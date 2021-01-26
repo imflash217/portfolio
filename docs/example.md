@@ -68,3 +68,25 @@ def विभाग(भाज्य, भाजक):
     massa, nec semper lorem quam in massa.
 
 [Submit :fontawesome-solid-paper-plane:](#){: .md-button .md-button--primary }
+
+=== "C"
+
+    ``` c
+    #include <stdio.h>
+
+    int main(void) {
+      printf("Hello world!\n");
+      return 0;
+    }
+    ```
+
+=== "C++"
+
+    ``` c++
+    #include <iostream>
+
+    int main(void) {
+      std::cout << "Hello world!" << std::endl;
+      return 0;
+    }
+    ```
