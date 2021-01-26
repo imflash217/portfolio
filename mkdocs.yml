@@ -20,5 +20,6 @@ markdown_extensions:
       clickable_checkbox: false
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.snippets:
   - attr_list
   - footnotes
