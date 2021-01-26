@@ -9,4 +9,6 @@ theme:
   palette:
     primary: red
 markdown_extensions:
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
