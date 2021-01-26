@@ -16,3 +16,4 @@ markdown_extensions:
   - pymdownx.highlight:
       linenums: true
   - attr_list
+  - footnotes
