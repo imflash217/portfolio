@@ -21,7 +21,9 @@ import torch
 import pytorch_lightning as pl
 ```
 
-# Deployment
+# Notes
+
+### Deployment
 ```
 git add . && git commit -m "update" && git push -u origin main && mkdocs gh-deploy --force
 ```
