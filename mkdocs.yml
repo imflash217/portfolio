@@ -2,7 +2,7 @@ site_name: Vinay Kumar
 nav:
   - Getting Started: index.md
   - Install: install.md
-  - Full Example: example.md
+  - Research Assistant @iVMCL, NCState University: example.md
 
 theme:
   name: material
