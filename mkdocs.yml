@@ -11,6 +11,7 @@ theme:
 markdown_extensions:
   - admonition
   - pymdownx.details
+  - pymdownx.tabbed
   - pymdownx.superfences
   - pymdownx.highlight:
       linenums: true
