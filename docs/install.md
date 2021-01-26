@@ -30,5 +30,19 @@ def विभाग(भाज्य, भाजक):
 
 #####################################################################
 ```
+
 ![Placeholder](https://dummyimage.com/60x40/eee/aaa){: align=left }
-lorem ipsum 
+lorem ipsum
+
+----------
+
+![Placeholder](https://dummyimage.com/100x100/eee/aaa){: loading=lazy }
+
+----------
+
+<figure>
+  <img src="https://dummyimage.com/100x100/eee/aaa" width="100" />
+  <figcaption>Image caption</figcaption>
+</figure>
+
+-------------
