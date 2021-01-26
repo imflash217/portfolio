@@ -52,3 +52,8 @@ lorem ipsum
     * [x] In scelerisque nibh non dolor mollis congue sed et metus
     * [ ] Praesent sed risus massa
 - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+
+-------------
+$$
+\operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
+$$
