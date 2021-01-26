@@ -30,5 +30,5 @@ def विभाग(भाज्य, भाजक):
 
 #####################################################################
 ```
-![Placeholder](https://dummyimage.com/600x400/eee/aaa){: align=left }
+![Placeholder](https://dummyimage.com/60x40/eee/aaa){: align=left }
 lorem ipsum 
