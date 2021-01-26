@@ -1,3 +1,5 @@
 site_name: Vinay Kumar
 theme:
   name: material
+  palette:
+    accent: red
