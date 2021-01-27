@@ -8,6 +8,8 @@ theme:
   name: material
   palette:
     primary: red
+  font:
+    code: Fira Code
 markdown_extensions:
   - admonition
   - pymdownx.details
