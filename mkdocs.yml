@@ -1,4 +1,36 @@
 ##########################################################################
+theme:
+  name: material
+  icon:
+    logo: assets/vinay_2016_stylized.jpg
+  palette:
+    primary: black
+  font:
+    code: Fira Code
+  features:
+    - navigation.tabs
+    - navigation.expand
+
+##########################################################################
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: false
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.snippets:
+  - abbr
+  - attr_list
+  - footnotes
+  - meta
+##########################################################################
+##########################################################################
 site_name: Vinay Kumar
 ##########################################################################
 nav:
@@ -19,34 +51,4 @@ nav:
     - Install1: proj_1.md
     - Install2: proj_1.md
   - Notes: notes.md
-##########################################################################
-theme:
-  name: material
-  icon:
-    logo: material/smile
-  palette:
-    primary: black
-  font:
-    code: Fira Code
-  features:
-    - navigation.tabs
-    - navigation.expand
-##########################################################################
-markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.tabbed
-  - pymdownx.superfences
-  - pymdownx.highlight:
-      linenums: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-      clickable_checkbox: false
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.snippets:
-  - abbr
-  - attr_list
-  - footnotes
-  - meta
 ##########################################################################
