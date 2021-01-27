@@ -2,7 +2,7 @@
 theme:
   name: material
   icon:
-    logo: assets/vinay_2016_stylized.png
+    logo: assets/vinay_2016_stylized.svg
   palette:
     primary: black
   font:
