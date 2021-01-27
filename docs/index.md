@@ -13,6 +13,10 @@ hide:
 [Resume](#){: .md-button .md-button--primary }
 [LinkedIn](#){: .md-button .md-button--primary }
 
+???+ Contact Details ""
+    - :material-linkedin: www.google.com
+    - :material-github: www.github.com
+
 ???+ success ""
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
