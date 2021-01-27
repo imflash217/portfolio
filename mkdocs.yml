@@ -1,7 +1,8 @@
 site_name: Vinay Kumar
 nav:
-  - Getting Started: index.md
+  - About me: index.md
   - Install: install.md
+    - Install: install.md
   - Research Assistant @iVMCL, NCState University: example.md
 
 theme:
