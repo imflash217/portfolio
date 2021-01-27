@@ -2,7 +2,8 @@
 theme:
   name: material
   icon:
-    logo: material/flash-circle
+    # logo: material/flash-circle
+    logo: material/fingerprint
   palette:
     primary: black
   font:
