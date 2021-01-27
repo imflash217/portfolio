@@ -2,7 +2,7 @@
 site_name: Vinay Kumar
 ##########################################################################
 nav:
-  - About me: bio.md
+  - About me: index.md
   - Research Publications:
     - Interspeech 2014: interspeech_2014.md
     - Odyssey 2014: odyssey_2014.md
