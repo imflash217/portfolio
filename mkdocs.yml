@@ -4,20 +4,20 @@ site_name: Vinay Kumar
 nav:
   - About me: bio.md
   - Research Publications:
-    - Interspeech 2014: publications/interspeech_2014.md
-    - Odyssey 2014: publications/odyssey_2014.md
+    - Interspeech 2014: interspeech_2014.md
+    - Odyssey 2014: odyssey_2014.md
   - Work Experience:
-    - iVMCL Lab, NC State: work_experience/ivmcl.md
-    - ARoS Lab, NC State: work_experience/aros.md
-    - Springboard Inc.: work_experience/springboard.md
-    - Meeami Technologies: work_experience/meeami.md
-    - Flash.AI: work_experience/flashai.md
-    - Cognizant: work_experience/cognizant.md
+    - iVMCL Lab, NC State: ivmcl.md
+    - ARoS Lab, NC State: aros.md
+    - Springboard Inc.: springboard.md
+    - Meeami Technologies: meeami.md
+    - Flash.AI: flashai.md
+    - Cognizant: cognizant.md
   - Projects:
-    - Install1: projects/proj_1.md
-    - Install2: projects/proj_1.md
-    - Install1: projects/proj_1.md
-    - Install2: projects/proj_1.md
+    - Install1: proj_1.md
+    - Install2: proj_1.md
+    - Install1: proj_1.md
+    - Install2: proj_1.md
   - Notes: notes.md
 ##########################################################################
 theme:
