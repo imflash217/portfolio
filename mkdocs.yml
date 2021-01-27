@@ -4,8 +4,8 @@ site_name: Vinay Kumar
 nav:
   - About me: index.md
   - Research Publications:
-    - Interspeech 2014: interspeech2014.md
-    - Odyssey 2014: odyssey2014.md
+    - Interspeech 2014: interspeech_2014.md
+    - Odyssey 2014: odyssey_2014.md
   - Work Experience:
     - iVMCL Lab, NC State: ivmcl.md
     - ARoS Lab, NC State: aros.md
