@@ -31,6 +31,13 @@ markdown_extensions:
   - footnotes
   - meta
 ##########################################################################
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/squidfunk
 ##########################################################################
 site_name: Vinay Kumar
 ##########################################################################
