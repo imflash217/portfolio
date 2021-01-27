@@ -2,47 +2,48 @@
 site_name: Vinay Kumar
 ##########################################################################
 nav:
-    - About me: index.md
-    - Research Publications:
-        - Interspeech 2014: interspeech_2014.md
-        - Odyssey 2014: odyssey_2014.md
-    - Work Experience:
-        - iVMCL Lab, NC State: ivmcl.md
-        - ARoS Lab, NC State: aros.md
-        - Springboard Inc.: springboard.md
-        - Meeami Technologies: meeami.md
-        - Flash.AI: flashai.md
-        - Cognizant: cognizant.md
-    - Projects:
-        - Install1: proj_1.md
-        - Install2: proj_1.md
-        - Install1: proj_1.md
-        - Install2: proj_1.md
-    - Notes: notes.md
+  - About me: index.md
+  - Research Publications:
+    - Interspeech 2014: interspeech_2014.md
+    - Odyssey 2014: odyssey_2014.md
+  - Work Experience:
+    - iVMCL Lab, NC State: ivmcl.md
+    - ARoS Lab, NC State: aros.md
+    - Springboard Inc.: springboard.md
+    - Meeami Technologies: meeami.md
+    - Flash.AI: flashai.md
+    - Cognizant: cognizant.md
+  - Projects:
+    - Install1: proj_1.md
+    - Install2: proj_1.md
+    - Install1: proj_1.md
+    - Install2: proj_1.md
+  - Notes: notes.md
 ##########################################################################
 theme:
-    name: material
-    palette:
-        primary: black
-    font:
-        code: Fira Code
-    features:
-        - navigation.tabs
+  name: material
+  palette:
+    primary: black
+  font:
+    code: Fira Code
+  features:
+    - navigation.tabs
+    - navigation.sections
 ##########################################################################
 markdown_extensions:
-    - admonition
-     pymdownx.details
-    - pymdownx.tabbed
-    - pymdownx.superfences
-    - pymdownx.highlight:
-        linenums: true
-    - pymdownx.tasklist:
-        custom_checkbox: true
-        clickable_checkbox: false
-    - pymdownx.arithmatex:
-        generic: true
-    - pymdownx.snippets:
-    - abbr
-    - attr_list
-    - footnotes
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: false
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.snippets:
+  - abbr
+  - attr_list
+  - footnotes
 ##########################################################################
