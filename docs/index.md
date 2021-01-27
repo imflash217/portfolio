@@ -10,7 +10,7 @@ hide:
     <figcaption>That's me!!</figcaption>
 </figure>
 
-[Flash :material-flash:](#){: .md-button .md-button--primary }
+[Fingerprint :material-fingerprint:](#){: .md-button .md-button--primary }
 
 ???+ success ""
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
