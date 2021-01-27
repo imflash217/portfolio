@@ -1,15 +1,35 @@
 site_name: Vinay Kumar
 nav:
   - About me: index.md
-  - Install:
+  - Research Publications:
+    - Interspeech 2014: install.md
+    - Odyssey 2014: install.md
+  - Work Experience:
+    - iVMCL Lab, NC State: install.md
+    - ARoS Lab, NC State: install.md
+    - Springboard Inc.: install.md
+    - Meeami Technologies: install.md
+    - Flash.AI: install.md
+    - Cognizant: install.md
+  - Projects:
     - Install1: install.md
     - Install2: install.md
-  - Research Assistant @iVMCL, NCState University: example.md
+    - Install1: install.md
+    - Install2: install.md
+    - Install1: install.md
+    - Install2: install.md
+    - Install1: install.md
+    - Install2: install.md
+    - Install1: install.md
+    - Install2: install.md
+    - Install1: install.md
+    - Install2: install.md
+  - Notes: example.md
 
 theme:
   name: material
   palette:
-    primary: red
+    primary: black
   font:
     code: Fira Code
   features:
