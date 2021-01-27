@@ -1,8 +1,7 @@
 ##########################################################################
 theme:
   name: material
-  icon:
-    logo: vinay.png
+  logo: vinay.png
   palette:
     primary: black
   font:
