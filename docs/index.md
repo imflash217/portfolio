@@ -10,8 +10,8 @@ hide:
     <figcaption>That's me!!</figcaption>
 </figure>
 
-[Fingerprint :material-fingerprint:](#){: .md-button .md-button--primary }
-
+[Resume](#){: .md-button .md-button--primary }
+[LinkedIn](#){: .md-button .md-button--primary }
 ???+ success ""
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
