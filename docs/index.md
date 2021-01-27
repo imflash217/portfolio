@@ -13,7 +13,7 @@ hide:
 [Resume](#){: .md-button .md-button--primary }
 [LinkedIn](#){: .md-button .md-button--primary }
 
-???+ Contact Details ""
+???+ quote "Contact Details"
     - :material-linkedin: www.google.com
     - :material-github: www.github.com
 
