@@ -1,7 +1,8 @@
 ##########################################################################
 theme:
   name: material
-  logo: assets/vinay.png
+  icon:
+    logo: material/flash-circle
   palette:
     primary: black
   font:
