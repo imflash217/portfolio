@@ -10,12 +10,9 @@ hide:
     <figcaption>That's me!!</figcaption>
 </figure>
 
-[Resume](#){: .md-button .md-button--primary }
-[LinkedIn](#){: .md-button .md-button--primary }
+[LinkedIn :material-linkedin:](www.linkedin.com/in/imflash217){: .md-button .md-button--primary }
+[Github :material-github: ](www.github.com/imflash217){: .md-button .md-button--primary }
 
-
-- :material-linkedin: www.google.com
-- :material-github: www.github.com
 
 ???+ success ""
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
