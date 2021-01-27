@@ -1,4 +1,6 @@
+##########################################################################
 site_name: Vinay Kumar
+##########################################################################
 nav:
   - About me: index.md
   - Research Publications:
@@ -25,7 +27,7 @@ nav:
     - Install1: install.md
     - Install2: install.md
   - Notes: example.md
-
+##########################################################################
 theme:
   name: material
   palette:
@@ -34,6 +36,7 @@ theme:
     code: Fira Code
   features:
     - navigation.tabs
+##########################################################################
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -50,3 +53,4 @@ markdown_extensions:
   - abbr
   - attr_list
   - footnotes
+##########################################################################
