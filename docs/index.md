@@ -12,6 +12,7 @@ hide:
 
 [Resume](#){: .md-button .md-button--primary }
 [LinkedIn](#){: .md-button .md-button--primary }
+
 ???+ success ""
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
