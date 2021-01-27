@@ -28,6 +28,7 @@ theme:
     code: Fira Code
   features:
     - navigation.tabs
+    - navigation.sections
 ##########################################################################
 markdown_extensions:
   - admonition
