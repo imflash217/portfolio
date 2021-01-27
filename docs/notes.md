@@ -1,4 +1,4 @@
-
+# Notes
 ???+ success ""
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
@@ -138,7 +138,7 @@ The HTML specification is maintained by the W3C.
 
 <!-- ##################################################################### -->
 
-# Welcome to MkDocs
+## Welcome to MkDocs
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
