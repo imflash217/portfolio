@@ -1,3 +1,8 @@
+<figure>
+  <img src="https://dummyimage.com/100x100/eee/aaa" width="100" />
+  <figcaption>That's me!!</figcaption>
+</figure>
+
 ???+ success ""
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
