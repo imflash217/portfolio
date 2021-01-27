@@ -5,8 +5,9 @@ hide:
 ---
 
 <figure>
-  <img src="https://dummyimage.com/100x100/eee/aaa" width="100" />
-  <figcaption>That's me!!</figcaption>
+    <img src="https://dummyimage.com/100x100/eee/aaa" width="100" />
+    <!-- <img src="https://dummyimage.com/100x100/eee/aaa" width="100" /> -->
+    <figcaption>That's me!!</figcaption>
 </figure>
 
 ???+ success ""
