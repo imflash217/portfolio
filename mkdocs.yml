@@ -46,4 +46,5 @@ markdown_extensions:
   - abbr
   - attr_list
   - footnotes
+  - meta
 ##########################################################################

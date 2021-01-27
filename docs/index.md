@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation # Hide navigation
+  - toc        # Hide table of contents
+---
+
 <figure>
   <img src="https://dummyimage.com/100x100/eee/aaa" width="100" />
   <figcaption>That's me!!</figcaption>
