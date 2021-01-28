@@ -72,6 +72,6 @@ nav:
     - Install2: proj_1.md
     - Install1: proj_1.md
     - Install2: proj_1.md
-  - Blog: notes.md
+  - Blog: blog/blog.md
   - Notes: notes.md
 ##########################################################################
