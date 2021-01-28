@@ -4,8 +4,8 @@ hide:
   - toc        # Hide table of contents
 --- -->
 
-???+ success "My blog"
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+<!-- ???+ success "My blog" -->
+    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
 
@@ -19,7 +19,7 @@ hide:
 
     Nunc eu odio eleifend, blandit leo a, volutpat sapien. Phasellus posuere in
     sem ut cursus. Nullam sit amet tincidunt ipsum, sit amet elementum turpis.
-    Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
+    Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim. -->
 
 <!-- <figure>
     <img src="assets/vinay.png" width="200" />
