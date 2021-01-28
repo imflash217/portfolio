@@ -38,6 +38,8 @@ hide:
 
     While exposure to visible light causes heating, it does not cause ionization with its risks. You may be heated by the sun through a car windshield, but you will not be sunburned - `that is an effect of the higher frequency uv part of sunlight which is blocked by the glass of the windshield.`
 
+    ![1.png](../assets/blogs/blog_1/7.png)
+
 ???+ quote "Ultraviolet :sunny:"
     ![1.png](../assets/blogs/blog_1/5.png)
     The near ultraviolet is absorbed very strongly in the surface layer of the skin by **electron transitions**. As you go to higher energies, the ionization energies for many molecules are reached and the **more dangerous photoionization processes** take place.
