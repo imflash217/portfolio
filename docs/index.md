@@ -13,6 +13,7 @@ hide:
     <figcaption>That's me!!</figcaption>
 </figure>
 
+[audio] (assets/audio_1.mpeg)
 
 ???+ quote "My motivation"
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
