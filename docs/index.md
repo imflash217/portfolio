@@ -4,14 +4,15 @@ hide:
   - toc        # Hide table of contents
 ---
 
+[LinkedIn :material-linkedin:](#){: .md-button .md-button--primary }
+[Github :material-github: ](#){: .md-button .md-button--primary }
+
 <figure>
     <img src="assets/vinay.png" width="200" />
     <!-- <img src="https://dummyimage.com/100x100/eee/aaa" width="100" /> -->
     <figcaption>That's me!!</figcaption>
 </figure>
 
-[LinkedIn :material-linkedin:](#){: .md-button .md-button--primary }
-[Github :material-github: ](#){: .md-button .md-button--primary }
 
 
 ???+ success ""
