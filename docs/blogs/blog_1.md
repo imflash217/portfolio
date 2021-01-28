@@ -24,7 +24,7 @@ hide:
     - Conductors will strongly absorb microwaves and any lower frequencies _because they will cause electric currents which will heat the material._ Most matter, including the human body, is largely transparent to microwaves.
     - High intensity microwaves, as in a _microwave oven_ where they pass back and forth through the food millions of times, will heat the material **by producing molecular rotations and torsions.** Since the quantum energies are a million times lower than those of x-rays, they **cannot produce ionization** and the characteristic types of radiation damage associated with ionizing radiation.
 
-???+ quote "Infrared :red_circle"
+???+ quote "Infrared :red_circle:"
     ![1.png](../assets/blogs/blog_1/3.png)
     The quantum energy of infrared photons is in the range **`0.001 to 1.7 eV` which is in the range of energies separating the quantum states of molecular vibrations.**
 
@@ -48,7 +48,7 @@ hide:
 
     Health concerns for UV exposure are mostly for the range **`290-330 nm`** in wavelength, the range called **UVB**. According to `Scotto, et al`, the most effective biological wavelength for producing skin burns is **`297 nm`**. Their research indicates that the biological effects increase logarithmically within the UVB range, with 330 nm being only 0.1% as effective as 297 nm for biological effects. **So it is clearly important to control exposure to UVB.**
 
-???+ quote "X-men :skull: :stuck_out_tongue_winking_eye:"
+???+ quote "X-men :skull: :stuck_out_tongue_winking_eye: :no_good:"
     | First Header                                   | Second Header                                  |
     | ---------------------------------------------- | ---------------------------------------------- |
     | ![1.png](../assets/blogs/blog_1/6a.png "img1") | ![1.png](../assets/blogs/blog_1/6b.png "img1") |
