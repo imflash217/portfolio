@@ -26,6 +26,7 @@ hide:
     - High intensity microwaves, as in a _microwave oven_ where they pass back and forth through the food millions of times, will heat the material **by producing molecular rotations and torsions.** Since the quantum energies are a million times lower than those of x-rays, they **cannot produce ionization** and the characteristic types of radiation damage associated with ionizing radiation.
 
 ### `Infrared`
+
 ???+ quote "Infrared :red_circle:"
     ![1.png](../assets/blogs/blog_1/3.png)
     The quantum energy of infrared photons is in the range **`0.001 to 1.7 eV` which is in the range of energies separating the quantum states of molecular vibrations.**
