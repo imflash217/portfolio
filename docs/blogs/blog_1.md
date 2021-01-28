@@ -4,8 +4,8 @@ hide:
   - toc        # Hide table of contents
 --- -->
 
-<!-- ???+ success "My blog" -->
-    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+<!-- ???+ success "My blog"
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
 
@@ -52,8 +52,4 @@ hide:
     | ---------------------------------------------- | ---------------------------------------------- |
     | ![1.png](../assets/blogs/blog_1/6a.png "img1") | ![1.png](../assets/blogs/blog_1/6b.png "img1") |
 
-    The quantum energy of microwave photons is in the range 0.00001 to 0.001 eV which is in the range of energies separating the quantum states of molecular rotation and torsion. The interaction of microwaves with matter other than metallic conductors will be to rotate molecules and produce heat as result of that molecular motion. Conductors will strongly absorb microwaves and any lower frequencies because they will cause electric currents which will heat the material. Most matter, including the human body, is largely transparent to microwaves. High intensity microwaves, as in a microwave oven where they pass back and forth through the food millions of times, will heat the material by producing molecular rotations and torsions. Since the quantum energies are a million times lower than those of x-rays, they cannot produce ionization and the characteristic types of radiation damage associated with ionizing radiation.
-
-| First Header                                   | Second Header                                  |
-| ---------------------------------------------- | ---------------------------------------------- |
-| ![1.png](../assets/blogs/blog_1/6a.png "img1") | ![1.png](../assets/blogs/blog_1/6b.png "img1") |
+    Since the quantum energies of x-ray photons are much too high to be absorbed in electron transitions between states for most atoms, they can interact with an electron only by knocking it completely out of the atom. That is, all x-rays are classified as ionizing radiation. This can occur by giving all of the energy to an electron (photoionization) or by giving part of the energy to the electron and the remainder to a lower energy photon (Compton scattering). At sufficiently high energies, the x-ray photon can create an electron positron pair.
