@@ -21,12 +21,13 @@ hide:
     The _quantum energy_ of microwave photons is in the range **`0.00001 to 0.001 eV`** _which is in the range of energies separating the quantum states of molecular rotation and torsion_.
 
     - The interaction of microwaves with matter **other than metallic conductors**** will be to rotate molecules and produce heat as result of that molecular motion.
-    - Conductors will strongly absorb microwaves and any lower frequencies _because they will cause electric currents which will heat the material._ Most matter, including the human body, is largely transparent to microwaves. 
+    - Conductors will strongly absorb microwaves and any lower frequencies _because they will cause electric currents which will heat the material._ Most matter, including the human body, is largely transparent to microwaves.
     - High intensity microwaves, as in a _microwave oven_ where they pass back and forth through the food millions of times, will heat the material **by producing molecular rotations and torsions.** Since the quantum energies are a million times lower than those of x-rays, they **cannot produce ionization** and the characteristic types of radiation damage associated with ionizing radiation.
 
 ???+ quote "Infrared"
     ![1.png](../assets/blogs/blog_1/3.png)
-    The quantum energy of infrared photons is in the range 0.001 to 1.7 eV which is in the range of energies separating the quantum states of molecular vibrations. Infrared is absorbed more strongly than microwaves, but less strongly than visible light. The result of infrared absorption is heating of the tissue since it increases molecular vibrational activity. Infrared radiation does penetrate the skin further than visible light and can thus be used for photographic imaging of subcutaneous blood vessels.
+    The quantum energy of infrared photons is in the range **`0.001 to 1.7 eV` which is in the range of energies separating the quantum states of molecular vibrations.** Infrared is absorbed more strongly than microwaves, but less strongly than visible light.
+    The result of infrared absorption is heating of the tissue since it increases molecular vibrational activity. Infrared radiation does penetrate the skin further than visible light and can thus be used for photographic imaging of subcutaneous blood vessels.
 
 ???+ quote "Visible Light :rainbow:"
     ![1.png](../assets/blogs/blog_1/4.png)
