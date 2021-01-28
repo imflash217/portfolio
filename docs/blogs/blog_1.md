@@ -39,6 +39,7 @@ hide:
     While exposure to visible light causes heating, it does not cause ionization with its risks. You may be heated by the sun through a car windshield, but you will not be sunburned - `that is an effect of the higher frequency uv part of sunlight which is blocked by the glass of the windshield.`
 
     ![1.png](../assets/blogs/blog_1/7.png)
+    ![1.png](../assets/blogs/blog_1/8.png)
 
 ???+ quote "Ultraviolet :sunny:"
     ![1.png](../assets/blogs/blog_1/5.png)
