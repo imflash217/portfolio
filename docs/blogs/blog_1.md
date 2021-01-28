@@ -9,7 +9,7 @@ hide:
 
 ???+ quote "......."
     ![1.png](../assets/blogs/blog_1/1.png)
-    The different parts of the electromagnetic spectrum have very different effects upon interaction with matter. Starting with low frequency `radio waves`, the human body is quite transparent (_you can listen to your portable radio inside your home since the waves pass freely through the walls of your house and even through the person beside you!_) **As you move upward through `microwaves` and `infrared` to `visible light`, you absorb more and more strongly.** In the lower ultraviolet range, all the `uv` from the sun is absorbed in a thin outer layer of your skin. As you move further up into the `x-ray` region of the spectrum, you become transparent again, because most of the mechanisms for absorption are gone. You then absorb only a small fraction of the radiation, but that absorption involves the `more violent ionization events`.
+    The different parts of the electromagnetic spectrum have very different effects upon interaction with matter. Starting with low frequency `radio waves`, the human body is quite transparent (_you can listen to your portable radio inside your home since the waves pass freely through the walls of your house and even through the person beside you!_) **As you move upward through `microwaves` and `infrared` to `visible light`, you absorb more and more strongly.** In the lower ultraviolet range, all the `UV` from the sun is absorbed in a thin outer layer of your skin. As you move further up into the `x-ray` region of the spectrum, you become transparent again, because most of the mechanisms for absorption are gone. You then absorb only a small fraction of the radiation, but that absorption involves the `more violent ionization events`.
 
     - Each portion of the electromagnetic spectrum has quantum energies appropriate for the excitation of certain types of physical processes.
     - The energy levels for all physical processes at the atomic and molecular levels are quantized, and if there are no available quantized energy levels with spacings which match the quantum energy of the incident radiation, then the material will be transparent **to that radiation**, and it will pass through.
@@ -40,18 +40,20 @@ hide:
 
 ???+ quote "Ultraviolet :sunny:"
     ![1.png](../assets/blogs/blog_1/5.png)
-    The near ultraviolet is absorbed very strongly in the surface layer of the skin by electron transitions. As you go to higher energies, the ionization energies for many molecules are reached and the more dangerous photoionization processes take place. Sunburn is primarily an effect of uv, and ionization produces the risk of skin cancer.
+    The near ultraviolet is absorbed very strongly in the surface layer of the skin by **electron transitions**. As you go to higher energies, the ionization energies for many molecules are reached and the **more dangerous photoionization processes** take place.
 
-    The ozone layer in the upper atmosphere is important for human health because it absorbs most of the harmful ultraviolet radiation from the sun before it reaches the surface. The higher frequencies in the ultraviolet are ionizing radiation and can produce harmful physiological effects ranging from sunburn to skin cancer.
+    - Sunburn is primarily an effect of uv, and ionization produces the risk of _skin cancer_.
 
-    Health concerns for UV exposure are mostly for the range 290-330 nm in wavelength, the range called UVB. According to Scotto, et al, the most effective biological wavelength for producing skin burns is 297 nm. Their research indicates that the biological effects increase logarithmically within the UVB range, with 330 nm being only 0.1% as effective as 297 nm for biological effects. So it is clearly important to control exposure to UVB.
+    The `ozone layer` in the upper atmosphere is important for human health because it absorbs most of the harmful ultraviolet radiation from the sun before it reaches the surface. **The higher frequencies in the ultraviolet are ionizing radiation** and can produce harmful physiological effects ranging from _sunburn_ to _skin cancer_.
+
+    Health concerns for UV exposure are mostly for the range **`290-330 nm`** in wavelength, the range called **UVB**. According to `Scotto, et al`, the most effective biological wavelength for producing skin burns is **`297 nm`**. Their research indicates that the biological effects increase logarithmically within the UVB range, with 330 nm being only 0.1% as effective as 297 nm for biological effects. **So it is clearly important to control exposure to UVB.**
 
 ???+ quote "X-men :skull: :stuck_out_tongue_winking_eye:"
     | First Header                                   | Second Header                                  |
     | ---------------------------------------------- | ---------------------------------------------- |
     | ![1.png](../assets/blogs/blog_1/6a.png "img1") | ![1.png](../assets/blogs/blog_1/6b.png "img1") |
 
-    Since the quantum energies of x-ray photons are much too high to be absorbed in electron transitions between states for most atoms, they can interact with an electron only by knocking it completely out of the atom. That is, all x-rays are classified as ionizing radiation. This can occur by giving all of the energy to an electron (photoionization) or by giving part of the energy to the electron and the remainder to a lower energy photon (Compton scattering). At sufficiently high energies, the x-ray photon can create an electron positron pair.
+    Since the **quantum energies** of x-ray photons are much **too high to be absorbed in electron transitions** between states for most atoms, they can interact with an electron only by knocking it completely out of the atom. That is, **all x-rays are classified as ionizing radiation**. This can occur by giving all of the energy to an electron (_photoionization_) or by giving part of the energy to the electron and the remainder to a lower energy photon (_Compton Scattering_). **At sufficiently high energies, the x-ray photon can create an electron positron pair.**
 
 `Author: Vinay Kumar (@imflash217) | Date: 28/January/2021`
 
