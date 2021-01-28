@@ -35,7 +35,8 @@ hide:
 
     Since the quantum energies of x-ray photons are much too high to be absorbed in electron transitions between states for most atoms, they can interact with an electron only by knocking it completely out of the atom. That is, all x-rays are classified as ionizing radiation. This can occur by giving all of the energy to an electron (photoionization) or by giving part of the energy to the electron and the remainder to a lower energy photon (Compton scattering). At sufficiently high energies, the x-ray photon can create an electron positron pair.
 
-`Written by @imflash217`
+`Author: @imflash217`
+`Date: 28/January/2021`
 
 ### `References:`
 [^1]: [http://hyperphysics.phy-astr.gsu.edu/hbase/mod3.html](http://hyperphysics.phy-astr.gsu.edu/hbase/mod3.html)
