@@ -72,10 +72,10 @@ nav:
     - Hobby_2: hobbies/hobby_2.md
     - Hobby_3: hobbies/hobby_3.md
     - Hobby_4: hobbies/hobby_4.md
-  - Blog:
-    - Hobby_1: blogs/blog_1.md
-    - Hobby_2: blogs/blog_2.md
-    - Hobby_3: blogs/blog_3.md
+  - Blogs:
+    - Blog_1: blogs/blog_1.md
+    - Blog_2: blogs/blog_2.md
+    - Blog_3: blogs/blog_3.md
   - Gists:
     - Gist_1: gists/gist_1.md
     - Gist_2: gists/gist_2.md
