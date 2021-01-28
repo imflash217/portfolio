@@ -72,6 +72,9 @@ nav:
     - Install2: hobbies/hobby_1.md
     - Install1: hobbies/hobby_1.md
     - Install2: hobbies/hobby_1.md
-  - Blog: blog/blog_1.md
+  - Blog:
+    - Hobby_1: blog/blog_1.md
+    - Hobby_2: blog/blog_1.md
+    - Hobby_3: blog/blog_1.md
   - Notes: notes.md
 ##########################################################################
