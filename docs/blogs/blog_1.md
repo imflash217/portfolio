@@ -43,7 +43,7 @@ hide:
 
 `Author: @imflash217 | Date: 28/January/2021`
 
-`The contents of this article were originallypublished at [^1], [^2], [^3], [^4], [^5]. I have assembled it for my own understanding. Feel free to reuse and tag along the references. :+1:`
+`The contents of this article were originally published at [^1], [^2], [^3], [^4], [^5]. I have assembled it for my own understanding. Feel free to reuse and tag along the references. :+1:`
 
 ### `References:`
 [^1]: [http://hyperphysics.phy-astr.gsu.edu/hbase/mod3.html](http://hyperphysics.phy-astr.gsu.edu/hbase/mod3.html)
