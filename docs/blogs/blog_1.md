@@ -22,7 +22,7 @@ hide:
     Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
 
 <figure>
-    <img src="assets/../../assets/vinay.png" width="200" />
+    <img src="assets/vinay.png" width="200" />
 </figure>
 []
 
