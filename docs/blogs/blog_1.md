@@ -7,7 +7,7 @@ hide:
 # Electromagnetic Spectrum, properties of material medium & its effects.
 `Author: Vinay Kumar (@imflash217) | Date: 28/January/2021`
 
-???+ quote "......."
+???+ quote
     ![1.png](../assets/blogs/blog_1/1.png)
     The different parts of the electromagnetic spectrum have very different effects upon interaction with matter. Starting with low frequency `radio waves`, the human body is quite transparent (_you can listen to your portable radio inside your home since the waves pass freely through the walls of your house and even through the person beside you!_) **As you move upward through `microwaves` and `infrared` to `visible light`, you absorb more and more strongly.** In the lower ultraviolet range, all the `UV` from the sun is absorbed in a thin outer layer of your skin. As you move further up into the `x-ray` region of the spectrum, you become transparent again, because most of the mechanisms for absorption are gone. You then absorb only a small fraction of the radiation, but that absorption involves the `more violent ionization events`.
 
