@@ -63,18 +63,22 @@ nav:
     - Flash.AI: work/flashai.md
     - Cognizant: work/cognizant.md
   - Projects:
-    - Install1: projects/proj_1.md
-    - Install2: projects/proj_1.md
-    - Install1: projects/proj_1.md
-    - Install2: projects/proj_1.md
+    - Project_1: projects/proj_1.md
+    - Project_2: projects/proj_2.md
+    - Project_3: projects/proj_3.md
+    - Project_4: projects/proj_4.md
   - Hobby Projects:
-    - Install1: hobbies/hobby_1.md
-    - Install2: hobbies/hobby_1.md
-    - Install1: hobbies/hobby_1.md
-    - Install2: hobbies/hobby_1.md
+    - Hobby_1: hobbies/hobby_1.md
+    - Hobby_2: hobbies/hobby_2.md
+    - Hobby_3: hobbies/hobby_3.md
+    - Hobby_4: hobbies/hobby_4.md
   - Blog:
-    - Hobby_1: blog/blog_1.md
-    - Hobby_2: blog/blog_1.md
-    - Hobby_3: blog/blog_1.md
+    - Hobby_1: blogs/blog_1.md
+    - Hobby_2: blogs/blog_2.md
+    - Hobby_3: blogs/blog_3.md
+  - Gists:
+    - Gist_1: gists/gist_1.md
+    - Gist_2: blog/gist_2.md
+    - Gist_3: blog/gist_3.md
   - Notes: notes.md
 ##########################################################################
