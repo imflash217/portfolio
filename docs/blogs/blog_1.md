@@ -37,8 +37,9 @@ hide:
     The primary mechanism for the absorption of visible light photons is the elevation of electrons to higher energy levels. There are many available states, so visible light is absorbed strongly. With a strong light source, red light can be transmitted through the hand or a fold of skin, showing that **the red end of the spectrum is not absorbed as strongly as the violet end.**
 
     While exposure to visible light causes heating, it does not cause ionization with its risks. You may be heated by the sun through a car windshield, but you will not be sunburned - _that is an effect of the higher frequency uv part of sunlight which is blocked by the glass of the windshield._
-
+    ----
     ![1.png](../assets/blogs/blog_1/7.png)
+    ----
     ![1.png](../assets/blogs/blog_1/8.png)
 
 ???+ quote "Ultraviolet :sunny:"
