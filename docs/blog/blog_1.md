@@ -1,20 +1,10 @@
----
+<!-- ---
 hide:
   - navigation # Hide navigation
   - toc        # Hide table of contents
----
+--- -->
 
-[LinkedIn :material-linkedin:](#){: .md-button .md-button--primary }
-[Github :material-github: ](#){: .md-button .md-button--primary }
-
-<figure>
-    <img src="assets/vinay.png" width="200" />
-    <!-- <img src="https://dummyimage.com/100x100/eee/aaa" width="100" /> -->
-    <figcaption>That's me!!</figcaption>
-</figure>
-
-
-???+ success "My motivation"
+???+ success "My blog"
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
