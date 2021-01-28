@@ -38,4 +38,7 @@ hide:
 ### References:
 [^1]: [http://hyperphysics.phy-astr.gsu.edu/hbase/mod3.html](http://hyperphysics.phy-astr.gsu.edu/hbase/mod3.html)
 [^2]: [http://hyperphysics.phy-astr.gsu.edu/hbase/mod2.html](http://hyperphysics.phy-astr.gsu.edu/hbase/mod2.html)
+[^3]: [https://physics.stackexchange.com/questions/300551/how-can-wifi-penetrate-through-walls-when-visible-light-cant](https://physics.stackexchange.com/questions/300551/how-can-wifi-penetrate-through-walls-when-visible-light-cant)
+[^4]: [https://physics.stackexchange.com/questions/1836/why-is-air-invisible] (https://physics.stackexchange.com/questions/1836/why-is-air-invisible)
+[^5]: [https://physics.stackexchange.com/questions/7437/why-is-glass-transparent] (https://physics.stackexchange.com/questions/7437/why-is-glass-transparent)
 
