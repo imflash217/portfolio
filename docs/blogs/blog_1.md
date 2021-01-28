@@ -34,7 +34,7 @@ hide:
 
     Health concerns for UV exposure are mostly for the range 290-330 nm in wavelength, the range called UVB. According to Scotto, et al, the most effective biological wavelength for producing skin burns is 297 nm. Their research indicates that the biological effects increase logarithmically within the UVB range, with 330 nm being only 0.1% as effective as 297 nm for biological effects. So it is clearly important to control exposure to UVB.
 
-???+ quote "X-men :smile:"
+???+ quote "X-men :tongue:"
     | First Header                                   | Second Header                                  |
     | ---------------------------------------------- | ---------------------------------------------- |
     | ![1.png](../assets/blogs/blog_1/6a.png "img1") | ![1.png](../assets/blogs/blog_1/6b.png "img1") |
