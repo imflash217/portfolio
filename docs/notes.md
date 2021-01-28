@@ -144,8 +144,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit.[^2]
 [^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-[^2]:
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+[^2]: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
 
 ```python
 #####################################################################
