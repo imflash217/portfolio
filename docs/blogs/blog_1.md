@@ -49,4 +49,6 @@ hide:
 
 ???+ quote "......."
     <img src="../assets/blogs/blog_1/6a.png" width="300"/> <img src="../assets/blogs/blog_1/6b.png" width="300"/>
+    <img src="https://openclipart.org/image/2400px/svg_to_png/28580/kablam-Number-Animals-1.png" width="200"/> <img src="https://openclipart.org/download/71101/two.svg" width="300"/>
+
     The quantum energy of microwave photons is in the range 0.00001 to 0.001 eV which is in the range of energies separating the quantum states of molecular rotation and torsion. The interaction of microwaves with matter other than metallic conductors will be to rotate molecules and produce heat as result of that molecular motion. Conductors will strongly absorb microwaves and any lower frequencies because they will cause electric currents which will heat the material. Most matter, including the human body, is largely transparent to microwaves. High intensity microwaves, as in a microwave oven where they pass back and forth through the food millions of times, will heat the material by producing molecular rotations and torsions. Since the quantum energies are a million times lower than those of x-rays, they cannot produce ionization and the characteristic types of radiation damage associated with ionizing radiation.
