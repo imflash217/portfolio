@@ -26,8 +26,11 @@ hide:
 
 ???+ quote "Infrared"
     ![1.png](../assets/blogs/blog_1/3.png)
-    The quantum energy of infrared photons is in the range **`0.001 to 1.7 eV` which is in the range of energies separating the quantum states of molecular vibrations.** Infrared is absorbed more strongly than microwaves, but less strongly than visible light.
-    The result of infrared absorption is heating of the tissue since it increases molecular vibrational activity. Infrared radiation **does penetrate the skin further than visible light** and can thus be used for **photographic imaging of subcutaneous blood vessels.**
+    The quantum energy of infrared photons is in the range **`0.001 to 1.7 eV` which is in the range of energies separating the quantum states of molecular vibrations.**
+
+    - Infrared is absorbed more strongly than microwaves, but less strongly than visible light.
+    - The result of infrared absorption is heating of the tissue since it increases molecular vibrational activity.
+    - Infrared radiation **does penetrate the skin further than visible light** and can thus be used for **photographic imaging of subcutaneous blood vessels.**
 
 ???+ quote "Visible Light :rainbow:"
     ![1.png](../assets/blogs/blog_1/4.png)
