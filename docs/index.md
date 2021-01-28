@@ -14,6 +14,7 @@ hide:
 </figure>
 
 [audio] (assets/audio_1.mpeg)
+[gameAI] (assets/gameAI.mov)
 
 ???+ quote "My motivation"
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
