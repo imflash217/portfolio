@@ -15,7 +15,7 @@ hide:
     - The energy levels for all physical processes at the atomic and molecular levels are quantized, and if there are no available quantized energy levels with spacings which match the quantum energy of the incident radiation, then the material will be transparent **to that radiation**, and it will pass through.
     - If electromagnetic energy is absorbed, but cannot eject electrons from the atoms of the material, then it is classified as non-ionizing radiation, and will typically just heat the material.
 
-
+### `Microwaves`
 ???+ quote "Microwaves"
     ![1.png](../assets/blogs/blog_1/2.png)
     The _quantum energy_ of microwave photons is in the range **`0.00001 to 0.001 eV`** _which is in the range of energies separating the quantum states of molecular rotation and torsion_.
@@ -24,6 +24,7 @@ hide:
     - Conductors will strongly absorb microwaves and any lower frequencies _because they will cause electric currents which will heat the material._ Most matter, including the human body, is largely transparent to microwaves.
     - High intensity microwaves, as in a _microwave oven_ where they pass back and forth through the food millions of times, will heat the material **by producing molecular rotations and torsions.** Since the quantum energies are a million times lower than those of x-rays, they **cannot produce ionization** and the characteristic types of radiation damage associated with ionizing radiation.
 
+### `Infrared`
 ???+ quote "Infrared :red_circle:"
     ![1.png](../assets/blogs/blog_1/3.png)
     The quantum energy of infrared photons is in the range **`0.001 to 1.7 eV` which is in the range of energies separating the quantum states of molecular vibrations.**
@@ -32,6 +33,7 @@ hide:
     - The result of infrared absorption is heating of the tissue since it increases molecular vibrational activity.
     - Infrared radiation **does penetrate the skin further than visible light** and can thus be used for **photographic imaging of subcutaneous blood vessels.**
 
+### `Visible Light`
 ???+ quote "Visible Light :rainbow:"
     ![1.png](../assets/blogs/blog_1/4.png)
     The primary mechanism for the absorption of visible light photons is the elevation of electrons to higher energy levels. There are many available states, so visible light is absorbed strongly. With a strong light source, red light can be transmitted through the hand or a fold of skin, showing that **the red end of the spectrum is not absorbed as strongly as the violet end.**
@@ -46,6 +48,7 @@ hide:
 
     ![1.png](../assets/blogs/blog_1/8.png)
 
+### `Ultraviolet`
 ???+ quote "Ultraviolet :sunny:"
     ![1.png](../assets/blogs/blog_1/5.png)
     The near ultraviolet is absorbed very strongly in the surface layer of the skin by **electron transitions**. As you go to higher energies, the ionization energies for many molecules are reached and the **more dangerous photoionization processes** take place.
@@ -56,6 +59,7 @@ hide:
 
     Health concerns for UV exposure are mostly for the range **`290-330 nm`** in wavelength, the range called **UVB**. According to `Scotto, et al`, the most effective biological wavelength for producing skin burns is **`297 nm`**. Their research indicates that the biological effects increase logarithmically within the UVB range, with 330 nm being only 0.1% as effective as 297 nm for biological effects. **So it is clearly important to control exposure to UVB.**
 
+### `X-ray`
 ???+ quote "X-men :skull: :stuck_out_tongue_winking_eye: :no_good:"
     | First Header                                   | Second Header                                  |
     | ---------------------------------------------- | ---------------------------------------------- |
