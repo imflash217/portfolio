@@ -4,7 +4,7 @@ hide:
   - toc        # Hide table of contents
 --- -->
 
-## Electromagnetic Spectrum, properties of material medium & its effects.
+# Electromagnetic Spectrum, properties of material medium & its effects.
 `Author: @imflash217 | Date: 28/January/2021`
 
 ???+ quote "......."
