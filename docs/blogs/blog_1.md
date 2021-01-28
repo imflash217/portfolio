@@ -16,6 +16,7 @@ hide:
     - If electromagnetic energy is absorbed, but cannot eject electrons from the atoms of the material, then it is classified as non-ionizing radiation, and will typically just heat the material.
 
 ### `Microwaves`
+
 ???+ quote "Microwaves"
     ![1.png](../assets/blogs/blog_1/2.png)
     The _quantum energy_ of microwave photons is in the range **`0.00001 to 0.001 eV`** _which is in the range of energies separating the quantum states of molecular rotation and torsion_.
