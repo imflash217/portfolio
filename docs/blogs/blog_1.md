@@ -20,7 +20,7 @@ hide:
     ![1.png](../assets/blogs/blog_1/3.png)
     The quantum energy of infrared photons is in the range 0.001 to 1.7 eV which is in the range of energies separating the quantum states of molecular vibrations. Infrared is absorbed more strongly than microwaves, but less strongly than visible light. The result of infrared absorption is heating of the tissue since it increases molecular vibrational activity. Infrared radiation does penetrate the skin further than visible light and can thus be used for photographic imaging of subcutaneous blood vessels.
 
-???+ quote "## Visible Light :rainbow:"
+???+ quote "Visible Light :rainbow:" [TOC]
     ![1.png](../assets/blogs/blog_1/4.png)
     The primary mechanism for the absorption of visible light photons is the elevation of electrons to higher energy levels. There are many available states, so visible light is absorbed strongly. With a strong light source, red light can be transmitted through the hand or a fold of skin, showing that the red end of the spectrum is not absorbed as strongly as the violet end.
 
