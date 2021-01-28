@@ -78,7 +78,7 @@ nav:
     - Hobby_3: blogs/blog_3.md
   - Gists:
     - Gist_1: gists/gist_1.md
-    - Gist_2: blog/gist_2.md
-    - Gist_3: blog/gist_3.md
+    - Gist_2: gists/gist_2.md
+    - Gist_3: gists/gist_3.md
   - Notes: notes.md
 ##########################################################################
