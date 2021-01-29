@@ -24,7 +24,7 @@ hide:
 
     Hashing is a technique to **map a range of keys into a range of indexes** (usually of an array).
 
-    - A very generic hashing function is **modulous** (`x % y`).
+    - A very generic hashing function is **modulo operator** (`x % y`).
 
 <!-- ######################################################################################################### -->
 ### `References:`
