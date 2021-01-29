@@ -7,6 +7,8 @@ hide:
 # Hash Tables
 `Author: Vinay Kumar (@imflash217) | Date: 29/January/2021`
 
+### `Definition:`
+
 ???+ note "Definition"
     **Hash Table** is a data structure which stores data in an associative manner.
 
