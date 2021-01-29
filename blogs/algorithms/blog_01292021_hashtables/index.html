@@ -785,6 +785,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#linear-probing" class="md-nav__link">
+    Linear probing:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References:
   </a>
@@ -952,6 +959,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#linear-probing" class="md-nav__link">
+    Linear probing:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References:
   </a>
@@ -1007,10 +1021,12 @@ hide:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">9</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">9</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
         <span class="mi">12</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
         <span class="mi">42</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
-        <span class="mi">7</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="mi">21</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 <table>
@@ -1042,8 +1058,15 @@ hide:
 <td><code>7 % 20 = 7</code></td>
 <td><code>7</code></td>
 </tr>
+<tr>
+<td>2</td>
+<td><code>2 % 20 = 2</code></td>
+<td><code>2</code></td>
+</tr>
 </tbody>
 </table>
+<p>As we can see that a given <strong>hashing function</strong> can create the same hash-value from two different keys. (in above table keys <code>42</code> and <code>2</code>). So we use <strong><code>Linear Probing</code></strong></p>
+<h3 id="linear-probing">Linear probing:</h3>
 </details>
 <!-- ######################################################################################################### -->
 <h3 id="references"><code>References:</code></h3>
