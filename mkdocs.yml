@@ -26,7 +26,6 @@ markdown_extensions:
       clickable_checkbox: false
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.snippets:
   - abbr
   - attr_list
   - footnotes
@@ -34,7 +33,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - markdown_include.include
+
 ##########################################################################
 plugins:
   - search
