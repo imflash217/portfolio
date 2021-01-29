@@ -33,6 +33,6 @@ hide:
     sem ut cursus. Nullam sit amet tincidunt ipsum, sit amet elementum turpis.
     Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
 
-```python
+```python hl_lines="2 3"
 --8<-- "docs/test.py"
 ```
