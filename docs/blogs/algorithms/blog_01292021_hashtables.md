@@ -5,6 +5,7 @@ hide:
 --- -->
 
 # Hash Tables
+`Author: Vinay Kumar (@imflash217) | Date: 29/January/2021`
 
 ???+ success "My blog"
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
@@ -22,3 +23,7 @@ hide:
     Nunc eu odio eleifend, blandit leo a, volutpat sapien. Phasellus posuere in
     sem ut cursus. Nullam sit amet tincidunt ipsum, sit amet elementum turpis.
     Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
+
+
+### `References:`
+[^1]: https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
