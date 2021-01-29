@@ -1068,6 +1068,43 @@ hide:
 <p>As we can see that a given <strong>hashing function</strong> can create the same hash-value from two different keys. (in above table keys <code>42</code> and <code>2</code>). So we use <strong><code>Linear Probing</code></strong> to resolve conflicts.</p>
 <h3 id="linear-probing">Linear probing:</h3>
 <p><strong>Linear Probing</strong> is a method used to resolve conflicts in the hash-value. It may happen that the hash-function creates an already used index of the array. In such case we search the next empty location of the array <strong>by looking into the next cell until we find an empty cell</strong></p>
+<p>So in our above example, the updated hash-table would be:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Hash</th>
+<th>Array index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td><code>9 % 20 = 9</code></td>
+<td><code>9</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>12 % 20 = 12</code></td>
+<td><code>12</code></td>
+</tr>
+<tr>
+<td>42</td>
+<td><code>42 % 20 = 2</code></td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>7 % 20 = 7</code></td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>2 % 20 = 2</code></td>
+<td><strong><code>3</code></strong></td>
+</tr>
+</tbody>
+</table>
 </details>
 <!-- ######################################################################################################### -->
 <h2 id="references"><code>References:</code></h2>
