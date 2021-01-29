@@ -27,3 +27,4 @@ hide:
 
 ### `References:`
 [^1]: https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
+[^2]: https://www.tutorialspoint.com/python_data_structure/python_hash_table.htm
