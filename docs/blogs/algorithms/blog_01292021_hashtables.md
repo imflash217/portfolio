@@ -30,6 +30,13 @@ hide:
     - Consider a hash-table of `size=20`
     - Following (`key`, `value`) pairs to be stored using the hash-table
 
+    ```python
+    dict = {1: 20,
+            2: 70,
+            42: 80,
+            4: 25}
+    ```
+
 
 <!-- ######################################################################################################### -->
 ### `References:`
