@@ -15,6 +15,7 @@ hide:
     - In a hash table, the data is stored in an array format where each data-value has its own unique index-value. Due to this feature, the access to data becomes very fast if we know the desired index-value; irrespective of the size of the data.
     - Hash Table uses an array as a storage medium and uses hash-technique to generate the index where an element is to be inserted or to be located from.
 
+![Hashing](https://www.tutorialspoint.com/data_structures_algorithms/images/hash_function.jpg)
 
 ### `References:`
 [^1]: https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
