@@ -33,9 +33,6 @@ hide:
     sem ut cursus. Nullam sit amet tincidunt ipsum, sit amet elementum turpis.
     Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
 
-<!-- ```python hl_lines="2 3"
---8<-- "https://github.com/imflash217/lightning/blob/master/api/forward.py"
-``` -->
-
-## Paragraph
-{% include 'https://github.com/imflash217/lightning/blob/master/api/forward.py' %}
+```python hl_lines="2 3"
+--8<-- "../lightning/flashModel.py"
+```
