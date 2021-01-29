@@ -17,6 +17,8 @@ hide:
     - In a hash table, the data is stored in an array format where each data-value has its own unique index-value. Due to this feature, the access to data becomes very fast if we know the desired index-value; irrespective of the size of the data.
     - Hash Table uses an array as a storage medium and uses **hashing** to generate the index where an element is to be inserted or to be located from.
 
+<!-- ######################################################################################################### -->
+
 ## `Hashing`
 
 ???+ note "Hashing"
@@ -26,7 +28,10 @@ hide:
 
     - A very generic hashing function is **modulo operator** (`x % y`).
 
+<!-- ######################################################################################################### -->
+
 ### `Example`
+
 ???+ quote "Example of Hashing"
     - Consider a hash-table of `size=20`
     - Following (`key`, `value`) pairs to be stored using the hash-table
@@ -49,7 +54,10 @@ hide:
 
     As we can see that a given **hashing function** can create the same hash-value from two different keys. (in above table keys `42` and `2`). So we use **`Linear Probing`** to resolve conflicts.
 
+<!-- ######################################################################################################### -->
+
 ## `Linear probing`
+
 ???+ quote "Linear Probing"
     **Linear Probing** is a method used to resolve conflicts in the hash-value. It may happen that the hash-function creates an already used index of the array. In such case we search the next empty location of the array **by looking into the next cell until we find an empty cell**
 
@@ -62,8 +70,6 @@ hide:
     | 42  | `42 % 20 = 2`  | `2`         |
     | 7   | `7 % 20 = 7`   | `7`         |
     | 2   | `2 % 20 = 2`   | **`3`**     |
-
-
 
 
 <!-- ######################################################################################################### -->
