@@ -9,7 +9,7 @@ hide:
 
 <!-- ######################################################################################################### -->
 
-### `Definition:`
+## `Definition:`
 
 ???+ note "Definition"
     **Hash Table** is a data structure which stores data in an associative manner.
@@ -46,15 +46,16 @@ hide:
     | 7   | `7 % 20 = 7`   | `7`         |
     | 2   | `2 % 20 = 2`   | `2`         |
 
-    As we can see that a given **hashing function** can create the same hash-value from two different keys. (in above table keys `42` and `2`). So we use **`Linear Probing`**
+    As we can see that a given **hashing function** can create the same hash-value from two different keys. (in above table keys `42` and `2`). So we use **`Linear Probing`** to resolve conflicts.
 
     ### Linear probing:
-    
+    **Linear Probing** is a method used to resolve conflicts in the hash-value. It may happen that the hash-function creates an already used index of the array. In such case we search the next empty location of the array **by looking into the next cell until we find an empty cell**
+
 
 
 
 <!-- ######################################################################################################### -->
-### `References:`
+## `References:`
 [^1]: https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
 [^2]: https://www.tutorialspoint.com/python_data_structure/python_hash_table.htm
 [^3]: https://www.tutorialspoint.com/data_structures_algorithms/hash_data_structure.htm
