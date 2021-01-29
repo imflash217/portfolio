@@ -65,6 +65,9 @@ hide:
 
 
 <!-- ######################################################################################################### -->
+??? quote ""
+    The contents of this article were originally published at references[^1] [^2] [^3] [^4] [^5]. I have assembled it for my own understanding. Feel free to reuse and tag along the references. :+1:
+
 ## `References:`
 [^1]: https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
 [^2]: https://www.tutorialspoint.com/python_data_structure/python_hash_table.htm
