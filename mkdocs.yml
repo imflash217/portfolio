@@ -21,7 +21,9 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      base_path: "."
+      check_paths: true
   - pymdownx.highlight:
       linenums: true
   - pymdownx.tasklist:
