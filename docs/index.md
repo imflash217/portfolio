@@ -34,4 +34,4 @@ hide:
     Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
 
 
---8<-- "test.py"
+--8<-- "./test.py"
