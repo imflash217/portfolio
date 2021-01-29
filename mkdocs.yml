@@ -79,9 +79,11 @@ nav:
     - Hobby_3: hobbies/hobby_3.md
     - Hobby_4: hobbies/hobby_4.md
   - Blogs:
-    - Electromagnetic Spectrum, properties of material medium & its effects: blogs/blog_01282021.md
-    - Blog_2: blogs/blog_2.md
-    - Blog_3: blogs/blog_3.md
+    - Physics:
+      - Electromagnetic Spectrum, properties of material medium & its effects: blogs/physics/blog_01282021.md
+    - Algorithms:
+      - Blog_2: blogs/algorithms/blog_2.md
+      - Blog_3: blogs/algorithms/blog_3.md
   - Gists:
     - Gist_1: gists/gist_1.md
     - Gist_2: gists/gist_2.md
