@@ -7,24 +7,14 @@ hide:
 # Hash Tables
 `Author: Vinay Kumar (@imflash217) | Date: 29/January/2021`
 
-???+ success "My blog"
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
+???+ note "Definition"
+    **Hash Table** is a data structure which stores data in an associative manner.
 
-    ``` python
-    def bubble_sort(items):
-        for i in range(len(items)):
-            for j in range(len(items) - 1 - i):
-                if items[j] > items[j + 1]:
-                    items[j], items[j + 1] = items[j + 1], items[j]
-    ```
-
-    Nunc eu odio eleifend, blandit leo a, volutpat sapien. Phasellus posuere in
-    sem ut cursus. Nullam sit amet tincidunt ipsum, sit amet elementum turpis.
-    Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
+    - In a hash table, the data is stored in an array format where each data-value has its own unique index-value. Due to this feature, the access to data becomes very fast if we know the desired index-value; irrespective of the size of the data.
+    - Hash Table uses an array as a storage medium and uses hash-technique to generate the index where an element is to be inserted or to be located from.
 
 
 ### `References:`
 [^1]: https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
 [^2]: https://www.tutorialspoint.com/python_data_structure/python_hash_table.htm
+[^3]: https://www.tutorialspoint.com/data_structures_algorithms/hash_data_structure.htm
