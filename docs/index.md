@@ -34,5 +34,5 @@ hide:
     Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
 
 ```python hl_lines="2 3"
---8<-- "../lightning/flashModel.py"
+--8<-- "https://github.com/imflash217/lightning/blob/master/api/forward.py"
 ```
