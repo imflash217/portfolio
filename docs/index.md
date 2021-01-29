@@ -34,5 +34,5 @@ hide:
     Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
 
 ```
---8<-- "notes.md"
+--8<-- notes.md
 ```
