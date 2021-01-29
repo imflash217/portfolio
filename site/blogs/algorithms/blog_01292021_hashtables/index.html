@@ -781,6 +781,26 @@
     Hashing
   </a>
   
+    <nav class="md-nav" aria-label="Hashing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-probing" class="md-nav__link">
+    Linear probing
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -942,6 +962,26 @@
     Hashing
   </a>
   
+    <nav class="md-nav" aria-label="Hashing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-probing" class="md-nav__link">
+    Linear probing
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -981,6 +1021,8 @@ hide:
 <li>Hash Table uses an array as a storage medium and uses <strong>hashing</strong> to generate the index where an element is to be inserted or to be located from.</li>
 </ul>
 </details>
+<!-- ######################################################################################################### -->
+
 <h2 id="hashing"><code>Hashing</code></h2>
 <details class="note" open="open"><summary>Hashing</summary><p><img alt="Hashing" src="https://www.tutorialspoint.com/data_structures_algorithms/images/hash_function.jpg" /></p>
 <p>Hashing is a technique to <strong>map a range of keys into a range of indexes</strong> (usually of an array).</p>
@@ -988,6 +1030,9 @@ hide:
 <li>A very generic hashing function is <strong>modulo operator</strong> (<code>x % y</code>).</li>
 </ul>
 </details>
+<!-- ######################################################################################################### -->
+
+<h3 id="example"><code>Example</code></h3>
 <details class="quote" open="open"><summary>Example of Hashing</summary><ul>
 <li>Consider a hash-table of <code>size=20</code></li>
 <li>Following (<code>key</code>, <code>value</code>) pairs to be stored using the hash-table</li>
@@ -1041,6 +1086,9 @@ hide:
 </table>
 <p>As we can see that a given <strong>hashing function</strong> can create the same hash-value from two different keys. (in above table keys <code>42</code> and <code>2</code>). So we use <strong><code>Linear Probing</code></strong> to resolve conflicts.</p>
 </details>
+<!-- ######################################################################################################### -->
+
+<h2 id="linear-probing"><code>Linear probing</code></h2>
 <details class="quote" open="open"><summary>Linear Probing</summary><p><strong>Linear Probing</strong> is a method used to resolve conflicts in the hash-value. It may happen that the hash-function creates an already used index of the array. In such case we search the next empty location of the array <strong>by looking into the next cell until we find an empty cell</strong></p>
 <p>So in our above example, the updated hash-table would map <code>key = 2</code> to <code>index = 3</code>:</p>
 <table>

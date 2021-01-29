@@ -73,11 +73,15 @@ hide:
 
 
 <!-- ######################################################################################################### -->
+
+???+ quote "Author Disclaimer"
+    `Author: Vinay Kumar (@imflash217) | Date: 29/January/2021`
+
+    The contents of this article were originally published at references[^1] [^2] [^3] [^4] [^5]. I have assembled it for my own understanding. Feel free to reuse and tag along the references. :+1:
+
 ## `References`
 [^1]: https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
 [^2]: https://www.tutorialspoint.com/python_data_structure/python_hash_table.htm
 [^3]: https://www.tutorialspoint.com/data_structures_algorithms/hash_data_structure.htm
 
-???+ quote "Disclaimer"
-    The contents of this article were originally published at references[^1] [^2] [^3] [^4] [^5]. I have assembled it for my own understanding. Feel free to reuse and tag along the references. :+1:
 <!-- ######################################################################################################### -->
