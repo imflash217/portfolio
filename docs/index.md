@@ -33,8 +33,7 @@ hide:
     sem ut cursus. Nullam sit amet tincidunt ipsum, sit amet elementum turpis.
     Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
 
-```
+
 --8<--
 test.py
 --8<--
-```
