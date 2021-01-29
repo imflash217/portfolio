@@ -1068,7 +1068,7 @@ hide:
 <p>As we can see that a given <strong>hashing function</strong> can create the same hash-value from two different keys. (in above table keys <code>42</code> and <code>2</code>). So we use <strong><code>Linear Probing</code></strong> to resolve conflicts.</p>
 <h3 id="linear-probing">Linear probing:</h3>
 <p><strong>Linear Probing</strong> is a method used to resolve conflicts in the hash-value. It may happen that the hash-function creates an already used index of the array. In such case we search the next empty location of the array <strong>by looking into the next cell until we find an empty cell</strong></p>
-<p>So in our above example, the updated hash-table would be:</p>
+<p>So in our above example, the updated hash-table would map <code>key = 2</code> to <code>index = 3</code>:</p>
 <table>
 <thead>
 <tr>
