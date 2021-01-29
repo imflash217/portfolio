@@ -27,7 +27,9 @@ hide:
     - A very generic hashing function is **modulo operator** (`x % y`).
 
 ???+ quote "Example of Hashing"
-    hi
+    - Consider a hash-table of `size=20`
+    - Following (`key`, `value`) pairs to be stored using the hash-table
+    - 
 
 <!-- ######################################################################################################### -->
 ### `References:`
