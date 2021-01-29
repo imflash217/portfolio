@@ -3,6 +3,7 @@ hide:
   - navigation # Hide navigation
   - toc        # Hide table of contents
 --- -->
+
 # Hash Tables
 
 ???+ success "My blog"
