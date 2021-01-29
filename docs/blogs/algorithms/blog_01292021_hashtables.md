@@ -26,6 +26,9 @@ hide:
 
     - A very generic hashing function is **modulo operator** (`x % y`).
 
+???+ quote "Example of Hashing"
+    hi
+
 <!-- ######################################################################################################### -->
 ### `References:`
 [^1]: https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
