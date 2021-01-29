@@ -1004,7 +1004,7 @@ hide:
 <li>Consider a hash-table of <code>size=20</code></li>
 <li>Following (<code>key</code>, <code>value</code>) pairs to be stored using the hash-table</li>
 </ul>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">9</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
@@ -1013,12 +1013,37 @@ hide:
         <span class="mi">7</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-| Key | Hash         | Array index |
-| --- | ------------ | ----------- |
-| 9   | <code>9%20 = 9</code>   | <code>9</code>         |
-| 12  | <code>12%20 = 12</code> | <code>12</code>        |
-| 42  | <code>42%20 = 2</code>  | <code>2</code>         |
-| 7   | <code>7%20 = 7</code>   | <code>7</code>         |</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Hash</th>
+<th>Array index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td><code>9%20 = 9</code></td>
+<td><code>9</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>12%20 = 12</code></td>
+<td><code>12</code></td>
+</tr>
+<tr>
+<td>42</td>
+<td><code>42%20 = 2</code></td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>7%20 = 7</code></td>
+<td><code>7</code></td>
+</tr>
+</tbody>
+</table>
 </details>
 <!-- ######################################################################################################### -->
 <h3 id="references"><code>References:</code></h3>
