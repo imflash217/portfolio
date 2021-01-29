@@ -65,7 +65,7 @@ hide:
 
 
 <!-- ######################################################################################################### -->
-??? quote ""
+???+ quote "Disclaimer"
     The contents of this article were originally published at references[^1] [^2] [^3] [^4] [^5]. I have assembled it for my own understanding. Feel free to reuse and tag along the references. :+1:
 
 ## `References:`
