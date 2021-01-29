@@ -771,34 +771,21 @@
       
         <li class="md-nav__item">
   <a href="#definition" class="md-nav__link">
-    Definition:
+    Definition
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#hashing" class="md-nav__link">
-    Hashing:
+    Hashing
   </a>
-  
-    <nav class="md-nav" aria-label="Hashing:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linear-probing" class="md-nav__link">
-    Linear probing:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
-    References:
+    References
   </a>
   
 </li>
@@ -945,34 +932,21 @@
       
         <li class="md-nav__item">
   <a href="#definition" class="md-nav__link">
-    Definition:
+    Definition
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#hashing" class="md-nav__link">
-    Hashing:
+    Hashing
   </a>
-  
-    <nav class="md-nav" aria-label="Hashing:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linear-probing" class="md-nav__link">
-    Linear probing:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
-    References:
+    References
   </a>
   
 </li>
@@ -1000,14 +974,14 @@ hide:
 <p><code>Author: Vinay Kumar (@imflash217) | Date: 29/January/2021</code></p>
 <!-- ######################################################################################################### -->
 
-<h2 id="definition"><code>Definition:</code></h2>
+<h2 id="definition"><code>Definition</code></h2>
 <details class="note" open="open"><summary>Definition</summary><p><strong>Hash Table</strong> is a data structure which stores data in an associative manner.</p>
 <ul>
 <li>In a hash table, the data is stored in an array format where each data-value has its own unique index-value. Due to this feature, the access to data becomes very fast if we know the desired index-value; irrespective of the size of the data.</li>
 <li>Hash Table uses an array as a storage medium and uses <strong>hashing</strong> to generate the index where an element is to be inserted or to be located from.</li>
 </ul>
 </details>
-<h2 id="hashing"><code>Hashing:</code></h2>
+<h2 id="hashing"><code>Hashing</code></h2>
 <details class="note" open="open"><summary>Hashing</summary><p><img alt="Hashing" src="https://www.tutorialspoint.com/data_structures_algorithms/images/hash_function.jpg" /></p>
 <p>Hashing is a technique to <strong>map a range of keys into a range of indexes</strong> (usually of an array).</p>
 <ul>
@@ -1066,8 +1040,8 @@ hide:
 </tbody>
 </table>
 <p>As we can see that a given <strong>hashing function</strong> can create the same hash-value from two different keys. (in above table keys <code>42</code> and <code>2</code>). So we use <strong><code>Linear Probing</code></strong> to resolve conflicts.</p>
-<h3 id="linear-probing">Linear probing:</h3>
-<p><strong>Linear Probing</strong> is a method used to resolve conflicts in the hash-value. It may happen that the hash-function creates an already used index of the array. In such case we search the next empty location of the array <strong>by looking into the next cell until we find an empty cell</strong></p>
+</details>
+<details class="quote" open="open"><summary>Linear Probing</summary><p><strong>Linear Probing</strong> is a method used to resolve conflicts in the hash-value. It may happen that the hash-function creates an already used index of the array. In such case we search the next empty location of the array <strong>by looking into the next cell until we find an empty cell</strong></p>
 <p>So in our above example, the updated hash-table would map <code>key = 2</code> to <code>index = 3</code>:</p>
 <table>
 <thead>
@@ -1109,7 +1083,7 @@ hide:
 <!-- ######################################################################################################### -->
 <details class="quote" open="open"><summary>Disclaimer</summary><p>The contents of this article were originally published at references<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> [^4] [^5]. I have assembled it for my own understanding. Feel free to reuse and tag along the references. <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":+1:" /></p>
 </details>
-<h2 id="references"><code>References:</code></h2>
+<h2 id="references"><code>References</code></h2>
 <!-- ######################################################################################################### -->
 
 <div class="footnote">
