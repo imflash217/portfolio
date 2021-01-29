@@ -34,7 +34,8 @@ hide:
     dict = {9: 20,
             12: 70,
             42: 80,
-            7: 25}
+            7: 25,
+            2: 21}
     ```
 
     | Key | Hash           | Array index |
@@ -43,6 +44,12 @@ hide:
     | 12  | `12 % 20 = 12` | `12`        |
     | 42  | `42 % 20 = 2`  | `2`         |
     | 7   | `7 % 20 = 7`   | `7`         |
+    | 2   | `2 % 20 = 2`   | `2`         |
+
+    As we can see that a given **hashing function** can create the same hash-value from two different keys. (in above table keys `42` and `2`). So we use **`Linear Probing`**
+
+    ### Linear probing:
+    
 
 
 
