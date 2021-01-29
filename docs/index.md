@@ -32,3 +32,5 @@ hide:
     Nunc eu odio eleifend, blandit leo a, volutpat sapien. Phasellus posuere in
     sem ut cursus. Nullam sit amet tincidunt ipsum, sit amet elementum turpis.
     Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
+
+{{../mkdocs.yml}}
