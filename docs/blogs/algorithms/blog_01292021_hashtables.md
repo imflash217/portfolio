@@ -51,6 +51,16 @@ hide:
     ### Linear probing:
     **Linear Probing** is a method used to resolve conflicts in the hash-value. It may happen that the hash-function creates an already used index of the array. In such case we search the next empty location of the array **by looking into the next cell until we find an empty cell**
 
+    So in our above example, the updated hash-table would be:
+
+    | Key | Hash           | Array index |
+    | --- | -------------- | ----------- |
+    | 9   | `9 % 20 = 9`   | `9`         |
+    | 12  | `12 % 20 = 12` | `12`        |
+    | 42  | `42 % 20 = 2`  | `2`         |
+    | 7   | `7 % 20 = 7`   | `7`         |
+    | 2   | `2 % 20 = 2`   | **`3`**     |
+
 
 
 
