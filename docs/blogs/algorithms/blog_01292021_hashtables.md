@@ -29,7 +29,7 @@ hide:
 ???+ quote "Example of Hashing"
     - Consider a hash-table of `size=20`
     - Following (`key`, `value`) pairs to be stored using the hash-table
-    - 
+
 
 <!-- ######################################################################################################### -->
 ### `References:`
