@@ -34,5 +34,5 @@ hide:
     Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
 
 ```python hl_lines="2 3"
---8<-- "docs/test.py"
+--8<-- "../lightning/flashModel.py"
 ```

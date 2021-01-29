@@ -22,6 +22,7 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.superfences
   - pymdownx.highlight
+  - pymdownx.inlinehilite
   - pymdownx.snippets:
       base_path: "."
       check_paths: true
