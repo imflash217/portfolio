@@ -76,6 +76,10 @@ hide:
 ???+ success "search() method for hash-table"
     **`Search`**
 
+## `Delete`
+
+???+ success "delete() method for hash-table"
+    **`Delete`**
 <!-- ######################################################################################################### -->
 
 ## `Python Implementation`
@@ -96,6 +100,7 @@ hide:
 [^2]: https://www.tutorialspoint.com/python_data_structure/python_hash_table.htm
 [^3]: https://www.tutorialspoint.com/data_structures_algorithms/hash_data_structure.htm
 [^4]: http://blog.chapagain.com.np/hash-table-implementation-in-python-data-structures-algorithms/
-[^5]: 
+[^5]: https://runestone.academy/runestone/books/published/pythonds/SortSearch/Hashing.html
+[^6]: http://paulmouzas.github.io/2014/12/31/implementing-a-hash-table.html
 
 <!-- ######################################################################################################### -->
