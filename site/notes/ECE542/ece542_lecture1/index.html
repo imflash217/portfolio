@@ -1024,7 +1024,11 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Model Selection</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Hyperparams</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Overfitting v/s Underfitting</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Generalization Gap</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Model Capacity</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> K-fold Cross Validation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Leave-one-out Cross Validation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> </li>
 </ul>
 <details class="note" open="open"><summary>What is Machine Learning?</summary><p>It is a field that aims to extract relationships and structures in the data.
 <code>Example: How to map data to annotations?</code></p>
@@ -1044,6 +1048,10 @@ This measure is called <strong>Loss Function</strong></p>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Latent Variable Modeling (PCA, AE)</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Clustering</li>
 </ul>
+</details>
+<details class="success" open="open"><summary>[special case of] Cross Validation </summary><p>If there are many point on the graph of CV(<span class="arithmatex">\(\theta\)</span>) with similar values near the minimum; we choose the most <strong>parsimonious</strong> model that has a CV value within the <em>standard deviation</em> from the best model <span class="arithmatex">\(\theta^*\)</span>.</p>
+<p>In other words; we pick the first <span class="arithmatex">\(\theta\)</span> for which the CV value satisfies
+<span class="arithmatex">\(<span class="arithmatex">\(CV(\theta) &lt; CV(\theta^*) + std(CV(\theta^*))\)</span>\)</span></p>
 </details>
                 
               

@@ -39,3 +39,6 @@
 
     In other words; we pick the first $\theta$ for which the CV value satisfies
     $$CV(\theta) < CV(\theta^*) + std(CV(\theta^*))$$
+
+    **Benefits** of this process:
+    It decreases the possibility of choose an underfit or slightly ovefit model than what is required. Provides better Guarantees.
