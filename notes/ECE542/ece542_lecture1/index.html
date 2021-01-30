@@ -1052,6 +1052,8 @@ This measure is called <strong>Loss Function</strong></p>
 <details class="success" open="open"><summary>[special case of] Cross Validation </summary><p>If there are many point on the graph of CV(<span class="arithmatex">\(\theta\)</span>) with similar values near the minimum; we choose the most <strong>parsimonious</strong> model that has a CV value within the <em>standard deviation</em> from the best model <span class="arithmatex">\(\theta^*\)</span>.</p>
 <p>In other words; we pick the first <span class="arithmatex">\(\theta\)</span> for which the CV value satisfies
 <span class="arithmatex">\(<span class="arithmatex">\(CV(\theta) &lt; CV(\theta^*) + std(CV(\theta^*))\)</span>\)</span></p>
+<p><strong>Benefits</strong> of this process:
+It decreases the possibility of choose an underfit or slightly ovefit model than what is required. Provides better Guarantees.</p>
 </details>
                 
               
