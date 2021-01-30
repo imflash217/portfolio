@@ -61,6 +61,7 @@ site_name: Vinay Kumar
 nav:
   - About me: index.md
   - Research Publications:
+    - About: publications/about.md
     - Interspeech 2014: publications/interspeech_2014.md
     - Odyssey 2014: publications/odyssey_2014.md
   - Work Experience:
@@ -71,22 +72,26 @@ nav:
     - Flash.AI: work/flashai.md
     - Cognizant: work/cognizant.md
   - Projects:
+    - About: projects/about.md
     - Project_1: projects/proj_1.md
     - Project_2: projects/proj_2.md
     - Project_3: projects/proj_3.md
     - Project_4: projects/proj_4.md
   - Hobby Projects:
+    - About: hobbies/about.md
     - Hobby_1: hobbies/hobby_1.md
     - Hobby_2: hobbies/hobby_2.md
     - Hobby_3: hobbies/hobby_3.md
     - Hobby_4: hobbies/hobby_4.md
   - Blogs:
+    - About: blogs/about.md
     - Physics:
       - Electromagnetic Spectrum, properties of material medium & its effects: blogs/physics/blog_01282021.md
     - Algorithms:
       - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
       - Blog_3: blogs/algorithms/blog_3.md
   - Gists:
+    - About: gists/about.md
     - PyTorch Lightning:
       - api:
         - configure_optimizers(): gists/lightning/api/configure_optimizers.md
@@ -95,5 +100,6 @@ nav:
         - log(): gists/lightning/api/log.md
         - test_step(): gists/lightning/api/test_step.md
         - training_step(): gists/lightning/api/training_step.md
-  - Notes: notes.md
+  - Notes:
+    - About: notes/about.md
 ##########################################################################
