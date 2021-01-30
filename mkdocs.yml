@@ -65,6 +65,7 @@ nav:
     - Interspeech 2014: publications/interspeech_2014.md
     - Odyssey 2014: publications/odyssey_2014.md
   - Work Experience:
+    - About: work/about.md
     - iVMCL Lab, NC State: work/ivmcl.md
     - ARoS Lab, NC State: work/aros.md
     - Springboard Inc.: work/springboard.md
