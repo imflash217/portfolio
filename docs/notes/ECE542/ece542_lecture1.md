@@ -7,7 +7,11 @@
 - [ ] Model Selection
 - [ ] Hyperparams
 - [ ] Overfitting v/s Underfitting
+- [ ] Generalization Gap
 - [ ] Model Capacity
+- [ ] K-fold Cross Validation
+  - [ ] Leave-one-out Cross Validation
+- [ ] 
 
 ???+ note "What is Machine Learning?"
     It is a field that aims to extract relationships and structures in the data.
@@ -29,3 +33,9 @@
     - [x] Generative Models (GAN, AE, RBM)
     - [x] Latent Variable Modeling (PCA, AE)
     - [ ] Clustering
+
+???+ success "[special case of] Cross Validation "
+    If there are many point on the graph of CV($\theta$) with similar values near the minimum; we choose the most **parsimonious** model that has a CV value within the _standard deviation_ from the best model $\theta^*$.
+
+    In other words; we pick the first $\theta$ for which the CV value satisfies
+    $$CV(\theta) < CV(\theta^*) + std(CV(\theta^*))$$
