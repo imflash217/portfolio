@@ -78,7 +78,7 @@ hide:
 
 ## `Delete`
 
-???+ success "delete() method for hash-table"
+???+ danger "delete() method for hash-table"
     **`Delete`**
 <!-- ######################################################################################################### -->
 
