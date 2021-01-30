@@ -12,7 +12,7 @@ hide:
 ## `Definition`
 
 ???+ note "Definition"
-    **Hash Table** is a data structure which stores data in an associative manner.
+    **Hash Table** is a data structure which stores data in an **associative manner** (i.e. in a (key, value) pair).
 
     - In a hash table, the data is stored in an array format where each data-value has its own unique index-value. Due to this feature, the access to data becomes very fast if we know the desired index-value; irrespective of the size of the data.
     - Hash Table uses an array as a storage medium and uses **hashing** to generate the index where an element is to be inserted or to be located from.
