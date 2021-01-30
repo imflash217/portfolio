@@ -87,6 +87,11 @@ nav:
   - Gists:
     - PyTorch Lightning:
       - api:
-        - pl.LightningModule.configure_optimizers(): gists/lightning/api/configure_optimizers.md
+        - configure_optimizers(): gists/lightning/api/configure_optimizers.md
+        - forward(): gists/lightning/api/forward.md
+        - freeze(): gists/lightning/api/freeze.md
+        - log(): gists/lightning/api/log.md
+        - test_step(): gists/lightning/api/test_step.md
+        - training_step(): gists/lightning/api/training_step.md
   - Notes: notes.md
 ##########################################################################
