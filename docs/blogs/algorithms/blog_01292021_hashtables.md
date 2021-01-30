@@ -74,10 +74,15 @@ hide:
 ## `Search`
 
 ???+ success "search() method for hash-table"
+    **`Search`**
 
-    ```python
-    --8<-- "../ProgrammingContests/ctci/hashtable.py"
-    ```
+<!-- ######################################################################################################### -->
+
+## `Python Implementation`
+
+```python
+--8<-- "../ProgrammingContests/ctci/hashtable.py"
+```
 
 <!-- ######################################################################################################### -->
 
