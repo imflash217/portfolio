@@ -93,7 +93,7 @@ nav:
         - test_step(): gists/lightning/api/test_step.md
         - training_step(): gists/lightning/api/training_step.md
   - Notes:
+    - About: notes/about.md
     - ECE 542:
       - Lecture 1: notes/ECE542/lecture1.md
-    - About: notes/about.md
 ##########################################################################
