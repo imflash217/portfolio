@@ -4,7 +4,7 @@
 ## `Code Snippets`
 
 ```python
---8<-- "~/Desktop/flashAI/lightning/api/configure_optimizers.py"
+--8<-- "../lightning/api/configure_optimizers.py"
 ```
 
 <!-- ######################################################################################################### -->
