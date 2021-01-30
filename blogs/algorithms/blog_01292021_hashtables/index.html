@@ -804,6 +804,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    Search
+  </a>
+  
+    <nav class="md-nav" aria-label="Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -985,6 +1005,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    Search
+  </a>
+  
+    <nav class="md-nav" aria-label="Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -1127,6 +1167,41 @@ hide:
 </tr>
 </tbody>
 </table>
+</details>
+<h2 id="search"><code>Search</code></h2>
+<details class="success" open="open"><summary>search() method for hash-table</summary><p>```python lines="2 5"
+import torch as pt
+import pytorch_lightning as pl</p>
+<h6 id="_1"></h6>
+<p>class FlashModel(pl.LightningModule):
+    """This defines a MODEL"""</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>def __init__(self, num_layers: int = 3):
+    super().__init__()
+    self.layer1 = pt.nn.Linear()
+    self.layer2 = pt.nn.Linear()
+    self.layer3 = pt.nn.Linear()
+</code></pre></div>
+</td></tr></table>
+<p>class FlashModel(pl.LightningModule):
+    """This defines a SYSTEM"""</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>def __init__(self,
+             encoder: pt.nn.Module = None,
+             decoder: pt.nn.Module = None):
+    super().__init__()
+    self.encoder = encoder
+    self.decoder = decoder
+</code></pre></div>
+</td></tr></table>
+<p>```</p>
 </details>
 <!-- ######################################################################################################### -->
 
