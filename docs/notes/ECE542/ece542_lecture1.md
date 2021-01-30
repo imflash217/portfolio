@@ -12,6 +12,8 @@
     We need a **measure** to see how well our system is doing at learning.
     This measure is called **Loss Function**
 
+    - [x] Sum-of-Squared-Error (SSE): $\sum_{i}||(y_i - f(x_i)||_2^2$
+
 ???+ note "Training"
     The process of teaching our system to minimize errors is called as **Training**.
 
