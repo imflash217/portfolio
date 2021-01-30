@@ -8,3 +8,12 @@
     It is a field that aims to extract relationships and structures in the data.
     `Example: How to map data to annotations?`
 
+???+ note "Loss Function"
+    We need a **measure** to see how well our system is doing at learning.
+    This measure is called **Loss Function**
+
+???+ note "Training"
+    The process of teaching our system to minimize errors is called as **Training**.
+
+???+ note "Evaluation"
+    The process of determining the _performance_ of our trained system over an **unseen dataset** is called as **Evaluation**.
