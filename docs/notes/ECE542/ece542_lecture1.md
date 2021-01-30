@@ -37,11 +37,7 @@
 ???+ success "[special case of] Cross Validation "
     If there are many point on the graph of CV($\theta$) with similar values near the minimum; we choose the most **parsimonious** model that has a CV value within the _standard deviation_ from the best model $\theta^*$.
 
-    In other words; we pick the first $\theta$ for which the CV value satisfies
-
-    $$
-    CV(\theta) < CV(\theta^*) + std(CV(\theta^*))
-    $$
+    In other words; we pick the first $\theta$ for which the CV value satisfies $CV(\theta) < CV(\theta^*) + std(CV(\theta^*))$
 
     **Benefits** of this process:
     It decreases the possibility of choose an underfit or slightly ovefit model than what is required. Provides better Guarantees.
