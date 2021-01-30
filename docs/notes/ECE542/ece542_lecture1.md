@@ -17,3 +17,7 @@
 
 ???+ note "Evaluation"
     The process of determining the _performance_ of our trained system over an **unseen dataset** is called as **Evaluation**.
+
+???+ note "Unsupervised Learning"
+    - [x] Generative Models (GAN, AE, RBM)
+    - [x] Latent Variable Modeling (PCA, AE)
