@@ -6,6 +6,8 @@
 - [ ] Training v/s Evaluation Error
 - [ ] Model Selection
 - [ ] Hyperparams
+- [ ] Overfitting v/s Underfitting
+- [ ] Model Capacity
 
 ???+ note "What is Machine Learning?"
     It is a field that aims to extract relationships and structures in the data.
@@ -15,7 +17,7 @@
     We need a **measure** to see how well our system is doing at learning.
     This measure is called **Loss Function**
 
-    - [x] Sum-of-Squared-Error (SSE): $2^2$ $\sum_{i}||(y_i - f(x_i)||_2^2$
+    - [x] Sum-of-Squared-Error (SSE): $2^2$ $\sum_{i}\norm{(y_i - f(x_i)}_2^2$
 
 ???+ note "Training"
     The process of teaching our system to minimize errors is called as **Training**.
