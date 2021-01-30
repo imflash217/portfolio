@@ -774,6 +774,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    Delete
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#python-implementation" class="md-nav__link">
     Python Implementation
   </a>
@@ -1089,6 +1096,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    Delete
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#python-implementation" class="md-nav__link">
     Python Implementation
   </a>
@@ -1242,83 +1256,113 @@ hide:
 <h2 id="search"><code>Search</code></h2>
 <details class="success" open="open"><summary>search() method for hash-table</summary><p><strong><code>Search</code></strong></p>
 </details>
+<h2 id="delete"><code>Delete</code></h2>
+<details class="success" open="open"><summary>delete() method for hash-table</summary><p><strong><code>Delete</code></strong></p>
+</details>
 <!-- ######################################################################################################### -->
 
 <h2 id="python-implementation"><code>Python Implementation</code></h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HashTable</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HashTable</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table_size</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
@@ -1376,6 +1420,30 @@ hide:
         <span class="k">else</span><span class="p">:</span>
             <span class="n">bucket</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>     <span class="c1">## ! two different keys COLLIDING. So APPEND using CHAINING</span>
 
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Searching for a &quot;key&quot; and returning its (key, value) pair</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (int): any hashable type (as per the hash function used)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            (key, value) pair</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">hash_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hashing_func</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash_table</span><span class="p">[</span><span class="n">hash_key</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">kv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bucket</span><span class="p">):</span>
+            <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">kv</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Delete a given key (if present in the hashtable)</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key ([type]): [description]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
 
 
 <span class="c1">##########################################################################################</span>
@@ -1390,6 +1458,9 @@ hide:
     <span class="k">print</span><span class="p">(</span><span class="n">hashtable</span><span class="o">.</span><span class="n">hash_table</span><span class="p">)</span>
     <span class="n">hashtable</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;flash217&quot;</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">hashtable</span><span class="o">.</span><span class="n">hash_table</span><span class="p">)</span>
+
+    <span class="c1">## searching</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">hashtable</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">32</span><span class="p">))</span>
 
 <span class="c1">##########################################################################################</span>
 </code></pre></div>
@@ -1417,7 +1488,12 @@ hide:
 <li id="fn:4">
 <p><a href="http://blog.chapagain.com.np/hash-table-implementation-in-python-data-structures-algorithms/">http://blog.chapagain.com.np/hash-table-implementation-in-python-data-structures-algorithms/</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
-<li id="fn:5"></li>
+<li id="fn:5">
+<p><a href="https://runestone.academy/runestone/books/published/pythonds/SortSearch/Hashing.html">https://runestone.academy/runestone/books/published/pythonds/SortSearch/Hashing.html</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="http://paulmouzas.github.io/2014/12/31/implementing-a-hash-table.html">http://paulmouzas.github.io/2014/12/31/implementing-a-hash-table.html</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
                 
