@@ -52,8 +52,10 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/imflash217
 
-copyright: Copyright &copy; 2021 Vinay Kumar
+extra_css:
+  - stylesheets/extra.css
 ##########################################################################
+copyright: Copyright &copy; 2021 Vinay Kumar
 site_name: Vinay Kumar
 ##########################################################################
 nav:
