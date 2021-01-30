@@ -21,3 +21,4 @@
 ???+ note "Unsupervised Learning"
     - [x] Generative Models (GAN, AE, RBM)
     - [x] Latent Variable Modeling (PCA, AE)
+    - [ ] Clustering
