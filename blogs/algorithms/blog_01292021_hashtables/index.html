@@ -808,19 +808,6 @@
     Search
   </a>
   
-    <nav class="md-nav" aria-label="Search">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1009,19 +996,6 @@
     Search
   </a>
   
-    <nav class="md-nav" aria-label="Search">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1169,39 +1143,23 @@ hide:
 </table>
 </details>
 <h2 id="search"><code>Search</code></h2>
-<details class="success" open="open"><summary>search() method for hash-table</summary><p>```python lines="2, 5"
-import torch as pt
-import pytorch_lightning as pl</p>
-<h6 id="_1"></h6>
-<p>class FlashModel(pl.LightningModule):
-    """This defines a MODEL"""</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>def __init__(self, num_layers: int = 3):
-    super().__init__()
-    self.layer1 = pt.nn.Linear()
-    self.layer2 = pt.nn.Linear()
-    self.layer3 = pt.nn.Linear()
-</code></pre></div>
-</td></tr></table>
-<p>class FlashModel(pl.LightningModule):
-    """This defines a SYSTEM"""</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<details class="success" open="open"><summary>search() method for hash-table</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4
 5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>def __init__(self,
-             encoder: pt.nn.Module = None,
-             decoder: pt.nn.Module = None):
-    super().__init__()
-    self.encoder = encoder
-    self.decoder = decoder
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HashTable</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">table_size</span> <span class="o">=</span> <span class="n">table_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hash_table</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">table_size</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">pass</span>
 </code></pre></div>
 </td></tr></table>
-<p>```</p>
 </details>
 <!-- ######################################################################################################### -->
 
