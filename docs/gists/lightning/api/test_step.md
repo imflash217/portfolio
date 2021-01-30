@@ -1,5 +1,5 @@
 
-# `pl.LightningModule.configure_optimizers()`
+# `pl.LightningModule.test_step()`
 
 ## `Code Snippets`
 
