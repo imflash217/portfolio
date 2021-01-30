@@ -75,8 +75,8 @@ hide:
 
 ???+ success "search() method for hash-table"
 
-    ```python lines="2, 5"
-    --8<-- "../lightning/flashModel.py"
+    ```python
+    --8<-- "../ProgrammingContests/ctci/hashtable.py"
     ```
 
 <!-- ######################################################################################################### -->
