@@ -247,6 +247,8 @@ git add . && git commit -m "update" && git push -u origin main && mkdocs gh-depl
 ```
 <!--  -->
 
+<object data="../assets/1.pdf" type="application/pdf" width="100%"> </object>
+
 <object data="../assets/1.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="../assets/1.pdf">
         <p>This browser does not support PDF. Please download the PDF to view it: <a href="../assets/1.pdf">Download PDF</a>.</p>
