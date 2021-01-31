@@ -11,5 +11,6 @@
     - [ ] trace(AB) = trace(BA)
 
 ???+ danger "Q1 Solution"
-    Let $v = [v_1, v_2, \cdots, v_n]$
-    
+    Let $v = [v_1, v_2, \cdots, v_n]^T$ be a column vector of size $(n,1)$
+    - [ ] Then, $v^T\ v = $
+
