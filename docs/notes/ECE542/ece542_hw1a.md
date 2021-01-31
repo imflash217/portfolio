@@ -9,3 +9,7 @@
 
     - [ ] $v^T v$ = trace($vv^T$)
     - [ ] trace(AB) = trace(BA)
+
+???+ danger "Q1 Solution"
+    Let $v = [v_1, v_2, \cdots, v_n]$
+    
