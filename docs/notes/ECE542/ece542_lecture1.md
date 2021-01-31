@@ -1,5 +1,8 @@
 # Lecture `#1`
 
+`Author: Vinay Kumar (@imflash217) | Date: 30/January/2021`
+
+
 - [ ] AI v/s ML v/s DL (Venn Diagram)
 - [ ] One-hot-encoding
 - [x] Loss Function
