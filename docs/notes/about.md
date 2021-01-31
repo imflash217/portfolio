@@ -246,11 +246,11 @@ import pytorch_lightning as pl
 git add . && git commit -m "update" && git push -u origin main && mkdocs gh-deploy --force
 ```
 <!--  -->
-
+<!--
 <object data="http://www.africau.edu/images/default/sample.pdf" type="application/pdf" width="100%"> </object>
 
 <object data="http://www.africau.edu/images/default/sample.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="http://www.africau.edu/images/default/sample.pdf">
         <p>This browser does not support PDF. Please download the PDF to view it: <a href="http://www.africau.edu/images/default/sample.pdf">Download PDF</a>.</p>
     </embed>
-</object>
+</object> -->
