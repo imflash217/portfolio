@@ -246,3 +246,9 @@ import pytorch_lightning as pl
 git add . && git commit -m "update" && git push -u origin main && mkdocs gh-deploy --force
 ```
 <!--  -->
+
+<object data="../assets/10290.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="../assets/10290.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="../assets/10290.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
