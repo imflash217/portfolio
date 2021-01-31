@@ -7,5 +7,5 @@
 ???+ question "Q1"
     Given a vector $v \in R^n$ and **square matrices** $A, B \in R^{n\times n}$; show that:
 
-    - [] $v^T v$ = trace($vv^T$)
-    - [] trace(AB) = trace(BA)
+    - [ ] $v^T v$ = trace($vv^T$)
+    - [ ] trace(AB) = trace(BA)
