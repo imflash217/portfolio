@@ -4,8 +4,8 @@ hide:
   - toc        # Hide table of contents
 ---
 
-[LinkedIn :material-linkedin:](#){: .md-button .md-button--primary }
-[Github :material-github: ](#){: .md-button .md-button--primary }
+<!-- [LinkedIn :material-linkedin:](#){: .md-button .md-button--primary }
+[Github :material-github: ](#){: .md-button .md-button--primary } -->
 
 <figure>
     <img src="assets/vinay.png" width="200" />
@@ -13,8 +13,8 @@ hide:
     <figcaption>That's me!!</figcaption>
 </figure>
 
-<!-- [audio] (assets/audio_1.mpeg)
-[gameAI] (assets/gameAI.mov) -->
+- [x] LINKEDIN :material-linkedin: https://www.linkedin.com/in/imflash217
+- [x] GITHUB :material-github: https://www.github.com/imflash217
 
 ???+ quote "My motivation"
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
