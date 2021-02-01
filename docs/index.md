@@ -14,7 +14,7 @@ hide:
 </figure>
 
 ???+ quote "Contact Details"
-    - [x] "material-submit: Email: vkumar24@ncsu.edu
+    - [x] :material-gmail: Email: vkumar24@ncsu.edu
     - [x] :material-linkedin: https://www.linkedin.com/in/imflash217
     - [x] :material-github: https://www.github.com/imflash217
     - [x] KAGGLE :
