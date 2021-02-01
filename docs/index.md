@@ -14,6 +14,7 @@ hide:
 </figure>
 
 ???+ quote "Contact Details"
+    - [x] Email: vkumar24@ncsu.edu
     - [x] LINKEDIN :material-linkedin: https://www.linkedin.com/in/imflash217
     - [x] GITHUB :material-github: https://www.github.com/imflash217
     - [x] KAGGLE :material-kaggle: 
