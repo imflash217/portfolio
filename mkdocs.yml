@@ -87,7 +87,7 @@ nav:
       - Electromagnetic Spectrum, properties of material medium & its effects: blogs/physics/blog_01282021.md
     - Algorithms:
       - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
-      - Insertion Sort: blogs/algorithms/blog_01312021_insertion_sort.md
+      - Insertion Sort: blogs/algorithms/blog_01312021_sorting.md
   - Gists:
     - About: gists/about.md
     - PyTorch Lightning:

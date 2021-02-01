@@ -753,15 +753,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#version-1" class="md-nav__link">
-    Version #1
+  <a href="#vanilla-insertion-sort" class="md-nav__link">
+    Vanilla Insertion Sort
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved-version-2-using-binary-search" class="md-nav__link">
-    Improved Version #2 using Binary Search
+  <a href="#binary-insertion-sort" class="md-nav__link">
+    Binary Insertion Sort
   </a>
   
 </li>
@@ -1127,15 +1127,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#version-1" class="md-nav__link">
-    Version #1
+  <a href="#vanilla-insertion-sort" class="md-nav__link">
+    Vanilla Insertion Sort
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#improved-version-2-using-binary-search" class="md-nav__link">
-    Improved Version #2 using Binary Search
+  <a href="#binary-insertion-sort" class="md-nav__link">
+    Binary Insertion Sort
   </a>
   
 </li>
@@ -1167,8 +1167,8 @@
                 
                 <h1 id="insertion-sort">Insertion Sort</h1>
 <h2 id="definition">Definition</h2>
-<h3 id="version-1">Version <code>#1</code></h3>
-<details class="note" open="open"><summary>Version <code>#1</code></summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<h3 id="vanilla-insertion-sort">Vanilla Insertion Sort</h3>
+<details class="note" open="open"><summary>Vanilla Insertion Sort</summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>for i = 1, 2, 3, ..., n{
@@ -1180,8 +1180,8 @@
 <img alt="insertion sort" src="../../../assets/blogs/algorithms/blog_01312021_insertion_sort/1.jpg" /></p>
 <p>This above version has <strong><span class="arithmatex">\(\theta(n)\)</span></strong> steps and each step has <strong><span class="arithmatex">\(\theta(n)\)</span></strong> comparisons. SO this version of the algorithm is <strong><span class="arithmatex">\(\theta(n^2)\)</span></strong> runtime complexity.</p>
 </details>
-<h3 id="improved-version-2-using-binary-search">Improved Version <code>#2</code> using Binary Search</h3>
-<details class="note" open="open"><summary>Improved Version <code>#2</code></summary><p>This improved version is slightly improved by using <strong>Binary Search</strong> while searching for the position to place the key <code>A[i]</code> in the sorted part of the array (i.e. <code>A[0:i-1]</code>)
+<h3 id="binary-insertion-sort">Binary Insertion Sort</h3>
+<details class="note" open="open"><summary>Binary Insertion Sort</summary><p>This improved version is slightly improved by using <strong>Binary Search</strong> while searching for the position to place the key <code>A[i]</code> in the sorted part of the array (i.e. <code>A[0:i-1]</code>)
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1191,7 +1191,7 @@
 }
 </code></pre></div>
 </td></tr></table></p>
-<p>This above version has <strong><span class="arithmatex">\(\theta(n)\)</span></strong> steps and each step has <strong><span class="arithmatex">\(\theta(\log(n))\)</span></strong> comparisons due to Binary Search. SO this version of the algorithm is <strong><span class="arithmatex">\(\theta(n\times \log(n))\)</span></strong> runtime complexity.</p>
+<p>This above version has <strong><span class="arithmatex">\(\theta(n)\)</span></strong> steps and each step has <strong><span class="arithmatex">\(\theta(\log(n))\)</span></strong> comparisons due to Binary Search. SO this version of the algorithm is <strong><span class="arithmatex">\(\theta(n\times \log(n))\)</span></strong> runtime complexity (in sorting <strong>but not in swappings</strong>). If we consider swapping operations too then even Binary Search will take <span class="arithmatex">\(\theta(n)\)</span> time to swap positions as it might have to move a lot of positions.</p>
 </details>
 <details class="quote" open="open"><summary>Author Disclaimer</summary><p><code>Author: Vinay Kumar (@imflash217)</code></p>
 <p><code>Date: 31/January/2021</code></p>

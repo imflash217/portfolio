@@ -1,4 +1,4 @@
-# Insertion Sort
+# Sorting Algorithms
 
 ## Definition
 
