@@ -1,6 +1,6 @@
 # Sorting Algorithms
 
-## Definition
+## Insertion Sort
 
 ### Vanilla Insertion Sort
 
