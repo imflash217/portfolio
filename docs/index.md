@@ -14,10 +14,10 @@ hide:
 </figure>
 
 ???+ quote "Contact Details"
-    - [x] "material-gmail: Email:    vkumar24@ncsu.edu
-    - [x] :material-linkedin: LINKEDIN https://www.linkedin.com/in/imflash217
-    - [x] :material-github: GITHUB    https://www.github.com/imflash217
-    - [x] :fa-kaggle: KAGGLE :
+    - [x] "material-submit: Email: vkumar24@ncsu.edu
+    - [x] :material-linkedin: https://www.linkedin.com/in/imflash217
+    - [x] :material-github: https://www.github.com/imflash217
+    - [x] KAGGLE :
 
 
 ???+ quote "My motivation"
