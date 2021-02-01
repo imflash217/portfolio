@@ -4,11 +4,11 @@
 
     ```
     - main()
-      - word_frequencies_for_file()
-        - get_words_from_line_list()
-        - count_frequency()
-      - vector_angle()
-        - inner_product()
+    |---- word_frequencies_for_file()
+    |-------- get_words_from_line_list()
+    |-------- count_frequency()
+    |---- vector_angle()
+    |-------- inner_product()
     ```
 
 
