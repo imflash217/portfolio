@@ -2,7 +2,7 @@
 
 ## Definition
 
-???+ note "Pseudo Code"
+???+ note "Pseudo Code `#1`"
 
     ```
     for i = 1, 2, 3, ..., n{
