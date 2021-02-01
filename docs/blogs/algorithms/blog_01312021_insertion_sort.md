@@ -10,6 +10,7 @@
         by pairwise swaps down to the correct position
     }
     ```
+    ![insertion sort](../../assets/blogs/algorithms/blog_01312021_insertion_sort/1.jpg)
 
 
 
