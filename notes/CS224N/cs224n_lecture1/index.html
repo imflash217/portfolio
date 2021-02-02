@@ -1191,7 +1191,7 @@
                 
                 <h1 id="lecture-1">Lecture <code>#1</code></h1>
 <h2 id="word-meaning">Word Meaning</h2>
-<details class="note" open="open"><summary>NLTK example</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<details class="note" open="open"><summary>NLTK example: synonyms of word <code>good</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -1214,63 +1214,17 @@
     <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;{poses[synset.pos()]}: {&#39;&#39;.join([l.name() for l in synset.lemmas()])}&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>❯ python 01_word_meaning.py
-noun: good
-noun: goodgoodness
-noun: goodgoodness
-noun: commoditytrade_goodgood
-adj: good
-adj (s): fullgood
-adj: good
-adj (s): estimablegoodhonorablerespectable
-adj (s): beneficialgood
-adj (s): good
-adj (s): goodjustupright
-adj (s): adeptexpertgoodpracticedproficientskillfulskilful
-adj (s): good
-adj (s): deargoodnear
-adj (s): dependablegoodsafesecure
-adj (s): goodrightripe
-adj (s): goodwell
-adj (s): effectivegoodin_effectin_force
-adj (s): good
-adj (s): goodserious
-adj (s): goodsound
-adj (s): goodsalutary
-adj (s): goodhonest
-adj (s): goodundecomposedunspoiledunspoilt
-adj (s): good
-adv: wellgood
-adv: thoroughlysoundlygood
-</code></pre></div>
-</td></tr></table>
+</details>
+<details class="bug" open="open"><summary>Problems with toolkits like <code>WordNet</code></summary><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Great as a resource but missing <code>nuance</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Example: <code>proficent</code> is listed as a synonym for <code>good</code>; but it is correct only in some contexts.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Missing new meaning of words</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Example: new slang words etc like <code>wicked</code>, <code>badass</code>, <code>nifty</code> etc.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> IMPOSSIBLE to keep up-to-date</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Very Subjective</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Requires human labour to curate and maintain</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Can't compute accurate word-similarity.</li>
+</ul>
 </details>
 <!-- ############################################################################################################ -->
 <details class="quote" open="open"><summary>Author Disclaimer</summary><p><code>Author: Vinay Kumar (@imflash217)</code></p>
