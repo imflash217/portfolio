@@ -40,6 +40,7 @@
     ```
 
 ???+ bug "Problems with toolkits like `WordNet`"
+
     - [x] Great as a resource but missing `nuance`
         * [ ] Example: `proficent` is listed as a synonym for `good`; but it is correct only in some contexts.
     - [x] Missing new meaning of words
