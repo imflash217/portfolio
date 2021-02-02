@@ -2,6 +2,11 @@
 
 ## Word Meaning
 
+- [x] Denotational Semantics
+- [x] Distributional Semantics
+- [x] Localist Representation (like `one-hot vectors`)
+- [x] Distributed Representation (like `word-vectors`)
+
 ???+ note "NLTK example: synonyms of word `good`"
 
     ```python
