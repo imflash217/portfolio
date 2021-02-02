@@ -41,4 +41,5 @@
     The contents of this article were originally published at the references below. I have assembled it for my own understanding. Feel free to reuse and tag along the references. :+1:
 
 ## `References`
-[^1]:
+[^1]: https://twitter.com/pottolama/status/1354745837524553728
+[^2]: https://github.com/mportesi/sorting_algo_visualizer
