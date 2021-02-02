@@ -2,7 +2,7 @@
 
 ## Word Meaning
 
-???+ note "NLTK example"
+???+ note "NLTK example: synonyms of word `good`"
 
     ```python
     --8<-- "../CS224N/01_word_meaning.py"
@@ -38,7 +38,15 @@
     adv: wellgood
     adv: thoroughlysoundlygood
     ```
-
+???+ bug "Problems with toolkits like `WordNet`"
+    - [x] Great as a resource but missing `nuance`
+      - [ ] Example: `proficent` is listed as a synonym for `good`; but it is correct only in some contexts.
+    - [x] Missing new meaning of words
+      - [ ] Example: new slang words etc like `wicked`, `badass`, `nifty` etc.
+      - [ ] IMPOSSIBLE to keep up-to-date
+    - [x] Very Subjective
+    - [x] Requires human labour to curate and maintain
+    - [x] Can't compute accurate word-similarity.
 
 
 
