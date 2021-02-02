@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 # Lecture `#1`
 
 ## Word Meaning
