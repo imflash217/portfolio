@@ -19,6 +19,10 @@ hide:
     - [x] :material-github: https://www.github.com/imflash217
     - [x] KAGGLE :
 
+<figure>
+    <img src="https://4.bp.blogspot.com/-tgA9nKQJJ2Q/Vtra_9UwzDI/AAAAAAAANhQ/VmWebFhwBxw/s1600/underconstruction.jpg
+" width="4" />
+</figure>
 
 ???+ quote "My motivation"
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
