@@ -1,4 +1,9 @@
 <figure>
+    <img src="https://4.bp.blogspot.com/-tgA9nKQJJ2Q/Vtra_9UwzDI/AAAAAAAANhQ/VmWebFhwBxw/s1600/underconstruction.jpg
+" width="800" />
+</figure>
+
+<figure>
   <img src="https://dummyimage.com/100x100/eee/aaa" width="100" />
   <figcaption>Image caption</figcaption>
 </figure>
