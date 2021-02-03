@@ -21,7 +21,7 @@ hide:
 
 <figure>
     <img src="https://4.bp.blogspot.com/-tgA9nKQJJ2Q/Vtra_9UwzDI/AAAAAAAANhQ/VmWebFhwBxw/s1600/underconstruction.jpg
-" width="400" />
+" width="800" />
 </figure>
 
 ???+ quote "My motivation"
