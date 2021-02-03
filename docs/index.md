@@ -9,15 +9,12 @@ hide:
 
 <figure>
     <img src="assets/vinay.png" width="200" />
-    <!-- <img src="https://dummyimage.com/100x100/eee/aaa" width="100" /> -->
-    <figcaption>That's me!!</figcaption>
 </figure>
 
 ???+ quote "Contact Details"
     - [x] :material-gmail: vkumar24@ncsu.edu
     - [x] :material-linkedin: https://www.linkedin.com/in/imflash217
     - [x] :material-github: https://www.github.com/imflash217
-    - [x] KAGGLE :
 
 <figure>
     <img src="https://4.bp.blogspot.com/-tgA9nKQJJ2Q/Vtra_9UwzDI/AAAAAAAANhQ/VmWebFhwBxw/s1600/underconstruction.jpg
