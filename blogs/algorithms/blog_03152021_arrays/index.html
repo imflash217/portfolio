@@ -1315,9 +1315,15 @@ us to <strong>read</strong> and <strong>write</strong> elements into the array e
 knows exactly where each element is stored in the memory.</p>
 <p>On the other hand <strong>removing</strong>, <strong>adding</strong> and <strong>finding arbitrary values</strong> in an array
 can be a linear-time operation.</p>
-<p>Removing or splicing requires shifting all elements by one to fill the gap.</p>
-<p>Inserting a new element would requires shifting or allocating a new larger array to hold the elements.</p>
-<p>Finding an element in the array would require iterating over the entire array in the worst-case.</p>
+<p><strong>Removing</strong> or <strong>splicing</strong> requires shifting all elements by one to fill the gap.</p>
+<p><strong>Inserting</strong> a new element would requires shifting or allocating a new larger array to hold the elements.</p>
+<p><strong>Finding</strong> an element in the array would require iterating over the entire array in the worst-case.</p>
+</details>
+<details class="note" open="open"><summary>Dynamic Arrays</summary><p>It is worth noting that in many <strong>statically-typed</strong> programming languages (e.g. Java, C++);
+an array is limited to its <em>initially declared size</em>.</p>
+<p><strong>ALL modern languages</strong> support DYNAMICALLY-SIZED arrays; which automatically increase or decrease their size
+by allocating a new copy of the array when it begins to run out-of-memory.</p>
+<p>Dynamic arrays guarantee better <strong>amortized performance</strong> by only performing these costly operations when necessary.</p>
 </details>
 <details class="note" open="open"><summary>Definition</summary><p><strong>Hash Table</strong> is a data structure which stores data in an <strong>associative manner</strong> (i.e. in a (key, value) pair).</p>
 <ul>
