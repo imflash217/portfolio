@@ -39,8 +39,8 @@ markdown_extensions:
   - footnotes
   - meta
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: "!!python/name:materialx.emoji.twemoji"
+      emoji_generator: "!!python/name:materialx.emoji.to_svg"
 
 ##########################################################################
 plugins:
@@ -90,6 +90,7 @@ nav:
       - Sorting: blogs/algorithms/blog_01312021_sorting.md
       - Document Distance: blogs/algorithms/blog_02012021_document_distance.md
       - Priority Queue: blogs/algorithms/blog_02012021_priority_queue.md
+      - Arrays: blogs/algorithms/blog_03152021_arrays.md
   - Gists:
     - About: gists/about.md
     - PyTorch Lightning:
