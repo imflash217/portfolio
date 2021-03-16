@@ -21,13 +21,20 @@ hide:
     On the other hand **removing**, **adding** and **finding arbitrary values** in an array
     can be a linear-time operation.
 
-    Removing or splicing requires shifting all elements by one to fill the gap.
+    **Removing** or **splicing** requires shifting all elements by one to fill the gap.
 
-    Inserting a new element would requires shifting or allocating a new larger array to hold the elements.
+    **Inserting** a new element would requires shifting or allocating a new larger array to hold the elements.
 
-    Finding an element in the array would require iterating over the entire array in the worst-case.
+    **Finding** an element in the array would require iterating over the entire array in the worst-case.
 
+???+ note "Dynamic Arrays"
+    It is worth noting that in many **statically-typed** programming languages (e.g. Java, C++);
+    an array is limited to its *initially declared size*.
 
+    **ALL modern languages** support DYNAMICALLY-SIZED arrays; which automatically increase or decrease their size
+    by allocating a new copy of the array when it begins to run out-of-memory.
+
+    Dynamic arrays guarantee better **amortized performance** by only performing these costly operations when necessary.
 
 
 
