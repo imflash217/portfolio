@@ -810,6 +810,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog_03152021_arrays/" class="md-nav__link">
+        Arrays
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1232,10 +1244,10 @@
                 <h1 id="sorting-algorithms">Sorting Algorithms</h1>
 <h2 id="insertion-sort">Insertion Sort</h2>
 <h3 id="vanilla-insertion-sort">Vanilla Insertion Sort</h3>
-<details class="note" open="open"><summary>Vanilla Insertion Sort</summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>for i = 1, 2, 3, ..., n{
+<details class="note" open="open"><summary>Vanilla Insertion Sort</summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>for i = 1, 2, 3, ..., n{
     insert A[i] into sorted array A[0:i-1]
     by &quot;pairwise swaps&quot; down to the correct position
 }
@@ -1246,10 +1258,10 @@
 </details>
 <h3 id="binary-insertion-sort">Binary Insertion Sort</h3>
 <details class="note" open="open"><summary>Binary Insertion Sort</summary><p>This improved version is slightly improved by using <strong>Binary Search</strong> while searching for the position to place the key <code>A[i]</code> in the sorted part of the array (i.e. <code>A[0:i-1]</code>)
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>for i = 1, 2, 3, ..., n{
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>for i = 1, 2, 3, ..., n{
     insert A[i] into sorted array A[0:i-1]
     by &quot;Binary Search&quot; down to the correct position
 }
