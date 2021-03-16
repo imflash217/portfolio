@@ -43,15 +43,11 @@ hide:
 ???+ note "Calculating Memory Usage"
     To calculate the memory usage of an array simply multiply the size of the array with the size of the data-type.
 
-    ???+ question ""
-        What is the memory usage of an array that contains one-thousand 32-bit integers?
-
+    ???+ question "What is the memory usage of an array that contains one-thousand 32-bit integers?"
         ```
         1000 * 32 bits  = 1000 * 4 bytes = 4000 bytes = 4Kb
         ```
-    ???+ question ""
-        What is the memory usage of an array that contains one-hundred 10-char strings?
-
+    ???+ question "What is the memory usage of an array that contains one-hundred 10-char strings?"
         ```
         100 * 10 chars = 100 * 10 * 1 byte = 1000 bytes = 1Kb
         ```
