@@ -52,6 +52,8 @@ hide:
         100 * 10 chars = 100 * 10 * 1 byte = 1000 bytes = 1Kb
         ```
 
+## `Common Array Operations`
+
 ???+ success "Common Array Operations"
 
     - **Insert** an item
@@ -65,6 +67,8 @@ hide:
     - **Reverse** an array
     - **Swap** an array
     - **Filter** an array
+
+## `When to use an array in an interview`
 
 ???+ danger "When to use an array in an interview"
     Use an array when you need dta in an ordered list with **fast-indexing** or **compact-memory-footprint**.
