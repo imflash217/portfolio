@@ -1313,6 +1313,11 @@ Generally speaking an array is allocated upfront as a single block of memory bas
 on the number of elements and type of the data we want the array to hold. This allows
 us to <strong>read</strong> and <strong>write</strong> elements into the array efficiently, since our program
 knows exactly where each element is stored in the memory.</p>
+<p>On the other hand <strong>removing</strong>, <strong>adding</strong> and <strong>finding arbitrary values</strong> in an array
+can be a linear-time operation.</p>
+<p>Removing or splicing requires shifting all elements by one to fill the gap.</p>
+<p>Inserting a new element would requires shifting or allocating a new larger array to hold the elements.</p>
+<p>Finding an element in the array would require iterating over the entire array in the worst-case.</p>
 </details>
 <details class="note" open="open"><summary>Definition</summary><p><strong>Hash Table</strong> is a data structure which stores data in an <strong>associative manner</strong> (i.e. in a (key, value) pair).</p>
 <ul>
