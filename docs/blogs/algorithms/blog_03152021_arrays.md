@@ -18,6 +18,15 @@ hide:
     us to **read** and **write** elements into the array efficiently, since our program
     knows exactly where each element is stored in the memory.
 
+    On the other hand **removing**, **adding** and **finding arbitrary values** in an array
+    can be a linear-time operation.
+
+    Removing or splicing requires shifting all elements by one to fill the gap.
+
+    Inserting a new element would requires shifting or allocating a new larger array to hold the elements.
+
+    Finding an element in the array would require iterating over the entire array in the worst-case.
+
 
 
 
