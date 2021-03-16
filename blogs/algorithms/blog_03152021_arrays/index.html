@@ -788,6 +788,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dynamic-array" class="md-nav__link">
+    Dynamic Array
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculating-memory-usage" class="md-nav__link">
+    Calculating Memory Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hashing" class="md-nav__link">
     Hashing
   </a>
@@ -1230,6 +1244,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dynamic-array" class="md-nav__link">
+    Dynamic Array
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculating-memory-usage" class="md-nav__link">
+    Calculating Memory Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hashing" class="md-nav__link">
     Hashing
   </a>
@@ -1319,12 +1347,29 @@ can be a linear-time operation.</p>
 <p><strong>Inserting</strong> a new element would requires shifting or allocating a new larger array to hold the elements.</p>
 <p><strong>Finding</strong> an element in the array would require iterating over the entire array in the worst-case.</p>
 </details>
+<h2 id="dynamic-array"><code>Dynamic Array</code></h2>
 <details class="note" open="open"><summary>Dynamic Arrays</summary><p>It is worth noting that in many <strong>statically-typed</strong> programming languages (e.g. Java, C++);
 an array is limited to its <em>initially declared size</em>.</p>
 <p><strong>ALL modern languages</strong> support DYNAMICALLY-SIZED arrays; which automatically increase or decrease their size
 by allocating a new copy of the array when it begins to run out-of-memory.</p>
 <p>Dynamic arrays guarantee better <strong>amortized performance</strong> by only performing these costly operations when necessary.</p>
 </details>
+<h2 id="calculating-memory-usage"><code>Calculating Memory Usage</code></h2>
+<p>???+ note "Calculating Memory Usage`
+    To calculate the memory usage of an array simply multiply the size of the array with the size of the data-type.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>???+ question &quot;&quot;
+    What is the memory usage of an array that contains one-thousand 32-bit integers?
+
+    ```
+    1000 * 32 bits  = 1000 * 4 bytes = 4000 bytes = 4Kb
+    ```
+</code></pre></div>
+</td></tr></table>
 <details class="note" open="open"><summary>Definition</summary><p><strong>Hash Table</strong> is a data structure which stores data in an <strong>associative manner</strong> (i.e. in a (key, value) pair).</p>
 <ul>
 <li>In a hash table, the data is stored in an array format where each data-value has its own unique index-value. Due to this feature, the access to data becomes very fast if we know the desired index-value; irrespective of the size of the data.</li>
