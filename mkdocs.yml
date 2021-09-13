@@ -3,7 +3,7 @@ theme:
   name: material
   icon:
     # logo: material/flash-circle
-    logo: material/satr-shooting
+    logo: material/star-shooting
   palette:
     primary: black
   font:
