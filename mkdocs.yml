@@ -61,7 +61,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 ##########################################################################
 copyright: Copyright &copy; 2021 Vinay Kumar
-site_name: Vinay Kumar
+site_name: Vinay Kumar (@imflash217) 🌺॥ महाजनो येन गतः स पन्थाः ॥🌺
 ##########################################################################
 nav:
   - About me: index.md
