@@ -3,7 +3,7 @@ theme:
   name: material
   icon:
     # logo: material/flash-circle
-    logo: material/fingerprint
+    logo: material/sprout-outline
   palette:
     primary: black
   font:
