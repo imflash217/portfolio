@@ -14,4 +14,5 @@
     * [x] In hac habitasse platea dictumst
     * [x] In scelerisque nibh non dolor mollis congue sed et metus
     * [ ] Praesent sed risus massa
+    * [ ] Hariom ॰॰ हरि ॐ गुरु ॰॰
 - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
