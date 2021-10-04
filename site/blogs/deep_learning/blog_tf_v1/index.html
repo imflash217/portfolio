@@ -842,6 +842,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#example-3-tfplaceholder" class="md-nav__link">
+    Example-3: tf.placeholder()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1249,6 +1256,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#example-3-tfplaceholder" class="md-nav__link">
+    Example-3: tf.placeholder()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1359,7 +1373,33 @@ multiply the two numbers we have to create a sessiona nd run it.</p>
 <li>Create a session.</li>
 <li>Run the operations inside the session.</li>
 </ol>
-<p><span style="color:yellow">### Example-3: <code>tf.placeholder()</code></span></p>
+<h3 id="example-3-tfplaceholder">Example-3: <code>tf.placeholder()</code></h3>
+<p>Next, we will see how to use a placeholder.</p>
+<p>A <strong>placeholder</strong> is an object whose value we can specify ONLY later.</p>
+<p>To specify values for a placeholder, we can pass in values by using a 
+"feed dictionary" (<code>feed_dict</code> variable).</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Below we create a placeholder for x.</span>
+<span class="c1">## This allows us to pass in a number later when we run the SESSION</span>
+
+<span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>      <span class="c1">## the placeholder variable</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="mi">9</span><span class="p">}))</span>
+
+<span class="n">sess</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>18
+</code></pre></div>
+</td></tr></table></p>
                 
               
               
