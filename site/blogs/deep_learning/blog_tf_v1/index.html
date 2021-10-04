@@ -1413,7 +1413,7 @@ multiply the two numbers we have to create a sessiona nd run it.</p>
 </code></pre></div>
 </td></tr></table></p>
 <h3 id="using-one-hot-encodings">Using one-hot encodings:</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1472,6 +1472,28 @@ multiply the two numbers we have to create a sessiona nd run it.</p>
     <span class="k">return</span> <span class="n">one_hot</span>
 </code></pre></div>
 </td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">num_classes</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">one_hot</span> <span class="o">=</span> <span class="n">one_hot_matrix</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">one_hot</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[[0,0,1,0,0,0,0],
+ [1,0,0,1,0,0,0],
+ [0,1,0,0,1,1,0],
+ [0,0,0,0,0,0,1]]
+</code></pre></div>
+</td></tr></table></p>
                 
               
               
