@@ -847,6 +847,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#using-one-hot-encodings" class="md-nav__link">
+    Using one-hot encodings:
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1261,6 +1268,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#using-one-hot-encodings" class="md-nav__link">
+    Using one-hot encodings:
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1398,6 +1412,66 @@ multiply the two numbers we have to create a sessiona nd run it.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>18
 </code></pre></div>
 </td></tr></table></p>
+<h3 id="using-one-hot-encodings">Using one-hot encodings:</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">one_hot_matrix</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a matrix where the i-th row corresponds to the ith class number.</span>
+<span class="sd">    j-th column corresponds to the j-th example.</span>
+<span class="sd">    So, if the label for j-th example is i; then only the ith value is 1 in j-th column</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        labels: the labels for each example</span>
+<span class="sd">        num_classes: the number of classes in this task</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        a one-hot matrix</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">## create a tf.constant &amp; name it &quot;num_classes&quot;</span>
+    <span class="n">num_classes</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;num_classes&quot;</span><span class="p">)</span>
+
+    <span class="c1">## Use tf.one_hot (be careful with &quot;axis&quot;)</span>
+    <span class="n">one_hot_matrix</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">indices</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1">## Create a session</span>
+    <span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+
+    <span class="c1">## Execute the one_hot_matrix graph inside the session</span>
+    <span class="n">one_hot</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">one_hot_matrix</span><span class="p">)</span>
+
+    <span class="c1">## Close the session</span>
+    <span class="n">sess</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="c1">## return the one_hot matrix</span>
+    <span class="k">return</span> <span class="n">one_hot</span>
+</code></pre></div>
+</td></tr></table>
                 
               
               
