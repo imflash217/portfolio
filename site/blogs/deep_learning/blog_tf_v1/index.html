@@ -825,6 +825,26 @@
     Exploring the Tensorflow Library
   </a>
   
+    <nav class="md-nav" aria-label="Exploring the Tensorflow Library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    Example-1:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    Example-2:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1212,6 +1232,26 @@
     Exploring the Tensorflow Library
   </a>
   
+    <nav class="md-nav" aria-label="Exploring the Tensorflow Library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    Example-1:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    Example-2:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1247,6 +1287,7 @@ hide:
 <!-- ######################################################################################################### -->
 
 <h2 id="exploring-the-tensorflow-library">Exploring the Tensorflow Library</h2>
+<h3 id="example-1">Example-1:</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1272,6 +1313,32 @@ hide:
     <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>                              <span class="c1">## initializes the global variables</span>
     <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>                              <span class="c1">## executes the program stored in &quot;loss&quot; variable</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>                                 <span class="c1">## prints the value stored in &quot;loss&quot; variable</span>
+</code></pre></div>
+</td></tr></table>
+<p>Writing and running programs in <code>Tensorflow</code> has the following steps:</p>
+<ol>
+<li><strong>Create tensors</strong> (variables) that are not yet evaluated/executed.</li>
+<li><strong>Write operations</strong> between those tensors.</li>
+<li><strong>Initialize</strong> the tensors.</li>
+<li><strong>Create a Session</strong>.</li>
+<li><strong>Run the session</strong>. This will run the operations written in step-2.</li>
+</ol>
+<p>So, when we created a variable for <code>loss</code>, we simply defined the loss as a function of other
+quantities but did not evaluate its value. To evaluate it, we had to run 
+<code>tf.global_variables_initializer()</code> to intialize the values and then inside <code>sess.run(init)</code>
+we calculated the updated value and prited it in the last line above.</p>
+<h3 id="example-2">Example-2:</h3>
+<p>Now, let's take a look at</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Tensor(&quot;Mul:0&quot;, shape=(), dtype=int32)
 </code></pre></div>
 </td></tr></table>
                 
