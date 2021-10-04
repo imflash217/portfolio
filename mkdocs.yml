@@ -10,7 +10,14 @@ theme:
     code: Fira Code
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    
 
 ##########################################################################
 markdown_extensions:
