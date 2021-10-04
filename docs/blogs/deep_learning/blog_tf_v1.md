@@ -10,6 +10,7 @@ hide:
 <!-- ######################################################################################################### -->
 
 In this session you will learn to do the following in `TensorFlow v1.0`
+
 1. Initialize Variables
 2. Start your own session
 3. Train Algorithms
@@ -34,3 +35,5 @@ with tf.Session() as sess:                      ## Creates a session to execute 
     sess.run(loss)                              ## executes the program stored in "loss" variable
     print(loss)                                 ## prints the value stored in "loss" variable
 ```
+
+
