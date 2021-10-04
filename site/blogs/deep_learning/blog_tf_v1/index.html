@@ -798,9 +798,38 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tensorflow Tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Tensorflow Tutorial
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exploring-the-tensorflow-library" class="md-nav__link">
+    Exploring the Tensorflow Library
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1172,6 +1201,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exploring-the-tensorflow-library" class="md-nav__link">
+    Exploring the Tensorflow Library
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1192,6 +1236,42 @@ hide:
 <h1 id="tensorflow-tutorial">Tensorflow Tutorial</h1>
 <p><code>Author: Vinay Kumar (@imflash217) | Date: 03/October/2021</code></p>
 <!-- ######################################################################################################### -->
+
+<p>In this session you will learn to do the following in <code>TensorFlow v1.0</code>
+1. Initialize Variables
+2. Start your own session
+3. Train Algorithms
+4. Implement a Neural Network</p>
+<!-- ######################################################################################################### -->
+
+<h2 id="exploring-the-tensorflow-library">Exploring the Tensorflow Library</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+
+<span class="n">y_hat</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;y_hat&quot;</span><span class="p">)</span>           <span class="c1">## Defins a &quot;y_hat&quot; constant. Sets its value to 36</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">39</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>                   <span class="c1">## Defins a &quot;y&quot; constant. Sets its value to 39</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="n">y</span><span class="o">-</span><span class="n">y_hat</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
+
+<span class="n">init</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">()</span>        <span class="c1">## Used to initialize the variables with the</span>
+                                                <span class="c1">## respective values when &quot;sess.run(init)&quot; is called</span>
+
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>                      <span class="c1">## Creates a session to execute our program</span>
+    <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>                              <span class="c1">## initializes the global variables</span>
+    <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>                              <span class="c1">## executes the program stored in &quot;loss&quot; variable</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>                                 <span class="c1">## prints the value stored in &quot;loss&quot; variable</span>
+</code></pre></div>
+</td></tr></table>
                 
               
               
