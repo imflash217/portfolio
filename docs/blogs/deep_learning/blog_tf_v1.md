@@ -110,3 +110,37 @@ sess.close()
 18
 ```
 
+### Using one-hot encodings:
+
+```python
+def one_hot_matrix(labels, num_classes):
+    """
+    Creates a matrix where the i-th row corresponds to the ith class number.
+    j-th column corresponds to the j-th example.
+    So, if the label for j-th example is i; then only the ith value is 1 in j-th column
+    
+    Args:
+        labels: the labels for each example
+        num_classes: the number of classes in this task
+    Returns:
+        a one-hot matrix
+    """
+    ## create a tf.constant & name it "num_classes"
+    num_classes = tf.constant(num_classes, name="num_classes")
+    
+    ## Use tf.one_hot (be careful with "axis")
+    one_hot_matrix = tf.one_hot(indices=labels, depth=num_classes, axis=0)
+
+    ## Create a session
+    sess = tf.Session()
+
+    ## Execute the one_hot_matrix graph inside the session
+    one_hot = sess.run(one_hot_matrix)
+
+    ## Close the session
+    sess.close()
+    
+    ## return the one_hot matrix
+    return one_hot
+
+```
