@@ -3,7 +3,8 @@ theme:
   name: material
   icon:
     # logo: material/flash-circle
-    logo: material/balloon
+    # logo: material/balloon
+    logo: assets/logo.png
   palette:
     scheme: slate
     primary: amber
