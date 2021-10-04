@@ -5,7 +5,8 @@ theme:
     # logo: material/flash-circle
     logo: material/balloon
   palette:
-    primary: black
+    scheme: slate
+    primary: amber
   font:
     text: lexend
     code: Fira Code
@@ -14,7 +15,6 @@ theme:
     - navigation.tabs.sticky
     - navigation.expand
     - navigation.top
-    - navigation.tracking
     - navigation.instant
     - search.suggest
     - search.highlight
