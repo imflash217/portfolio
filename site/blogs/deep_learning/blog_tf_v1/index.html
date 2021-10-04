@@ -866,6 +866,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#building-a-neural-network" class="md-nav__link">
+    Building a Neural Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Building a Neural Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-the-model" class="md-nav__link">
+    Building the model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1294,6 +1314,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#building-a-neural-network" class="md-nav__link">
+    Building a Neural Network
+  </a>
+  
+    <nav class="md-nav" aria-label="Building a Neural Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-the-model" class="md-nav__link">
+    Building the model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1566,6 +1606,169 @@ where all elements are either zeros or ones</p>
  [1,1,1]]
 </code></pre></div>
 </td></tr></table></p>
+<h2 id="building-a-neural-network">Building a Neural Network</h2>
+<h3 id="building-the-model">Building the model</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tf_utils</span> <span class="kn">import</span> <span class="n">load_dataset</span><span class="p">,</span> <span class="n">random_mini_batches</span><span class="p">,</span> <span class="n">convert_to_one_hot</span><span class="p">,</span> <span class="n">predict</span>
+<span class="kn">from</span> <span class="nn">tensorflow.python.framework</span> <span class="kn">import</span> <span class="n">ops</span>
+
+<span class="k">def</span> <span class="nf">model</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">,</span> 
+        <span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span> <span class="n">bs</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Implements a 3-layer Tensorflow Neural Network:</span>
+<span class="sd">        [Linear]-&gt;[Relu]-&gt;[Linear]-&gt;[Relu]-&gt;[Linear]-[Softmax]</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            X_train: the train dataset inputs</span>
+<span class="sd">            Y_train: the train dataset labels</span>
+<span class="sd">            X_test: the test dataset inputs</span>
+<span class="sd">            Y_test: the test dataset labels</span>
+<span class="sd">            lr: the learnign rate</span>
+<span class="sd">            num_epochs: number of epochs</span>
+<span class="sd">            bs: batch-size</span>
+<span class="sd">            verbose: True if you want to print the process else False</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            the trained model parameters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">ops</span><span class="o">.</span><span class="n">reset_default_graph</span><span class="p">()</span>       <span class="c1">## to be able to rerun the model, w/o overwriting the tf.variables</span>
+        <span class="n">tf</span><span class="o">.</span><span class="n">set_random_seed</span><span class="p">(</span><span class="mi">217</span><span class="p">)</span>         <span class="c1">## to keep consistent results</span>
+        <span class="n">seed</span> <span class="o">=</span> <span class="mi">3</span>                        <span class="c1">## to keep consistent results</span>
+        <span class="p">(</span><span class="n">n_x</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span>        <span class="c1">## n_x = input size; m = number of training examples</span>
+        <span class="n">n_y</span> <span class="o">=</span> <span class="n">Y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>          <span class="c1">## n_y = output size</span>
+        <span class="n">costs</span> <span class="o">=</span> <span class="p">[]</span>                      <span class="c1">## to keep track of the costs</span>
+
+        <span class="c1">## Step-1: Create placeholders of shape = (n_x, n_y)</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">create_placeholders</span><span class="p">(</span><span class="n">n_x</span><span class="p">,</span> <span class="n">n_y</span><span class="p">)</span>
+
+        <span class="c1">## Step-2: Initialize parameters</span>
+        <span class="n">parameters</span> <span class="o">=</span> <span class="n">initialize_parameters</span><span class="p">()</span>
+
+        <span class="c1">## Step-3: Forward propagation</span>
+        <span class="c1">##         Build the forward propagation the tf graph</span>
+        <span class="n">Z3</span> <span class="o">=</span> <span class="n">forward_proagation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">parameters</span><span class="p">)</span>
+
+        <span class="c1">## Step-4: Cost function</span>
+        <span class="c1">##         Add cost function to tf graph</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">Z3</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+        <span class="c1">## Step-5: Backward propagation</span>
+        <span class="c1">##         Define the tf optimizer. Use `AdamOptimizer`</span>
+        <span class="n">optimizer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">AdamOptimizer</span><span class="p">(</span><span class="n">lr</span><span class="p">)</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+
+        <span class="c1">## Step-6: Initialize all variables</span>
+        <span class="n">init</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">()</span>
+
+        <span class="c1">## Step-7: Start the session to compute the tf graph</span>
+        <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
+            <span class="c1">## Step-7.1: Run the initializer `init`</span>
+            <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+
+            <span class="c1">## Step-7.2: Do the training loop</span>
+            <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epchs</span><span class="p">):</span>
+                <span class="n">epoch_cost</span> <span class="o">=</span> <span class="mf">0.0</span>        <span class="c1">## Define the cost for each epoch</span>
+                <span class="n">num_batches</span> <span class="o">=</span> <span class="n">m</span> <span class="o">//</span> <span class="n">bs</span>
+                <span class="n">seed</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">minibatches</span> <span class="o">=</span> <span class="n">random_mini_batches</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
+                <span class="k">for</span> <span class="p">(</span><span class="n">Xb</span><span class="p">,</span> <span class="n">Yb</span><span class="p">)</span> <span class="ow">in</span> <span class="n">minibatches</span><span class="p">:</span>
+                    <span class="n">_</span><span class="p">,</span> <span class="n">minibatch_cost</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">cost</span><span class="p">],</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">X</span><span class="p">:</span><span class="n">Xb</span><span class="p">,</span> <span class="n">Y</span><span class="p">:</span><span class="n">Yb</span><span class="p">})</span>
+                    <span class="n">epoch_cost</span> <span class="o">+=</span> <span class="n">minibatch_cost</span>
+                <span class="n">epoch_cost</span> <span class="o">/=</span> <span class="n">num_batches</span>
+
+            <span class="c1">## Step-8: Save the trained model parameters</span>
+            <span class="n">parameters</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;parameters have been trained&quot;</span><span class="p">)</span>
+
+            <span class="c1">## Step-9: How to calculate the correct predictions &amp; accuracy</span>
+            <span class="n">correct_preds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Z3</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Y</span><span class="p">))</span>
+            <span class="n">accuracy</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">correct_preds</span><span class="p">,</span> <span class="s2">&quot;float&quot;</span><span class="p">))</span>
+
+            <span class="c1">## Step-10: Calculate the train &amp; test accuracies</span>
+            <span class="n">accuracy_train</span> <span class="o">=</span> <span class="n">accuracy</span><span class="o">.</span><span class="n">eval</span><span class="p">({</span><span class="n">X</span><span class="p">:</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y</span><span class="p">:</span><span class="n">Y_train</span><span class="p">})</span>
+            <span class="n">accuracy_test</span> <span class="o">=</span> <span class="n">accuracy</span><span class="o">.</span><span class="n">eval</span><span class="p">({</span><span class="n">X</span><span class="p">:</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y</span><span class="p">:</span><span class="n">Y_test</span><span class="p">})</span>
+
+            <span class="k">return</span> <span class="n">parameters</span>
+</code></pre></div>
+</td></tr></table>
                 
               
               
