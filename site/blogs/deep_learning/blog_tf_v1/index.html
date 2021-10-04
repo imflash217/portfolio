@@ -1341,6 +1341,24 @@ we calculated the updated value and prited it in the last line above.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Tensor(&quot;Mul:0&quot;, shape=(), dtype=int32)
 </code></pre></div>
 </td></tr></table>
+<p>As expected we will not see <code>20</code>. We got a tensor saying that the result of the tensor
+does not have the <code>shape</code> attribute and is of the type <code>int32</code>. All we did was to put in
+the <strong>computation graph</strong>; but we haven't run this computation yet! In order to actually 
+multiply the two numbers we have to create a sessiona nd run it.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>20
+</code></pre></div>
+</td></tr></table></p>
+<p><strong>Awesome!!</strong>. To summarize, remember the following:</p>
+<ol>
+<li>Initialize your variables.</li>
+<li>Create a session.</li>
+<li>Run the operations inside the session.</li>
+</ol>
                 
               
               
