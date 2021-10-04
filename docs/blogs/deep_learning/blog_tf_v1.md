@@ -20,7 +20,7 @@ In this session you will learn to do the following in `TensorFlow v1.0`
 
 ## Exploring the Tensorflow Library
 
-### Example-1:
+### Example-1: General Overview
 
 ```python
 import tensorflow as tf
@@ -51,13 +51,13 @@ quantities but did not evaluate its value. To evaluate it, we had to run
 `tf.global_variables_initializer()` to intialize the values and then inside `sess.run(init)`
 we calculated the updated value and prited it in the last line above.
 
-### Example-2:
+### Example-2: `tf.Session()`
 
 Now, let's take a look at
 
 ```python
 a = tf.constant(2)
-b = tf.constant(3)
+b = tf.constant(10)
 c = tf.multiply(a, b)
 print(c)
 ```
@@ -84,5 +84,8 @@ print(sess.run(c))
 1. Initialize your variables.
 2. Create a session.
 3. Run the operations inside the session.
+
+
+<span style="color:yellow">### Example-3: `tf.placeholder()`</span>
 
 
