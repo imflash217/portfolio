@@ -854,6 +854,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#initialize-with-zeros-ones" class="md-nav__link">
+    Initialize with zeros &amp; ones
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1275,6 +1282,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#initialize-with-zeros-ones" class="md-nav__link">
+    Initialize with zeros &amp; ones
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1492,6 +1506,64 @@ multiply the two numbers we have to create a sessiona nd run it.</p>
  [1,0,0,1,0,0,0],
  [0,1,0,0,1,1,0],
  [0,0,0,0,0,0,1]]
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="initialize-with-zeros-ones">Initialize with zeros &amp; ones</h3>
+<p>We will use <code>tf.ones()</code> and <code>tf.zeros()</code> to initialize a tensor of shape <code>shape</code>,
+where all elements are either zeros or ones</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">ones</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int64</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Creates a tensor of ones with shape=shape</span>
+<span class="sd">    Args:</span>
+<span class="sd">        shape: the shape of the resulting tensor</span>
+<span class="sd">        dtype: the datatype of every element in the resulting tensor</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        A tensor where all elements are 1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">## Create ones tensor using `tf.ones()`</span>
+    <span class="n">ones</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="c1">## Create a session</span>
+    <span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+
+    <span class="c1">## Execute the op in the session to calculate its value</span>
+    <span class="n">ones</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">ones</span><span class="p">)</span>
+
+    <span class="c1">## Close the session</span>
+    <span class="n">sess</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="c1">## Return the ones tensor</span>
+    <span class="k">return</span> <span class="n">ones</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">ones_tensor</span> <span class="o">=</span> <span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ones_tensor</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[[1,1,1],
+ [1,1,1]]
 </code></pre></div>
 </td></tr></table></p>
                 
