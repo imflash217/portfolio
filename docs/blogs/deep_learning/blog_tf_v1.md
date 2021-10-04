@@ -144,3 +144,17 @@ def one_hot_matrix(labels, num_classes):
     return one_hot
 
 ```
+```python
+import numpy as np
+
+labels = np.array([1,2,0,1,2,2,3])
+num_classes = 4
+one_hot = one_hot_matrix(labels, num_classes)
+print(one_hot)
+```
+```
+[[0,0,1,0,0,0,0],
+ [1,0,0,1,0,0,0],
+ [0,1,0,0,1,1,0],
+ [0,0,0,0,0,0,1]]
+```
