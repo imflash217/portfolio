@@ -196,3 +196,91 @@ print(ones_tensor)
 [[1,1,1],
  [1,1,1]]
 ```
+
+## Building a Neural Network
+
+### Building the model
+
+```python
+from tf_utils import load_dataset, random_mini_batches, convert_to_one_hot, predict
+from tensorflow.python.framework import ops
+
+def model(X_train, Y_train, X_test, Y_test, 
+        lr=1e-3, num_epochs=1500, bs=32, verbose=True):
+        """
+        Implements a 3-layer Tensorflow Neural Network:
+        [Linear]->[Relu]->[Linear]->[Relu]->[Linear]-[Softmax]
+          
+        Args:
+            X_train: the train dataset inputs
+            Y_train: the train dataset labels
+            X_test: the test dataset inputs
+            Y_test: the test dataset labels
+            lr: the learnign rate
+            num_epochs: number of epochs
+            bs: batch-size
+            verbose: True if you want to print the process else False
+        
+        Returns:
+            the trained model parameters.
+        """
+        
+        ops.reset_default_graph()       ## to be able to rerun the model, w/o overwriting the tf.variables
+        tf.set_random_seed(217)         ## to keep consistent results
+        seed = 3                        ## to keep consistent results
+        (n_x, m) = X_train.shape        ## n_x = input size; m = number of training examples
+        n_y = Y_train.shape[0]          ## n_y = output size
+        costs = []                      ## to keep track of the costs
+
+        ## Step-1: Create placeholders of shape = (n_x, n_y)
+        X, Y = create_placeholders(n_x, n_y)
+        
+        ## Step-2: Initialize parameters
+        parameters = initialize_parameters()
+
+        ## Step-3: Forward propagation
+        ##         Build the forward propagation the tf graph
+        Z3 = forward_proagation(X, parameters)
+
+        ## Step-4: Cost function
+        ##         Add cost function to tf graph
+        cost = compute_cost(Z3, Y)
+
+        ## Step-5: Backward propagation
+        ##         Define the tf optimizer. Use `AdamOptimizer`
+        optimizer = tf.train.AdamOptimizer(lr).minimize(cost)
+        
+        ## Step-6: Initialize all variables
+        init = tf.global_variables_initializer()
+
+        ## Step-7: Start the session to compute the tf graph
+        with tf.Session() as sess:
+            ## Step-7.1: Run the initializer `init`
+            sess.run(init)
+
+            ## Step-7.2: Do the training loop
+            for epoch in range(num_epchs):
+                epoch_cost = 0.0        ## Define the cost for each epoch
+                num_batches = m // bs
+                seed += 1
+                minibatches = random_mini_batches(X_train, Y_train, bs, seed)
+                for (Xb, Yb) in minibatches:
+                    _, minibatch_cost = sess.run([optimizer, cost], feed_dict={X:Xb, Y:Yb})
+                    epoch_cost += minibatch_cost
+                epoch_cost /= num_batches
+
+            ## Step-8: Save the trained model parameters
+            parameters = sess.run(parameters)
+            print("parameters have been trained")
+
+            ## Step-9: How to calculate the correct predictions & accuracy
+            correct_preds = tf.equal(tf.argmax(Z3), tf.argmax(Y))
+            accuracy = tf.reduce_mean(tf.cast(correct_preds, "float"))
+
+            ## Step-10: Calculate the train & test accuracies
+            accuracy_train = accuracy.eval({X:X_train, Y:Y_train})
+            accuracy_test = accuracy.eval({X:X_test, Y:Y_test})
+
+            return parameters
+```
+
