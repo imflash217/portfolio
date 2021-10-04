@@ -158,3 +158,41 @@ print(one_hot)
  [0,1,0,0,1,1,0],
  [0,0,0,0,0,0,1]]
 ```
+
+### Initialize with zeros & ones
+We will use `tf.ones()` and `tf.zeros()` to initialize a tensor of shape `shape`,
+where all elements are either zeros or ones
+
+```python
+
+def ones(shape, dtype=tf.int64):
+    """Creates a tensor of ones with shape=shape
+    Args:
+        shape: the shape of the resulting tensor
+        dtype: the datatype of every element in the resulting tensor
+    Returns:
+        A tensor where all elements are 1
+    """
+    ## Create ones tensor using `tf.ones()`
+    ones = tf.ones(shape, dtype=dtype)
+
+    ## Create a session
+    sess = tf.Session()
+    
+    ## Execute the op in the session to calculate its value
+    ones = sess.run(ones)
+
+    ## Close the session
+    sess.close()
+
+    ## Return the ones tensor
+    return ones
+```
+```python
+ones_tensor = ones([2,3])
+print(ones_tensor)
+```
+```
+[[1,1,1],
+ [1,1,1]]
+```
