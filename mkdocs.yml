@@ -91,6 +91,8 @@ nav:
       - Document Distance: blogs/algorithms/blog_02012021_document_distance.md
       - Priority Queue: blogs/algorithms/blog_02012021_priority_queue.md
       - Arrays: blogs/algorithms/blog_03152021_arrays.md
+    - Deep Learning:
+      - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
   - Gists:
     - About: gists/about.md
     - PyTorch Lightning:
