@@ -829,15 +829,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1" class="md-nav__link">
-    Example-1:
+  <a href="#example-1-general-overview" class="md-nav__link">
+    Example-1: General Overview
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-2" class="md-nav__link">
-    Example-2:
+  <a href="#example-2-tfsession" class="md-nav__link">
+    Example-2: tf.Session()
   </a>
   
 </li>
@@ -1236,15 +1236,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1" class="md-nav__link">
-    Example-1:
+  <a href="#example-1-general-overview" class="md-nav__link">
+    Example-1: General Overview
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-2" class="md-nav__link">
-    Example-2:
+  <a href="#example-2-tfsession" class="md-nav__link">
+    Example-2: tf.Session()
   </a>
   
 </li>
@@ -1287,7 +1287,7 @@ hide:
 <!-- ######################################################################################################### -->
 
 <h2 id="exploring-the-tensorflow-library">Exploring the Tensorflow Library</h2>
-<h3 id="example-1">Example-1:</h3>
+<h3 id="example-1-general-overview">Example-1: General Overview</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1327,13 +1327,13 @@ hide:
 quantities but did not evaluate its value. To evaluate it, we had to run 
 <code>tf.global_variables_initializer()</code> to intialize the values and then inside <code>sess.run(init)</code>
 we calculated the updated value and prited it in the last line above.</p>
-<h3 id="example-2">Example-2:</h3>
+<h3 id="example-2-tfsession">Example-2: <code>tf.Session()</code></h3>
 <p>Now, let's take a look at</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </code></pre></div>
@@ -1359,6 +1359,7 @@ multiply the two numbers we have to create a sessiona nd run it.</p>
 <li>Create a session.</li>
 <li>Run the operations inside the session.</li>
 </ol>
+<p><span style="color:yellow">### Example-3: <code>tf.placeholder()</code></span></p>
                 
               
               
