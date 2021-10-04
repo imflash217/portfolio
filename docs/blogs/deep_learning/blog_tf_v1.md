@@ -86,6 +86,27 @@ print(sess.run(c))
 3. Run the operations inside the session.
 
 
-<span style="color:yellow">### Example-3: `tf.placeholder()`</span>
+### Example-3: `tf.placeholder()`
 
+Next, we will see how to use a placeholder.
+
+A **placeholder** is an object whose value we can specify ONLY later.
+
+To specify values for a placeholder, we can pass in values by using a 
+"feed dictionary" (`feed_dict` variable).
+
+```python
+## Below we create a placeholder for x.
+## This allows us to pass in a number later when we run the SESSION
+
+sess = tf.Session()
+
+x = tf.placeholder(tf.int64, name="x")      ## the placeholder variable
+print(sess.run(2*x, feed_dict={x:9}))
+
+sess.close()
+```
+```
+18
+```
 
