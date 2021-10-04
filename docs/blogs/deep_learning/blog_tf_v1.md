@@ -20,6 +20,8 @@ In this session you will learn to do the following in `TensorFlow v1.0`
 
 ## Exploring the Tensorflow Library
 
+### Example-1:
+
 ```python
 import tensorflow as tf
 
@@ -36,4 +38,31 @@ with tf.Session() as sess:                      ## Creates a session to execute 
     print(loss)                                 ## prints the value stored in "loss" variable
 ```
 
+Writing and running programs in `Tensorflow` has the following steps:
+
+1. **Create tensors** (variables) that are not yet evaluated/executed.
+2. **Write operations** between those tensors.
+3. **Initialize** the tensors.
+4. **Create a Session**.
+5. **Run the session**. This will run the operations written in step-2.
+
+So, when we created a variable for `loss`, we simply defined the loss as a function of other
+quantities but did not evaluate its value. To evaluate it, we had to run 
+`tf.global_variables_initializer()` to intialize the values and then inside `sess.run(init)`
+we calculated the updated value and prited it in the last line above.
+
+### Example-2:
+
+Now, let's take a look at
+
+```python
+a = tf.constant(2)
+b = tf.constant(3)
+c = tf.multiply(a, b)
+print(c)
+```
+
+```
+Tensor("Mul:0", shape=(), dtype=int32)
+```
 
