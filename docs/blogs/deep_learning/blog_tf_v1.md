@@ -66,3 +66,23 @@ print(c)
 Tensor("Mul:0", shape=(), dtype=int32)
 ```
 
+As expected we will not see `20`. We got a tensor saying that the result of the tensor
+does not have the `shape` attribute and is of the type `int32`. All we did was to put in
+the **computation graph**; but we haven't run this computation yet! In order to actually 
+multiply the two numbers we have to create a sessiona nd run it.
+
+```python
+sess = tf.Session()
+print(sess.run(c))
+```
+```
+20
+```
+
+**Awesome!!**. To summarize, remember the following:
+
+1. Initialize your variables.
+2. Create a session.
+3. Run the operations inside the session.
+
+
