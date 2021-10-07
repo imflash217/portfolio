@@ -1092,6 +1092,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#12-unpacking-elements-from-iterables-of-arbitrary-length" class="md-nav__link">
+    1.2: Unpacking elements from iterables of arbitrary length
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1307,6 +1314,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#12-unpacking-elements-from-iterables-of-arbitrary-length" class="md-nav__link">
+    1.2: Unpacking elements from iterables of arbitrary length
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1327,7 +1341,7 @@ hide:
 --- -->
 
 <h1 id="data-structures-algorithms">Data Structures &amp; Algorithms</h1>
-<p><code>Author: Vinay Kumar (@imflash217) | Date: 03/October/2021</code></p>
+<p><code>Author: Vinay Kumar (@imflash217) | Date: 07/October/2021</code></p>
 <!-- ######################################################################################################### -->
 
 <h2 id="11-unpacking-a-sequence-into-separate-variables">1.1: Unpacking a sequence into separate variables</h2>
@@ -1335,7 +1349,7 @@ hide:
 </details>
 <details class="done" open="open"><summary>Solution</summary><ol>
 <li>Any <strong>sequence</strong> or <strong>iterable</strong> can be unpacked into variables using a simple assignment operation.</li>
-<li>The only requirement is that the <strong>the numbe rof variables and structure of the sequence must match</strong>.</li>
+<li>The only requirement is that the <strong>the number of variables and structure of the sequence must match</strong>.</li>
 </ol>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1380,18 +1394,14 @@ hide:
 </code></pre></div>
 </td></tr></table></p>
 </details>
-<details class="quote" open="open"><summary>Discussion</summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>for i = 1, 2, 3, ..., n{
-    insert A[i] into sorted array A[0:i-1]
-    by &quot;pairwise swaps&quot; down to the correct position
-}
-</code></pre></div>
-</td></tr></table>
-<img alt="insertion sort" src="../../../assets/blogs/algorithms/blog_01312021_insertion_sort/1.jpg" /></p>
-<p>This above version has <strong><span class="arithmatex">\(\theta(n)\)</span></strong> steps and each step has <strong><span class="arithmatex">\(\theta(n)\)</span></strong> comparisons. SO this version of the algorithm is <strong><span class="arithmatex">\(\theta(n^2)\)</span></strong> runtime complexity.</p>
+<details class="quote" open="open"><summary>Discussion</summary><p>Unpacking actually works with any object that happens to be <strong>iterable</strong> (tuples, lists, dicts, str, files, iteratirs, generators...)</p>
 </details>
+<!-- ######################################################################################################### -->
+
+<h2 id="12-unpacking-elements-from-iterables-of-arbitrary-length"><code>1.2:</code> Unpacking elements from iterables of arbitrary length</h2>
+<details class="danger" open="open"><summary>Problem</summary><p>You need to unpack <code>N</code> elements from an <strong>iterable</strong>; but the iterable may be longer than <code>N</code> elements (causing a <code>too many values to unpack</code> exception)</p>
+</details>
+<details class="done" open="open"><summary>Solution</summary></details>
                 
               
               
