@@ -1331,7 +1331,56 @@ hide:
 <!-- ######################################################################################################### -->
 
 <h2 id="11-unpacking-a-sequence-into-separate-variables">1.1: Unpacking a sequence into separate variables</h2>
-<details class="danger" open="open"><summary>Vanilla Insertion Sort</summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<details class="danger" open="open"><summary>Problem</summary><p>You have a <code>N-element</code> tuple or sequence that you would like to unpack into a collection of <code>N</code> variables.</p>
+</details>
+<details class="done" open="open"><summary>Solution</summary><ol>
+<li>Any <strong>sequence</strong> or <strong>iterable</strong> can be unpacked into variables using a simple assignment operation.</li>
+<li>The only requirement is that the <strong>the numbe rof variables and structure of the sequence must match</strong>.</li>
+</ol>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">##----------------------------------------------------------</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>   <span class="c1">## create a tuple</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span>    <span class="c1">## unpack the tuple into variables &#39;x&#39; &amp; &#39;y&#39;. </span>
+            <span class="c1">## x=4; y=5</span>
+<span class="c1">##----------------------------------------------------------</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ACME&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mf">91.1</span><span class="p">,</span> <span class="p">(</span><span class="mi">2021</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">07</span><span class="p">)]</span>
+<span class="n">name</span><span class="p">,</span> <span class="n">shares</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">date</span> <span class="o">=</span> <span class="n">data</span>    <span class="c1">## unpack the list</span>
+                                    <span class="c1">## name=&quot;ACME&quot;; shares=50</span>
+                                    <span class="c1">## price=91.1; date=(2021,10,07)</span>
+
+<span class="c1">## another way to unpack the nested iterable or container</span>
+<span class="c1">## name=&quot;ACME&quot;; shares=50; price=91.1; </span>
+<span class="c1">## year = 2021; month=10; day=07</span>
+<span class="n">name</span><span class="p">,</span> <span class="n">shares</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span> <span class="o">=</span> <span class="n">data</span>
+</code></pre></div>
+</td></tr></table>
+<p>If there is a mismatch in the number of elements; you will get an ERROR.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">p</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+    File <span class="s2">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, <span class="k">in</span> &lt;module&gt;
+    ValueError: need more than <span class="m">2</span> values to unpack
+</code></pre></div>
+</td></tr></table></p>
+</details>
+<details class="quote" open="open"><summary>Discussion</summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>for i = 1, 2, 3, ..., n{
