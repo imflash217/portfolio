@@ -1445,7 +1445,8 @@ hide:
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Performs a simple text match on a sequence of lines</span>
 <span class="sd">and yields the matching line &amp; previous N lines of context when found</span>
 <span class="sd">&quot;&quot;&quot;</span>
@@ -1459,6 +1460,7 @@ hide:
             <span class="k">yield</span> <span class="n">line</span><span class="p">,</span> <span class="n">previous_lines</span>
         <span class="n">previous_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
+<span class="c1">##-----------------------------------------------------------##</span>
 <span class="c1">## Example use ona file</span>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;somefile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
