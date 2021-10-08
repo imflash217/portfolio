@@ -23,5 +23,17 @@ hide:
     but changes cannot be made through it.
 
     ```python
+    from types import MappingProxyType
 
+    d = {1:"A"}
+    d_proxy = MappingProxyType(d)   ## creating a proxy for the original dict d
+                                    ## d_proxy = {1:"A"}
+    print(d_proxy[1])               ## "A"
+    d_proxy[2] = "X"                ## TypeERROR. mappingproxy does not support item assignment
+
+    d[2] = "B"                      ## OKAY. The original dictionary is still mutable
+
+    print(d_proxy)                  ## The proxy has a dynamic view of the original dict. 
+                                    ## So, it refelects the change
+                                    ## {1:"A", 2:"B"}
     ```
