@@ -1348,7 +1348,31 @@ given a mapping returns a <code>mappingproxy</code> instance that is <strong>rea
 of the original mapping. </p>
 <p>This means that the original mapping can be seen through <code>mappingproxy</code>
 but changes cannot be made through it.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">MappingProxyType</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s2">&quot;A&quot;</span><span class="p">}</span>
+<span class="n">d_proxy</span> <span class="o">=</span> <span class="n">MappingProxyType</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>   <span class="c1">## creating a proxy for the original dict d</span>
+                                <span class="c1">## d_proxy = {1:&quot;A&quot;}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d_proxy</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>               <span class="c1">## &quot;A&quot;</span>
+<span class="n">d_proxy</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;X&quot;</span>                <span class="c1">## TypeERROR. mappingproxy does not support item assignment</span>
+
+<span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>                      <span class="c1">## OKAY. The original dictionary is still mutable</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">d_proxy</span><span class="p">)</span>                  <span class="c1">## The proxy has a dynamic view of the original dict. </span>
+                                <span class="c1">## So, it refelects the change</span>
+                                <span class="c1">## {1:&quot;A&quot;, 2:&quot;B&quot;}</span>
 </code></pre></div>
 </td></tr></table>
 </details>
