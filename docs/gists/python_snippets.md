@@ -11,7 +11,7 @@ hide:
 
 ## `1: MappingProxyType`
 
-???+ quote "Immutabel Mappings"
+???+ quote "Immutable Mappings"
     The mapping types provided by the standard library are all mutable; 
     but you may need to gurantee that a user cannot change a mapping by mistake.
 
