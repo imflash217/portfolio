@@ -105,6 +105,7 @@ nav:
       - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
   - Gists:
     - About: gists/about.md
+    - Python_Snippets: gists/python_snippets.md
     - PyTorch Lightning:
       - api:
         - configure_optimizers(): gists/lightning/api/configure_optimizers.md
