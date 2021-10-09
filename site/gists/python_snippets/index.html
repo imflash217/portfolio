@@ -915,6 +915,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-set-vs-frozenset" class="md-nav__link">
+    3: set v/s frozenset
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1331,6 +1338,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-set-vs-frozenset" class="md-nav__link">
+    3: set v/s frozenset
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1414,6 +1428,27 @@ but changes cannot be made through it.</p>
 <span class="sb">`s &gt;= z`</span>        <span class="sb">`s.__ge__(z)`</span>               <span class="sb">`s`</span> is a <span class="gs">**superset**</span> of <span class="sb">`z`</span> set
                 <span class="sb">`s.issuperset(it)`</span>          <span class="sb">`s`</span> is a <span class="gs">**superset**</span> of the set built from iterable <span class="sb">`it`</span>
 <span class="sb">`s &gt; z`</span>         <span class="sb">`s.__gt__(z)`</span>               <span class="sb">`s`</span> is a <span class="gs">**PROPER-superset**</span> of the set <span class="sb">`z`</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="3-set-vs-frozenset"><code>3: set v/s frozenset</code></h2>
+<details class="quote" open="open"><summary>Set v/s Frozenset</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="gs">**operator:     set:    frozenset:      description:**</span>
+<span class="sb">`s.add(e)`</span>      ✅                      Add element <span class="sb">`e`</span> to set <span class="sb">`s`</span>
+<span class="sb">`s.clear()`</span>     ✅                      Remove all elements from set <span class="sb">`s`</span>
+<span class="sb">`s.copy()`</span>      ✅      ✅              Shallow copy of set/frozenset <span class="sb">`s`</span>
+<span class="sb">`s.discard(e)`</span>  ✅                      Remove element <span class="sb">`e`</span> from set <span class="sb">`s`</span> IF it is present
+<span class="sb">`s.__iter__()`</span>  ✅      ✅              Get iterator over set/frozenset <span class="sb">`s`</span>
+<span class="sb">`s.__len__()`</span>   ✅      ✅              <span class="sb">`len(s)`</span>
+<span class="sb">`s.pop()`</span>       ✅                      Remove and return an element from <span class="sb">`s`</span>; raising <span class="sb">`keyError`</span> if <span class="sb">`s`</span> is empty
+<span class="sb">`s.remove(e)`</span>   ✅                      Remive element <span class="sb">`e`</span> from set <span class="sb">`s`</span>; raise <span class="sb">`KeyError`</span> if <span class="sb">`e not in s`</span>
 </code></pre></div>
 </td></tr></table>
 </details>
