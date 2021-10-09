@@ -37,3 +37,16 @@ hide:
                                     ## So, it refelects the change
                                     ## {1:"A", 2:"B"}
     ```
+
+<!-- ######################################################################################################### -->
+
+## `2: Set operators`
+
+???+ quote "Set Operators"
+    ```markdown
+    **operator:     method:                     desciption:**
+                    `s.isdisjoint(z)`           `s` and `z` are disjoint (i.e. have no elements in common)
+    `e in s`        `s.__contains__(e)`         element `e` is a subset of `s`
+    `s <= z`        `s.__le__(z)`               `s` is a **subset** of `z`
+        
+    ```
