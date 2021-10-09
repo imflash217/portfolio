@@ -46,7 +46,11 @@ hide:
     ```markdown
     **operator:     method:                     desciption:**
                     `s.isdisjoint(z)`           `s` and `z` are disjoint (i.e. have no elements in common)
-    `e in s`        `s.__contains__(e)`         element `e` is a subset of `s`
-    `s <= z`        `s.__le__(z)`               `s` is a **subset** of `z`
-        
+    `e in s`        `s.__contains__(e)`         element `e` is a subset of `s` set
+    `s <= z`        `s.__le__(z)`               `s` is a **subset** of `z` set
+                    `s.issubset(it)`            `s` is a **subset** of the set built from the iterable `it`
+    `s < z`         `s.__lt__(z)`               `s` is a **PROPER-subset** of `z` set
+    `s >= z`        `s.__ge__(z)`               `s` is a **superset** of `z` set
+                    `s.issuperset(it)`          `s` is a **superset** of the set built from iterable `it`
+    `s > z`         `s.__gt__(z)`               `s` is a **PROPER-superset** of the set `z`
     ```
