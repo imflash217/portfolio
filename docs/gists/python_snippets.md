@@ -56,3 +56,18 @@ hide:
                     `s.issuperset(it)`          `s` is a **superset** of the set built from iterable `it`
     `s > z`         `s.__gt__(z)`               `s` is a **PROPER-superset** of the set `z`
     ```
+
+## `3: set v/s frozenset`
+
+???+ quote "Set v/s Frozenset"
+    ```markdown
+    **operator:     set:    frozenset:      description:**
+    `s.add(e)`      ✅                      Add element `e` to set `s`
+    `s.clear()`     ✅                      Remove all elements from set `s`
+    `s.copy()`      ✅      ✅              Shallow copy of set/frozenset `s`
+    `s.discard(e)`  ✅                      Remove element `e` from set `s` IF it is present
+    `s.__iter__()`  ✅      ✅              Get iterator over set/frozenset `s`
+    `s.__len__()`   ✅      ✅              `len(s)`
+    `s.pop()`       ✅                      Remove and return an element from `s`; raising `keyError` if `s` is empty
+    `s.remove(e)`   ✅                      Remive element `e` from set `s`; raise `KeyError` if `e not in s`
+    ```
