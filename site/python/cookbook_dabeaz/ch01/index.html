@@ -1517,12 +1517,18 @@ hide:
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">heapq</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">heapq</span>
 
 <span class="k">class</span> <span class="nc">PriorityQueue</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_queue</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_idx</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_queue</span>
 
     <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">priority</span><span class="p">):</span>
         <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_queue</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="n">priority</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_idx</span><span class="p">,</span> <span class="n">item</span><span class="p">))</span>
@@ -1559,21 +1565,21 @@ hide:
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Item(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">)&quot;</span>
 
 <span class="c1">##-----------------------------------------------------------##</span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">q</span> <span class="o">=</span> <span class="n">PriorityQueue</span><span class="p">()</span>
-    <span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">Item</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">),</span> <span class="n">priority</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>     <span class="c1">## push an Item(&quot;foo&quot;) with priority=1</span>
-    <span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">Item</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">),</span> <span class="n">priority</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>     <span class="c1">## push an Item(&quot;bar&quot;) with priority=5</span>
-    <span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">Item</span><span class="p">(</span><span class="s2">&quot;spam&quot;</span><span class="p">),</span> <span class="n">priority</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>    <span class="c1">## push an Item(&quot;spam&quot;) with priority=4</span>
-    <span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">Item</span><span class="p">(</span><span class="s2">&quot;grok&quot;</span><span class="p">),</span> <span class="n">priority</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>    <span class="c1">## push an Item(&quot;grok&quot;) with priority=1</span>
 
-    <span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>         <span class="c1">## Item(&quot;bar&quot;)</span>
-    <span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>         <span class="c1">## Item(&quot;spam&quot;)</span>
-    <span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>         <span class="c1">## Item(&quot;foo&quot;)</span>
-    <span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>         <span class="c1">## Item(&quot;grok&quot;)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">PriorityQueue</span><span class="p">()</span>                 <span class="c1">## Create a priority-queue object</span>
+<span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">Item</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">),</span> <span class="n">priority</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>     <span class="c1">## push an Item(&quot;foo&quot;) with priority=1</span>
+<span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">Item</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">),</span> <span class="n">priority</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>     <span class="c1">## push an Item(&quot;bar&quot;) with priority=5</span>
+<span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">Item</span><span class="p">(</span><span class="s2">&quot;spam&quot;</span><span class="p">),</span> <span class="n">priority</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>    <span class="c1">## push an Item(&quot;spam&quot;) with priority=4</span>
+<span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">Item</span><span class="p">(</span><span class="s2">&quot;grok&quot;</span><span class="p">),</span> <span class="n">priority</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>    <span class="c1">## push an Item(&quot;grok&quot;) with priority=1</span>
+
+<span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>         <span class="c1">## Item(&quot;bar&quot;)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>         <span class="c1">## Item(&quot;spam&quot;)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>         <span class="c1">## Item(&quot;foo&quot;)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>         <span class="c1">## Item(&quot;grok&quot;)</span>
 </code></pre></div>
 </td></tr></table>
 <p>In the above example note that the items with same priority (<code>Item("foo")</code> and <code>Item("grok")</code>)
-preserve the <strong>insertion order</strong> during <code>pop</code>.</p>
+are returned in the same order as they were inserted into the queue.</p>
 </details>
                 
               
