@@ -1428,9 +1428,9 @@ hide:
 </td></tr></table>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="go">Traceback (most recent call last):</span>
-<span class="go">    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span>
-<span class="go">    ValueError: need more than 2 values to unpack</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+    File <span class="s2">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, <span class="k">in</span> &lt;module&gt;
+    ValueError: need more than <span class="m">2</span> values to unpack
 </code></pre></div>
 </td></tr></table></p>
 </details>
@@ -1629,6 +1629,13 @@ with the smae priority level. To elaborate on this, the instances of <code>Item<
 TypeError: unorderable types: Item<span class="o">()</span> &lt; Item<span class="o">()</span>
 </code></pre></div>
 </td></tr></table></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Item</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Item</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span>                   <span class="c1">## Returns &quot;True&quot;</span>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
               
