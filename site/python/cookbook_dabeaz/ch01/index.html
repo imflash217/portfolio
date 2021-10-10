@@ -1601,6 +1601,21 @@ hide:
 <p>In the above example note that the items with same priority (<code>Item("foo")</code> and <code>Item("grok")</code>)
 are returned in the same order as they were inserted into the queue.</p>
 </details>
+<details class="quote" open="open"><summary>Discussion</summary><p>The core of this recipe concerns with the use of <code>heapq</code> module.
+The methods <code>heapq.heappush()</code> and <code>heapq.heappop()</code> insert and remove items
+from <code>self._queue</code> in such a way that the first tem in the list has the <strong>smallest priority</strong>.</p>
+<p>The <code>heappop()</code> method always returns the <strong>smallest</strong> item; so that is the key idea to make 
+our <code>PriorityQueue</code> pop correct items.</p>
+<p>In this recipe the queue consists of tuple <code>(-priority, idx, item)</code>. 
+The <code>priority</code> value is negated to get the queue to sort items from 
+<strong>highest priority</strong> to <strong>lowest priority</strong>. 
+This is opposite from normal heap ordering; which sorts items from smallest to highest value.</p>
+<p>The role of the <code>idx</code> value is to properly order items with the same priority level.
+By keeping a constantly increasing index, the items will be sorted according to the 
+order in which they were inserted. 
+However, the <code>idx</code> also serves an important role in making the comparision work for items
+with the smae priority level. To elaborate on this, the instances of <code>Item</code> can't be ordered.</p>
+</details>
                 
               
               
