@@ -1529,7 +1529,8 @@ hide:
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">heapq</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">heapq</span>
 
 <span class="k">class</span> <span class="nc">PriorityQueue</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1553,7 +1554,8 @@ hide:
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns item with HIGHEST priority in the priority queue</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_queue</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_queue</span><span class="p">)</span>     <span class="c1">## a tuple of type (-priority, idx, item)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                       <span class="c1">## &quot;item&quot; from above line</span>
 </code></pre></div>
 </td></tr></table>
 <p>Here is an example of how we might use the above <code>PriorityQueue</code> class</p>
