@@ -116,7 +116,7 @@ nav:
         - training_step(): gists/lightning/api/training_step.md
   - Python Gems:
     - PyCookbook @dabeaz:
-      - Algorithms: python/cookbook_dabeaz/ch01.md
+      - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
   - Notes:
     - About: notes/about.md
     - ECE 542:
