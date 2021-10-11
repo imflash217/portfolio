@@ -1749,7 +1749,9 @@ you can simply focus on adding items.</p>
 keys accessed later on (<strong>even if they aren't found in the dictionary</strong>) i.e. instead of throwing <code>KeyError</code>
 for keys that are not found, it adds that key to the dictinary and maps its value to the empty constructor
 (<code>list</code> or <code>set</code> etc. as above).</p>
-<p>If you want to avoid this behavior, its better to use usual <code>dict()</code> with <code>setdefault()</code> method as shown below.
+<p>If you want to avoid this behavior, its better to use usual <code>dict()</code> with <code>setdefault()</code>.
+This process is a bit messy and hard-to-read as shown below; 
+but provides user-control to handle edge cases.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1758,7 +1760,36 @@ for keys that are not found, it adds that key to the dictinary and maps its valu
 <span class="n">d</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>     <span class="c1">## d = {&quot;a&quot;: [1,2]}</span>
 <span class="n">d</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>     <span class="c1">## d = {&quot;a&quot;: [1,2], &quot;b&quot;: [5]}</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
+</details>
+<details class="quote" open="open"><summary>Discussion</summary><p>In principle, constructing a multivariate dictionary is simple.
+However, initialization of the first value can be messy if you try to do it yourself.
+Below two code-snippets show this tradeoff.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="c1">##--------------- v/s -----------------##</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+    <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
               
