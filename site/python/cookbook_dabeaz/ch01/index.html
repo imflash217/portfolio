@@ -1125,6 +1125,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#16-collectionsdefaultdict" class="md-nav__link">
+    1.6: collections.defaultdict
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1357,6 +1364,13 @@
         <li class="md-nav__item">
   <a href="#15-priority-queue" class="md-nav__link">
     1.5: Priority Queue
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-collectionsdefaultdict" class="md-nav__link">
+    1.6: collections.defaultdict
   </a>
   
 </li>
@@ -1671,6 +1685,66 @@ The <code>idx</code> is always increasing and unique; so there is no chance of c
                         <span class="c1">## because idx: 7 &lt; 8 </span>
 </code></pre></div>
 </td></tr></table>
+</details>
+<!-- ######################################################################################################### -->
+
+<h2 id="16-collectionsdefaultdict"><code>1.6: collections.defaultdict</code></h2>
+<details class="danger" open="open"><summary>Mapping Keys to multiple values in Dictionary</summary><p>You want to make a dictionary that maps keys to more than one value
+(so called <code>multdict</code>)</p>
+</details>
+<details class="done" open="open"><summary>Solution</summary><p>A dictionary is a <code>mapping</code> where each <code>key</code> is mapped to a single value.
+If you want to map keys to <strong>multiple values</strong>; you need to store multiple values
+in another container (like <code>list</code> or <code>set</code> or other <code>container types</code>)</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+     <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
+    <span class="p">}</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span>
+     <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">},</span>
+    <span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+1. Use a <code>list</code> if you want to <strong>preserve the insertion-order</strong> of items.
+2. Use a <code>set</code> if you want to <strong>eliminate duplicates</strong>.</p>
+<p>To easily construct such dictionaries, you can use <strong><code>collections.defaultdict</code></strong>.
+A feature of <code>defaultdict</code> is that it automatically initializes the first value so 
+you can simply focus on adding items.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>               <span class="c1">## use &quot;list&quot; as a constructor to initialize values map for new keys</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                    <span class="c1">## d = {&quot;a&quot;:[1]}</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                    <span class="c1">## d = {&quot;a&quot;:[1,2]}</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>                    <span class="c1">## d = {&quot;a&quot;:[1,2], &quot;b&quot;:[5]}</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>                    <span class="c1">## d = {&quot;a&quot;:[1,2], &quot;b&quot;:[5,5]}       duplication of 5 is allowed in list</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>                <span class="c1">## use &quot;set&quot; as a constructor to initialize values map for new keys</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                       <span class="c1">## d = {&quot;a&quot;: (1)}</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                       <span class="c1">## d = {&quot;a&quot;: (1,2)}</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>                       <span class="c1">## d = {&quot;a&quot;: (1,2), &quot;b&quot;: (5)}</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>                       <span class="c1">## d = {&quot;a&quot;: (1,2), &quot;b&quot;: (5)}       duplicates NOT allowed in &quot;set&quot;</span>
+</code></pre></div>
+</td></tr></table></p>
 </details>
                 
               
