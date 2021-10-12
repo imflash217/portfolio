@@ -103,6 +103,7 @@ nav:
       - Arrays: blogs/algorithms/blog_03152021_arrays.md
     - Deep Learning:
       - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
+      - PyTorch Dataloaders: blogs/deep_learning/blog_dataloaders.md
   - Gists:
     - About: gists/about.md
     - Python_Snippets: gists/python_snippets.md
