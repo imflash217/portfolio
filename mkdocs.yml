@@ -7,7 +7,7 @@ theme:
   logo: assets/logo.png
   favicon: assets/logo.png
   palette:
-    scheme: slate
+    # scheme: slate
     primary: amber
   font:
     text: lexend
