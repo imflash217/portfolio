@@ -1401,7 +1401,7 @@ Then, the reversed linked list format of this problem would appear as:
 
     <span class="n">_sum</span> <span class="o">=</span> <span class="n">val_1</span> <span class="o">+</span> <span class="n">val_2</span> <span class="o">+</span> <span class="n">carry</span>                    <span class="c1">## add the two values</span>
     <span class="n">digit</span> <span class="o">=</span> <span class="n">_sum</span> <span class="o">%</span> <span class="mi">10</span>                               <span class="c1">## accounting for carry (next line)</span>
-    <span class="n">carry</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">_sum</span><span class="o">&gt;=</span><span class="mi">10</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="n">carry</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">_sum</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="k">else</span> <span class="mi">0</span>
 
     <span class="n">result</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span>                            <span class="c1">## create a new &quot;Node&quot; with new digit</span>
 
