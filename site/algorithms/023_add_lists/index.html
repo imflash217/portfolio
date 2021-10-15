@@ -1405,8 +1405,8 @@ Then, the reversed linked list format of this problem would appear as:
 
     <span class="n">result</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span>                            <span class="c1">## create a new &quot;Node&quot; with new digit</span>
 
-    <span class="n">next_1</span> <span class="o">=</span> <span class="n">head_1</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">head_1</span><span class="o">.</span><span class="n">next</span> <span class="k">else</span> <span class="kc">None</span>
-    <span class="n">next_2</span> <span class="o">=</span> <span class="n">head_2</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">head_2</span><span class="o">.</span><span class="n">next</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="n">next_1</span> <span class="o">=</span> <span class="n">head_1</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">head_1</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="n">next_2</span> <span class="o">=</span> <span class="n">head_2</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">head_2</span> <span class="k">else</span> <span class="kc">None</span>
 
     <span class="n">result</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">add_lists</span><span class="p">(</span><span class="n">next_1</span><span class="p">,</span> <span class="n">next_2</span><span class="p">,</span> <span class="n">carry</span><span class="p">)</span>  <span class="c1">## recursive call</span>
     <span class="k">return</span> <span class="n">result</span>
