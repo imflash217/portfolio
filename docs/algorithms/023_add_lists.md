@@ -4,8 +4,6 @@ hide:
   - toc        # Hide table of contents
 --- -->
 
-`Author: Vinay Kumar (@imflash217) | Update: 07/October/2021`
-
 <!-- ######################################################################################################### -->
 
 ???+ danger "Add lists"
