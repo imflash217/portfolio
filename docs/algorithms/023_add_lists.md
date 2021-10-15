@@ -56,7 +56,7 @@ hide:
 
         _sum = val_1 + val_2 + carry                    ## add the two values
         digit = _sum % 10                               ## accounting for carry (next line)
-        carry = 1 if _sum>=10 else 0
+        carry = 1 if _sum >= 10 else 0
 
         result = Node(digit)                            ## create a new "Node" with new digit
         
