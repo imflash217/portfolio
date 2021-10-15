@@ -63,11 +63,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#23-add-lists" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -1121,36 +1116,9 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          023_add_lists
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         023_add_lists
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#23-add-lists" class="md-nav__link">
-    23: Add lists
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1333,35 +1301,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#23-add-lists" class="md-nav__link">
-    23: Add lists
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -1379,7 +1318,6 @@ hide:
 <p><code>Author: Vinay Kumar (@imflash217) | Update: 07/October/2021</code></p>
 <!-- ######################################################################################################### -->
 
-<h2 id="23-add-lists"><code>23: Add lists</code></h2>
 <details class="danger" open="open"><summary>Add lists</summary><p>Write in a function that takes head of two <strong>linked lists</strong>, 
 each representing a number. The nodes of the linked-lists contain digits as value.
 The nodes in the input lists are <strong>reversed</strong> 
@@ -1412,6 +1350,66 @@ Then, the reversed linked list format of this problem would appear as:
  +  4 -&gt; 5 -&gt; 3
  --------------
     5 -&gt; 7 -&gt; 9
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="done" open="open"><summary>Solution</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">add_lists</span><span class="p">(</span><span class="n">head_1</span><span class="p">,</span> <span class="n">head_2</span><span class="p">,</span> <span class="n">carry</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Recursive solution&quot;&quot;&quot;</span>
+    <span class="c1">## base case:</span>
+    <span class="k">if</span> <span class="n">head_1</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">head_2</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">carry</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1">## grab the values of each node </span>
+    <span class="c1">## or use a dummy value 0 if the node is None</span>
+
+    <span class="n">val_1</span> <span class="o">=</span> <span class="n">head_1</span><span class="o">.</span><span class="n">val</span> <span class="k">if</span> <span class="n">head_1</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="n">val_2</span> <span class="o">=</span> <span class="n">head_2</span><span class="o">.</span><span class="n">val</span> <span class="k">if</span> <span class="n">head_2</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="n">_sum</span> <span class="o">=</span> <span class="n">val_1</span> <span class="o">+</span> <span class="n">val_2</span> <span class="o">+</span> <span class="n">carry</span>                    <span class="c1">## add the two values</span>
+    <span class="n">digit</span> <span class="o">=</span> <span class="n">_sum</span> <span class="o">%</span> <span class="mi">10</span>                               <span class="c1">## accounting for carry (next line)</span>
+    <span class="n">carry</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">_sum</span><span class="o">&gt;=</span><span class="mi">10</span> <span class="k">else</span> <span class="mi">0</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">digit</span><span class="p">)</span>                            <span class="c1">## create a new &quot;Node&quot; with new digit</span>
+
+    <span class="n">next_1</span> <span class="o">=</span> <span class="n">head_1</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">head_1</span><span class="o">.</span><span class="n">next</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="n">next_2</span> <span class="o">=</span> <span class="n">head_2</span><span class="o">.</span><span class="n">next</span> <span class="k">if</span> <span class="n">head_2</span><span class="o">.</span><span class="n">next</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="n">result</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">add_lists</span><span class="p">(</span><span class="n">next_1</span><span class="p">,</span> <span class="n">next_2</span><span class="p">,</span> <span class="n">carry</span><span class="p">)</span>  <span class="c1">## recursive call</span>
+    <span class="k">return</span> <span class="n">result</span>
 </code></pre></div>
 </td></tr></table>
 </details>
