@@ -95,12 +95,6 @@ nav:
     - About: blogs/about.md
     - Physics:
       - Electromagnetic Spectrum, properties of material medium & its effects: blogs/physics/blog_01282021.md
-    - Algorithms:
-      - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
-      - Sorting: blogs/algorithms/blog_01312021_sorting.md
-      - Document Distance: blogs/algorithms/blog_02012021_document_distance.md
-      - Priority Queue: blogs/algorithms/blog_02012021_priority_queue.md
-      - Arrays: blogs/algorithms/blog_03152021_arrays.md
     - Deep Learning:
       - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
       - PyTorch Dataloaders: blogs/deep_learning/blog_dataloaders.md
@@ -118,6 +112,13 @@ nav:
   - Python Gems:
     - PyCookbook @dabeaz:
       - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
+  - Algorithms:
+    - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
+    - Sorting: blogs/algorithms/blog_01312021_sorting.md
+    - Document Distance: blogs/algorithms/blog_02012021_document_distance.md
+    - Priority Queue: blogs/algorithms/blog_02012021_priority_queue.md
+    - Arrays: blogs/algorithms/blog_03152021_arrays.md
+    - 023_add_lists: algorithms/023_add_lists.md
   - Notes:
     - About: notes/about.md
     - ECE 542:
