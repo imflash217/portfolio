@@ -30,16 +30,6 @@
     This above version has **$\theta(n)$** steps and each step has **$\theta(\log(n))$** comparisons due to Binary Search. SO this version of the algorithm is **$\theta(n\times \log(n))$** runtime complexity (in sorting **but not in swappings**). If we consider swapping operations too then even Binary Search will take $\theta(n)$ time to swap positions as it might have to move a lot of positions.
 
 
-
-
-
-???+ quote "Author Disclaimer"
-    `Author: Vinay Kumar (@imflash217)`
-
-    `Date: 31/January/2021`
-
-    The contents of this article were originally published at the references below. I have assembled it for my own understanding. Feel free to reuse and tag along the references. :+1:
-
 ## `References`
 [^1]: https://twitter.com/pottolama/status/1354745837524553728
 [^2]: https://github.com/mportesi/sorting_algo_visualizer
