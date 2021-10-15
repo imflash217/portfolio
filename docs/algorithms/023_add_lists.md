@@ -60,8 +60,8 @@ hide:
 
         result = Node(digit)                            ## create a new "Node" with new digit
         
-        next_1 = head_1.next if head_1.next else None
-        next_2 = head_2.next if head_2.next else None
+        next_1 = head_1.next if head_1 else None
+        next_2 = head_2.next if head_2 else None
 
         result.next = add_lists(next_1, next_2, carry)  ## recursive call
         return result
