@@ -13,8 +13,6 @@ hide:
 
 <iframe src="https://streamable.com/e/ihhxw0" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jRRKO6dMC_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ???+ quote "Contact Details"
     - [x] :material-gmail: vkumar24@ncsu.edu
     - [x] :material-linkedin: https://www.linkedin.com/in/imflash217
