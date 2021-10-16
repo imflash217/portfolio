@@ -29,9 +29,7 @@
     <iframe src="https://www.youtube.com/embed/Ny9-5KkDlJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<div>
-    <iframe src="vim.pdf" width="100%" height="500px"></iframe>
-</div>
+<iframe src="vim.pdf" width="100%" height="500px"></iframe>
 
 
 <figure markdown> 
@@ -156,7 +154,7 @@ lorem ipsum
 ----------
 
 <figure>
-  <img src="https://dummyimage.com/100x100/eee/aaa" width="100" />
+  <img src="https://dummyimage.com/200x200/eee/aaa" width="200" />
   <figcaption>Image caption</figcaption>
 </figure>
 
