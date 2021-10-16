@@ -24,6 +24,7 @@
   border: 0;
 }
 </style>
+
 <div class="video-wrapper">
     <iframe src="https://www.youtube.com/embed/Ny9-5KkDlJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
@@ -33,6 +34,10 @@
 </div>
 
 
+<figure markdown> 
+  ![Dummy image](https://dummyimage.com/600x400/){ width="300" }
+  <figcaption>Image caption</figcaption>
+</figure>
 
 
 
