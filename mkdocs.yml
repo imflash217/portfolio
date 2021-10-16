@@ -20,7 +20,6 @@ theme:
     - navigation.instant
     - search.suggest
     - search.highlight
-    
 
 ##########################################################################
 markdown_extensions:
@@ -117,7 +116,7 @@ nav:
         - test_step(): gists/lightning/api/test_step.md
         - training_step(): gists/lightning/api/training_step.md
   - 👑Python Gems:
-    - 🥘PyCookbook @dabeaz:
+    - 🥘Cookbook @dabeaz:
       - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
   - 📟Algorithms:
     - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
