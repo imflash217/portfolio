@@ -105,10 +105,10 @@ nav:
     - Deep Learning:
       - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
       - PyTorch Dataloaders: blogs/deep_learning/blog_dataloaders.md
-  - ✏️Gists:
+  - ✏️GGists:
     - About: gists/about.md
-    - Python_Snippets: gists/python_snippets.md
-    - PyTorch Lightning:
+    - 🐍Python_Snippets: gists/python_snippets.md
+    - ⚡️PyTorch Lightning:
       - api:
         - configure_optimizers(): gists/lightning/api/configure_optimizers.md
         - forward(): gists/lightning/api/forward.md
@@ -117,7 +117,7 @@ nav:
         - test_step(): gists/lightning/api/test_step.md
         - training_step(): gists/lightning/api/training_step.md
   - 👑Python Gems:
-    - PyCookbook @dabeaz:
+    - 🥘PyCookbook @dabeaz:
       - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
   - 📟Algorithms:
     - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
