@@ -81,8 +81,8 @@ copyright: Copyright &copy; 2021 | Vinay Kumar (@imflash217) 🌺॥ महा�
 site_name: Vinay Kumar
 ##########################################################################
 nav:
-  - About me: index.md
-  - Research Publications:
+  - 🙂About me: index.md
+  - 🔬Research Publications:
     - About: publications/about.md
     - Interspeech 2014: publications/interspeech_2014.md
     - Odyssey 2014: publications/odyssey_2014.md
@@ -96,7 +96,7 @@ nav:
     - Cognizant: work/cognizant.md
   - 🧤Projects:
     - About: projects/about.md
-  - Hobby Projects:
+  - 🚵🏼‍♂️Hobby Projects:
     - About: hobbies/about.md
   - 📖Blogs:
     - About: blogs/about.md
@@ -105,7 +105,7 @@ nav:
     - Deep Learning:
       - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
       - PyTorch Dataloaders: blogs/deep_learning/blog_dataloaders.md
-  - Gists:
+  - ✏️Gists:
     - About: gists/about.md
     - Python_Snippets: gists/python_snippets.md
     - PyTorch Lightning:
