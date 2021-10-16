@@ -5,7 +5,7 @@ hide:
 --- -->
 
 <!-- ######################################################################################################### -->
-## Problem
+## `Problem`
 
 ???+ danger "Depth First Values"
     Write a function, `depth_first_values`, that takes in the root of a binary tree. 
@@ -39,6 +39,7 @@ hide:
 
     ```
 
+## `Solution`
 ???+ done "Solution"
     ```python
     # class Node:
@@ -63,3 +64,6 @@ hide:
 
     ```
 
+## `Discussion`
+
+???+ quote "Discussion"
