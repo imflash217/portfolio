@@ -11,6 +11,8 @@ hide:
     <img src="assets/vinay.png" width="200" />
 </figure>
 
+<iframe src="https://streamable.com/e/ihhxw0" allowfullscreen></iframe>
+
 ???+ quote "Contact Details"
     - [x] :material-gmail: vkumar24@ncsu.edu
     - [x] :material-linkedin: https://www.linkedin.com/in/imflash217
