@@ -40,5 +40,26 @@ hide:
     ```
 
 ???+ done "Solution"
-    ...
+    ```python
+    # class Node:
+    #   def __init__(self, val):
+    #     self.val = val
+    #     self.left = None
+    #     self.right = None
+
+    def depth_first_values(root):
+      """recursive solution Depth First Traversal"""
+      
+      ## base case
+      if root is None:
+        return []
+      
+      left_values = depth_first_values(root.left)
+      right_values = depth_first_values(root.right)
+      
+      ## in DFS, the visiting order is
+      ## root, left-child, right-child
+      return [root.val, *left_values, *right_values]
+
+    ```
 
