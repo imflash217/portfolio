@@ -44,9 +44,9 @@ hide:
     #     self.right = None
 
     def tree_sum(root):
-      if not root: return 0             ## base-case of leaf nodes
-      left_sum = tree_sum(root.left)    ## sum of left subtree
-      right_sum = tree_sum(root.right)  ## sum of right subtree
+      if not root: return 0                     ## base-case of leaf nodes
+      left_sum = tree_sum(root.left)            ## sum of left subtree
+      right_sum = tree_sum(root.right)          ## sum of right subtree
       return root.val + left_sum + right_sum
     ```
 
