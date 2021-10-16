@@ -71,11 +71,11 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 ##########################################################################
-copyright: Copyright &copy; 2021 Vinay Kumar (@imflash217) 🌺॥ महाजनो येन गतः स पन्थाः ॥🌺
+copyright: Copyright &copy; 2021 | Vinay Kumar (@imflash217) 🌺॥ महाजनो येन गतः स पन्थाः ॥🌺
 site_name: Vinay Kumar
 ##########################################################################
 nav:
-  - About me: index.html
+  - About me: index.md
   - Research Publications:
     - About: publications/about.md
     - Interspeech 2014: publications/interspeech_2014.md
@@ -128,4 +128,5 @@ nav:
         - HW1a: notes/ECE542/ece542_hw1a.md
     - CS224N:
       - Lecture 1: notes/CS224N/cs224n_lecture1.md
+  - HTML: imflash217.html
 ##########################################################################
