@@ -5,6 +5,8 @@
 " width="800" />
 </figure>
 
+<iframe src="https://www.youtube.com/playlist?list=PLNXhddCGkEb1C0D_JRmwGvkzM6vAz8LDv" allowfullscreen></iframe>
+
 ???+ success ""
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
