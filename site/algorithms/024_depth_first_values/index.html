@@ -1443,30 +1443,30 @@ The function should return a list containing all values of the tree in <strong>d
 <span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>a = Node(&#39;a&#39;)
-b = Node(&#39;b&#39;)
-c = Node(&#39;c&#39;)
-d = Node(&#39;d&#39;)
-e = Node(&#39;e&#39;)
-f = Node(&#39;f&#39;)
-g = Node(&#39;g&#39;)
-a.left = b
-a.right = c
-b.left = d
-b.right = e
-c.right = f
-e.left = g
+<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">a</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">c</span>
+<span class="n">b</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">d</span>
+<span class="n">b</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">e</span>
+<span class="n">c</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">f</span>
+<span class="n">e</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">g</span>
 
-#      a
-#    /   \
-#   b     c
-#  / \     \
-# d   e     f
-#    /
-#   g
+<span class="c1">#      a</span>
+<span class="c1">#    /   \</span>
+<span class="c1">#   b     c</span>
+<span class="c1">#  / \     \</span>
+<span class="c1"># d   e     f</span>
+<span class="c1">#    /</span>
+<span class="c1">#   g</span>
 
-depth_first_values(a)
-#   -&gt; [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;g&#39;, &#39;c&#39;, &#39;f&#39;]
+<span class="n">depth_first_values</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1">#   -&gt; [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;g&#39;, &#39;c&#39;, &#39;f&#39;]</span>
 </code></pre></div>
 </td></tr></table>
 </details>
