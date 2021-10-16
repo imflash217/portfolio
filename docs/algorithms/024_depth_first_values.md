@@ -40,6 +40,7 @@ hide:
     ```
 
 ## `Solution`
+
 ???+ done "Solution"
     ```python
     # class Node:
@@ -67,3 +68,4 @@ hide:
 ## `Discussion`
 
 ???+ quote "Discussion"
+    ...
