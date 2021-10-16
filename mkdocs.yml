@@ -126,6 +126,7 @@ nav:
     - Priority Queue: blogs/algorithms/blog_02012021_priority_queue.md
     - Arrays: blogs/algorithms/blog_03152021_arrays.md
     - 023_add_lists: algorithms/023_add_lists.md
+    - 024_depth_first_values: algorithms/024_depth_first_values.md
   - Notes:
     - About: notes/about.md
     - ECE 542:
