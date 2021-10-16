@@ -5,10 +5,6 @@
 " width="800" />
 </figure>
 
-<iframe src="https://www.youtube.com/watch?v=jRRKO6dMC_I" allowfullscreen></iframe>
-
-<iframe src="https://www.youtube.com/embed/udFxKZRyQt4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ???+ success ""
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
