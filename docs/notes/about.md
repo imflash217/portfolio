@@ -25,7 +25,7 @@
 }
 </style>
 <div class="video-wrapper">
-  <iframe width="1280" height="720" src="https://www.youtube.com/watch?v=udFxKZRyQt4" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/Ny9-5KkDlJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
