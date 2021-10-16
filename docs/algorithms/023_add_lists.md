@@ -6,6 +6,8 @@ hide:
 
 <!-- ######################################################################################################### -->
 
+## `Problem`
+
 ???+ danger "Add lists"
     Write in a function that takes head of two **linked lists**, 
     each representing a number. The nodes of the linked-lists contain digits as value.
@@ -31,6 +33,8 @@ hide:
      --------------
         5 -> 7 -> 9
     ```
+
+## `Solution`
 
 ???+ done "Solution"
     ```python
@@ -63,5 +67,8 @@ hide:
 
         result.next = add_lists(next_1, next_2, carry)  ## recursive call
         return result
-
     ```
+
+## `Discussion`
+???+ quote "Discussion"
+    ...
