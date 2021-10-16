@@ -8,7 +8,8 @@ theme:
   favicon: assets/logo.png
   palette:
     # scheme: slate
-    primary: red
+    primary: amber
+    accent: indigo
   font:
     text: lexend
     code: Fira Code
