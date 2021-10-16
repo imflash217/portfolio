@@ -75,7 +75,7 @@ copyright: Copyright &copy; 2021 Vinay Kumar (@imflash217) 🌺॥ महाज�
 site_name: Vinay Kumar
 ##########################################################################
 nav:
-  - About me: index.md
+  - About me: index.html
   - Research Publications:
     - About: publications/about.md
     - Interspeech 2014: publications/interspeech_2014.md
