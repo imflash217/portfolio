@@ -8,7 +8,7 @@ theme:
   favicon: assets/logo.png
   palette:
     # scheme: slate
-    primary: amber
+    primary: white
     accent: indigo
   font:
     text: lexend
