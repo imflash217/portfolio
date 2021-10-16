@@ -86,7 +86,7 @@ nav:
     - About: publications/about.md
     - Interspeech 2014: publications/interspeech_2014.md
     - Odyssey 2014: publications/odyssey_2014.md
-  - Work Experience:
+  - 🧑🏽‍🚒Work Experience:
     - About: work/about.md
     - iVMCL Lab, NC State: work/ivmcl.md
     - ARoS Lab, NC State: work/aros.md
@@ -94,11 +94,11 @@ nav:
     - Meeami Technologies: work/meeami.md
     - Flash.AI: work/flashai.md
     - Cognizant: work/cognizant.md
-  - Projects:
+  - 🧤Projects:
     - About: projects/about.md
   - Hobby Projects:
     - About: hobbies/about.md
-  - Blogs:
+  - 📖Blogs:
     - About: blogs/about.md
     - Physics:
       - Electromagnetic Spectrum, properties of material medium & its effects: blogs/physics/blog_01282021.md
@@ -116,10 +116,10 @@ nav:
         - log(): gists/lightning/api/log.md
         - test_step(): gists/lightning/api/test_step.md
         - training_step(): gists/lightning/api/training_step.md
-  - Python Gems:
+  - 👑Python Gems:
     - PyCookbook @dabeaz:
       - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
-  - Algorithms:
+  - 📟Algorithms:
     - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
     - Sorting: blogs/algorithms/blog_01312021_sorting.md
     - Document Distance: blogs/algorithms/blog_02012021_document_distance.md
