@@ -28,6 +28,20 @@
     <iframe src="https://www.youtube.com/embed/Ny9-5KkDlJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+
+
+
+<div>
+    <object data="assets/vim.pdf" type="application/pdf" width="300" height="200">
+        alt : <a href="vim.pdf">vim.pdf</a>
+    </object>
+</div>
+
+
+
+
+
+
 ???+ success ""
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
