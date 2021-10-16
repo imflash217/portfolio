@@ -5,6 +5,37 @@
 " width="800" />
 </figure>
 
+<style>
+.video-wrapper {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+.video-wrapper > iframe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+</style>
+<div class="video-wrapper">
+  <iframe width="1280" height="720" src="https://www.youtube.com/watch?v=udFxKZRyQt4" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+
+
+
+
+
+
+
 ???+ success ""
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
