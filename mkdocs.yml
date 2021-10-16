@@ -128,6 +128,9 @@ nav:
     - 023_add_lists: algorithms/023_add_lists.md
     - 024_depth_first_values: algorithms/024_depth_first_values.md
     - 025_breadth_first_values: algorithms/025_breadth_first_values.md
+    - 026_tree_includes: algorithms/026_tree_includes.md
+    - 027_tree_sum: algorithms/027_tree_sum.md
+
   - 📚Notes:
     - About: notes/about.md
     - ECE 542:
