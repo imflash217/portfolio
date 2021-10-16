@@ -11,9 +11,8 @@ hide:
     <img src="assets/vinay.png" width="200" />
 </figure>
 
-<iframe src="https://streamable.com/e/ihhxw0" allowfullscreen></iframe>
 <div class="video-wrapper">
-  <iframe width="1280" height="720" src="https://www.youtube.com/embed/vZNyjuNLhIk" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://streamable.com/e/ihhxw0" allowfullscreen></iframe>
 </div>
 
 ???+ quote "Contact Details"
