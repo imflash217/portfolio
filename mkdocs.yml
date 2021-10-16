@@ -129,6 +129,7 @@ nav:
     - 025_breadth_first_values: algorithms/025_breadth_first_values.md
     - 026_tree_includes: algorithms/026_tree_includes.md
     - 027_tree_sum: algorithms/027_tree_sum.md
+    - 028_tree_min_value: algorithms/028_tree_min_value.md
 
   - 📚Notes:
     - About: notes/about.md
