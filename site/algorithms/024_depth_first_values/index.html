@@ -1470,7 +1470,45 @@ The function should return a list containing all values of the tree in <strong>d
 </code></pre></div>
 </td></tr></table>
 </details>
-<details class="done" open="open"><summary>Solution</summary><p>...</p>
+<details class="done" open="open"><summary>Solution</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># class Node:</span>
+<span class="c1">#   def __init__(self, val):</span>
+<span class="c1">#     self.val = val</span>
+<span class="c1">#     self.left = None</span>
+<span class="c1">#     self.right = None</span>
+
+<span class="k">def</span> <span class="nf">depth_first_values</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;recursive solution Depth First Traversal&quot;&quot;&quot;</span>
+
+  <span class="c1">## base case</span>
+  <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[]</span>
+
+  <span class="n">left_values</span> <span class="o">=</span> <span class="n">depth_first_values</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+  <span class="n">right_values</span> <span class="o">=</span> <span class="n">depth_first_values</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+
+  <span class="c1">## in DFS, the visiting order is</span>
+  <span class="c1">## root, left-child, right-child</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">,</span> <span class="o">*</span><span class="n">left_values</span><span class="p">,</span> <span class="o">*</span><span class="n">right_values</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
                   
