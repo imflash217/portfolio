@@ -82,8 +82,7 @@ site_name: Vinay Kumar
 ##########################################################################
 nav:
   - 🏡 Home: index.md
-  - 🧬 Research Papers:
-    - About: publications/about.md
+  - 🧬 Research Papers: publications/about.md
     - Interspeech 2014: publications/interspeech_2014.md
     - Odyssey 2014: publications/odyssey_2014.md
   - 👨🏻‍💻 Work Experience:
