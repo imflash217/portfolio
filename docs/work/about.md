@@ -123,10 +123,6 @@ svg {
 
 </style>
 
-
-
-<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500" rel="stylesheet">
-
 <div class="card">
    <div class="card-avatar">
    </div>
