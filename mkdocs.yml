@@ -81,12 +81,12 @@ copyright: Copyright &copy; 2021 | Vinay Kumar (@imflash217) 🌺॥ महा�
 site_name: Vinay Kumar
 ##########################################################################
 nav:
-  - 🙂About me: index.md
-  - 🔬Research Publications:
+  - 🏡 Home: index.md
+  - 🧬 Research Publications:
     - About: publications/about.md
     - Interspeech 2014: publications/interspeech_2014.md
     - Odyssey 2014: publications/odyssey_2014.md
-  - 🧑🏽‍🚒Work Experience:
+  - 👨🏻‍💻 Work Experience:
     - About: work/about.md
     - iVMCL Lab, NC State: work/ivmcl.md
     - ARoS Lab, NC State: work/aros.md
@@ -96,9 +96,9 @@ nav:
     - Cognizant: work/cognizant.md
   - 🧤Projects:
     - About: projects/about.md
-  - 🚵🏼‍♂️Hobby Projects:
+  - 🚵🏼‍♂️ Hobby Projects:
     - About: hobbies/about.md
-  - 📖Blogs:
+  - ✍🏼 Blogs:
     - About: blogs/about.md
     - Physics:
       - Electromagnetic Spectrum, properties of material medium & its effects: blogs/physics/blog_01282021.md
