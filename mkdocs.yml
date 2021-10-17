@@ -116,10 +116,10 @@ nav:
         - log(): gists/lightning/api/log.md
         - test_step(): gists/lightning/api/test_step.md
         - training_step(): gists/lightning/api/training_step.md
-  - 👑Python Gems:
-    - 🥘Cookbook @dabeaz:
+  - 👑 Python Gems:
+    - 🥘 Cookbook @dabeaz:
       - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
-  - 📟Algorithms:
+  - 📟 Algorithms:
     - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
     - Sorting: blogs/algorithms/blog_01312021_sorting.md
     - Document Distance: blogs/algorithms/blog_02012021_document_distance.md
@@ -132,7 +132,7 @@ nav:
     - 027_tree_sum: algorithms/027_tree_sum.md
     - 028_tree_min_value: algorithms/028_tree_min_value.md
 
-  - 📚Notes:
+  - 📚 Notes:
     - About: notes/about.md
     - ECE 542:
       - Lecture 1: notes/ECE542/ece542_lecture1.md
