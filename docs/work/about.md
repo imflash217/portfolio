@@ -34,20 +34,6 @@
    --card-size: 300px;
 }
 
-body {
-   height: 100vh;
-   margin: 0;
-   display: grid;
-   place-items: center;
-   padding: 1rem;
-   background: var(--background);
-   font-family: 'Source Code Pro', monospace;
-
-   text-rendering: optimizelegibility;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-}
-
 .card {
    width: calc(var(--card-size) * 1.586);
    height: var(--card-size);
