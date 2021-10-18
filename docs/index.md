@@ -23,6 +23,8 @@ hide:
 
 .container {
   padding: 2px 16px;
+  display: flex;
+  justify-content: center;
 }
 </style>
 
