@@ -32,8 +32,8 @@ hide:
 <div class="card">
   <img src="assets/vinay.png" alt="avatar" style="width:50%">
   <div class="container">
-    <h4><b>Vinay Kumar</b></h4> 
-    <p>Deep Learning Engineer</p> 
+    <h2><b>Vinay Kumar</b></h2> 
+    <h3>Deep Learning Engineer</h3> 
   </div>
 </div>
 
