@@ -31,13 +31,7 @@ hide:
   <div class="container">
     <h2><b>Vinay Kumar</b></h2> 
     <h3>Deep Learning Engineer</h3>
-    <p>email: vkumar24@ncsu.edu</p>
-    <p>My Motivation: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+    <p>email: <b>vkumar24@ncsu.edu</b></p>
   </div>
 </div>
 
