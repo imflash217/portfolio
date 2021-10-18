@@ -17,7 +17,7 @@
 - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
 
 
-<iframe src="https://www.icloud.com/keynote/0sYqFk6FtwezsZBHWRBII0E1w?embed=true" width="100%" overflow="hidden" frameborder="0" allowfullscreen referrer="no-referrer"></iframe>
+<iframe src="https://www.icloud.com/keynote/0sYqFk6FtwezsZBHWRBII0E1w?embed=true" width="100%" height=auto frameborder="0" allowfullscreen="1" referrer="no-referrer"></iframe>
 
 
 --8<-- "../lightning/flashModel.py"
