@@ -16,7 +16,6 @@ hide:
   display: flex;
   justify-content: center;
   margin: auto;
-  vertical-align: middle;
 }
 
 .card:hover {
