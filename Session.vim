@@ -28,11 +28,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 19 - ((18 * winheight(0) + 18) / 36)
+let s:l = 20 - ((19 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 19
+keepjumps 20
 normal! 0
 tabnext
 edit docs/algorithms/028_tree_min_value.md
@@ -73,7 +73,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 38
 normal! 0
-tabnext 1
+tabnext 3
 badd +7 mkdocs.yml
 badd +1 ~/.vim_runtime/my_configs.vim
 badd +152 docs/work/about.md
