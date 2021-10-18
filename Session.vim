@@ -14,27 +14,7 @@ argglobal
 $argadd mkdocs.yml
 tabnew
 tabnew
-tabnew
 tabrewind
-edit mkdocs.yml
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 141 - ((33 * winheight(0) + 18) / 37)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 141
-normal! 02|
-tabnext
 edit docs/work/about.md
 argglobal
 balt docs/algorithms/028_tree_min_value.md
@@ -48,7 +28,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 125 - ((7 * winheight(0) + 18) / 37)
+let s:l = 125 - ((7 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -87,18 +67,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 16 - ((15 * winheight(0) + 18) / 36)
+let s:l = 14 - ((13 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
+keepjumps 14
 normal! 0
-tabnext 4
-badd +1 mkdocs.yml
-badd +3 ~/.vim_runtime/my_configs.vim
+tabnext 3
+badd +7 mkdocs.yml
+badd +1 ~/.vim_runtime/my_configs.vim
 badd +152 docs/work/about.md
 badd +62 docs/algorithms/028_tree_min_value.md
 badd +0 docs/index.md
+badd +1 docs/
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -109,7 +90,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
