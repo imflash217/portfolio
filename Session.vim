@@ -14,6 +14,7 @@ argglobal
 $argadd mkdocs.yml
 tabnew
 tabnew
+tabnew
 tabrewind
 edit docs/work/about.md
 argglobal
@@ -28,12 +29,31 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 20 - ((19 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 20
-normal! 0
+keepjumps 1
+normal! 08|
+tabnext
+edit docs/notes/about.md
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 28 - ((16 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 28
+normal! 017|
 tabnext
 edit docs/algorithms/028_tree_min_value.md
 argglobal
@@ -79,7 +99,7 @@ badd +7 mkdocs.yml
 badd +0 docs/index.md
 badd +62 docs/algorithms/028_tree_min_value.md
 badd +1 ~/.vim_runtime/my_configs.vim
-badd +1 docs/
+badd +0 docs/notes/about.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
