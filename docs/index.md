@@ -15,7 +15,7 @@ hide:
   width: 40%;
   display: flex;
   justify-content: center;
-  margin: 0, auto;
+  margin: auto;
   background-color: yellow;
   vertical-align: middle;
 }
