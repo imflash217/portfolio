@@ -33,7 +33,10 @@ hide:
   <img src="assets/vinay.png" alt="avatar" style="width:50%">
   <div class="container">
     <h2><b>Vinay Kumar</b></h2> 
-    <h3>Deep Learning Engineer</h3> 
+    <h3>Deep Learning Engineer</h3>
+    <h2>email: vkumar24@ncsu.edu</h2>
+    <h2>Github: www.github.com/imflash217</h2>
+    <h2>LinkedIn: www.linkedin.com/in/imflash217</h2>
   </div>
 </div>
 
