@@ -28,7 +28,7 @@ hide:
 </style>
 
 <div class="card">
-  <img src="assets/vinay.png" alt="avatar" style="width:100%">
+  <img src="assets/vinay.png" alt="avatar" style="width:50%">
   <div class="container">
     <h4><b>Vinay Kumar</b></h4> 
     <p>Deep Learning Engineer</p> 
