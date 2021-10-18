@@ -32,8 +32,8 @@ hide:
     <h2><b>Vinay Kumar</b></h2> 
     <h3>Deep Learning Engineer</h3>
     <p>email: <b>vkumar24@ncsu.edu</b></p>
-    <p>BTech in EE <b>@IIT-Hyderabad</b></p>
-    <p>MS in EE <b>@NC State University</b></p>
+    <p>BTech in EE <b href="https://iith.ac.in/">@IIT-Hyderabad</b></p>
+    <p>MS in EE <b href="https://www.ncsu.edu/">@NC State University</b></p>
   </div>
 </div>
 
