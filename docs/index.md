@@ -35,8 +35,6 @@ hide:
     <h2><b>Vinay Kumar</b></h2> 
     <h3>Deep Learning Engineer</h3>
     <p>email: vkumar24@ncsu.edu</p>
-    <p>Github: www.github.com/imflash217</p>
-    <p>LinkedIn: www.linkedin.com/in/imflash217</p>
   </div>
 </div>
 
