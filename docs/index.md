@@ -17,6 +17,7 @@ hide:
   justify-content: center;
   margin: 0, auto;
   background-color: yellow;
+  vertical-align: middle;
 }
 
 .card:hover {
