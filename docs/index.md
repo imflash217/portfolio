@@ -8,6 +8,8 @@ hide:
 [Github :material-github: ](#){: .md-button .md-button--primary } -->
 
 
+<!-- ------------------------------------------------------------------------------------ -->
+
 <style>
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -25,6 +27,8 @@ hide:
   padding: 2px 16px;
 }
 </style>
+
+<!-- ------------------------------------------------------------------------------------ -->
 
 <div class="card">
   <img src="assets/vinay.png" alt="avatar" style="width:40%">
