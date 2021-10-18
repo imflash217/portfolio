@@ -67,18 +67,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 38 - ((8 * winheight(0) + 18) / 36)
+let s:l = 17 - ((14 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 38
-normal! 0
-tabnext 3
-badd +7 mkdocs.yml
-badd +1 ~/.vim_runtime/my_configs.vim
+keepjumps 17
+normal! 012|
+tabnext 1
 badd +152 docs/work/about.md
-badd +62 docs/algorithms/028_tree_min_value.md
+badd +7 mkdocs.yml
 badd +0 docs/index.md
+badd +62 docs/algorithms/028_tree_min_value.md
+badd +1 ~/.vim_runtime/my_configs.vim
 badd +1 docs/
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
@@ -90,6 +90,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
