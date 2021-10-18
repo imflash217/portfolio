@@ -14,7 +14,6 @@ hide:
   transition: 0.3s;
   width: 60%;
   display: flex;
-  justify-content: center;
   margin: auto;
 }
 
@@ -24,7 +23,6 @@ hide:
 
 .container {
   padding: 2px 16px;
-  justify-content: center;
 }
 </style>
 
