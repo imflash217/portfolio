@@ -7,9 +7,6 @@ hide:
 <!-- [LinkedIn :material-linkedin:](#){: .md-button .md-button--primary }
 [Github :material-github: ](#){: .md-button .md-button--primary } -->
 
-<figure>
-    <img src="assets/vinay.png" width="200" />
-</figure>
 
 <style>
 .card {
