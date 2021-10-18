@@ -28,7 +28,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 19 - ((7 * winheight(0) + 18) / 36)
+let s:l = 19 - ((18 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -67,12 +67,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 36 - ((28 * winheight(0) + 18) / 36)
+let s:l = 68 - ((34 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 36
-normal! 07|
+keepjumps 68
+normal! 0
 tabnext 3
 badd +7 mkdocs.yml
 badd +1 ~/.vim_runtime/my_configs.vim
