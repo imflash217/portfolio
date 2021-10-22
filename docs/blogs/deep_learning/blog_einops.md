@@ -134,14 +134,40 @@ a.shape
 
 Several decompositions are possible. Some examples are shown below:
 
-???+ quote "Combining _composition_ and _decomposition_"
+???+ danger "Combining _composition_ and _decomposition_"
     Combining composition & decomposition
     ```python
+    ## here b1=2, decomposes b=6 into "b1=2" and "b2=3"
+    ## keeping b = b1*b2
     a = rearrange(images, "(b1 b2) w h c -> b1 b2 w h c", b1=2)
-
     a.shape     ## (2, 3, 96, 96, 3)
+    ```
+    ```
+    (2, 3, 96, 96, 3)
+    ```
+
+???+ done "An example"
+    Combining composition & decomposition
+    ```python
+    ## here b1=2, decomposes b=6 into "b1=2" and "b2=3"
+    ## keeping b = b1*b2
+    a = rearrange(images, "(b1 b2) w h c -> (b1 h) (b2 w) c", b1=2)
+    a.shape     ## (2*96, 3*96, 3)
     a
     ```
     <figure markdown>
     ![](../../../assets/blogs/deep_learning/einops/images_5.png)
+    </figure>
+
+???+ done "Another combination"
+    Combining composition & decomposition
+    ```python
+    ## here b1=2, decomposes b=6 into "b1=2" and "b2=3"
+    ## keeping b = b1*b2
+    a = rearrange(images, "(b1 b2) w h c -> (b2 h) (b1 w) c", b1=2)
+    a.shape     ## (3*96, 2*96, 3)
+    a
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_6.png)
     </figure>
