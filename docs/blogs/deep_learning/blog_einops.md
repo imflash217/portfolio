@@ -152,6 +152,7 @@ Several decompositions are possible. Some examples are shown below:
     ## here b1=2, decomposes b=6 into "b1=2" and "b2=3"
     ## keeping b = b1*b2
     a = rearrange(images, "(b1 b2) w h c -> (b1 h) (b2 w) c", b1=2)
+
     a.shape     ## (2*96, 3*96, 3)
     a
     ```
@@ -165,6 +166,7 @@ Several decompositions are possible. Some examples are shown below:
     ## here b1=2, decomposes b=6 into "b1=2" and "b2=3"
     ## keeping b = b1*b2
     a = rearrange(images, "(b1 b2) w h c -> (b2 h) (b1 w) c", b1=2)
+
     a.shape     ## (3*96, 2*96, 3)
     a
     ```
