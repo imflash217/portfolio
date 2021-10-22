@@ -110,3 +110,16 @@ a.shape
 ```
 (96, 576, 3)
 ```
+
+We can compose more than 2 axes/dimensions.
+Let's **flatten** the whole 4D array into a 1D array.
+The resulting 1D array contains as many elements as the original 4D array.
+
+```python
+## [6, 96, 96, 3] -> [(6*96*96*3)]
+a = rearrange(images, "b h w c -> (b h w c)")
+a.shape
+```
+```
+(165888, )
+```
