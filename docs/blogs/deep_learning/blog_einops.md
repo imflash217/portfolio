@@ -48,6 +48,10 @@ images[0]
 ```
 ![images_0](../../../assets/blogs/deep_learning/einops/images_0.png)
 
+<figure markdown>
+![...](../../../assets/blogs/deep_learning/einops/images_0.png)
+</figure>
+
 ```python
 images[1]
 ```
