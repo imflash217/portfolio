@@ -1645,19 +1645,13 @@ hide:
 operations provided by <code>einops</code></p>
 <details class="done" open="open"><summary>composition using <code>rearrange()</code></summary><p><code>einops</code> allows seamlessly composing <code>batch</code> and <code>height</code> to a <code>new height</code> dimension.</p>
 <p>Below we just rendered all images in the 4D tensor by collapsing it to a 3D tensor.
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; (b h) w c&quot;</span><span class="p">)</span>
-
-<span class="o">&lt;</span><span class="n">figure</span> <span class="n">markdown</span><span class="o">&gt;</span> 
-    <span class="err">!</span><span class="p">[</span><span class="n">images_3</span><span class="p">](</span><span class="o">../../../</span><span class="n">assets</span><span class="o">/</span><span class="n">blogs</span><span class="o">/</span><span class="n">deep_learning</span><span class="o">/</span><span class="n">einops</span><span class="o">/</span><span class="n">images_3</span><span class="o">.</span><span class="n">png</span><span class="p">)</span>
-    <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">composition</span> <span class="n">using</span> <span class="err">`</span><span class="n">rearrange</span><span class="p">()</span><span class="err">`</span><span class="o">&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; (b h) w c&quot;</span><span class="p">)</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
+<figure markdown> 
+    <img alt="images_3" src="../../../assets/blogs/deep_learning/einops/images_3.png" />
+    <figcaption>composition using <code>rearrange()</code></figcaption>
+</figure></p>
 </details>
                 
                   
