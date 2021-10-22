@@ -86,6 +86,16 @@ operations provided by `einops`
     ```
     <figure markdown> 
         ![images_3](../../../assets/blogs/deep_learning/einops/images_3.png)
-        <figcaption>composition using `rearrange()`</figcaption>
     </figure>
 
+
+???+ danger "composition using `rearrange()`"
+    `einops` allows seamlessly composing `batch` and `width` to a `new width` dimension.
+
+    Below we just rendered all images in the 4D tensor by collapsing it to a 3D tensor.
+    ```python
+    rearrange(images, "b h w c -> h (b w) c")
+    ```
+    <figure markdown> 
+        ![images_4](../../../assets/blogs/deep_learning/einops/images_4.png)
+    </figure>
