@@ -76,7 +76,7 @@ from einops import rearrange, reduce, repeat
 
 ### Composition of axes
 
-Transpositio is very common and useful; but let's move to other 
+Transposition is very common and useful; but let's move to other 
 operations provided by `einops`
 
 ???+ done "composition using `rearrange()` : height"
@@ -128,3 +128,20 @@ a.shape
 
 ### Decomposition of axes
 
+**Decomposition** is the inverse process of composition. 
+
+**It represents an existing axis as a combination of new axes**.
+
+Several decompositions are possible. Some examples are shown below:
+
+???+ quote "Combining _composition_ and _decomposition_"
+    Combining composition & decomposition
+    ```python
+    a = rearrange(images, "(b1 b2) w h c -> b1 b2 w h c", b1=2)
+
+    a.shape     ## (2, 3, 96, 96, 3)
+    a
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_5.png)
+    </figure>
