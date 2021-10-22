@@ -47,6 +47,10 @@ print(images.shape, images.dtype)   ## (6, 96, 96, 3), float64
 images[0]
 ```
 
+    <figure markdown> 
+        ![images_3](../../../assets/blogs/deep_learning/einops/images_3.png)
+    </figure>
+
 <figure markdown>
     ![images_0](../../../assets/blogs/deep_learning/einops/images_0.png)
 </figure>
