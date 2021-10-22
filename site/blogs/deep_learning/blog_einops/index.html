@@ -780,8 +780,6 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           einops tutorial
@@ -796,8 +794,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -806,16 +802,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#part-1" class="md-nav__link">
+    Part-1
+  </a>
+  
+    <nav class="md-nav" aria-label="Part-1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#welocome-to-einops" class="md-nav__link">
     Welocome to einops
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#whats-in-this-tutorial" class="md-nav__link">
     What's in this tutorial?
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1454,8 +1463,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1464,16 +1471,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#part-1" class="md-nav__link">
+    Part-1
+  </a>
+  
+    <nav class="md-nav" aria-label="Part-1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#welocome-to-einops" class="md-nav__link">
     Welocome to einops
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#whats-in-this-tutorial" class="md-nav__link">
     What's in this tutorial?
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1490,14 +1510,16 @@
               
                 
                 
+                  <h1>einops tutorial</h1>
+                
                 <!-- ---
 hide:
   - navigation # Hide navigation
   - toc        # Hide table of contents
 --- -->
 
-<h1 id="part-1">Part-1</h1>
-<h2 id="welocome-to-einops">Welocome to <code>einops</code></h2>
+<h2 id="part-1">Part-1</h2>
+<h3 id="welocome-to-einops">Welocome to <code>einops</code></h3>
 <ol>
 <li>We don't write 
     <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -1511,7 +1533,7 @@ hide:
     <code>numpy</code>, <code>pytorch</code>, <code>tensorflow</code>, <code>chainer</code>, <code>gluon</code>
     and <strong>extends</strong> them.</li>
 </ol>
-<h2 id="whats-in-this-tutorial">What's in this tutorial?</h2>
+<h3 id="whats-in-this-tutorial">What's in this tutorial?</h3>
 <ol>
 <li><strong>Fundamentals</strong>: reordering, composition, and decomposition of tensors.</li>
 <li><strong>Operations</strong>: <code>rearrange</code>, <code>reduce</code>, <code>repeat</code></li>
