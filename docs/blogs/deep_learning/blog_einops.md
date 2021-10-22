@@ -59,6 +59,7 @@ from einops import rearrange, reduce, repeat
 ```
 
 #### `einops.rearrange`
+
 ???+ done "rearrange"
     As its name suggests; it rearranges elements. Below, we swap `height` and `width`.
 
@@ -67,3 +68,9 @@ from einops import rearrange, reduce, repeat
     rearrange(images[0], "h w c -> w h c")
     ```
     ![images_2](../../../assets/blogs/deep_learning/einops/images_2.png)
+    
+    <figure markdown> 
+        ![images_2](../../../assets/blogs/deep_learning/einops/images_2.png)
+        <figcaption>`rearrange()`</figcaption>
+    </figure>
+
