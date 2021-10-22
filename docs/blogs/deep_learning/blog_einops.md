@@ -58,7 +58,7 @@ images[1]
 from einops import rearrange, reduce, repeat
 ```
 
-#### `einops.rearrange`
+### `rearrange`
 
 ???+ done "rearrange"
     As its name suggests; it rearranges elements. Below, we swap `height` and `width`.
@@ -72,3 +72,20 @@ from einops import rearrange, reduce, repeat
         <figcaption>`rearrange()`</figcaption>
     </figure>
 
+### Composition of axes
+
+Transpositio is very common and useful; but let's move to other 
+operations provided by `einops`
+
+???+ done "composition using `rearrange()`"
+    `einops` allows seamlessly composing `batch` and `height` to a `new height` dimension.
+
+    Below we just rendered all images in the 4D tensor by collapsing it to a 3D tensor.
+    ```python
+    rearrange(images, "b h w c -> (b h) w c")
+
+    <figure markdown> 
+        ![images_3](../../../assets/blogs/deep_learning/einops/images_3.png)
+        <figcaption>composition using `rearrange()`</figcaption>
+    </figure>
+    ```
