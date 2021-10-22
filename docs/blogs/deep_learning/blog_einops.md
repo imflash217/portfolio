@@ -4,9 +4,9 @@ hide:
   - toc        # Hide table of contents
 --- -->
 
-# Part-1
+## Part-1
 
-## Welocome to `einops`
+### Welocome to `einops`
 
 1. We don't write 
     ```python
@@ -20,7 +20,7 @@ hide:
     `numpy`, `pytorch`, `tensorflow`, `chainer`, `gluon`
     and **extends** them.
 
-## What's in this tutorial?
+### What's in this tutorial?
 
 1. **Fundamentals**: reordering, composition, and decomposition of tensors.
 2. **Operations**: `rearrange`, `reduce`, `repeat`
