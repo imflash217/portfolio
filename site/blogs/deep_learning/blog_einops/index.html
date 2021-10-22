@@ -1484,10 +1484,15 @@ hide:
 
 <h1 id="part-1">Part-1</h1>
 <h2 id="welocome-to-einops">Welocome to <code>einops</code></h2>
-<p>We don't write 
-<code>y = x.transpose(0,2,3,1)</code></p>
-<p>We write comprehensible code
-<code>y = einops.rearrange(x, "b c h w -&gt; b h w c")</code></p>
+<ol>
+<li>We don't write 
+    <code>y = x.transpose(0,2,3,1)</code></li>
+<li>We write comprehensible code
+    <code>y = einops.rearrange(x, "b c h w -&gt; b h w c")</code></li>
+<li><code>einops</code> supports widely used tensor packages viz. 
+    <code>numpy</code>, <code>pytorch</code>, <code>tensorflow</code>, <code>chainer</code>, <code>gluon</code>
+    and <strong>extends</strong> them.</li>
+</ol>
                 
                   
                     
