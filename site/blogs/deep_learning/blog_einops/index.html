@@ -1486,9 +1486,13 @@ hide:
 <h2 id="welocome-to-einops">Welocome to <code>einops</code></h2>
 <ol>
 <li>We don't write 
-    <code>y = x.transpose(0,2,3,1)</code></li>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table></li>
 <li>We write comprehensible code
-    <code>y = einops.rearrange(x, "b c h w -&gt; b h w c")</code></li>
+    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">y</span> <span class="o">=</span> <span class="n">einops</span><span class="o">.</span><span class="n">rearrange</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;b c h w -&gt; b h w c&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table></li>
 <li><code>einops</code> supports widely used tensor packages viz. 
     <code>numpy</code>, <code>pytorch</code>, <code>tensorflow</code>, <code>chainer</code>, <code>gluon</code>
     and <strong>extends</strong> them.</li>
