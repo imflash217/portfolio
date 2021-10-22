@@ -1650,7 +1650,15 @@ operations provided by <code>einops</code></p>
 </td></tr></table>
 <figure markdown> 
     <img alt="images_3" src="../../../assets/blogs/deep_learning/einops/images_3.png" />
-    <figcaption>composition using <code>rearrange()</code></figcaption>
+</figure></p>
+</details>
+<details class="danger" open="open"><summary>composition using <code>rearrange()</code></summary><p><code>einops</code> allows seamlessly composing <code>batch</code> and <code>width</code> to a <code>new width</code> dimension.</p>
+<p>Below we just rendered all images in the 4D tensor by collapsing it to a 3D tensor.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (b w) c&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown> 
+    <img alt="images_4" src="../../../assets/blogs/deep_learning/einops/images_4.png" />
 </figure></p>
 </details>
                 
