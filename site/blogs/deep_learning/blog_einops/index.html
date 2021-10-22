@@ -1693,18 +1693,50 @@ The resulting 1D array contains as many elements as the original 4D array.</p>
 <p><strong>Decomposition</strong> is the inverse process of composition. </p>
 <p><strong>It represents an existing axis as a combination of new axes</strong>.</p>
 <p>Several decompositions are possible. Some examples are shown below:</p>
-<details class="quote" open="open"><summary>Combining <em>composition</em> and <em>decomposition</em></summary><p>Combining composition &amp; decomposition
+<details class="danger" open="open"><summary>Combining <em>composition</em> and <em>decomposition</em></summary><p>Combining composition &amp; decomposition
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) w h c -&gt; b1 b2 w h c&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## here b1=2, decomposes b=6 into &quot;b1=2&quot; and &quot;b2=3&quot;</span>
+<span class="c1">## keeping b = b1*b2</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) w h c -&gt; b1 b2 w h c&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">a</span><span class="o">.</span><span class="n">shape</span>     <span class="c1">## (2, 3, 96, 96, 3)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>(2, 3, 96, 96, 3)
+</code></pre></div>
+</td></tr></table></p>
+</details>
+<details class="done" open="open"><summary>An example</summary><p>Combining composition &amp; decomposition
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## here b1=2, decomposes b=6 into &quot;b1=2&quot; and &quot;b2=3&quot;</span>
+<span class="c1">## keeping b = b1*b2</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) w h c -&gt; (b1 h) (b2 w) c&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">shape</span>     <span class="c1">## (2*96, 3*96, 3)</span>
 <span class="n">a</span>
 </code></pre></div>
 </td></tr></table>
 <figure markdown>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_5.png" />
+</figure></p>
+</details>
+<details class="done" open="open"><summary>Another combination</summary><p>Combining composition &amp; decomposition
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## here b1=2, decomposes b=6 into &quot;b1=2&quot; and &quot;b2=3&quot;</span>
+<span class="c1">## keeping b = b1*b2</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) w h c -&gt; (b2 h) (b1 w) c&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">shape</span>     <span class="c1">## (3*96, 2*96, 3)</span>
+<span class="n">a</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown>
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_6.png" />
 </figure></p>
 </details>
                 
