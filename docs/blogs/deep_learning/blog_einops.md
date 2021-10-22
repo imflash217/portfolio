@@ -46,11 +46,6 @@ print(images.shape, images.dtype)   ## (6, 96, 96, 3), float64
 ## display the 1st image (whole 4d tensor can't be rendered)
 images[0]
 ```
-
-    <figure markdown> 
-        ![images_3](../../../assets/blogs/deep_learning/einops/images_3.png)
-    </figure>
-
 <figure markdown>
     ![images_0](../../../assets/blogs/deep_learning/einops/images_0.png)
 </figure>
@@ -58,10 +53,7 @@ images[0]
 ```python
 images[1]
 ```
-
-<figure markdown>
-    ![images_1](../../../assets/blogs/deep_learning/einops/images_1.png)
-</figure>
+![images_1](../../../assets/blogs/deep_learning/einops/images_1.png)
 
 **We will use three opeartions:** `rearrange`, `reduce`, `repeat`
 ```python
