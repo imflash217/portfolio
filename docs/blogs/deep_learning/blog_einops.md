@@ -46,19 +46,21 @@ print(images.shape, images.dtype)   ## (6, 96, 96, 3), float64
 ## display the 1st image (whole 4d tensor can't be rendered)
 images[0]
 ```
-![images_0](../../../assets/blogs/deep_learning/einops/images_0.png)
+<figure markdown>
+    ![images_0](../../../assets/blogs/deep_learning/einops/images_0.png)
+</figure>
 
 ```python
 images[1]
 ```
-![images_1](../../../assets/blogs/deep_learning/einops/images_1.png)
+<figure markdown>
+    ![images_1](../../../assets/blogs/deep_learning/einops/images_1.png)
+</figure>
 
 **We will use three opeartions:** `rearrange`, `reduce`, `repeat`
 ```python
 from einops import rearrange, reduce, repeat
 ```
-
-### `rearrange`
 
 ???+ done "rearrange"
     As its name suggests; it rearranges elements. Below, we swap `height` and `width`.
@@ -125,3 +127,4 @@ a.shape
 ```
 
 ### Decomposition of axes
+
