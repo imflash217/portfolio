@@ -67,8 +67,6 @@ from einops import rearrange, reduce, repeat
     ```python
     rearrange(images[0], "h w c -> w h c")
     ```
-    ![images_2](../../../assets/blogs/deep_learning/einops/images_2.png)
-    
     <figure markdown> 
         ![images_2](../../../assets/blogs/deep_learning/einops/images_2.png)
         <figcaption>`rearrange()`</figcaption>
