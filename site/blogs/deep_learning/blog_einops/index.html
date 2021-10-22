@@ -823,6 +823,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#preparations" class="md-nav__link">
+    Preparations:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-a-batch-of-images" class="md-nav__link">
+    Load a batch of images
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1492,6 +1506,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#preparations" class="md-nav__link">
+    Preparations:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-a-batch-of-images" class="md-nav__link">
+    Load a batch of images
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1539,6 +1567,32 @@ hide:
 <li><strong>Operations</strong>: <code>rearrange</code>, <code>reduce</code>, <code>repeat</code></li>
 <li>How much can you do with a <strong>single</strong> operation?</li>
 </ol>
+<h3 id="preparations">Preparations:</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">display_np_arrays_as_images</span>
+<span class="n">display_np_arrays_as_images</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="load-a-batch-of-images">Load a batch of images</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## there are 6 images of shape 96x96</span>
+<span class="c1">## with 3 color channels packed as tensors</span>
+<span class="n">images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;./resources/tes_images.npy&quot;</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">images</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">images</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>   <span class="c1">## (6, 96, 96, 3), float64</span>
+
+<span class="c1">## display the 1st image (whole 4d tensor can&#39;t be rendered)</span>
+<span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                     
