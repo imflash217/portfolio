@@ -57,6 +57,10 @@ images[1]
 ```
 ![images_1](../../../assets/blogs/deep_learning/einops/images_1.png)
 
+<figure markdown>
+    ![...](../../../assets/blogs/deep_learning/einops/images_1.png)
+</figure>
+
 **We will use three opeartions:** `rearrange`, `reduce`, `repeat`
 ```python
 from einops import rearrange, reduce, repeat
