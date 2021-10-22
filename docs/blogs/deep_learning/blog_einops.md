@@ -48,3 +48,7 @@ images[0]
 ```
 ![images_0](../../../assets/blogs/deep_learning/einops/images_0.png)
 
+```python
+images[1]
+```
+![images_1](../../../assets/blogs/deep_learning/einops/images_1.png)
