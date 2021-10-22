@@ -173,3 +173,22 @@ Several decompositions are possible. Some examples are shown below:
     <figure markdown>
     ![](../../../assets/blogs/deep_learning/einops/images_6.png)
     </figure>
+
+
+
+???+ done "Another example: `width_to_height`"
+    Move part of the `width` dimension by `height`
+
+    We should call this `width_to_height` as the image `width` shrunk by 2 and `height` incresed by 2.
+
+    **But all pixels are same!!!**
+
+    ```python
+    a = rearrange(images, "b h (w w2) c -> (h w2) (b w) c", w2=2)
+
+    a.shape     ## (96*2, 6*96, 3)
+    a
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_7.png)
+    </figure>
