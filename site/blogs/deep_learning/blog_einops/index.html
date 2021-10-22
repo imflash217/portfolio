@@ -1644,7 +1644,7 @@ hide:
 </figure></p>
 </details>
 <h3 id="composition-of-axes">Composition of axes</h3>
-<p>Transpositio is very common and useful; but let's move to other 
+<p>Transposition is very common and useful; but let's move to other 
 operations provided by <code>einops</code></p>
 <details class="done" open="open"><summary>composition using <code>rearrange()</code> : height</summary><p><code>einops</code> allows seamlessly composing <code>batch</code> and <code>height</code> to a <code>new height</code> dimension.</p>
 <p>Below we just rendered all images in the 4D tensor by collapsing it to a 3D tensor.
@@ -1690,6 +1690,23 @@ The resulting 1D array contains as many elements as the original 4D array.</p>
 </code></pre></div>
 </td></tr></table></p>
 <h3 id="decomposition-of-axes">Decomposition of axes</h3>
+<p><strong>Decomposition</strong> is the inverse process of composition. </p>
+<p><strong>It represents an existing axis as a combination of new axes</strong>.</p>
+<p>Several decompositions are possible. Some examples are shown below:</p>
+<details class="quote" open="open"><summary>Combining <em>composition</em> and <em>decomposition</em></summary><p>Combining composition &amp; decomposition
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) w h c -&gt; b1 b2 w h c&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">shape</span>     <span class="c1">## (2, 3, 96, 96, 3)</span>
+<span class="n">a</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown>
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_5.png" />
+</figure></p>
+</details>
                 
                   
                     
