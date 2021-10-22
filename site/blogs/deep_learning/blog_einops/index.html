@@ -835,18 +835,19 @@
     Load a batch of images
   </a>
   
-    <nav class="md-nav" aria-label="Load a batch of images">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#einopsrearrange" class="md-nav__link">
-    einops.rearrange
+  <a href="#rearrange" class="md-nav__link">
+    rearrange
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#composition-of-axes" class="md-nav__link">
+    Composition of axes
+  </a>
   
 </li>
         
@@ -1531,18 +1532,19 @@
     Load a batch of images
   </a>
   
-    <nav class="md-nav" aria-label="Load a batch of images">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#einopsrearrange" class="md-nav__link">
-    einops.rearrange
+  <a href="#rearrange" class="md-nav__link">
+    rearrange
   </a>
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#composition-of-axes" class="md-nav__link">
+    Composition of axes
+  </a>
   
 </li>
         
@@ -1627,7 +1629,7 @@ hide:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">einops</span> <span class="kn">import</span> <span class="n">rearrange</span><span class="p">,</span> <span class="n">reduce</span><span class="p">,</span> <span class="n">repeat</span>
 </code></pre></div>
 </td></tr></table></p>
-<h4 id="einopsrearrange"><code>einops.rearrange</code></h4>
+<h3 id="rearrange"><code>rearrange</code></h3>
 <details class="done" open="open"><summary>rearrange</summary><p>As its name suggests; it rearranges elements. Below, we swap <code>height</code> and <code>width</code>.</p>
 <p>In other words, below we <strong>transpose</strong> first two axes/dimensions.
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c -&gt; w h c&quot;</span><span class="p">)</span>
@@ -1637,6 +1639,25 @@ hide:
     <img alt="images_2" src="../../../assets/blogs/deep_learning/einops/images_2.png" />
     <figcaption><code>rearrange()</code></figcaption>
 </figure></p>
+</details>
+<h3 id="composition-of-axes">Composition of axes</h3>
+<p>Transpositio is very common and useful; but let's move to other 
+operations provided by <code>einops</code></p>
+<details class="done" open="open"><summary>composition using <code>rearrange()</code></summary><p><code>einops</code> allows seamlessly composing <code>batch</code> and <code>height</code> to a <code>new height</code> dimension.</p>
+<p>Below we just rendered all images in the 4D tensor by collapsing it to a 3D tensor.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; (b h) w c&quot;</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">figure</span> <span class="n">markdown</span><span class="o">&gt;</span> 
+    <span class="err">!</span><span class="p">[</span><span class="n">images_3</span><span class="p">](</span><span class="o">../../../</span><span class="n">assets</span><span class="o">/</span><span class="n">blogs</span><span class="o">/</span><span class="n">deep_learning</span><span class="o">/</span><span class="n">einops</span><span class="o">/</span><span class="n">images_3</span><span class="o">.</span><span class="n">png</span><span class="p">)</span>
+    <span class="o">&lt;</span><span class="n">figcaption</span><span class="o">&gt;</span><span class="n">composition</span> <span class="n">using</span> <span class="err">`</span><span class="n">rearrange</span><span class="p">()</span><span class="err">`</span><span class="o">&lt;/</span><span class="n">figcaption</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">figure</span><span class="o">&gt;</span>
+</code></pre></div>
+</td></tr></table></p>
 </details>
                 
                   
