@@ -123,3 +123,5 @@ a.shape
 ```
 (165888, )
 ```
+
+### Decomposition of axes/dimensions
