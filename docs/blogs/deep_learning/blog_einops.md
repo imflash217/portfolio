@@ -25,3 +25,23 @@ hide:
 1. **Fundamentals**: reordering, composition, and decomposition of tensors.
 2. **Operations**: `rearrange`, `reduce`, `repeat`
 3. How much can you do with a **single** operation?
+
+### Preparations:
+```python
+import numpy
+from utils import display_np_arrays_as_images
+display_np_arrays_as_images()
+```
+
+### Load a batch of images
+```python
+## there are 6 images of shape 96x96
+## with 3 color channels packed as tensors
+images = np.load("./resources/tes_images.npy", allow_pickle=False)
+
+print(images.shape, images.dtype)   ## (6, 96, 96, 3), float64
+
+## display the 1st image (whole 4d tensor can't be rendered)
+images[0]
+```
+
