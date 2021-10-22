@@ -46,5 +46,5 @@ print(images.shape, images.dtype)   ## (6, 96, 96, 3), float64
 ## display the 1st image (whole 4d tensor can't be rendered)
 images[0]
 ```
-![images_0](assets/blogs/deep_learning/einops/images_0.png)
+![images_0](../../../assets/blogs/deep_learning/einops/images_0.png)
 
