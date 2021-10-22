@@ -1673,6 +1673,19 @@ operations provided by <code>einops</code></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>(96, 576, 3)
 </code></pre></div>
 </td></tr></table></p>
+<p>We can compose more than 2 axes/dimensions.
+Let's <strong>flatten</strong> the whole 4D array into a 1D array.
+The resulting 1D array contains as many elements as the original 4D array.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## [6, 96, 96, 3] -&gt; [(6*96*96*3)]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; (b h w c)&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>(165888, )
+</code></pre></div>
+</td></tr></table></p>
                 
                   
                     
