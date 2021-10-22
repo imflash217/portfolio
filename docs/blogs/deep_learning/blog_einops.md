@@ -49,7 +49,7 @@ images[0]
 ![images_0](../../../assets/blogs/deep_learning/einops/images_0.png)
 
 <figure markdown>
-    ![...](../../../assets/blogs/deep_learning/einops/images_0.png)
+![...](../../../assets/blogs/deep_learning/einops/images_0.png)
 </figure>
 
 ```python
@@ -58,7 +58,7 @@ images[1]
 ![images_1](../../../assets/blogs/deep_learning/einops/images_1.png)
 
 <figure markdown>
-    ![...](../../../assets/blogs/deep_learning/einops/images_1.png)
+![...](../../../assets/blogs/deep_learning/einops/images_1.png)
 </figure>
 
 **We will use three opeartions:** `rearrange`, `reduce`, `repeat`
