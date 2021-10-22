@@ -159,7 +159,7 @@ Several decompositions are possible. Some examples are shown below:
     ![](../../../assets/blogs/deep_learning/einops/images_5.png)
     </figure>
 
-???+ done "Another combination"
+???+ danger "Another combination"
     Combining composition & decomposition
     ```python
     ## here b1=2, decomposes b=6 into "b1=2" and "b2=3"
