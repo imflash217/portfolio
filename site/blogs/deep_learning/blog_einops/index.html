@@ -835,6 +835,19 @@
     Load a batch of images
   </a>
   
+    <nav class="md-nav" aria-label="Load a batch of images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#einopsrearrange" class="md-nav__link">
+    einops.rearrange
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1518,6 +1531,19 @@
     Load a batch of images
   </a>
   
+    <nav class="md-nav" aria-label="Load a batch of images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#einopsrearrange" class="md-nav__link">
+    einops.rearrange
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1601,12 +1627,17 @@ hide:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">einops</span> <span class="kn">import</span> <span class="n">rearrange</span><span class="p">,</span> <span class="n">reduce</span><span class="p">,</span> <span class="n">repeat</span>
 </code></pre></div>
 </td></tr></table></p>
+<h4 id="einopsrearrange"><code>einops.rearrange</code></h4>
 <details class="done" open="open"><summary>rearrange</summary><p>As its name suggests; it rearranges elements. Below, we swap <code>height</code> and <code>width</code>.</p>
 <p>In other words, below we <strong>transpose</strong> first two axes/dimensions.
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c -&gt; w h c&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 <img alt="images_2" src="../../../assets/blogs/deep_learning/einops/images_2.png" /></p>
+<p><figure markdown> 
+    <img alt="images_2" src="../../../assets/blogs/deep_learning/einops/images_2.png" />
+    <figcaption><code>rearrange()</code></figcaption>
+</figure></p>
 </details>
                 
                   
