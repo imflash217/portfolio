@@ -1712,9 +1712,11 @@ The resulting 1D array contains as many elements as the original 4D array.</p>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## here b1=2, decomposes b=6 into &quot;b1=2&quot; and &quot;b2=3&quot;</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## here b1=2, decomposes b=6 into &quot;b1=2&quot; and &quot;b2=3&quot;</span>
 <span class="c1">## keeping b = b1*b2</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) w h c -&gt; (b1 h) (b2 w) c&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
 <span class="n">a</span><span class="o">.</span><span class="n">shape</span>     <span class="c1">## (2*96, 3*96, 3)</span>
 <span class="n">a</span>
 </code></pre></div>
@@ -1728,9 +1730,11 @@ The resulting 1D array contains as many elements as the original 4D array.</p>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## here b1=2, decomposes b=6 into &quot;b1=2&quot; and &quot;b2=3&quot;</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## here b1=2, decomposes b=6 into &quot;b1=2&quot; and &quot;b2=3&quot;</span>
 <span class="c1">## keeping b = b1*b2</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) w h c -&gt; (b2 h) (b1 w) c&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
 <span class="n">a</span><span class="o">.</span><span class="n">shape</span>     <span class="c1">## (3*96, 2*96, 3)</span>
 <span class="n">a</span>
 </code></pre></div>
