@@ -52,3 +52,18 @@ images[0]
 images[1]
 ```
 ![images_1](../../../assets/blogs/deep_learning/einops/images_1.png)
+
+**We will use three opeartions:** `rearrange`, `reduce`, `repeat`
+```python
+from einops import rearrange, reduce, repeat
+```
+
+#### `einops.rearrange`
+???+ done "rearrange"
+    As its name suggests; it rearranges elements. Below, we swap `height` and `width`.
+
+    In other words, below we **transpose** first two axes/dimensions.
+    ```python
+    rearrange(images[0], "h w c -> w h c")
+    ```
+    ![images_2](../../../assets/blogs/deep_learning/einops/images_2.png)
