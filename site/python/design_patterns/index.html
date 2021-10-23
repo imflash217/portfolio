@@ -646,6 +646,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#finding-strategies-in-a-module" class="md-nav__link">
+    Finding Strategies in a module
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1215,6 +1222,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#finding-strategies-in-a-module" class="md-nav__link">
+    Finding Strategies in a module
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1626,6 +1640,37 @@ then use plain old <strong>functions</strong> else adapt to use <strong>class</s
 
 <span class="k">def</span> <span class="nf">best_promo</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Selects the best discount avaailable. Only one discount applicable&quot;&quot;&quot;</span>
+    <span class="n">best_discount</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">promo</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="k">for</span> <span class="n">promo</span> <span class="ow">in</span> <span class="n">all_promos</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">best_discount</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="finding-strategies-in-a-module">Finding Strategies in a module</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## using globals()</span>
+<span class="n">all_promos</span> <span class="o">=</span> <span class="p">[</span><span class="nb">globals</span><span class="p">()[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span>
+              <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_promo&quot;</span><span class="p">)</span>
+              <span class="ow">and</span> <span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;best_promo&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">best_promo</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="n">best_discount</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">promo</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">all_promos</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">best_discount</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## using modules to store the promos separately</span>
+<span class="n">all_promos</span> <span class="o">=</span> <span class="p">[</span><span class="n">func</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">promostions</span><span class="p">,</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isfunction</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">best_promo</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
     <span class="n">best_discount</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">promo</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="k">for</span> <span class="n">promo</span> <span class="ow">in</span> <span class="n">all_promos</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">best_discount</span>
 </code></pre></div>
