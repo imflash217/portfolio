@@ -12,8 +12,9 @@ theme:
     accent: indigo
   font:
     # text: lexend
-    text: Playfair Display
+    # text: Playfair Display
     # text: Source Serif Pro
+    text: arvo
     code: Fira Code
   features:
     - navigation.tabs
