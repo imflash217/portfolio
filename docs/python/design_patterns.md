@@ -282,3 +282,8 @@ def best_promo(order):
 ```
 
 Both the methods have pros & cons. Choose as you see fit.
+
+> We could add more stringent tests to filter the functions, 
+> by inspecting their arguments for instance.
+
+> A more elegant solution would be use a **decorator**. (we will study this in later blogs)
