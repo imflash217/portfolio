@@ -1820,6 +1820,44 @@ So, below we re-write the <strong>concrete implementations</strong> of the Strat
     <span class="k">return</span> <span class="mi">0</span>
 </code></pre></div>
 </td></tr></table>
+<details class="quote" open="open"><summary>Example Usage</summary><p>Smaple usage examples of <code>Order</code> class with promotion Strategy as <strong>functions</strong>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">joe</span> <span class="o">=</span> <span class="n">Customer</span><span class="p">(</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">ann</span> <span class="o">=</span> <span class="n">Customer</span><span class="p">(</span><span class="s2">&quot;Ann Smith&quot;</span><span class="p">,</span> <span class="mi">1100</span><span class="p">)</span>
+
+<span class="n">cart</span> <span class="o">=</span> <span class="p">[</span><span class="n">LineItem</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+        <span class="n">LineItem</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span>
+        <span class="n">LineItem</span><span class="p">(</span><span class="s2">&quot;watermelon&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)]</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">fidelity_promo</span><span class="p">)</span>        <span class="c1">## &lt; Order total = 42.00; DUE = 42.00 &gt;</span>
+<span class="n">Order</span><span class="p">(</span><span class="n">ann</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">fidelity_promo</span><span class="p">)</span>        <span class="c1">## &lt; Order total = 42.00; DUE = 39.90 &gt;</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Another Example</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">banana_cart</span> <span class="o">=</span> <span class="p">[</span><span class="n">LineItem</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+               <span class="n">LineItem</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)]</span>
+<span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">banana_cart</span><span class="p">,</span> <span class="n">bulk_item_promo</span><span class="p">)</span>        <span class="c1">## &lt; Order total = 30.00; DUE = 28.50 &gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Yet another Example</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">long_order</span> <span class="o">=</span> <span class="p">[</span><span class="n">LineItem</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">item_id</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">item_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+
+<span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">long_order</span><span class="p">,</span> <span class="n">large_order_promo</span><span class="p">)</span>       <span class="c1">## &lt; Order total = 10.00; DUE = 9.30 &gt;</span>
+<span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">large_order_promo</span><span class="p">)</span>             <span class="c1">## &lt; Order total = 42.00; DUE = 42.00 &gt;</span>
+</code></pre></div>
+</td></tr></table>
+</details>
                 
                   
                     
