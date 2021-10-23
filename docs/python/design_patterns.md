@@ -238,9 +238,9 @@ Order(joe, banana_cart, best_promo)         ## < Order total = 30.00; DUE = 28.5
 Order(ann, cart, best_promo)                ## < Order total = 42.00; DUE = 39.90 >     ## case-3
 ```
 
-1. case-1: `best_promo` selected the `large_order_promo` for customer `joe`
-2. case-2: `best_promo` selected the `bulk_item_promo` for customer `joe` (for ordering lots of bananas)
-3. case-3: `best_promo` selected the `fidelity_promo` for `ann`'s loyalty.
+* case-1: `best_promo` selected the `large_order_promo` for customer `joe`
+* case-2: `best_promo` selected the `bulk_item_promo` for customer `joe` (for ordering lots of bananas)
+* case-3: `best_promo` selected the `fidelity_promo` for `ann`'s loyalty.
 
 Below is the implementation of `best_promo`
 
