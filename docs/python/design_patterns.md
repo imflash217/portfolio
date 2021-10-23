@@ -41,7 +41,7 @@ class Order:
         return self.total() - discount
 
     def __repr__(self):
-        fmt = "<Order total = {:.2f}; DUE = {:.2f}"
+        fmt = "<Order total = {:.2f}; DUE = {:.2f}>"
         return fmt.format(self.total(), self.due())
 
 class Promotion(ABC):
@@ -86,5 +86,75 @@ class LargeOrderPromo(Promotion):
         if len(distinct_items) >= 10:
             return order.total() * 0.07
         return 0
+```
+
+## `Function-oriented` Strategy Pattern
+
+Each concrete implementation of the Strategy Pattern in above code is a `class`
+with a single method `discount()`. Furthermore, the strategy instances have no state
+(i.e. no instance attributes).
+
+They look a lot like plain functions. 
+So, below we re-write the **concrete implementations** of the Strategy Pattern as plain _function_.
+
+```python
+from collections import namedtuple
+
+Customer = namedtuple("Customer", "name fidelity")
+
+class LineItem:
+    def __init__(self, product, quantity, price):
+        self.product = product
+        self.quantity = quantity
+        self.price = price
+
+    def total(self):
+        return self.price * self.quantity
+
+class Order:
+    """The CONTEXT"""
+    def __init__(self, customer, cart, promotion=None):
+        self.customer = customer
+        self.cart = list(cart)
+        self.promotion = promotion
+
+    def total(self):
+        if not hasattr(self, "__total"):
+            self.__total = sum(item.total() for item in self.cart)
+        return self.__total
+
+    def due(self):
+        discount = 0
+        if self.promotion:
+            discount = self.promotion(self)
+        return self.total() - discount
+
+    def __repr__(self):
+        fmt = "<Order total = {:.2f}; DUE = {:.2f}>"
+        fmt.format(self.total(), self.due())
+
+########################################################################################
+## Redesign of the concrete-implementations of STRATEGY PATTERN as functions
+
+def fidelity_promot(order):
+    """5% discount for customers with >= 1000 fidelity points"""
+    return order.total() * 0.05 if order.customer.fidelity >= 1000 else 0
+
+def bulk_item_promo(order):
+    """10% discount for each LineItem with >= 20 units in cart"""
+    discount = 0
+    for item in oder.cart:
+        if item.quantity >= 20:
+            discount += item.total() * 0.1
+    return discount
+
+def large_order_promo(order):
+    """7% discount for orders with >= 10 distinct items"""
+    distinct_items = set(item.product for item in order.cart)
+    if len(distinct_items) >= 10:
+        return order.total() * 0.07
+    return 0
 
 ```
+
+
