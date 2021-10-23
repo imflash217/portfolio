@@ -252,3 +252,25 @@ def best_promo(order):
     best_discount = max(promo(order) for promo in all_promos)
     return best_discount
 ```
+
+## Finding Strategies in a module
+
+```python
+## using globals()
+all_promos = [globals()[name] for name in globals()
+              if name.endswith("_promo")
+              and name != "best_promo"]
+
+def best_promo(order):
+    best_discount = max(promo(order) for order in all_promos)
+    return best_discount
+```
+
+```python
+## using modules to store the promos separately
+all_promos = [func for name, func in inspect.getmembers(promostions, inspect.isfunction)]
+
+def best_promo(order):
+    best_discount = max(promo(order) for promo in all_promos)
+    return best_discount
+```
