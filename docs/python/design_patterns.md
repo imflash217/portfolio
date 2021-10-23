@@ -101,9 +101,6 @@ class LargeOrderPromo(Promotion):
     ```
     ```python
     Order(joe, cart, FidelityPromo())       ## < Order total = 42.00; DUE = 42.00 >
-    ```
-
-    ```python
     Order(ann, cart, FidelityPromo())       ## < Order total = 42.00; DUE = 39.90 >
     ```
     Few more example usage with differnt cart types
