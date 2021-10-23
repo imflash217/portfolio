@@ -41,7 +41,7 @@ class Order:
         return self.total() - discount
 
     def __repr__(self):
-        fmt = "<Order total = {:.2f}; DUE = {:.2f}>"
+        fmt = "< Order total = {:.2f}; DUE = {:.2f} >"
         return fmt.format(self.total(), self.due())
 
 class Promotion(ABC):
@@ -100,15 +100,25 @@ class LargeOrderPromo(Promotion):
             LineItem("watermelon", 5, 5.0)]
     ```
     ```python
-    Order(joe, cart, FidelityPromo())       ## <Order total = 42.00; DUE = 42.00
+    Order(joe, cart, FidelityPromo())       ## < Order total = 42.00; DUE = 42.00 >
     ```
 
     ```python
-    Order(ann, cart, FidelityPromo())       ## <Order total = 42.00; DUE = 39.90    
+    Order(ann, cart, FidelityPromo())       ## < Order total = 42.00; DUE = 39.90 >
     ```
+    Few more example usage with differnt cart types
+    ```python
+    banana_cart = [LineItem("banana", 30, 0.5),
+                   LineItem("apple", 10, 1.5)]
 
+    Order(joe, banana_cart, BulkItemPromo())    ## < Order total = 30.00; DUE = 28.50 >
+    ```
+    ```python
+    long_order = [LineItem(str(item_code), 1, 1.0) for item_code in range(10)]
 
-
+    Order(joe, long_order, LargeOrderPromo())   ## < Order total = 10.00; DUE = 9.30 >
+    Order(joe, cart, LargeOrderPromo())         ## < Order total = 42.00; DUE = 42.00 >
+    ```
 
 ## `Function-oriented` Strategy Pattern
 
