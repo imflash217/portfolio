@@ -4,7 +4,7 @@ hide:
   - toc        # Hide table of contents
 --- -->
 
-## `Strategy` Pattern
+## `STRATEGY` Pattern
 
 ```python
 from abc import ABC, abstractmethod
@@ -117,7 +117,7 @@ class LargeOrderPromo(Promotion):
     Order(joe, cart, LargeOrderPromo())         ## < Order total = 42.00; DUE = 42.00 >
     ```
 
-## `Function-oriented` Strategy Pattern
+## `Function-oriented` STRATEGY Pattern
 
 Each concrete implementation of the Strategy Pattern in above code is a `class`
 with a single method `discount()`. Furthermore, the strategy instances have no state
