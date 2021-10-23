@@ -237,11 +237,13 @@ Order(joe, long_order, best_promo)          ## < Order total = 10.00; DUE = 9.30
 Order(joe, banana_cart, best_promo)         ## < Order total = 30.00; DUE = 28.50 >     ## case-2
 Order(ann, cart, best_promo)                ## < Order total = 42.00; DUE = 39.90 >     ## case-3
 ```
+
 1. case-1: `best_promo` selected the `large_order_promo` for customer `joe`
 2. case-2: `best_promo` selected the `bulk_item_promo` for customer `joe` (for ordering lots of bananas)
 3. case-3: `best_promo` selected the `fidelity_promo` for `ann`'s loyalty.
 
 Below is the implementation of `best_promo`
+
 ```python
 all_promos = [fidelity_promo, bulk_item_promo, large_order_promo]
 
