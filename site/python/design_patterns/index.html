@@ -1652,7 +1652,9 @@ then use plain old <strong>functions</strong> else adapt to use <strong>class</s
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## using globals()</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Method-1</span>
+<span class="c1">## using globals()</span>
 <span class="n">all_promos</span> <span class="o">=</span> <span class="p">[</span><span class="nb">globals</span><span class="p">()[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span>
               <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_promo&quot;</span><span class="p">)</span>
               <span class="ow">and</span> <span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;best_promo&quot;</span><span class="p">]</span>
@@ -1670,7 +1672,9 @@ This works regardless of the names given to promos.</p>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## using modules to store the promos separately</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Method-2</span>
+<span class="c1">## using modules to store the promos separately</span>
 <span class="n">all_promos</span> <span class="o">=</span> <span class="p">[</span><span class="n">func</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">promotions</span><span class="p">,</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isfunction</span><span class="p">)]</span>
 
 <span class="k">def</span> <span class="nf">best_promo</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
