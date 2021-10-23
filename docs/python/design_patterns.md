@@ -197,8 +197,8 @@ def large_order_promo(order):
             LineItem("watermelon", 5, 5.0)]
     ```
     ```python
-    Order(joe, cart, fidelity_promo)        ## < Order total = 42.00; DUE = 42.00 >
-    Order(ann, cart, fidelity_promo)        ## < Order total = 42.00; DUE = 39.90 >
+    Order(joe, cart, fidelity_promo)                ## < Order total = 42.00; DUE = 42.00 >
+    Order(ann, cart, fidelity_promo)                ## < Order total = 42.00; DUE = 39.90 >
     ```
 
     Another Example
