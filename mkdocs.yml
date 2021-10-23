@@ -85,22 +85,27 @@ site_name: Vinay Kumar
 ##########################################################################
 nav:
   - 🏡 Home: index.md
+  
   - 🧬 Research Papers:
     - About: publications/about.md
     - Interspeech 2014: publications/interspeech_2014.md
     - Odyssey 2014: publications/odyssey_2014.md
-  - 👨🏻‍💻 Work Experience:
-    - About: work/about.md
-    - iVMCL Lab, NC State: work/ivmcl.md
-    - ARoS Lab, NC State: work/aros.md
-    - Springboard Inc.: work/springboard.md
-    - Meeami Technologies: work/meeami.md
-    - Flash.AI: work/flashai.md
-    - Cognizant: work/cognizant.md
-  - 🧤Projects:
-    - About: projects/about.md
-  - 🚵🏼‍♂️ Hobby Projects:
-    - About: hobbies/about.md
+  
+  #- 👨🏻‍💻 Work Experience:
+  #  - About: work/about.md
+  #  - iVMCL Lab, NC State: work/ivmcl.md
+  #  - ARoS Lab, NC State: work/aros.md
+  #  - Springboard Inc.: work/springboard.md
+  #  - Meeami Technologies: work/meeami.md
+  #  - Flash.AI: work/flashai.md
+  # - Cognizant: work/cognizant.md
+  
+  #- 🧤Projects:
+  #  - About: projects/about.md
+  
+  #- 🚵🏼‍♂️ Hobby Projects:
+  #  - About: hobbies/about.md
+
   - ✍🏼 Blogs:
     - About: blogs/about.md
     - Physics:
@@ -109,21 +114,12 @@ nav:
       - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
       - PyTorch Dataloaders: blogs/deep_learning/blog_dataloaders.md
       - einops tutorial: blogs/deep_learning/blog_einops.md
-  - ✏️ Gists:
-    - About: gists/about.md
-    - 🐍Python_Snippets: gists/python_snippets.md
-    - ⚡️PyTorch Lightning:
-      - api:
-        - configure_optimizers(): gists/lightning/api/configure_optimizers.md
-        - forward(): gists/lightning/api/forward.md
-        - freeze(): gists/lightning/api/freeze.md
-        - log(): gists/lightning/api/log.md
-        - test_step(): gists/lightning/api/test_step.md
-        - training_step(): gists/lightning/api/training_step.md
+
   - 👑 Python Gems:
     - 🥘 Cookbook @dabeaz:
       - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
     - Design Patterns in Python: python/design_patterns.md
+
   - 📟 Algorithms:
     - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
     - Sorting: blogs/algorithms/blog_01312021_sorting.md
@@ -137,6 +133,18 @@ nav:
     - 027_tree_sum: algorithms/027_tree_sum.md
     - 028_tree_min_value: algorithms/028_tree_min_value.md
 
+  - ✏️ Gists:
+    - About: gists/about.md
+    - 🐍Python_Snippets: gists/python_snippets.md
+    - ⚡️PyTorch Lightning:
+      - api:
+        - configure_optimizers(): gists/lightning/api/configure_optimizers.md
+        - forward(): gists/lightning/api/forward.md
+        - freeze(): gists/lightning/api/freeze.md
+        - log(): gists/lightning/api/log.md
+        - test_step(): gists/lightning/api/test_step.md
+        - training_step(): gists/lightning/api/training_step.md
+
   - 📚 Notes:
     - About: notes/about.md
     - ECE 542:
@@ -145,5 +153,5 @@ nav:
         - HW1a: notes/ECE542/ece542_hw1a.md
     - CS224N:
       - Lecture 1: notes/CS224N/cs224n_lecture1.md
-  - HTML: imflash217.html
+  
 ##########################################################################
