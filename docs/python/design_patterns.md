@@ -25,7 +25,7 @@ class Order:
     """This is the CONTEXT part of the Strategy-Pattern"""
     def __init__(self, customer, cart, promotion=None):
         self.customer = customer
-        self.cart = cart
+        self.cart = list(cart)
         self.promotion = promotion
 
     def total(self):
@@ -87,6 +87,26 @@ class LargeOrderPromo(Promotion):
             return order.total() * 0.07
         return 0
 ```
+
+???+ quote "Example Usage"
+    Sample usage of `Order` class with different promotions applied
+
+    ```python
+    joe = Customer("John Doe", 0)
+    ann = Customer("Ann Smith", 1100)
+
+    cart = [LineItem("banana", 4, 0.5),
+            LineItem("apple", 10, 1.5),
+            LineItem("watermelon", 5, 5.0)]
+
+    Order(joe, cart, FidelityPromo())
+    ```
+    ```
+    <Order total = 42.00; DUE = 42.00
+    ```
+
+
+
 
 ## `Function-oriented` Strategy Pattern
 
