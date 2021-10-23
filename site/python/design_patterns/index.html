@@ -1858,6 +1858,16 @@ So, below we re-write the <strong>concrete implementations</strong> of the Strat
 </code></pre></div>
 </td></tr></table>
 </details>
+<ol>
+<li><strong>STRATEGY</strong> objects often make good <strong>FLYWEIGHTS</strong></li>
+<li>A <strong>FLYWIGHT</strong> is a <em>shared</em> object that cane be use din multiple contexts simulatenously.</li>
+<li>Sharing is encouraged to reduce the creation of a new <strong>concrete</strong> strategy object when the 
+same strategy is applied over and over again in different contexts (i.e. with every new <code>Order</code> instance)</li>
+<li>If the <strong>strategies</strong> have no internal state (often the case); 
+then use plain old <strong>functions</strong> else adapt to use <strong>class</strong> version.</li>
+<li>A <strong>function</strong> is more lightweight than an user-defined <code>class</code></li>
+<li>A plain <strong>functions</strong> is also a_shared_ object that can be used in multiple contexts simulateneously.</li>
+</ol>
                 
                   
                     
