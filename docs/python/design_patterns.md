@@ -256,6 +256,7 @@ def best_promo(order):
 ## Finding Strategies in a module
 
 ```python
+## Method-1
 ## using globals()
 all_promos = [globals()[name] for name in globals()
               if name.endswith("_promo")
@@ -271,6 +272,7 @@ and storing all the promos functions in a file `promotions.py`.
 This works regardless of the names given to promos.
 
 ```python
+## Method-2
 ## using modules to store the promos separately
 all_promos = [func for name, func in inspect.getmembers(promotions, inspect.isfunction)]
 
