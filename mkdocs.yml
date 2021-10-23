@@ -11,7 +11,8 @@ theme:
     primary: white
     accent: indigo
   font:
-    text: lexend
+    # text: lexend
+    text: playfair
     code: Fira Code
   features:
     - navigation.tabs
