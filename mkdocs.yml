@@ -120,6 +120,7 @@ nav:
   - 👑 Python Gems:
     - 🥘 Cookbook @dabeaz:
       - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
+    - Design Patterns in Python: python/design_patterns.md
   - 📟 Algorithms:
     - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
     - Sorting: blogs/algorithms/blog_01312021_sorting.md

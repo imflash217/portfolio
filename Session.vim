@@ -16,6 +16,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -68,11 +69,30 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 106 - ((29 * winheight(0) + 18) / 37)
+let s:l = 1 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 106
+keepjumps 1
+normal! 0
+tabnext
+edit docs/python/design_patterns.md
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 14 - ((13 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 14
 normal! 0
 tabnext
 edit docs/publications/about.md
@@ -112,13 +132,14 @@ keepjumps exe s:l
 normal! zt
 keepjumps 25
 normal! 0
-tabnext 3
+tabnext 1
 badd +0 mkdocs.yml
 badd +0 docs/blogs/deep_learning/blog_tf_v1.md
 badd +1 docs/blogs/deep_learning/blog_einops.md
 badd +1 docs/
 badd +0 docs/publications/about.md
 badd +0 docs/notes/about.md
+badd +0 docs/python/design_patterns.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
