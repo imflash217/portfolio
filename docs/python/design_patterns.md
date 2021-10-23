@@ -218,13 +218,16 @@ def large_order_promo(order):
     Order(joe, cart, large_order_promo)             ## < Order total = 42.00; DUE = 42.00 >
     ```
 
-1. **STRATEGY** objects often make good **FLYWEIGHTS**
-2. A **FLYWIGHT** is a _shared_ object that cane be use din multiple contexts simulatenously.
+> 1. **STRATEGY** objects often make good **FLYWEIGHTS**
+> 2. A **FLYWIGHT** is a _shared_ object that cane be use din multiple contexts simulatenously.
 3. Sharing is encouraged to reduce the creation of a new **concrete** strategy object when the 
 same strategy is applied over and over again in different contexts (i.e. with every new `Order` instance)
 4. If the **strategies** have no internal state (often the case); 
 then use plain old **functions** else adapt to use **class** version.
 5. A **function** is more lightweight than an user-defined `class`
 6. A plain **functions** is also a_shared_ object that can be used in multiple contexts simulateneously.
+
+
+## Choosing the best Strategy
 
 
