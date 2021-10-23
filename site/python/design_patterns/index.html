@@ -1526,7 +1526,48 @@ hide:
 <span class="normal">35</span>
 <span class="normal">36</span>
 <span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
 <span class="n">Customer</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Customer&quot;</span><span class="p">,</span> <span class="s2">&quot;name fidelity&quot;</span><span class="p">)</span>
@@ -1563,7 +1604,48 @@ hide:
         <span class="n">fmt</span> <span class="o">=</span> <span class="s2">&quot;&lt;Order total = </span><span class="si">{:.2f}</span><span class="s2">; DUE = </span><span class="si">{:.2f}</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">due</span><span class="p">())</span>
 
-<span class="k">class</span>
+<span class="k">class</span> <span class="nc">Promotion</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The STRATEGY part of the Strategy-pattern</span>
+<span class="sd">    An Abstract Base Class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">discount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return discount as a positive dollar amount&quot;&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">FidelityPromot</span><span class="p">(</span><span class="n">Promotion</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    First CONCRETE implementation of STRATEGY ABC</span>
+
+<span class="sd">    5% disount for customer with 1000 or more fidelity points</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">discount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">order</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.05</span> <span class="k">if</span> <span class="n">order</span><span class="o">.</span><span class="n">customer</span><span class="o">.</span><span class="n">fidelity</span> <span class="o">&gt;=</span> <span class="mi">1000</span> <span class="k">else</span> <span class="mi">0</span>
+
+<span class="k">class</span> <span class="nc">BulkPromo</span><span class="p">(</span><span class="n">Promotion</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Second CONCRETE implementation of the Strategy-pattern</span>
+
+<span class="sd">    10% discount for each line-item with 20 or more units</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">discount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="n">discount</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">order</span><span class="o">.</span><span class="n">cart</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">quantity</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
+                <span class="n">discount</span> <span class="o">+=</span> <span class="n">item</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.1</span>
+        <span class="k">return</span> <span class="n">discount</span>
+
+<span class="k">class</span> <span class="nc">LargeOrderPromo</span><span class="p">(</span><span class="n">Promotion</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Third CONCRETE implementation of the Strategy-pattern</span>
+
+<span class="sd">    7% discount for orders with 10 or more distinct items</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">discount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+        <span class="n">distinct_items</span> <span class="o">=</span> <span class="p">{</span><span class="n">item</span><span class="o">.</span><span class="n">product</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">order</span><span class="o">.</span><span class="n">cart</span><span class="p">}</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">distinct_items</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">order</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.07</span>
+        <span class="k">return</span> <span class="mi">0</span>
 </code></pre></div>
 </td></tr></table>
                 
