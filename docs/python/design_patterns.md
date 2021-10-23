@@ -98,11 +98,13 @@ class LargeOrderPromo(Promotion):
     cart = [LineItem("banana", 4, 0.5),
             LineItem("apple", 10, 1.5),
             LineItem("watermelon", 5, 5.0)]
+    ```
+    ```python
+    Order(joe, cart, FidelityPromo())       ## <Order total = 42.00; DUE = 42.00
+    ```
 
-    Order(joe, cart, FidelityPromo())
-    ```
-    ```
-    <Order total = 42.00; DUE = 42.00
+    ```python
+    Order(ann, cart, FidelityPromo())       ## <Order total = 42.00; DUE = 39.90    
     ```
 
 
