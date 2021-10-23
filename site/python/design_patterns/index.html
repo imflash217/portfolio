@@ -1615,7 +1615,7 @@ hide:
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">()</span> <span class="o">-</span> <span class="n">discount</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">fmt</span> <span class="o">=</span> <span class="s2">&quot;&lt;Order total = </span><span class="si">{:.2f}</span><span class="s2">; DUE = </span><span class="si">{:.2f}</span><span class="s2">&gt;&quot;</span>
+        <span class="n">fmt</span> <span class="o">=</span> <span class="s2">&quot;&lt; Order total = </span><span class="si">{:.2f}</span><span class="s2">; DUE = </span><span class="si">{:.2f}</span><span class="s2"> &gt;&quot;</span>
         <span class="k">return</span> <span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">due</span><span class="p">())</span>
 
 <span class="k">class</span> <span class="nc">Promotion</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
@@ -1676,12 +1676,31 @@ hide:
         <span class="n">LineItem</span><span class="p">(</span><span class="s2">&quot;watermelon&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)]</span>
 </code></pre></div>
 </td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">FidelityPromo</span><span class="p">())</span>       <span class="c1">## &lt;Order total = 42.00; DUE = 42.00</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">FidelityPromo</span><span class="p">())</span>       <span class="c1">## &lt; Order total = 42.00; DUE = 42.00 &gt;</span>
 </code></pre></div>
 </td></tr></table></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Order</span><span class="p">(</span><span class="n">ann</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">FidelityPromo</span><span class="p">())</span>       <span class="c1">## &lt;Order total = 42.00; DUE = 39.90    </span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Order</span><span class="p">(</span><span class="n">ann</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">FidelityPromo</span><span class="p">())</span>       <span class="c1">## &lt; Order total = 42.00; DUE = 39.90 &gt;</span>
 </code></pre></div>
 </td></tr></table>
+Few more example usage with differnt cart types
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">banana_cart</span> <span class="o">=</span> <span class="p">[</span><span class="n">LineItem</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+               <span class="n">LineItem</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)]</span>
+
+<span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">banana_cart</span><span class="p">,</span> <span class="n">BulkItemPromo</span><span class="p">())</span>    <span class="c1">## &lt; Order total = 30.00; DUE = 28.50 &gt;</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">long_order</span> <span class="o">=</span> <span class="p">[</span><span class="n">LineItem</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">item_code</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">item_code</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+
+<span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">long_order</span><span class="p">,</span> <span class="n">LargeOrderPromo</span><span class="p">())</span>   <span class="c1">## &lt; Order total = 10.00; DUE = 9.30 &gt;</span>
+<span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">LargeOrderPromo</span><span class="p">())</span>         <span class="c1">## &lt; Order total = 42.00; DUE = 42.00 &gt;</span>
+</code></pre></div>
+</td></tr></table></p>
 </details>
 <h2 id="function-oriented-strategy-pattern"><code>Function-oriented</code> Strategy Pattern</h2>
 <p>Each concrete implementation of the Strategy Pattern in above code is a <code>class</code>
