@@ -266,11 +266,17 @@ def best_promo(order):
     return best_discount
 ```
 
+But a more flexible way to handle this is using inbuilt `inspect` module 
+and storing all the promos functions in a file `promotions.py`.
+This works regardless of the names given to promos.
+
 ```python
 ## using modules to store the promos separately
-all_promos = [func for name, func in inspect.getmembers(promostions, inspect.isfunction)]
+all_promos = [func for name, func in inspect.getmembers(promotions, inspect.isfunction)]
 
 def best_promo(order):
     best_discount = max(promo(order) for promo in all_promos)
     return best_discount
 ```
+
+Both the methods have pros & cons. Choose as you see fit.
