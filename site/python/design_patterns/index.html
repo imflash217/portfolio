@@ -1614,6 +1614,20 @@ then use plain old <strong>functions</strong> else adapt to use <strong>class</s
 1. case-1: <code>best_promo</code> selected the <code>large_order_promo</code> for customer <code>joe</code>
 2. case-2: <code>best_promo</code> selected the <code>bulk_item_promo</code> for customer <code>joe</code> (for ordering lots of bananas)
 3. case-3: <code>best_promo</code> selected the <code>fidelity_promo</code> for <code>ann</code>'s loyalty.</p>
+<p>Below is the implementation of <code>best_promo</code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">all_promos</span> <span class="o">=</span> <span class="p">[</span><span class="n">fidelity_promo</span><span class="p">,</span> <span class="n">bulk_item_promo</span><span class="p">,</span> <span class="n">large_order_promo</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">best_promo</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Selects the best discount avaailable. Only one discount applicable&quot;&quot;&quot;</span>
+    <span class="n">best_discount</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">promo</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="k">for</span> <span class="n">promo</span> <span class="ow">in</span> <span class="n">all_promos</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">best_discount</span>
+</code></pre></div>
+</td></tr></table></p>
                 
                   
                     
