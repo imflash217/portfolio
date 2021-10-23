@@ -186,4 +186,34 @@ def large_order_promo(order):
 
 ```
 
+???+ quote "Example Usage"
+    Smaple usage examples of `Order` class with promotion Strategy as **functions**
+    ```python
+    joe = Customer("John Doe", 0)
+    ann = Customer("Ann Smith", 1100)
 
+    cart = [LineItem("banana", 4, 0.5),
+            LineItem("apple", 10, 1.5),
+            LineItem("watermelon", 5, 5.0)]
+    ```
+    ```python
+    Order(joe, cart, fidelity_promo)        ## < Order total = 42.00; DUE = 42.00 >
+    Order(ann, cart, fidelity_promo)        ## < Order total = 42.00; DUE = 39.90 >
+    ```
+
+    Another Example
+
+    ```python
+    banana_cart = [LineItem("banana", 30, 0.5),
+                   LineItem("apple", 10, 1.5)]
+    Order(joe, banana_cart, bulk_item_promo)        ## < Order total = 30.00; DUE = 28.50 >
+    ```
+    
+    Yet another Example
+
+    ```python
+    long_order = [LineItem(str(item_id), 1, 1.0) for item_id in range(10)]
+
+    Order(joe, long_order, large_order_promo)       ## < Order total = 10.00; DUE = 9.30 >
+    Order(joe, cart, large_order_promo)             ## < Order total = 42.00; DUE = 42.00 >
+    ```
