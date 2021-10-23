@@ -1604,13 +1604,16 @@ then use plain old <strong>functions</strong> else adapt to use <strong>class</s
 </ol>
 <h2 id="choosing-the-best-strategy">Choosing the best Strategy</h2>
 <p>Given the same customers and carts from above examples; we now add additional tests.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">long_order</span><span class="p">,</span> <span class="n">best_promo</span><span class="p">)</span>          <span class="c1">## &lt; Order total = 10.00; DUE = 9.30 &gt;</span>
-<span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">banana_cart</span><span class="p">,</span> <span class="n">best_promo</span><span class="p">)</span>         <span class="c1">## &lt; Order total = 30.00; DUE = 28.50 &gt;</span>
-<span class="n">Order</span><span class="p">(</span><span class="n">ann</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">best_promo</span><span class="p">)</span>                <span class="c1">## &lt; Order total = 42.00; DUE = 39.90 &gt;</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">long_order</span><span class="p">,</span> <span class="n">best_promo</span><span class="p">)</span>          <span class="c1">## &lt; Order total = 10.00; DUE = 9.30 &gt;      ## case-1</span>
+<span class="n">Order</span><span class="p">(</span><span class="n">joe</span><span class="p">,</span> <span class="n">banana_cart</span><span class="p">,</span> <span class="n">best_promo</span><span class="p">)</span>         <span class="c1">## &lt; Order total = 30.00; DUE = 28.50 &gt;     ## case-2</span>
+<span class="n">Order</span><span class="p">(</span><span class="n">ann</span><span class="p">,</span> <span class="n">cart</span><span class="p">,</span> <span class="n">best_promo</span><span class="p">)</span>                <span class="c1">## &lt; Order total = 42.00; DUE = 39.90 &gt;     ## case-3</span>
 </code></pre></div>
 </td></tr></table>
+1. case-1: <code>best_promo</code> selected the <code>large_order_promo</code> for customer <code>joe</code>
+2. case-2: <code>best_promo</code> selected the <code>bulk_item_promo</code> for customer <code>joe</code> (for ordering lots of bananas)
+3. case-3: <code>best_promo</code> selected the <code>fidelity_promo</code> for <code>ann</code>'s loyalty.</p>
                 
                   
                     
