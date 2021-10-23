@@ -287,3 +287,6 @@ Both the methods have pros & cons. Choose as you see fit.
 > by inspecting their arguments for instance.
 
 > A more elegant solution would be use a **decorator**. (we will study this in later blogs)
+
+## References
+[^1]: https://github.com/gennad/Design-Patterns-in-Python
