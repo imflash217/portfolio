@@ -233,7 +233,10 @@ then use plain old **functions** else adapt to use **class** version.
 Given the same customers and carts from above examples; we now add additional tests.
 
 ```python
-Order(joe, long_order, best_promo)          ## < Order total = 10.00; DUE = 9.30 >
-Order(joe, banana_cart, best_promo)         ## < Order total = 30.00; DUE = 28.50 >
-Order(ann, cart, best_promo)                ## < Order total = 42.00; DUE = 39.90 >
+Order(joe, long_order, best_promo)          ## < Order total = 10.00; DUE = 9.30 >      ## case-1
+Order(joe, banana_cart, best_promo)         ## < Order total = 30.00; DUE = 28.50 >     ## case-2
+Order(ann, cart, best_promo)                ## < Order total = 42.00; DUE = 39.90 >     ## case-3
 ```
+1. case-1: `best_promo` selected the `large_order_promo` for customer `joe`
+2. case-2: `best_promo` selected the `bulk_item_promo` for customer `joe` (for ordering lots of bananas)
+3. case-3: `best_promo` selected the `fidelity_promo` for `ann`'s loyalty.
