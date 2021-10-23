@@ -240,3 +240,13 @@ Order(ann, cart, best_promo)                ## < Order total = 42.00; DUE = 39.9
 1. case-1: `best_promo` selected the `large_order_promo` for customer `joe`
 2. case-2: `best_promo` selected the `bulk_item_promo` for customer `joe` (for ordering lots of bananas)
 3. case-3: `best_promo` selected the `fidelity_promo` for `ann`'s loyalty.
+
+Below is the implementation of `best_promo`
+```python
+all_promos = [fidelity_promo, bulk_item_promo, large_order_promo]
+
+def best_promo(order):
+    """Selects the best discount avaailable. Only one discount applicable"""
+    best_discount = max(promo(order) for promo in all_promos)
+    return best_discount
+```
