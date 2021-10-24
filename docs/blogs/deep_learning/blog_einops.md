@@ -528,3 +528,12 @@ u.shape         ## (96, 96*3, 3)
     ![](../../../assets/blogs/deep_learning/einops/images_25.png)
     </figure>
 
+???+ done "Split & Reduce"
+    Split each image into two halves and compute the mean of the two halves.
+    ```python
+    u = reduce(images, "b (h1 h2) w c -> h2 (b w)", "mean", h1=2)
+    u.shape             ## (96/2, 6*96)
+    ```
+    <figure markdown class="card">
+    ![](../../../assets/blogs/deep_learning/einops/images_26.png)
+    </figure>
