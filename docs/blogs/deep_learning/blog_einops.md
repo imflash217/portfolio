@@ -500,3 +500,12 @@ u.shape         ## (96, 96*3, 3)
     <figure markdown>
     ![](../../../assets/blogs/deep_learning/einops/images_22.png)
     </figure>
+
+???+ quote "Interweaving lines for couple of images"
+    ```python
+    u = reduce(images, "(b1 b2) h w c -> h (b2 w) c", "max", b1=2)
+    u.shape             ## (96, 3*96, 3)
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_23.png)
+    </figure>
