@@ -1521,8 +1521,8 @@ The resulting 1D array contains as many elements as the original 4D array.</p>
 It affects the way data is being transposed. Below examples show the impacts.</p>
 <details class="danger" open="open"><summary>An example</summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (b w) c&quot;</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">shape</span>                                         <span class="c1">## (96, 6*96, 3)</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (b w) c&quot;</span><span class="p">)</span>       <span class="c1">## notice the ordering of (b w)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">shape</span>                                             <span class="c1">## (96, 6*96, 3)</span>
 <span class="n">a</span>
 </code></pre></div>
 </td></tr></table>
@@ -1532,8 +1532,8 @@ It affects the way data is being transposed. Below examples show the impacts.</p
 <p>v/s</p>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (w b) c&quot;</span><span class="p">)</span>
-<span class="n">b</span><span class="o">.</span><span class="n">shape</span>                                         <span class="c1">## (96, 96*6, 3)</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (w b) c&quot;</span><span class="p">)</span>       <span class="c1">## notice the ordeing of (w b)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">shape</span>                                             <span class="c1">## (96, 96*6, 3)</span>
 <span class="n">b</span>
 </code></pre></div>
 </td></tr></table>
@@ -1541,6 +1541,20 @@ It affects the way data is being transposed. Below examples show the impacts.</p
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_9.png" />
 </figure></p>
 <p><strong>Though the shapes of both <code>a</code> and <code>b</code> are same but the ordering of pixels are different.</strong></p>
+<p><strong><code>RULE</code></strong>: The rule of importance is just as for digits. 
+The <strong>leftmost</strong> digit is <strong>most significant</strong>.
+Neighboring number differ in <em>rightmost</em> axis.</p>
+<hr />
+<p>What will happen if <code>b1</code> and <code>b2</code> are <em>reordered</em> before composing to <code>width</code> 
+(as shown in examples below):
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) h w c -&gt; h (b1 b2 w) c&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>     <span class="c1">## produces &quot;einops&quot;</span>
+<span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) h w c -&gt; h (b2 b1 w) c&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>     <span class="c1">## prodices &quot;eoipns&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown>
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_10.png" />
+</figure></p>
 </details>
                 
                   
