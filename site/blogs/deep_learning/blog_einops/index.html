@@ -587,15 +587,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#order-of-axes-matter" class="md-nav__link">
     Order of axes matter
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1287,15 +1287,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#order-of-axes-matter" class="md-nav__link">
     Order of axes matter
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1516,13 +1516,13 @@ The resulting 1D array contains as many elements as the original 4D array.</p>
 </code></pre></div>
 </td></tr></table>
 </details>
-<h2 id="order-of-axes-matter">Order of axes matter</h2>
+<h3 id="order-of-axes-matter">Order of axes matter</h3>
 <p>The order of axes in composition and decomposition is of prime importance. 
 It affects the way data is being transposed. Below examples show the impacts.</p>
 <details class="danger" open="open"><summary>An example</summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (b w) c&quot;</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">shape</span>                                         <span class="c1">##</span>
+<span class="n">a</span><span class="o">.</span><span class="n">shape</span>                                         <span class="c1">## (96, 6*96, 3)</span>
 <span class="n">a</span>
 </code></pre></div>
 </td></tr></table>
@@ -1532,14 +1532,15 @@ It affects the way data is being transposed. Below examples show the impacts.</p
 <p>v/s</p>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (w b) c&quot;</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">shape</span>                                         <span class="c1">##</span>
-<span class="n">a</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (w b) c&quot;</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">shape</span>                                         <span class="c1">## (96, 96*6, 3)</span>
+<span class="n">b</span>
 </code></pre></div>
 </td></tr></table>
 <figure markdown>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_9.png" />
 </figure></p>
+<p><strong>Though the shapes of both <code>a</code> and <code>b</code> are same but the ordering of pixels are different.</strong></p>
 </details>
                 
                   
