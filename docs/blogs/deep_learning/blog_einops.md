@@ -300,3 +300,24 @@ If an axis was not present in the output definition --you guessed it -- it was *
     ![](../../../assets/blogs/deep_learning/einops/images_13.png)
     </figure>
 
+???+ done "Mean pooling with 2x2 kernel"
+    Image is split into 2x2 patch and each path is avergaed
+    ```python
+    u = reduce(images, "b (h h2) (w w2) c -> h (b w) c", "mean", h2=2, w2=2)
+    u.shape         ## (48, 6*48, 3)
+    u
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_14.png)
+    </figure>
+
+???+ danger "max-pooling with 2x2 kernel"
+    Imag eis plit into 2x2 patch and each patch is max-pooled
+    ```python
+    u = reduce(images, "b (h h2) (w w2) c -> h (b w) c", "max", h2=2, w2=2)
+    u.shape         ## (49, 6*48, 3)
+    u
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_15.png)
+    </figure>
