@@ -1960,6 +1960,15 @@ i.e. </p>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_22.png" />
 </figure></p>
 </details>
+<details class="quote" open="open"><summary>Interweaving lines for couple of images</summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) h w c -&gt; h (b2 w) c&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>             <span class="c1">## (96, 3*96, 3)</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown>
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_23.png" />
+</figure></p>
+</details>
                 
                   
                     
