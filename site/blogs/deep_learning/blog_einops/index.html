@@ -2026,9 +2026,18 @@ i.e. </p>
 </figure></p>
 </details>
 <details class="quote" open="open"><summary>Yet another Split &amp; Transpose</summary><p>This is crazy crazy....
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span>
+              <span class="s2">&quot;(b1 b2) (h1 h2) (w1 w2) c -&gt; (h1 b1 h2) (w1 b2 w2) c&quot;</span><span class="p">,</span>
+              <span class="n">h1</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">w1</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">b2</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>             <span class="c1">## (3*(6/3)*(96/3), 3*3*(96/3), 3) = (192, 288, 3)</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
+<figure markdown class="card">
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_29.png" />
+</figure></p>
 </details>
                 
                   
