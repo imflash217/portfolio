@@ -440,4 +440,13 @@ u.shape         ## (2*96, 2*96, 3)
 ![](../../../assets/blogs/deep_learning/einops/images_19.png)
 </figure>
 
+4. Order of axes matter as usual. You can repeat each pixel 3 times by changing the order of axes in repeat
+```python
+u = repeat(images[0], "h w c -> h (w repeat) c", repeat=3)      ## repeat the pixels along the width dim. 3 times
+u.shape         ## (96, 96*3, 3)
+```
+<figure markdown>
+![](../../../assets/blogs/deep_learning/einops/images_20.png)
+</figure>
 
+:man_raising_hand: NOTE: The `repeat` operation covers `numpy.tile`, `numpy.repeat` and much more.
