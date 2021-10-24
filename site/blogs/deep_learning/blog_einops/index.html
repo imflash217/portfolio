@@ -1492,13 +1492,13 @@ hide:
 <span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
-<figure>
+<figure class="card">
 <p><img alt="..." src="../../../assets/blogs/deep_learning/einops/images_0.png" /></p>
 </figure>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">images</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
-<figure>
+<figure class="card">
 <p><img alt="..." src="../../../assets/blogs/deep_learning/einops/images_1.png" /></p>
 </figure>
 <p><strong>We will use three opeartions:</strong> <code>rearrange</code>, <code>reduce</code>, <code>repeat</code>
@@ -1511,7 +1511,7 @@ hide:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c -&gt; w h c&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown> 
+<figure markdown class=card>
     <img alt="images_2" src="../../../assets/blogs/deep_learning/einops/images_2.png" />
     <figcaption><code>rearrange()</code></figcaption>
 </figure></p>
@@ -1524,7 +1524,7 @@ operations provided by <code>einops</code></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; (b h) w c&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown> 
+<figure markdown class="card">
     <img alt="images_3" src="../../../assets/blogs/deep_learning/einops/images_3.png" />
 </figure></p>
 </details>
@@ -1533,7 +1533,7 @@ operations provided by <code>einops</code></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (b w) c&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown> 
+<figure markdown class="card">
     <img alt="images_4" src="../../../assets/blogs/deep_learning/einops/images_4.png" />
 </figure></p>
 </details>
@@ -1594,7 +1594,7 @@ The resulting 1D array contains as many elements as the original 4D array.</p>
 <span class="n">a</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_5.png" />
 </figure></p>
 </details>
@@ -1612,7 +1612,7 @@ The resulting 1D array contains as many elements as the original 4D array.</p>
 <span class="n">a</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_6.png" />
 </figure></p>
 </details>
@@ -1628,7 +1628,7 @@ The resulting 1D array contains as many elements as the original 4D array.</p>
 <span class="n">a</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_7.png" />
 </figure></p>
 </details>
@@ -1653,7 +1653,7 @@ It affects the way data is being transposed. Below examples show the impacts.</p
 <span class="n">a</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_8.png" />
 </figure></p>
 <p>v/s</p>
@@ -1664,7 +1664,7 @@ It affects the way data is being transposed. Below examples show the impacts.</p
 <span class="n">b</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_9.png" />
 </figure></p>
 <p><strong>Though the shapes of both <code>a</code> and <code>b</code> are same but the ordering of pixels are different.</strong></p>
@@ -1679,7 +1679,7 @@ Neighboring number differ in <em>rightmost</em> axis.</p>
 <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) h w c -&gt; h (b2 b1 w) c&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>     <span class="c1">## prodices &quot;eoipns&quot;</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_10.png" />
 </figure></p>
 </details>
@@ -1705,7 +1705,7 @@ If an axis was not present in the output definition --you guessed it -- it was <
 <span class="n">u</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_11.png" />
 </figure></p>
 <p>The above code is similar to the standard code (without <code>einops</code>) as shown below
@@ -1716,7 +1716,7 @@ If an axis was not present in the output definition --you guessed it -- it was <
 <span class="n">u</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_12.png" />
 </figure></p>
 <p>But, the code with <code>einops</code> is much more readable and states the operations clearly.</p>
@@ -1730,7 +1730,7 @@ If an axis was not present in the output definition --you guessed it -- it was <
 <span class="n">u</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_13.png" />
 </figure></p>
 </details>
@@ -1743,7 +1743,7 @@ If an axis was not present in the output definition --you guessed it -- it was <
 <span class="n">u</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_14.png" />
 </figure></p>
 </details>
@@ -1756,7 +1756,7 @@ If an axis was not present in the output definition --you guessed it -- it was <
 <span class="n">u</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_15.png" />
 </figure></p>
 </details>
@@ -1767,7 +1767,7 @@ If an axis was not present in the output definition --you guessed it -- it was <
 <span class="n">u</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_16.png" />
 </figure></p>
 </details>
@@ -1858,7 +1858,7 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 <span class="n">y</span><span class="o">.</span><span class="n">shape</span>                                             <span class="c1">## (96, 6*96, 3)</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_17.png" />
 </figure></p>
 </details>
@@ -1888,7 +1888,7 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 <span class="n">u</span><span class="o">.</span><span class="n">shape</span>         <span class="c1">## (96, 3*96, 3)</span>
 </code></pre></div>
 </td></tr></table></p>
-<figure>
+<figure class="card">
 <p><img alt="" src="../../../assets/blogs/deep_learning/einops/images_18.png" /></p>
 </figure>
 <p><img alt="🎯" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3af.svg" title=":dart:" /> Repeat along <strong>multiple existing axes</strong>
@@ -1897,7 +1897,7 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 <span class="n">u</span><span class="o">.</span><span class="n">shape</span>         <span class="c1">## (2*96, 2*96, 3)</span>
 </code></pre></div>
 </td></tr></table></p>
-<figure>
+<figure class="card">
 <p><img alt="" src="../../../assets/blogs/deep_learning/einops/images_19.png" /></p>
 </figure>
 <p><img alt="🎯" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3af.svg" title=":dart:" /> Order of axes matter as usual. You can repeat each pixel 3 times by changing the order of axes in repeat
@@ -1908,7 +1908,7 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 <span class="n">u</span><span class="o">.</span><span class="n">shape</span>         <span class="c1">## (96, 96*3, 3)</span>
 </code></pre></div>
 </td></tr></table></p>
-<figure>
+<figure class="card">
 <p><img alt="" src="../../../assets/blogs/deep_learning/einops/images_20.png" /></p>
 </figure>
 <p><img alt="🙋‍♂️" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> NOTE: The <code>repeat</code> operation covers <code>numpy.tile</code>, <code>numpy.repeat</code> and much more.</p>
@@ -1947,7 +1947,7 @@ i.e. </p>
 <span class="n">u</span><span class="o">.</span><span class="n">shape</span>             <span class="c1">## (2*96, 3*96, 3)</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_21.png" />
 </figure></p>
 </details>
@@ -1956,7 +1956,7 @@ i.e. </p>
 <span class="n">u</span><span class="o">.</span><span class="n">shape</span>             <span class="c1">## (96*2, 3*96, 3)</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown>
+<figure markdown class="card">
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_22.png" />
 </figure></p>
 </details>
