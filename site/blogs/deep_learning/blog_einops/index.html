@@ -1648,7 +1648,7 @@ If an axis was not present in the output definition --you guessed it -- it was <
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_14.png" />
 </figure></p>
 </details>
-<details class="danger" open="open"><summary>max-pooling with 2x2 kernel</summary><p>Imag eis plit into 2x2 patch and each patch is max-pooled
+<details class="danger" open="open"><summary>max-pooling with 2x2 kernel</summary><p>Image is split into 2x2 patch and each patch is max-pooled
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b (h h2) (w w2) c -&gt; h (b w) c&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="n">h2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">w2</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -1658,6 +1658,17 @@ If an axis was not present in the output definition --you guessed it -- it was <
 </td></tr></table>
 <figure markdown>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_15.png" />
+</figure></p>
+</details>
+<details class="danger" open="open"><summary>yet another example</summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) h w c -&gt; (b2 h) (b1 w)&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>         <span class="c1">## (3*96, 2*96)</span>
+<span class="n">u</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown>
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_16.png" />
 </figure></p>
 </details>
                 
