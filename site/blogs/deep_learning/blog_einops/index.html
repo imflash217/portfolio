@@ -1838,7 +1838,7 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 <p>This is the third operation in <code>einops</code> library</p>
 <ol>
 <li>
-<p>Repeat along a new axis. The new axis can be placed anywhere.
+<p>Repeat <strong>along a new axis</strong>. The new axis can be placed anywhere.
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1856,11 +1856,11 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 </td></tr></table></p>
 </li>
 <li>
-<p>Repat along an existing axis
+<p>Repat along <strong>an existing axis</strong>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## repeats the width 3 times</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c =&gt; h (repeat w) c&quot;</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c -&gt; h (repeat w) c&quot;</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">u</span><span class="o">.</span><span class="n">shape</span>         <span class="c1">## (96, 3*96, 3)</span>
 </code></pre></div>
 </td></tr></table></p>
@@ -1868,6 +1868,17 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 </ol>
 <figure>
 <p><img alt="" src="../../../assets/blogs/deep_learning/einops/images_18.png" /></p>
+</figure>
+<ol>
+<li>Repeat along <strong>multiple existing axes</strong>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c -&gt; (2 h) (2 w) c&quot;</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>         <span class="c1">## (2*96, 2*96, 3)</span>
+</code></pre></div>
+</td></tr></table></li>
+</ol>
+<figure>
+<p><img alt="" src="../../../assets/blogs/deep_learning/einops/images_19.png" /></p>
 </figure>
                 
                   
