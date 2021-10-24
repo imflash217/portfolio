@@ -574,4 +574,14 @@ u.shape         ## (96, 96*3, 3)
     ![](../../../assets/blogs/deep_learning/einops/images_29.png)
     </figure>
 
+???+ danger "Arbitrarily Complicated Pattern"
+    ```python
+    u = reduce(images,
+               "(b1 b2) (h1 h2 h3) (w1 w2 w3) c -> (h1 w1 h3) (b1 w2 h2 w3 b2) c", 
+               "mean",
+               w1=2, w3=2, h2=2, h3=2, b2=2)
+    ```
+    <figure markdown class="card">
+    ![](../../../assets/blogs/deep_learning/einops/images_30.png)
+    </figure>
 
