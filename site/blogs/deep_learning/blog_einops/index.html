@@ -2052,6 +2052,26 @@ i.e. </p>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_30.png" />
 </figure></p>
 </details>
+<details class="quote" open="open"><summary>Subtract background &amp; Normalize</summary><p>Subtract background in each image individually and normalize.</p>
+<p><strong> <img alt="🎯" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3af.svg" title=":dart:" /> NOTE: Pay attention to <code>()</code> -- this is a composition of <code>0</code> axis
+(a dummy axis with 1 element)</strong></p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; b () () c&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">)</span>   <span class="c1">## finding per-image per-channel max</span>
+<span class="n">u</span> <span class="o">-=</span> <span class="n">images</span>                                         <span class="c1">## subtracting</span>
+<span class="n">u</span> <span class="o">/=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; b () () c&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">)</span>       <span class="c1">## NORMALIZATION</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (b w) c&quot;</span><span class="p">)</span>
+
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>                                             <span class="c1">## (96, 6*96, 3)</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown class="card">
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_31.png" />
+</figure></p>
+</details>
                 
                   
                     
