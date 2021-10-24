@@ -494,5 +494,6 @@ u.shape         ## (96, 96*3, 3)
 
 ???+ done "Interweaving along vertical for couple of images"
     ```python
-    u = rearrange(images, "")
+    u = rearrange(images, "(b1 b2) h w c -> (h b1) (b2 w) c", b1=2)
+    u.shape             ## (96*2, 3*96, 3)
     ```
