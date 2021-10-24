@@ -6,3 +6,22 @@
 .md-typeset details {
     font-size: 16px
 }
+
+h1 {
+    color: white;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,65,79,1) 42%, rgba(0,84,255,1) 81%); 
+    padding: 0.25em;
+}
+
+h3 {
+    color: white;
+    background-color: black;
+    padding: 0.25em;
+}
+
+h2 {
+    color: white;
+    background-color: #fc0362;
+    padding: 0.25em;
+}

@@ -15,6 +15,8 @@ $argadd mkdocs.yml
 tabnew
 tabnew
 tabnew
+tabnew
+tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -28,7 +30,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 157 - ((35 * winheight(0) + 18) / 37)
+let s:l = 157 - ((34 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -47,7 +49,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -67,11 +69,50 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 373 - ((30 * winheight(0) + 18) / 37)
+let s:l = 497 - ((34 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 373
+keepjumps 497
+normal! 027|
+tabnext
+edit ~/Desktop/flashAI/fluent_python/src/notebook_css/style-notebook.css
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
+tabnext
+edit docs/stylesheets/extra.css
+argglobal
+balt ~/Desktop/flashAI/fluent_python/src/notebook_css/style-notebook.css
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
 normal! 0
 tabnext
 edit docs/python/design_patterns.md
@@ -87,13 +128,13 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 281 - ((12 * winheight(0) + 18) / 37)
+let s:l = 281 - ((12 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 281
 normal! 024|
-tabnext 3
+tabnext 5
 badd +1 mkdocs.yml
 badd +1 docs/blogs/deep_learning/blog_tf_v1.md
 badd +1 docs/blogs/deep_learning/blog_einops.md
@@ -101,6 +142,8 @@ badd +1 docs/python/design_patterns.md
 badd +0 docs/publications/about.md
 badd +32 docs/notes/about.md
 badd +105 docs/blogs/physics/blog_01282021.md
+badd +0 ~/Desktop/flashAI/fluent_python/src/notebook_css/style-notebook.css
+badd +0 docs/stylesheets/extra.css
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

@@ -491,3 +491,8 @@ u.shape         ## (96, 96*3, 3)
     <figure markdown>
     ![](../../../assets/blogs/deep_learning/einops/images_21.png)
     </figure>
+
+???+ done "Interweaving along vertical for couple of images"
+    ```python
+    u = rearrange(images, "")
+    ```
