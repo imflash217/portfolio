@@ -421,7 +421,7 @@ v = repeat(images[0], "h w c -> h 5 w c")   ## repeats 5 times in the new axis.
 v.shape         ## (96, 5, 96, 3)
 ```
 
-2. Repat along **an existing axis**
+:dart: Repat along **an existing axis**
 ```python
 ## repeats the width 3 times
 u = repeat(images[0], "h w c -> h (repeat w) c", repeat=3)
@@ -430,7 +430,8 @@ u.shape         ## (96, 3*96, 3)
 <figure markdown>
 ![](../../../assets/blogs/deep_learning/einops/images_18.png)
 </figure>
-3. Repeat along **multiple existing axes**
+
+:dart: Repeat along **multiple existing axes**
 ```python
 u = repeat(images[0], "h w c -> (2 h) (2 w) c")
 u.shape         ## (2*96, 2*96, 3)
@@ -438,7 +439,8 @@ u.shape         ## (2*96, 2*96, 3)
 <figure markdown>
 ![](../../../assets/blogs/deep_learning/einops/images_19.png)
 </figure>
-4. Order of axes matter as usual. You can repeat each pixel 3 times by changing the order of axes in repeat
+
+:dart: Order of axes matter as usual. You can repeat each pixel 3 times by changing the order of axes in repeat
 ```python
 ## repeat the pixels along the width dim. 3 times
 u = repeat(images[0], "h w c -> h (w repeat) c", repeat=3)
