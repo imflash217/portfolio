@@ -1806,6 +1806,20 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 <span class="n">v</span><span class="o">.</span><span class="n">shape</span>                                                 <span class="c1">## (6, 96, 96, 3)</span>
 </code></pre></div>
 </td></tr></table></p>
+<details class="danger" open="open"><summary>An example usage</summary><p>Compute max in each image individually and then show a difference
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; b () () c&quot;</span><span class="p">,</span> <span class="nb">max</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">-=</span> <span class="n">images</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (b w) c&quot;</span><span class="p">)</span>
+<span class="n">y</span><span class="o">.</span><span class="n">shape</span>                                             <span class="c1">## (96, 6*96, 3)</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown>
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_17.png" />
+</figure></p>
+</details>
                 
                   
                     
