@@ -1965,8 +1965,18 @@ i.e. </p>
 <span class="n">u</span><span class="o">.</span><span class="n">shape</span>             <span class="c1">## (96, 3*96, 3)</span>
 </code></pre></div>
 </td></tr></table>
-<figure markdown class="card">
+<figure markdown>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_23.png" />
+</figure></p>
+</details>
+<details class="done" open="open"><summary>Decomposing color into different axes</summary><p>Here we decompose color dimension into different axes. We also downsample the image.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b (h 2) (w 2) c -&gt; (c h) (b w)&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>             <span class="c1">## (3*48, 6*48)</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown>
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_24.png" />
 </figure></p>
 </details>
                 
