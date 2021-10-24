@@ -2094,6 +2094,30 @@ i.e. </p>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_32.png" />
 </figure></p>
 </details>
+<details class="quote" open="open"><summary>ROTATE</summary><p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; w (b h) c&quot;</span><span class="p">)</span>       <span class="c1">## rotation of (width &lt;-&gt; height) </span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>             <span class="c1">## (96, 6*96, 3)</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown class="card">
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_33.png" />
+</figure></p>
+</details>
+<details class="quote" open="open"><summary>Another Example</summary><p>Let's bring the <code>channel</code> dimension as part of the <code>width</code> axis.</p>
+<p>Also, at the same time <strong>downsample</strong> the <code>width</code> axis by 2x
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> 
+           <span class="s2">&quot;b (h h2) (w w2) c -&gt; (h w2) (b w c)&quot;</span><span class="p">,</span> 
+           <span class="s2">&quot;mean&quot;</span><span class="p">,</span> 
+           <span class="n">h2</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">w2</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown class="card">
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_34.png" />
+</figure></p>
+</details>
                 
                   
                     
