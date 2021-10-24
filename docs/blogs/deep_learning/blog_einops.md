@@ -451,4 +451,10 @@ u.shape         ## (96, 96*3, 3)
 :man_raising_hand: NOTE: The `repeat` operation covers `numpy.tile`, `numpy.repeat` and much more.
 
 
-### `repeat <=> reduce`
+### reduce v/s repeat
+
+`reduce` and `repeat` are opposite of each other. 
+
+1. `reduce`: reduces amount of elements
+2. `repeat`: increases the numbe rof elements.
+
