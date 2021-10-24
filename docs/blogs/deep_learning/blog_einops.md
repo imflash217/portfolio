@@ -346,7 +346,9 @@ x = list(images)
 ## Case-0: We can use the "list-axis" as 1st axis ("b") and rest of the axes stays as usual
 x0 = rearrange(x, "b h w c -> b h w c")
 x0.shape                                    ## (6, 96, 96, 3)
+```
 
+```python
 ##----------------------------------------------------------------------------##
 ## case-1: But the new axis can appear in any place
 x1 = rearrange(x, "b h w c -> h w c b")
@@ -355,7 +357,9 @@ x1.shape                                    ## (96, 96, 3, 6)
 ## This is equivalent to using `numpy.stack`
 x11 = numpy.stack(x, axis=3)
 x11.shape                                   ## (96, 96, 3, 6)
+```
 
+```python
 ##----------------------------------------------------------------------------##
 ## Case-2: ....Or we can also concatenate along axes
 x2 = rearrange(x, "b h w c -> h (b w) c")
