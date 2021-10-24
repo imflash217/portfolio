@@ -405,3 +405,29 @@ v.shape                                                 ## (6, 96, 96, 3)
     <figure markdown>
     ![](../../../assets/blogs/deep_learning/einops/images_17.png)
     </figure>
+
+### Meet `repeat`: Repeating elements
+
+This is the third operation in `einops` library
+
+1. Repeat along a new axis. The new axis can be placed anywhere.
+```python
+u = repeat(images[0], "h w c -> h new_axis w c", new_axis=5)
+u.shape         ## (96, 5, 96, 3)
+
+## -- OR -- a shortcut
+
+v = repeat(images[0], "h w c -> h 5 w c")   ## repeats 5 times in the new axis.
+v.shape         ## (96, 5, 96, 3)
+```
+
+2. Repat along an existing axis
+```python
+## repeats the width 3 times
+u = repeat(images[0], "h w c => h (repeat w) c", repeat=3)
+u.shape         ## (96, 3*96, 3)
+```
+<figure markdown>
+![](../../../assets/blogs/deep_learning/einops/images_18.png)
+</figure>
+
