@@ -68,12 +68,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 497 - ((34 * winheight(0) + 18) / 36)
+let s:l = 498 - ((34 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 497
-normal! 027|
+keepjumps 498
+normal! 042|
 tabnext
 edit docs/stylesheets/extra.css
 argglobal
@@ -114,7 +114,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 281
 normal! 024|
-tabnext 3
+tabnext 4
 badd +1 mkdocs.yml
 badd +1 docs/blogs/deep_learning/blog_tf_v1.md
 badd +1 docs/blogs/deep_learning/blog_einops.md
