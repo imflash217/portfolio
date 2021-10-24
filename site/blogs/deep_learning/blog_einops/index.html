@@ -1920,7 +1920,11 @@ to get back the original tensor.
 
 <span class="k">assert</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">reduced</span><span class="p">)</span>       <span class="c1">## True</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
+Notice that the operation pattern in <code>reduce</code> and <code>repeat</code> are reverse of each other.
+i.e. </p>
+<p>in <code>repeat</code> its <code>"b h w c -&gt; b h new_axis w c"</code> but</p>
+<p>in <code>reduce</code> its <code>"b h new_axis w c -&gt; b h w c"</code></p>
 </details>
                 
                   
