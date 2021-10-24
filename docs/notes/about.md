@@ -29,7 +29,7 @@
     <iframe src="https://www.youtube.com/embed/lve6KTZTKDw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<iframe src="vim.pdf" width="100%" height="500px"></iframe>
+<iframe src="../vim.pdf" width="100%" height="500px"></iframe>
 
 
 <figure markdown> 
