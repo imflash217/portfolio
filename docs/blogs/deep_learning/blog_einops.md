@@ -203,3 +203,31 @@ Several decompositions are possible. Some examples are shown below:
 
     a.shape     ## (6*48, 96*2, 3)
     ```
+
+## Order of axes matter
+
+The order of axes in composition and decomposition is of prime importance. 
+It affects the way data is being transposed. Below examples show the impacts.
+
+???+ danger "An example"
+    ```python
+    a = rearrange(images, "b h w c -> h (b w) c")
+    a.shape                                         ##
+    a
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_8.png)
+    </figure>
+
+    v/s
+
+    ```python
+    a = rearrange(images, "b h w c -> h (w b) c")
+    a.shape                                         ##
+    a
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_9.png)
+    </figure>
+
+
