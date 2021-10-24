@@ -550,4 +550,20 @@ u.shape         ## (96, 96*3, 3)
     ![](../../../assets/blogs/deep_learning/einops/images_27.png)
     </figure>
 
+???+ done "Another Split & Transpose"
+    This is crazy
+    ```python
+    u = rearrange(images,
+                  "b (h1 h2 h3) (w1 w2 w3) c -> (h1 w2 h3) (b w1 h2 w3) c",
+                  h2=2, h3=2, w2=2, w3=2)
+    u.shape             ## (96/(2*2)*2*2, 6*96/(2*2)*2*2, c) = (96, 6*96, 3)
+    ```
+    <figure markdown class="card">
+    ![](../../../assets/blogs/deep_learning/einops/images_28.png)
+    </figure>
 
+???+ quote "Yet another Split & Transpose"
+    This is crazy crazy....
+    ```python
+
+    ```
