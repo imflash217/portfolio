@@ -374,13 +374,23 @@ x22.shape                                   ## (96. 6*96, 3)
 
 You can write `1` to create new axis of length 1. 
 There is also a synonym `()` that does exactly the same
+
 It is exactly what `numpy.exapand_axis()` and `torch.unsqueeze()` does.
 
 ```python
-## both operations does the same as "numpy.expand_dims()"
+## both operations does the same as "numpy.expand_dims()" or "torch.unsqueeze()"
 u = rearrange(images, "b h w c -> b 1 h w 1 c")
 v = rearrange(images, "b h w c -> b () h w () c")
 
 u.shape         ## (6, 1, 96, 96, 1, 3)
 v.shape         ## (6, 1, 96, 96, 1, 3)
 ```
+
+The `numpy.squeeze()` operation is also facilitated by `rearrange()` as usual.
+```python
+u = rearrange(images, "b h w c -> b 1 h w 1 c")         ## torch.unsqueeze()
+v = rearrange(u, "b 1 h w 1 c -> b h w c")              ## torch.unsqueeze()
+
+v.shape                                                 ## (6, 96, 96, 3)
+```
+
