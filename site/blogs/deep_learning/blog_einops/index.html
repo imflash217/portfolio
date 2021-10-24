@@ -2072,6 +2072,28 @@ i.e. </p>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_31.png" />
 </figure></p>
 </details>
+<details class="danger" open="open"><summary>PIXELATE</summary><p>First <strong>downscale</strong> by averaging then <strong>upscale</strong> by using the same pattern.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## downscale using &quot;mean&quot; kernel of size (6, 8)</span>
+<span class="n">downscaled</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b (h h2) (w w2) c -&gt; b h w c&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">h2</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">w2</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">upscaled</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="n">downscaled</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; b (h h2) (w w2) c&quot;</span><span class="p">,</span> <span class="n">h2</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">w2</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">upscaled</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (b w) c&quot;</span><span class="p">)</span>
+
+<span class="n">downscaled</span><span class="o">.</span><span class="n">shape</span>            <span class="c1">## (6, 96/6, 96/8, 3)</span>
+<span class="n">upscaled</span><span class="o">.</span><span class="n">shape</span>              <span class="c1">## (6, (96/6)*6, (96/8)*8, 3) = (6, 96, 96, 3)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">shape</span>                     <span class="c1">## (96, 6*96, 3)</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown class="card">
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_32.png" />
+</figure></p>
+</details>
                 
                   
                     
