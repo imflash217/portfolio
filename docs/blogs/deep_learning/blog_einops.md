@@ -482,3 +482,12 @@ u.shape         ## (96, 96*3, 3)
 
 ### Some more examples
 
+???+ quote "Interwaving pixels of different pictures"
+    All letters can be observed in the final image
+    ```python
+    u = rearrange(images, "(b1 b2) h w c -> (h b1) (w b2) c", b1=2)
+    u.shape             ## (2*96, 3*96, 3)
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_21.png)
+    </figure>
