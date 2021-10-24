@@ -561,7 +561,7 @@
         
           <li class="md-nav__item">
   <a href="#preparations" class="md-nav__link">
-    Preparations:
+    Preparations
   </a>
   
 </li>
@@ -569,6 +569,13 @@
           <li class="md-nav__item">
   <a href="#load-a-batch-of-images" class="md-nav__link">
     Load a batch of images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meet-rearrange" class="md-nav__link">
+    Meet (rearrange)
   </a>
   
 </li>
@@ -590,6 +597,13 @@
           <li class="md-nav__item">
   <a href="#order-of-axes-matter" class="md-nav__link">
     Order of axes matter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meet-reduce" class="md-nav__link">
+    Meet (reduce)
   </a>
   
 </li>
@@ -1261,7 +1275,7 @@
         
           <li class="md-nav__item">
   <a href="#preparations" class="md-nav__link">
-    Preparations:
+    Preparations
   </a>
   
 </li>
@@ -1269,6 +1283,13 @@
           <li class="md-nav__item">
   <a href="#load-a-batch-of-images" class="md-nav__link">
     Load a batch of images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meet-rearrange" class="md-nav__link">
+    Meet (rearrange)
   </a>
   
 </li>
@@ -1290,6 +1311,13 @@
           <li class="md-nav__item">
   <a href="#order-of-axes-matter" class="md-nav__link">
     Order of axes matter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meet-reduce" class="md-nav__link">
+    Meet (reduce)
   </a>
   
 </li>
@@ -1341,7 +1369,7 @@ hide:
 <li><strong>Operations</strong>: <code>rearrange</code>, <code>reduce</code>, <code>repeat</code></li>
 <li>How much can you do with a <strong>single</strong> operation?</li>
 </ol>
-<h3 id="preparations">Preparations:</h3>
+<h3 id="preparations">Preparations</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span>
@@ -1379,6 +1407,7 @@ hide:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">einops</span> <span class="kn">import</span> <span class="n">rearrange</span><span class="p">,</span> <span class="n">reduce</span><span class="p">,</span> <span class="n">repeat</span>
 </code></pre></div>
 </td></tr></table></p>
+<h3 id="meet-rearrange">Meet (<code>rearrange</code>)</h3>
 <details class="done" open="open"><summary>rearrange</summary><p>As its name suggests; it rearranges elements. Below, we swap <code>height</code> and <code>width</code>.</p>
 <p>In other words, below we <strong>transpose</strong> first two axes/dimensions.
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c -&gt; w h c&quot;</span><span class="p">)</span>
@@ -1554,6 +1583,43 @@ Neighboring number differ in <em>rightmost</em> axis.</p>
 </td></tr></table>
 <figure markdown>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_10.png" />
+</figure></p>
+</details>
+<h3 id="meet-reduce">Meet (<code>reduce</code>)</h3>
+<p>In <code>einops</code> we don't need to guess what happened (like below)
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+Because we write clearly what happened (as shown below)
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">einops.reduce</span>
+
+<span class="n">reduce</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; b h w&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+If an axis was not present in the output definition --you guessed it -- it was <strong>reduced</strong></p>
+<details class="done" open="open"><summary>Average over batch</summary><p>Average over batch
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h w c&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">)</span>      <span class="c1">## reduce using &quot;mean&quot; across the &quot;batch&quot; dimension</span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>                                             <span class="c1">## (96, 96, 3)</span>
+<span class="n">u</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown>
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_11.png" />
+</figure></p>
+<p>The above code is similar to the standard code (without <code>einops</code>) as shown below
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>                             <span class="c1">## find mean across the &quot;batch&quot; dimension </span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>                                             <span class="c1">## (96, 96, 3)</span>
+<span class="n">u</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown>
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_12.png" />
 </figure></p>
 </details>
                 
