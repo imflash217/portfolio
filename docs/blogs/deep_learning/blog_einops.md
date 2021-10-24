@@ -267,7 +267,7 @@ If an axis was not present in the output definition --you guessed it -- it was *
 ???+ done "Average over batch"
     Average over batch
     ```python
-    u = reduce(images, "b h w c -> h w c", "mean")      ## reduce using "mean" across the "batch" dimension
+    u = reduce(images, "b h w c -> h w c", "mean")      ## reduce using "mean" across the "batch" axis
     u.shape                                             ## (96, 96, 3)
     u
     ```
@@ -277,10 +277,14 @@ If an axis was not present in the output definition --you guessed it -- it was *
 
     The above code is similar to the standard code (without `einops`) as shown below
     ```python
-    u = images.mean(axis=0)                             ## find mean across the "batch" dimension 
-    u.shape                                             ## (96, 96, 3)
+    u = images.mean(axis=0)     ## find mean across the "batch" dimension 
+    u.shape                     ## (96, 96, 3)
     u
     ```
     <figure markdown>
     ![](../../../assets/blogs/deep_learning/einops/images_12.png)
     </figure>
+
+    But, the code with `einops` is much more readable and states the operations clearly.
+
+
