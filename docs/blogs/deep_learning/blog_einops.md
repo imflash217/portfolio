@@ -565,5 +565,13 @@ u.shape         ## (96, 96*3, 3)
 ???+ quote "Yet another Split & Transpose"
     This is crazy crazy....
     ```python
-
+    u = rearrange(images,
+                  "(b1 b2) (h1 h2) (w1 w2) c -> (h1 b1 h2) (w1 b2 w2) c",
+                  h1=3, w1=3, b2=3)
+    u.shape             ## (3*(6/3)*(96/3), 3*3*(96/3), 3) = (192, 288, 3)
     ```
+    <figure markdown class="card">
+    ![](../../../assets/blogs/deep_learning/einops/images_29.png)
+    </figure>
+
+
