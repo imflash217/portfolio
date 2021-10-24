@@ -211,8 +211,8 @@ It affects the way data is being transposed. Below examples show the impacts.
 
 ???+ danger "An example"
     ```python
-    a = rearrange(images, "b h w c -> h (b w) c")
-    a.shape                                         ## (96, 6*96, 3)
+    a = rearrange(images, "b h w c -> h (b w) c")       ## notice the ordering of (b w)
+    a.shape                                             ## (96, 6*96, 3)
     a
     ```
     <figure markdown>
@@ -222,8 +222,8 @@ It affects the way data is being transposed. Below examples show the impacts.
     v/s
 
     ```python
-    b = rearrange(images, "b h w c -> h (w b) c")
-    b.shape                                         ## (96, 96*6, 3)
+    b = rearrange(images, "b h w c -> h (w b) c")       ## notice the ordeing of (w b)
+    b.shape                                             ## (96, 96*6, 3)
     b
     ```
     <figure markdown>
@@ -232,6 +232,20 @@ It affects the way data is being transposed. Below examples show the impacts.
 
     **Though the shapes of both `a` and `b` are same but the ordering of pixels are different.**
 
+    **`RULE`**: The rule of importance is just as for digits. 
+    The **leftmost** digit is **most significant**.
+    Neighboring number differ in _rightmost_ axis.
 
+    ------------------------------------------------------
+    
+    What will happen if `b1` and `b2` are _reordered_ before composing to `width` 
+    (as shown in examples below):
+    ```python
+    rearrange(images, "(b1 b2) h w c -> h (b1 b2 w) c", b1=2)     ## produces "einops"
+    rearrange(images, "(b1 b2) h w c -> h (b2 b1 w) c", b1=2)     ## prodices "eoipns"
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_10.png)
+    </figure>
 
 
