@@ -410,7 +410,7 @@ v.shape                                                 ## (6, 96, 96, 3)
 
 This is the third operation in `einops` library
 
-1. Repeat along a new axis. The new axis can be placed anywhere.
+1. Repeat **along a new axis**. The new axis can be placed anywhere.
 ```python
 u = repeat(images[0], "h w c -> h new_axis w c", new_axis=5)
 u.shape         ## (96, 5, 96, 3)
@@ -421,13 +421,23 @@ v = repeat(images[0], "h w c -> h 5 w c")   ## repeats 5 times in the new axis.
 v.shape         ## (96, 5, 96, 3)
 ```
 
-2. Repat along an existing axis
+2. Repat along **an existing axis**
 ```python
 ## repeats the width 3 times
-u = repeat(images[0], "h w c => h (repeat w) c", repeat=3)
+u = repeat(images[0], "h w c -> h (repeat w) c", repeat=3)
 u.shape         ## (96, 3*96, 3)
 ```
 <figure markdown>
 ![](../../../assets/blogs/deep_learning/einops/images_18.png)
 </figure>
+
+3. Repeat along **multiple existing axes**
+```python
+u = repeat(images[0], "h w c -> (2 h) (2 w) c")
+u.shape         ## (2*96, 2*96, 3)
+```
+<figure markdown>
+![](../../../assets/blogs/deep_learning/einops/images_19.png)
+</figure>
+
 
