@@ -46,14 +46,14 @@ print(images.shape, images.dtype)   ## (6, 96, 96, 3), float64
 ## display the 1st image (whole 4d tensor can't be rendered)
 images[0]
 ```
-<figure markdown>
+<figure markdown class="card">
 ![...](../../../assets/blogs/deep_learning/einops/images_0.png)
 </figure>
 
 ```python
 images[1]
 ```
-<figure markdown>
+<figure markdown class="card">
 ![...](../../../assets/blogs/deep_learning/einops/images_1.png)
 </figure>
 
@@ -71,7 +71,7 @@ from einops import rearrange, reduce, repeat
     ```python
     rearrange(images[0], "h w c -> w h c")
     ```
-    <figure markdown> 
+    <figure markdown class=card>
         ![images_2](../../../assets/blogs/deep_learning/einops/images_2.png)
         <figcaption>`rearrange()`</figcaption>
     </figure>
@@ -88,7 +88,7 @@ operations provided by `einops`
     ```python
     rearrange(images, "b h w c -> (b h) w c")
     ```
-    <figure markdown> 
+    <figure markdown class="card">
         ![images_3](../../../assets/blogs/deep_learning/einops/images_3.png)
     </figure>
 
@@ -100,7 +100,7 @@ operations provided by `einops`
     ```python
     rearrange(images, "b h w c -> h (b w) c")
     ```
-    <figure markdown> 
+    <figure markdown class="card">
         ![images_4](../../../assets/blogs/deep_learning/einops/images_4.png)
     </figure>
 
@@ -158,7 +158,7 @@ Several decompositions are possible. Some examples are shown below:
     a.shape     ## (2*96, 3*96, 3)
     a
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_5.png)
     </figure>
 
@@ -172,7 +172,7 @@ Several decompositions are possible. Some examples are shown below:
     a.shape     ## (3*96, 2*96, 3)
     a
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_6.png)
     </figure>
 
@@ -189,7 +189,7 @@ Several decompositions are possible. Some examples are shown below:
     a.shape     ## (96*2, 6*48, 3)
     a
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_7.png)
     </figure>
 
@@ -217,7 +217,7 @@ It affects the way data is being transposed. Below examples show the impacts.
     a.shape                                             ## (96, 6*96, 3)
     a
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_8.png)
     </figure>
 
@@ -228,7 +228,7 @@ It affects the way data is being transposed. Below examples show the impacts.
     b.shape                                             ## (96, 96*6, 3)
     b
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_9.png)
     </figure>
 
@@ -246,7 +246,7 @@ It affects the way data is being transposed. Below examples show the impacts.
     rearrange(images, "(b1 b2) h w c -> h (b1 b2 w) c", b1=2)     ## produces "einops"
     rearrange(images, "(b1 b2) h w c -> h (b2 b1 w) c", b1=2)     ## prodices "eoipns"
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_10.png)
     </figure>
 
@@ -271,7 +271,7 @@ If an axis was not present in the output definition --you guessed it -- it was *
     u.shape                                             ## (96, 96, 3)
     u
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_11.png)
     </figure>
 
@@ -281,7 +281,7 @@ If an axis was not present in the output definition --you guessed it -- it was *
     u.shape                     ## (96, 96, 3)
     u
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_12.png)
     </figure>
 
@@ -296,7 +296,7 @@ If an axis was not present in the output definition --you guessed it -- it was *
     u.shape                                         ## (96, 96)
     u
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_13.png)
     </figure>
 
@@ -309,7 +309,7 @@ If an axis was not present in the output definition --you guessed it -- it was *
     u.shape         ## (48, 6*48, 3)
     u
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_14.png)
     </figure>
 
@@ -322,7 +322,7 @@ If an axis was not present in the output definition --you guessed it -- it was *
     u.shape         ## (49, 6*48, 3)
     u
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_15.png)
     </figure>
 
@@ -332,7 +332,7 @@ If an axis was not present in the output definition --you guessed it -- it was *
     u.shape         ## (3*96, 2*96)
     u
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_16.png)
     </figure>
 
@@ -402,7 +402,7 @@ v.shape                                                 ## (6, 96, 96, 3)
     y = rearrange(x, "b h w c -> h (b w) c")
     y.shape                                             ## (96, 6*96, 3)
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_17.png)
     </figure>
 
@@ -427,7 +427,7 @@ v.shape         ## (96, 5, 96, 3)
 u = repeat(images[0], "h w c -> h (repeat w) c", repeat=3)
 u.shape         ## (96, 3*96, 3)
 ```
-<figure markdown>
+<figure markdown class="card">
 ![](../../../assets/blogs/deep_learning/einops/images_18.png)
 </figure>
 
@@ -436,7 +436,7 @@ u.shape         ## (96, 3*96, 3)
 u = repeat(images[0], "h w c -> (2 h) (2 w) c")
 u.shape         ## (2*96, 2*96, 3)
 ```
-<figure markdown>
+<figure markdown class="card">
 ![](../../../assets/blogs/deep_learning/einops/images_19.png)
 </figure>
 
@@ -446,7 +446,7 @@ u.shape         ## (2*96, 2*96, 3)
 u = repeat(images[0], "h w c -> h (w repeat) c", repeat=3)
 u.shape         ## (96, 96*3, 3)
 ```
-<figure markdown>
+<figure markdown class="card">
 ![](../../../assets/blogs/deep_learning/einops/images_20.png)
 </figure>
 
@@ -488,7 +488,7 @@ u.shape         ## (96, 96*3, 3)
     u = rearrange(images, "(b1 b2) h w c -> (h b1) (w b2) c", b1=2)
     u.shape             ## (2*96, 3*96, 3)
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_21.png)
     </figure>
 
@@ -497,7 +497,7 @@ u.shape         ## (96, 96*3, 3)
     u = rearrange(images, "(b1 b2) h w c -> (h b1) (b2 w) c", b1=2)
     u.shape             ## (96*2, 3*96, 3)
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_22.png)
     </figure>
 
