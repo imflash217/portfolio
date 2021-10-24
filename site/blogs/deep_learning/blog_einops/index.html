@@ -1623,6 +1623,19 @@ If an axis was not present in the output definition --you guessed it -- it was <
 </figure></p>
 <p>But, the code with <code>einops</code> is much more readable and states the operations clearly.</p>
 </details>
+<details class="danger" open="open"><summary>Reducing over multiple axes</summary><p>Example of reducing over several dimensions.</p>
+<p>Besides <code>"mean"</code>, there are also <code>"min"</code>, <code>"max"</code>, <code>"sum"</code>, <code>"prod"</code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h w&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">)</span>     <span class="c1">## redce across &quot;batch&quot; &amp; &quot;channel&quot; axes</span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>                                         <span class="c1">## (96, 96)</span>
+<span class="n">u</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown>
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_13.png" />
+</figure></p>
+</details>
                 
                   
                     
