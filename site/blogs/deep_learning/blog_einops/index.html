@@ -1880,6 +1880,18 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 <figure>
 <p><img alt="" src="../../../assets/blogs/deep_learning/einops/images_19.png" /></p>
 </figure>
+<ol>
+<li>Order of axes matter as usual. You can repeat each pixel 3 times by changing the order of axes in repeat
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c -&gt; h (w repeat) c&quot;</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>      <span class="c1">## repeat the pixels along the width dim. 3 times</span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>         <span class="c1">## (96, 96*3, 3)</span>
+</code></pre></div>
+</td></tr></table></li>
+</ol>
+<figure>
+<p><img alt="" src="../../../assets/blogs/deep_learning/einops/images_20.png" /></p>
+</figure>
+<p><img alt="🙋‍♂️" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> NOTE: The <code>repeat</code> operation covers <code>numpy.tile</code>, <code>numpy.repeat</code> and much more.</p>
                 
                   
                     
