@@ -335,3 +335,33 @@ If an axis was not present in the output definition --you guessed it -- it was *
     <figure markdown>
     ![](../../../assets/blogs/deep_learning/einops/images_16.png)
     </figure>
+
+### Stack & Concatenate
+
+```python
+## rearrange can also take care of lists of arrays with the same shapes
+
+x = list(images)
+
+## Case-0: We can use the "list-axis" as 1st axis ("b") and rest of the axes stays as usual
+x0 = rearrange(x, "b h w c -> b h w c")
+x0.shape                                    ## (6, 96, 96, 3)
+
+##----------------------------------------------------------------------------##
+## case-1: But the new axis can appear in any place
+x1 = rearrange(x, "b h w c -> h w c b")
+x1.shape                                    ## (96, 96, 3, 6)
+
+## This is equivalent to using `numpy.stack`
+x11 = numpy.stack(x, axis=3)
+x11.shape                                   ## (96, 96, 3, 6)
+
+##----------------------------------------------------------------------------##
+## Case-2: ....Or we can also concatenate along axes
+x2 = rearrange(x, "b h w c -> h (b w) c")
+x2.shape                                    ## (96, 6*96, 3)
+
+## This is equivalent to using `numpy.concatenate`
+x22 = numpy.concatenate(x, axis=1)
+x22.shape                                   ## (96. 6*96, 3)
+```
