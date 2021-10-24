@@ -300,6 +300,8 @@ If an axis was not present in the output definition --you guessed it -- it was *
     ![](../../../assets/blogs/deep_learning/einops/images_13.png)
     </figure>
 
+### Mean-pooling
+
 ???+ done "Mean pooling with 2x2 kernel"
     Image is split into 2x2 patch and each path is avergaed
     ```python
@@ -310,6 +312,8 @@ If an axis was not present in the output definition --you guessed it -- it was *
     <figure markdown>
     ![](../../../assets/blogs/deep_learning/einops/images_14.png)
     </figure>
+
+### Max-pooling
 
 ???+ danger "max-pooling with 2x2 kernel"
     Image is split into 2x2 patch and each patch is max-pooled
