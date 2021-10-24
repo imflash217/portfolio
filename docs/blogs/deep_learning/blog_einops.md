@@ -287,4 +287,16 @@ If an axis was not present in the output definition --you guessed it -- it was *
 
     But, the code with `einops` is much more readable and states the operations clearly.
 
+???+ danger "Reducing over multiple axes"
+    Example of reducing over several dimensions.
+    
+    Besides `"mean"`, there are also `"min"`, `"max"`, `"sum"`, `"prod"`
+    ```python
+    u = reduce(images, "b h w c -> h w", "min")     ## redce across "batch" & "channel" axes
+    u.shape                                         ## (96, 96)
+    u
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_13.png)
+    </figure>
 
