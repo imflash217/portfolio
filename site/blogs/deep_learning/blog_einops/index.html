@@ -1602,7 +1602,7 @@ If an axis was not present in the output definition --you guessed it -- it was <
 <details class="done" open="open"><summary>Average over batch</summary><p>Average over batch
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h w c&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">)</span>      <span class="c1">## reduce using &quot;mean&quot; across the &quot;batch&quot; dimension</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h w c&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">)</span>      <span class="c1">## reduce using &quot;mean&quot; across the &quot;batch&quot; axis</span>
 <span class="n">u</span><span class="o">.</span><span class="n">shape</span>                                             <span class="c1">## (96, 96, 3)</span>
 <span class="n">u</span>
 </code></pre></div>
@@ -1613,14 +1613,15 @@ If an axis was not present in the output definition --you guessed it -- it was <
 <p>The above code is similar to the standard code (without <code>einops</code>) as shown below
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>                             <span class="c1">## find mean across the &quot;batch&quot; dimension </span>
-<span class="n">u</span><span class="o">.</span><span class="n">shape</span>                                             <span class="c1">## (96, 96, 3)</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>     <span class="c1">## find mean across the &quot;batch&quot; dimension </span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>                     <span class="c1">## (96, 96, 3)</span>
 <span class="n">u</span>
 </code></pre></div>
 </td></tr></table>
 <figure markdown>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_12.png" />
 </figure></p>
+<p>But, the code with <code>einops</code> is much more readable and states the operations clearly.</p>
 </details>
                 
                   
