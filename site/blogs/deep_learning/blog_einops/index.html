@@ -1997,6 +1997,20 @@ i.e. </p>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_26.png" />
 </figure></p>
 </details>
+<details class="quote" open="open"><summary>Split and Transpose</summary><p>Split into small patches and transpose each patch.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## splitting each image into 96/8 * 96/8 = 12*12 = 144 patches</span>
+<span class="c1">## each patch is of shape (8, 8)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;b (h1 h2) (w1 w2) c -&gt; (h1 w2) (b w1 h2) c&quot;</span><span class="p">,</span> <span class="n">h2</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">w2</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>             <span class="c1">## (12*8, 6*12*8, 3)</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown class="card">
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_27.png" />
+</figure></p>
+</details>
                 
                   
                     
