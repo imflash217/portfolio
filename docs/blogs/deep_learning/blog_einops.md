@@ -458,5 +458,17 @@ u.shape         ## (96, 96*3, 3)
 `reduce` and `repeat` are opposite of each other. 
 
 1. `reduce`: reduces amount of elements
-2. `repeat`: increases the numbe rof elements.
+2. `repeat`: increases the number of elements.
 
+???+ danger "An example of `reduce` v/s `repeat`"
+    In this example each image is repeated first then reduced over the `new_axis`
+    to get back the original tensor.
+    ```python
+    repeated = repeat(images, "b h w c -> b h new_axis w c", new_axis=2)
+    reduced = reduce(repeated, "b h new_axis w c -> b h w c", "min")
+
+    repeated.shape                                  ## (6, 96, 2, 96, 3)
+    reduced.shape                                   ## (6, 96, 96, 3)
+
+    assert numpy.array_equal(images, reduced)       ## True
+    ```
