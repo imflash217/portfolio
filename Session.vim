@@ -16,7 +16,6 @@ tabnew
 tabnew
 tabnew
 tabnew
-tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -76,25 +75,6 @@ normal! zt
 keepjumps 497
 normal! 027|
 tabnext
-edit ~/Desktop/flashAI/fluent_python/src/notebook_css/style-notebook.css
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-tabnext
 edit docs/stylesheets/extra.css
 argglobal
 balt ~/Desktop/flashAI/fluent_python/src/notebook_css/style-notebook.css
@@ -108,11 +88,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 10 - ((9 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 10
 normal! 0
 tabnext
 edit docs/python/design_patterns.md
@@ -134,7 +114,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 281
 normal! 024|
-tabnext 5
+tabnext 3
 badd +1 mkdocs.yml
 badd +1 docs/blogs/deep_learning/blog_tf_v1.md
 badd +1 docs/blogs/deep_learning/blog_einops.md
