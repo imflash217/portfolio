@@ -449,3 +449,6 @@ u.shape         ## (96, 96*3, 3)
 </figure>
 
 :man_raising_hand: NOTE: The `repeat` operation covers `numpy.tile`, `numpy.repeat` and much more.
+
+
+### `repeat <=> reduce`
