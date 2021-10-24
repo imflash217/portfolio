@@ -618,3 +618,28 @@ u.shape         ## (96, 96*3, 3)
     <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_32.png)
     </figure>
+
+???+ quote "ROTATE"
+    ```python
+    u = rearrange(images, "b h w c -> w (b h) c")       ## rotation of (width <-> height) 
+    u.shape             ## (96, 6*96, 3)
+    ```
+    <figure markdown class="card">
+    ![](../../../assets/blogs/deep_learning/einops/images_33.png)
+    </figure>
+
+???+ quote "Another Example"
+    Let's bring the `channel` dimension as part of the `width` axis.
+
+    Also, at the same time **downsample** the `width` axis by 2x
+    ```python
+    u = reduce(images, 
+               "b (h h2) (w w2) c -> (h w2) (b w c)", 
+               "mean", 
+               h2=3, w2=3)
+    ```
+    <figure markdown class="card">
+    ![](../../../assets/blogs/deep_learning/einops/images_34.png)
+    </figure>
+
+
