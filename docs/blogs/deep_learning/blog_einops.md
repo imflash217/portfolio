@@ -518,3 +518,13 @@ u.shape         ## (96, 96*3, 3)
     <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_24.png)
     </figure>
+
+???+ quote "Disproportionate resize"
+    ```python
+    u = reduce(images, "b (h 3) (w 4) c -> (h) (b w)", "mean")
+    u.shape             ## (96/3, 6*96/4)
+    ```
+    <figure markdown class="card">
+    ![](../../../assets/blogs/deep_learning/einops/images_25.png)
+    </figure>
+
