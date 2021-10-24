@@ -1836,9 +1836,7 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 </details>
 <h3 id="meet-repeat-repeating-elements">Meet <code>repeat</code>: Repeating elements</h3>
 <p>This is the third operation in <code>einops</code> library</p>
-<ol>
-<li>
-<p>Repeat <strong>along a new axis</strong>. The new axis can be placed anywhere.
+<p>:bulls_eye: Repeat <strong>along a new axis</strong>. The new axis can be placed anywhere.
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1854,17 +1852,15 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 <span class="n">v</span><span class="o">.</span><span class="n">shape</span>         <span class="c1">## (96, 5, 96, 3)</span>
 </code></pre></div>
 </td></tr></table></p>
-</li>
-<li>
-<p>Repat along <strong>an existing axis</strong>
+<ol>
+<li>Repat along <strong>an existing axis</strong>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## repeats the width 3 times</span>
 <span class="n">u</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c -&gt; h (repeat w) c&quot;</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">u</span><span class="o">.</span><span class="n">shape</span>         <span class="c1">## (96, 3*96, 3)</span>
 </code></pre></div>
-</td></tr></table></p>
-</li>
+</td></tr></table></li>
 </ol>
 <figure>
 <p><img alt="" src="../../../assets/blogs/deep_learning/einops/images_18.png" /></p>
@@ -1883,7 +1879,9 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 <ol>
 <li>Order of axes matter as usual. You can repeat each pixel 3 times by changing the order of axes in repeat
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c -&gt; h (w repeat) c&quot;</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>      <span class="c1">## repeat the pixels along the width dim. 3 times</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## repeat the pixels along the width dim. 3 times</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">repeat</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c -&gt; h (w repeat) c&quot;</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">u</span><span class="o">.</span><span class="n">shape</span>         <span class="c1">## (96, 96*3, 3)</span>
 </code></pre></div>
 </td></tr></table></li>
