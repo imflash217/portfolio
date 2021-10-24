@@ -410,7 +410,7 @@ v.shape                                                 ## (6, 96, 96, 3)
 
 This is the third operation in `einops` library
 
-:bulls_eye: Repeat **along a new axis**. The new axis can be placed anywhere.
+:dart: Repeat **along a new axis**. The new axis can be placed anywhere.
 ```python
 u = repeat(images[0], "h w c -> h new_axis w c", new_axis=5)
 u.shape         ## (96, 5, 96, 3)
