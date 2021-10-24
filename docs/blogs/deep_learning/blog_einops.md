@@ -537,3 +537,17 @@ u.shape         ## (96, 96*3, 3)
     <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_26.png)
     </figure>
+
+???+ quote "Split and Transpose"
+    Split into small patches and transpose each patch.
+    ```python
+    ## splitting each image into 96/8 * 96/8 = 12*12 = 144 patches
+    ## each patch is of shape (8, 8)
+    u = rearrange(images, "b (h1 h2) (w1 w2) c -> (h1 w2) (b w1 h2) c", h2=8, w2=8)
+    u.shape             ## (12*8, 6*12*8, 3)
+    ```
+    <figure markdown class="card">
+    ![](../../../assets/blogs/deep_learning/einops/images_27.png)
+    </figure>
+
+
