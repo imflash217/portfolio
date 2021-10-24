@@ -24,6 +24,7 @@ theme:
     - navigation.instant
     - search.suggest
     - search.highlight
+    - content.code.annotate
 
 ##########################################################################
 markdown_extensions:

@@ -278,8 +278,10 @@ all_promos = [func for name, func in inspect.getmembers(promotions, inspect.isfu
 
 def best_promo(order):
     best_discount = max(promo(order) for promo in all_promos)
-    return best_discount
+    return best_discount    # (1)
 ```
+
+1.  :man_raising_hand: I'm a code annotation! I can cont
 
 Both the methods have pros & cons. Choose as you see fit.
 

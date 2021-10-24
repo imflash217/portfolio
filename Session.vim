@@ -31,12 +31,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 89 - ((12 * winheight(0) + 18) / 37)
+let s:l = 28 - ((27 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 89
-normal! 02|
+keepjumps 28
+normal! 0
 tabnext
 edit docs/blogs/deep_learning/blog_tf_v1.md
 argglobal
@@ -95,7 +95,7 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 292
-normal! 056|
+normal! 05|
 tabnext
 edit docs/blogs/physics/blog_01282021.md
 argglobal
@@ -173,7 +173,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
