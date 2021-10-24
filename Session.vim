@@ -15,10 +15,6 @@ $argadd mkdocs.yml
 tabnew
 tabnew
 tabnew
-tabnew
-tabnew
-tabnew
-tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -32,11 +28,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 28 - ((27 * winheight(0) + 18) / 37)
+let s:l = 157 - ((35 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 28
+keepjumps 157
 normal! 0
 tabnext
 edit docs/blogs/deep_learning/blog_tf_v1.md
@@ -71,31 +67,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 371 - ((28 * winheight(0) + 18) / 37)
+let s:l = 373 - ((30 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 371
-normal! 03|
-tabnext
-edit docs/notes/
-argglobal
-balt docs/blogs/deep_learning/blog_einops.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
+keepjumps 373
 normal! 0
 tabnext
 edit docs/python/design_patterns.md
@@ -117,74 +93,14 @@ keepjumps exe s:l
 normal! zt
 keepjumps 281
 normal! 024|
-tabnext
-edit docs/blogs/physics/blog_01282021.md
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 106 - ((29 * winheight(0) + 18) / 37)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 106
-normal! 0
-tabnext
-edit docs/publications/about.md
-argglobal
-balt docs/python/design_patterns.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-tabnext
-edit docs/notes/about.md
-argglobal
-balt docs/publications/about.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 25 - ((7 * winheight(0) + 18) / 37)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 25
-normal! 0
-tabnext 4
+tabnext 3
 badd +1 mkdocs.yml
 badd +1 docs/blogs/deep_learning/blog_tf_v1.md
 badd +1 docs/blogs/deep_learning/blog_einops.md
 badd +1 docs/python/design_patterns.md
-badd +1 docs/publications/about.md
-badd +1 docs/notes/about.md
-badd +0 docs/blogs/physics/blog_01282021.md
-badd +0 docs/notes/
+badd +0 docs/publications/about.md
+badd +32 docs/notes/about.md
+badd +105 docs/blogs/physics/blog_01282021.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -195,6 +111,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
