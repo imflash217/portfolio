@@ -506,7 +506,7 @@ u.shape         ## (96, 96*3, 3)
     u = reduce(images, "(b1 b2) h w c -> h (b2 w) c", "max", b1=2)
     u.shape             ## (96, 3*96, 3)
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_23.png)
     </figure>
 
@@ -516,6 +516,6 @@ u.shape         ## (96, 96*3, 3)
     u = reduce(images, "b (h 2) (w 2) c -> (c h) (b w)", "mean")
     u.shape             ## (3*48, 6*48)
     ```
-    <figure markdown>
+    <figure markdown class="card">
     ![](../../../assets/blogs/deep_learning/einops/images_24.png)
     </figure>
