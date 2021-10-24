@@ -6,7 +6,7 @@ hide:
 
 ## Part-1
 
-### Welocome to `einops`
+### Welcome to einops
 
 1. We don't write 
     ```python
@@ -62,7 +62,7 @@ images[1]
 from einops import rearrange, reduce, repeat
 ```
 
-### Meet (`rearrange`)
+### Meet "rearrange"
 
 ???+ done "rearrange"
     As its name suggests; it rearranges elements. Below, we swap `height` and `width`.
@@ -250,7 +250,7 @@ It affects the way data is being transposed. Below examples show the impacts.
     ![](../../../assets/blogs/deep_learning/einops/images_10.png)
     </figure>
 
-### Meet (`reduce`)
+### Meet "reduce"
 
 In `einops` we don't need to guess what happened (like below)
 ```python
@@ -406,7 +406,7 @@ v.shape                                                 ## (6, 96, 96, 3)
     ![](../../../assets/blogs/deep_learning/einops/images_17.png)
     </figure>
 
-### Meet `repeat`: Repeating elements
+### Meet "repeat": Repeating elements
 
 This is the third operation in `einops` library
 
