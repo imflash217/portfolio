@@ -73,7 +73,6 @@ from einops import rearrange, reduce, repeat
     ```
     <figure markdown class=card>
         ![images_2](../../../assets/blogs/deep_learning/einops/images_2.png)
-        <figcaption>`rearrange()`</figcaption>
     </figure>
 
 ### Composition of axes
