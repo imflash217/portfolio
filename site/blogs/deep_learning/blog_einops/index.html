@@ -546,8 +546,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#welocome-to-einops" class="md-nav__link">
-    Welocome to einops
+  <a href="#welcome-to-einops" class="md-nav__link">
+    Welcome to einops
   </a>
   
 </li>
@@ -575,7 +575,7 @@
         
           <li class="md-nav__item">
   <a href="#meet-rearrange" class="md-nav__link">
-    Meet (rearrange)
+    Meet "rearrange"
   </a>
   
 </li>
@@ -603,7 +603,7 @@
         
           <li class="md-nav__item">
   <a href="#meet-reduce" class="md-nav__link">
-    Meet (reduce)
+    Meet "reduce"
   </a>
   
 </li>
@@ -638,7 +638,7 @@
         
           <li class="md-nav__item">
   <a href="#meet-repeat-repeating-elements" class="md-nav__link">
-    Meet repeat: Repeating elements
+    Meet "repeat": Repeating elements
   </a>
   
 </li>
@@ -1309,8 +1309,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#welocome-to-einops" class="md-nav__link">
-    Welocome to einops
+  <a href="#welcome-to-einops" class="md-nav__link">
+    Welcome to einops
   </a>
   
 </li>
@@ -1338,7 +1338,7 @@
         
           <li class="md-nav__item">
   <a href="#meet-rearrange" class="md-nav__link">
-    Meet (rearrange)
+    Meet "rearrange"
   </a>
   
 </li>
@@ -1366,7 +1366,7 @@
         
           <li class="md-nav__item">
   <a href="#meet-reduce" class="md-nav__link">
-    Meet (reduce)
+    Meet "reduce"
   </a>
   
 </li>
@@ -1401,7 +1401,7 @@
         
           <li class="md-nav__item">
   <a href="#meet-repeat-repeating-elements" class="md-nav__link">
-    Meet repeat: Repeating elements
+    Meet "repeat": Repeating elements
   </a>
   
 </li>
@@ -1447,7 +1447,7 @@ hide:
 --- -->
 
 <h2 id="part-1">Part-1</h2>
-<h3 id="welocome-to-einops">Welocome to <code>einops</code></h3>
+<h3 id="welcome-to-einops">Welcome to einops</h3>
 <ol>
 <li>We don't write 
     <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -1505,7 +1505,7 @@ hide:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">einops</span> <span class="kn">import</span> <span class="n">rearrange</span><span class="p">,</span> <span class="n">reduce</span><span class="p">,</span> <span class="n">repeat</span>
 </code></pre></div>
 </td></tr></table></p>
-<h3 id="meet-rearrange">Meet (<code>rearrange</code>)</h3>
+<h3 id="meet-rearrange">Meet "rearrange"</h3>
 <details class="done" open="open"><summary>rearrange</summary><p>As its name suggests; it rearranges elements. Below, we swap <code>height</code> and <code>width</code>.</p>
 <p>In other words, below we <strong>transpose</strong> first two axes/dimensions.
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;h w c -&gt; w h c&quot;</span><span class="p">)</span>
@@ -1683,7 +1683,7 @@ Neighboring number differ in <em>rightmost</em> axis.</p>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_10.png" />
 </figure></p>
 </details>
-<h3 id="meet-reduce">Meet (<code>reduce</code>)</h3>
+<h3 id="meet-reduce">Meet "reduce"</h3>
 <p>In <code>einops</code> we don't need to guess what happened (like below)
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
@@ -1862,7 +1862,7 @@ There is also a synonym <code>()</code> that does exactly the same</p>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_17.png" />
 </figure></p>
 </details>
-<h3 id="meet-repeat-repeating-elements">Meet <code>repeat</code>: Repeating elements</h3>
+<h3 id="meet-repeat-repeating-elements">Meet "repeat": Repeating elements</h3>
 <p>This is the third operation in <code>einops</code> library</p>
 <p><img alt="🎯" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3af.svg" title=":dart:" /> Repeat <strong>along a new axis</strong>. The new axis can be placed anywhere.
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
