@@ -478,3 +478,7 @@ u.shape         ## (96, 96*3, 3)
     in `repeat` its `"b h w c -> b h new_axis w c"` but
     
     in `reduce` its `"b h new_axis w c -> b h w c"`
+
+
+### Some more examples
+
