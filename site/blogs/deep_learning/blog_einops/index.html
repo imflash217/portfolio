@@ -622,6 +622,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#stack-concatenate" class="md-nav__link">
+    Stack &amp; Concatenate
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1350,6 +1357,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#stack-concatenate" class="md-nav__link">
+    Stack &amp; Concatenate
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1701,6 +1715,58 @@ If an axis was not present in the output definition --you guessed it -- it was <
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_16.png" />
 </figure></p>
 </details>
+<h3 id="stack-concatenate">Stack &amp; Concatenate</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## rearrange can also take care of lists of arrays with the same shapes</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+
+<span class="c1">## Case-0: We can use the &quot;list-axis&quot; as 1st axis (&quot;b&quot;) and rest of the axes stays as usual</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; b h w c&quot;</span><span class="p">)</span>
+<span class="n">x0</span><span class="o">.</span><span class="n">shape</span>                                    <span class="c1">## (6, 96, 96, 3)</span>
+
+<span class="c1">##----------------------------------------------------------------------------##</span>
+<span class="c1">## case-1: But the new axis can appear in any place</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h w c b&quot;</span><span class="p">)</span>
+<span class="n">x1</span><span class="o">.</span><span class="n">shape</span>                                    <span class="c1">## (96, 96, 3, 6)</span>
+
+<span class="c1">## This is equivalent to using `numpy.stack`</span>
+<span class="n">x11</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">x11</span><span class="o">.</span><span class="n">shape</span>                                   <span class="c1">## (96, 96, 3, 6)</span>
+
+<span class="c1">##----------------------------------------------------------------------------##</span>
+<span class="c1">## Case-2: ....Or we can also concatenate along axes</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;b h w c -&gt; h (b w) c&quot;</span><span class="p">)</span>
+<span class="n">x2</span><span class="o">.</span><span class="n">shape</span>                                    <span class="c1">## (96, 6*96, 3)</span>
+
+<span class="c1">## This is equivalent to using `numpy.concatenate`</span>
+<span class="n">x22</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x22</span><span class="o">.</span><span class="n">shape</span>                                   <span class="c1">## (96. 6*96, 3)</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                     
