@@ -1941,6 +1941,16 @@ i.e. </p>
 <p>in <code>reduce</code> its <code>"b h new_axis w c -&gt; b h w c"</code></p>
 </details>
 <h3 id="some-more-examples">Some more examples</h3>
+<details class="quote" open="open"><summary>Interwaving pixels of different pictures</summary><p>All letters can be observed in the final image
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="s2">&quot;(b1 b2) h w c -&gt; (h b1) (w b2) c&quot;</span><span class="p">,</span> <span class="n">b1</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>             <span class="c1">## (2*96, 3*96, 3)</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown>
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_21.png" />
+</figure></p>
+</details>
                 
                   
                     
