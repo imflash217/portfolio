@@ -603,4 +603,18 @@ u.shape         ## (96, 96*3, 3)
     ![](../../../assets/blogs/deep_learning/einops/images_31.png)
     </figure>
 
+???+ danger "PIXELATE"
+    First **downscale** by averaging then **upscale** by using the same pattern.
+    ```python
+    ## downscale using "mean" kernel of size (6, 8)
+    downscaled = reduce(images, "b (h h2) (w w2) c -> b h w c", "mean", h2=6, w2=8)
+    upscaled = repeat(downscaled, "b h w c -> b (h h2) (w w2) c", h2=6, w2=8)
+    v = rearrange(upscaled, "b h w c -> h (b w) c")
 
+    downscaled.shape            ## (6, 96/6, 96/8, 3)
+    upscaled.shape              ## (6, (96/6)*6, (96/8)*8, 3) = (6, 96, 96, 3)
+    v.shape                     ## (96, 6*96, 3)
+    ```
+    <figure markdown class="card">
+    ![](../../../assets/blogs/deep_learning/einops/images_32.png)
+    </figure>
