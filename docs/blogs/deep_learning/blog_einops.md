@@ -394,3 +394,14 @@ v = rearrange(u, "b 1 h w 1 c -> b h w c")              ## torch.unsqueeze()
 v.shape                                                 ## (6, 96, 96, 3)
 ```
 
+???+ danger "An example usage"
+    Compute max in each image individually and then show a difference
+    ```python
+    x = reduce(images, "b h w c -> b () () c", max)
+    x -= images
+    y = rearrange(x, "b h w c -> h (b w) c")
+    y.shape                                             ## (96, 6*96, 3)
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_17.png)
+    </figure>
