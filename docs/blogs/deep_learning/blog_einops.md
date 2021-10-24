@@ -585,3 +585,22 @@ u.shape         ## (96, 96*3, 3)
     ![](../../../assets/blogs/deep_learning/einops/images_30.png)
     </figure>
 
+???+ quote "Subtract background & Normalize"
+    Subtract background in each image individually and normalize.
+
+    ** :dart: NOTE: Pay attention to `()` -- this is a composition of `0` axis
+    (a dummy axis with 1 element)**
+
+    ```python
+    u = reduce(images, "b h w c -> b () () c", "max")   ## finding per-image per-channel max
+    u -= images                                         ## subtracting
+    u /= reduce(u, "b h w c -> b () () c", "max")       ## NORMALIZATION
+    u = rearrange(u, "b h w c -> h (b w) c")
+
+    u.shape                                             ## (96, 6*96, 3)
+    ```
+    <figure markdown class="card">
+    ![](../../../assets/blogs/deep_learning/einops/images_31.png)
+    </figure>
+
+
