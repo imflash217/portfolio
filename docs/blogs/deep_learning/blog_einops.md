@@ -26,7 +26,7 @@ hide:
 2. **Operations**: `rearrange`, `reduce`, `repeat`
 3. How much can you do with a **single** operation?
 
-### Preparations:
+### Preparations
 ```python
 import numpy
 from utils import display_np_arrays_as_images
@@ -61,6 +61,8 @@ images[1]
 ```python
 from einops import rearrange, reduce, repeat
 ```
+
+### Meet (`rearrange`)
 
 ???+ done "rearrange"
     As its name suggests; it rearranges elements. Below, we swap `height` and `width`.
@@ -248,4 +250,37 @@ It affects the way data is being transposed. Below examples show the impacts.
     ![](../../../assets/blogs/deep_learning/einops/images_10.png)
     </figure>
 
+### Meet (`reduce`)
 
+In `einops` we don't need to guess what happened (like below)
+```python
+x.mean(-1)
+```
+Because we write clearly what happened (as shown below)
+```python
+import einops.reduce
+
+reduce(x, "b h w c -> b h w", "mean")
+```
+If an axis was not present in the output definition --you guessed it -- it was **reduced**
+
+???+ done "Average over batch"
+    Average over batch
+    ```python
+    u = reduce(images, "b h w c -> h w c", "mean")      ## reduce using "mean" across the "batch" dimension
+    u.shape                                             ## (96, 96, 3)
+    u
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_11.png)
+    </figure>
+
+    The above code is similar to the standard code (without `einops`) as shown below
+    ```python
+    u = images.mean(axis=0)                             ## find mean across the "batch" dimension 
+    u.shape                                             ## (96, 96, 3)
+    u
+    ```
+    <figure markdown>
+    ![](../../../assets/blogs/deep_learning/einops/images_12.png)
+    </figure>
