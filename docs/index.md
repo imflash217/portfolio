@@ -30,7 +30,7 @@ hide:
 
 <!-- ------------------------------------------------------------------------------------ -->
 
-<div class="card">
+<div class="photo">
   <img src="assets/vinay.png" alt="avatar" style="width:40%">
   <div class="container">
     <h2><b>Vinay Kumar</b></h2> 
