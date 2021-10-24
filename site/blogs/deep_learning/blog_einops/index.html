@@ -2011,6 +2011,25 @@ i.e. </p>
 <img alt="" src="../../../assets/blogs/deep_learning/einops/images_27.png" />
 </figure></p>
 </details>
+<details class="done" open="open"><summary>Another Split &amp; Transpose</summary><p>This is crazy
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">u</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">images</span><span class="p">,</span>
+              <span class="s2">&quot;b (h1 h2 h3) (w1 w2 w3) c -&gt; (h1 w2 h3) (b w1 h2 w3) c&quot;</span><span class="p">,</span>
+              <span class="n">h2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">h3</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">w2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">w3</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">shape</span>             <span class="c1">## (96/(2*2)*2*2, 6*96/(2*2)*2*2, c) = (96, 6*96, 3)</span>
+</code></pre></div>
+</td></tr></table>
+<figure markdown class="card">
+<img alt="" src="../../../assets/blogs/deep_learning/einops/images_28.png" />
+</figure></p>
+</details>
+<details class="quote" open="open"><summary>Yet another Split &amp; Transpose</summary><p>This is crazy crazy....
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</td></tr></table></p>
+</details>
                 
                   
                     
