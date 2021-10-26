@@ -9,6 +9,8 @@
 
 .md-typeset h1 {
     color: white;
+    font-weight: bold;
+    font-family: 'Alfa Slab One', cursive;
     background: rgb(2,0,36);
     background-image: linear-gradient(to right, #0033ff, #232eff, #3428ff, #4121ff, #4c17ff, #6434ff, #7649ff, #875cff, #a587ff, #c2afff, #e0d7ff, #ffffff);
     padding: 0.25em;
@@ -16,6 +18,8 @@
 
 .md-typeset h2 {
     color: white;
+    font-weight: bold;
+    font-family: 'Alfa Slab One', cursive;
     background-color: #fc0362;
     padding: 0.25em;
 }
