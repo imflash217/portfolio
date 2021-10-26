@@ -30,12 +30,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 23 - ((22 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 23
-normal! 024|
+keepjumps 1
+normal! 0
 tabnext
 edit docs/blogs/deep_learning/blog_tf_v1.md
 argglobal
@@ -109,12 +109,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 32 - ((8 * winheight(0) + 18) / 36)
+let s:l = 13 - ((11 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 32
-normal! 03|
+keepjumps 13
+normal! 05|
 tabnext
 edit docs/python/design_patterns.md
 argglobal
