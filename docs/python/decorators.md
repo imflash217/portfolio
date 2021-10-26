@@ -10,6 +10,7 @@ Both these code snippet shas the same effect:
 def target():
     print("running target()")
 ```
+v/s
 ```python
 ## this code snippet has the same effect as the above one (using @decorate decorator)
 def target():
