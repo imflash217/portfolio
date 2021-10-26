@@ -16,7 +16,6 @@ tabnew
 tabnew
 tabnew
 tabnew
-tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -96,26 +95,6 @@ normal! zt
 keepjumps 33
 normal! 017|
 tabnext
-edit docs/stylesheets/extra.css
-argglobal
-balt ~/Desktop/flashAI/fluent_python/src/notebook_css/style-notebook.css
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 13 - ((11 * winheight(0) + 18) / 36)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 13
-normal! 05|
-tabnext
 edit docs/python/design_patterns.md
 argglobal
 balt docs/blogs/deep_learning/blog_einops.md
@@ -144,7 +123,7 @@ badd +0 docs/publications/about.md
 badd +32 docs/notes/about.md
 badd +105 docs/blogs/physics/blog_01282021.md
 badd +0 ~/Desktop/flashAI/fluent_python/src/notebook_css/style-notebook.css
-badd +0 docs/stylesheets/extra.css
+badd +8 docs/stylesheets/extra.css
 badd +0 docs/index.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
