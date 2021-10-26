@@ -22,7 +22,7 @@
 
 .md-typeset h3 {
     color: white;
-    background-image: linear-gradient(to right, #ffbf00, #e5d000, #c0e100, #8cf100, #00ff29);
+    background-image: linear-gradient(to right, #ffbf00, #e5d000, #c0e100, #8cf100, #fff);
     padding: 0.25em;
 }
 
