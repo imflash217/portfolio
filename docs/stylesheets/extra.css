@@ -7,10 +7,6 @@
     font-size: 16px
 }
 
-.md-typeset body{
-    background-image: linear-gradient(to right, #0033ff, #232eff, #3428ff, #4121ff, #4c17ff, #6434ff, #7649ff, #875cff, #a587ff, #c2afff, #e0d7ff, #ffffff);
-}
-
 .md-typeset h1 {
     color: white;
     font-weight: bold;
