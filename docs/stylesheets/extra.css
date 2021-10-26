@@ -10,7 +10,7 @@
 .md-typeset h1 {
     color: white;
     background: rgb(2,0,36);
-    background-image: linear-gradient(to right, #08ff00, #77f900, #a4f300, #c6ed00, #e1e600, #f6d93f, #ffce62, #ffc681, #ffc9b5, #ffd9e4, #ffedfe, #ffffff);
+    background-image: linear-gradient(to right, #0033ff, #232eff, #3428ff, #4121ff, #4c17ff, #6434ff, #7649ff, #875cff, #a587ff, #c2afff, #e0d7ff, #ffffff);
     padding: 0.25em;
 }
 
