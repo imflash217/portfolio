@@ -30,12 +30,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 157 - ((34 * winheight(0) + 18) / 36)
+let s:l = 23 - ((22 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 157
-normal! 0
+keepjumps 23
+normal! 024|
 tabnext
 edit docs/blogs/deep_learning/blog_tf_v1.md
 argglobal
@@ -69,12 +69,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 520 - ((35 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 520
-normal! 05|
+keepjumps 1
+normal! 0
 tabnext
 edit docs/index.md
 argglobal
@@ -135,7 +135,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 281
 normal! 024|
-tabnext 3
+tabnext 5
 badd +1 mkdocs.yml
 badd +1 docs/blogs/deep_learning/blog_tf_v1.md
 badd +1 docs/blogs/deep_learning/blog_einops.md
@@ -156,6 +156,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
