@@ -14,7 +14,7 @@
     
     
       
-        <title>Meeami - Vinay Kumar</title>
+        <title>Decorators - Vinay Kumar</title>
       
     
     
@@ -90,7 +90,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Meeami
+              Decorators
             
           </span>
         </div>
@@ -187,6 +187,8 @@
         
   
   
+    
+  
 
 
   
@@ -198,7 +200,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../python/cookbook_dabeaz/ch01/" class="md-tabs__link">
+      <a href="../cookbook_dabeaz/ch01/" class="md-tabs__link md-tabs__link--active">
         👑 Python Gems
       </a>
     </li>
@@ -526,12 +528,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" data-md-state="indeterminate" type="checkbox" id="nav-4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
       
       <label class="md-nav__link" for="nav-4">
         👑 Python Gems
@@ -572,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/cookbook_dabeaz/ch01/" class="md-nav__link">
+      <a href="../cookbook_dabeaz/ch01/" class="md-nav__link">
         Data Structures & Algorithms
       </a>
     </li>
@@ -590,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/design_patterns/" class="md-nav__link">
+      <a href="../design_patterns/" class="md-nav__link">
         Design Patterns
       </a>
     </li>
@@ -600,11 +604,18 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../python/decorators/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Decorators
       </a>
+      
     </li>
   
 
@@ -1140,100 +1151,9 @@
               
                 
                 
-                  <h1>Meeami</h1>
+                  <h1>Decorators</h1>
                 
-                <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#####################################################################</span>
-<span class="c1">## प्रोजेक्ट-शिक्षा</span>
-<span class="c1">#####################################################################</span>
-
-<span class="k">def</span> <span class="nf">विभाग</span><span class="p">(</span><span class="n">भाज्य</span><span class="p">,</span> <span class="n">भाजक</span><span class="p">):</span>
-    <span class="n">भागफल</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">भाग</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">शेषफल</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-----------------------------------&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;भाज्य - (भाजक x भाग) = शेष [?] भाजक&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-----------------------------------&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">भाज्य</span> <span class="o">&lt;</span> <span class="n">भाजक</span><span class="p">:</span>
-        <span class="c1"># print</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;भाज्य &lt; भाजक [ग़लत संख्याएँ दी गयीं. कृपया सही संख्या अंकित करें.]&quot;</span><span class="p">)</span>
-
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">शेष</span> <span class="o">=</span> <span class="n">भाज्य</span> <span class="o">-</span> <span class="p">(</span><span class="n">भाजक</span> <span class="o">*</span> <span class="n">भाग</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">शेष</span> <span class="o">&gt;=</span> <span class="n">भाजक</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">भाज्य</span><span class="si">}</span><span class="s2"> - (</span><span class="si">{</span><span class="n">भाजक</span><span class="si">}</span><span class="s2"> x </span><span class="si">{</span><span class="n">भाग</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">शेष</span><span class="si">}</span><span class="s2"> &gt; </span><span class="si">{</span><span class="n">भाजक</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="n">भाग</span> <span class="o">=</span> <span class="n">भाग</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">भाज्य</span><span class="si">}</span><span class="s2"> - (</span><span class="si">{</span><span class="n">भाजक</span><span class="si">}</span><span class="s2"> x </span><span class="si">{</span><span class="n">भाग</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">शेष</span><span class="si">}</span><span class="s2"> &lt; </span><span class="si">{</span><span class="n">भाजक</span><span class="si">}</span><span class="s2"> .समाप्त&quot;</span><span class="p">)</span>
-            <span class="n">भागफल</span> <span class="o">=</span> <span class="n">भाग</span>
-            <span class="n">शेषफल</span> <span class="o">=</span> <span class="n">शेष</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-----------------------------------&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;भागफल&quot;</span><span class="p">:</span> <span class="n">भागफल</span><span class="p">,</span> <span class="s2">&quot;शेषफल&quot;</span><span class="p">:</span> <span class="n">शेषफल</span><span class="p">}</span>
-
-<span class="c1">#####################################################################</span>
-</code></pre></div>
-</td></tr></table>
-<p><img align="left" alt="Placeholder" src="https://dummyimage.com/60x40/eee/aaa" />
-lorem ipsum</p>
-<hr />
-<p><img alt="Placeholder" loading="lazy" src="https://dummyimage.com/100x100/eee/aaa" /></p>
-<hr />
-<figure>
-  <img src="https://dummyimage.com/100x100/eee/aaa" width="100" />
-  <figcaption>Image caption</figcaption>
-</figure>
-
-<hr />
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vestibulum convallis sit amet nisi a tincidunt<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In hac habitasse platea dictumst</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In scelerisque nibh non dolor mollis congue sed et metus</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Praesent sed risus massa</li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque</li>
-</ul>
-<hr />
-<div class="arithmatex">\[
-\operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
-\]</div>
-<hr />
-<p>The homomorphism <span class="arithmatex">\(f\)</span> is injective if and only if its kernel is only the 
-singleton set <span class="arithmatex">\(e_G\)</span>, because otherwise <span class="arithmatex">\(\exists a,b\in G\)</span> with <span class="arithmatex">\(a\neq b\)</span> such 
-that <span class="arithmatex">\(f(a)=f(b)\)</span>.</p>
-<hr />
-<p>The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
+                
                 
                   
                     
@@ -1242,7 +1162,7 @@ that <span class="arithmatex">\(f(a)=f(b)\)</span>.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-01-27
+      Last update: 2021-10-26
     
   </small>
 </div>
@@ -1261,6 +1181,41 @@ that <span class="arithmatex">\(f(a)=f(b)\)</span>.</p>
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../design_patterns/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Design Patterns
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../blogs/algorithms/blog_01292021_hashtables/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Hash Tables
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
