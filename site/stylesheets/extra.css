@@ -10,7 +10,7 @@
 .md-typeset h1 {
     color: white;
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,65,79,1) 42%, rgba(0,84,255,1) 81%); 
+    background-image: linear-gradient(to right, #000 #e7faff, #ffffff);
     padding: 0.25em;
 }
 
