@@ -1218,6 +1218,25 @@
 <p><strong> A decorator is a <code>callable</code> that takes another function as argument (the decorated func.)</strong>
 The decorator may perform some processing with the decorated function, 
 and return it or replaces it with another function or <code>callable</code> object.</p>
+<p>Both these code snippet shas the same effect:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@decorate</span>
+<span class="k">def</span> <span class="nf">target</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;running target()&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## this code snippet has the same effect as the above one (using @decorate decorator)</span>
+<span class="k">def</span> <span class="nf">target</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;running target()&quot;</span><span class="p">)</span>
+
+<span class="n">target</span> <span class="o">=</span> <span class="n">decorate</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table></p>
                 
                   
                     
