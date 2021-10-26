@@ -19,14 +19,14 @@
 .md-typeset h2 {
     color: white;
     font-weight: bold;
-    font-family: 'Goldplay';
+    font-family: 'Roboto Slab';
     background-color: #fc0362;
     padding: 0.25em;
 }
 
 .md-typeset h3 {
     color: white;
-    font-family: 'Goldplay';
+    font-family: 'Roboto Slab';
     background-image: linear-gradient(to right, #ff9f1c, #f0b200, #dbc500, #bed800, #66f46a, #2efba6, #00ffd7, #a9fcff, #e7faff, #ffffff);
     padding: 0.25em;
 }
