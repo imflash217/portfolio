@@ -14,7 +14,7 @@
     
     
       
-        <title>Decorators - Vinay Kumar</title>
+        <title>Decorators & Closures - Vinay Kumar</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Decorators
+              Decorators & Closures
             
           </span>
         </div>
@@ -618,12 +618,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Decorators
+          Decorators & Closures
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Decorators
+        Decorators & Closures
       </a>
       
         
@@ -640,6 +640,13 @@
         <li class="md-nav__item">
   <a href="#decorators-101" class="md-nav__link">
     Decorators 101
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-does-python-executs-decorators" class="md-nav__link">
+    When does Python executs decorators?
   </a>
   
 </li>
@@ -1199,6 +1206,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#when-does-python-executs-decorators" class="md-nav__link">
+    When does Python executs decorators?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1212,7 +1226,7 @@
               
                 
                 
-                  <h1>Decorators</h1>
+                  <h1>Decorators & Closures</h1>
                 
                 <h2 id="decorators-101">Decorators 101</h2>
 <p><strong> A decorator is a <code>callable</code> that takes another function as argument (the decorated func.)</strong>
@@ -1237,7 +1251,22 @@ v/s
 
 <span class="n">target</span> <span class="o">=</span> <span class="n">decorate</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
+Decorators are just syntactic sugar. 
+We can always call a decorator like any regular callable, passing another function (as shown in 2<sup>nd</sup> snippet above).</p>
+<ol>
+<li>Decorators have the power to replace the decorated-function with a different one.</li>
+<li>Decorators are executed immediately when a module is loaded.</li>
+</ol>
+<h2 id="when-does-python-executs-decorators">When does Python executs decorators?</h2>
+<p>A key feature of decorators is that they run right after the decorated function is defined.
+This happens usually at the <code>import</code> time (i.e. when the module is loaded).</p>
+<details class="quote" open="open"><summary>An example</summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## registration.py module</span>
+<span class="n">registry</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div>
+</td></tr></table>
+</details>
                 
                   
                     
@@ -1246,7 +1275,7 @@ v/s
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-10-26
+      Last update: 2021-10-27
     
   </small>
 </div>
