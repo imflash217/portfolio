@@ -9,7 +9,7 @@ hide:
 
 <!-- ######################################################################################################### -->
 
-## `Definition`
+## Definition
 
 ???+ note "Definition"
     **Hash Table** is a data structure which stores data in an **associative manner** (i.e. in a (key, value) pair).
@@ -19,7 +19,7 @@ hide:
 
 <!-- ######################################################################################################### -->
 
-## `Hashing`
+## Hashing
 
 ???+ note "Hashing"
     ![Hashing](https://www.tutorialspoint.com/data_structures_algorithms/images/hash_function.jpg)
@@ -30,7 +30,7 @@ hide:
 
 <!-- ######################################################################################################### -->
 
-### `Example`
+### Example
 
 ???+ quote "Example of Hashing"
     - Consider a hash-table of `size=20`
@@ -56,7 +56,7 @@ hide:
 
 <!-- ######################################################################################################### -->
 
-## `Linear Probing`
+## Linear Probing
 
 ???+ note "Linear Probing"
     **Linear Probing** is a method used to resolve conflicts in the hash-value. It may happen that the hash-function creates an already used index of the array. In such case we search the next empty location of the array **by looking into the next cell until we find an empty cell**
@@ -71,18 +71,18 @@ hide:
     | 7   | `7 % 20 = 7`   | `7`         |
     | 2   | `2 % 20 = 2`   | **`3`**     |
 
-## `Search`
+## Search
 
 ???+ success "search() method for hash-table"
     **`Search`**
 
-## `Delete`
+## Delete
 
 ???+ danger "delete() method for hash-table"
     **`Delete`**
 <!-- ######################################################################################################### -->
 
-## `Python Implementation`
+## Python Implementation
 
 ```python
 --8<-- "../ProgrammingContests/ctci/hashtable.py"
@@ -90,14 +90,7 @@ hide:
 
 <!-- ######################################################################################################### -->
 
-???+ quote "Author Disclaimer"
-    `Author: Vinay Kumar (@imflash217)`
-
-    `Date: 29/January/2021`
-
-    The contents of this article were originally published at the references below. I have assembled it for my own understanding. Feel free to reuse and tag along the references. :+1:
-
-## `References`
+## References
 [^1]: https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
 [^2]: https://www.tutorialspoint.com/python_data_structure/python_hash_table.htm
 [^3]: https://www.tutorialspoint.com/data_structures_algorithms/hash_data_structure.htm

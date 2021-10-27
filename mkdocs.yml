@@ -121,7 +121,7 @@ nav:
     - 🥘 Cookbook @dabeaz:
       - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
     - Design Patterns: python/design_patterns.md
-    - Decorators: python/decorators.md
+    - Decorators & Closures: python/decorators.md
 
   - 📟 Algorithms:
     - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md

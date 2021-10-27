@@ -6,7 +6,7 @@ hide:
 
 <!-- ######################################################################################################### -->
 
-## `Problem`
+## Problem
 
 ???+ danger "Add lists"
     Write in a function that takes head of two **linked lists**, 
@@ -34,7 +34,7 @@ hide:
         5 -> 7 -> 9
     ```
 
-## `Solution`
+## Solution
 
 ???+ done "Solution"
     ```python
@@ -61,7 +61,7 @@ hide:
         carry = 1 if _sum >= 10 else 0
 
         result = Node(digit)                            ## create a new "Node" with new digit
-        
+
         next_1 = head_1.next if head_1 else None
         next_2 = head_2.next if head_2 else None
 
@@ -69,6 +69,6 @@ hide:
         return result
     ```
 
-## `Discussion`
+## Discussion
 ???+ quote "Discussion"
     ...

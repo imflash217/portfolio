@@ -6,7 +6,7 @@ hide:
 
 <!-- ######################################################################################################### -->
 
-## `Problem`
+## Problem
 
 ???+ danger "Problem"
     Write a function, `tree_sum`, that takes in the root of a **binary tree** that contains number values. 
@@ -34,7 +34,7 @@ hide:
     tree_sum(a) # -> 21
     ```
 
-## `Solution`
+## Solution
 ???+ done "Solution"
     ```python
     # class Node:
@@ -51,7 +51,7 @@ hide:
     ```
 
 
-## `Discussion`
+## Discussion
 
 ???+ quote "Discussion"
     `...`

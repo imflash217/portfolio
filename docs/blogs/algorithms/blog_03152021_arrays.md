@@ -9,7 +9,7 @@ hide:
 
 <!-- ######################################################################################################### -->
 
-## `Definition`
+## Definition
 
 ???+ note "Definition"
     An **Array** is an ordered list of data that we access with a numerical index.
@@ -27,7 +27,7 @@ hide:
 
     **Finding** an element in the array would require iterating over the entire array in the worst-case.
 
-## `Dynamic Array`
+## Dynamic Array
 
 ???+ note "Dynamic Arrays"
     It is worth noting that in many **statically-typed** programming languages (e.g. Java, C++);
@@ -38,7 +38,7 @@ hide:
 
     Dynamic arrays guarantee better **amortized performance** by only performing these costly operations when necessary.
 
-## `Calculating Memory Usage`
+## Calculating Memory Usage
 
 ???+ note "Calculating Memory Usage"
     To calculate the memory usage of an array simply multiply the size of the array with the size of the data-type.
@@ -52,7 +52,7 @@ hide:
         100 * 10 chars = 100 * 10 * 1 byte = 1000 bytes = 1Kb
         ```
 
-## `Common Array Operations`
+## Common Array Operations
 
 ???+ success "Common Array Operations"
 
@@ -68,7 +68,7 @@ hide:
     - **Swap** an array
     - **Filter** an array
 
-## `When to use an array in an interview`
+## When to use an array in an interview
 
 ???+ danger "When to use an array in an interview"
     Use an array when you need dta in an ordered list with **fast-indexing** or **compact-memory-footprint**.

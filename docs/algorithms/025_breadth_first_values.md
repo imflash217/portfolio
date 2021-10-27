@@ -5,7 +5,7 @@ hide:
 --- -->
 
 <!-- ######################################################################################################### -->
-## `Problem`
+## Problem
 
 ???+ danger "Breadth First Values"
     Write a function, `breadth_first_values`, that takes in the root of a binary tree. 
@@ -39,7 +39,7 @@ hide:
     #    -> ['a', 'b', 'c', 'x', 'd', 'e']
     ```
 
-## `Solution`
+## Solution
 
 ???+ done "Solution"
     ```python
@@ -77,7 +77,7 @@ hide:
       return visited
     ```
 
-## `Discussion`
+## Discussion
 
 ???+ quote "Discussion"
     ...

@@ -4,7 +4,7 @@ hide:
   - toc        # Hide table of contents
 --- -->
 <!-- ######################################################################################################### -->
-## `Problem`
+## Problem
 
 ???+ danger "Minimum value in a binary tree"
     Write a function, tree_min_value, that takes in the root of a binary tree that contains number values. 
@@ -35,7 +35,7 @@ hide:
 
     ```
 
-## `Solution`
+## Solution
 
 ???+ done "Solution"
     ```python
@@ -55,7 +55,7 @@ hide:
 
     ```
 
-## `Discussion`
+## Discussion
 
 ???+ quote "Discussion"
     `...`

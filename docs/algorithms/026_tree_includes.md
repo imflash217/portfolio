@@ -6,7 +6,7 @@ hide:
 
 <!-- ######################################################################################################### -->
 
-## `Problem`
+## Problem
 
 ???+ danger "Problem"
 
@@ -36,7 +36,7 @@ hide:
     tree_includes(a, "e") # -> True
     ```
 
-## `Solution`
+## Solution
 
 ???+ done "Solution"
     ```python
@@ -59,7 +59,7 @@ hide:
 
     ```
 
-## `Discussion`
+## Discussion
 
 ???+ quote "Discussion"
     `...`

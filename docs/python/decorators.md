@@ -18,4 +18,20 @@ def target():
 
 target = decorate(target)
 ```
+Decorators are just syntactic sugar. 
+We can always call a decorator like any regular callable, passing another function (as shown in 2nd snippet above).
 
+1. Decorators have the power to replace the decorated-function with a different one.
+2. Decorators are executed immediately when a module is loaded.
+
+## When does Python executs decorators?
+
+A key feature of decorators is that they run right after the decorated function is defined.
+This happens usually at the `import` time (i.e. when the module is loaded).
+
+???+ quote "An example"
+    ```python
+    ## registration.py module
+    registry = []
+
+    ```
