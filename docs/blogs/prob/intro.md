@@ -30,3 +30,4 @@ Now, we do the following steps:
 2. _Pick a fruit_: Then, **randomly** select an item of fruit for the box.
 3. _Replace the fruit_: Having observed the type of the picked fruit (`apple` or `orange`),
 now, replace it in the box from which it came.
+4. _Repeat_ steps 1-to-3 multiple times.
