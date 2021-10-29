@@ -17,6 +17,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -30,12 +31,32 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 124 - ((21 * winheight(0) + 18) / 36)
+let s:l = 116 - ((15 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 124
-normal! 027|
+keepjumps 116
+normal! 040|
+tabnext
+edit docs/blogs/prob/intro.md
+argglobal
+balt mkdocs.yml
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext
 edit docs/blogs/deep_learning/blog_tf_v1.md
 argglobal
@@ -49,7 +70,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -69,7 +90,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 18) / 36)
+let s:l = 9 - ((8 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -89,7 +110,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 33 - ((24 * winheight(0) + 18) / 36)
+let s:l = 33 - ((25 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -109,7 +130,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 291 - ((34 * winheight(0) + 18) / 36)
+let s:l = 291 - ((35 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -129,38 +150,44 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 37 - ((16 * winheight(0) + 18) / 36)
+let s:l = 34 - ((13 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 37
-normal! 05|
-tabnext 6
+keepjumps 34
+normal! 028|
+tabnext 2
 badd +1 mkdocs.yml
 badd +1 docs/blogs/deep_learning/blog_tf_v1.md
 badd +1 docs/blogs/deep_learning/blog_einops.md
+badd +1 docs/index.md
 badd +1 docs/python/design_patterns.md
-badd +0 docs/publications/about.md
+badd +0 docs/python/decorators.md
+badd +11 ~/.vimrc
+badd +1 docs/publications/about.md
 badd +32 docs/notes/about.md
 badd +1 docs/blogs/physics/blog_01282021.md
-badd +0 ~/Desktop/flashAI/fluent_python/src/notebook_css/style-notebook.css
-badd +8 docs/stylesheets/extra.css
-badd +0 docs/index.md
+badd +1 ~/Desktop/flashAI/fluent_python/src/notebook_css/style-notebook.css
+badd +29 docs/stylesheets/extra.css
 badd +1 docs/
-badd +0 docs/python/decorators.md
 badd +311 docs/python/cookbook_dabeaz/ch01.md
 badd +92 docs/blogs/algorithms/blog_01292021_hashtables.md
-badd +0 docs/blogs/algorithms/blog_01312021_sorting.md
+badd +1 docs/blogs/algorithms/blog_01312021_sorting.md
 badd +26 docs/blogs/algorithms/blog_02012021_document_distance.md
 badd +17 docs/blogs/algorithms/blog_02012021_priority_queue.md
 badd +78 docs/blogs/algorithms/blog_03152021_arrays.md
-badd +0 docs/algorithms/023_add_lists.md
+badd +1 docs/algorithms/023_add_lists.md
 badd +68 docs/algorithms/024_depth_first_values.md
 badd +80 docs/algorithms/025_breadth_first_values.md
 badd +14 docs/algorithms/026_tree_includes.md
 badd +9 docs/algorithms/027_tree_sum.md
-badd +0 docs/algorithms/028_tree_min_value.md
+badd +1 docs/algorithms/028_tree_min_value.md
 badd +18 docs/gists/lightning/api/configure_optimizers.md
+badd +101 ~/.vim_runtime/my_configs.vim
+badd +99 ~/.vim_runtime/vimrcs/plugins_config.vim
+badd +1 ~/.vim_runtime/vimrcs/basic.vim
+badd +183 ~/.vim_runtime/vimrcs/extended.vim
+badd +0 docs/blogs/prob/intro.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
