@@ -522,6 +522,33 @@
     Example: Red/Blue boxes
   </a>
   
+    <nav class="md-nav" aria-label="Example: Red/Blue boxes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-setup" class="md-nav__link">
+    The setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-experiment" class="md-nav__link">
+    The Experiment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-pre-conditions-assumptions" class="md-nav__link">
+    The Pre-conditions / Assumptions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1245,6 +1272,33 @@
     Example: Red/Blue boxes
   </a>
   
+    <nav class="md-nav" aria-label="Example: Red/Blue boxes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-setup" class="md-nav__link">
+    The setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-experiment" class="md-nav__link">
+    The Experiment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-pre-conditions-assumptions" class="md-nav__link">
+    The Pre-conditions / Assumptions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1273,6 +1327,7 @@ of Pattern Recognition.</p>
 <p>When combined with <strong>Decision Theory</strong>, it allows us to make optimal predictions
 given all the informtion available to us, even though that information may be incomplete or ambiguous.</p>
 <h2 id="example-redblue-boxes">Example: Red/Blue boxes</h2>
+<h3 id="the-setup">The setup</h3>
 <p>Imagine we have two boxes <code>red_box</code> and <code>blue_box</code>. 
 Each box contains different number of fruits <code>oranges</code> and <code>apples</code>.
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1287,14 +1342,22 @@ blue_box:
     - apples: 3
     - oranges: 1
 </code></pre></div>
-</td></tr></table>
-Now, we do the following steps:</p>
+</td></tr></table></p>
+<h3 id="the-experiment">The Experiment</h3>
+<p>Now, we do the following steps:</p>
 <ol>
 <li><em>Select a box</em>: <strong>Randomly</strong> pick one of the boxes (either <code>red_box</code> or <code>blue_box</code>)</li>
 <li><em>Pick a fruit</em>: Then, <strong>randomly</strong> select an item of fruit for the box.</li>
 <li><em>Replace the fruit</em>: Having observed the type of the picked fruit (<code>apple</code> or <code>orange</code>),
 now, replace it in the box from which it came.</li>
 <li><em>Repeat</em> steps 1-to-3 multiple times.</li>
+</ol>
+<h3 id="the-pre-conditions-assumptions">The Pre-conditions / Assumptions</h3>
+<p>Now, let's suppose in doing the above experiment, </p>
+<ol>
+<li>we pick the <code>red_box</code> <strong>40%</strong> of the times and the <code>blue_box</code> <strong>60%</strong> of the times. </li>
+<li>Also, assume that that when we remove an item of fruit
+from a box, we are equally likely to select any of the pices of fruits in the box.</li>
 </ol>
                 
                   
