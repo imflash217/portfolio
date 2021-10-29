@@ -26,6 +26,7 @@ blue_box:
     - oranges: 1
 ```
 Now, we do the following steps:
+
 1. _Select a box_: **Randomly** pick one of the boxes (either `red_box` or `blue_box`)
 2. _Pick a fruit_: Then, **randomly** select an item of fruit for the box.
 3. _Replace the fruit_: Having observed the type of the picked fruit (`apple` or `orange`),
