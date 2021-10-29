@@ -495,9 +495,38 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Introduction
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-redblue-boxes" class="md-nav__link">
+    Example: Red/Blue boxes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1205,6 +1234,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-redblue-boxes" class="md-nav__link">
+    Example: Red/Blue boxes
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1227,7 +1271,28 @@ It arrises through:</p>
 and manipulation of uncertainity and forms one of the central foundations
 of Pattern Recognition.</p>
 <p>When combined with <strong>Decision Theory</strong>, it allows us to make optimal predictions
-given all the informtion available to us, even though that information may be incomplete or ambigous.</p>
+given all the informtion available to us, even though that information may be incomplete or ambiguous.</p>
+<h2 id="example-redblue-boxes">Example: Red/Blue boxes</h2>
+<p>Imagine we have two boxes <code>red_box</code> and <code>blue_box</code>. 
+Each box contains different number of fruits <code>oranges</code> and <code>apples</code>.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>red_box:
+    - apples: 2
+    - oranges: 6
+blue_box:
+    - apples: 3
+    - oranges: 1
+</code></pre></div>
+</td></tr></table>
+Now, we do the following steps:
+1. <em>Select a box</em>: <strong>Randomly</strong> pick one of the boxes (either <code>red_box</code> or <code>blue_box</code>)
+2. <em>Pick a fruit</em>: Then, <strong>randomly</strong> select an item of fruit for the box.
+3. <em>Replace the fruit</em>: Having observed the type of the picked fruit (<code>apple</code> or <code>orange</code>),
+now, replace it in the box from which it came.</p>
                 
                   
                     
