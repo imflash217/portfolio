@@ -57,7 +57,7 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 55
-normal! 0
+normal! 065|
 tabnext
 edit docs/stylesheets/extra.css
 argglobal
@@ -178,7 +178,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 34
 normal! 028|
-tabnext 2
+tabnext 3
 badd +1 mkdocs.yml
 badd +0 docs/blogs/prob/intro.md
 badd +29 docs/stylesheets/extra.css
