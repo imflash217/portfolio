@@ -1329,6 +1329,27 @@
 </code></pre></div>
 </td></tr></table></p>
 <h2 id="an-alternative-constructor">An alternative constructor</h2>
+<p>Since in above example, we <strong>export</strong> a <code>Vector2D</code> as bytes; 
+we also need a method to <strong>imports</strong> a <code>vector2D</code> from binary sequence.</p>
+<p>Looking at the standard library for inspiration, we see that <code>array.array</code>
+has a class method <code>frombytes()</code>. Lets adopt this nomenclature in our <code>Vector2D</code> class.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## adding a import method from a binary sequence</span>
+<span class="c1">## inside Vector2D class definition</span>
+
+<span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">frombytes</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">octets</span><span class="p">):</span>
+    <span class="n">typecode</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">octets</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">memv</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">octets</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">typecode</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="o">*</span><span class="n">memv</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                     
