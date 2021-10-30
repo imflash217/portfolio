@@ -32,7 +32,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 116 - ((15 * winheight(0) + 18) / 37)
+let s:l = 116 - ((15 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -57,7 +57,7 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 51
-normal! 0
+normal! 056|
 tabnext
 edit docs/stylesheets/extra.css
 argglobal
@@ -77,7 +77,7 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 31
-normal! 05|
+normal! 0164|
 tabnext
 edit docs/blogs/deep_learning/blog_tf_v1.md
 argglobal
@@ -92,7 +92,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 37)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -112,7 +112,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 18) / 37)
+let s:l = 9 - ((8 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -132,7 +132,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 33 - ((25 * winheight(0) + 18) / 37)
+let s:l = 33 - ((24 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -152,7 +152,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 291 - ((35 * winheight(0) + 18) / 37)
+let s:l = 291 - ((34 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -172,7 +172,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 34 - ((13 * winheight(0) + 18) / 37)
+let s:l = 34 - ((13 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -186,7 +186,7 @@ badd +1 docs/blogs/deep_learning/blog_einops.md
 badd +1 docs/index.md
 badd +1 docs/python/design_patterns.md
 badd +1 docs/python/decorators.md
-badd +11 ~/.vimrc
+badd +29 ~/.vimrc
 badd +1 docs/publications/about.md
 badd +32 docs/notes/about.md
 badd +1 docs/blogs/physics/blog_01282021.md
@@ -220,7 +220,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
