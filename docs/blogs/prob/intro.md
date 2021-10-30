@@ -49,4 +49,7 @@ from a box, we are equally likely to select any of the pices of fruits in the bo
 ### The Theory
 
 In this experiemnt, the identity of the box to be chosen is a random variable, denoted by
-$B$ 
+$B$ which can take two possible values `r` and `b` (corresponding to red or blue boxes).
+Similarly, the identity of fruit is also a **random variable** denoted by $F$ and it can
+take either of the values `a` and `o` (corresponding to apple an dorange respectively).
+
