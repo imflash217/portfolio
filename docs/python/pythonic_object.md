@@ -33,3 +33,20 @@ class Vector2D:
 ```
 
 ## An alternative constructor
+
+Since in above example, we **export** a `Vector2D` as bytes; 
+we also need a method to **imports** a `vector2D` from binary sequence.
+
+Looking at the standard library for inspiration, we see that `array.array`
+has a class method `frombytes()`. Lets adopt this nomenclature in our `Vector2D` class.
+
+```python
+## adding a import method from a binary sequence
+## inside Vector2D class definition
+
+@classmethod
+def frombytes(cls, octets):
+    typecode = chr(octets[0])
+    memv = memoryview(octets[1:]).cast(typecode)
+    return cls(*memv)
+```
