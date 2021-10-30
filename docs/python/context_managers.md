@@ -6,8 +6,22 @@ context using the `with` statement; as well as running a callable upon completin
 inside the `with` block. 
 
 For eg:
+
 ```python
 with open("file.txt") as f:
     contents = f.read()
 ```
 
+Anyone familiar with this pattern knows that invoking `open` in this fashion ensures that 
+`f`'s `close()` will be called at some point. 
+
+There are two ways to implement this functionality ourselves:
+
+1. using class
+2. using `@contextmanager` decorator
+
+### Ctxt Manager using CLASS
+
+```python
+
+```
