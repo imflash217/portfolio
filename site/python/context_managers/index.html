@@ -1390,11 +1390,13 @@ then, <code>__exit__()</code> method is called.</li>
     <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-<p>This works in exactly the same manner as the CLASS version.
-The <code>custom_open</code> function executes until it reaches the <code>yield</code> statement.
-The control was given back to the <code>with</code> statement which assigns whatever was
-<code>yield</code>ed to <code>f</code> in the <code>as f</code> part  of the <code>with</code> statement.
-The <code>finally</code> block is executed at the end of the <code>with</code> statement.</p>
+<p>This works in exactly the same manner as the CLASS version:</p>
+<ol>
+<li>The <code>custom_open</code> function executes until it reaches the <code>yield</code> statement.</li>
+<li>The control was given back to the <code>with</code> statement which assigns whatever was
+<code>yield</code>ed to <code>f</code> in the <code>as f</code> part  of the <code>with</code> statement.</li>
+<li>The <code>finally</code> block is executed at the end of the <code>with</code> statement.</li>
+</ol>
                 
                   
                     
