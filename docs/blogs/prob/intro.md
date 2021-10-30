@@ -55,3 +55,7 @@ two possible values `r` and `b` (corresponding to red or blue boxes).
 2. Similarly, the identity of fruit is also a **random variable** $F$ and it can
 take either of the values `a` and `o` (corresponding to apple an dorange respectively).
 
+> Definition:
+> The **Probability of an event** is defined as the _fraction_ of times, that event occurs
+> out of the total numbe rof trials (in the limit that the total numbe rof trials goes to
+> infinity)
