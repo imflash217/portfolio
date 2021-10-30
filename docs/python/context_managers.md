@@ -20,8 +20,22 @@ There are two ways to implement this functionality ourselves:
 1. using class
 2. using `@contextmanager` decorator
 
-### Ctxt Manager using CLASS
+### Ctx Manager using CLASS
 
 ```python
+class CustomOpen:
+    def __init__(self, filename):
+        self.file = open(filename)
+
+    def __enter__(self):
+        return self.file
+
+    def __exit__(self, ctx_type, ctx_vale, ctx_traceback):
+        self.file.close()
+
+###################################################################
+
+with CustomOPen("file.txt") as f:
+    contents = f.read()
 
 ```
