@@ -50,4 +50,24 @@ assigned to `f` in `as f` part of the statement.
 3. When the **contents of the `with` block** is finished executing, 
 then, `__exit__()` method is called.
 
-###
+### Ctx Managers using DECORATORS
+```python
+## implementing a smilar context manager as above 
+## uisng a decorator
+
+from contextlib import contextmanager
+
+@contextmanager
+def custom_open(filename):
+    f = open(filename)
+    try:
+        yield f
+    finally:
+        f.close()
+
+#########################################################
+
+with custom_open("file.txt") as f:
+    contents = f.read()
+
+```
