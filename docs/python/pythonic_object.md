@@ -72,4 +72,21 @@ It does not have access to internal state variables of the class or the instance
 It is kept inside the class definition to provide easy access to related functions/method,
 so the user have access to all necessary method for a class within itself instead of finding it elsewhere.
 
+An example:
+```python
+class Demo:
+    @classmethod
+    def klassmeth(*args):
+        return *args
 
+    @staticmethod
+    def statmeth(*args):
+        return *args
+```
+```python
+Demo.klassmeth()            ## (<class "__main__.Demo">,)
+Demo.klassmeth("spam")      ## (<class "__main__.Demo">, "spam")
+
+Demo.statmeth()             ## ()
+Demo.statmeth("spam")       ## ("spam")
+```
