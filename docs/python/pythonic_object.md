@@ -61,4 +61,6 @@ instead of an instance (eg. `self`)
 3. Most commonly used as **alternate constructors** (eg. `frombytes` in above code)
 Note: (in the above `frombyytes()`) how the last line in `frombytes()` uses `cls` argument by invoking 
 it to build a new instance (`cls(*memv)`)
+4. By convention the 1st argument of the `@classmethod` should be named `cls` 
+(but Python does not care about the name though)
 
