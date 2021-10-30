@@ -1376,6 +1376,12 @@ it to build a new instance (<code>cls(*memv)</code>)</li>
 <li>By convention the 1<sup>st</sup> argument of the <code>@classmethod</code> should be named <code>cls</code> 
 (but Python does not care about the name though)</li>
 </ol>
+<p><strong><code>@staticmethod</code></strong></p>
+<p>A static method is just like a plain old <strong>function</strong> that happens to live inside the body of a <strong>class</strong>
+instead of being defind outside the class.
+It does not have access to internal state variables of the class or the instance.
+It is kept inside the class definition to provide easy access to related functions/method,
+so the user have access to all necessary method for a class within itself instead of finding it elsewhere.</p>
                 
                   
                     
