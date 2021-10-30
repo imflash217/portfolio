@@ -57,7 +57,7 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 51
-normal! 056|
+normal! 077|
 tabnext
 edit docs/stylesheets/extra.css
 argglobal
@@ -181,6 +181,7 @@ normal! 028|
 tabnext 2
 badd +1 mkdocs.yml
 badd +0 docs/blogs/prob/intro.md
+badd +29 docs/stylesheets/extra.css
 badd +1 docs/blogs/deep_learning/blog_tf_v1.md
 badd +1 docs/blogs/deep_learning/blog_einops.md
 badd +1 docs/index.md
@@ -191,7 +192,6 @@ badd +1 docs/publications/about.md
 badd +32 docs/notes/about.md
 badd +1 docs/blogs/physics/blog_01282021.md
 badd +1 ~/Desktop/flashAI/fluent_python/src/notebook_css/style-notebook.css
-badd +29 docs/stylesheets/extra.css
 badd +1 docs/
 badd +311 docs/python/cookbook_dabeaz/ch01.md
 badd +92 docs/blogs/algorithms/blog_01292021_hashtables.md
@@ -220,6 +220,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost

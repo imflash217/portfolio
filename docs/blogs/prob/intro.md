@@ -48,4 +48,5 @@ from a box, we are equally likely to select any of the pices of fruits in the bo
 
 ### The Theory
 
-In this experiemnt, the identity of the box to be chosen
+In this experiemnt, the identity of the box to be chosen is a random variable, denoted by
+$B$ 
