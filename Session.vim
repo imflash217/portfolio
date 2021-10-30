@@ -18,7 +18,6 @@ tabnew
 tabnew
 tabnew
 tabnew
-tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -32,12 +31,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 116 - ((15 * winheight(0) + 18) / 36)
+let s:l = 42 - ((28 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 116
-normal! 040|
+keepjumps 42
+normal! 06|
 tabnext
 edit docs/blogs/prob/intro.md
 argglobal
@@ -52,32 +51,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 65 - ((32 * winheight(0) + 18) / 36)
+let s:l = 67 - ((20 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 65
-normal! 06|
-tabnext
-edit docs/stylesheets/extra.css
-argglobal
-balt docs/blogs/prob/intro.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 31 - ((17 * winheight(0) + 18) / 36)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 31
-normal! 049|
+keepjumps 67
+normal! 017|
 tabnext
 edit docs/blogs/deep_learning/blog_tf_v1.md
 argglobal
@@ -181,7 +160,7 @@ normal! 028|
 tabnext 2
 badd +1 mkdocs.yml
 badd +0 docs/blogs/prob/intro.md
-badd +29 docs/stylesheets/extra.css
+badd +31 docs/stylesheets/extra.css
 badd +1 docs/blogs/deep_learning/blog_tf_v1.md
 badd +1 docs/blogs/deep_learning/blog_einops.md
 badd +1 docs/index.md
@@ -210,6 +189,7 @@ badd +101 ~/.vim_runtime/my_configs.vim
 badd +99 ~/.vim_runtime/vimrcs/plugins_config.vim
 badd +1 ~/.vim_runtime/vimrcs/basic.vim
 badd +183 ~/.vim_runtime/vimrcs/extended.vim
+badd +17 docs/javascripts/mathjax.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -220,6 +200,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost

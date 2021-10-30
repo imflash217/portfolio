@@ -63,5 +63,9 @@ take either of the values `a` and `o` (corresponding to apple an dorange respect
 
 Thus , the probability of selecting teh `red_box` is $4/10$ and that of the `blue_box` is
 $6/10$.
-$$p(B=r) = 4/10$$
-$$p(B=b) = 6/10$$
+$$
+p(B=r) = 4/10
+$$
+$$
+p(B=b) = 6/10
+$$
