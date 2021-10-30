@@ -72,7 +72,3 @@ $$
 p(B=b) = 6/10
 $$
 
-$$
-\operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
-$$
-
