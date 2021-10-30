@@ -1455,7 +1455,8 @@ so the user have access to all necessary method for a class within itself instea
 from datetime import datetime
 now = datetime.now()
 format(now, "%H:%M:%S")             ## "18:49:05"
-print("Its now {:%I:%M %p}")        ## "Its now 06:49 PM"</code></p>
+print("Its now {:%I:%M %p}")        ## "Its now 06:49 PM"</code>
+If a class has no <code>__format__()</code> method, the method inherited from <code>object</code> return <code>str(my_object)</code>.</p>
                 
                   
                     
