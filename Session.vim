@@ -178,7 +178,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 34
 normal! 028|
-tabnext 2
+tabnext 3
 badd +1 mkdocs.yml
 badd +0 docs/blogs/prob/intro.md
 badd +1 docs/blogs/deep_learning/blog_tf_v1.md
