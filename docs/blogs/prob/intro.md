@@ -59,7 +59,7 @@ take either of the values `a` and `o` (corresponding to apple an dorange respect
 >
 > The **Probability of an event** is defined as the _fraction_ of times, that event occurs
 > out of the total number of trials (in the limit that the total number of trials goes to
-> infinity)
+> infinity). All probabilities must lie in the interval [0, 1]
 
 Thus , the probability of selecting teh `red_box` is $4/10$ and that of the `blue_box` is
 $6/10$.
