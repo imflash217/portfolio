@@ -1432,7 +1432,7 @@ so the user have access to all necessary method for a class within itself instea
 <li><code>int</code> type supports <code>b</code> (for base=2 integers) and <code>x</code> (for base=16 integers).</li>
 <li><code>float</code> type implements <code>f</code> (for fixed-points) and <code>%</code> (for a percentage display).</li>
 </ol>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -1445,10 +1445,17 @@ so the user have access to all necessary method for a class within itself instea
 <span class="nb">format</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">)</span>        <span class="c1">## 0.666667</span>
 <span class="nb">format</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;.3f&quot;</span><span class="p">)</span>      <span class="c1">## 0.667</span>
 
-<span class="nb">format</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>        <span class="c1">## 66.7%</span>
+<span class="nb">format</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>        <span class="c1">## 66.666667%</span>
 <span class="nb">format</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;.2%&quot;</span><span class="p">)</span>      <span class="c1">## 66.67%</span>
 </code></pre></div>
 </td></tr></table>
+ The Format Specifier Mini Language is extensible because each class gets to interpret
+ the <code>format_spec</code> argument as it likes. </p>
+<p><code>python
+from datetime import datetime
+now = datetime.now()
+format(now, "%H:%M:%S")             ## "18:49:05"
+print("Its now {:%I:%M %p}")        ## "Its now 06:49 PM"</code></p>
                 
                   
                     
