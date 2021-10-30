@@ -1451,11 +1451,15 @@ so the user have access to all necessary method for a class within itself instea
 </td></tr></table>
  The Format Specifier Mini Language is extensible because each class gets to interpret
  the <code>format_spec</code> argument as it likes. </p>
-<p><code>python
-from datetime import datetime
-now = datetime.now()
-format(now, "%H:%M:%S")             ## "18:49:05"
-print("Its now {:%I:%M %p}")        ## "Its now 06:49 PM"</code>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">format</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>             <span class="c1">## &quot;18:49:05&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Its now {:%I:%M %p}&quot;</span><span class="p">)</span>        <span class="c1">## &quot;Its now 06:49 PM&quot;</span>
+</code></pre></div>
+</td></tr></table>
 If a class has no <code>__format__()</code> method, the method inherited from <code>object</code> return <code>str(my_object)</code>.</p>
                 
                   
