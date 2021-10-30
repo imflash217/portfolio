@@ -110,7 +110,7 @@ format(2/3, ".2%")      ## 66.67%
  The Format Specifier Mini Language is extensible because each class gets to interpret
  the `format_spec` argument as it likes. 
 
- ```python
+```python
 from datetime import datetime
 now = datetime.now()
 format(now, "%H:%M:%S")             ## "18:49:05"
