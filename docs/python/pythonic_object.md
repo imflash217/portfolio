@@ -91,3 +91,19 @@ Demo.klassmeth("spam")      ## (<class "__main__.Demo">, "spam")
 Demo.statmeth()             ## ()
 Demo.statmeth("spam")       ## ("spam")
 ```
+
+## Formatted displays
+
+1. `int` type supports `b` (for base=2 integers) and `x` (for base=16 integers).
+2. `float` type implements `f` (for fixed-points) and `%` (for a percentage display).
+
+```python
+format(42, "b")         ## "101010"
+format(42, "x")         ## "2a"
+
+format(2/3, 'f')        ## 0.666667
+format(2/3, ".3f")      ## 0.667
+
+format(2/3, "%")        ## 66.7%
+format(2/3, ".2%")      ## 66.67%
+```
