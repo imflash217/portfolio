@@ -46,4 +46,6 @@ Now, let's suppose in doing the above experiment,
 2. Also, assume that that when we remove an item of fruit
 from a box, we are equally likely to select any of the pices of fruits in the box.
 
+### The Theory
+
 

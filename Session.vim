@@ -18,6 +18,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -31,7 +32,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 116 - ((15 * winheight(0) + 18) / 36)
+let s:l = 116 - ((15 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -51,15 +52,36 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 51 - ((19 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 51
 normal! 0
+tabnext
+edit docs/stylesheets/extra.css
+argglobal
+balt docs/blogs/prob/intro.md
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 29 - ((28 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 29
+normal! 05|
 tabnext
 edit docs/blogs/deep_learning/blog_tf_v1.md
 argglobal
+balt docs/blogs/prob/intro.md
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -156,13 +178,14 @@ keepjumps exe s:l
 normal! zt
 keepjumps 34
 normal! 028|
-tabnext 2
+tabnext 3
 badd +1 mkdocs.yml
+badd +0 docs/blogs/prob/intro.md
 badd +1 docs/blogs/deep_learning/blog_tf_v1.md
 badd +1 docs/blogs/deep_learning/blog_einops.md
 badd +1 docs/index.md
 badd +1 docs/python/design_patterns.md
-badd +0 docs/python/decorators.md
+badd +1 docs/python/decorators.md
 badd +11 ~/.vimrc
 badd +1 docs/publications/about.md
 badd +32 docs/notes/about.md
@@ -187,7 +210,6 @@ badd +101 ~/.vim_runtime/my_configs.vim
 badd +99 ~/.vim_runtime/vimrcs/plugins_config.vim
 badd +1 ~/.vim_runtime/vimrcs/basic.vim
 badd +183 ~/.vim_runtime/vimrcs/extended.vim
-badd +0 docs/blogs/prob/intro.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
