@@ -683,9 +683,38 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Context Managers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Context Managers
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ctxt-manager-using-class" class="md-nav__link">
+    Ctxt Manager using CLASS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1227,6 +1256,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ctxt-manager-using-class" class="md-nav__link">
+    Ctxt Manager using CLASS
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1243,12 +1287,23 @@
 This extra contextual information takes the form of running a <strong>callable</strong> upon initiating the 
 context using the <code>with</code> statement; as well as running a callable upon completing all the code 
 inside the <code>with</code> block. </p>
-<p>For eg:
+<p>For eg:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
+<p>Anyone familiar with this pattern knows that invoking <code>open</code> in this fashion ensures that 
+<code>f</code>'s <code>close()</code> will be called at some point. </p>
+<p>There are two ways to implement this functionality ourselves:</p>
+<ol>
+<li>using class</li>
+<li>using <code>@contextmanager</code> decorator</li>
+</ol>
+<h3 id="ctxt-manager-using-class">Ctxt Manager using CLASS</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</td></tr></table>
                 
                   
                     
