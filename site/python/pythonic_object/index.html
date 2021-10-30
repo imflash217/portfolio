@@ -703,6 +703,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#formatted-displays" class="md-nav__link">
+    Formatted displays
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1265,6 +1272,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#formatted-displays" class="md-nav__link">
+    Formatted displays
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1413,6 +1427,28 @@ so the user have access to all necessary method for a class within itself instea
 <span class="n">Demo</span><span class="o">.</span><span class="n">statmeth</span><span class="p">(</span><span class="s2">&quot;spam&quot;</span><span class="p">)</span>       <span class="c1">## (&quot;spam&quot;)</span>
 </code></pre></div>
 </td></tr></table></p>
+<h2 id="formatted-displays">Formatted displays</h2>
+<ol>
+<li><code>int</code> type supports <code>b</code> (for base=2 integers) and <code>x</code> (for base=16 integers).</li>
+<li><code>float</code> type implements <code>f</code> (for fixed-points) and <code>%</code> (for a percentage display).</li>
+</ol>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">format</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>         <span class="c1">## &quot;101010&quot;</span>
+<span class="nb">format</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>         <span class="c1">## &quot;2a&quot;</span>
+
+<span class="nb">format</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">)</span>        <span class="c1">## 0.666667</span>
+<span class="nb">format</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;.3f&quot;</span><span class="p">)</span>      <span class="c1">## 0.667</span>
+
+<span class="nb">format</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>        <span class="c1">## 66.7%</span>
+<span class="nb">format</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;.2%&quot;</span><span class="p">)</span>      <span class="c1">## 66.67%</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                     
