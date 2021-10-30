@@ -1382,6 +1382,35 @@ instead of being defind outside the class.
 It does not have access to internal state variables of the class or the instance.
 It is kept inside the class definition to provide easy access to related functions/method,
 so the user have access to all necessary method for a class within itself instead of finding it elsewhere.</p>
+<p>An example:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Demo</span><span class="p">:</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">klassmeth</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">*</span><span class="n">args</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">statmeth</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">*</span><span class="n">args</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Demo</span><span class="o">.</span><span class="n">klassmeth</span><span class="p">()</span>            <span class="c1">## (&lt;class &quot;__main__.Demo&quot;&gt;,)</span>
+<span class="n">Demo</span><span class="o">.</span><span class="n">klassmeth</span><span class="p">(</span><span class="s2">&quot;spam&quot;</span><span class="p">)</span>      <span class="c1">## (&lt;class &quot;__main__.Demo&quot;&gt;, &quot;spam&quot;)</span>
+
+<span class="n">Demo</span><span class="o">.</span><span class="n">statmeth</span><span class="p">()</span>             <span class="c1">## ()</span>
+<span class="n">Demo</span><span class="o">.</span><span class="n">statmeth</span><span class="p">(</span><span class="s2">&quot;spam&quot;</span><span class="p">)</span>       <span class="c1">## (&quot;spam&quot;)</span>
+</code></pre></div>
+</td></tr></table></p>
                 
                   
                     
