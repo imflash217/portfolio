@@ -18,6 +18,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -31,12 +32,32 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 42 - ((28 * winheight(0) + 18) / 36)
+let s:l = 129 - ((22 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 42
-normal! 06|
+keepjumps 129
+normal! 050|
+tabnext
+edit docs/python/pythonic_object.md
+argglobal
+balt mkdocs.yml
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=1
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext
 edit docs/blogs/prob/intro.md
 argglobal
@@ -51,12 +72,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 67 - ((20 * winheight(0) + 18) / 36)
+let s:l = 74 - ((27 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 67
-normal! 017|
+keepjumps 74
+normal! 0
 tabnext
 edit docs/blogs/deep_learning/blog_tf_v1.md
 argglobal
@@ -190,6 +211,7 @@ badd +99 ~/.vim_runtime/vimrcs/plugins_config.vim
 badd +1 ~/.vim_runtime/vimrcs/basic.vim
 badd +183 ~/.vim_runtime/vimrcs/extended.vim
 badd +17 docs/javascripts/mathjax.js
+badd +0 docs/python/pythonic_object.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -200,7 +222,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
