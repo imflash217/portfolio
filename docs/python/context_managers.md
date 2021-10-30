@@ -50,7 +50,7 @@ assigned to `f` in `as f` part of the statement.
 3. When the **contents of the `with` block** is finished executing, 
 then, `__exit__()` method is called.
 
-### Ctx Managers using DECORATORS
+### Ctx Managers using GENERATORS
 ```python
 ## implementing a smilar context manager as above 
 ## uisng a decorator
@@ -71,3 +71,9 @@ with custom_open("file.txt") as f:
     contents = f.read()
 
 ```
+
+This works in exactly the same manner as the CLASS version.
+The `custom_open` function executes until it reaches the `yield` statement.
+The control was given back to the `with` statement which assigns whatever was
+`yield`ed to `f` in the `as f` part  of the `with` statement.
+The `finally` block is executed at the end of the `with` statement.
