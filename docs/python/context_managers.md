@@ -17,7 +17,7 @@ Anyone familiar with this pattern knows that invoking `open` in this fashion ens
 
 There are two ways to implement this functionality ourselves:
 
-1. using class
+1. using `class`
 2. using `@contextmanager` decorator
 
 ### Ctx Manager using CLASS
@@ -39,3 +39,15 @@ with CustomOPen("file.txt") as f:
     contents = f.read()
 
 ```
+
+This is just a regular class with two extra methods `__enter__()` and `__exit__()`.
+Implementation of `__enter__` and `__exit__` are essential for its usage in `with` statement.
+Following are the three steps of functionality of `with` statement:
+
+1. Firstly, `CustomOpen` is initantiated
+2. Then its `__enter__()` method is called and whatever `__enter__()` returns is 
+assigned to `f` in `as f` part of the statement.
+3. When the **contents of the `with` block** is finished executing, 
+then, `__exit__()` method is called.
+
+###
