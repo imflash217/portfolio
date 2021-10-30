@@ -77,7 +77,7 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 31
-normal! 081|
+normal! 05|
 tabnext
 edit docs/blogs/deep_learning/blog_tf_v1.md
 argglobal
@@ -178,7 +178,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 34
 normal! 028|
-tabnext 3
+tabnext 2
 badd +1 mkdocs.yml
 badd +0 docs/blogs/prob/intro.md
 badd +29 docs/stylesheets/extra.css
