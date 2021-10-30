@@ -712,6 +712,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1269,6 +1276,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1297,7 +1311,7 @@ inside the <code>with</code> block. </p>
 <code>f</code>'s <code>close()</code> will be called at some point. </p>
 <p>There are two ways to implement this functionality ourselves:</p>
 <ol>
-<li>using class</li>
+<li>using <code>class</code></li>
 <li>using <code>@contextmanager</code> decorator</li>
 </ol>
 <h3 id="ctx-manager-using-class">Ctx Manager using CLASS</h3>
@@ -1330,6 +1344,17 @@ inside the <code>with</code> block. </p>
     <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
+<p>This is just a regular class with two extra methods <code>__enter__()</code> and <code>__exit__()</code>.
+Implementation of <code>__enter__</code> and <code>__exit__</code> are essential for its usage in <code>with</code> statement.
+Following are the three steps of functionality of <code>with</code> statement:</p>
+<ol>
+<li>Firstly, <code>CustomOpen</code> is initantiated</li>
+<li>Then its <code>__enter__()</code> method is called and whatever <code>__enter__()</code> returns is 
+assigned to <code>f</code> in <code>as f</code> part of the statement.</li>
+<li>When the <strong>contents of the <code>with</code> block</strong> is finished executing, 
+then, <code>__exit__()</code> method is called.</li>
+</ol>
+<h3 id="_1"></h3>
                 
                   
                     
