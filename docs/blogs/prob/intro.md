@@ -61,7 +61,7 @@ take either of the values `a` and `o` (corresponding to apple an dorange respect
 > out of the total number of trials (in the limit that the total number of trials goes to
 > infinity). All probabilities must lie in the interval [0, 1]
 
-Thus , the probability of selecting teh `red_box` is $4/10$ and that of the `blue_box` is
+Thus , the probability of selecting the `red_box` is $4/10$ and that of the `blue_box` is
 $6/10$.
 $$
 p(B=r) = 4/10
@@ -69,3 +69,4 @@ $$
 $$
 p(B=b) = 6/10
 $$
+
