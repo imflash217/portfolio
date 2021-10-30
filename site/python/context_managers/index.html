@@ -706,8 +706,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ctxt-manager-using-class" class="md-nav__link">
-    Ctxt Manager using CLASS
+  <a href="#ctx-manager-using-class" class="md-nav__link">
+    Ctx Manager using CLASS
   </a>
   
 </li>
@@ -1263,8 +1263,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ctxt-manager-using-class" class="md-nav__link">
-    Ctxt Manager using CLASS
+  <a href="#ctx-manager-using-class" class="md-nav__link">
+    Ctx Manager using CLASS
   </a>
   
 </li>
@@ -1300,8 +1300,34 @@ inside the <code>with</code> block. </p>
 <li>using class</li>
 <li>using <code>@contextmanager</code> decorator</li>
 </ol>
-<h3 id="ctxt-manager-using-class">Ctxt Manager using CLASS</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+<h3 id="ctx-manager-using-class">Ctx Manager using CLASS</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CustomOpen</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx_type</span><span class="p">,</span> <span class="n">ctx_vale</span><span class="p">,</span> <span class="n">ctx_traceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1">###################################################################</span>
+
+<span class="k">with</span> <span class="n">CustomOPen</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
                 
