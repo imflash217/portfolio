@@ -696,6 +696,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#classmethod-vs-staticmethod" class="md-nav__link">
+    @classmethod v/s @staticmethod
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1251,6 +1258,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#classmethod-vs-staticmethod" class="md-nav__link">
+    @classmethod v/s @staticmethod
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1350,6 +1364,16 @@ has a class method <code>frombytes()</code>. Lets adopt this nomenclature in our
     <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="o">*</span><span class="n">memv</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
+<h2 id="classmethod-vs-staticmethod">@classmethod v/s @staticmethod</h2>
+<p><strong><code>@classmethod</code></strong>:</p>
+<ol>
+<li>It is used to define a method that operates on <strong>class</strong>; not on <strong>instances</strong>.</li>
+<li>It receives the <strong>class</strong> itself as the 1<sup>st</sup> argument (eg. <code>cls</code> in above code) 
+instead of an instance (eg. <code>self</code>)</li>
+<li>Most commonly used as <strong>alternate constructors</strong> (eg. <code>frombytes</code> in above code)
+Note: (in the above <code>frombyytes()</code>) how the last line in <code>frombytes()</code> uses <code>cls</code> argument by invoking 
+it to build a new instance (<code>cls(*memv)</code>)</li>
+</ol>
                 
                   
                     
