@@ -116,5 +116,5 @@ now = datetime.now()
 format(now, "%H:%M:%S")             ## "18:49:05"
 print("Its now {:%I:%M %p}")        ## "Its now 06:49 PM"
 ```
-
+If a class has no `__format__()` method, the method inherited from `object` return `str(my_object)`.
 
