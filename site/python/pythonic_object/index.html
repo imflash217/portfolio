@@ -1404,7 +1404,9 @@ so the user have access to all necessary method for a class within itself instea
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Demo</span><span class="o">.</span><span class="n">klassmeth</span><span class="p">()</span>            <span class="c1">## (&lt;class &quot;__main__.Demo&quot;&gt;,)</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## no matter how it is invoked, Demo.klassmethod always receives Demo class as its 1st argument</span>
+<span class="n">Demo</span><span class="o">.</span><span class="n">klassmeth</span><span class="p">()</span>            <span class="c1">## (&lt;class &quot;__main__.Demo&quot;&gt;,)</span>
 <span class="n">Demo</span><span class="o">.</span><span class="n">klassmeth</span><span class="p">(</span><span class="s2">&quot;spam&quot;</span><span class="p">)</span>      <span class="c1">## (&lt;class &quot;__main__.Demo&quot;&gt;, &quot;spam&quot;)</span>
 
 <span class="n">Demo</span><span class="o">.</span><span class="n">statmeth</span><span class="p">()</span>             <span class="c1">## ()</span>
