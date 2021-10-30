@@ -6,8 +6,8 @@ import math
 class Vector2D:
     typecode = "d"
     def __init__(self, x, y):
-        self.x = x
-        self.y = y
+        self.x = float(x)
+        self.y = float(y)
 
     def __iter__(self):
         return (i for i in (self.x, self.y))
@@ -31,3 +31,5 @@ class Vector2D:
     def __bool__(self):
         return bool(abs(self))
 ```
+
+## An alternative constructor
