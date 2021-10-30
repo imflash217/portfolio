@@ -84,6 +84,7 @@ class Demo:
         return *args
 ```
 ```python
+## no matter how it is invoked, Demo.klassmethod always receives Demo class as its 1st argument
 Demo.klassmeth()            ## (<class "__main__.Demo">,)
 Demo.klassmeth("spam")      ## (<class "__main__.Demo">, "spam")
 
