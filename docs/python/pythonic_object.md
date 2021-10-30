@@ -50,3 +50,15 @@ def frombytes(cls, octets):
     memv = memoryview(octets[1:]).cast(typecode)
     return cls(*memv)
 ```
+
+## @classmethod v/s @staticmethod
+
+**`@classmethod`**:
+
+1. It is used to define a method that operates on **class**; not on **instances**.
+2. It receives the **class** itself as the 1st argument (eg. `cls` in above code) 
+instead of an instance (eg. `self`)
+3. Most commonly used as **alternate constructors** (eg. `frombytes` in above code)
+Note: (in the above `frombyytes()`) how the last line in `frombytes()` uses `cls` argument by invoking 
+it to build a new instance (`cls(*memv)`)
+
