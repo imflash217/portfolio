@@ -72,8 +72,9 @@ with custom_open("file.txt") as f:
 
 ```
 
-This works in exactly the same manner as the CLASS version.
-The `custom_open` function executes until it reaches the `yield` statement.
-The control was given back to the `with` statement which assigns whatever was
+This works in exactly the same manner as the CLASS version:
+
+1. The `custom_open` function executes until it reaches the `yield` statement.
+2. The control was given back to the `with` statement which assigns whatever was
 `yield`ed to `f` in the `as f` part  of the `with` statement.
-The `finally` block is executed at the end of the `with` statement.
+3. The `finally` block is executed at the end of the `with` statement.
