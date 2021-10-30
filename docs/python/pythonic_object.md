@@ -64,3 +64,12 @@ it to build a new instance (`cls(*memv)`)
 4. By convention the 1st argument of the `@classmethod` should be named `cls` 
 (but Python does not care about the name though)
 
+**`@staticmethod`**
+
+A static method is just like a plain old **function** that happens to live inside the body of a **class**
+instead of being defind outside the class.
+It does not have access to internal state variables of the class or the instance.
+It is kept inside the class definition to provide easy access to related functions/method,
+so the user have access to all necessary method for a class within itself instead of finding it elsewhere.
+
+
