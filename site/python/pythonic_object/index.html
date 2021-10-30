@@ -1373,6 +1373,8 @@ instead of an instance (eg. <code>self</code>)</li>
 <li>Most commonly used as <strong>alternate constructors</strong> (eg. <code>frombytes</code> in above code)
 Note: (in the above <code>frombyytes()</code>) how the last line in <code>frombytes()</code> uses <code>cls</code> argument by invoking 
 it to build a new instance (<code>cls(*memv)</code>)</li>
+<li>By convention the 1<sup>st</sup> argument of the <code>@classmethod</code> should be named <code>cls</code> 
+(but Python does not care about the name though)</li>
 </ol>
                 
                   
