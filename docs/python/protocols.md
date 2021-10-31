@@ -20,11 +20,18 @@ class FrenchDeck:
                                         for suit in suits]
 
     def __len__(self):
-        ## for usage as a SEQUENCE
+        ## necessary for usage as a SEQUENCE
         return len(self._cards)
 
     def __getitem__(self, idx):
-        ## for usage as a SEQUENCE
+        ## necessary for usage as a SEQUENCE
         return self._cards[idx]
 ```
+
+Because **protocols** are informal and un-enforced, you can get away with just 
+implementing the part of the protocol that is necessary for your usage.
+
+For example, to support only **iteration** we just need to implement the `__getitem__()` method;
+we don't need to implement `__len__()`.
+
 
