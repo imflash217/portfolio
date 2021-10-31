@@ -1264,14 +1264,18 @@ all that matters is that it provides the necessary methods</p>
                                         <span class="k">for</span> <span class="n">suit</span> <span class="ow">in</span> <span class="n">suits</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1">## for usage as a SEQUENCE</span>
+        <span class="c1">## necessary for usage as a SEQUENCE</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cards</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
-        <span class="c1">## for usage as a SEQUENCE</span>
+        <span class="c1">## necessary for usage as a SEQUENCE</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cards</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
+<p>Because <strong>protocols</strong> are informal and un-enforced, you can get away with just 
+implementing the part of the protocol that is necessary for your usage.</p>
+<p>For example, to support only <strong>iteration</strong> we just need to implement the <code>__getitem__()</code> method;
+we don't need to implement <code>__len__()</code>.</p>
                 
                   
                     
