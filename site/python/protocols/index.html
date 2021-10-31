@@ -14,7 +14,7 @@
     
     
       
-        <title>About - Vinay Kumar</title>
+        <title>Protocols - Vinay Kumar</title>
       
     
     
@@ -90,7 +90,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              About
+              Protocols
             
           </span>
         </div>
@@ -187,6 +187,8 @@
         
   
   
+    
+  
 
 
   
@@ -198,7 +200,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../python/cookbook_dabeaz/ch01/" class="md-tabs__link">
+      <a href="../cookbook_dabeaz/ch01/" class="md-tabs__link md-tabs__link--active">
         👑 Python Gems
       </a>
     </li>
@@ -566,12 +568,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" data-md-state="indeterminate" type="checkbox" id="nav-4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
       
       <label class="md-nav__link" for="nav-4">
         👑 Python Gems
@@ -612,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/cookbook_dabeaz/ch01/" class="md-nav__link">
+      <a href="../cookbook_dabeaz/ch01/" class="md-nav__link">
         Data Structures & Algorithms
       </a>
     </li>
@@ -630,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/design_patterns/" class="md-nav__link">
+      <a href="../design_patterns/" class="md-nav__link">
         Design Patterns
       </a>
     </li>
@@ -642,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/decorators/" class="md-nav__link">
+      <a href="../decorators/" class="md-nav__link">
         Decorators & Closures
       </a>
     </li>
@@ -654,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/pythonic_object/" class="md-nav__link">
+      <a href="../pythonic_object/" class="md-nav__link">
         A Pythonic Object
       </a>
     </li>
@@ -666,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/context_managers/" class="md-nav__link">
+      <a href="../context_managers/" class="md-nav__link">
         Context Managers
       </a>
     </li>
@@ -676,11 +680,18 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../python/protocols/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Protocols
       </a>
+      
     </li>
   
 
@@ -1216,29 +1227,12 @@
               
                 
                 
-                  <h1>About</h1>
+                  <h1>Protocols</h1>
                 
-                <figure>
-    <img src="https://4.bp.blogspot.com/-tgA9nKQJJ2Q/Vtra_9UwzDI/AAAAAAAANhQ/VmWebFhwBxw/s1600/underconstruction.jpg
-" width="800" />
-</figure>
-
-<figure>
-  <img src="https://dummyimage.com/100x100/eee/aaa" width="100" />
-  <figcaption>Image caption</figcaption>
-</figure>
-
-<hr />
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vestibulum convallis sit amet nisi a tincidunt<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In hac habitasse platea dictumst</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In scelerisque nibh non dolor mollis congue sed et metus</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Praesent sed risus massa</li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque</li>
-</ul>
+                <p>In the context of Object Oriented Programming, 
+a <strong>protocol</strong> is an <em>informal interface that is defined only in the documentation, not in code</em>.</p>
+<p>For eg., the <strong>sequence protocol</strong> in Python entails just the <code>__len__()</code> and <code>__getitem__()</code> methods.
+Any class <code>Spam</code> that uses those methods can be used as a <strong>sequence</strong></p>
                 
                   
                     
@@ -1247,7 +1241,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-02-03
+      Last update: 2021-10-30
     
   </small>
 </div>
@@ -1266,6 +1260,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../context_managers/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Context Managers
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../blogs/algorithms/blog_01292021_hashtables/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Hash Tables
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
