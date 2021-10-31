@@ -1232,7 +1232,46 @@
                 <p>In the context of Object Oriented Programming, 
 a <strong>protocol</strong> is an <em>informal interface that is defined only in the documentation, not in code</em>.</p>
 <p>For eg., the <strong>sequence protocol</strong> in Python entails just the <code>__len__()</code> and <code>__getitem__()</code> methods.
-Any class <code>Spam</code> that uses those methods can be used as a <strong>sequence</strong></p>
+Any class <code>Spam</code> that uses those methods can be used as a <strong>sequence</strong>.
+Whether <code>Spam</code> is a subclass of this or that is irrelevant; 
+all that matters is that it provides the necessary methods</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">collections</span>
+<span class="n">Card</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Card&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;rank&quot;</span><span class="p">,</span> <span class="s2">&quot;suit&quot;</span><span class="p">])</span>
+
+<span class="k">class</span> <span class="nc">FrenchDeck</span><span class="p">:</span>
+    <span class="n">ranks</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;JQKA&quot;</span><span class="p">)</span>
+    <span class="n">suits</span> <span class="o">=</span> <span class="s2">&quot;spades, diamonds, clubs, hearts&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cards</span> <span class="o">=</span> <span class="p">[</span><span class="n">Card</span><span class="p">(</span><span class="n">rank</span><span class="p">,</span> <span class="n">suit</span><span class="p">)</span> <span class="k">for</span> <span class="n">rank</span> <span class="ow">in</span> <span class="n">ranks</span>
+                                        <span class="k">for</span> <span class="n">suit</span> <span class="ow">in</span> <span class="n">suits</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">## for usage as a SEQUENCE</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cards</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="c1">## for usage as a SEQUENCE</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cards</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                     
