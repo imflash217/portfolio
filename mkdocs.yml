@@ -129,6 +129,7 @@ nav:
     - A Pythonic Object: python/pythonic_object.md
     - Context Managers: python/context_managers.md
     - Protocols: python/protocols.md
+    - Hashing: python/hashing.md
 
   - 📟 Algorithms:
     - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
