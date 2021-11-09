@@ -1818,7 +1818,18 @@ Below is a sample code using a <strong>dictionary comprehension</strong>
 </code></pre></div>
 </td></tr></table></p>
 </details>
-<details class="quote" open="open"><summary>Discussion</summary></details>
+<details class="quote" open="open"><summary>Discussion</summary><p>A <strong>dictionary</strong> is a mapping between a set of <strong>keys</strong> and <strong>values</strong></p>
+<p>The <strong><code>.keys()</code></strong> method on a dict returns <strong>keys-view</strong> object of the dict.
+This keys-view object support common <strong>set</strong> operations like <strong>join</strong>, <strong>intersection</strong>, <strong>difference</strong> etc.
+These set operations are supported because it is <strong>guranteed</strong> that the keys of a dict are uniquely hashable.</p>
+<p>The <strong><code>.items()</code></strong>  method on a dict returns <strong>items-view</strong> object consisting 
+of <code>(key, value)</code> pairs. This items-view object also supports common set operations as above.</p>
+<p>The <strong><code>.values()</code></strong> method on the dict returns a <strong>values-view</strong> object consisting of values of the dict.
+BUT, this <strong>values-view</strong> object DOES-NOT SUPPORT common set operations 
+because the <strong>values of a dict are not guranteed to be unique</strong>.
+Although, if necessary we can always convert this <em>values-view object</em> into a <em>set</em> and 
+then perform required set-operations as usual.</p>
+</details>
                 
                   
                     
