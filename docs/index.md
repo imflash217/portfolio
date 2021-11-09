@@ -24,7 +24,7 @@ hide:
 }
 
 .container {
-  padding: 2px 16px;
+  padding: 2px 2px;
 }
 </style>
 
