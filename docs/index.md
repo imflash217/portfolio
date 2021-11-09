@@ -49,8 +49,8 @@ hide:
             <p><a href="https://github.com/imflash217">github.com/imflash217</a></p>
         </div>
     </div>
-    <div class="photo">
-        <img src="assets/linkedin.png">
+    <div class="photo" style="width:100%">
+        <img src="assets/linkedin.png" style="height:32px">
         <div class="container">
             <p><a href="https://linkedin.com/in/imflash217">linkedin.com/in/imflash217</a></p>
         </div>
