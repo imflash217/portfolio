@@ -45,7 +45,7 @@ hide:
         </div>
     </div>
     <div class="photo">
-        <img src="assets/LI-In-Bug.png" alt="avatar" style="height:40px">
+        <img src="assets/LI-In-Bug.png" alt="avatar" style="height:40px width:30%">
         <div class="container">
             <p><a href="https://linkedin.com/in/imflash217">linkedin.com/in/imflash217</a></p>
         </div>
