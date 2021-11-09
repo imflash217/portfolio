@@ -38,8 +38,8 @@ hide:
     <p>email: <b>vkumar24@ncsu.edu</b></p>
     <p>BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
     <p>MS in EE <a style="font-weight:bold" href="https://www.ncsu.edu/">@NC State University</a></p>
-    <div class="photo" height=100>
-        <img src="assets/GitHub_Logo.png" alt="avatar">
+    <div class="photo">
+        <img src="assets/GitHub_Logo.png" alt="avatar" style="heigh:100">
         <div class="container">
             <a href="https://github.com/imflash217">https://github.com/imflash217</a> 
         </div>
