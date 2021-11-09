@@ -41,7 +41,7 @@ hide:
     <div class="photo">
         <img src="assets/GitHub_Logo.png" alt="avatar" style="heigh:100">
         <div class="container">
-            <a href="https://github.com/imflash217">https://github.com/imflash217</a> 
+            <p><a href="https://github.com/imflash217">https://github.com/imflash217</a></p>
         </div>
     </div>
   </div>
