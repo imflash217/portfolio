@@ -39,13 +39,13 @@ hide:
     <p>BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
     <p>MS in EE <a style="font-weight:bold" href="https://www.ncsu.edu/">@NC State University</a></p>
     <div class="photo" style="width:100%">
-        <img src="assets/github_logo2.png" alt="avatar" style="height:40px">
+        <img src="assets/github_logo2.png">
         <div class="container">
             <p><a href="https://github.com/imflash217">github.com/imflash217</a></p>
         </div>
     </div>
-    <div class="photo">
-        <img src="assets/LI-In-Bug.png" alt="avatar" style="height:40px width:30%">
+    <div class="photo" style="width:100%">
+        <img src="assets/LI-In-Bug.png">
         <div class="container">
             <p><a href="https://linkedin.com/in/imflash217">linkedin.com/in/imflash217</a></p>
         </div>
