@@ -50,7 +50,7 @@ hide:
         </div>
     </div>
     <div class="photo" style="width:100%">
-        <img src="assets/linkedin.png" style="width:32px">
+        <img src="assets/linkedin.png">
         <div class="container">
             <p><a href="https://linkedin.com/in/imflash217">linkedin.com/in/imflash217</a></p>
         </div>
