@@ -43,7 +43,7 @@ hide:
 
 <!-- ------------------------------------------------------------------------------------ -->
 
-<div class="photo">
+<div class="photo" height=100>
   <img src="assets/GitHub_Logo.png" alt="avatar" style="width:40%" height=100>
   <div class="container">
     <p>https://github.com/imflash217</p> 
