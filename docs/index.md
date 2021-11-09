@@ -38,19 +38,19 @@ hide:
     <p>BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
     <p>MS in EE <a style="font-weight:bold" href="https://www.ncsu.edu/">@NC State University</a></p>
     <div class="photo" style="width:100%">
-        <img src="assets/email.png" style="width:32px height:32px">
+        <img src="assets/email.png" style="height:40px">
         <div class="container">
             <p>vkumar24@ncsu.edu</p>
         </div>
     </div>
     <div class="photo" style="width:100%">
-        <img src="assets/github.png" style="width:32px">
+        <img src="assets/github.png" style="height:40px">
         <div class="container">
             <p><a href="https://github.com/imflash217">github.com/imflash217</a></p>
         </div>
     </div>
     <div class="photo" style="width:100%">
-        <img src="assets/linkedin.png" style="height:50px">
+        <img src="assets/linkedin.png" style="height:40px">
         <div class="container">
             <p><a href="https://linkedin.com/in/imflash217">linkedin.com/in/imflash217</a></p>
         </div>
