@@ -35,8 +35,8 @@ hide:
   <div class="container">
     <h2><b>Vinay Kumar</b></h2> 
     <h3>Deep Learning Engineer</h3>
-    <p>BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
-    <p>Masters in EE <a style="font-weight:bold" href="https://www.ncsu.edu/">@NC State University</a></p>
+    <p>🎓 BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
+    <p>🎓 Masters in EE <a style="font-weight:bold" href="https://www.ncsu.edu/">@NC State University</a></p>
     Find me on <a style="font-weight:bold" href="https://github.com/imflash217">GitHub</a> & 
     <a style="font-weight:bold" href="https://linkedin.com/in/imflash217">LinkedIn</a> using the handle 
     <b>@imflash217</b> or drop me an email at <b>vkumar24@ncsu.edu<b>
