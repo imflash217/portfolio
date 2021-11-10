@@ -2115,6 +2115,22 @@ object's <strong><code>__getitem__()</code></strong> method.</p>
 a <strong>tuple</strong> with all the indexed elements into it; which is then passed to the <strong><code>sorted()</code></strong> function.
 This is important if you want to simulatenously sort on multiple fields 
 (as shown in above example <code>rows_by_lfname</code>, ie.e sorting by <code>lname</code> first then by <code>fname</code>).</p>
+<p>The functionality of <strong><code>itemgetter()</code></strong> is sometimes replaced by <strong><code>lambda</code></strong> expressions, </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rows_by_fanme</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;fname&quot;</span><span class="p">])</span>
+<span class="n">rows_by_lfname</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;lname&quot;</span><span class="p">],</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;fname&quot;</span><span class="p">]))</span>
+</code></pre></div>
+</td></tr></table>
+<p>:target: But <strong><code>itemgetter()</code></strong> is <strong>faster</strong> than <code>lambda</code> expressions.</p>
+<p>:target: Note that this technique can also be used for other functions that does their operations
+which require <code>key</code> callable function such as <strong><code>min()</code></strong>, <strong><code>max()</code></strong> etc.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+<span class="nb">min</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s2">&quot;uid&quot;</span><span class="p">))</span>    <span class="c1">## {&#39;fname&#39;: &#39;John&#39;, &#39;lname&#39;: &#39;Cleese&#39;, &#39;uid&#39;: 1001}</span>
+<span class="nb">max</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s2">&quot;uid&quot;</span><span class="p">))</span>    <span class="c1">## {&#39;fname&#39;: &#39;Big&#39;, &#39;lname&#39;: &#39;Jones&#39;, &#39;uid&#39;: 1004}</span>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
                   
