@@ -2087,7 +2087,7 @@ For example:</p>
  {&#39;fname&#39;: &#39;Big&#39;, &#39;uid&#39;: 1004, &#39;lname&#39;: &#39;Jones&#39;}]
 </code></pre></div>
 </td></tr></table></p>
-<p>The <strong><code>itemgetter()</code></strong> function also accepts <strong>multiple</strong> keys as arguments</p>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> The <strong><code>itemgetter()</code></strong> function also accepts <strong>multiple</strong> keys as arguments</p>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rows_by_lfname</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s2">&quot;lname&quot;</span><span class="p">,</span> <span class="s2">&quot;fname&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rows_by_lfname</span><span class="p">)</span>
