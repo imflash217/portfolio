@@ -709,6 +709,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#113-sorting-a-list-of-dicts-by-a-common-key" class="md-nav__link">
+    1.13: Sorting a List of dicts by a common key
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1393,6 +1400,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#113-sorting-a-list-of-dicts-by-a-common-key" class="md-nav__link">
+    1.13: Sorting a List of dicts by a common key
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2018,6 +2032,62 @@ operations like <em>sum</em>, <em>difference</em> etc.</p>
 </code></pre></div>
 </td></tr></table>
 </details>
+<h2 id="113-sorting-a-list-of-dicts-by-a-common-key">1.13: Sorting a List of dicts by a common key</h2>
+<details class="danger" open="open"><summary>Problem</summary><p>You have a list of dictionaries and you would like to sort the items according to
+one or more of the dict values</p>
+</details>
+<details class="done" open="open"><summary>Solution</summary><p>Sorting this type of structure is easy using <strong><code>operator</code></strong> module's <strong><code>itemgetter()</code></strong> function.
+Let's say you've queried a database table to get a listing of the members on your website,
+and you receive the following data structure in return.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">rows</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;fname&#39;</span><span class="p">:</span> <span class="s1">&#39;Brian&#39;</span><span class="p">,</span> <span class="s1">&#39;lname&#39;</span><span class="p">:</span> <span class="s1">&#39;Jones&#39;</span><span class="p">,</span> <span class="s1">&#39;uid&#39;</span><span class="p">:</span> <span class="mi">1003</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;fname&#39;</span><span class="p">:</span> <span class="s1">&#39;David&#39;</span><span class="p">,</span> <span class="s1">&#39;lname&#39;</span><span class="p">:</span> <span class="s1">&#39;Beazley&#39;</span><span class="p">,</span> <span class="s1">&#39;uid&#39;</span><span class="p">:</span> <span class="mi">1002</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;fname&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;lname&#39;</span><span class="p">:</span> <span class="s1">&#39;Cleese&#39;</span><span class="p">,</span> <span class="s1">&#39;uid&#39;</span><span class="p">:</span> <span class="mi">1001</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;fname&#39;</span><span class="p">:</span> <span class="s1">&#39;Big&#39;</span><span class="p">,</span> <span class="s1">&#39;lname&#39;</span><span class="p">:</span> <span class="s1">&#39;Jones&#39;</span><span class="p">,</span> <span class="s1">&#39;uid&#39;</span><span class="p">:</span> <span class="mi">1004</span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+It is fairly easy to output these rows ordered by any of the <em>fields</em> <strong>common</strong> to all of the rows in the dict.
+For example:</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
+
+<span class="n">rows_by_fname</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s2">&quot;fname&quot;</span><span class="p">))</span>
+<span class="n">rows_by_uid</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="s2">&quot;uid&quot;</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">rows_by_fname</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[{&#39;fname&#39;: &#39;Big&#39;, &#39;uid&#39;: 1004, &#39;lname&#39;: &#39;Jones&#39;},
+ {&#39;fname&#39;: &#39;Brian&#39;, &#39;uid&#39;: 1003, &#39;lname&#39;: &#39;Jones&#39;},
+ {&#39;fname&#39;: &#39;David&#39;, &#39;uid&#39;: 1002, &#39;lname&#39;: &#39;Beazley&#39;},
+ {&#39;fname&#39;: &#39;John&#39;, &#39;uid&#39;: 1001, &#39;lname&#39;: &#39;Cleese&#39;}]
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">rows_by_uid</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[{&#39;fname&#39;: &#39;John&#39;, &#39;uid&#39;: 1001, &#39;lname&#39;: &#39;Cleese&#39;},
+ {&#39;fname&#39;: &#39;David&#39;, &#39;uid&#39;: 1002, &#39;lname&#39;: &#39;Beazley&#39;},
+ {&#39;fname&#39;: &#39;Brian&#39;, &#39;uid&#39;: 1003, &#39;lname&#39;: &#39;Jones&#39;},
+ {&#39;fname&#39;: &#39;Big&#39;, &#39;uid&#39;: 1004, &#39;lname&#39;: &#39;Jones&#39;}]
+</code></pre></div>
+</td></tr></table></p>
+</details>
                 
                   
                     
@@ -2026,7 +2096,7 @@ operations like <em>sum</em>, <em>difference</em> etc.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-11-09
+      Last update: 2021-11-10
     
   </small>
 </div>
