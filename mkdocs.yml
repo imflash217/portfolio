@@ -122,7 +122,8 @@ nav:
       - einops tutorial: blogs/deep_learning/blog_einops.md
 
   - 👑 Python Gems:
-    - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
+    - 🥘 Cookbook:
+      - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
     - Design Patterns: python/design_patterns.md
     - Decorators & Closures: python/decorators.md
     - A Pythonic Object: python/pythonic_object.md
