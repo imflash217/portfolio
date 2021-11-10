@@ -2121,8 +2121,8 @@ This is important if you want to simulatenously sort on multiple fields
 <span class="n">rows_by_lfname</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;lname&quot;</span><span class="p">],</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;fname&quot;</span><span class="p">]))</span>
 </code></pre></div>
 </td></tr></table>
-<p>:target: But <strong><code>itemgetter()</code></strong> is <strong>faster</strong> than <code>lambda</code> expressions.</p>
-<p>:target: Note that this technique can also be used for other functions that does their operations
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> But <strong><code>itemgetter()</code></strong> is <strong>faster</strong> than <code>lambda</code> expressions.</p>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Note that this technique can also be used for other functions that does their operations
 which require <code>key</code> callable function such as <strong><code>min()</code></strong>, <strong><code>max()</code></strong> etc.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
