@@ -1992,6 +1992,31 @@ update the counter object.</p>
 </td></tr></table>
 <p>:graduation: The <strong><code>Counter</code> object</strong> also supports common <strong>mathematical</strong> 
 operations like <em>sum</em>, <em>difference</em> etc.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="s2">&quot;earth&quot;</span><span class="p">]</span>
+<span class="n">morewords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;vinay&quot;</span><span class="p">,</span> <span class="s2">&quot;earth&quot;</span><span class="p">]</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>          <span class="c1">## {&quot;hello&quot;:2, &quot;world&quot;:2, &quot;earht&quot;:1}</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">morewords</span><span class="p">)</span>      <span class="c1">## {&quot;hello&quot;:1, &quot;vinay&quot;:1, &quot;earth&quot;:1}</span>
+
+<span class="c1">## adding the two counter objects together</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>                                       <span class="c1">## {&quot;hello&quot;:3, &quot;world&quot;:2, &quot;earth&quot;:2, &quot;vinay&quot;:1}</span>
+
+<span class="c1">## subtracting the two counter objects</span>
+<span class="n">a</span> <span class="o">-</span> <span class="n">b</span>                                       <span class="c1">## {&quot;hello&quot;:1, &quot;world&quot;:2, &quot;vinay&quot;:1}</span>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
                   
