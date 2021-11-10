@@ -2103,7 +2103,15 @@ For example:</p>
 </code></pre></div>
 </td></tr></table></p>
 </details>
-<details class="quote" open="open"><summary>Discussion</summary></details>
+<details class="quote" open="open"><summary>Discussion</summary><p>In this example, <code>rows</code> is passed to the built-in <strong><code>sorted()</code></strong> function which accepts a keyword 
+argument <strong><code>key</code></strong>. The <strong><code>key</code></strong> argument is expected to be a callable that accepts a single item
+from <code>rows</code> as input and returns a single value that is used as a basis for sorting.
+The <strong><code>itemgetter()</code></strong> is just such a callable.</p>
+<p>The <strong><code>operator.itemgetter()</code></strong> function takes as argument the lookup indices 
+which is used to extract the desired values from the records in the <code>rows</code>.
+It can be a dictionary key name, a numeric list element, or any value that can be fed to the 
+object's <strong><code>__getitem__()</code></strong> method.</p>
+</details>
                 
                   
                     
