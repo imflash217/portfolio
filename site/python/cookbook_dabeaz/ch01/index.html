@@ -2149,7 +2149,43 @@ which require <code>key</code> callable function such as <strong><code>min()</co
 <h2 id="114-sorting-objects-wo-native-comparision-support">1.14: Sorting objects w/o native comparision support</h2>
 <details class="danger" open="open"><summary>Problem</summary><p>You want to sort objects of the same class; but they don't natively support comparision operation.</p>
 </details>
-<details class="done" open="open"><summary>Solution</summary><p>...</p>
+<details class="done" open="open"><summary>Solution</summary><p>The built-in <strong><code>sorted()</code></strong> function takes a <strong><code>key</code></strong> argument that can be passed a callable
+that will return a value in the object that <strong><code>sorted()</code></strong> will use to compare the objects.</p>
+<p>For example, if you have sequence of <code>User</code> instances and you want to sort the items in the sequence
+using their <code>used_id</code> attribute; you would supply a <strong>callable</strong> that will take a <code>User</code> instance 
+as input and return the <code>user_id</code> of that input which can then be used by <strong><code>sorted()</code></strong> function
+as a key to sort the instances in the sequence. This is illustrated in the below code.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">user_id</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;User(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">user_id</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<span class="c1">## ---------------------------------------------- ##</span>
+
+<span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">User</span><span class="p">(</span><span class="mi">23</span><span class="p">),</span> <span class="n">User</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">User</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+
+<span class="hll"><span class="nb">sorted</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">u</span><span class="p">:</span> <span class="n">u</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>  <span class="c1">## [User(1), User(9), User(23)]</span>
+</span></code></pre></div>
+</td></tr></table>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Instead of using <code>lambda</code> you can a faster <strong><code>operator.attrgetter()</code></strong> function</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;user_id&quot;</span><span class="p">))</span>    <span class="c1">## [user(1), User(9), User(23)]</span>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
                   
