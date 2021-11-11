@@ -1409,6 +1409,12 @@ For example, you may want ot use the split characters later on to reform the out
 <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="n">d</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">delimiters</span><span class="p">))</span>    <span class="c1">## &quot;vinay kumar,ram;lakshmi,devi anil-kumar-ram&quot;</span>
 </code></pre></div>
 </td></tr></table>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> If you don't want the separator/delimiter to be in the result list
+but still need to use the <strong>parenthesis</strong> <code>()</code> to group parts of the regular expression pattern;
+then use a <strong>non-capture group</strong> specified by <strong><code>(?:...)</code></strong> as shown below.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(?:;|,|-|\s)\s*&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>  <span class="c1">## [&quot;vinay&quot;, &quot;kumar&quot;, &quot;ram&quot;, &quot;lakshmi&quot;, &quot;devi&quot;, &quot;anil&quot;, &quot;kumar&quot;, &quot;ram&quot;]</span>
+</code></pre></div>
+</td></tr></table>
 </details>
 <!-- ######################################################################################################### -->
                 
