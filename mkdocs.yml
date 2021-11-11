@@ -127,6 +127,17 @@ nav:
       - 2. Strings & Texts: python/cookbook_dabeaz/ch02.md
       - 3. Numbers, Dates & Times: python/cookbook_dabeaz/ch03.md
       - 4. Iterators & Generators: python/cookbook_dabeaz/ch04.md
+      - 5. Files & I/O: python/cookbook_dabeaz/ch05.md
+      - 6. Data Encoding & Processing: python/cookbook_dabeaz/ch06.md
+      - 7. Functions: python/cookbook_dabeaz/ch07.md
+      - 8. Classes & Objects: python/cookbook_dabeaz/ch08.md
+      - 9. Metaprogramming: python/cookbook_dabeaz/ch09.md
+      - 10. Modules & Packages: python/cookbook_dabeaz/ch10.md
+      - 11. Network & Web Programming: python/cookbook_dabeaz/ch11.md
+      - 12. Concurrency: python/cookbook_dabeaz/ch12.md
+      - 13. Utility Scrioting & System Administration: python/cookbook_dabeaz/ch13.md
+      - 14. Testing, Debugging & Exceptions: python/cookbook_dabeaz/ch14.md
+      - 15. C Extensions: python/cookbook_dabeaz/ch15.md
     - Design Patterns: python/design_patterns.md
     - Decorators & Closures: python/decorators.md
     - A Pythonic Object: python/pythonic_object.md
