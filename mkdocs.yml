@@ -123,7 +123,10 @@ nav:
 
   - 👑 Python Gems:
     - 🥘 Cookbook:
-      - Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
+      - 1. Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
+      - 2. String & Texts: python/cookbook_dabeaz/ch02.md
+      - 3. Numbers, Dates & Times: python/cookbook_dabeaz/ch03.md
+      - 4. Iterators & Generators: python/cookbook_dabeaz/ch04.md
     - Design Patterns: python/design_patterns.md
     - Decorators & Closures: python/decorators.md
     - A Pythonic Object: python/pythonic_object.md
