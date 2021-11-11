@@ -1353,7 +1353,7 @@ While more complicated operations might require the use of <strong>regular expre
 <details class="done" open="open"><summary>Solution</summary><p>The <strong><code>str.split()</code></strong> method of string objects is really meant for <strong>very simple use cases</strong>
 and <strong>doesn't</strong> allow for multiple <em>delimiters</em>. </p>
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> In case you need a bit more flexibility use <strong><code>re.split()</code></strong> instead as shown below.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -1366,8 +1366,17 @@ and <strong>doesn't</strong> allow for multiple <em>delimiters</em>. </p>
 <span class="c1">## [&quot;vinay&quot;, &quot;kumar&quot;, &quot;ram&quot;, &quot;lakshmi&quot;, &quot;devi&quot;, &quot;anil&quot;, &quot;kumar&quot;, &quot;ram&quot;]</span>
 </code></pre></div>
 </td></tr></table>
+Here in the above <code>re.split(r"[;,-\s]\s*", line)</code> the delimiter is either a 
+<em>semi-colon</em> (<code>;</code>), a <em>comma</em> (<code>,</code>), a <em>hyphen</em> (<code>-</code>), a single <em>space</em> (<code></code>) or
+any of these followed by any number of <em>spaces</em>.</p>
 </details>
-<details class="quote" open="open"><summary>Discussion</summary></details>
+<details class="quote" open="open"><summary>Discussion</summary><p>The <strong><code>re.split()</code></strong> is useful because you can specify multiple patterns for the <em>delimiter</em>.
+In the above solution using <code>re.split()</code>, the separator/delimiter is either a<br />
+<em>semi-colon</em> (<code>;</code>), a <em>comma</em> (<code>,</code>), a <em>hyphen</em> (<code>-</code>), a single <em>space</em> (<code></code>) or
+any of these followed by any number of <em>spaces</em>. Whenever that pattern is found,
+the entire match becomes a delimiter between whatever fileds lie on either side of the match.</p>
+<p>The result is <strong>list</strong> of fileds just like <strong><code>str.split()</code></strong></p>
+</details>
 <!-- ######################################################################################################### -->
                 
                   
