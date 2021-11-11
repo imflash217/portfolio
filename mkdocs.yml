@@ -124,7 +124,7 @@ nav:
   - 👑 Python Gems:
     - 🥘 Cookbook:
       - 1. Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
-      - 2. String & Texts: python/cookbook_dabeaz/ch02.md
+      - 2. Strings & Texts: python/cookbook_dabeaz/ch02.md
       - 3. Numbers, Dates & Times: python/cookbook_dabeaz/ch03.md
       - 4. Iterators & Generators: python/cookbook_dabeaz/ch04.md
     - Design Patterns: python/design_patterns.md
