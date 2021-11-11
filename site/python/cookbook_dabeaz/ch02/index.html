@@ -1350,21 +1350,22 @@ While more complicated operations might require the use of <strong>regular expre
 <details class="danger" open="open"><summary>Problem</summary><p>You need to split the string into fields but the <strong>delimiters</strong>
 (and the space around them) aren't consistent throughtout the string.</p>
 </details>
-<details class="done" open="open"><summary>Solution</summary><p>The <strong><code>split()</code></strong> method of string objects is really meant for <strong>very simple use cases</strong>
+<details class="done" open="open"><summary>Solution</summary><p>The <strong><code>str.split()</code></strong> method of string objects is really meant for <strong>very simple use cases</strong>
 and <strong>doesn't</strong> allow for multiple <em>delimiters</em>. </p>
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> In case you need a bit more flexibility use <strong><code>re.split()</code></strong> instead as shown below.</p>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;vinay kumar, ram; lakshmi,           devi         anil-kumar-ram&quot;</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
-<span class="kn">import</span> <span class="nn">re</span>
+<span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;vinay kumar, ram; lakshmi,           devi         anil-kumar-ram&quot;</span>
+
 <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[;,-\s]\s*&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>   
+<span class="c1">## [&quot;vinay&quot;, &quot;kumar&quot;, &quot;ram&quot;, &quot;lakshmi&quot;, &quot;devi&quot;, &quot;anil&quot;, &quot;kumar&quot;, &quot;ram&quot;]</span>
 </code></pre></div>
 </td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">[</span><span class="s2">&quot;vinay&quot;</span>, <span class="s2">&quot;kumar&quot;</span>, <span class="s2">&quot;ram&quot;</span>, <span class="s2">&quot;lakshmi&quot;</span>, <span class="s2">&quot;devi&quot;</span>, <span class="s2">&quot;anil&quot;</span>, <span class="s2">&quot;kumar&quot;</span>, <span class="s2">&quot;ram&quot;</span><span class="o">]</span>
-</code></pre></div>
-</td></tr></table></p>
 </details>
 <details class="quote" open="open"><summary>Discussion</summary></details>
 <!-- ######################################################################################################### -->
