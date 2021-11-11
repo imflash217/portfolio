@@ -1376,6 +1376,9 @@ In the above solution using <code>re.split()</code>, the separator/delimiter is 
 any of these followed by any number of <em>spaces</em>. Whenever that pattern is found,
 the entire match becomes a delimiter between whatever fileds lie on either side of the match.</p>
 <p>The result is <strong>list</strong> of fileds just like <strong><code>str.split()</code></strong></p>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> When using <code>re.split()</code>, you need to be a bit careful <strong>if the regular expression
+involves a <em>capture group</em> enclosed in parenthesis</strong>. If <strong>capture groups</strong> are used, then the 
+matched text (i.e. the delimiter/separator) is also included in the result as shown below.</p>
 </details>
 <!-- ######################################################################################################### -->
                 
