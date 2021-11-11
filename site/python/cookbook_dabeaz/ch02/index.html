@@ -1379,7 +1379,34 @@ the entire match becomes a delimiter between whatever fileds lie on either side 
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> When using <code>re.split()</code>, you need to be a bit careful <strong>if the regular expression
 involves a <em>capture group</em> enclosed in parenthesis</strong>. If <strong>capture groups</strong> are used, then the 
 matched text (i.e. the delimiter/separator) is also included in the result as shown below.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;vinay kumar, ram; lakshmi,           devi         anil-kumar-ram&quot;</span>
+
+<span class="n">fields</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(;|,|-|\s)\s*&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+<span class="c1">## [&quot;vinay&quot;, &quot; &quot;, &quot;kumar&quot;, &quot;,&quot;, &quot;ram&quot;, &quot;;&quot;, &quot;laksmi&quot;, &quot;,&quot;, &quot;devi&quot;, &quot; &quot;, &quot;anil&quot;, &quot;-&quot;, &quot;kumar&quot;, &quot;-&quot;, &quot;ram&quot;]</span>
+</code></pre></div>
+</td></tr></table>
+<p>Getting the split characters / delimiters/separators might be useful in certain contexts.
+For example, you may want ot use the split characters later on to reform the output string.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">values</span> <span class="o">=</span> <span class="n">fields</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>                <span class="c1">## [&quot;vinay&quot;, &quot;kumar&quot;, &quot;ram&quot;, &quot;lakshmi&quot;, &quot;devi&quot;, &quot;anil&quot;, &quot;kumar&quot;, &quot;ram&quot;]</span>
+<span class="n">delimiters</span> <span class="o">=</span> <span class="n">fields</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>    <span class="c1">## [&quot; &quot;, &quot;,&quot;, &quot;;&quot;, &quot;-&quot;, &quot; &quot;, &quot;-&quot;, &quot;-&quot;, &quot;&quot;]</span>
+
+<span class="c1">## reform the line using the same delimiters</span>
+<span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="n">d</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">delimiters</span><span class="p">))</span>    <span class="c1">## &quot;vinay kumar,ram;lakshmi,devi anil-kumar-ram&quot;</span>
 </code></pre></div>
 </td></tr></table>
 </details>
