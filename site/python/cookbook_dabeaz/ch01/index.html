@@ -2183,8 +2183,8 @@ as a key to sort the instances in the sequence. This is illustrated in the below
 <p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Instead of using <code>lambda</code> you can a faster <strong><code>operator.attrgetter()</code></strong> function</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;user_id&quot;</span><span class="p">))</span>    <span class="c1">## [user(1), User(9), User(23)]</span>
-</code></pre></div>
+<span class="hll"><span class="nb">sorted</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;user_id&quot;</span><span class="p">))</span>    <span class="c1">## [user(1), User(9), User(23)]</span>
+</span></code></pre></div>
 </td></tr></table>
 </details>
 <details class="quote" open="open"><summary>Discussion</summary></details>
