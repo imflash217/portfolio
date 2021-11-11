@@ -2180,14 +2180,37 @@ as a key to sort the instances in the sequence. This is illustrated in the below
 <span class="hll"><span class="nb">sorted</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">u</span><span class="p">:</span> <span class="n">u</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>  <span class="c1">## [User(1), User(9), User(23)]</span>
 </span></code></pre></div>
 </td></tr></table>
-<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Instead of using <code>lambda</code> you can a faster <strong><code>operator.attrgetter()</code></strong> function</p>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Instead of using <code>lambda</code>, you can use a faster <strong><code>operator.attrgetter()</code></strong> function</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
 <span class="hll"><span class="nb">sorted</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;user_id&quot;</span><span class="p">))</span>    <span class="c1">## [user(1), User(9), User(23)]</span>
 </span></code></pre></div>
 </td></tr></table>
 </details>
-<details class="quote" open="open"><summary>Discussion</summary></details>
+<details class="quote" open="open"><summary>Discussion</summary><p>The choice of whether to use <code>lambda</code> or <code>operator.attrgetter()</code> is personal,
+but <strong><code>operator.attrgetter()</code></strong> is a bit faster and <strong>supports multiple attribute indexing</strong>
+as shown below. </p>
+<p>Suppose the <code>User</code> class has two attributes <code>user_id</code> and <code>user_name</code> and we want to sort
+sequence of <code>User</code> instances based on both these attributes; then we can use <strong><code>operator.attrgetter()</code></strong>
+very easily.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
+
+<span class="c1">## assume that &quot;User&quot; class has two attributes &quot;user_id&quot; and &quot;user_name&quot;</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;user_id&quot;</span><span class="p">,</span> <span class="s2">&quot;user_name&quot;</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> This behavior of <strong><code>attrgetter()</code></strong> is analogous to <strong><code>itemgetter()</code></strong> function (used for <strong>dictionaries</strong>)</p>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Similar to <code>itemgetter()</code>, we can use <code>attrgetter()</code> for other 
+comparision operations that require a <code>key</code> attribute such as <strong><code>min()</code>, <code>max()</code></strong> etc.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">min</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;user_id&quot;</span><span class="p">))</span>
+<span class="nb">max</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;user_id&quot;</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+</details>
                 
                   
                     
