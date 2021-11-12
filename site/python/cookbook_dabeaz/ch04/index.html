@@ -1468,6 +1468,18 @@ like <code>None</code> as shown below.</p>
 </code></pre></div>
 </td></tr></table>
 </details>
+<details class="quote" open="open"><summary>Discussion</summary><p>In most cases the <strong><code>for</code></strong> is used to consume the iterable.
+However every now and then a problem statement calls for precise control over
+the underlying mechanism. The below example explains what happens underneath 
+the iteration protocol.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>&gt;&gt;&gt; <span class="nv">items</span><span class="o">=</span> <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span><span class="o">]</span>        <span class="c1">## the iterable</span>
+&gt;&gt;&gt; 
+&gt;&gt;&gt; <span class="c1">## Get the iterator</span>
+</code></pre></div>
+</td></tr></table>
+</details>
                 
                   
                     
