@@ -1524,7 +1524,7 @@ or other <strong>iterables</strong>. You want the <strong>iteration</strong> to 
 </details>
 <details class="done" open="open"><summary>Solution</summary><p>Typically all you need to do is to define an internal <strong><code>iter()</code></strong> method that delegates iteration
 to internally held container as shown below.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1536,7 +1536,19 @@ to internally held container as shown below.</p>
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
 <span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">_children</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1549,9 +1561,26 @@ to internally held container as shown below.</p>
 
 <span class="hll">    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span class="hll">        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="p">)</span>
-</span></code></pre></div>
+</span>
+<span class="c1">## ---------------------------------------------- ##</span>
+
+<span class="k">if</span> <span class="n">__naame__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">child1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">child2</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">child1</span><span class="p">)</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">child2</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">root</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
-<p>We can use the above defined <code>Node</code> class as follows:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>&gt;&gt;&gt; Node<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+    Node<span class="o">(</span><span class="m">2</span><span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+We can use the above defined <code>Node</code> class as follows:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
 </code></pre></div>
 </td></tr></table>
