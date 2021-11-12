@@ -1580,7 +1580,29 @@ accept <strong>varying numbe rof positional arguments</strong> as shown below.</
 </code></pre></div>
 </td></tr></table>
 </details>
-<details class="quote" open="open"><summary>Discussion</summary></details>
+<details class="quote" open="open"><summary>Discussion</summary><p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> <strong>Keyword-only arguments</strong> are a good way to enforce greater code-clarity when
+specifying optional function arguments. For example consider the following code:</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">msg</span> <span class="o">=</span> <span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+If someone is not familiar with <strong><code>recv</code></strong> (written in above section), they might not know 
+what does <strong><code>False</code></strong> mean in this scenario. On the other hand, its much clearer to the user 
+if someone writes the call as below:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">msg</span> <span class="o">=</span> <span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> The use of keyword-only arguments is often very useful for tricks involving <code>**kwargs</code>,
+since they show up nicely when the user asks for <code>help()</code></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">recv</span><span class="p">)</span>
+<span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">recv</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
+<span class="n">recv</span><span class="p">(</span><span class="n">maxsize</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">block</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Receives a message&quot;&quot;&quot;</span>
+</code></pre></div>
+</td></tr></table>
+</details>
                 
                   
                     
