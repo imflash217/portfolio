@@ -1586,7 +1586,8 @@ iterator object that implements a <strong><code>__next__()</code></strong> metho
 the actual iteration.</p>
 <p>In the above example, we are delegating the implemeation of <strong><code>__next__()</code></strong> method 
 by returning a <strong>list</strong> (<code>iter(self._children)</code>) which internally implements <strong><code>__iter__()</code></strong>.</p>
-<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Calling the <strong><code>iter(x)</code></strong> function internally calls <strong><code>x.__iter__()</code></strong></p>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Calling the <strong><code>iter(x)</code></strong> function internally calls <strong><code>x.__iter__()</code></strong>.
+Note that this behaviour is similar to <code>len(seq)</code> and <code>seq.__len__()</code></p>
 </details>
                 
                   
