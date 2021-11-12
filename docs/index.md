@@ -46,6 +46,8 @@ hide:
 
 <!-- ------------------------------------------------------------------------------------ -->
 
+<div class="photo">
 <figure>
     <img src="assets/VinayK_resume_2.png"/>
 </figure>
+</div>
