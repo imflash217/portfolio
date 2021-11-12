@@ -1450,8 +1450,8 @@ In above code, it is treated as a <strong><code>sequence</code></strong> in furt
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">avg</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">rest</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">rest</span><span class="p">))</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="k">def</span> <span class="nf">avg</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">):</span>
+</span>    <span class="k">return</span> <span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">rest</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">rest</span><span class="p">))</span>
 
 <span class="c1">## ------------------------------------------------- ##</span>
 
@@ -1469,8 +1469,8 @@ In the below code, <strong><code>attrs</code></strong> is a <strong>dictionary</
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">html</span>
 
-<span class="k">def</span> <span class="nf">make_element</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">):</span>
-    <span class="n">keyvals</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">=&#39;</span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s2">&#39;&quot;</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">atts</span><span class="o">.</span><span class="n">items</span><span class="p">]</span>
+<span class="hll"><span class="k">def</span> <span class="nf">make_element</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">):</span>
+</span>    <span class="n">keyvals</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">=&#39;</span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s2">&#39;&quot;</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">atts</span><span class="o">.</span><span class="n">items</span><span class="p">]</span>
     <span class="n">attr_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">keyvals</span><span class="p">)</span>
     <span class="n">element</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">name</span><span class="si">}{</span><span class="n">attr_str</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
     <span class="k">return</span> <span class="n">element</span>
@@ -1490,8 +1490,8 @@ In the below code, <strong><code>attrs</code></strong> is a <strong>dictionary</
 any-number-of-keyword-arguments use both <strong><code>*</code></strong> &amp; <code>**</code> arguments as shown below</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">anyargs</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>     <span class="c1">## a tuple</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="k">def</span> <span class="nf">anyargs</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>     <span class="c1">## a tuple</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>   <span class="c1">## a dictionary</span>
 </code></pre></div>
 </td></tr></table>
