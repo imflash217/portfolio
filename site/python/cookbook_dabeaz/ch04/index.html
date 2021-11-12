@@ -1489,18 +1489,18 @@ the iteration protocol.</p>
 <span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>&gt;&gt;&gt; <span class="nv">items</span><span class="o">=</span> <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span><span class="o">]</span>        <span class="c1">## the iterable</span>
 &gt;&gt;&gt; 
 &gt;&gt;&gt; <span class="c1">## Get the iterator</span>
-&gt;&gt;&gt; <span class="nv">it</span> <span class="o">=</span> iter<span class="o">(</span>items<span class="o">)</span>        <span class="c1">## invokes &quot;items.__iter__()&quot;</span>
-&gt;&gt;&gt; next<span class="o">(</span>it<span class="o">)</span>                <span class="c1">## invokes &quot;items.__next__()&quot;</span>
-<span class="m">1</span>
+<span class="hll">&gt;&gt;&gt; <span class="nv">it</span> <span class="o">=</span> iter<span class="o">(</span>items<span class="o">)</span>        <span class="c1">## invokes &quot;items.__iter__()&quot;</span>
+</span><span class="hll">&gt;&gt;&gt; next<span class="o">(</span>it<span class="o">)</span>                <span class="c1">## invokes &quot;items.__next__()&quot;</span>
+</span><span class="m">1</span>
 &gt;&gt;&gt; next<span class="o">(</span>it<span class="o">)</span>
 <span class="m">2</span>
 &gt;&gt;&gt; next<span class="o">(</span>it<span class="o">)</span>
 <span class="m">3</span>
 &gt;&gt;&gt; next<span class="o">(</span>it<span class="o">)</span>
-Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-    file <span class="s2">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, <span class="k">in</span> &lt;module&gt;
-StopIteration
-&gt;&gt;&gt;
+<span class="hll">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span><span class="hll">    file <span class="s2">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, <span class="k">in</span> &lt;module&gt;
+</span><span class="hll">StopIteration
+</span>&gt;&gt;&gt;
 </code></pre></div>
 </td></tr></table>
 </details>
