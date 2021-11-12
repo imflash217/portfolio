@@ -680,6 +680,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#42-delegating-iteration" class="md-nav__link">
+    4.2: Delegating Iteration
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1409,6 +1416,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#42-delegating-iteration" class="md-nav__link">
+    4.2: Delegating Iteration
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1496,7 +1510,7 @@ the iteration protocol.</p>
 <span class="m">2</span>
 &gt;&gt;&gt; next<span class="o">(</span>it<span class="o">)</span>
 <span class="m">3</span>
-&gt;&gt;&gt; next<span class="o">(</span>it<span class="o">)</span>                <span class="c1">## this triggers &quot;StopIteration&quot; exception b&#39;coz the iterator &quot;it&quot; is empty now</span>
+&gt;&gt;&gt; next<span class="o">(</span>it<span class="o">)</span>    <span class="c1">## this triggers &quot;StopIteration&quot; exception b&#39;coz the iterator &quot;it&quot; is empty now</span>
 <span class="hll">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
 </span><span class="hll">    file <span class="s2">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, <span class="k">in</span> &lt;module&gt;
 </span><span class="hll">StopIteration
@@ -1504,6 +1518,11 @@ the iteration protocol.</p>
 </code></pre></div>
 </td></tr></table>
 </details>
+<h2 id="42-delegating-iteration">4.2: Delegating Iteration</h2>
+<details class="danger" open="open"><summary>Problem</summary><p>You have built a custom container object that internallt holds a <code>list</code> or <code>tuple</code> 
+or other <strong>iterables</strong>. You want the <strong>iteration</strong> to work with this custom container.</p>
+</details>
+<details class="done" open="open"><summary>Solution</summary></details>
                 
                   
                     
