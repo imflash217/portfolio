@@ -1645,7 +1645,19 @@ Neither are they type-cheked nor does Puython behave any differently than before
 However, they might give useful hunts about types that would be useful for users or third-party libraries.</p>
 <p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Any type of object can be uased as an annotation (eg. numbers, string, instances, types, etc.).</p>
 </details>
-<details class="quote" open="open"><summary>Discussion</summary></details>
+<details class="quote" open="open"><summary>Discussion</summary><p>Function annotations are merely stored in function's <strong><code>__annotations__</code></strong> attribute.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>&gt;&gt;&gt; add.__annotations__
+<span class="o">{</span><span class="s2">&quot;y&quot;</span>: &lt;class <span class="s2">&quot;int&quot;</span>&gt;,
+ <span class="s2">&quot;return&quot;</span>: &lt;class <span class="s2">&quot;int&quot;</span>&gt;,
+ <span class="s2">&quot;x&quot;</span>: &lt;class <span class="s2">&quot;int&quot;</span>&gt;,
+<span class="o">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
                 
                   
                     
