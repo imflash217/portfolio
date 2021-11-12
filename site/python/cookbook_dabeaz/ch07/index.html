@@ -1546,8 +1546,8 @@ or <strong>a single unnamed <code>*</code></strong> as shown below.</p>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">recv</span><span class="p">(</span><span class="n">maxsize</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">block</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Receives a message&quot;&quot;&quot;</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="k">def</span> <span class="nf">recv</span><span class="p">(</span><span class="n">maxsize</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">block</span><span class="p">):</span>
+</span>    <span class="sd">&quot;&quot;&quot;Receives a message&quot;&quot;&quot;</span>
     <span class="k">pass</span>
 
 <span class="c1">##-------------------------------------##</span>
@@ -1567,8 +1567,8 @@ accept <strong>varying numbe rof positional arguments</strong> as shown below.</
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span>    <span class="n">m</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">clip</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">m</span> <span class="o">=</span> <span class="n">clip</span> <span class="k">if</span> <span class="n">clip</span> <span class="o">&gt;</span> <span class="n">m</span> <span class="k">else</span> <span class="n">m</span>
     <span class="k">return</span> <span class="n">m</span>
