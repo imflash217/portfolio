@@ -1493,9 +1493,9 @@ code to catch the <strong><code>StopIteration</code></strong> exception as shown
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 <span class="hll">            <span class="n">line</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </span>            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-        <span class="k">pass</span>
-</code></pre></div>
+<span class="hll">    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+</span><span class="hll">        <span class="k">pass</span>
+</span></code></pre></div>
 </td></tr></table>
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Normally <strong><code>StopIteration</code></strong> exception is used to signal the end of the sequence.</p>
 <p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> But, if you are using <strong><code>next</code></strong>, you can instruct <code>next()</code> to return a <strong>terminating value</strong>
