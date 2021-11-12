@@ -1,7 +1,3 @@
-:root > * {
-  --md-code-hl-color: #FFD00C;
-}
-
 .md-grid {
     max-width: initial;
 }
