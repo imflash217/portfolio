@@ -1441,6 +1441,26 @@ viz.</p>
 </details>
 <details class="done" open="open"><summary>Solution</summary><p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> For a function that accepts any number of <strong>positional</strong> arguments use a <strong><code>*</code></strong> argument.</p>
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> For a function that accepts any number of <strong>keyword</strong> arguments use a <code>**</code> argument.</p>
+<p>To write any function that accepts any numbe rof positional arguments, use a <strong><code>*</code></strong> argument as shown below.
+In this example, <strong><code>rest</code></strong> is a <strong><code>tuple</code></strong> of all extra positional arguments passed.
+In above code, it is treated as a <strong><code>sequence</code></strong> in further calculations inside the function.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">avg</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">rest</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">rest</span><span class="p">))</span>
+
+<span class="c1">## ------------------------------------------------- ##</span>
+
+<span class="n">avg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>        <span class="c1">## return=2.0; first=1, rest=(2, 3)</span>
+<span class="n">avg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>     <span class="c1">## return=2.5; first=1, rest=(2, 3, 4)</span>
+</code></pre></div>
+</td></tr></table>
+<p>To accept any number of <strong>keyword arguments</strong> use a <code>**</code> argument as shown below. 
+:w</p>
 </details>
                 
                   
