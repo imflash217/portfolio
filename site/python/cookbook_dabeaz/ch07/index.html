@@ -1460,7 +1460,32 @@ In above code, it is treated as a <strong><code>sequence</code></strong> in furt
 </code></pre></div>
 </td></tr></table>
 <p>To accept any number of <strong>keyword arguments</strong> use a <code>**</code> argument as shown below. 
-:w</p>
+In the below code, <strong><code>attrs</code></strong> is a <strong>dictionary</strong> that holds the passed keyword arguments (if any)</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">html</span>
+
+<span class="k">def</span> <span class="nf">make_element</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">):</span>
+    <span class="n">keyvals</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">=&#39;</span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s2">&#39;&quot;</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">atts</span><span class="o">.</span><span class="n">items</span><span class="p">]</span>
+    <span class="n">attr_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">keyvals</span><span class="p">)</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">name</span><span class="si">}{</span><span class="n">attr_str</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+    <span class="k">return</span> <span class="n">element</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Creates: &quot;&lt;item size=&#39;large&#39; quantity=6&gt;Albatross&lt;/item&gt;&quot;</span>
+<span class="n">make_element</span><span class="p">(</span><span class="s2">&quot;item&quot;</span><span class="p">,</span> <span class="s2">&quot;Albatross&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;large&quot;</span><span class="p">,</span> <span class="n">quantity</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Creates: &quot;&lt;p&gt;&amp;lt;spam&amp;gt;&lt;/p&gt;&quot;</span>
+<span class="n">make_element</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;&lt;spam&gt;&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table></p>
 </details>
                 
                   
