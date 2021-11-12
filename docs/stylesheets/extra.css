@@ -1,5 +1,5 @@
 :root > * {
-  --md-code-hl-color: linear-gradient(to right, #ffd900, #fce200, #f8ec00, #f3f500, #edff00);
+  --md-code-hl-color: #FFD00C;
 }
 
 .md-grid {
