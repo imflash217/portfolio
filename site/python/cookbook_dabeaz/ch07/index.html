@@ -730,6 +730,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#77-capturing-variables-in-anonymous-functions" class="md-nav__link">
+    7.7: Capturing variables in Anonymous functions
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1437,6 +1444,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#77-capturing-variables-in-anonymous-functions" class="md-nav__link">
+    7.7: Capturing variables in Anonymous functions
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1662,6 +1676,26 @@ Because Python does not have type decalrations, it can be difficult to read a so
 and hind about the types of objects; <strong>function annotations</strong> are one way to resolve this problem.</p>
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> More advance usage of function annotations is to implement <strong>multiple dispatch</strong> (i.e. <em>overloaded functions</em>)</p>
 </details>
+<h2 id="77-capturing-variables-in-anonymous-functions">7.7: Capturing variables in Anonymous functions</h2>
+<details class="danger" open="open"><summary>Problem</summary><p>You have defined an anonymous function using <strong><code>lambda</code></strong> and but you also need to capture the
+value of certain variable at the tim eof definition.</p>
+</details>
+<details class="done" open="open"><summary>Solution</summary><p>Consider the behaviour of the following code a python console:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre></div>
+</td></tr></table>
+<p>Now ask yourself a question. What is the value of <strong><code>a(10)</code></strong> and <strong><code>b(10)</code></strong> now?
+If you think that the values will be <code>20</code> and <code>30</code>; you would be wrong.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</td></tr></table>
+</details>
                 
                   
                     
@@ -1670,7 +1704,7 @@ and hind about the types of objects; <strong>function annotations</strong> are o
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-11-12
+      Last update: 2021-11-13
     
   </small>
 </div>
