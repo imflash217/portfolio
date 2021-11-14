@@ -1931,7 +1931,8 @@ as shown below.</p>
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Using closures</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Using closures</span>
 <span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
 
 <span class="k">def</span> <span class="nf">url_template</span><span class="p">(</span><span class="n">template</span><span class="p">):</span>
@@ -1940,12 +1941,13 @@ as shown below.</p>
     <span class="k">return</span> <span class="n">opener</span>
 
 <span class="c1">## ------------------------------------------------------------------------------- ##</span>
-<span class="c1">## Example Usage of the above CLOSURE &quot;url_template&quot;</span>
 
-<span class="hll"><span class="n">yahoo</span> <span class="o">=</span> <span class="n">url_template</span><span class="p">(</span><span class="s2">&quot;http://finance.yahoo.com/d/quotes.csv?s=</span><span class="si">{names}</span><span class="s2">&amp;f=</span><span class="si">{fields}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1">## Example Usage of the above CLOSURE &quot;url_template&quot;</span>
+<span class="hll">
+</span><span class="hll"><span class="n">yahoo</span> <span class="o">=</span> <span class="n">url_template</span><span class="p">(</span><span class="s2">&quot;http://finance.yahoo.com/d/quotes.csv?s=</span><span class="si">{names}</span><span class="s2">&amp;f=</span><span class="si">{fields}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span><span class="hll"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">yahoo</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="s2">&quot;APPL, FB, TSLA&quot;</span><span class="p">,</span> <span class="n">fileds</span><span class="o">=</span><span class="s2">&quot;sl1c1v&quot;</span><span class="p">):</span>
-</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
-</span></code></pre></div>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+</code></pre></div>
 </td></tr></table>
 </details>
                 
