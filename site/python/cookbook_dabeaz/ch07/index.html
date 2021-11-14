@@ -2009,7 +2009,16 @@ Below, we show how to use the above code:</p>
 </code></pre></div>
 </td></tr></table>
 <p>As you can notice above, the callbakc function <strong><code>print_result()</code></strong> only accepts a <strong>single argument</strong>
-which can be an issue when we want our callbakc function to interact with other contextual variables.</p>
+i.e <strong><code>result</code></strong>. No other information is provided.
+This lack of information can be an issue when we want our callback function to interact with other contextual variables
+or other parts of the code.
+Below we provide some probable solutions to handle this issue:</p>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Some ways to carry extra information with callbacks:</p>
+<ol>
+<li>Use <strong>bound methods</strong> instead of regular sinple functions.</li>
+<li>Use <strong>closures</strong></li>
+<li>Use <strong>coroutines</strong>.</li>
+</ol>
 </details>
                 
                   
