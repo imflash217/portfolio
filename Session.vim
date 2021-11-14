@@ -46,15 +46,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 542 - ((16 * winheight(0) + 18) / 36)
+let s:l = 542 - ((35 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 542
 normal! 04|
 tabnext 2
-badd +0 mkdocs.yml
-badd +398 docs/python/cookbook_dabeaz/ch07.md
+badd +1 mkdocs.yml
+badd +0 docs/python/cookbook_dabeaz/ch07.md
 badd +40 ~/.vim_runtime/my_configs.vim
 badd +11 ~/.vimrc
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
