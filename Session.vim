@@ -26,11 +26,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 80 - ((17 * winheight(0) + 18) / 36)
+let s:l = 125 - ((27 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 80
+keepjumps 125
 normal! 0
 tabnext
 edit docs/python/cookbook_dabeaz/ch07.md
@@ -46,15 +46,17 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 327 - ((17 * winheight(0) + 18) / 36)
+let s:l = 398 - ((397 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 327
-normal! 014|
+keepjumps 398
+normal! 0
 tabnext 2
 badd +0 mkdocs.yml
-badd +0 docs/python/cookbook_dabeaz/ch07.md
+badd +398 docs/python/cookbook_dabeaz/ch07.md
+badd +40 ~/.vim_runtime/my_configs.vim
+badd +11 ~/.vimrc
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
