@@ -2150,6 +2150,11 @@ that made the initial request leading up the callback execution". Thus the execu
 between making the request and handling the result is effectively lost.</strong> </p>
 <p>If you want the callback function to continue with a procedure involving multiple steps, 
 you have to figure out how to save and restore the associated states.</p>
+<p>There are really two main promising ways to capture and restore context states:</p>
+<ol>
+<li>You can carry it around in a <strong>class instance</strong>. Attach it to <strong>bound method</strong> perhaps.</li>
+<li>Or you can carry it around in a <strong>closure</strong> (an inner function).</li>
+</ol>
 </details>
                 
                   
