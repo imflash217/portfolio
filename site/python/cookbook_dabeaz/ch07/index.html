@@ -2020,6 +2020,36 @@ Below we provide some probable solutions to handle this issue:</p>
 <li>Use <strong>coroutines</strong>.</li>
 <li>Using <strong><code>functools.partial()</code></strong></li>
 </ol>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Using <strong>BOUND METHODS</strong>: One way to carry extra information in a callback is to use <strong>bound methods</strong> 
+instead of simple function. For example, this below class keeps an internal sequence number 
+that is incremented everytime a result is received.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ResultHandler</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sequence</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sequence</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sequence</span><span class="si">}</span><span class="s2">] Got: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+To use this class <strong><code>ResultHandler</code></strong>, we need to create its instance and use its 
+<strong><code>handler()</code></strong> method as a callback.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">ResultHandler</span><span class="p">()</span>                 <span class="c1">## creating an instance of the class</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">handler</span><span class="p">)</span>
+<span class="hll"><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">handler</span><span class="p">)</span>
+<span class="hll"><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HelloWorld&quot;</span>
+</span></code></pre></div>
+</td></tr></table>
+Notice in the above </p>
 </details>
                 
                   
