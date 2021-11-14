@@ -46,12 +46,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 398 - ((397 * winheight(0) + 18) / 36)
+let s:l = 542 - ((16 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 398
-normal! 0
+keepjumps 542
+normal! 04|
 tabnext 2
 badd +0 mkdocs.yml
 badd +398 docs/python/cookbook_dabeaz/ch07.md
