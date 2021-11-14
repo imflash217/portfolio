@@ -1943,11 +1943,11 @@ as shown below.</p>
 <span class="c1">## ------------------------------------------------------------------------------- ##</span>
 
 <span class="c1">## Example Usage of the above CLOSURE &quot;url_template&quot;</span>
-<span class="hll">
-</span><span class="hll"><span class="n">yahoo</span> <span class="o">=</span> <span class="n">url_template</span><span class="p">(</span><span class="s2">&quot;http://finance.yahoo.com/d/quotes.csv?s=</span><span class="si">{names}</span><span class="s2">&amp;f=</span><span class="si">{fields}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="hll"><span class="n">yahoo</span> <span class="o">=</span> <span class="n">url_template</span><span class="p">(</span><span class="s2">&quot;http://finance.yahoo.com/d/quotes.csv?s=</span><span class="si">{names}</span><span class="s2">&amp;f=</span><span class="si">{fields}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span><span class="hll"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">yahoo</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="s2">&quot;APPL, FB, TSLA&quot;</span><span class="p">,</span> <span class="n">fileds</span><span class="o">=</span><span class="s2">&quot;sl1c1v&quot;</span><span class="p">):</span>
-</span>    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
-</code></pre></div>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+</span></code></pre></div>
 </td></tr></table>
 </details>
                 
