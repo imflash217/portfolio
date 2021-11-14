@@ -1971,24 +1971,33 @@ callback function carry extra state to be used inside the callback function itse
 </details>
 <details class="done" open="open"><summary>Solution</summary><p>Let's first talk about <strong>callback functions</strong> which are used in <em>asynchronous processing</em>
 via the following example:</p>
-<p>```python hl_line="6"
-def apply_async(func, args, <em>, callback):
-    ## compute the result
-    result = func(</em>args)</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>## invoke the callback
-callback(result)
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">apply_async</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">callback</span><span class="p">):</span>
+    <span class="c1">## compute the result</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="c1">## invoke the callback</span>
+<span class="hll">    <span class="n">callback</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></code></pre></div>
+</td></tr></table>
+<p>In reality, such code might do all sorts of advanced processing involving threads, processes,
+&amp; timers. But here we are just focusing on the <strong>invocation</strong> of the <strong>callback</strong>.
+Below, we show how to use the above code:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">print_result</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Got: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </code></pre></div>
 </td></tr></table>
-<p><code>In reality, such code might do all sorts of advanced processing involving threads, processes,
-&amp; timers. But here we are just focusing on the **invocation** of the **callback**.
-Below, we show how to use the above code:</code>python
-def print_result(result):
-    print(f"Got: {result}")
-
-def add(x, y):
-    return x + y
-```</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">print_result</span><span class="p">)</span>
 <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
@@ -1999,6 +2008,8 @@ def add(x, y):
 <span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HelloWorld&quot;</span>
 </code></pre></div>
 </td></tr></table>
+<p>As you can notice above, the callbakc function <strong><code>print_result()</code></strong> only accepts a <strong>single argument</strong>
+which can be an issue when we want our callbakc function to interact with other contextual variables.</p>
 </details>
                 
                   
