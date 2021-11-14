@@ -738,8 +738,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#78-partial" class="md-nav__link">
-    7.8: partial
+  <a href="#78-functoolspartial" class="md-nav__link">
+    7.8: functools.partial()
   </a>
   
 </li>
@@ -1459,8 +1459,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#78-partial" class="md-nav__link">
-    7.8: partial
+  <a href="#78-functoolspartial" class="md-nav__link">
+    7.8: functools.partial()
   </a>
   
 </li>
@@ -1678,11 +1678,11 @@ However, they might give useful hunts about types that would be useful for users
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll">&gt;&gt;&gt; add.__annotations__
-</span><span class="o">{</span><span class="s2">&quot;y&quot;</span>: &lt;class <span class="s2">&quot;int&quot;</span>&gt;,
- <span class="s2">&quot;return&quot;</span>: &lt;class <span class="s2">&quot;int&quot;</span>&gt;,
- <span class="s2">&quot;x&quot;</span>: &lt;class <span class="s2">&quot;int&quot;</span>&gt;,
-<span class="o">}</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="o">.</span><span class="vm">__annotations__</span>
+</span><span class="p">{</span><span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&quot;</span><span class="nc">int</span><span class="s2">&quot;&gt;,</span>
+ <span class="s2">&quot;return&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&quot;</span><span class="nc">int</span><span class="s2">&quot;&gt;,</span>
+ <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&quot;</span><span class="nc">int</span><span class="s2">&quot;&gt;,</span>
+<span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 <p>Although, annotations have many potential use-cases, their primary utility is probably <strong>just documentation</strong>.
@@ -1714,10 +1714,10 @@ The python console gives the follwoing results.</p>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">30</span>
+<span class="mi">30</span>
 <span class="o">&gt;&gt;&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">30</span>
+<span class="mi">30</span>
 </code></pre></div>
 </td></tr></table>
 <p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> The problem here is that <strong><code>x</code></strong> used here (in the <strong><code>lambda</code></strong> expression) is a <strong>free variable</strong>;
@@ -1732,11 +1732,11 @@ For example see below code:</p>
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="mi">15</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">25</span>
+<span class="mi">25</span>
 <span class="o">&gt;&gt;&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="mi">3</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">13</span>
+<span class="mi">13</span>
 </code></pre></div>
 </td></tr></table>
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> If you want an anonymous <code>lambda</code> function to capture a value at the <strong>point of definition</strong>
@@ -1758,10 +1758,10 @@ include that value as a <strong>default value</strong> in the <code>lambda</code
 <span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </span><span class="o">&gt;&gt;&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">20</span>                          <span class="c1">## Note the difference here from above code (earlier this was 30)</span>
+<span class="mi">20</span>                          <span class="c1">## Note the difference here from above code (earlier this was 30)</span>
 <span class="o">&gt;&gt;&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">30</span>                          <span class="c1">## Note that &quot;b&quot; captured the correct value of &quot;x&quot;</span>
+<span class="mi">30</span>                          <span class="c1">## Note that &quot;b&quot; captured the correct value of &quot;x&quot;</span>
 </code></pre></div>
 </td></tr></table>
 </details>
@@ -1769,28 +1769,66 @@ include that value as a <strong>default value</strong> in the <code>lambda</code
 For example, creating a list of <code>lambda</code> expressions using a <code>list comprehension</code> or a loop of some kind
 <strong>and expecting the <code>lambda</code> expressions to remember the iteration variable at the time of defintion</strong>.
 For example:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
 <span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 <span class="o">...</span>
-<span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
-</span><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
-</span><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
-</span><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
-</span><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
-</span></code></pre></div>
+<span class="hll"><span class="mi">4</span>
+</span><span class="hll"><span class="mi">4</span>
+</span><span class="hll"><span class="mi">4</span>
+</span><span class="hll"><span class="mi">4</span>
+</span><span class="hll"><span class="mi">4</span>
+</span><span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 </td></tr></table>
 <p>Notice, how all <code>lambda</code> expressions take the same final value of <code>n</code> from the <code>range(5)</code> expression.</p>
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> But, if we specifically captuer the value of <code>n</code> using <strong>default arguments</strong>, 
 then we get the behaviour we want</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+</span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="o">...</span>
+<span class="mi">0</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="78-functoolspartial">7.8: functools.partial()</h2>
+<details class="danger" open="open"><summary>Making an N-argumnet callable work asa callable with fewwer argumnets</summary><p>You have a callable that you want to make it work with other Python code.
+possbly as a callabel or <strong>handler</strong>, but it takes too many argumnets and causes
+an exception when called.</p>
+</details>
+<details class="done" open="open"><summary>Solution</summary><p>If you need to reduce the number of arguments to a function, you should use <strong><code>functools.partial()</code></strong>
+The <strong><code>partial()</code></strong> function allows you to assign fixed values to one or more of the arguments 
+thus reduce the number of required argumnets in <strong>subsequent calls of the reduced function</strong>. as shown below.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+Now consider <strong><code>functools.partial()</code></strong> to fix certain arguments.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1798,25 +1836,17 @@ then we get the behaviour we want</p>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
-</span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
-<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-<span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="o">&gt;&gt;&gt;</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>               <span class="c1">## a=1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>                           <span class="c1">## note that it takes only 3 arguments</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>            <span class="c1">## d=42</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 </details>
-<h2 id="78-partial">7.8: partial</h2>
-<details class="danger" open="open"><summary>Making an N-argumnet callable work asa callable with fewwer argumnets</summary><p>You have a callable that you want to make it work with other Python code.
-possbly as a callabel or <strong>handler</strong>, but it takes too many argumnets and causes
-an exception when called.</p>
-</details>
-<details class="done" open="open"><summary>Solution</summary></details>
                 
                   
                     
