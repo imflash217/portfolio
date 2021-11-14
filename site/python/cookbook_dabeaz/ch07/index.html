@@ -2100,17 +2100,18 @@ using a <strong>bound method</strong> or a <strong>closure</strong>.</p>
 </code></pre></div>
 </td></tr></table>
 We can use it as usual as before.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">handler</span> <span class="o">=</span> <span class="n">make_handler</span><span class="p">()</span>                            <span class="c1">## our callback function</span>
-<span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">handler</span><span class="o">.</span><span class="n">send</span><span class="p">)</span>     <span class="c1">## NOTICE the use of &quot;send&quot; to push value to the &quot;yield&quot; in the callback coroutine</span>
+<span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">handler</span><span class="o">.</span><span class="n">send</span><span class="p">)</span>     
 </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
 <span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;WORLD!!&quot;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">handler</span><span class="o">.</span><span class="n">send</span><span class="p">)</span>
 </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HelloWORLD!!&quot;</span>
 </code></pre></div>
 </td></tr></table>
+NOTICE the use of "send" to push value to the "yield" in the callback coroutine</p>
 </details>
                 
                   
