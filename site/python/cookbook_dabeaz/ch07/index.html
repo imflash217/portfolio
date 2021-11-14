@@ -1691,7 +1691,8 @@ value of certain variable at the tim eof definition.</p>
 </code></pre></div>
 </td></tr></table>
 <p>Now ask yourself a question. What is the value of <strong><code>a(10)</code></strong> and <strong><code>b(10)</code></strong> now?
-If you think that the values will be <code>20</code> and <code>30</code>; you would be wrong.</p>
+If you think that the values will be <code>20</code> and <code>30</code>; you would be wrong.
+The python console gives the follwoing results.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1701,6 +1702,8 @@ If you think that the values will be <code>20</code> and <code>30</code>; you wo
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">30</span>
 </code></pre></div>
 </td></tr></table>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> The problem here is that <strong><code>x</code></strong> used here (in the <strong><code>lambda</code></strong> expression) is a <strong>free variable</strong>;
+<strong>that gets bound at <em>runtime</em>, not at <em>definition time</em>.</strong></p>
 </details>
                 
                   
