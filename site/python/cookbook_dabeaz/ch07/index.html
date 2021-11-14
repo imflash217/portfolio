@@ -2042,14 +2042,15 @@ To use this class <strong><code>ResultHandler</code></strong>, we need to create
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">ResultHandler</span><span class="p">()</span>                 <span class="c1">## creating an instance of the class</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">handler</span><span class="p">)</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">rh</span> <span class="o">=</span> <span class="n">ResultHandler</span><span class="p">()</span>                 <span class="c1">## creating an instance of the class</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">rh</span><span class="o">.</span><span class="n">handler</span><span class="p">)</span>
 <span class="hll"><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
-</span><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">handler</span><span class="p">)</span>
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">rh</span><span class="o">.</span><span class="n">handler</span><span class="p">)</span>
 <span class="hll"><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HelloWorld&quot;</span>
 </span></code></pre></div>
 </td></tr></table>
-Notice in the above </p>
+Notice in the above output, how the instance of <code>ResultHandler</code> class <strong><code>rh</code></strong> uses its internal state variable
+<strong><code>self.sequence</code></strong> across two different calls of the callback function <strong><code>rh.handler</code></strong>.</p>
 </details>
                 
                   
