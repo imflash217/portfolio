@@ -1999,12 +1999,11 @@ Below, we show how to use the above code:</p>
 </code></pre></div>
 </td></tr></table>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">print_result</span><span class="p">)</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">print_result</span><span class="p">)</span>
 <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
-</code></pre></div>
-</td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_result</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Hello&quot;, &quot;World&#39;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">print_result</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">apply_result</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Hello&quot;, &quot;World&#39;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">print_result</span><span class="p">)</span>
 <span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HelloWorld&quot;</span>
 </code></pre></div>
 </td></tr></table>
