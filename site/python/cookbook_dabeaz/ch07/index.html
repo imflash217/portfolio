@@ -1965,9 +1965,22 @@ as shown below.</p>
 </td></tr></table>
 </details>
 <h2 id="710-carrying-extra-state-with-callback-functions">7.10: Carrying extra state with callback functions</h2>
-<details class="danger" open="open"><summary>Problem</summary><p>You are writing code that relies on the use of <strong>callback funcktions</strong> 
+<details class="danger" open="open"><summary>Problem</summary><p>You are writing code that relies on the use of <strong>callback functions</strong> 
 (e.g. <em>event handlers</em>, <em>completion callback</em>, etc.); but you want to have the 
 callback function carry extra state to be used inside the callback function itself.</p>
+</details>
+<details class="done" open="open"><summary>Solution</summary><p>Let's first talk about <strong>callback functions</strong> which are used in <em>asynchronous processing</em>
+via the following example:</p>
+<p>```python hl_line="6"
+def apply_async(func, args, <em>, callback):
+    ## compute the result
+    result = func(</em>args)</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>## invoke the callback
+callback(result)
+</code></pre></div>
+</td></tr></table>
+<p>```</p>
 </details>
                 
                   
