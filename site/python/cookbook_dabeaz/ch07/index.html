@@ -758,23 +758,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#1-2-3-4-5-handler-make_handler-our-callback-function-to-be-used-apply_asyncadd-23-callbackhandler-1-got-5-apply_asyncadd-hello-world-callbackhandler-2-got-helloworld-the-callback-remembers-the-count-sequence" class="md-nav__link">
-    1
-2
-3
-4
-5&gt;&gt;&gt; handler = make_handler()                    ## our callback function to be used
-&gt;&gt;&gt; apply_async(add, (2,3), callback=handler)
-[1] Got: 5
-&gt;&gt;&gt; apply_async(add, (&quot;Hello&quot;, &quot;World&quot;), callback=handler)
-[2] Got: &quot;HelloWorld&quot;                                       ## the callback remembers the count sequence
-
-
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1510,23 +1493,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#1-2-3-4-5-handler-make_handler-our-callback-function-to-be-used-apply_asyncadd-23-callbackhandler-1-got-5-apply_asyncadd-hello-world-callbackhandler-2-got-helloworld-the-callback-remembers-the-count-sequence" class="md-nav__link">
-    1
-2
-3
-4
-5&gt;&gt;&gt; handler = make_handler()                    ## our callback function to be used
-&gt;&gt;&gt; apply_async(add, (2,3), callback=handler)
-[1] Got: 5
-&gt;&gt;&gt; apply_async(add, (&quot;Hello&quot;, &quot;World&quot;), callback=handler)
-[2] Got: &quot;HelloWorld&quot;                                       ## the callback remembers the count sequence
-
-
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2102,7 +2068,7 @@ in the callback function.</p>
     <span class="k">return</span> <span class="n">handler</span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="1-2-3-4-5-handler-make_handler-our-callback-function-to-be-used-apply_asyncadd-23-callbackhandler-1-got-5-apply_asyncadd-hello-world-callbackhandler-2-got-helloworld-the-callback-remembers-the-count-sequence"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -2112,7 +2078,8 @@ in the callback function.</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">handler</span><span class="p">)</span>
 <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HelloWorld&quot;</span>                                       <span class="c1">## the callback remembers the count sequence</span>
 </code></pre></div>
-</td></tr></table></h2>
+</td></tr></table>
+<hr />
 <p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Using <strong>COROUTINES</strong>: Sometimes we can also use a <strong>coroutine</strong> to accomplish what we achieved
 using a <strong>bound method</strong> or a <strong>closure</strong>.</p>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
