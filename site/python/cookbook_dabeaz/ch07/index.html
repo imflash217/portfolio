@@ -1980,7 +1980,25 @@ def apply_async(func, args, <em>, callback):
 callback(result)
 </code></pre></div>
 </td></tr></table>
-<p>```</p>
+<p><code>In reality, such code might do all sorts of advanced processing involving threads, processes,
+&amp; timers. But here we are just focusing on the **invocation** of the **callback**.
+Below, we show how to use the above code:</code>python
+def print_result(result):
+    print(f"Got: {result}")
+
+def add(x, y):
+    return x + y
+```</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">print_result</span><span class="p">)</span>
+<span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_result</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Hello&quot;, &quot;World&#39;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">print_result</span><span class="p">)</span>
+<span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HelloWorld&quot;</span>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
                   
