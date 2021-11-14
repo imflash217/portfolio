@@ -758,6 +758,25 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-2-3-4-5-6-from-functools-import-partial-seq-sequenceno-apply_asyncadd-23-callbackpartialhandler-seqseq-1-got-5-apply_asyncadd-hello_-world-callbackpartialhandler-seqseq-2-got-hello_world" class="md-nav__link">
+    1
+2
+3
+4
+5
+6&gt;&gt;&gt; from functools import partial
+&gt;&gt;&gt; seq = SequenceNo()
+&gt;&gt;&gt; apply_async(add, (2,3), callback=partial(handler, seq=seq))
+[1] Got: 5
+&gt;&gt;&gt; apply_async(add, (&quot;HELLO_&quot;, &quot;WORLD!!!&quot;), callback=partial(handler, seq=seq))
+[2] Got: &quot;HELLO_WORLD!!!&quot;
+
+
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1493,6 +1512,25 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-2-3-4-5-6-from-functools-import-partial-seq-sequenceno-apply_asyncadd-23-callbackpartialhandler-seqseq-1-got-5-apply_asyncadd-hello_-world-callbackpartialhandler-seqseq-2-got-hello_world" class="md-nav__link">
+    1
+2
+3
+4
+5
+6&gt;&gt;&gt; from functools import partial
+&gt;&gt;&gt; seq = SequenceNo()
+&gt;&gt;&gt; apply_async(add, (2,3), callback=partial(handler, seq=seq))
+[1] Got: 5
+&gt;&gt;&gt; apply_async(add, (&quot;HELLO_&quot;, &quot;WORLD!!!&quot;), callback=partial(handler, seq=seq))
+[2] Got: &quot;HELLO_WORLD!!!&quot;
+
+
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2130,7 +2168,7 @@ using an extra argument and a <strong>partial</strong> function application.</p>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">seq</span><span class="o">.</span><span class="n">sequence</span><span class="si">}</span><span class="s2">] Got: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<h2 id="1-2-3-4-5-6-from-functools-import-partial-seq-sequenceno-apply_asyncadd-23-callbackpartialhandler-seqseq-1-got-5-apply_asyncadd-hello_-world-callbackpartialhandler-seqseq-2-got-hello_world"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -2141,6 +2179,15 @@ using an extra argument and a <strong>partial</strong> function application.</p>
 <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;HELLO_&quot;</span><span class="p">,</span> <span class="s2">&quot;WORLD!!!&quot;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="n">seq</span><span class="p">))</span>
 <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HELLO_WORLD!!!&quot;</span>
+</code></pre></div>
+</td></tr></table></h2>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Because, <strong><code>lambda</code></strong> expressions can be very useful in creating <strong>partial</strong> functions.
+We can use <code>lambda</code> expressions (with added contextual argumnets) as callbacks as shown below.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span> <span class="o">=</span> <span class="n">SequenceNo</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">handler</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">seq</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
 </code></pre></div>
 </td></tr></table>
 </details>
@@ -2161,6 +2208,13 @@ in that they are built from functions. They also automatically captures all the 
 <p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> But, if using <strong>closures</strong>, we need to pay careful attention to <em>mutable</em> variables.
 In the above solution we use <strong><code>nonlocal</code></strong> declaration for variable <strong><code>sequence</code></strong> to specify that
 we were using the variable from withing the closure; otherwise we will get an <code>ERROR</code>.</p>
+<hr />
+<p>The use of <strong><code>coroutines</code></strong> is interesting and very closely resembles the usage of <strong>closures</strong>.</p>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> In some sense, it is even cleaner as we don't have to worry about the <code>nonlocal</code> declarations.</p>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> Only potential downsides of using <strong>coroutines</strong> is that its somewhat difficult to understand 
+conceptually and we have to remembr some nitty-gritty details of its usage 
+(for example, making sure to call <strong><code>next()</code></strong> before using the couroutine as a callback etc...)</p>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Nevertheless, coroutines are very useful in defining <strong>inlined callbacks</strong>.</p>
 </details>
                 
                   
