@@ -737,6 +737,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#78-partial" class="md-nav__link">
+    7.8: partial
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1451,6 +1458,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#78-partial" class="md-nav__link">
+    7.8: partial
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1766,13 +1780,13 @@ For example:</p>
 <span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
 <span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-<span class="hll"><span class="o">...</span>
+<span class="o">...</span>
+<span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
 </span><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
 </span><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
 </span><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
 </span><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
-</span><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span>
-</code></pre></div>
+</span></code></pre></div>
 </td></tr></table>
 <p>Notice, how all <code>lambda</code> expressions take the same final value of <code>n</code> from the <code>range(5)</code> expression.</p>
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> But, if we specifically captuer the value of <code>n</code> using <strong>default arguments</strong>, 
@@ -1797,6 +1811,12 @@ then we get the behaviour we want</p>
 </code></pre></div>
 </td></tr></table>
 </details>
+<h2 id="78-partial">7.8: partial</h2>
+<details class="danger" open="open"><summary>Making an N-argumnet callable work asa callable with fewwer argumnets</summary><p>You have a callable that you want to make it work with other Python code.
+possbly as a callabel or <strong>handler</strong>, but it takes too many argumnets and causes
+an exception when called.</p>
+</details>
+<details class="done" open="open"><summary>Solution</summary></details>
                 
                   
                     
