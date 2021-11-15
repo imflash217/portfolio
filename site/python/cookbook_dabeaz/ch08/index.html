@@ -1509,7 +1509,25 @@ to class definitions. Some of the topics include:</p>
 <h2 id="81-__str__-__repr__">8.1: <code>__str__()</code> &amp; <code>__repr__()</code></h2>
 <details class="danger" open="open"><summary>Problem</summary><p>You want to change the output produced by printing or viewing instances to something more sensible.</p>
 </details>
-<details class="done" open="open"><summary>Solution</summary><p>To chang ethe string representation of the <strong>class instances</strong> define <strong><code>__str__()</code></strong> &amp; <strong><code>__repr__()</code></strong> methods.</p>
+<details class="done" open="open"><summary>Solution</summary><p>To change the string representation of the <strong>class instances</strong> define 
+<strong><code>__str__()</code></strong> &amp; <strong><code>__repr__()</code></strong> methods as shown below.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Pair</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;(</span><span class="si">{0.x!s}</span><span class="s2">, </span><span class="si">{0.y!s}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Pair(</span><span class="si">{0.x!r}</span><span class="s2">, </span><span class="si">{0.y!r}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
                   
