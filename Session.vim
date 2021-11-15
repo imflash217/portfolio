@@ -72,12 +72,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 8 - ((7 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 8
+normal! 030|
 tabnext
 edit mkdocs.yml
 argglobal
@@ -97,11 +97,11 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 99
-normal! 033|
+normal! 031|
 tabnext
-edit docs/paper_reviews/dter.md
+edit docs/paper_reviews/detr.md
 argglobal
-balt mkdocs.yml
+balt docs/paper_reviews/dter.md
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -178,7 +178,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 20
 normal! 0
-tabnext 3
+tabnext 5
 badd +1 mkdocs.yml
 badd +1 docs/python/cookbook_dabeaz/ch07.md
 badd +0 docs/notes/about.md
@@ -190,6 +190,7 @@ badd +1 ../../stylesheets/extra.css
 badd +50 docs/index.md
 badd +0 docs/paper_reviews/about.md
 badd +0 docs/paper_reviews/dter.md
+badd +1 docs/paper_reviews/detr.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
