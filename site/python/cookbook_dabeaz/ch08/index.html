@@ -1591,7 +1591,43 @@ as shown in below snippet.</p>
 <h2 id="82-customizing-string-formatting">8.2: Customizing string formatting</h2>
 <details class="danger" open="open"><summary>Problem</summary><p>You want an object to support customized formatting through the <strong><code>formaat()</code></strong> function and string method.</p>
 </details>
-<details class="done" open="open"><summary>Solution</summary><p>To customize string formatting, define a custom <strong><code>__format__()</code></strong> method in the class definition.</p>
+<details class="done" open="open"><summary>Solution</summary><p>To customize string formatting, define a custom <strong><code>__format__()</code></strong> method in the class definition.
+For example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">_formats</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;ymd&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{d.year}</span><span class="s2">-</span><span class="si">{d.month}</span><span class="s2">-</span><span class="si">{d.day}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mdy&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{d.month}</span><span class="s2">/</span><span class="si">{d.day}</span><span class="s2">/</span><span class="si">{d.year}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dmy&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{d.day}</span><span class="s2">/</span><span class="si">{d.month}</span><span class="s2">/</span><span class="si">{d.year}</span><span class="s2">&quot;</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">date</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">day</span> <span class="o">=</span> <span class="n">day</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">month</span> <span class="o">=</span> <span class="n">month</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+
+    <span class="k">def</span> <span class="fm">__format__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">code</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;ymd&quot;</span>
+        <span class="n">fmt</span> <span class="o">=</span> <span class="n">_formats</span><span class="p">[</span><span class="n">code</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
                   
