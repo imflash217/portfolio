@@ -17,6 +17,8 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
+tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -30,11 +32,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 125 - ((27 * winheight(0) + 18) / 36)
+let s:l = 127 - ((27 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 125
+keepjumps 127
 normal! 0
 tabnext
 edit docs/python/cookbook_dabeaz/ch07.md
@@ -50,12 +52,32 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 591 - ((13 * winheight(0) + 18) / 36)
+let s:l = 590 - ((12 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 591
-normal! 04|
+keepjumps 590
+normal! 020|
+tabnext
+edit docs/paper_reviews/about.md
+argglobal
+balt docs/python/cookbook_dabeaz/ch07.md
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext
 edit mkdocs.yml
 argglobal
@@ -70,12 +92,32 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 17 - ((16 * winheight(0) + 18) / 36)
+let s:l = 99 - ((9 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 17
-normal! 03|
+keepjumps 99
+normal! 033|
+tabnext
+edit docs/paper_reviews/dter.md
+argglobal
+balt mkdocs.yml
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext
 edit docs/notes/about.md
 argglobal
@@ -90,15 +132,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 35 - ((16 * winheight(0) + 18) / 36)
+let s:l = 32 - ((12 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 35
-normal! 0105|
+keepjumps 32
+normal! 0
 tabnext
 edit docs/projects/about.md
 argglobal
+balt docs/notes/about.md
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -118,6 +161,7 @@ normal! 0
 tabnext
 edit docs/work/about.md
 argglobal
+balt docs/projects/about.md
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -134,16 +178,18 @@ keepjumps exe s:l
 normal! zt
 keepjumps 20
 normal! 0
-tabnext 4
+tabnext 3
 badd +1 mkdocs.yml
-badd +0 docs/python/cookbook_dabeaz/ch07.md
+badd +1 docs/python/cookbook_dabeaz/ch07.md
+badd +0 docs/notes/about.md
+badd +1 docs/projects/about.md
+badd +1 docs/work/about.md
 badd +40 ~/.vim_runtime/my_configs.vim
 badd +11 ~/.vimrc
-badd +0 ../../stylesheets/extra.css
-badd +0 docs/notes/about.md
+badd +1 ../../stylesheets/extra.css
 badd +50 docs/index.md
-badd +0 docs/projects/about.md
-badd +0 docs/work/about.md
+badd +0 docs/paper_reviews/about.md
+badd +0 docs/paper_reviews/dter.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
