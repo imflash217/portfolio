@@ -15,8 +15,6 @@ $argadd mkdocs.yml
 tabnew
 tabnew
 tabnew
-tabnew
-tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -77,46 +75,6 @@ normal! zt
 keepjumps 86
 normal! 020|
 tabnext
-edit docs/paper_reviews/detr.md
-argglobal
-balt docs/python/cookbook_dabeaz/ch08.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-tabnext
-edit docs/paper_reviews/about.md
-argglobal
-balt docs/paper_reviews/detr.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 3 - ((2 * winheight(0) + 18) / 36)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 3
-normal! 0
-tabnext
 edit mkdocs.yml
 argglobal
 balt docs/python/cookbook_dabeaz/ch07.md
@@ -146,9 +104,9 @@ badd +40 ~/.vim_runtime/my_configs.vim
 badd +11 ~/.vimrc
 badd +1 ../../stylesheets/extra.css
 badd +50 docs/index.md
-badd +9 docs/paper_reviews/about.md
+badd +3 docs/paper_reviews/about.md
 badd +0 docs/paper_reviews/dter.md
-badd +1 docs/paper_reviews/detr.md
+badd +5 docs/paper_reviews/detr.md
 badd +0 docs/python/cookbook_dabeaz/ch08.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
