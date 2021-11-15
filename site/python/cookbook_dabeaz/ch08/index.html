@@ -1547,6 +1547,25 @@ or <strong><code>str()</code></strong> methods.</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1">## __str__() output</span>
 </code></pre></div>
 </td></tr></table>
+<p>The implementation of the above class also show how different string representations 
+may be used during formatting. Specifically, the special <strong><code>!r</code></strong> formatting code
+indicates that the output of <strong><code>__repr__()</code></strong> should be used instead of <strong><code>__str__()</code></strong>, the default.
+An example below shows this behavior:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Pair</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is </span><span class="si">{0!r}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</span><span class="n">p</span> <span class="ow">is</span> <span class="n">Pair</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is </span><span class="si">{0!s}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</span><span class="n">p</span> <span class="ow">is</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
                   
