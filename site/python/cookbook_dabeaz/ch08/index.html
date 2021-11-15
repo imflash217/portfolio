@@ -807,6 +807,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-format-codes" class="md-nav__link">
+    The format codes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    -----------------------------------------------
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1495,6 +1516,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-format-codes" class="md-nav__link">
+    The format codes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    -----------------------------------------------
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1593,12 +1635,15 @@ as shown in below snippet.</p>
 </details>
 <details class="done" open="open"><summary>Solution</summary><p>To customize string formatting, define a custom <strong><code>__format__()</code></strong> method in the class definition.
 For example:</p>
-<p>```python hl_lies="1-5 13"
-_formats = {
+<p>```python hl_lies="1-5 13"</p>
+<h2 id="the-format-codes">The format codes</h2>
+<h2 id="_1"></h2>
+<p>_formats = {
     "ymd": "{d.year}-{d.month}-{d.day}",
     "mdy": "{d.month}/{d.day}/{d.year}",
     "dmy": "{d.day}/{d.month}/{d.year}"
 }</p>
+<h2 id="-">-----------------------------------------------</h2>
 <p>class date:
     def <strong>init</strong>(self, day, month, year):
         self.day = day
