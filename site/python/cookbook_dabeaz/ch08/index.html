@@ -1613,24 +1613,24 @@ For example:</p>
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="c1">## The format codes</span>
-</span><span class="hll"><span class="c1">##</span>
-</span><span class="hll"><span class="n">_formats</span> <span class="o">=</span> <span class="p">{</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## The format codes</span>
+<span class="c1">##</span>
+<span class="hll"><span class="n">_formats</span> <span class="o">=</span> <span class="p">{</span>
 </span><span class="hll">    <span class="s2">&quot;ymd&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{d.year}</span><span class="s2">-</span><span class="si">{d.month}</span><span class="s2">-</span><span class="si">{d.day}</span><span class="s2">&quot;</span><span class="p">,</span>
 </span><span class="hll">    <span class="s2">&quot;mdy&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{d.month}</span><span class="s2">/</span><span class="si">{d.day}</span><span class="s2">/</span><span class="si">{d.year}</span><span class="s2">&quot;</span><span class="p">,</span>
-</span>    <span class="s2">&quot;dmy&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{d.day}</span><span class="s2">/</span><span class="si">{d.month}</span><span class="s2">/</span><span class="si">{d.year}</span><span class="s2">&quot;</span>
-<span class="p">}</span>
-
+</span><span class="hll">    <span class="s2">&quot;dmy&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{d.day}</span><span class="s2">/</span><span class="si">{d.month}</span><span class="s2">/</span><span class="si">{d.year}</span><span class="s2">&quot;</span>
+</span><span class="hll"><span class="p">}</span>
+</span>
 <span class="c1">## ----------------------------------------------- ##</span>
 
 <span class="k">class</span> <span class="nc">date</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
-<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">day</span> <span class="o">=</span> <span class="n">day</span>
-</span>        <span class="bp">self</span><span class="o">.</span><span class="n">month</span> <span class="o">=</span> <span class="n">month</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">day</span> <span class="o">=</span> <span class="n">day</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">month</span> <span class="o">=</span> <span class="n">month</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
 
-    <span class="k">def</span> <span class="fm">__format__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">code</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+<span class="hll">    <span class="k">def</span> <span class="fm">__format__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+</span>        <span class="k">if</span> <span class="n">code</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
             <span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;ymd&quot;</span>
         <span class="n">fmt</span> <span class="o">=</span> <span class="n">_formats</span><span class="p">[</span><span class="n">code</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
