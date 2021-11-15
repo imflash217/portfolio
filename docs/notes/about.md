@@ -35,6 +35,7 @@
 <iframe src="https://www.icloud.com/keynote/0sYqFk6FtwezsZBHWRBII0E1w#startup_ideas" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 
+<iframe src="https://www.icloud.com/keynote/0sYqFk6FtwezsZBHWRBII0E1w?embed=true" width="100%" height=500px, frameborder="0" allowfullscreen="1" referrer="no-referrer"></iframe>
 
 <figure markdown> 
   ![Dummy image](https://dummyimage.com/600x400/){ width="300" }

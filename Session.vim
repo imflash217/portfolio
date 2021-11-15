@@ -15,6 +15,8 @@ $argadd mkdocs.yml
 tabnew
 tabnew
 tabnew
+tabnew
+tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -88,11 +90,49 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 33 - ((32 * winheight(0) + 18) / 36)
+let s:l = 35 - ((16 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 33
+keepjumps 35
+normal! 083|
+tabnext
+edit docs/projects/about.md
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 9 - ((8 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 9
+normal! 0
+tabnext
+edit docs/work/about.md
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 20 - ((19 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 20
 normal! 0
 tabnext 4
 badd +1 mkdocs.yml
@@ -101,6 +141,9 @@ badd +40 ~/.vim_runtime/my_configs.vim
 badd +11 ~/.vimrc
 badd +0 ../../stylesheets/extra.css
 badd +0 docs/notes/about.md
+badd +50 docs/index.md
+badd +0 docs/projects/about.md
+badd +0 docs/work/about.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -111,7 +154,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
