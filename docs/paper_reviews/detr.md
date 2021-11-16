@@ -4,4 +4,4 @@
 
 ## Review Presentation Slides
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRI-T5ZEn_bWpM3G4upV1CfgyUgL3duD0BVTuUSBgcBlcGEc1HL_soJUzZ7ZnyXNVewjTJrGkmHs4Bf/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRI-T5ZEn_bWpM3G4upV1CfgyUgL3duD0BVTuUSBgcBlcGEc1HL_soJUzZ7ZnyXNVewjTJrGkmHs4Bf/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
