@@ -1690,6 +1690,10 @@ of the instance attributes</p>
 <details class="done" open="open"><summary>Solution</summary><p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> A simple way to <strong>customize</strong> access to an attribute is to define it as <strong><code>property</code></strong>.</p>
 <p>For example, in below code, we define a <strong><code>property</code></strong> that adds simple type checking for its
 <strong><code>getter</code></strong> and <strong><code>setter</code></strong> methods.</p>
+<p>``` python hl_lines="3 8" title="prop.py"
+class Person:
+    def <strong>init</strong>(self, first_name):
+        self.first_name = first_name        ## NOTE: I'm defining "self.first_name" not "self._first_name"</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1705,32 +1709,25 @@ of the instance attributes</p>
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">):</span>
-<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">=</span> <span class="n">first_name</span>        <span class="c1">## NOTE: I&#39;m defining &quot;self.first_name&quot; not &quot;self._first_name&quot;</span>
-</span>
-    <span class="c1">## getter method</span>
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">first_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="hll">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_first_name</span>
-</span>
-    <span class="c1">## setter method</span>
-    <span class="nd">@first_name</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">first_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Expected a string&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_first_name</span> <span class="o">=</span> <span class="n">value</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>## getter method
+@property
+def first_name(self):
+    return self._first_name
 
-    <span class="c1">## deleter method</span>
-    <span class="nd">@first_name</span><span class="o">.</span><span class="n">deleter</span>
-    <span class="k">def</span> <span class="nf">first_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t delete attribute&quot;</span><span class="p">)</span>
+## setter method
+@first_name.setter
+def first_name(self, value):
+    if not isinstance(value, str):
+        raise TypeError(&quot;Expected a string&quot;)
+    self._first_name = value
+
+## deleter method
+@first_name.deleter
+def first_name(self):
+    raise AttributeError(&quot;Can&#39;t delete attribute&quot;)
 </code></pre></div>
 </td></tr></table>
+<p>```</p>
 </details>
                 
                   
