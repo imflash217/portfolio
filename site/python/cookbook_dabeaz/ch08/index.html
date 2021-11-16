@@ -1790,7 +1790,9 @@ of a <strong>descriptor class</strong>. For example:</p>
 </code></pre></div>
 </td></tr></table>
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> A <strong>Descriptor</strong> is a class that implements three core attribute access operations
-(get, set, delete) via the special methods <strong><code>__get__(), __set__(), __delete__()</code></strong>.</p>
+(get, set, delete) via the special methods <strong><code>__get__(), __set__(), __delete__()</code></strong>. These methods 
+work by receiving an instance as input. The underlying dictionary of the instance is then manipulated
+as appropriate.</p>
 </details>
                 
                   
