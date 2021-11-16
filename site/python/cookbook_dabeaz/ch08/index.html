@@ -814,6 +814,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#89-descriptor-class" class="md-nav__link">
+    8.9: Descriptor Class
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1509,6 +1516,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#89-descriptor-class" class="md-nav__link">
+    8.9: Descriptor Class
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1732,6 +1746,50 @@ of the instance attributes</p>
 </code></pre></div>
 </td></tr></table>
 </details>
+<h2 id="89-descriptor-class">8.9: Descriptor Class</h2>
+<details class="danger" open="open"><summary>Creating a new kind of class or instance attribute</summary><p>You want to create a new kind of class with instance atrribute type with some extra functionality
+such as <strong><code>type checking</code></strong></p>
+</details>
+<details class="done" open="open"><summary>Solution</summary><p>If you want to create an entirely new kind of instance attribute, define its functionality in the form 
+of a <strong>descriptor class</strong>. For example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Descriptor attribute for an integer type-checked attribute</span>
+<span class="k">class</span> <span class="nc">Integer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">insatnce</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Expected to be an int&quot;</span><span class="p">)</span>
+        <span class="n">instance</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+
+    <span class="k">def</span> <span class="fm">__delete__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="k">del</span> <span class="n">instance</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+</details>
                 
                   
                     
@@ -1740,7 +1798,7 @@ of the instance attributes</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-11-15
+      Last update: 2021-11-16
     
   </small>
 </div>
