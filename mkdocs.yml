@@ -94,9 +94,11 @@ nav:
     - About: publications/about.md
     - Interspeech 2014: publications/interspeech_2014.md
     - Odyssey 2014: publications/odyssey_2014.md
-  - 🚨Paper Reviews:
+
+  - 📚 Paper Reviews:
     - About: paper_reviews/about.md
     - DETR: paper_reviews/detr.md
+  
   #- 👨🏻‍💻 Work Experience:
   #  - About: work/about.md
   #  - iVMCL Lab, NC State: work/ivmcl.md

@@ -14,27 +14,7 @@ argglobal
 $argadd mkdocs.yml
 tabnew
 tabnew
-tabnew
 tabrewind
-edit mkdocs.yml
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 127 - ((27 * winheight(0) + 18) / 36)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 127
-normal! 0
-tabnext
 edit docs/python/cookbook_dabeaz/ch07.md
 argglobal
 balt mkdocs.yml
@@ -48,7 +28,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 587 - ((9 * winheight(0) + 18) / 36)
+let s:l = 587 - ((35 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -73,7 +53,7 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 86
-normal! 020|
+normal! 030|
 tabnext
 edit mkdocs.yml
 argglobal
@@ -88,14 +68,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 97 - ((10 * winheight(0) + 18) / 36)
+let s:l = 91 - ((7 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 97
-normal! 05|
-tabnext 3
-badd +1 mkdocs.yml
+keepjumps 91
+normal! 02|
+tabnext 2
+badd +129 mkdocs.yml
 badd +1 docs/python/cookbook_dabeaz/ch07.md
 badd +32 docs/notes/about.md
 badd +9 docs/projects/about.md
