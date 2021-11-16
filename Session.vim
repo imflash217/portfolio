@@ -13,8 +13,6 @@ argglobal
 %argdel
 $argadd mkdocs.yml
 tabnew
-tabnew
-tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch07.md
 argglobal
@@ -55,48 +53,8 @@ keepjumps exe s:l
 normal! zt
 keepjumps 149
 normal! 04|
-tabnext
-edit docs/paper_reviews/detr.md
-argglobal
-balt docs/python/cookbook_dabeaz/ch08.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 7 - ((6 * winheight(0) + 18) / 36)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 7
-normal! 0330|
-tabnext
-edit mkdocs.yml
-argglobal
-balt docs/python/cookbook_dabeaz/ch07.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 91 - ((7 * winheight(0) + 18) / 36)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 91
-normal! 02|
 tabnext 2
-badd +129 mkdocs.yml
+badd +91 mkdocs.yml
 badd +1 docs/python/cookbook_dabeaz/ch07.md
 badd +32 docs/notes/about.md
 badd +9 docs/projects/about.md
@@ -107,7 +65,7 @@ badd +1 ../../stylesheets/extra.css
 badd +50 docs/index.md
 badd +3 docs/paper_reviews/about.md
 badd +0 docs/paper_reviews/dter.md
-badd +5 docs/paper_reviews/detr.md
+badd +7 docs/paper_reviews/detr.md
 badd +0 docs/python/cookbook_dabeaz/ch08.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
