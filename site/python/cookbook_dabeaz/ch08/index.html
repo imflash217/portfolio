@@ -1831,6 +1831,10 @@ When we do this, all access to the <strong>descriptor attributes</strong> (<stro
 <span class="ne">TypeError</span><span class="p">:</span> <span class="n">Expected</span> <span class="n">an</span> <span class="nb">int</span>
 </code></pre></div>
 </td></tr></table>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> As input, each method of the descriptor receives the instance being manipulated.
+To carry out the requested operation, the underlying instance dictionary 
+(underlying <strong><code>__dict__()</code></strong> attribute) is manipulated. The <strong><code>self.name</code></strong> attribute of the 
+<strong>descriptor</strong> holds the dictionary key being used to store the actual data in the instance dictionary.</p>
 </details>
                 
                   
