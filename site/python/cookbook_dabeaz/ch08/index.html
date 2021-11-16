@@ -183,7 +183,7 @@
   
     <li class="md-tabs__item">
       <a href="../../../paper_reviews/about/" class="md-tabs__link">
-        🚨Paper Reviews
+        📚 Paper Reviews
       </a>
     </li>
   
@@ -409,13 +409,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" data-md-state="indeterminate" type="checkbox" id="nav-3" checked>
       
       <label class="md-nav__link" for="nav-3">
-        🚨Paper Reviews
+        📚 Paper Reviews
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="🚨Paper Reviews" data-md-level="1">
+      <nav class="md-nav" aria-label="📚 Paper Reviews" data-md-level="1">
         <label class="md-nav__title" for="nav-3">
           <span class="md-nav__icon md-icon"></span>
-          🚨Paper Reviews
+          📚 Paper Reviews
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -803,6 +803,13 @@
         <li class="md-nav__item">
   <a href="#82-customizing-string-formatting" class="md-nav__link">
     8.2: Customizing string formatting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#86-creating-managed-attributes" class="md-nav__link">
+    8.6: Creating managed attributes
   </a>
   
 </li>
@@ -1495,6 +1502,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#86-creating-managed-attributes" class="md-nav__link">
+    8.6: Creating managed attributes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1668,6 +1682,17 @@ For example:</p>
 <p>The <strong><code>__format__()</code></strong> method provides HOOK into Python's string formatting functionality.</p>
 <p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Its important to know that the interpretation of the format codes (e.g. <strong><code>_formats</code></strong> in above code)
 is entirely upto the class defintion and developer.</p>
+</details>
+<h2 id="86-creating-managed-attributes">8.6: Creating managed attributes</h2>
+<details class="danger" open="open"><summary>Problem</summary><p>You want to add extra processing (e.e. type checking, validation) to the <strong>getting</strong> and <strong>setting</strong>
+of the instance attributes</p>
+</details>
+<details class="done" open="open"><summary>Solution</summary><p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> A simple way to <strong>customize</strong> access to an attribute is to define it as <strong><code>property</code></strong>.</p>
+<p>For example, in below code, we define a <strong><code>property</code></strong> that adds simple type checking for its
+<strong><code>getter</code></strong> and <strong><code>setter</code></strong> methods.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
                   
