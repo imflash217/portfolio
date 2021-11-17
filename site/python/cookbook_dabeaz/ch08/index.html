@@ -1838,6 +1838,28 @@ To carry out the requested operation, the underlying instance dictionary
 </details>
 <details class="quote" open="open"><summary>Discussion</summary><p>Descriptors provide the underlying logic for most of the Python's class features 
 such as <strong><code>@classmethod</code></strong>, <strong><code>@staticmethod</code></strong>, <strong><code>@property</code></strong> and even <strong><code>__slots__</code></strong> attribute.</p>
+<p>By defining <strong>descriptors</strong>, you can capture the core instance oprtations (get, set, delete)
+at a very low level and completely customoze what they do. 
+<strong>It is one of the most important tool used by writers of most advance librarues &amp; frameeeeworks</strong></p>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> One confusion with the descriptors is that they can only be defined at the <strong>class level</strong>
+and not at the <strong>per-instance basis</strong>. The following descriptor usage will not work.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## this descriptor USAGE will not work</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>            <span class="c1">## NO! Must be a class variable</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>            <span class="c1">## NO! Must be a class variable</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</code></pre></div>
+</td></tr></table>
 </details>
                 
                   
