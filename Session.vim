@@ -12,6 +12,9 @@ set shortmess=aoO
 argglobal
 %argdel
 $argadd docs/python/cookbook_dabeaz/ch08.md
+set stal=2
+tabnew
+tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
 setlocal fdm=manual
@@ -24,14 +27,37 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 272 - ((22 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 272
 normal! 0
-tabnext 1
-badd +0 docs/python/cookbook_dabeaz/ch08.md
+tabnext
+edit mkdocs.yml
+argglobal
+balt docs/blogs/lightning/about.md
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 132 - ((16 * winheight(0) + 17) / 34)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 132
+normal! 044|
+tabnext 2
+set stal=1
+badd +1 docs/python/cookbook_dabeaz/ch08.md
+badd +0 docs/blogs/lightning/about.md
+badd +0 mkdocs.yml
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -42,7 +68,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost

@@ -124,7 +124,12 @@ nav:
       - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
       - PyTorch Dataloaders: blogs/deep_learning/blog_dataloaders.md
       - einops tutorial: blogs/deep_learning/blog_einops.md
-
+    - PyTorch Lightning:
+      - Tutorial-1: blogs/lightning/tut_1.md
+      - Tutorial-2: blogs/lightning/tut_2.md
+      - Tutorial-3: blogs/lightning/tut_3.md
+      - Tutorial-4: blogs/lightning/tut_4.md
+      - Tutorial-5: blogs/lightning/tut_5.md
   - 👑 Python Gems:
     - 🥘 Cookbook:
       - 1. Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
