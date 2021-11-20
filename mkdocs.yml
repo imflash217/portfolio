@@ -15,7 +15,7 @@ theme:
     # text: Playfair Display
     # text: Source Serif Pro
     text: arvo
-    code: Fira Code
+    code: Fira Code Bold
   features:
     - navigation.tabs
     - navigation.tabs.sticky

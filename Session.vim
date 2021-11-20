@@ -48,12 +48,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 132 - ((16 * winheight(0) + 17) / 34)
+let s:l = 118 - ((2 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 132
-normal! 043|
+keepjumps 118
+normal! 06|
 tabnext
 edit docs/blogs/lightning/tut_1.md
 argglobal
