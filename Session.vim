@@ -49,12 +49,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 20 - ((13 * winheight(0) + 19) / 39)
+let s:l = 18 - ((11 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 20
-normal! 023|
+keepjumps 18
+normal! 05|
 tabnext
 edit ~/.vimrc
 argglobal
@@ -69,12 +69,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 110 - ((19 * winheight(0) + 19) / 39)
+let s:l = 111 - ((20 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 110
-normal! 034|
+keepjumps 111
+normal! 033|
 tabnext
 edit docs/blogs/lightning/tut_1.md
 argglobal
