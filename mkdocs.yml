@@ -14,8 +14,9 @@ theme:
     # text: lexend
     # text: Playfair Display
     # text: Source Serif Pro
-    text: arvo
-    code: Cascadia Code
+    # text: arvo
+    text: Cascadia Code PL
+    code: Cascadia Code PL
   features:
     - navigation.tabs
     - navigation.tabs.sticky

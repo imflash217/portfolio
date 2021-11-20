@@ -28,11 +28,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 272 - ((22 * winheight(0) + 17) / 35)
+let s:l = 269 - ((39 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 272
+keepjumps 269
 normal! 0
 tabnext
 edit mkdocs.yml
@@ -48,7 +48,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 18 - ((16 * winheight(0) + 17) / 34)
+let s:l = 18 - ((17 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -68,7 +68,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 17) / 34)
+let s:l = 1 - ((0 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -77,9 +77,9 @@ normal! 0
 tabnext 2
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
-badd +0 docs/blogs/lightning/about.md
 badd +0 mkdocs.yml
-badd +0 docs/blogs/lightning/tut_1.md
+badd +1 docs/blogs/lightning/tut_1.md
+badd +1 docs/blogs/lightning/about.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -90,6 +90,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
