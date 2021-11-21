@@ -15,7 +15,8 @@ theme:
     # text: Playfair Display
     # text: Source Serif Pro
     # text: Cascadia Code PL
-    text: Arvo
+    # text: Arvo
+    text: Freight Sans Pro
     code: Cascadia Code
   features:
     - navigation.tabs
