@@ -16,7 +16,8 @@ theme:
     # text: Source Serif Pro
     # text: Cascadia Code PL
     # text: Arvo
-    text: Freight Sans Pro
+    # text: Freight Sans Pro
+    text: Nunito
     code: Cascadia Code
   features:
     - navigation.tabs
