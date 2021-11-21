@@ -19,7 +19,7 @@ theme:
     # text: Freight Sans Pro
     # text: Nunito
     text: Roboto
-    code: Cascadia Code
+    code: "Fira Code", "Cascadia Code"
   features:
     - navigation.tabs
     - navigation.tabs.sticky
