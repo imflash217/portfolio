@@ -17,7 +17,8 @@ theme:
     # text: Cascadia Code PL
     # text: Arvo
     # text: Freight Sans Pro
-    text: Nunito
+    # text: Nunito
+    text: Roboto
     code: Cascadia Code
   features:
     - navigation.tabs
