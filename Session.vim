@@ -15,6 +15,7 @@ $argadd docs/python/cookbook_dabeaz/ch08.md
 set stal=2
 tabnew
 tabnew
+tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -28,11 +29,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 272 - ((37 * winheight(0) + 19) / 38)
+let s:l = 233 - ((39 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 272
+keepjumps 233
 normal! 0
 tabnext
 edit mkdocs.yml
@@ -48,12 +49,32 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 18 - ((11 * winheight(0) + 19) / 38)
+let s:l = 122 - ((19 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 18
-normal! 05|
+keepjumps 122
+normal! 04|
+tabnext
+edit docs/blogs/about.md
+argglobal
+balt mkdocs.yml
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 10 - ((9 * winheight(0) + 20) / 40)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 10
+normal! 0
 tabnext
 edit docs/blogs/lightning/tut_1.md
 argglobal
@@ -68,19 +89,20 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 19) / 38)
+let s:l = 1 - ((0 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 0
-tabnext 2
+tabnext 3
 set stal=1
-badd +0 docs/python/cookbook_dabeaz/ch08.md
-badd +1 mkdocs.yml
+badd +1 docs/python/cookbook_dabeaz/ch08.md
+badd +0 mkdocs.yml
 badd +1 docs/blogs/lightning/tut_1.md
 badd +1 docs/blogs/lightning/about.md
 badd +111 ~/.vimrc
+badd +0 docs/blogs/about.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
