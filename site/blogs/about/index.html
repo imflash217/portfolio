@@ -1970,6 +1970,12 @@
         classifier &amp; the model.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> For image classifiers and <strong><code>SGD</code> optimizer</strong>, the <strong><code>Multi-Step LR Scheduler</code></strong>
         is shown to be a good choice.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Models trained with <strong><code>Adam</code></strong> commonly use a smooth exponential-decay in the <code>lr</code> or a cosine-like scheduler.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> For Transformers:<ul>
+<li><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Remember to use a <strong><code>learning rate WARMUP</code></strong></li>
+<li><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> The <code>cosine-scheduler</code> is often used for decaying the <code>lr</code> afterwards (but can also be replaced by exponential decay)</li>
+</ul>
+</li>
 </ul>
 </details>
 <hr />
