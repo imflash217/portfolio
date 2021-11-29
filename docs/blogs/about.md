@@ -27,9 +27,9 @@ hide:
         - **`Weight Decaay`**
         - **`Dropout`**
         - **`Augmentation`**
-    - :rotating_light: Dropout is a good regularization technique as it has shown to be
+    - [x] Dropout is a good regularization technique as it has shown to be
         applicable on most architectures and has shown to **reduce overfitting**.
-
+    - [x] If you want to use **weight-decay in Adam**, use **`torch.optim.AdamW`** instead of `torch.optim.Adam`.
 
 
 ------------------------------------------------------------------------------
