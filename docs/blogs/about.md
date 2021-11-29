@@ -13,9 +13,9 @@ hide:
     - [x] For image classifiers and **`SGD` optimizer**, the **`Multi-Step LR Scheduler`**
             is shown to be a good choice.
     - [x] Models trained with **`Adam`** commonly use a smooth exponential-decay in the `lr` or a cosine-like scheduler.
-    - [x] For Transformers:
+    - [x] For TRANSFORMERS:
         - :rotating_light: Remember to use a **`learning rate WARMUP`**
-        - :rotating_light: The `cosine-scheduler` is often used for decaying the `lr` afterwards (but can also be replaced by exponential decay)
+        - :rotating_light: The `cosine-scheduler` is often used for decaying the `lr` afterwards (but can also be replaced by `exponential decay`)
 
 
 
