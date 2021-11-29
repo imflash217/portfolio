@@ -1,6 +1,8 @@
 
 ------------------------------------------------------------------------------
 ## References
-- [x] Hyperparameter Search
+- [ ] Hyperparameter Search
     - [ ] Learning rate finder: https://pytorch-lightning.readthedocs.io/en/latest/lr_finder.html
-    - [ ] 
+    - [ ] Auto Scaling batch sizes: https://pytorch-lightning.readthedocs.io/en/latest/training_tricks.html#auto-scaling-of-batch-size
+    - [ ] Compare hyperparm search performance in TensorBoard: https://towardsdatascience.com/a-complete-guide-to-using-tensorboard-with-pytorch-53cb2301e8c3
+
