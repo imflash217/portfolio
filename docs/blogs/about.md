@@ -1,8 +1,9 @@
-<!-- - navigation # Hide navigation -->
 ---
 hide:
   - toc        # Hide table of contents
 ---
+
+<!-- - navigation # Hide navigation -->
 
 ------------------------------------------------------------------------------
 ## References
