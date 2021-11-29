@@ -5,6 +5,14 @@ hide:
 
 <!-- - navigation # Hide navigation -->
 
+## Tips & Tricks
+
+???+ done "LR Scheduler"
+    - [x] Similar to the `learning rate`, the `lr-scheduler` to apply depends on the 
+            classifier & the model.
+    - [x] For image classifiers and **`SGD` optimizer**, the **`Multi-Step LR Scheduler`**
+            is shown to be a good choice.
+
 ------------------------------------------------------------------------------
 ## References
 - [ ] Hyperparameter Search
