@@ -1,6 +1,9 @@
 <!-- - navigation # Hide navigation -->
+---
 hide:
   - toc        # Hide table of contents
+---
+
 ------------------------------------------------------------------------------
 ## References
 - [ ] Hyperparameter Search
