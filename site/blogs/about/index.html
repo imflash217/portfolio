@@ -1995,6 +1995,25 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Dropout is a good regularization technique as it has shown to be
     applicable on most architectures and has shown to <strong>reduce overfitting</strong>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> If you want to use <strong>weight-decay in Adam</strong>, use <strong><code>torch.optim.AdamW</code></strong> instead of <code>torch.optim.Adam</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Domain specific regularization: There are a couple of regularization techniques that 
+    depend on the input-data / domain as shown below.<ul>
+<li><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Computer Vision: Image augmenatation like <ul>
+<li><strong><code>horizontal_flip</code></strong>, </li>
+<li><strong><code>rotation</code></strong>, </li>
+<li><strong><code>scale_and_crop</code></strong>, </li>
+<li><strong><code>color_distortion</code></strong>, </li>
+<li><strong><code>gaussian_noise</code></strong> etc.</li>
+</ul>
+</li>
+<li><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> NLP: input dropout of <strong>whole words</strong></li>
+<li><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Graphs: <ul>
+<li>Dropping edges</li>
+<li>Dropping nodes</li>
+<li>Dropping part of the features of all nodes</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </details>
 <hr />
