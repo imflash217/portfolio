@@ -55,6 +55,8 @@ hide:
     Your model is not reaching the performance it should, 
     but PyTorch is not telling you why that happens!! These are very annoying bugs.
 
+------------------------------------------------------------------------------
+
 #### Softmax, CrossEntropy & NLLLoss
 
 :trophy: The most common mistake is the mismatch between the loss function
@@ -70,6 +72,8 @@ Hence, the input to the `nn.CrossEntropyLoss` should be the output of the last l
 2. If you use **`nn.NLLLoss`**, you need to apply **log-softmax** before yourselves.
 `nn.NLLLoss` requires **log-probabilities** as its input not just plain *probabilities*. 
 So, make sure to use `F.log_softmax()` instead of `nn.Softmax`
+
+------------------------------------------------------------------------------
 
 #### Softmax over correct dimension/axis
 
