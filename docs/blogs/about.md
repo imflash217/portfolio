@@ -71,6 +71,10 @@ Hence, the input to the `nn.CrossEntropyLoss` should be the output of the last l
 `nn.NLLLoss` requires **log-probabilities** as its input not just plain *probabilities*. 
 So, make sure to use `F.log_softmax()` instead of `nn.Softmax`
 
+#### Softmax over correct dimension/axis
+
+Be careful to apply softmax over correct dimensio/axis in your output.
+For eg. you apply softamx over **last dimension** like this: **`nn.Softmax(dim=-1)`**
 
 
 ------------------------------------------------------------------------------
