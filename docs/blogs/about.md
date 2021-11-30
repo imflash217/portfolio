@@ -51,7 +51,15 @@ hide:
 
 ### Under-performing model
 
+???+ danger "Situation/Problem"
+    Your model is not reaching the performance it should, 
+    but PyTorch is not telling you why that happens!! These are very annoying bugs.
 
+#### Softmax, CrossEntropy & NLLLoss
+
+:rotating_light: the most common mistake is the mismatch between the loss function
+and the output activations. A very usual common source of confusion is the relationship 
+between **`nn.Softmax`, `nn.LogSoftmax`, `nn.NLLLoss`, & `nn.CrossEntropyLoss`**
 
 ------------------------------------------------------------------------------
 ## References
