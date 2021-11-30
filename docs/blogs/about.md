@@ -80,6 +80,30 @@ So, make sure to use `F.log_softmax()` instead of `nn.Softmax`
 Be careful to apply softmax over correct dimensio/axis in your output.
 For eg. you apply softamx over **last dimension** like this: **`nn.Softmax(dim=-1)`**
 
+------------------------------------------------------------------------------
+
+#### Categorical Data & Embeddings
+
+
+#### Hidden size mismatch
+
+If you perform matrix multiplications and have a shape mismatch between two matrices,
+PyTorch will contain and throw error. 
+
+However, there are situations where PyTorch does not throw any error because the misaligned
+dimensions have (unluckily) the same dimension. For example, imagine you have a weight matrix
+**`W`** of shape **`[d_in, d_out]`**. If you take an inout **`x`** of shape **`[batch_size, d_in]`**.
+And you want to do the matrix multiplication as **`out = W.matmul(x)`** then the shape of the output `out` 
+will be correct as **`[batch_size, d_out]`**. But, suppose if by chance **`batch_size == d_in`**
+then both **`W.matmul(x)`** and **`x.matmul(W)`** will produce the same sized output `[d_in, d_out]`.
+This is definitely not the behaviour we want as it hides the error in the order of 
+matrix maultiplication over different dimension.
+
+:rotating_light: So, **always test your code with multiple different batch sizes to prevent
+shape misalignments with the batch dimension**.
+
+
+
 
 ------------------------------------------------------------------------------
 
