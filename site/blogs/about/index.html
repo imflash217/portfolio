@@ -628,6 +628,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#categorical-data-embeddings" class="md-nav__link">
+    Categorical Data &amp; Embeddings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hidden-size-mismatch" class="md-nav__link">
+    Hidden size mismatch
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2050,6 +2064,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#categorical-data-embeddings" class="md-nav__link">
+    Categorical Data &amp; Embeddings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hidden-size-mismatch" class="md-nav__link">
+    Hidden size mismatch
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2169,6 +2197,21 @@ So, make sure to use <code>F.log_softmax()</code> instead of <code>nn.Softmax</c
 <p>Be careful to apply softmax over correct dimensio/axis in your output.
 For eg. you apply softamx over <strong>last dimension</strong> like this: <strong><code>nn.Softmax(dim=-1)</code></strong></p>
 <hr />
+<h4 id="categorical-data-embeddings">Categorical Data &amp; Embeddings</h4>
+<h4 id="hidden-size-mismatch">Hidden size mismatch</h4>
+<p>If you perform matrix multiplications and have a shape mismatch between two matrices,
+PyTorch will contain and throw error. </p>
+<p>However, there are situations where PyTorch does not throw any error because the misaligned
+dimensions have (unluckily) the same dimension. For example, imagine you have a weight matrix
+<strong><code>W</code></strong> of shape <strong><code>[d_in, d_out]</code></strong>. If you take an inout <strong><code>x</code></strong> of shape <strong><code>[batch_size, d_in]</code></strong>.
+And you want to do the matrix multiplication as <strong><code>out = W.matmul(x)</code></strong> then the shape of the output <code>out</code> 
+will be correct as <strong><code>[batch_size, d_out]</code></strong>. But, suppose if by chance <strong><code>batch_size == d_in</code></strong>
+then both <strong><code>W.matmul(x)</code></strong> and <strong><code>x.matmul(W)</code></strong> will produce the same sized output <code>[d_in, d_out]</code>.
+This is definitely not the behaviour we want as it hides the error in the order of 
+matrix maultiplication over different dimension.</p>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> So, <strong>always test your code with multiple different batch sizes to prevent
+shape misalignments with the batch dimension</strong>.</p>
+<hr />
 <h2 id="references">References</h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Hyperparameter Search<ul class="task-list">
@@ -2193,7 +2236,7 @@ For eg. you apply softamx over <strong>last dimension</strong> like this: <stron
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-11-29
+      Last update: 2021-11-30
     
   </small>
 </div>
