@@ -576,6 +576,26 @@
     Tips &amp; Tricks
   </a>
   
+    <nav class="md-nav" aria-label="Tips &amp; Tricks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lr-scheduler" class="md-nav__link">
+    LR Scheduler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regularizaation" class="md-nav__link">
+    Regularizaation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1938,6 +1958,26 @@
     Tips &amp; Tricks
   </a>
   
+    <nav class="md-nav" aria-label="Tips &amp; Tricks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lr-scheduler" class="md-nav__link">
+    LR Scheduler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regularizaation" class="md-nav__link">
+    Regularizaation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1970,15 +2010,14 @@ hide:
 
 <h1 id="the-preface-of-the-key-technological-stuffs-here">The Preface of the key technological stuffs here</h1>
 <h2 id="tips-tricks">Tips &amp; Tricks</h2>
-<details class="done" open="open">
-<summary>LR Scheduler</summary>
+<h3 id="lr-scheduler">LR Scheduler</h3>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Similar to the <code>learning rate</code>, the <code>lr-scheduler</code> to apply depends on the 
-        classifier &amp; the model.</li>
+    classifier &amp; the model.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> For image classifiers and <strong><code>SGD</code> optimizer</strong>, the <strong><code>Multi-Step LR Scheduler</code></strong>
-        is shown to be a good choice.</li>
+    is shown to be a good choice.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Models trained with <strong><code>Adam</code></strong> commonly use a smooth exponential-decay 
-        in the <code>lr</code> or a cosine-like scheduler.</li>
+    in the <code>lr</code> or a cosine-like scheduler.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> For TRANSFORMERS:<ul>
 <li><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Remember to use a <strong><code>learning rate WARMUP</code></strong></li>
 <li><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> The <code>cosine-scheduler</code> is often used for decaying the <code>lr</code> 
@@ -1986,14 +2025,12 @@ hide:
 </ul>
 </li>
 </ul>
-</details>
-<details class="danger" open="open">
-<summary>Regularizaation</summary>
+<h3 id="regularizaation">Regularizaation</h3>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Regularization is important in networks when we see a significantly higher 
-        <strong>training</strong> performance than <strong>test</strong> performance.</li>
+    <strong>training</strong> performance than <strong>test</strong> performance.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The regularization parameters all interact with each other and hence 
-        <strong>must be tuned together</strong>. The most commonly used regularization techniques are:<ul>
+    <strong>must be tuned together</strong>. The most commonly used regularization techniques are:<ul>
 <li><strong><code>Weight Decaay</code></strong></li>
 <li><strong><code>Dropout</code></strong></li>
 <li><strong><code>Augmentation</code></strong></li>
@@ -2022,7 +2059,6 @@ hide:
 </ul>
 </li>
 </ul>
-</details>
 <hr />
 <h2 id="references">References</h2>
 <ul class="task-list">
