@@ -6,6 +6,8 @@ hide:
 ---
 -->
 
+## The Preface of the key technological stuffs here
+
 ## Tips & Tricks
 
 ???+ done "LR Scheduler"
