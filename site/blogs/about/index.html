@@ -2146,6 +2146,7 @@ hide:
 <p>Your model is not reaching the performance it should, 
 but PyTorch is not telling you why that happens!! These are very annoying bugs.</p>
 </details>
+<hr />
 <h4 id="softmax-crossentropy-nllloss">Softmax, CrossEntropy &amp; NLLLoss</h4>
 <p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> The most common mistake is the mismatch between the loss function
 and the output activations. A very usual common source of confusion is the relationship 
@@ -2163,6 +2164,7 @@ Otherwise, PyTorch will apply the Softmax TWICE which will signifacntly worsen t
 So, make sure to use <code>F.log_softmax()</code> instead of <code>nn.Softmax</code></p>
 </li>
 </ol>
+<hr />
 <h4 id="softmax-over-correct-dimensionaxis">Softmax over correct dimension/axis</h4>
 <p>Be careful to apply softmax over correct dimensio/axis in your output.
 For eg. you apply softamx over <strong>last dimension</strong> like this: <strong><code>nn.Softmax(dim=-1)</code></strong></p>
