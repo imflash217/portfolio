@@ -64,7 +64,7 @@ between **`nn.Softmax`, `nn.LogSoftmax`, `nn.NLLLoss`, & `nn.CrossEntropyLoss`**
 1. **`nn.CrossEntropyLoss`** does two operations on its inputs: **`nn.LogSoftmax`** & **`nn.NLLLoss`**.
 Hence, the input to the `nn.CrossEntropyLoss` should be the output of the last layer of the network.
 
-    :rotating_light: **Don't apply `nn.Softmax` before the Cross Entropy Loss.** 
+    :rotating_light: **Don't apply `nn.Softmax` before the `nn.CrossEntropyLoss`.** 
     Otherwise, PyTorch will apply the Softmax TWICE which will signifacntly worsen the performance.
 
 2. If you use **`nn.NLLLoss`**, you need to apply **log-softmax** before yourselves.
