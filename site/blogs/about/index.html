@@ -611,6 +611,19 @@
     Under-performing model
   </a>
   
+    <nav class="md-nav" aria-label="Under-performing model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#softmax-crossentropy-nllloss" class="md-nav__link">
+    Softmax, CrossEntropy &amp; NLLLoss
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2013,6 +2026,19 @@
     Under-performing model
   </a>
   
+    <nav class="md-nav" aria-label="Under-performing model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#softmax-crossentropy-nllloss" class="md-nav__link">
+    Softmax, CrossEntropy &amp; NLLLoss
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2101,6 +2127,15 @@ hide:
 </ul>
 <h2 id="debugging-in-pytorch">Debugging in PyTorch</h2>
 <h3 id="under-performing-model">Under-performing model</h3>
+<details class="danger" open="open">
+<summary>Situation/Problem</summary>
+<p>Your model is not reaching the performance it should, 
+but PyTorch is not telling you why that happens!! These are very annoying bugs.</p>
+</details>
+<h4 id="softmax-crossentropy-nllloss">Softmax, CrossEntropy &amp; NLLLoss</h4>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> the most common mistake is the mismatch between the loss function
+and the output activations. A very usual common source of confusion is the relationship 
+between <strong><code>nn.Softmax</code>, <code>nn.LogSoftmax</code>, <code>nn.NLLLoss</code>, &amp; <code>nn.CrossEntropyLoss</code></strong></p>
 <hr />
 <h2 id="references">References</h2>
 <ul class="task-list">
