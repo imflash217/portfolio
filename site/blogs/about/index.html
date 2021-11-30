@@ -2137,11 +2137,13 @@ but PyTorch is not telling you why that happens!! These are very annoying bugs.<
 and the output activations. A very usual common source of confusion is the relationship 
 between <strong><code>nn.Softmax</code>, <code>nn.LogSoftmax</code>, <code>nn.NLLLoss</code>, &amp; <code>nn.CrossEntropyLoss</code></strong></p>
 <ol>
-<li><strong><code>nn.CrossEntropyLoss</code></strong> does two operations on its inputs: <strong><code>nn.LogSoftmax</code></strong> &amp; <strong><code>nn.NLLLoss</code></strong>.
-Hence, the input to the <code>nn.CrossEntropyLoss</code> should be the output of the last layer of the network.</li>
-</ol>
+<li>
+<p><strong><code>nn.CrossEntropyLoss</code></strong> does two operations on its inputs: <strong><code>nn.LogSoftmax</code></strong> &amp; <strong><code>nn.NLLLoss</code></strong>.
+Hence, the input to the <code>nn.CrossEntropyLoss</code> should be the output of the last layer of the network.</p>
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> <strong>Don't apply <code>nn.Softmax</code> before the Cross Entropy Loss.</strong> 
 Otherwise, PyTorch will apply the Softmax TWICE which will signifacntly worsen the performance.</p>
+</li>
+</ol>
 <hr />
 <h2 id="references">References</h2>
 <ul class="task-list">
