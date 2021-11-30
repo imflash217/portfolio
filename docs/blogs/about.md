@@ -67,6 +67,9 @@ Hence, the input to the `nn.CrossEntropyLoss` should be the output of the last l
     :rotating_light: **Don't apply `nn.Softmax` before the Cross Entropy Loss.** 
     Otherwise, PyTorch will apply the Softmax TWICE which will signifacntly worsen the performance.
 
+2. If you use **`nn.NLLLoss`**, you need to apply **log-softmax** before yourselves.
+`nn.NLLLoss` requires **log-probabilities** as its input not just plain *probabilities*. 
+So, make sure to use `F.log_softmax()` instead of `nn.Softmax`
 
 
 
