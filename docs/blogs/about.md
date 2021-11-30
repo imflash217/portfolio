@@ -10,42 +10,42 @@ hide:
 
 ## Tips & Tricks
 
-???+ done "LR Scheduler"
-    - [x] Similar to the `learning rate`, the `lr-scheduler` to apply depends on the 
-            classifier & the model.
-    - [x] For image classifiers and **`SGD` optimizer**, the **`Multi-Step LR Scheduler`**
-            is shown to be a good choice.
-    - [x] Models trained with **`Adam`** commonly use a smooth exponential-decay 
-            in the `lr` or a cosine-like scheduler.
-    - [x] For TRANSFORMERS:
-        - :rotating_light: Remember to use a **`learning rate WARMUP`**
-        - :rotating_light: The `cosine-scheduler` is often used for decaying the `lr` 
-            afterwards (but can also be replaced by `exponential decay`)
+### LR Scheduler
+- [x] Similar to the `learning rate`, the `lr-scheduler` to apply depends on the 
+    classifier & the model.
+- [x] For image classifiers and **`SGD` optimizer**, the **`Multi-Step LR Scheduler`**
+    is shown to be a good choice.
+- [x] Models trained with **`Adam`** commonly use a smooth exponential-decay 
+    in the `lr` or a cosine-like scheduler.
+- [x] For TRANSFORMERS:
+    - :rotating_light: Remember to use a **`learning rate WARMUP`**
+    - :rotating_light: The `cosine-scheduler` is often used for decaying the `lr` 
+        afterwards (but can also be replaced by `exponential decay`)
 
-???+ danger "Regularizaation"
-    - [x] Regularization is important in networks when we see a significantly higher 
-            **training** performance than **test** performance.
-    - [x] The regularization parameters all interact with each other and hence 
-            **must be tuned together**. The most commonly used regularization techniques are:
-        - **`Weight Decaay`**
-        - **`Dropout`**
-        - **`Augmentation`**
-    - [x] Dropout is a good regularization technique as it has shown to be
-        applicable on most architectures and has shown to **reduce overfitting**.
-    - [x] If you want to use **weight-decay in Adam**, use **`torch.optim.AdamW`** instead of `torch.optim.Adam`.
-    - [x] Domain specific regularization: There are a couple of regularization techniques that 
-        depend on the input-data / domain as shown below.
-        - :rotating_light: Computer Vision: Image augmenatation like 
-            - **`horizontal_flip`**, 
-            - **`rotation`**, 
-            - **`scale_and_crop`**, 
-            - **`color_distortion`**, 
-            - **`gaussian_noise`** etc.
-        - :rotating_light: NLP: input dropout of **whole words**
-        - :rotating_light: Graphs: 
-            - Dropping edges
-            - Dropping nodes
-            - Dropping part of the features of all nodes
+### Regularizaation
+- [x] Regularization is important in networks when we see a significantly higher 
+    **training** performance than **test** performance.
+- [x] The regularization parameters all interact with each other and hence 
+    **must be tuned together**. The most commonly used regularization techniques are:
+    - **`Weight Decaay`**
+    - **`Dropout`**
+    - **`Augmentation`**
+- [x] Dropout is a good regularization technique as it has shown to be
+    applicable on most architectures and has shown to **reduce overfitting**.
+- [x] If you want to use **weight-decay in Adam**, use **`torch.optim.AdamW`** instead of `torch.optim.Adam`.
+- [x] Domain specific regularization: There are a couple of regularization techniques that 
+    depend on the input-data / domain as shown below.
+    - :rotating_light: Computer Vision: Image augmenatation like 
+        - **`horizontal_flip`**, 
+        - **`rotation`**, 
+        - **`scale_and_crop`**, 
+        - **`color_distortion`**, 
+        - **`gaussian_noise`** etc.
+    - :rotating_light: NLP: input dropout of **whole words**
+    - :rotating_light: Graphs: 
+        - Dropping edges
+        - Dropping nodes
+        - Dropping part of the features of all nodes
 
 
 ------------------------------------------------------------------------------
