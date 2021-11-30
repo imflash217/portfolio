@@ -57,7 +57,7 @@ hide:
 
 #### Softmax, CrossEntropy & NLLLoss
 
-:rotating_light: The most common mistake is the mismatch between the loss function
+:trophy: The most common mistake is the mismatch between the loss function
 and the output activations. A very usual common source of confusion is the relationship 
 between **`nn.Softmax`, `nn.LogSoftmax`, `nn.NLLLoss`, & `nn.CrossEntropyLoss`**
 
