@@ -1,9 +1,10 @@
+<!--
 ---
 hide:
-  - toc        # Hide table of contents
+    - toc        # Hide table of contents
+    - navigation # Hide navigation 
 ---
-
-<!-- - navigation # Hide navigation -->
+-->
 
 ## Tips & Tricks
 
