@@ -621,6 +621,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#softmax-over-correct-dimensionaxis" class="md-nav__link">
+    Softmax over correct dimension/axis
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2036,6 +2043,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#softmax-over-correct-dimensionaxis" class="md-nav__link">
+    Softmax over correct dimension/axis
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2149,6 +2163,9 @@ Otherwise, PyTorch will apply the Softmax TWICE which will signifacntly worsen t
 So, make sure to use <code>F.log_softmax()</code> instead of <code>nn.Softmax</code></p>
 </li>
 </ol>
+<h4 id="softmax-over-correct-dimensionaxis">Softmax over correct dimension/axis</h4>
+<p>Be careful to apply softmax over correct dimensio/axis in your output.
+For eg. you apply softamx over <strong>last dimension</strong> like this: <strong><code>nn.Softmax(dim=-1)</code></strong></p>
 <hr />
 <h2 id="references">References</h2>
 <ul class="task-list">
