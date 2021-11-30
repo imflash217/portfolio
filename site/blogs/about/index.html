@@ -2143,6 +2143,11 @@ Hence, the input to the <code>nn.CrossEntropyLoss</code> should be the output of
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> <strong>Don't apply <code>nn.Softmax</code> before the Cross Entropy Loss.</strong> 
 Otherwise, PyTorch will apply the Softmax TWICE which will signifacntly worsen the performance.</p>
 </li>
+<li>
+<p>If you use <strong><code>nn.NLLLoss</code></strong>, you need to apply <strong>log-softmax</strong> before yourselves.
+<code>nn.NLLLoss</code> requires <strong>log-probabilities</strong> as its input not just plain <em>probabilities</em>. 
+So, make sure to use <code>F.log_softmax()</code> instead of <code>nn.Softmax</code></p>
+</li>
 </ol>
 <hr />
 <h2 id="references">References</h2>
