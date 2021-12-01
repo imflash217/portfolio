@@ -147,6 +147,11 @@ By default, it is set to **`False`**, but it is highly recommended to set it to 
 :trophy: This option of `inplace` is ONLY available to activations functions
 where we don't need to know the original input for backpropagation.
 
+For example, in **`nn.ReLU`**, the value sthat are set to zero have a gradient of ZERO independent
+of the specific input values.
+
+:rotating_light: In-place operations can save a lot of memory, especially if you have a very large feature map.
+
 
 
 
