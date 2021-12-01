@@ -140,8 +140,10 @@ class MLP(nn.Module):
 
 Some activation functions such as **`nn.ReLU`** and **`nn.LeakyReLU`** have an argument **`inplace`**.
 By default, it is set to **`False`**, but it is highly recommended to set it to **`True`** in neural networks.
-> Setting it to `True`, makes the original value of the input overridden by the **output** during the
+
+> Setting it to `True`, makes the original value of the **input** overridden by the **new output** during the
 > forward pass.
+
 
 
 
