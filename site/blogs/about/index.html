@@ -2298,6 +2298,9 @@ forward pass.</p>
 </blockquote>
 <p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> This option of <code>inplace</code> is ONLY available to activations functions
 where we don't need to know the original input for backpropagation.</p>
+<p>For example, in <strong><code>nn.ReLU</code></strong>, the value sthat are set to zero have a gradient of ZERO independent
+of the specific input values.</p>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> In-place operations can save a lot of memory, especially if you have a very large feature map.</p>
 <hr />
 <h2 id="references">References</h2>
 <ul class="task-list">
