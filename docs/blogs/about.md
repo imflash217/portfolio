@@ -103,6 +103,46 @@ matrix maultiplication over different dimension.
 shape misalignments with the batch dimension**.
 
 
+### Use nn.Sequential & nn.ModuleList
+
+If you have a model with lots of layers, you might waant to summarize them into 
+`nn.Sequential` or `nn.ModuleList` object. In the forward pass, you only need to call the 
+`Sequential` or iterate through the `ModuleList`.
+
+A multi-layer-perceptron (MLP) can be implemented as follows:
+
+```python
+import torch
+import torch.nn as nn
+
+class MLP(nn.Module):
+    def __init__(
+        self,
+        input_dims=64,
+        hidden_dims=[128, 256],
+        output_dims=10,
+    ):
+        super().__init__()
+        hidden_dims = [input_dims] + hidden_dims
+        layers = []
+        for i in range(len(hidden_dims)-1):
+            layers += [
+                nn.Linear(hidden_dims[i], hidden_dims[i+1],
+                nn.ReLU(inplace=True)
+            ]
+        self.layers = nn.Sequential(*layers)
+    
+    def forward(self, x):
+        return self.layers(x)
+```
+
+
+
+
+
+
+
+
 
 
 ------------------------------------------------------------------------------
