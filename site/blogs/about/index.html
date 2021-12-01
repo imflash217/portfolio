@@ -654,6 +654,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#in-place-activation-functions" class="md-nav__link">
+    In-place Activation functions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2097,6 +2104,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#in-place-activation-functions" class="md-nav__link">
+    In-place Activation functions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2275,6 +2289,13 @@ shape misalignments with the batch dimension</strong>.</p>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
+<h3 id="in-place-activation-functions">In-place Activation functions</h3>
+<p>Some activation functions such as <strong><code>nn.ReLU</code></strong> and <strong><code>nn.LeakyReLU</code></strong> have an argument <strong><code>inplace</code></strong>.
+By default, it is set to <strong><code>False</code></strong>, but it is highly recommended to set it to <strong><code>True</code></strong> in neural networks.</p>
+<blockquote>
+<p>Setting it to <code>True</code>, makes the original value of the input overridden by the <strong>output</strong> during the
+forward pass.</p>
+</blockquote>
 <hr />
 <h2 id="references">References</h2>
 <ul class="task-list">
