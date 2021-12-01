@@ -144,7 +144,8 @@ By default, it is set to **`False`**, but it is highly recommended to set it to 
 > Setting it to `True`, makes the original value of the **input** overridden by the **new output** during the
 > forward pass.
 
-
+:trophy: This option of `inplace` is ONLY available to activations functions
+where we don't need to know the original input for backpropagation.
 
 
 
