@@ -647,6 +647,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#use-nnsequential-nnmodulelist" class="md-nav__link">
+    Use nn.Sequential &amp; nn.ModuleList
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2083,6 +2090,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#use-nnsequential-nnmodulelist" class="md-nav__link">
+    Use nn.Sequential &amp; nn.ModuleList
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2211,6 +2225,56 @@ This is definitely not the behaviour we want as it hides the error in the order 
 matrix maultiplication over different dimension.</p>
 <p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> So, <strong>always test your code with multiple different batch sizes to prevent
 shape misalignments with the batch dimension</strong>.</p>
+<h3 id="use-nnsequential-nnmodulelist">Use nn.Sequential &amp; nn.ModuleList</h3>
+<p>If you have a model with lots of layers, you might waant to summarize them into 
+<code>nn.Sequential</code> or <code>nn.ModuleList</code> object. In the forward pass, you only need to call the 
+<code>Sequential</code> or iterate through the <code>ModuleList</code>.</p>
+<p>A multi-layer-perceptron (MLP) can be implemented as follows:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+
+<span class="k">class</span> <span class="nc">MLP</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">input_dims</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+        <span class="n">hidden_dims</span><span class="o">=</span><span class="p">[</span><span class="mi">128</span><span class="p">,</span> <span class="mi">256</span><span class="p">],</span>
+        <span class="n">output_dims</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="n">hidden_dims</span> <span class="o">=</span> <span class="p">[</span><span class="n">input_dims</span><span class="p">]</span> <span class="o">+</span> <span class="n">hidden_dims</span>
+        <span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hidden_dims</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">layers</span> <span class="o">+=</span> <span class="p">[</span>
+                <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dims</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hidden_dims</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="o">*</span><span class="n">layers</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
 <hr />
 <h2 id="references">References</h2>
 <ul class="task-list">
@@ -2236,7 +2300,7 @@ shape misalignments with the batch dimension</strong>.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-11-30
+      Last update: 2021-12-01
     
   </small>
 </div>
