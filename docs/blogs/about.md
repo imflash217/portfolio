@@ -136,8 +136,12 @@ class MLP(nn.Module):
         return self.layers(x)
 ```
 
+### In-place Activation functions
 
-
+Some activation functions such as **`nn.ReLU`** and **`nn.LeakyReLU`** have an argument **`inplace`**.
+By default, it is set to **`False`**, but it is highly recommended to set it to **`True`** in neural networks.
+> Setting it to `True`, makes the original value of the input overridden by the **output** during the
+> forward pass.
 
 
 
