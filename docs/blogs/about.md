@@ -173,3 +173,4 @@ of the specific input values.
     - [ ] Saving `git` hash metadata: 
         https://github.com/Nithin-Holla/meme_challenge/blob/f4dc2079acb78ae30caaa31e112c4c210f93bf27/utils/save.py#L26
 
+- [x] PyTorch Tutorials: https://effectivemachinelearning.com/
