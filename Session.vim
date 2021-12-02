@@ -15,6 +15,7 @@ $argadd docs/python/cookbook_dabeaz/ch08.md
 set stal=2
 tabnew
 tabnew
+tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -68,11 +69,31 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+let s:l = 180 - ((38 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 180
+normal! 0
+tabnext
+edit docs/blogs/physics/blog_01282021.md
+argglobal
+balt docs/blogs/about.md
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 105 - ((27 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 105
 normal! 0
 tabnext 3
 set stal=1
@@ -88,6 +109,7 @@ badd +1 docs/gists/about.md
 badd +1 docs/gists/lightning/api/configure_optimizers.md
 badd +1 docs/gists/lightning/api/forward.md
 badd +1 docs/gists/python_snippets.md
+badd +0 docs/blogs/physics/blog_01282021.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

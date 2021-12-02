@@ -161,10 +161,10 @@ of the specific input values.
 
 
 ## References
-- [ ] Hyperparameter Search
-    - [ ] Learning rate finder: 
+Hyperparameter Search
+[^1] Learning rate finder: 
         https://pytorch-lightning.readthedocs.io/en/latest/advanced/lr_finder.html#learning-rate-finder
-    - [ ] Auto Scaling batch sizes: 
+[^2] Auto Scaling batch sizes: 
         https://pytorch-lightning.readthedocs.io/en/latest/advanced/training_tricks.html#auto-scaling-of-batch-size
     - [ ] Compare hyperparam search performance in TensorBoard: 
         https://towardsdatascience.com/a-complete-guide-to-using-tensorboard-with-pytorch-53cb2301e8c3
