@@ -69,11 +69,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 180 - ((38 * winheight(0) + 19) / 39)
+let s:l = 167 - ((25 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 180
+keepjumps 167
 normal! 0
 tabnext
 edit docs/blogs/physics/blog_01282021.md
