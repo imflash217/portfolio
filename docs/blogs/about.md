@@ -161,7 +161,6 @@ of the specific input values.
 
 
 ## References
-Hyperparameter Search
 [^1]: Learning rate finder: 
         https://pytorch-lightning.readthedocs.io/en/latest/advanced/lr_finder.html#learning-rate-finder
 [^2]: Auto Scaling batch sizes: 
@@ -172,7 +171,6 @@ Hyperparameter Search
         https://medium.com/pytorch/accelerate-your-hyperparameter-optimization-with-pytorchs-ecosystem-tools-bc17001b9a49
 [^5]: Saving `git` hash metadata: 
         https://github.com/Nithin-Holla/meme_challenge/blob/f4dc2079acb78ae30caaa31e112c4c210f93bf27/utils/save.py#L26
-------
 [^6]: PyTorch Tutorials: https://effectivemachinelearning.com/
 [^7]: Attention & Transformers: https://e2eml.school/transformers.html
 
