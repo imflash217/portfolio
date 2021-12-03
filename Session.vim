@@ -15,6 +15,7 @@ $argadd docs/python/cookbook_dabeaz/ch08.md
 set stal=2
 tabnew
 tabnew
+tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -48,12 +49,32 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 122 - ((20 * winheight(0) + 19) / 39)
+let s:l = 104 - ((9 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 122
-normal! 06|
+keepjumps 104
+normal! 0
+tabnext
+edit docs/notes/about.md
+argglobal
+balt mkdocs.yml
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext
 edit docs/blogs/about.md
 argglobal
@@ -74,7 +95,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 164
 normal! 0
-tabnext 2
+tabnext 3
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +0 mkdocs.yml
