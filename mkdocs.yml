@@ -101,8 +101,12 @@ nav:
 
   - 📚 Paper Reviews:
     - About: paper_reviews/about.md
-    - DETR: paper_reviews/detr.md
-  
+
+  - 🤖 Transformers:
+    - transformers/about.md
+    - Vaswani et al.: transformers/vaswani.md
+    - DETR: transformers/detr.md 
+
   #- 👨🏻‍💻 Work Experience:
   #  - About: work/about.md
   #  - iVMCL Lab, NC State: work/ivmcl.md
