@@ -186,6 +186,8 @@ nav:
         - log(): gists/lightning/api/log.md
         - test_step(): gists/lightning/api/test_step.md
         - training_step(): gists/lightning/api/training_step.md
+  
+  - ✅ ToDo: todo.md
 
   - 📚 Notes:
     - About: notes/about.md
