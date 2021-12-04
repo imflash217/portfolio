@@ -57,26 +57,6 @@ normal! zt
 keepjumps 190
 normal! 02|
 tabnext
-edit docs/todo.md
-argglobal
-balt mkdocs.yml
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 2
-normal! 0
-tabnext
 edit docs/blogs/about.md
 argglobal
 balt mkdocs.yml
@@ -95,6 +75,26 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 164
+normal! 0
+tabnext
+edit docs/todo.md
+argglobal
+balt docs/blogs/about.md
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
 normal! 0
 tabnext
 edit docs/transformers/about.md
@@ -116,12 +116,13 @@ keepjumps exe s:l
 normal! zt
 keepjumps 8
 normal! 0
-tabnext 3
+tabnext 4
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
-badd +0 mkdocs.yml
+badd +1 mkdocs.yml
+badd +0 docs/blogs/about.md
+badd +1 docs/transformers/about.md
 badd +1 docs/blogs/lightning/about.md
-badd +175 docs/blogs/about.md
 badd +1 docs/blogs/lightning/tut_1.md
 badd +111 ~/.vimrc
 badd +39 docs/notes/about.md
@@ -131,8 +132,7 @@ badd +1 docs/gists/lightning/api/configure_optimizers.md
 badd +1 docs/gists/lightning/api/forward.md
 badd +1 docs/gists/python_snippets.md
 badd +105 docs/blogs/physics/blog_01282021.md
-badd +0 docs/transformers/about.md
-badd +0 docs/todo.md
+badd +4 docs/todo.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
