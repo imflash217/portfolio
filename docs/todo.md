@@ -19,3 +19,5 @@
             https://e2eml.school/how_optimization_works_1.html
 [^12]: 🟢 How optimization works:
             https://e2eml.school/how_optimization_works_2.html
+[^13]: 🟢 Optimizing a linear model:
+            https://e2eml.school/how_optimization_works_3.html
