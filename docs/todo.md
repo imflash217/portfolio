@@ -13,3 +13,5 @@
 [^8]: 🟡 Batch-ReNorm: https://arxiv.org/pdf/1702.03275.pdf
 [^9]: 🟡 StreamingNorm: https://arxiv.org/pdf/1610.06160.pdf
 [^10]: 🟡 Online Norm: https://proceedings.neurips.cc/paper/2019/file/cb3ce9b06932da6faaa7fc70d5b5d2f4-Paper.pdf
+[^11]: 🟢 https://e2eml.school/how_optimization_works_1.html
+[^12]: 🟢 https://e2eml.school/how_optimization_works_2.html
