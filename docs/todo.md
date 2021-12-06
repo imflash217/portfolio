@@ -10,3 +10,6 @@
 [^6]: 🟡 How BatchNorm Helps? https://arxiv.org/pdf/1805.11604.pdf
 [^7]: 🟡 Understanding BatchNorm: 
             https://proceedings.neurips.cc/paper/2018/file/36072923bfc3cf47745d704feb489480-Paper.pdf
+[^8]: 🟡 Batch-ReNorm: https://arxiv.org/pdf/1702.03275.pdf
+[^9]: 🟡 StreamingNorm: https://arxiv.org/pdf/1610.06160.pdf
+[^10]: 🟡 Online Norm: https://proceedings.neurips.cc/paper/2019/file/cb3ce9b06932da6faaa7fc70d5b5d2f4-Paper.pdf
