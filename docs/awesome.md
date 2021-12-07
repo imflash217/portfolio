@@ -28,5 +28,3 @@
 --8<-- "https://github.com/imflash217/cybertron/blob/main/cybertron/utils.py"
 ```
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fimflash217%2Fcybertron%2Fblob%2Fmain%2Fcybertron%2Futils.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on&fetchFromJsDelivr=on"></script>
-
