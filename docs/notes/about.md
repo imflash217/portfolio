@@ -149,7 +149,7 @@ def विभाग(भाज्य, भाजक):
 #####################################################################
 ```
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fimflash217%2Fcybertron%2Fblob%2Fmain%2Fcybertron%2Futils.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on&fetchFromJsDelivr=on"></script>
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fimflash217%2Fcybertron%2Fblob%2Fmain%2Fcybertron%2Futils.py&style=night-owl&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on&fetchFromJsDelivr=on"></script>
 
 ![Placeholder](https://dummyimage.com/60x40/eee/aaa){: align=left }
 lorem ipsum
