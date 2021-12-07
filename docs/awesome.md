@@ -25,6 +25,6 @@
             https://e2eml.school/how_optimization_works_4.html
 
 ``` title=".browserslistrc"
---8<--​ "https://github.com/imflash217/cybertron/blob/main/cybertron/utils.py"
+--8<-- "https://github.com/imflash217/cybertron/blob/main/cybertron/utils.py"
 ```
 
