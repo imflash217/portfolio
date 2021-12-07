@@ -21,5 +21,5 @@
             https://e2eml.school/how_optimization_works_2.html
 [^13]: 🟢 Optimizing a linear model:
             https://e2eml.school/how_optimization_works_3.html
-[^14]: 🟢 Optimizing complex models:
+[^14]: :glove: Optimizing complex models:
             https://e2eml.school/how_optimization_works_4.html
