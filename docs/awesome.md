@@ -23,3 +23,8 @@
             https://e2eml.school/how_optimization_works_3.html
 [^14]: 🟢 Optimizing complex models:
             https://e2eml.school/how_optimization_works_4.html
+
+<iframe
+  src="https://github.com/imflash217/cybertron/blob/main/cybertron/utils.py"
+  style="width:100%; height:300px;"
+></iframe>
