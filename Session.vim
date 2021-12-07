@@ -30,7 +30,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 233 - ((37 * winheight(0) + 19) / 38)
+let s:l = 233 - ((36 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -50,12 +50,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 190 - ((29 * winheight(0) + 19) / 38)
+let s:l = 190 - ((30 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 190
-normal! 02|
+normal! 028|
 tabnext
 edit docs/blogs/about.md
 argglobal
@@ -70,32 +70,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 164 - ((22 * winheight(0) + 19) / 38)
+let s:l = 164 - ((21 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 164
 normal! 0
-tabnext
-edit docs/todo.md
-argglobal
-balt docs/blogs/about.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 21 - ((9 * winheight(0) + 8) / 17)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 21
-normal! 035|
 tabnext
 edit docs/transformers/about.md
 argglobal
@@ -110,18 +90,38 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 8 - ((7 * winheight(0) + 19) / 38)
+let s:l = 8 - ((7 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 8
 normal! 0
-tabnext 4
+tabnext
+edit docs/awesome.md
+argglobal
+balt docs/transformers/about.md
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
+tabnext 5
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
 badd +1 docs/blogs/about.md
-badd +0 docs/todo.md
+badd +24 docs/todo.md
 badd +1 docs/transformers/about.md
 badd +1 docs/blogs/lightning/about.md
 badd +1 docs/blogs/lightning/tut_1.md
@@ -133,6 +133,7 @@ badd +1 docs/gists/lightning/api/configure_optimizers.md
 badd +1 docs/gists/lightning/api/forward.md
 badd +1 docs/gists/python_snippets.md
 badd +105 docs/blogs/physics/blog_01282021.md
+badd +0 docs/awesome.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
