@@ -50,11 +50,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 201 - ((38 * winheight(0) + 19) / 39)
+let s:l = 49 - ((20 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 201
+keepjumps 49
 normal! 05|
 tabnext
 edit docs/blogs/about.md
@@ -116,7 +116,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 27
 normal! 021|
-tabnext 2
+tabnext 5
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
@@ -144,7 +144,6 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
