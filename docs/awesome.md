@@ -35,4 +35,5 @@
             https://ajcr.net/Basic-guide-to-einsum/
 [^18]: 🟢 einops: 
             https://einops.rocks/
-
+[^19]: 🟢 EINSUM / einops / PyTorch:
+            https://theaisummer.com/einsum-attention/
