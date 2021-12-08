@@ -17,7 +17,6 @@ tabnew
 tabnew
 tabnew
 tabnew
-tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -117,27 +116,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 25
 normal! 012|
-tabnext
-edit docs/notes/about.md
-argglobal
-balt docs/awesome.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 152 - ((27 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 152
-normal! 0152|
-tabnext 6
+tabnext 5
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
@@ -147,7 +126,7 @@ badd +1 docs/transformers/about.md
 badd +1 docs/blogs/lightning/about.md
 badd +1 docs/blogs/lightning/tut_1.md
 badd +111 ~/.vimrc
-badd +39 docs/notes/about.md
+badd +152 docs/notes/about.md
 badd +1 docs/notes/ECE542/ece542_hw1a.md
 badd +1 docs/gists/about.md
 badd +1 docs/gists/lightning/api/configure_optimizers.md
