@@ -2268,6 +2268,13 @@ without <code>einops</code>.</p>
 </code></pre></div>
 </td></tr></table>
 </details>
+<details class="quote" open="open">
+<summary>Why prefer EINOPS implementation?</summary>
+<p>Following are the reasons to prefer the new implementation:
+- [x] In the original code, if the input is changed and the <strong><code>batch_size</code></strong> 
+        is divisible by 16 (which usually is), we will get something senseless after reshaping.
+    - [ ] The new code using <strong><code>einops</code></strong> explicitly raise ERROR in the above scenario. Hence better!!</p>
+</details>
 <h2 id="references">References</h2>
 <div class="footnote">
 <hr />
