@@ -85,7 +85,11 @@ from einops.layers.torch import Rearrange, Reduce
 
     - [x] In the original code, if the input is changed and the **`batch_size`** 
             is divisible by 16 (which usually is), we will get something senseless after reshaping.
-        - [ ]:rotating_light: The new code using **`einops`** explicitly raise ERROR in the above scenario. Hence better!!
+        - [ ] :rotating_light: The new code using **`einops`** explicitly raise ERROR in the above scenario. Hence better!!
+    - [x] 
+
+
+
 
 ## References
 
