@@ -80,6 +80,11 @@ from einops.layers.torch import Rearrange, Reduce
     )
     ```
 
+???+ quote "Why prefer EINOPS implementation?"
+    Following are the reasons to prefer the new implementation:
+    - [x] In the original code, if the input is changed and the **`batch_size`** 
+            is divisible by 16 (which usually is), we will get something senseless after reshaping.
+        - [ ] The new code using **`einops`** explicitly raise ERROR in the above scenario. Hence better!!
 
 ## References
 
