@@ -59,7 +59,7 @@ from einops.layers.torch import Rearrange, Reduce
     conv_net_old = ConvNet()
     ```
 
-???+ done "ConvNet using EINOPS + PyTorch"
+???+ done "Using EINOPS + PyTorch"
     Implementing the same above ConvNet using **`einops`** & `PyTorch`
     
     ```python hl_lines="9"
