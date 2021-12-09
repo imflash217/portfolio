@@ -2273,8 +2273,8 @@ without <code>einops</code>.</p>
 <p>Following are the reasons to prefer the new implementation:</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In the original code, if the input is changed and the <strong><code>batch_size</code></strong> 
-        is divisible by 16 (which usually is), we will get something senseless after reshaping.<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The new code using <strong><code>einops</code></strong> explicitly raise ERROR in the above scenario. Hence better!!</li>
+        is divisible by 16 (which usually is), we will get something senseless after reshaping.<ul>
+<li>[ ]<img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> The new code using <strong><code>einops</code></strong> explicitly raise ERROR in the above scenario. Hence better!!</li>
 </ul>
 </li>
 </ul>
