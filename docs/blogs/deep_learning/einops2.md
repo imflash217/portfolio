@@ -92,6 +92,7 @@ from einops.layers.torch import Rearrange, Reduce
             And there is no need in your code to **load** the model (which also has lots of benefits).
     - [x] Don't need **`logsoftmax`**? Now, you can use **`conv_net_new[-1]`**. 
             Another reason to prefer **`nn.Sequential`**
+    - [x] ... And we culd also add **inplace `ReLU`**
 
 
 
