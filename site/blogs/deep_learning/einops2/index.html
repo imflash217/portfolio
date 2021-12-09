@@ -2277,7 +2277,12 @@ without <code>einops</code>.</p>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> The new code using <strong><code>einops</code></strong> explicitly raise ERROR in the above scenario. Hence better!!</li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> We won't forget to use the flag <strong><code>self.training</code></strong> with the new implementation.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Code is straightforward to read and analyze.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong><code>nn.Sequential</code></strong> makes printing/saving/passing trivial. 
+        And there is no need in your code to <strong>load</strong> the model (which also has lots of benefits).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Don't need <strong><code>logsoftmax</code></strong>? Now, you can use <strong><code>conv_net_new[-1]</code></strong>. 
+        Another reason to prefer <strong><code>nn.Sequential</code></strong></li>
 </ul>
 </details>
 <h2 id="references">References</h2>
