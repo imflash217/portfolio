@@ -2283,6 +2283,7 @@ without <code>einops</code>.</p>
         And there is no need in your code to <strong>load</strong> the model (which also has lots of benefits).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Don't need <strong><code>logsoftmax</code></strong>? Now, you can use <strong><code>conv_net_new[-1]</code></strong>. 
         Another reason to prefer <strong><code>nn.Sequential</code></strong></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> ... And we culd also add <strong>inplace <code>ReLU</code></strong></li>
 </ul>
 </details>
 <h2 id="references">References</h2>
