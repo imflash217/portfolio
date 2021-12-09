@@ -7,7 +7,7 @@ in both the traditional `PyTorch` way as well as using `einops` library.
 
 Firstly, we will import the necessary libraries to be used.
 
-```python
+```python hl_lines="10-11"
 ## importing necessary libraries
 
 import math
@@ -20,6 +20,10 @@ import torch.nn.functional as F
 from einops import rearrange, reduce, repeat, asnumpy, parse_shape
 from einops.layers.torch import Rearrange, Reduce
 ```
+
+## Simple ConvNet
+
+
 
 
 ## References
