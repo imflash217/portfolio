@@ -27,7 +27,7 @@ from einops.layers.torch import Rearrange, Reduce
     Here is an implementation of a simple **ConvNet** using only **`PyTorch`**
     without `einops`.
 
-    ```python hl_lines="27"
+    ```python hl_lines="29"
     class ConvNet(nn.Module):
         def __init__(self):
             super(ConvNet, self).__init__()
@@ -53,10 +53,18 @@ from einops.layers.torch import Rearrange, Reduce
             x = F.dropout(x, training=self.training)
             x = self.fc2(x)
             return F.log_softmax(x, dim=1)
-            
+    
+    ## Instantiating the ConvNet class
+       
     conv_net_old = ConvNet()
     ```
 
+???+ done "ConvNet using EINOPS + PyTorch"
+    Implementing the same above ConvNet using **`einops`** & `PyTorch`
+    
+    ```python
+    
+    ```
 
 
 ## References
