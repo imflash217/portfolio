@@ -62,8 +62,22 @@ from einops.layers.torch import Rearrange, Reduce
 ???+ done "ConvNet using EINOPS + PyTorch"
     Implementing the same above ConvNet using **`einops`** & `PyTorch`
     
-    ```python
-    
+    ```python hl_lines="9"
+    conv_net_new = nn.Sequential(
+        nn.Conv2d(1, 10, kernel_size=5),
+        nn.MaxPool2d(kernel_size=2),
+        nn.ReLU(),
+        nn.Conv2d(10, 20, kernel_size=5),
+        nn.MaxPool2d(kernel_size=2),
+        nn.ReLU(),
+        nn.Dropout2d(),
+        Rearrange("b c h w -> b (c h w)"),
+        nn.Linear(320, 50),
+        nn.ReLU(),
+        nn.Dropout(),
+        nn.Linear(50, 10),
+        nn.LogSoftmax(dim=1)
+    )
     ```
 
 
