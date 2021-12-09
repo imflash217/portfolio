@@ -131,7 +131,9 @@ nav:
     - Deep Learning:
       - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
       - PyTorch Dataloaders: blogs/deep_learning/blog_dataloaders.md
-      - einops tutorial: blogs/deep_learning/blog_einops.md
+    - EINSUM:
+      - einops tutorial: blogs/deep_learning/einops.md
+      - einops examples: blogs/deep_learning/einops_2.md
     - PyTorch Lightning:
       - Tutorial-1: blogs/lightning/tut_1.md
       - Tutorial-2: blogs/lightning/tut_2.md
