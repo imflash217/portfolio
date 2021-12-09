@@ -86,7 +86,12 @@ from einops.layers.torch import Rearrange, Reduce
     - [x] In the original code, if the input is changed and the **`batch_size`** 
             is divisible by 16 (which usually is), we will get something senseless after reshaping.
         - [ ] :rotating_light: The new code using **`einops`** explicitly raise ERROR in the above scenario. Hence better!!
-    - [x] 
+    - [x] We won't forget to use the flag **`self.training`** with the new implementation.
+    - [x] Code is straightforward to read and analyze.
+    - [x] **`nn.Sequential`** makes printing/saving/passing trivial. 
+            And there is no need in your code to **load** the model (which also has lots of benefits).
+    - [x] Don't need **`logsoftmax`**? Now, you can use **`conv_net_new[-1]`**. 
+            Another reason to prefer **`nn.Sequential`**
 
 
 
