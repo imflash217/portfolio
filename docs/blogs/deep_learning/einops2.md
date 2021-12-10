@@ -98,7 +98,7 @@ from einops.layers.torch import Rearrange, Reduce
 ## Super-resolution
 
 ???+ danger "Only PyTorch"
-    ```python
+    ```python hl_lines="9-10, 17"
     class SuperResolutionNetOLD(nn.Module):
         def __init__(self, upscale_factor):
             super(SuperResolutionNetOLD, self).__init__()
