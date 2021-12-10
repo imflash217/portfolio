@@ -922,6 +922,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gram-matrix-style-transfer" class="md-nav__link">
+    Gram Matrix / Style Transfer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -2135,6 +2142,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gram-matrix-style-transfer" class="md-nav__link">
+    Gram Matrix / Style Transfer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -2374,6 +2388,42 @@ without <code>einops</code>.</p>
         and saves a lot of memory.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> and all the benefits of <strong><code>nn.Sequential</code></strong></li>
 </ul>
+</details>
+<h2 id="gram-matrix-style-transfer">Gram Matrix / Style Transfer</h2>
+<p>Restyling Graam Matrix for style transfer.</p>
+<details class="danger" open="open">
+<summary>Original Code using ONLY PyTorch</summary>
+<p>The original code is already very good. First line shows what kind of input is expected.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">gram_matrix_old</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span> <span class="o">*</span> <span class="n">w</span><span class="p">)</span>
+    <span class="n">features_t</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">gram</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">bmm</span><span class="p">(</span><span class="n">features_t</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">gram</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="done" open="open">
+<summary>Using EINSUM</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">gram_matrix_new</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;bchw, bdhw -&gt; bcd&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">h</span> <span class="o">*</span> <span class="n">w</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="quote" open="open">
+<summary>Improvements</summary>
+<p><strong><code>einsum</code></strong> operations should be read like:
+- [x] For each batch &amp; each pair of channels we sum over <strong><code>h</code></strong> and <strong><code>w</code></strong>.
+- [x] The normalization is also changed, because that's how <strong>Gram Matrix</strong> is defined.
+        Else we should call it <strong>Normalized Gram Matrix</strong> or alike.</p>
 </details>
 <h2 id="references">References</h2>
 <div class="footnote">
