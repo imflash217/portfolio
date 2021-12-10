@@ -293,7 +293,8 @@ Restyling Graam Matrix for style transfer.
                 ## as the original input channels
                 self.out_channels -= self.in_channels
             else:
-                raise ValueError(f"Cannot combine tensors with {self.combine}. Only 'add' & 'concat' supported."
+                raise ValueError(f"Cannot combine tensors with {self.combine}. "
+                                 f"Only 'add' & 'concat' supported."
             
             ## Use a 1x1 grouped or non-grouped convolution to reduce input channels
             ## to bottleneck channels, as in ResNet bottleneck module.
@@ -375,7 +376,10 @@ Restyling Graam Matrix for style transfer.
             
     ```
 
-
+???+ done "Using EINOPS"
+    ```python
+    
+    ```
 
 
 
