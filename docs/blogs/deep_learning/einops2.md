@@ -157,7 +157,7 @@ Restyling Graam Matrix for style transfer.
     ```
 
 ???+ done "Using EINSUM"
-    ```python
+    ```python hl_lines="3"
     def gram_matrix_new(y):
         b, c, h, w = y.shape
         return torch.einsum("bchw, bdhw -> bcd", [y, y]) / (h * w)
