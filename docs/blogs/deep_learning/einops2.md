@@ -431,6 +431,21 @@ Restyling Graam Matrix for style transfer.
             
     ```
 
+???+ quote "Improvements"
+    Rewriting the code helped to identify the following:
+    
+    - [x] There is no sense in doing reshuffling and not using groups in the first convolution
+            (indeed in the paper it is not so). **However , the result is an equivalent model**.
+    - [x] It is strage that the first convolution may not be grouped,
+            while the last convolution is always grouped. (**and th's different from the paper**)
+
+    Also,
+    
+    - [x] There is an identity layer for pyTorch introduced here.
+    - [x] The last thing to do is to get rid of **`conv1x1`** and **`conv3x3`** 
+            (those are not better than the standard implementation)
+
+
 
 
 
