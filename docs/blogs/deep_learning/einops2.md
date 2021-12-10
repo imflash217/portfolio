@@ -98,7 +98,7 @@ from einops.layers.torch import Rearrange, Reduce
 ## Super-resolution
 
 ???+ danger "Only PyTorch"
-    ```python hl_lines="9-10 17"
+    ```python hl_lines="9-10 16"
     class SuperResolutionNetOLD(nn.Module):
         def __init__(self, upscale_factor):
             super(SuperResolutionNetOLD, self).__init__()
@@ -113,18 +113,28 @@ from einops.layers.torch import Rearrange, Reduce
         def forward(self, x):
             x = self.relu(self.conv1(x))
             x = self.relu(self.conv2(x))
-            x = self.relu(self.conv4(x))
+            x = self.relu(self.conv3(x))
             x = self.pixel_shuffle(self.conv4(x))
             return x
     ```
 
 ???+ done "Using EINOPS"
-    ```python
-    def SuperResolutionNetNEW(nn.Module):
-        
+    ```python hl_lines="10"
+    def SuperResolutionNetNEW(upscale_factor):
+        return nn.Sequential(
+            nn.Conv2d(1, 64, kernel_size=5, padding=2),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(64, 64, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(64, 32, kernel_size=3, padding=1),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(32, upscale_factor ** 2, kernel_size=3, padding=1),
+            Rearrange("b (h2 w2) h w -> b (h h2) (w w2)", h2=upscale_factor, w2=upscale_factor)
+        )
     ```
 
-
+???+ quote "Improvements over the old implementation"
+    ...
 
 
 
