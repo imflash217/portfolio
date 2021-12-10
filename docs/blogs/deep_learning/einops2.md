@@ -176,11 +176,11 @@ Restyling Graam Matrix for style transfer.
 ???+ danger "ONLY PyTorch"
     ```python hl_lines="14-15"
     class RNNModelOLD(nn.Module):
-        """Container module for an ENCODER, a RECURRENT module & a DECODER module"""
+        """Container module with an ENCODER, a RECURRENT module & a DECODER module"""
         def __init__(self, ntoken, ninp, nhid, nlayers, dropout=0.5):
             super(RNNModelOLD, self).__init__()
             self.drop = nn.Dropout(dropout)
-            self.encoder = nn.Embedding(ntoke, ninp)
+            self.encoder = nn.Embedding(ntoken, ninp)
             self.rnn = nn.LSTM(ninp, nhid, nlayers, dropout=dropout)
             self.decoder = nn.Linear(nhid, ntoken)
         
@@ -196,6 +196,22 @@ Restyling Graam Matrix for style transfer.
 
 ???+ done "Using EINOPS"
     ```python
+    def RNNModelNEW(nn.Module):
+        """Container module with an ENCODER, RNN & a DECODER modules."""
+        def __init__(self, ntoken, ninp, nhid, nlayers, dropout=0.5):
+            super(RNNModelNEW, self).__init__()
+            self.drop = nn.Dropout(dropout)
+            self.encoder = nn.Embedding(ntoken, ninp)
+            self.rnn = nn.LSTM(ninp, nhid, nlayers, dropout=dropout)
+            self.decoder = nn.Linear(nhid, ntoken)
+        
+        def forward(self, input, hidden):
+            t, b = input.shape[:2]
+            emb = self.drop(self.encoder(input))
+            output, hidden = self.rnn(emb, hidden)
+            output = rearrange(self.drop(output), "t b nhid -> (t b) nhid")
+            decoded = rearrange(self.decoder(output), "(t b) token -> t b token", t=t, b=b)
+            return decoded, hidden
     ```
 
 
