@@ -195,7 +195,7 @@ Restyling Graam Matrix for style transfer.
 
 
 ???+ done "Using EINOPS"
-    ```python
+    ```python hl_lines="11 14-15"
     def RNNModelNEW(nn.Module):
         """Container module with an ENCODER, RNN & a DECODER modules."""
         def __init__(self, ntoken, ninp, nhid, nlayers, dropout=0.5):
