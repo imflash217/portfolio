@@ -171,6 +171,34 @@ Restyling Graam Matrix for style transfer.
             Else we should call it **Normalized Gram Matrix** or alike.
 
 
+## Recurrent Models (RNNs)
+
+???+ danger "ONLY PyTorch"
+    ```python hl_lines="14-15"
+    class RNNModelOLD(nn.Module):
+        """Container module for an ENCODER, a RECURRENT module & a DECODER module"""
+        def __init__(self, ntoken, ninp, nhid, nlayers, dropout=0.5):
+            super(RNNModelOLD, self).__init__()
+            self.drop = nn.Dropout(dropout)
+            self.encoder = nn.Embedding(ntoke, ninp)
+            self.rnn = nn.LSTM(ninp, nhid, nlayers, dropout=dropout)
+            self.decoder = nn.Linear(nhid, ntoken)
+        
+        def forward(self, input, hidden):
+            emb = self.drop(self.encoder(input))
+            output, hidden = self.rnn(emb, hidden)
+            output = self.drop(output)
+            decoded = self.decoder(output.view(output.size(0)*output.size(1), output.size(2)))
+            return decoded.view(output.size(0), output.size(1), decoded.size(1)), hidden
+
+    ```
+
+
+???+ done "Using EINOPS"
+    ```python
+    ```
+
+
 
 ## References
 
