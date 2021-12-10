@@ -20,7 +20,7 @@
     color: white;
     font-weight: bold;
     font-family: 'Roboto Slab';
-    background-image: linear-gradient(to right, #000000, #331019, #620f24, #920728, #c20023, #d82241, #ed3a60, #ff517f, #fd85bb, #f4b3e5, #f0dcfa, #ffffff);
+    background-image: linear-gradient(to right, #000000, #222222, #3f3f3f, #5e5e5e, #7f7f7f, #949494, #aaaaaa, #c1c1c1, #d0d0d0, #e0e0e0, #efefef, #ffffff);
     padding: 0.25em;
 }
 
