@@ -2420,10 +2420,12 @@ without <code>einops</code>.</p>
 </details>
 <details class="quote" open="open">
 <summary>Improvements</summary>
-<p><strong><code>einsum</code></strong> operations should be read like:
-- [x] For each batch &amp; each pair of channels we sum over <strong><code>h</code></strong> and <strong><code>w</code></strong>.
-- [x] The normalization is also changed, because that's how <strong>Gram Matrix</strong> is defined.
-        Else we should call it <strong>Normalized Gram Matrix</strong> or alike.</p>
+<p><strong><code>einsum</code></strong> operations should be read like:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> For each batch &amp; each pair of channels we sum over <strong><code>h</code></strong> and <strong><code>w</code></strong>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The normalization is also changed, because that's how <strong>Gram Matrix</strong> is defined.
+        Else we should call it <strong>Normalized Gram Matrix</strong> or alike.</li>
+</ul>
 </details>
 <h2 id="references">References</h2>
 <div class="footnote">
