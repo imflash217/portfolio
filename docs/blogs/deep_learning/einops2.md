@@ -134,7 +134,11 @@ from einops.layers.torch import Rearrange, Reduce
     ```
 
 ???+ quote "Improvements over the old implementation"
-    ...
+    - [x] No need in special instruction **`pixel_shuffle`** (& the result is transferrable b/w the frameworks)
+    - [x] Output does not contain a fake axis (& we could do the same for the input)
+    - [x] inplace **`ReLU`** used now. For high resolution images this becomes critical
+            and saves a lot of memory.
+    - [x] and all the benefits of **`nn.Sequential`**
 
 
 
