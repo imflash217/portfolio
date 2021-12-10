@@ -936,6 +936,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#channel-shuffle-from-shufflenet" class="md-nav__link">
+    Channel Shuffle (from ShuffleNet)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -2163,6 +2170,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#channel-shuffle-from-shufflenet" class="md-nav__link">
+    Channel Shuffle (from ShuffleNet)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -2509,6 +2523,49 @@ without <code>einops</code>.</p>
 <span class="hll">        <span class="n">output</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">output</span><span class="p">),</span> <span class="s2">&quot;t b nhid -&gt; (t b) nhid&quot;</span><span class="p">)</span>
 </span><span class="hll">        <span class="n">decoded</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">output</span><span class="p">),</span> <span class="s2">&quot;(t b) token -&gt; t b token&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
 </span>        <span class="k">return</span> <span class="n">decoded</span><span class="p">,</span> <span class="n">hidden</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="channel-shuffle-from-shufflenet">Channel Shuffle (from ShuffleNet)</h2>
+<details class="danger" open="open">
+<summary>ONLY PyTorch</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">channel_shuffle_old</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">groups</span><span class="p">):</span>
+    <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+    <span class="n">channels_per_group</span> <span class="o">=</span> <span class="n">c</span> <span class="o">//</span> <span class="n">groups</span>
+
+    <span class="c1">## reshape</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">groups</span><span class="p">,</span> <span class="n">channels_per_group</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+
+    <span class="c1">## transpose</span>
+    <span class="c1">## - contiguous() is required if transpose() is used before view()</span>
+    <span class="c1">##   See https://github.com/pytorch/pytorch/issues/764</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">contiguous</span><span class="p">()</span>
+
+    <span class="c1">## flatten</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="done" open="open">
+<summary>Using EINOPS</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">channel_shuffle_new</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">groups</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;b (c1 c2) h w -&gt; b (c2 c1) h w&quot;</span><span class="p">,</span> <span class="n">c1</span><span class="o">=</span><span class="n">groups</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 </details>
