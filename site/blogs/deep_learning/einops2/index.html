@@ -2946,6 +2946,22 @@ without <code>einops</code>.</p>
 </code></pre></div>
 </td></tr></table>
 </details>
+<details class="quote" open="open">
+<summary>Improvements</summary>
+<p>Rewriting the code helped to identify the following:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> There is no sense in doing reshuffling and not using groups in the first convolution
+        (indeed in the paper it is not so). <strong>However , the result is an equivalent model</strong>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> It is strage that the first convolution may not be grouped,
+        while the last convolution is always grouped. (<strong>and th's different from the paper</strong>)</li>
+</ul>
+<p>Also,</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> There is an identity layer for pyTorch introduced here.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> The last thing to do is to get rid of <strong><code>conv1x1</code></strong> and <strong><code>conv3x3</code></strong> 
+        (those are not better than the standard implementation)</li>
+</ul>
+</details>
 <h2 id="references">References</h2>
 <div class="footnote">
 <hr />
