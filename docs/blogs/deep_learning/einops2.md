@@ -378,7 +378,18 @@ Restyling Graam Matrix for style transfer.
 
 ???+ done "Using EINOPS"
     ```python
-    
+    class ShuffleUnitNEW(nn.Module):
+        def __init__(
+            self,
+            in_channels,
+            out_channels,
+            groups=3,
+            grouped_conv=True,
+            combine="add"
+        ):
+            super().__init__()
+            
+            
     ```
 
 
