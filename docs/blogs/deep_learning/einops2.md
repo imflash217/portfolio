@@ -165,6 +165,7 @@ Restyling Graam Matrix for style transfer.
 
 ???+ quote "Improvements"
     **`einsum`** operations should be read like:
+
     - [x] For each batch & each pair of channels we sum over **`h`** and **`w`**.
     - [x] The normalization is also changed, because that's how **Gram Matrix** is defined.
             Else we should call it **Normalized Gram Matrix** or alike.
