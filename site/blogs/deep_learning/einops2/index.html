@@ -2844,7 +2844,25 @@ without <code>einops</code>.</p>
 </details>
 <details class="done" open="open">
 <summary>Using EINOPS</summary>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ShuffleUnitNEW</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">in_channels</span><span class="p">,</span>
+        <span class="n">out_channels</span><span class="p">,</span>
+        <span class="n">groups</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">grouped_conv</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">combine</span><span class="o">=</span><span class="s2">&quot;add&quot;</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
 </details>
