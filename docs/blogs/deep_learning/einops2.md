@@ -140,6 +140,35 @@ from einops.layers.torch import Rearrange, Reduce
             and saves a lot of memory.
     - [x] and all the benefits of **`nn.Sequential`**
 
+## Gram Matrix / Style Transfer
+
+Restyling Graam Matrix for style transfer.
+
+???+ danger "Original Code using ONLY PyTorch"
+    The original code is already very good. First line shows what kind of input is expected.
+    
+    ```python
+    def gram_matrix_old(y):
+        (b, c, h, w) = y.size()
+        features = y.view(b, c, h * w)
+        features_t = features.transpose(1, 2)
+        gram = features.bmm(features_t) / (c * h * w)
+        return gram
+    ```
+
+???+ done "Using EINSUM"
+    ```python
+    def gram_matrix_new(y):
+        b, c, h, w = y.shape
+        return torch.einsum("bchw, bdhw -> bcd", [y, y]) / (h * w)
+    ```
+
+???+ quote "Improvements"
+    **`einsum`** operations should be read like:
+    - [x] For each batch & each pair of channels we sum over **`h`** and **`w`**.
+    - [x] The normalization is also changed, because that's how **Gram Matrix** is defined.
+            Else we should call it **Normalized Gram Matrix** or alike.
+
 
 
 ## References
