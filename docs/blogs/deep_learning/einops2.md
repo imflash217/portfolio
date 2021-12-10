@@ -293,7 +293,7 @@ Restyling Graam Matrix for style transfer.
                 ## as the original input channels
                 self.out_channels -= self.in_channels
             else:
-                raise ValueError(f"Cannot combine tensors with {self.combine}. "
+                raise ValueError(f"Cannot combine tensors with {self.combine}.\n"
                                  f"Only 'add' & 'concat' supported.")
             
             ## Use a 1x1 grouped or non-grouped convolution to reduce input channels
