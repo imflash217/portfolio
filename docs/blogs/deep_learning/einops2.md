@@ -215,6 +215,35 @@ Restyling Graam Matrix for style transfer.
     ```
 
 
+## Channel Shuffle (from ShuffleNet)
+
+???+ danger "ONLY PyTorch"
+    ```python
+    def channel_shuffle_old(x, groups):
+        b, c, h, w = x.data.size()
+        channels_per_group = c // groups
+        
+        ## reshape
+        x = x.view(b, groups, channels_per_group, h, w)
+        
+        ## transpose
+        ## - contiguous() is required if transpose() is used before view()
+        ##   See https://github.com/pytorch/pytorch/issues/764
+        x = x.transpose(1, 2).contiguous()
+        
+        ## flatten
+        x = x.view(b, -1, h, w)
+        return x
+    ```
+
+???+ done "Using EINOPS"
+    ```python
+    def channel_shuffle_new(x, groups):
+        return rearrange(x, "b (c1 c2) h w -> b (c2 c1) h w", c1=groups)
+    ```
+
+
+
 
 ## References
 

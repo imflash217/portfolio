@@ -72,12 +72,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 181 - ((29 * winheight(0) + 19) / 39)
+let s:l = 198 - ((14 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 181
-normal! 012|
+keepjumps 198
+normal! 033|
 tabnext
 edit docs/stylesheets/extra.css
 argglobal
