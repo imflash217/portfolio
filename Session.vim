@@ -18,6 +18,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -71,12 +72,32 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 118 - ((23 * winheight(0) + 19) / 39)
+let s:l = 177 - ((25 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 118
-normal! 020|
+keepjumps 177
+normal! 04|
+tabnext
+edit docs/stylesheets/extra.css
+argglobal
+balt docs/blogs/deep_learning/einops2.md
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext
 edit docs/blogs/about.md
 argglobal
@@ -137,7 +158,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 41
 normal! 025|
-tabnext 3
+tabnext 4
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
@@ -157,6 +178,7 @@ badd +1 docs/gists/lightning/api/forward.md
 badd +1 docs/gists/python_snippets.md
 badd +105 docs/blogs/physics/blog_01282021.md
 badd +34 docs/index.md
+badd +0 docs/stylesheets/extra.css
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
