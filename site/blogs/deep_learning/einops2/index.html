@@ -2367,7 +2367,13 @@ without <code>einops</code>.</p>
 </details>
 <details class="quote" open="open">
 <summary>Improvements over the old implementation</summary>
-<p>...</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> No need in special instruction <strong><code>pixel_shuffle</code></strong> (&amp; the result is transferrable b/w the frameworks)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Output does not contain a fake axis (&amp; we could do the same for the input)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> inplace <strong><code>ReLU</code></strong> used now. For high resolution images this becomes critical
+        and saves a lot of memory.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> and all the benefits of <strong><code>nn.Sequential</code></strong></li>
+</ul>
 </details>
 <h2 id="references">References</h2>
 <div class="footnote">
