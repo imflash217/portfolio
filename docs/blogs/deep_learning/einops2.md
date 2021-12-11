@@ -215,6 +215,82 @@ Restyling Graam Matrix for style transfer.
     ```
 
 
+## Improving RNN
+
+???+ danger "Only PyTorch"
+    ```python
+    class RNNold(nn.Module):
+        def __init__(
+            self,
+            vocab_size,
+            embedding_dim,
+            hidden_dim,
+            output_dim,
+            n_layers,
+            bidirectional,
+            dropout
+        ):
+            super().__init__()
+            self.embedding = nn.Embedding(vocab_size, embedding_dim)
+            self.rnn = nn.LSTM(embedding_dim,
+                                hidden_dim,
+                                num_layers=n_layers,
+                                bidirectional=bidirectional,
+                                dropout=dropout)
+            self.fc = nn.Linear(hidden_dim * 2, output_dim)
+            self.dropout = nn.Dropout(dropout)
+
+        def forward(self, x):
+            ## x = [sent_len, batch_size]
+            embedded = self.dropout(self.embedding(x))      ## size = [sent_len, batch_size, emb_dim]
+            output, (hidden, cell) = self.rnn(embedded)
+            
+            ## output.shape = [sent_len, batch_size, hid_dim * num_directions]
+            ## hidden.shape = [num_layers * num_directions, batch_size, hid_dim]
+            ## cell.shape = [num_layers * num_directions, batch_size, hid_dim]
+            
+            ## concat the final dropout (hidden[-2,:,:]) and backward (hidden[-1,:,:]) hidden layers
+            ## and apply dropout
+            ## hidden.size = [batch_size, hid_dim * num_directions]
+            hidden = self.dropout(torch.cat([hidden[-2,:,:], hidden[-1,:,:]], dim=1))
+
+            return self.fc(hidden.squeeze(0))
+    ```
+
+???+ done "Using EINOPS"
+    ```python
+    class RNNnew(nn.Module):
+        def __init__(
+            self,
+            vocab_size,
+            embedding_dim,
+            hidden_dim,
+            output_dim,
+            n_layers,
+            bidirectional,
+            dropout
+        ):
+            super().__init__()
+            self.embedding = nn.Embedding(vocab_size, embedding_dim)
+            self.rnn = nn.LSTM(embedding_dim,
+                                hidden_dim,
+                                num_layers=n_layers,
+                                bidirectional=bidirectional,
+                                dropout=dropout)
+            self.dropout = nn.Dropout(dropout)
+            self.directions = 2 if bidirectional else 1
+            self.fc = nn.Linear(hidden_dim * self.directions, output_dim)
+        
+        def forward(self, x):
+            embedded = self.dropout(self.embedding(x))
+            output, (hidden, cell) = self.rnn(embedded)
+            hidden = rearrange(hidden, "(layer dir) b c -> layer b (dir c)", dir=self.directions)
+            
+            ## take the fina layer's hidden
+            return self.fc(self.dropout(hidden[-1]))
+    ```
+
+
 ## Channel Shuffle (from ShuffleNet)
 
 ???+ danger "ONLY PyTorch"
@@ -444,82 +520,6 @@ Restyling Graam Matrix for style transfer.
     - [x] There is an identity layer for pyTorch introduced here.
     - [x] The last thing to do is to get rid of **`conv1x1`** and **`conv3x3`** 
             (those are not better than the standard implementation)
-
-
-## Improving RNN
-
-???+ danger "Only PyTorch"
-    ```python
-    class RNNold(nn.Module):
-        def __init__(
-            self,
-            vocab_size,
-            embedding_dim,
-            hidden_dim,
-            output_dim,
-            n_layers,
-            bidirectional,
-            dropout
-        ):
-            super().__init__()
-            self.embedding = nn.Embedding(vocab_size, embedding_dim)
-            self.rnn = nn.LSTM(embedding_dim,
-                                hidden_dim,
-                                num_layers=n_layers,
-                                bidirectional=bidirectional,
-                                dropout=dropout)
-            self.fc = nn.Linear(hidden_dim * 2, output_dim)
-            self.dropout = nn.Dropout(dropout)
-
-        def forward(self, x):
-            ## x = [sent_len, batch_size]
-            embedded = self.dropout(self.embedding(x))      ## size = [sent_len, batch_size, emb_dim]
-            output, (hidden, cell) = self.rnn(embedded)
-            
-            ## output.shape = [sent_len, batch_size, hid_dim * num_directions]
-            ## hidden.shape = [num_layers * num_directions, batch_size, hid_dim]
-            ## cell.shape = [num_layers * num_directions, batch_size, hid_dim]
-            
-            ## concat the final dropout (hidden[-2,:,:]) and backward (hidden[-1,:,:]) hidden layers
-            ## and apply dropout
-            ## hidden.size = [batch_size, hid_dim * num_directions]
-            hidden = self.dropout(torch.cat([hidden[-2,:,:], hidden[-1,:,:]], dim=1))
-
-            return self.fc(hidden.squeeze(0))
-    ```
-
-???+ done "Using EINOPS"
-    ```python
-    class RNNnew(nn.Module):
-        def __init__(
-            self,
-            vocab_size,
-            embedding_dim,
-            hidden_dim,
-            output_dim,
-            n_layers,
-            bidirectional,
-            dropout
-        ):
-            super().__init__()
-            self.embedding = nn.Embedding(vocab_size, embedding_dim)
-            self.rnn = nn.LSTM(embedding_dim,
-                                hidden_dim,
-                                num_layers=n_layers,
-                                bidirectional=bidirectional,
-                                dropout=dropout)
-            self.dropout = nn.Dropout(dropout)
-            self.directions = 2 if bidirectional else 1
-            self.fc = nn.Linear(hidden_dim * self.directions, output_dim)
-        
-        def forward(self, x):
-            embedded = self.dropout(self.embedding(x))
-            output, (hidden, cell) = self.rnn(embedded)
-            hidden = rearrange(hidden, "(layer dir) b c -> layer b (dir c)", dir=self.directions)
-            
-            ## take the fina layer's hidden
-            return self.fc(self.dropout(hidden[-1]))
-    ```
 
 
 
