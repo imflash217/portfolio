@@ -3053,6 +3053,68 @@ without <code>einops</code>.</p>
 </code></pre></div>
 </td></tr></table>
 </details>
+<details class="done" open="open">
+<summary>Using EINOPS</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">RNNnew</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">vocab_size</span><span class="p">,</span>
+        <span class="n">embedding_dim</span><span class="p">,</span>
+        <span class="n">hidden_dim</span><span class="p">,</span>
+        <span class="n">output_dim</span><span class="p">,</span>
+        <span class="n">n_layers</span><span class="p">,</span>
+        <span class="n">bidirectional</span><span class="p">,</span>
+        <span class="n">dropout</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">embedding</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rnn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">embedding_dim</span><span class="p">,</span>
+                            <span class="n">hidden_dim</span><span class="p">,</span>
+                            <span class="n">num_layers</span><span class="o">=</span><span class="n">n_layers</span><span class="p">,</span>
+                            <span class="n">bidirectional</span><span class="o">=</span><span class="n">bidirectional</span><span class="p">,</span>
+                            <span class="n">dropout</span><span class="o">=</span><span class="n">dropout</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="n">dropout</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">directions</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">bidirectional</span> <span class="k">else</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">directions</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">embedded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">embedding</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">output</span><span class="p">,</span> <span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rnn</span><span class="p">(</span><span class="n">embedded</span><span class="p">)</span>
+        <span class="n">hidden</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="s2">&quot;(layer dir) b c -&gt; layer b (dir c)&quot;</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">directions</span><span class="p">)</span>
+
+        <span class="c1">## take the fina layer&#39;s hidden</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">hidden</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></div>
+</td></tr></table>
+</details>
 <h2 id="references">References</h2>
 <div class="footnote">
 <hr />
@@ -3073,7 +3135,7 @@ without <code>einops</code>.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-12-10
+      Last update: 2021-12-11
     
   </small>
 </div>
