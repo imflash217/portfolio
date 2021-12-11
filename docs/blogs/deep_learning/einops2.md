@@ -488,7 +488,38 @@ Restyling Graam Matrix for style transfer.
             return self.fc(hidden.squeeze(0))
     ```
 
-
+???+ done "Using EINOPS"
+    ```python
+    class RNNnew(nn.Module):
+        def __init__(
+            self,
+            vocab_size,
+            embedding_dim,
+            hidden_dim,
+            output_dim,
+            n_layers,
+            bidirectional,
+            dropout
+        ):
+            super().__init__()
+            self.embedding = nn.Embedding(vocab_size, embedding_dim)
+            self.rnn = nn.LSTM(embedding_dim,
+                                hidden_dim,
+                                num_layers=n_layers,
+                                bidirectional=bidirectional,
+                                dropout=dropout)
+            self.dropout = nn.Dropout(dropout)
+            self.directions = 2 if bidirectional else 1
+            self.fc = nn.Linear(hidden_dim * self.directions, output_dim)
+        
+        def forward(self, x):
+            embedded = self.dropout(self.embedding(x))
+            output, (hidden, cell) = self.rnn(embedded)
+            hidden = rearrange(hidden, "(layer dir) b c -> layer b (dir c)", dir=self.directions)
+            
+            ## take the fina layer's hidden
+            return self.fc(self.dropout(hidden[-1]))
+    ```
 
 
 
