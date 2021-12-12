@@ -701,7 +701,21 @@ Restyling Graam Matrix for style transfer.
 
 ???+ done "Using EINOPS"
     ```python
-    
+    class CNNnew(nn.Module):
+        def __init__(self, vocab_size, embedding_dim, n_filters, filter_sizes, output_dim, dropout):
+            super().__init__()
+            self.embedding = nn.Embedding(vocab_size, embedding_dim)
+            self.convs = nn.ModuleList([nn.Conv1d(embedding_dim, n_filters, kernel_size=size) 
+                                        for size in filter_sizes])
+            self.fc = nn.Linear(len(filter_sizes)*n_filters, output_dim)
+            self.dropout = nn.Dropout(dropout)
+
+        def forward(self, x):
+            x = rearrange(x, "t b -> t b")
+            emb = rearrange(self.embedding(x), "t b c -> b c t")
+            pooled = [reduce(conv(emb), "b c t -> b c") for conv in self.convs]
+            concatenated = rearrange(pooled, "filter b c -> b (filter c)")
+            return self.fc(self.dropout(F.relu(concatenated)))
     ```
 
 
