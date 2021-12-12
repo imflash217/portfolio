@@ -971,6 +971,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cnns-for-text-classification" class="md-nav__link">
+    CNNs for text classification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references-1" class="md-nav__link">
     References 1
   </a>
@@ -2233,6 +2240,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cnns-for-text-classification" class="md-nav__link">
+    CNNs for text classification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references-1" class="md-nav__link">
     References 1
   </a>
@@ -3382,15 +3396,23 @@ without <code>einops</code>.</p>
 <span class="normal">7</span>
 <span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">FastTextNEW</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-        <span class="n">Rearrange</span><span class="p">(</span><span class="s2">&quot;t b -&gt; t b&quot;</span><span class="p">),</span>
-        <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">),</span>
+<span class="hll">        <span class="n">Rearrange</span><span class="p">(</span><span class="s2">&quot;t b -&gt; t b&quot;</span><span class="p">),</span>
+</span>        <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">),</span>
         <span class="n">Reduce</span><span class="p">(</span><span class="s2">&quot;t b c -&gt; b c&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">),</span>
         <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">embedding_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">),</span>
-        <span class="n">Rearrange</span><span class="p">(</span><span class="s2">&quot;b c -&gt; b c&quot;</span><span class="p">),</span>
-    <span class="p">)</span>
+<span class="hll">        <span class="n">Rearrange</span><span class="p">(</span><span class="s2">&quot;b c -&gt; b c&quot;</span><span class="p">),</span>
+</span>    <span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Here, the first and last operations (highlighted) do nothing and can be removed.
+        But, were added to explicitly added to show expected input and output shape</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> This also gives us the flexibility of changing interface by editing a single line.
+        Should you need to accept inputs of shape <strong><code>(b, t)</code></strong> we just need to change 
+        the line to <strong><code>Rearrange("b t -&gt; t b")</code></strong></li>
+</ul>
 </details>
+<h2 id="cnns-for-text-classification">CNNs for text classification</h2>
 <h2 id="references-1">References <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h2>
 <div class="footnote">
 <hr />
