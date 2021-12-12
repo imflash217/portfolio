@@ -700,7 +700,7 @@ Restyling Graam Matrix for style transfer.
     ```
 
 ???+ done "Using EINOPS"
-    ```python
+    ```python hl_lines="5-6"
     class CNNnew(nn.Module):
         def __init__(self, vocab_size, embedding_dim, n_filters, filter_sizes, output_dim, dropout):
             super().__init__()
