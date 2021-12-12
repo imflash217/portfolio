@@ -609,9 +609,9 @@ Restyling Graam Matrix for style transfer.
             nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=3, stride=2, padding=1),
             make_layer(64,      64,  block, layers[0], stride=1),
-            make_layer(64,      128, block, layers[1], stride=2),
-            make_layer(128,     256, block, layers[2], stride=2),
-            make_layer(256,     512, block, layers[3], stride=2),
+            make_layer(64 * e,  128, block, layers[1], stride=2),
+            make_layer(128 * e, 256, block, layers[2], stride=2),
+            make_layer(256 * e, 512, block, layers[3], stride=2),
             ## Combined AvgPool & view in one single operation
             Reduce("b c h w -> b c", "mean"),
             n.Linear(512 * e, num_classes),
