@@ -631,7 +631,34 @@ Restyling Graam Matrix for style transfer.
     ```
 
 
+## FastText
 
+???+ danger "ONLY PyTorch"
+    ```python
+    class FastTextOLD(nn.Module):
+        def __init__(self, vocab_size, embedding_dim, output_dim):
+            super().__init__()
+            self.embedding = nn.Embedding(vocab_size, embedding_dim)
+            self.fc = nn.Linear(embedding_dim, output_dim)
+
+        def forward(self, x):
+            embedded = self.embedding(x)
+            embedded = embedded.permute(1, 0, 2)
+            pooled = F.avg_pool2d(embedded, (embedded.shape[1], 1)).squeeze(1)
+            return self.fc(pooled)
+    ```
+
+???+ done "Using EINOPS"
+    ```python
+    def FastTextNEW(vocab_size, embedding_dim, output_dim):
+        return nn.Sequential(
+            Rearrange("t b -> t b"),
+            nn.Embedding(vocab_size, embedding_dim),
+            Reduce("t b c -> b c", "mean"),
+            nn.Linear(embedding_dim, output_dim),
+            Rearrange("b c -> b c"),
+        )
+    ```
 
 
 
