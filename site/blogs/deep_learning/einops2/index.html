@@ -3493,13 +3493,21 @@ without <code>einops</code>.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="n">dropout</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;t b -&gt; t b&quot;</span><span class="p">)</span>
-        <span class="n">emb</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">embedding</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;t b c -&gt; b c t&quot;</span><span class="p">)</span>
+<span class="hll">        <span class="n">x</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;t b -&gt; t b&quot;</span><span class="p">)</span>
+</span>        <span class="n">emb</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">embedding</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;t b c -&gt; b c t&quot;</span><span class="p">)</span>
         <span class="n">pooled</span> <span class="o">=</span> <span class="p">[</span><span class="n">reduce</span><span class="p">(</span><span class="n">conv</span><span class="p">(</span><span class="n">emb</span><span class="p">),</span> <span class="s2">&quot;b c t -&gt; b c&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">conv</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">convs</span><span class="p">]</span>
         <span class="n">concatenated</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">pooled</span><span class="p">,</span> <span class="s2">&quot;filter b c -&gt; b (filter c)&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">concatenated</span><span class="p">)))</span>
 </code></pre></div>
 </td></tr></table>
+</details>
+<details class="quote" open="open">
+<summary>Discussion</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Original code misuses <strong><code>nn.Conv2d</code></strong> while <strong><code>nn.Conv1d</code></strong> is the right choice.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> New code can work with any number of <strong><code>filter_sizes</code></strong> and won't fail.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> First line in the new code does nothing, but was just added for simplicity &amp; clarity of shapes.</li>
+</ul>
 </details>
 <h2 id="references">References</h2>
 <div class="footnote">
