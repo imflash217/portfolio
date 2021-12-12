@@ -700,7 +700,7 @@ Restyling Graam Matrix for style transfer.
     ```
 
 ???+ done "Using EINOPS"
-    ```python hl_lines="5-6"
+    ```python hl_lines="5-6 11"
     class CNNnew(nn.Module):
         def __init__(self, vocab_size, embedding_dim, n_filters, filter_sizes, output_dim, dropout):
             super().__init__()
@@ -718,7 +718,11 @@ Restyling Graam Matrix for style transfer.
             return self.fc(self.dropout(F.relu(concatenated)))
     ```
 
-
+???+ quote "Discussion"
+    
+    - [x] Original code misuses **`nn.Conv2d`** while **`nn.Conv1d`** is the right choice.
+    - [x] New code can work with any number of **`filter_sizes`** and won't fail.
+    - [x] First line in the new code does nothing, but was just added for simplicity & clarity of shapes.
 
 
 
