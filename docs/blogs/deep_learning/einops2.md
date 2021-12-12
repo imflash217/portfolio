@@ -649,7 +649,7 @@ Restyling Graam Matrix for style transfer.
     ```
 
 ???+ done "Using EINOPS"
-    ```python
+    ```python hl_lines="3 7"
     def FastTextNEW(vocab_size, embedding_dim, output_dim):
         return nn.Sequential(
             Rearrange("t b -> t b"),
@@ -659,6 +659,21 @@ Restyling Graam Matrix for style transfer.
             Rearrange("b c -> b c"),
         )
     ```
+    
+    - [x] Here, the first and last operations (highlighted) do nothing and can be removed.
+            But, were added to explicitly added to show expected input and output shape
+    - [x] This also gives us the flexibility of changing interface by editing a single line.
+            Should you need to accept inputs of shape **`(b, t)`** we just need to change 
+            the line to **`Rearrange("b t -> t b")`**
+
+
+## CNNs for text classification
+
+
+
+
+
+
 
 
 
