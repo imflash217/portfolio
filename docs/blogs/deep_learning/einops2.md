@@ -522,7 +522,7 @@ Restyling Graam Matrix for style transfer.
             (those are not better than the standard implementation)
 
 
-## Simplifying ResNet
+## ResNet
 
 ???+ danger "ONLY PyTorch"
     ```python
