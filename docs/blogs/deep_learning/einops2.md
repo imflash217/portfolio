@@ -669,9 +669,40 @@ Restyling Graam Matrix for style transfer.
 
 ## CNNs for text classification
 
+???+ danger "ONLY PyTorch"
+    ```python
+    class CNNold(nn.Module):
+        def __init__(self, vocab_size, embedding_dim, n_filters, filter_sizes, output_dim, dropout):
+            super().__init__()
+            self.embedding = nn.Embedding(vocab_size, embedding_dim)
+            self.conv_0 = nn.Conv2d(in_channels=1, out_channels=n_filters, kernel_size=(filter_sizes[0], embedding_dim))
+            self.conv_1 = nn.Conv2d(in_channels=1, out_channels=n_filters, kernel_size=(filter_sizes[1], embedding_dim))
+            self.conv_2 = nn.Conv2d(in_channels=1, out_channels=n_filters, kernel_size=(filter_sizes[2], embedding_dim))
+            self.fc = nn.Linear(len(filter_sizes)*n_filters, output_dim)
+            self.dropout = nn.Dropout(dropout)
 
+        def forward(self, x):
+            x = x.permute(1, 0)
+            embedded = self.embedding(x)
+            embedded = embedded.unsqueeze(dim=1)
 
+            conved_0 = F.relu(self.conv_0(embedded).squeeze(dim=3))
+            conved_1 = F.relu(self.conv_1(embedded).squeeze(dim=3))
+            conved_2 = F.relu(self.conv_2(embedded).squeeze(dim=3))
 
+            pooled_0 = F.max_pool1d(conved_0, conved_0.shape[2]).squeeze(dim=2)
+            pooled_1 = F.max_pool1d(conved_1, conved_1.shape[2]).squeeze(dim=2)
+            pooled_2 = F.max_pool1d(conved_2, conved_2.shape[2]).squeeze(dim=2)
+            
+            cat = self.dropout(torch.cat((pooled_0, pooled_1, pooled_2), dim=1))
+            return self.fc(cat)
+
+    ```
+
+???+ done "Using EINOPS"
+    ```python
+    
+    ```
 
 
 
