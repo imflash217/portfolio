@@ -677,7 +677,7 @@ Restyling Graam Matrix for style transfer.
 
 
 
-## References [^1]
+## References
 
 [^1]: http://einops.rocks/pytorch-examples.html
 [^2]: https://github.com/arogozhnikov/einops
