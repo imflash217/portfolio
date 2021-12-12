@@ -583,6 +583,52 @@ Restyling Graam Matrix for style transfer.
 
     ```
 
+???+ done "Using EINOPS"
+    ```python
+    def make_layer(inplanes, planes, block, n_blocks, stride=1):
+        downsample = None
+        if stride != 1 or inplanes != planes * block.expansion:
+            ## output-size won't match input-size; so adjust the residual
+            downsample = nn.Sequential(
+                nn.Conv2d(inplanes, planes * block.expansion, kernel_size=1, stride=stride, bias=False),
+                nn.BatchNorm2d(planes * block.expansion),
+            )
+
+        return nn.Sequential(
+            block(inplanes, planes, stride, downsample),
+            *[block(planes * block.expansion, planes) for _ in range(1, n_blocks)]
+        )
+
+    def ResNetNEW(block, layers, num_classes=1000):
+        e = block.expansion
+        
+        resnet = nn.Sequential(
+            Rearrange("b c h w -> b c h w", c=3, h=224, w=224),
+            nn.Conv2d(3, 64, kernel_size=7, stride=2, padding=3, bias=False),
+            nn.BatchNorm2d(64),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=3, stride=2, padding=1),
+            make_layer(64,      64,  block, layers[0], stride=1),
+            make_layer(64,      128, block, layers[1], stride=2),
+            make_layer(128,     256, block, layers[2], stride=2),
+            make_layer(256,     512, block, layers[3], stride=2),
+            ## Combined AvgPool & view in one single operation
+            Reduce("b c h w -> b c", "mean"),
+            n.Linear(512 * e, num_classes),
+        )
+
+        ## initialization
+        for m in resnet.modules():
+            if isinstance(m, nn.Conv2d):
+                n = m.kernel_size[0] * m.kernel_size[1] * m.out_channels
+                m.weight.data.normal_(0, math.sqrt(2./n))
+            elif isinstance(m, nn.BatchNorm2d):
+                m.weight.data.fill_(1.)
+                m.bias.data.zero_()
+        
+        return resnet
+
+    ```
 
 
 
