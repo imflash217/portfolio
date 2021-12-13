@@ -21,5 +21,5 @@
 ???+ quote "Question #4"
     > Why might the expression **`current_node.next.val`** be UNSAFE?
 
-    :trophy: If the current node is a **leaf-node** then its `.next` will be `None`
+    :trophy: If the current node is a **TAIL-node** then its `.next` will be `None`
     and `None` object does not have `.val` attribute.
