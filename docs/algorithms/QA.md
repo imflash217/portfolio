@@ -11,7 +11,7 @@
     :trophy: **HEAD** for first-node 
     :trophy: **TAIL** for last-node
 
-???+ quote "Question #4"
+???+ quote "Question #3"
     > What is the **dummy head pattern** for a linked-list?
     
     :trophy: The **dummy head pattern** is where we use a fake node to 
@@ -23,3 +23,8 @@
 
     :trophy: If the current node is a **TAIL-node** then its `.next` will be `None`
     and `None` object does not have `.val` attribute.
+
+???+ quote "Question #5
+    > What is the OPTIMAL COMPLEXITY for **searching a target value in a tandard singly-linked-list**?
+    
+    :trophy: 
