@@ -820,8 +820,32 @@ Restyling Graam Matrix for style transfer.
             self.dropout = nn.Dropout(dropout)
 
         def forward(self, q, k, v, mask=None):
-            ...
-    
+            d_k = self.d_k
+            d_v = self.d_v
+            n_head = self.n_head
+            
+            sz_b, len_q, _ = q.size()
+            sz_b, len_k, _ = k.size()
+            sz_b, len_v, _ = v.size()
+
+            residual = q
+            q = self.w_qs(q).view(sz_b, len_q, n_head, d_k)
+            k = self.w_ks(k).view(sz_b, len_k, n_head, d_k)
+            v = self.w_vs(v).view(sz_b, len_v, n_head, d_v)
+
+            q = q.permute(2, 0, 1, 3).contiguous().view(-1, len_q, d_k)     ## (n*b, len_q, d_k)
+            k = k.permute(2, 0, 1, 3).contiguous().view(-1, len_k, d_k)     ## (n*b, len_k, d_k)
+            v = v.permute(2, 0, 1, 3).contiguous().view(-1, len_v, d_v)     ## (n*b, len_v, d_v)
+            
+            mask = mask.repeat(n_head, 1, 1)    ## (n*b, ...)
+            output, attn = self.attention(q, k, v, mask=mask)
+            output = output.view(n_head, sz_b, len_q, d_v)
+            output = output.permute(1, 2, 0, 3).contiguous().view(sz_b, len_q, -1)      ## (b, len_q, n*d_v)
+            output = self.dropout(self.fc(output))
+            output = self.layer_norm(output + residual)
+
+            return output, attn
+            
     ```
 
 
