@@ -25,7 +25,7 @@
     :trophy: If the current node is a **TAIL-node** then its `.next` will be `None`
     and `None` object does not have `.val` attribute.
 
-???+ quote "Question #5
+???+ quote "Question #5"
     > What is the OPTIMAL COMPLEXITY for **searching a target value in a tandard singly-linked-list**?
     
     :trophy: $O(n)$ time-complexity and $O(1)$ space-complexity for ITERATIVE Solution.
