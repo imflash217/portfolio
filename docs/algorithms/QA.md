@@ -9,6 +9,7 @@
     > What terms are commonly used to describe the **first node** & **last node** of a linked list?
 
     :trophy: **HEAD** for first-node 
+    
     :trophy: **TAIL** for last-node
 
 ???+ quote "Question #3"
@@ -27,4 +28,6 @@
 ???+ quote "Question #5
     > What is the OPTIMAL COMPLEXITY for **searching a target value in a tandard singly-linked-list**?
     
-    :trophy: 
+    :trophy: $O(n)$ time-complexity and $O(1)$ space-complexity for ITERATIVE Solution.
+    
+    :trophy: $O(n)$ time-complexity and $O(n)$ space-complexity for RECURSIVE solution.
