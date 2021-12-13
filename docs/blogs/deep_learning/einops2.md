@@ -725,6 +725,30 @@ Restyling Graam Matrix for style transfer.
     - [x] First line in the new code does nothing, but was just added for simplicity & clarity of shapes.
 
 
+## Highway Convolutions
+
+???+ danger "ONLY PyTorch"
+    ```python
+    class HighwayConv1dOLD(nn.Conv1d):
+        def forward(self, inputs):
+            L = super(HIghwayCon1dOLD, self).forward(inputs)
+            H1, H2 = torch.chunk(L, 2, dim=1)   ## chunk at the feature dimension
+            torch.sigmoid_(H1)
+            return H1 * H2 + (1.0 - H1) * inputs
+    ```
+
+???+ done "Using EINOPS"
+    ```python
+    class HighwayConv1dNEW(nn.Conv1d):
+        def forward(self, inputs):
+            L = super().forward(inputs)
+            H1, H2 = rearrange(L, "b (split c) t -> split b c t", split=2)
+            torch.sigmoid_(H1)
+            return H1 * H2 + (1.0 - H1) * inputs
+    ```
+
+
+
 
 ## References
 
