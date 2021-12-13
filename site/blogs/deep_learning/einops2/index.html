@@ -978,6 +978,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#highway-convolutions" class="md-nav__link">
+    Highway Convolutions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -2247,6 +2254,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#highway-convolutions" class="md-nav__link">
+    Highway Convolutions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -3508,6 +3522,39 @@ without <code>einops</code>.</p>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> New code can work with any number of <strong><code>filter_sizes</code></strong> and won't fail.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> First line in the new code does nothing, but was just added for simplicity &amp; clarity of shapes.</li>
 </ul>
+</details>
+<h2 id="highway-convolutions">Highway Convolutions</h2>
+<details class="danger" open="open">
+<summary>ONLY PyTorch</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HighwayConv1dOLD</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv1d</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">HIghwayCon1dOLD</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">H1</span><span class="p">,</span> <span class="n">H2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">chunk</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1">## chunk at the feature dimension</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid_</span><span class="p">(</span><span class="n">H1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">H1</span> <span class="o">*</span> <span class="n">H2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">H1</span><span class="p">)</span> <span class="o">*</span> <span class="n">inputs</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="done" open="open">
+<summary>Using EINOPS</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HighwayConv1dNEW</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv1d</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">H1</span><span class="p">,</span> <span class="n">H2</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s2">&quot;b (split c) t -&gt; split b c t&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid_</span><span class="p">(</span><span class="n">H1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">H1</span> <span class="o">*</span> <span class="n">H2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">H1</span><span class="p">)</span> <span class="o">*</span> <span class="n">inputs</span>
+</code></pre></div>
+</td></tr></table>
 </details>
 <h2 id="references">References</h2>
 <div class="footnote">
