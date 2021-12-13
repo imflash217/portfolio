@@ -848,7 +848,7 @@ Restyling Graam Matrix for style transfer.
             
     ```
 
-???+ done "USing EINOPS"
+???+ done "Using EINOPS"
     ```python
     class MultiHeadAttentionNEW(nn.Module):
         def __init__(self, n_heads, d_model, d_k, d_v, dropout=0.1):

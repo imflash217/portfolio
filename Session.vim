@@ -19,6 +19,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -72,12 +73,32 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 198 - ((14 * winheight(0) + 19) / 39)
+let s:l = 851 - ((0 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 198
-normal! 033|
+keepjumps 851
+normal! 013|
+tabnext
+edit docs/algorithms/QA.md
+argglobal
+balt docs/blogs/deep_learning/einops2.md
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext
 edit docs/stylesheets/extra.css
 argglobal
@@ -92,7 +113,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 32 - ((14 * winheight(0) + 19) / 39)
+let s:l = 32 - ((14 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -112,7 +133,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 164 - ((22 * winheight(0) + 19) / 39)
+let s:l = 164 - ((23 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -158,11 +179,12 @@ keepjumps exe s:l
 normal! zt
 keepjumps 41
 normal! 025|
-tabnext 3
+tabnext 2
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
 badd +0 docs/blogs/deep_learning/einops2.md
+badd +1 docs/stylesheets/extra.css
 badd +1 docs/blogs/about.md
 badd +1 docs/transformers/about.md
 badd +1 docs/awesome.md
@@ -178,7 +200,7 @@ badd +1 docs/gists/lightning/api/forward.md
 badd +1 docs/gists/python_snippets.md
 badd +105 docs/blogs/physics/blog_01282021.md
 badd +34 docs/index.md
-badd +0 docs/stylesheets/extra.css
+badd +0 docs/algorithms/QA.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

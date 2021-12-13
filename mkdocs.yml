@@ -165,11 +165,12 @@ nav:
     - Hashing: python/hashing.md
 
   - 📟 Algorithms:
-    - Hash Tables: blogs/algorithms/blog_01292021_hashtables.md
-    - Sorting: blogs/algorithms/blog_01312021_sorting.md
-    - Document Distance: blogs/algorithms/blog_02012021_document_distance.md
-    - Priority Queue: blogs/algorithms/blog_02012021_priority_queue.md
-    - Arrays: blogs/algorithms/blog_03152021_arrays.md
+    - Q/A: algorithms/QA.md
+    - Hash Tables: algorithms/hashtables.md
+    - Sorting: algorithms/sorting.md
+    - Document Distance: algorithms/document_distance.md
+    - Priority Queue: algorithms/priority_queue.md
+    - Arrays: algorithms/arrays.md
     - 023_add_lists: algorithms/023_add_lists.md
     - 024_depth_first_values: algorithms/024_depth_first_values.md
     - 025_breadth_first_values: algorithms/025_breadth_first_values.md
