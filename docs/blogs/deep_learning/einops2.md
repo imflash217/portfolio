@@ -748,6 +748,32 @@ Restyling Graam Matrix for style transfer.
     ```
 
 
+## Simple Attention
+
+???+ danger "ONLY PyTorch"
+    ```python hl_lines="6 8"
+    class Attention(nn.Module):
+        def __init__(self):
+            super(Attention, self).__init__()
+
+        def forward(self, K, Q, V):
+            A = torch.bmm(K.transpose((1, 2), Q) / np.sqrt(Q.shape[1])
+            A = F.softmax(A, dim=1)
+            R = torch.bmm(V, A)
+            return torch.cat((R, Q), dim=1)
+    ```
+
+???+ done "Using EINOPS"
+    ```python hl_lines="3 5"
+    def attention(K, Q, V):
+        _, n_channels, _ = K.shape
+        A = torch.einsum("bct,bcl->btl", [K, Q])
+        A = F.softmax(A * n_channels ** (-0.5), dim=1)
+        R = torch.einsum("bct,btl->bcl", [V, A])
+        return torch.cat((R, Q), dim=1)
+    ```
+
+
 
 
 ## References
