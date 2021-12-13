@@ -6,11 +6,12 @@
     :trophy: **`value`** and **`next`**
 
 ???+ quote "Question #2"
-    > What term is commonly used to describe the "first node of alinked list"?
+    > What terms are commonly used to describe the **first node** & **last node** of a linked list?
 
-    :trophy: **HEAD**
+    :trophy: **HEAD** for first-node 
+    :trophy: **TAIL** for last-node
 
-???+ quote "Question #3"
+???+ quote "Question #4"
     > What is the **dummy head pattern** for a linked-list?
     
     :trophy: The **dummy head pattern** is where we use a fake node to 
