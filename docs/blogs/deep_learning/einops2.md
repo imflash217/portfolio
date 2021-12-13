@@ -848,7 +848,30 @@ Restyling Graam Matrix for style transfer.
             
     ```
 
+???+ done "USing EINOPS"
+    ```python
+    class MultiHeadAttentionNEW(nn.Module):
+        def __init__(self, n_heads, d_model, d_k, d_v, dropout=0.1):
+            super().__init__()
+            self.n_heads = n_heads
+            
+            self.w_qs = nn.Linear(d_model, n_heads * d_k)
+            self.w_ks = nn.Linear(d_model, n_heads * d_k)
+            self.w_vs = nn.Linear(d_model, n_heads * d_v)
+            
+            nn.init.normal_(self.w_qs.weight, mean=0, std=np.sqrt(2.0 / (d-model + d_k)))
+            nn.init.normal_(self.w_ks.weight, mean=0, std=np.sqrt(2.0 / (d_model + d_k)))
+            nn.init.normal_(self.w_vs.weight, mean=0, std=np.sqrt(2.0 / (d_model + d_v)))
 
+            self.fc = nn.Linear(n_heads * d_v, d_model)
+            nn.init.xavier_normal_(self.fc.weight)
+            self.dropout = nn.Dropout(dropout)
+            self.layer_norm = nn.LayerNorm(d_model)
+
+        def forward(self, q, k, v, mask=None):
+            residual = q
+            
+    ```
 
 
 
