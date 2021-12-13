@@ -985,6 +985,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#simple-attention" class="md-nav__link">
+    Simple Attention
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -2256,6 +2263,13 @@
         <li class="md-nav__item">
   <a href="#highway-convolutions" class="md-nav__link">
     Highway Convolutions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-attention" class="md-nav__link">
+    Simple Attention
   </a>
   
 </li>
@@ -3553,6 +3567,45 @@ without <code>einops</code>.</p>
 <span class="hll">        <span class="n">H1</span><span class="p">,</span> <span class="n">H2</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="s2">&quot;b (split c) t -&gt; split b c t&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </span>        <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid_</span><span class="p">(</span><span class="n">H1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">H1</span> <span class="o">*</span> <span class="n">H2</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">H1</span><span class="p">)</span> <span class="o">*</span> <span class="n">inputs</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="simple-attention">Simple Attention</h2>
+<details class="danger" open="open">
+<summary>ONLY PyTorch</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Attention</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Attention</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+<span class="hll">        <span class="n">A</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">bmm</span><span class="p">(</span><span class="n">K</span><span class="o">.</span><span class="n">transpose</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">Q</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span>        <span class="n">A</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="hll">        <span class="n">R</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">bmm</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+</span>        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">R</span><span class="p">,</span> <span class="n">Q</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="done" open="open">
+<summary>Using EINOPS</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">attention</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">V</span><span class="p">):</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">n_channels</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">K</span><span class="o">.</span><span class="n">shape</span>
+<span class="hll">    <span class="n">A</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;bct,bcl-&gt;btl&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">K</span><span class="p">,</span> <span class="n">Q</span><span class="p">])</span>
+</span>    <span class="n">A</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">n_channels</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="hll">    <span class="n">R</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;bct,btl-&gt;bcl&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">V</span><span class="p">,</span> <span class="n">A</span><span class="p">])</span>
+</span>    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">R</span><span class="p">,</span> <span class="n">Q</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 </details>
