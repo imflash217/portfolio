@@ -728,7 +728,7 @@ Restyling Graam Matrix for style transfer.
 ## Highway Convolutions
 
 ???+ danger "ONLY PyTorch"
-    ```python
+    ```python hl_lines="4"
     class HighwayConv1dOLD(nn.Conv1d):
         def forward(self, inputs):
             L = super(HIghwayCon1dOLD, self).forward(inputs)
@@ -738,7 +738,7 @@ Restyling Graam Matrix for style transfer.
     ```
 
 ???+ done "Using EINOPS"
-    ```python
+    ```python hl_lines="4"
     class HighwayConv1dNEW(nn.Conv1d):
         def forward(self, inputs):
             L = super().forward(inputs)
