@@ -20,7 +20,6 @@ tabnew
 tabnew
 tabnew
 tabnew
-tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -94,32 +93,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+let s:l = 63 - ((38 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 63
 normal! 0
-tabnext
-edit docs/algorithms/linked_list.md
-argglobal
-balt docs/algorithms/binary_tree.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 45 - ((20 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 45
-normal! 08|
 tabnext
 edit docs/stylesheets/extra.css
 argglobal
@@ -223,8 +202,10 @@ badd +105 docs/blogs/physics/blog_01282021.md
 badd +34 docs/index.md
 badd +35 docs/algorithms/QA.md
 badd +0 docs/algorithms/binary_tree.md
-badd +0 docs/algorithms/linked_list.md
+badd +45 docs/algorithms/linked_list.md
 badd +10 docs/algorithms/023_add_lists.md
+badd +9 docs/algorithms/024_depth_first_values.md
+badd +9 docs/algorithms/025_breadth_first_values.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
