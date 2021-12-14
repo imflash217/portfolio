@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#24-depth-first-values" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1497,9 +1502,46 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Binary Tree
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Binary Tree
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#24-depth-first-values" class="md-nav__link">
+    24: Depth First values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-breadth-first-values" class="md-nav__link">
+    25: Breadth First Values
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1983,6 +2025,45 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#24-depth-first-values" class="md-nav__link">
+    24: Depth First values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-breadth-first-values" class="md-nav__link">
+    25: Breadth First Values
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -1991,7 +2072,236 @@
                 
                   <h1>Binary Tree</h1>
                 
-                
+                <h2 id="24-depth-first-values">24: Depth First values</h2>
+<details class="danger" open="open">
+<summary>Depth First Values</summary>
+<p>Write a function, <code>depth_first_values</code>, that takes in the root of a binary tree. 
+The function should return a list containing all values of the tree in <strong>depth-first order</strong>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">a</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">c</span>
+<span class="n">b</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">d</span>
+<span class="n">b</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">e</span>
+<span class="n">c</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">f</span>
+<span class="n">e</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">g</span>
+
+<span class="c1">#      a</span>
+<span class="c1">#    /   \</span>
+<span class="c1">#   b     c</span>
+<span class="c1">#  / \     \</span>
+<span class="c1"># d   e     f</span>
+<span class="c1">#    /</span>
+<span class="c1">#   g</span>
+
+<span class="n">depth_first_values</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1">#   -&gt; [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;g&#39;, &#39;c&#39;, &#39;f&#39;]</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="done" open="open">
+<summary>Solution</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># class Node:</span>
+<span class="c1">#   def __init__(self, val):</span>
+<span class="c1">#     self.val = val</span>
+<span class="c1">#     self.left = None</span>
+<span class="c1">#     self.right = None</span>
+
+<span class="k">def</span> <span class="nf">depth_first_values</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;recursive solution Depth First Traversal&quot;&quot;&quot;</span>
+
+  <span class="c1">## base case</span>
+  <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[]</span>
+
+  <span class="n">left_values</span> <span class="o">=</span> <span class="n">depth_first_values</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+  <span class="n">right_values</span> <span class="o">=</span> <span class="n">depth_first_values</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+
+  <span class="c1">## in DFS, the visiting order is</span>
+  <span class="c1">## root, left-child, right-child</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">,</span> <span class="o">*</span><span class="n">left_values</span><span class="p">,</span> <span class="o">*</span><span class="n">right_values</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="quote" open="open">
+<summary>Discussion</summary>
+<p>...</p>
+</details>
+<h2 id="25-breadth-first-values">25: Breadth First Values</h2>
+<details class="danger" open="open">
+<summary>Breadth First Values</summary>
+<p>Write a function, <code>breadth_first_values</code>, that takes in the root of a binary tree. 
+The function should return a list containing all values of the tree in <strong>breadth-first order</strong>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="n">a</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">b</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">c</span>
+<span class="n">c</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">c</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">d</span>
+<span class="n">d</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">e</span>
+
+<span class="c1">#      a</span>
+<span class="c1">#       \</span>
+<span class="c1">#        b</span>
+<span class="c1">#       /</span>
+<span class="c1">#      c</span>
+<span class="c1">#    /  \</span>
+<span class="c1">#   x    d</span>
+<span class="c1">#         \</span>
+<span class="c1">#          e</span>
+
+<span class="n">breadth_first_values</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> 
+<span class="c1">#    -&gt; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;x&#39;, &#39;d&#39;, &#39;e&#39;]</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="done" open="open">
+<summary>Solution</summary>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># class Node:</span>
+<span class="c1">#   def __init__(self, val):</span>
+<span class="c1">#     self.val = val</span>
+<span class="c1">#     self.left = None</span>
+<span class="c1">#     self.right = None</span>
+
+<span class="k">def</span> <span class="nf">breadth_first_values</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+  <span class="c1">## base case for empty tree</span>
+  <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[]</span>
+
+  <span class="c1">## using double-ended queue struct</span>
+  <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+  <span class="c1">## step-1: add the root into the queue</span>
+  <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="n">root</span><span class="p">])</span>
+  <span class="n">visited</span> <span class="o">=</span> <span class="p">[]</span>
+
+  <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+    <span class="c1">## grabbing current visited node</span>
+    <span class="n">current_node</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+
+    <span class="c1">## put that node in the visited list</span>
+    <span class="n">visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+
+    <span class="c1">## and add their children (if present) into the queue</span>
+    <span class="k">if</span> <span class="n">current_node</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+      <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">current_node</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+      <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">visited</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="quote" open="open">
+<summary>Discussion</summary>
+<p>...</p>
+</details>
                 
                   
                     

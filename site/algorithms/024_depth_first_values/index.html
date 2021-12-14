@@ -2001,20 +2001,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#solution" class="md-nav__link">
-    Solution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#discussion" class="md-nav__link">
-    Discussion
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2038,108 +2024,6 @@ hide:
 
 <!-- ######################################################################################################### -->
 <h2 id="problem">Problem</h2>
-<details class="danger" open="open">
-<summary>Depth First Values</summary>
-<p>Write a function, <code>depth_first_values</code>, that takes in the root of a binary tree. 
-The function should return a list containing all values of the tree in <strong>depth-first order</strong>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
-<span class="n">e</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-<span class="n">a</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">b</span>
-<span class="n">a</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">c</span>
-<span class="n">b</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">d</span>
-<span class="n">b</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">e</span>
-<span class="n">c</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">f</span>
-<span class="n">e</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">g</span>
-
-<span class="c1">#      a</span>
-<span class="c1">#    /   \</span>
-<span class="c1">#   b     c</span>
-<span class="c1">#  / \     \</span>
-<span class="c1"># d   e     f</span>
-<span class="c1">#    /</span>
-<span class="c1">#   g</span>
-
-<span class="n">depth_first_values</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="c1">#   -&gt; [&#39;a&#39;, &#39;b&#39;, &#39;d&#39;, &#39;e&#39;, &#39;g&#39;, &#39;c&#39;, &#39;f&#39;]</span>
-</code></pre></div>
-</td></tr></table>
-</details>
-<h2 id="solution">Solution</h2>
-<details class="done" open="open">
-<summary>Solution</summary>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># class Node:</span>
-<span class="c1">#   def __init__(self, val):</span>
-<span class="c1">#     self.val = val</span>
-<span class="c1">#     self.left = None</span>
-<span class="c1">#     self.right = None</span>
-
-<span class="k">def</span> <span class="nf">depth_first_values</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;recursive solution Depth First Traversal&quot;&quot;&quot;</span>
-
-  <span class="c1">## base case</span>
-  <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="k">return</span> <span class="p">[]</span>
-
-  <span class="n">left_values</span> <span class="o">=</span> <span class="n">depth_first_values</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-  <span class="n">right_values</span> <span class="o">=</span> <span class="n">depth_first_values</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
-
-  <span class="c1">## in DFS, the visiting order is</span>
-  <span class="c1">## root, left-child, right-child</span>
-  <span class="k">return</span> <span class="p">[</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">,</span> <span class="o">*</span><span class="n">left_values</span><span class="p">,</span> <span class="o">*</span><span class="n">right_values</span><span class="p">]</span>
-</code></pre></div>
-</td></tr></table>
-</details>
-<h2 id="discussion">Discussion</h2>
-<details class="quote" open="open">
-<summary>Discussion</summary>
-<p>...</p>
-</details>
                 
                   
                     
@@ -2148,7 +2032,7 @@ The function should return a list containing all values of the tree in <strong>d
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-10-27
+      Last update: 2021-12-13
     
   </small>
 </div>
