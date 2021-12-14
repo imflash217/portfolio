@@ -1,4 +1,4 @@
-## 24: Depth First values
+## 25: Depth First values
 
 ???+ danger "Depth First Values"
     Write a function, `depth_first_values`, that takes in the root of a binary tree. 
@@ -57,7 +57,7 @@
     ```
 
 
-## 25: Breadth First Values
+## 26: Breadth First Values
 
 ???+ danger "Breadth First Values"
     Write a function, `breadth_first_values`, that takes in the root of a binary tree. 
@@ -129,7 +129,7 @@
 
 
 
-## 26: Tree Includes
+## 27: Tree Includes
 
 ???+ danger "Problem"
 
@@ -181,7 +181,7 @@
     ```
 
 
-## 27: Tree Sum
+## 28: Tree Sum
 
 ???+ danger "Problem"
     Write a function, `tree_sum`, that takes in the root of a **binary tree** that contains number values. 
@@ -225,7 +225,7 @@
     ```
 
 
-## 28: Binary Tree Min Value
+## 29: Binary Tree Min Value
 
 ???+ danger "Minimum value in a binary tree"
     Write a function, tree_min_value, that takes in the root of a binary tree that contains number values. 
@@ -276,7 +276,7 @@
     ```
 
 
-
+## 30: 
 
 
 
