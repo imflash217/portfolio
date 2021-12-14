@@ -20,8 +20,6 @@ tabnew
 tabnew
 tabnew
 tabnew
-tabnew
-tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -100,46 +98,6 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 187
-normal! 0
-tabnext
-edit docs/algorithms/027_tree_sum.md
-argglobal
-balt docs/algorithms/binary_tree.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-tabnext
-edit docs/algorithms/026_tree_includes.md
-argglobal
-balt docs/algorithms/binary_tree.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 10 - ((9 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 10
 normal! 0
 tabnext
 edit docs/stylesheets/extra.css
@@ -221,7 +179,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 41
 normal! 025|
-tabnext 5
+tabnext 4
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
@@ -248,8 +206,8 @@ badd +45 docs/algorithms/linked_list.md
 badd +10 docs/algorithms/023_add_lists.md
 badd +9 docs/algorithms/024_depth_first_values.md
 badd +9 docs/algorithms/025_breadth_first_values.md
-badd +0 docs/algorithms/026_tree_includes.md
-badd +0 docs/algorithms/027_tree_sum.md
+badd +10 docs/algorithms/026_tree_includes.md
+badd +10 docs/algorithms/027_tree_sum.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
