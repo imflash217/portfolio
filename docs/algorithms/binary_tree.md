@@ -344,4 +344,10 @@
 ## 31: Tree Path Finder
 
 ???+ danger "Problem"
-    
+    Write a function **`path_finder`** that takes in the *root* of a BT and a *target value*
+    The function should return an array representing the path to teh target value.
+    If the target value is not found, then return `None`.
+
+    ```python
+
+    ```
