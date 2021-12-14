@@ -318,5 +318,24 @@
 
 ???+ done "Solution"
     ```python
-    
+    import math
+
+    class Node:
+        def __init__(self, value):
+            self.val = value
+            self.left = None
+            self.right = None
+
+    def max_path_sum(root):
+        ## base case (None node)
+        if root is None:
+            return -math.inf
+        
+        ## base case (leaf node)
+        if root.left == None and root.right == None:
+            return root.val
+
+        left_sum = max_path_sum(root.left)
+        right_sum = max_path_sum(root.right)
+        return root.val + max(left_sum, right_sum)
     ```
