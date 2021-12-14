@@ -173,12 +173,6 @@ nav:
     - Arrays: algorithms/arrays.md
     - Linked List: algorithms/linked_list.md
     - Binary Tree: algorithms/binary_tree.md
-    - 023_add_lists: algorithms/023_add_lists.md
-    - 024_depth_first_values: algorithms/024_depth_first_values.md
-    - 025_breadth_first_values: algorithms/025_breadth_first_values.md
-    - 026_tree_includes: algorithms/026_tree_includes.md
-    - 027_tree_sum: algorithms/027_tree_sum.md
-    - 028_tree_min_value: algorithms/028_tree_min_value.md
 
   - ✏️ Gists:
     - About: gists/about.md

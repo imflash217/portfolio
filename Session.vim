@@ -21,7 +21,6 @@ tabnew
 tabnew
 tabnew
 tabnew
-tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -55,12 +54,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 177 - ((28 * winheight(0) + 19) / 39)
+let s:l = 176 - ((27 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 177
-normal! 044|
+keepjumps 176
+normal! 0
 tabnext
 edit docs/blogs/deep_learning/einops2.md
 argglobal
@@ -81,26 +80,6 @@ keepjumps exe s:l
 normal! zt
 keepjumps 851
 normal! 013|
-tabnext
-edit docs/algorithms/QA.md
-argglobal
-balt docs/blogs/deep_learning/einops2.md
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 35 - ((34 * winheight(0) + 19) / 39)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 35
-normal! 0
 tabnext
 edit docs/algorithms/binary_tree.md
 argglobal
@@ -135,12 +114,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 19) / 39)
+let s:l = 45 - ((20 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 0
+keepjumps 45
+normal! 08|
 tabnext
 edit docs/stylesheets/extra.css
 argglobal
@@ -221,7 +200,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 41
 normal! 025|
-tabnext 2
+tabnext 4
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
@@ -242,7 +221,7 @@ badd +1 docs/gists/lightning/api/forward.md
 badd +1 docs/gists/python_snippets.md
 badd +105 docs/blogs/physics/blog_01282021.md
 badd +34 docs/index.md
-badd +0 docs/algorithms/QA.md
+badd +35 docs/algorithms/QA.md
 badd +0 docs/algorithms/binary_tree.md
 badd +0 docs/algorithms/linked_list.md
 badd +10 docs/algorithms/023_add_lists.md
