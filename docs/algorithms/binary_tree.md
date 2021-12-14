@@ -380,3 +380,43 @@
     
     path_finder(a, "h") # -> ['a', 'c', 'f', 'h']
     ```
+
+???+ done "Solution"
+    ```python hl_lines="36"
+    class Node:
+        def __init__(self, val):
+            self.val = val
+            self.left = None
+            self.right = None
+
+    def _path_finder(root, target):
+        ## base case (None node)
+        if root is None:
+            return None
+
+        ## base case (node found)
+        if root.val == target:
+            return [root.val]
+
+        ## recuse over the left child
+        left_path = _path_finder(root.left, target)
+        if left_path is not None:
+            ## target found in the left child subtree
+            left_path.append(root.val)
+            return left_path
+        
+        ## recurse over the right child
+        right_path = _path_finder(root.right, target)
+        if right_path is not None:
+            ## target found in the left child subtree
+            right_path.append(root.val)
+            return right_path
+
+        return None     ## edge case
+
+    def path_finder(root, target):
+        path = _path_finder(root, target)
+        if path is None:
+            return None
+        return path[::-1]       ## return the path in reverse order (from root to target)
+    ```
