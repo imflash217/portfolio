@@ -276,7 +276,7 @@
     ```
 
 
-## 30: Root-to-Leaf path with MAX sum
+## 30: Root-to-Leaf path w/ MAX sum
 
 ???+ danger "Problem"
     Write a function **`max_path_sum()`** that takes in the root of a Binary Tree
