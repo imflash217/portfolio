@@ -2710,7 +2710,59 @@ root-to-leaf path in the tree.</p>
 <p>Write a function <strong><code>path_finder</code></strong> that takes in the <em>root</em> of a BT and a <em>target value</em>
 The function should return an array representing the path to teh target value.
 If the target value is not found, then return <code>None</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+<p>Assumption: Every node in teh tree contains unique value.</p>
+<p>Sample example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;h&quot;</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">a</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">c</span>
+<span class="n">b</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">d</span>
+<span class="n">b</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">e</span>
+<span class="n">c</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">f</span>
+<span class="n">e</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">g</span>
+<span class="n">f</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">h</span>
+
+<span class="c1">#      a</span>
+<span class="c1">#    /   \</span>
+<span class="c1">#   b     c</span>
+<span class="c1">#  / \     \</span>
+<span class="c1"># d   e     f</span>
+<span class="c1">#    /       \</span>
+<span class="c1">#   g         h</span>
+
+<span class="n">path_finder</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">)</span> <span class="c1"># -&gt; [&#39;a&#39;, &#39;c&#39;, &#39;f&#39;, &#39;h&#39;]</span>
 </code></pre></div>
 </td></tr></table>
 </details>
