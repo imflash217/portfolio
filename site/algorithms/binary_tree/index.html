@@ -2646,7 +2646,45 @@ root-to-leaf path in the tree.</p>
 </details>
 <details class="done" open="open">
 <summary>Solution</summary>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">max_path_sum</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="c1">## base case (None node)</span>
+    <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span>
+
+    <span class="c1">## base case (leaf node)</span>
+    <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span>
+
+    <span class="n">left_sum</span> <span class="o">=</span> <span class="n">max_path_sum</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+    <span class="n">right_sum</span> <span class="o">=</span> <span class="n">max_path_sum</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">left_sum</span><span class="p">,</span> <span class="n">right_sum</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 </details>
