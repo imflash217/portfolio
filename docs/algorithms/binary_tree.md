@@ -278,5 +278,43 @@
 
 ## 30: Root-to-Leaf path with MAX sum
 
+???+ danger "Problem"
+    Write a function **`max_path_sum()`** that takes in the root of a Binary Tree
+    that conatins number values. The functions should return the maximum sum of any 
+    root-to-leaf path in the tree.
+    
+    Assumption: The tree is non-empty
+    
+    An example of the scenario is shown below:
+    
+    ```python
+    a = Node(-1)
+    b = Node(-6)
+    c = Node(-5)
+    d = Node(-3)
+    e = Node(0)
+    f = Node(-13)
+    g = Node(-1)
+    h = Node(-2)
+    
+    a.left = b
+    a.right = c
+    b.left = d
+    b.right = e
+    c.right = f
+    e.left = g
+    f.right = h
+    
+    #        -1
+    #      /   \
+    #    -6    -5
+    #   /  \     \
+    # -3   0    -13
+    #     /       \
+    #    -1       -2
+    
+    max_path_sum(a) # -> -8
+    ```
+
 
 
