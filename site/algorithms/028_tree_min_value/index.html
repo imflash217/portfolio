@@ -2001,20 +2001,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#solution" class="md-nav__link">
-    Solution
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#discussion" class="md-nav__link">
-    Discussion
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2037,87 +2023,6 @@ hide:
 --- -->
 <!-- ######################################################################################################### -->
 <h2 id="problem">Problem</h2>
-<details class="danger" open="open">
-<summary>Minimum value in a binary tree</summary>
-<p>Write a function, tree_min_value, that takes in the root of a binary tree that contains number values. 
-The function should return the minimum value within the tree.</p>
-<p>You may assume that the input tree is non-empty.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">e</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">a</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">b</span>
-<span class="n">a</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">c</span>
-<span class="n">b</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">d</span>
-<span class="n">b</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">e</span>
-<span class="n">c</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">f</span>
-
-<span class="c1">#       3</span>
-<span class="c1">#    /    \</span>
-<span class="c1">#   11     4</span>
-<span class="c1">#  / \      \</span>
-<span class="c1">#  4   -2     1</span>
-<span class="n">tree_min_value</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># -&gt; -2</span>
-</code></pre></div>
-</td></tr></table>
-</details>
-<h2 id="solution">Solution</h2>
-<details class="done" open="open">
-<summary>Solution</summary>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># class Node:</span>
-<span class="c1">#   def __init__(self, val):</span>
-<span class="c1">#     self.val = val</span>
-<span class="c1">#     self.left = None</span>
-<span class="c1">#     self.right = None</span>
-
-<span class="k">def</span> <span class="nf">tree_min_value</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
-  <span class="kn">import</span> <span class="nn">math</span>
-
-  <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span> <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span>                <span class="c1">## base case for leaf nodes&#39;s children</span>
-  <span class="n">left_min</span> <span class="o">=</span> <span class="n">tree_min_value</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>        <span class="c1">## minimum value in left subtree</span>
-  <span class="n">right_min</span> <span class="o">=</span> <span class="n">tree_min_value</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>      <span class="c1">## minimum value in right subtree</span>
-  <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">,</span> <span class="n">left_min</span><span class="p">,</span> <span class="n">right_min</span><span class="p">)</span>   <span class="c1">## return minimum of root, lef, &amp; right subtrees</span>
-</code></pre></div>
-</td></tr></table>
-</details>
-<h2 id="discussion">Discussion</h2>
-<details class="quote" open="open">
-<summary>Discussion</summary>
-<p><code>...</code></p>
-</details>
                 
                   
                     
@@ -2126,7 +2031,7 @@ The function should return the minimum value within the tree.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-10-27
+      Last update: 2021-12-13
     
   </small>
 </div>
