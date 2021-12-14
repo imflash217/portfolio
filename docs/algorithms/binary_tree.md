@@ -317,7 +317,7 @@
     ```
 
 ???+ done "Solution"
-    ```python
+    ```python hl_lines="11-17 21"
     import math
 
     class Node:
@@ -326,6 +326,7 @@
             self.left = None
             self.right = None
 
+    ## RECURSIVE Solution
     def max_path_sum(root):
         ## base case (None node)
         if root is None:
@@ -339,3 +340,8 @@
         right_sum = max_path_sum(root.right)
         return root.val + max(left_sum, right_sum)
     ```
+
+## 31: Tree Path Finder
+
+???+ danger "Problem"
+    
