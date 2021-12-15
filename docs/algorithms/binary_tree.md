@@ -460,7 +460,7 @@
 
     ## RECURSIVE DFS
     ## time = O(n)
-    ## space = O(1)
+    ## space = O(n)
 
     def tree_value_count(root, target):
         ## base case (None node)
@@ -472,4 +472,60 @@
         if root.val == target:
             return 1 + left_count + right_count
         return left_count + right_count
+    ```
+
+## 33: Height of a BT
+
+???+ danger "Problem"
+    Write a function, how_high, that takes in the root of a binary tree. 
+    The function should return a number representing the height of the tree.
+
+    The height of a binary tree is defined as the maximal number of edges from the root node to any leaf node.
+
+    **If the tree is empty, return -1.**
+
+    ```python
+    a = Node('a')
+    b = Node('b')
+    c = Node('c')
+    d = Node('d')
+    e = Node('e')
+    f = Node('f')
+    g = Node('g')
+    
+    a.left = b
+    a.right = c
+    b.left = d
+    b.right = e
+    c.right = f
+    e.left = g
+    
+    #      a
+    #    /   \
+    #   b     c
+    #  / \     \
+    # d   e     f
+    #    /
+    #   g
+    
+    how_high(a) # -> 3
+    ```
+
+???+ done "Solution"
+    ```python
+    class Node:
+        def __init__(self, val):
+            self.val = val
+            self.left = None
+            self.right = None
+
+    ## RECURSIVE approach
+    def how_high(root):
+        ## base case (None node)
+        if root is None:
+            return -1       ## see definition of height of a BT above
+        
+        left_height = how_high(root.left)
+        right_height = how_high(root.right)
+        return 1 + max(left_height, right_height)
     ```
