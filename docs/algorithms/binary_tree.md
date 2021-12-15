@@ -477,7 +477,7 @@
 ## 33: Height of a BT
 
 ???+ danger "Problem"
-    Write a function, how_high, that takes in the root of a binary tree. 
+    Write a function, `how_high()`, that takes in the root of a binary tree. 
     The function should return a number representing the height of the tree.
 
     The height of a binary tree is defined as the maximal number of edges from the root node to any leaf node.
@@ -528,4 +528,41 @@
         left_height = how_high(root.left)
         right_height = how_high(root.right)
         return 1 + max(left_height, right_height)
+    ```
+
+## 34: Botton Right Value
+
+???+ danger "Problem"
+    Write a function, `bottom_right_value()`, that takes in the root of a binary tree. 
+    The function should return the right-most value in the bottom-most level of the tree.
+
+    You may assume that the input tree is non-empty.
+
+    ```python
+    a = Node(-1)
+    b = Node(-6)
+    c = Node(-5)
+    d = Node(-3)
+    e = Node(-4)
+    f = Node(-13)
+    g = Node(-2)
+    h = Node(6)
+    
+    a.left = b
+    a.right = c
+    b.left = d
+    b.right = e
+    c.right = f
+    e.left = g
+    e.right = h
+    
+    #        -1
+    #      /   \
+    #    -6    -5
+    #   /  \     \
+    # -3   -4   -13
+    #     / \       
+    #    -2  6
+    
+    bottom_right_value(a) # -> 6
     ```
