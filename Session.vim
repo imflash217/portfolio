@@ -54,12 +54,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 138 - ((11 * winheight(0) + 19) / 39)
+let s:l = 139 - ((10 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 138
-normal! 045|
+keepjumps 139
+normal! 07|
 tabnext
 edit docs/blogs/lightning/api.md
 argglobal
@@ -74,11 +74,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+let s:l = 24 - ((23 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 24
 normal! 0
 tabnext
 edit docs/blogs/deep_learning/einops2.md
@@ -200,7 +200,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 41
 normal! 025|
-tabnext 2
+tabnext 3
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
@@ -216,8 +216,8 @@ badd +111 ~/.vimrc
 badd +152 docs/notes/about.md
 badd +1 docs/notes/ECE542/ece542_hw1a.md
 badd +1 docs/gists/about.md
-badd +1 docs/gists/lightning/api/configure_optimizers.md
-badd +1 docs/gists/lightning/api/forward.md
+badd +2 docs/gists/lightning/api/configure_optimizers.md
+badd +6 docs/gists/lightning/api/forward.md
 badd +1 docs/gists/python_snippets.md
 badd +105 docs/blogs/physics/blog_01282021.md
 badd +34 docs/index.md
@@ -231,6 +231,9 @@ badd +10 docs/algorithms/026_tree_includes.md
 badd +10 docs/algorithms/027_tree_sum.md
 badd +8 docs/algorithms/028_tree_min_value.md
 badd +0 docs/blogs/lightning/api.md
+badd +6 docs/gists/lightning/api/freeze.md
+badd +0 docs/gists/lightning/api/log.md
+badd +0 docs/gists/lightning/api/training_step.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
