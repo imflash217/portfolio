@@ -53,12 +53,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 139 - ((10 * winheight(0) + 19) / 39)
+let s:l = 95 - ((10 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 139
-normal! 07|
+keepjumps 95
+normal! 011|
 tabnext
 edit docs/blogs/deep_learning/einops2.md
 argglobal
@@ -179,7 +179,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 41
 normal! 025|
-tabnext 2
+tabnext 4
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml

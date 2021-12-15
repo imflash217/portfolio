@@ -530,7 +530,7 @@
         return 1 + max(left_height, right_height)
     ```
 
-## 34: Botton Right Value
+## `log()` 34: Botton Right Value
 
 ???+ danger "Problem"
     Write a function, `bottom_right_value()`, that takes in the root of a binary tree. 
