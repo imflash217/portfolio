@@ -200,7 +200,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 41
 normal! 025|
-tabnext 3
+tabnext 2
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
