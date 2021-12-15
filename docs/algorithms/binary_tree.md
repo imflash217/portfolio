@@ -566,3 +566,21 @@
     
     bottom_right_value(a) # -> 6
     ```
+
+???+ done "Solution"
+    ```python hl_lines="1 4"
+    from collections import deque
+    
+    def bottom_right_value(root):
+        queue = deque([root])
+        current = None
+
+        while queue:
+            current = queue.popleft()
+            if current.left is not None:
+                queue.append(current.left)
+            if current.right is not None:
+                queue.append(current.right)
+
+        return current.val
+    ```
