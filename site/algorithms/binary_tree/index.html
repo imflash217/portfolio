@@ -1588,6 +1588,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#34-botton-right-value" class="md-nav__link">
+    34: Botton Right Value
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2151,6 +2158,13 @@
         <li class="md-nav__item">
   <a href="#33-height-of-a-bt" class="md-nav__link">
     33: Height of a BT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-botton-right-value" class="md-nav__link">
+    34: Botton Right Value
   </a>
   
 </li>
@@ -2964,7 +2978,7 @@ The function should return the number of times that the target occurs in the tre
 <h2 id="33-height-of-a-bt">33: Height of a BT</h2>
 <details class="danger" open="open">
 <summary>Problem</summary>
-<p>Write a function, how_high, that takes in the root of a binary tree. 
+<p>Write a function, <code>how_high()</code>, that takes in the root of a binary tree. 
 The function should return a number representing the height of the tree.</p>
 <p>The height of a binary tree is defined as the maximal number of edges from the root node to any leaf node.</p>
 <p><strong>If the tree is empty, return -1.</strong></p>
@@ -3049,6 +3063,66 @@ The function should return a number representing the height of the tree.</p>
     <span class="n">left_height</span> <span class="o">=</span> <span class="n">how_high</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
     <span class="n">right_height</span> <span class="o">=</span> <span class="n">how_high</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">left_height</span><span class="p">,</span> <span class="n">right_height</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="34-botton-right-value">34: Botton Right Value</h2>
+<details class="danger" open="open">
+<summary>Problem</summary>
+<p>Write a function, <code>bottom_right_value()</code>, that takes in the root of a binary tree. 
+The function should return the right-most value in the bottom-most level of the tree.</p>
+<p>You may assume that the input tree is non-empty.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="o">-</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">a</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">c</span>
+<span class="n">b</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">d</span>
+<span class="n">b</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">e</span>
+<span class="n">c</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">f</span>
+<span class="n">e</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">g</span>
+<span class="n">e</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">h</span>
+
+<span class="c1">#        -1</span>
+<span class="c1">#      /   \</span>
+<span class="c1">#    -6    -5</span>
+<span class="c1">#   /  \     \</span>
+<span class="c1"># -3   -4   -13</span>
+<span class="c1">#     / \       </span>
+<span class="c1">#    -2  6</span>
+
+<span class="n">bottom_right_value</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># -&gt; 6</span>
 </code></pre></div>
 </td></tr></table>
 </details>
