@@ -596,6 +596,8 @@ but the relative order among paths in the outer list does not matter.
 
 You may assume that the input tree is non-empty.
 
+An example use case is shown below:
+
 ```python
 a = Node('a')
 b = Node('b')
