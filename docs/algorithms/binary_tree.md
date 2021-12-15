@@ -634,4 +634,7 @@ all_tree_paths(a) # ->
 ```
 
 ???+ done "Solution"
+    ```python
     
+
+    ```
