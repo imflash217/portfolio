@@ -141,6 +141,7 @@ nav:
       - Tutorial-3: blogs/lightning/tut_3.md
       - Tutorial-4: blogs/lightning/tut_4.md
       - Tutorial-5: blogs/lightning/tut_5.md
+
   - 👑 Python Gems:
     - 🥘 Cookbook:
       - 1. Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
