@@ -452,5 +452,24 @@
 
 ???+ done "Solution"
     ```python
+    class Node:
+        def __init__(self, val):
+            self.val = val
+            self.left = None
+            self.right = None
 
+    ## RECURSIVE DFS
+    ## time = O(n)
+    ## space = O(1)
+
+    def tree_value_count(root, target):
+        ## base case (None node)
+        if root is None:
+            return 0
+
+        left_count = tree_value_count(root.left, target)
+        right_count = tree_value_count(root.right, target)
+        if root.val == target:
+            return 1 + left_count + right_count
+        return left_count + right_count
     ```
