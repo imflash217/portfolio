@@ -20,6 +20,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -53,11 +54,31 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 176 - ((27 * winheight(0) + 19) / 39)
+let s:l = 138 - ((11 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 176
+keepjumps 138
+normal! 045|
+tabnext
+edit docs/blogs/lightning/api.md
+argglobal
+balt mkdocs.yml
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
 normal! 0
 tabnext
 edit docs/blogs/deep_learning/einops2.md
@@ -179,7 +200,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 41
 normal! 025|
-tabnext 2
+tabnext 3
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
@@ -209,6 +230,7 @@ badd +9 docs/algorithms/025_breadth_first_values.md
 badd +10 docs/algorithms/026_tree_includes.md
 badd +10 docs/algorithms/027_tree_sum.md
 badd +8 docs/algorithms/028_tree_min_value.md
+badd +0 docs/blogs/lightning/api.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
