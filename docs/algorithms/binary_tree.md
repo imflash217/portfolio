@@ -636,7 +636,7 @@ all_tree_paths(a) # ->
 ```
 
 ???+ done "Solution"
-    ```python
+    ```python hl_lines="15 19 21-23 31"
     # class Node:
     #   def __init__(self, val):
     #     self.val = val
@@ -667,7 +667,6 @@ all_tree_paths(a) # ->
     
     def all_tree_paths(root):
       all_paths = _all_tree_paths(root)
-      print("==>", all_paths)
       return [path[::-1] for path in all_paths]
 
     ```
