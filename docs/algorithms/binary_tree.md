@@ -637,6 +637,37 @@ all_tree_paths(a) # ->
 
 ???+ done "Solution"
     ```python
+    # class Node:
+    #   def __init__(self, val):
+    #     self.val = val
+    #     self.left = None
+    #     self.right = None
     
+    ## Recursive DFS
+    ## during DFS let the nodes return two lists which contains
+    ## the two possible paths (left & right)
+    ## branch it according to values it receives from each branch
+    
+    def _all_tree_paths(root):
+      ## base case (None node)
+      if root is None:
+        return []         ## return empty list as there its a null node
+      
+      left_paths = _all_tree_paths(root.left)
+      right_paths = _all_tree_paths(root.right)
+      paths = left_paths + right_paths
+      
+      if len(paths) == 0:
+        paths.append([root.val])
+        return paths
+      
+      for path in paths:
+        path.append(root.val)
+      return paths
+    
+    def all_tree_paths(root):
+      all_paths = _all_tree_paths(root)
+      print("==>", all_paths)
+      return [path[::-1] for path in all_paths]
 
     ```
