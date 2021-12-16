@@ -3127,7 +3127,8 @@ but the relative order among paths in the outer list does not matter.</p>
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
-<span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># class Node:</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># class Node:</span>
 <span class="c1">#   def __init__(self, val):</span>
 <span class="c1">#     self.val = val</span>
 <span class="c1">#     self.left = None</span>
@@ -3139,25 +3140,26 @@ but the relative order among paths in the outer list does not matter.</p>
 <span class="c1">## branch it according to values it receives from each branch</span>
 
 <span class="k">def</span> <span class="nf">_all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
-  <span class="c1">## base case (None node)</span>
-  <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="hll">    <span class="k">return</span> <span class="p">[]</span>         <span class="c1">## return empty list as there its a null node</span>
+    <span class="c1">## base case (None node)</span>
+    <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="hll">        <span class="k">return</span> <span class="p">[]</span>         <span class="c1">## return empty list as there its a null node</span>
 </span>
-  <span class="n">left_paths</span> <span class="o">=</span> <span class="n">_all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-  <span class="n">right_paths</span> <span class="o">=</span> <span class="n">_all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
-<span class="hll">  <span class="n">paths</span> <span class="o">=</span> <span class="n">left_paths</span> <span class="o">+</span> <span class="n">right_paths</span>
+    <span class="n">left_paths</span> <span class="o">=</span> <span class="n">_all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+    <span class="n">right_paths</span> <span class="o">=</span> <span class="n">_all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+<span class="hll">    <span class="n">paths</span> <span class="o">=</span> <span class="n">left_paths</span> <span class="o">+</span> <span class="n">right_paths</span>
 </span>
-<span class="hll">  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span class="hll">    <span class="n">paths</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">])</span>
-</span><span class="hll">    <span class="k">return</span> <span class="n">paths</span>
+<span class="hll">    <span class="c1">## base-case (leaf-node)</span>
+</span><span class="hll">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">paths</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">])</span>
+</span><span class="hll">        <span class="k">return</span> <span class="n">paths</span>
 </span>
-  <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
-    <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">paths</span>
+    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+        <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">paths</span>
 
 <span class="k">def</span> <span class="nf">all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
-  <span class="n">all_paths</span> <span class="o">=</span> <span class="n">_all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-<span class="hll">  <span class="k">return</span> <span class="p">[</span><span class="n">path</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">all_paths</span><span class="p">]</span>
+    <span class="n">all_paths</span> <span class="o">=</span> <span class="n">_all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="hll">    <span class="k">return</span> <span class="p">[</span><span class="n">path</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">all_paths</span><span class="p">]</span>
 </span></code></pre></div>
 </td></tr></table>
 </details>
