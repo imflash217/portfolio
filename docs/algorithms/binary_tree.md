@@ -636,7 +636,7 @@ all_tree_paths(a) # ->
 ```
 
 ???+ done "Solution"
-    ```python hl_lines="15 19 21-23 31"
+    ```python hl_lines="15 19 21-24 32"
     # class Node:
     #   def __init__(self, val):
     #     self.val = val
@@ -649,24 +649,25 @@ all_tree_paths(a) # ->
     ## branch it according to values it receives from each branch
     
     def _all_tree_paths(root):
-      ## base case (None node)
-      if root is None:
-        return []         ## return empty list as there its a null node
+        ## base case (None node)
+        if root is None:
+            return []         ## return empty list as there its a null node
       
-      left_paths = _all_tree_paths(root.left)
-      right_paths = _all_tree_paths(root.right)
-      paths = left_paths + right_paths
-      
-      if len(paths) == 0:
-        paths.append([root.val])
+        left_paths = _all_tree_paths(root.left)
+        right_paths = _all_tree_paths(root.right)
+        paths = left_paths + right_paths
+        
+        ## base-case (leaf-node)
+        if len(paths) == 0:
+            paths.append([root.val])
+            return paths
+
+        for path in paths:
+            path.append(root.val)
         return paths
-      
-      for path in paths:
-        path.append(root.val)
-      return paths
     
     def all_tree_paths(root):
-      all_paths = _all_tree_paths(root)
-      return [path[::-1] for path in all_paths]
+        all_paths = _all_tree_paths(root)
+        return [path[::-1] for path in all_paths]
 
     ```
