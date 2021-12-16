@@ -1618,6 +1618,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#36-tree-levels" class="md-nav__link">
+    36: Tree levels
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2025,6 +2032,13 @@
         <li class="md-nav__item">
   <a href="#35-all-tree-paths" class="md-nav__link">
     35: All tree paths
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-tree-levels" class="md-nav__link">
+    36: Tree levels
   </a>
   
 </li>
@@ -3162,6 +3176,82 @@ but the relative order among paths in the outer list does not matter.</p>
 <span class="hll">    <span class="k">return</span> <span class="p">[</span><span class="n">path</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">all_paths</span><span class="p">]</span>
 </span></code></pre></div>
 </td></tr></table>
+</details>
+<h2 id="36-tree-levels">36: Tree levels</h2>
+<p>Write a function, <strong><code>tree_levels()</code></strong>, that takes in the root of a binary tree. 
+The function should return a 2D list where each sublist represents a level of the tree.</p>
+<p>An example use-case is shown below:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">a</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">c</span>
+<span class="n">b</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">d</span>
+<span class="n">b</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">e</span>
+<span class="n">c</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">f</span>
+<span class="n">e</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">g</span>
+<span class="n">e</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">h</span>
+<span class="n">f</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">i</span>
+
+<span class="c1">#         a</span>
+<span class="c1">#      /    \</span>
+<span class="c1">#     b      c</span>
+<span class="c1">#   /  \      \</span>
+<span class="c1">#  d    e      f</span>
+<span class="c1">#      / \    /</span>
+<span class="c1">#     g  h   i</span>
+
+<span class="n">tree_levels</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># -&gt;</span>
+<span class="c1"># [</span>
+<span class="c1">#   [&#39;a&#39;],</span>
+<span class="c1">#   [&#39;b&#39;, &#39;c&#39;],</span>
+<span class="c1">#   [&#39;d&#39;, &#39;e&#39;, &#39;f&#39;],</span>
+<span class="c1">#   [&#39;g&#39;, &#39;h&#39;, &#39;i&#39;]</span>
+<span class="c1"># ]</span>
+</code></pre></div>
+</td></tr></table>
+<details class="done" open="open">
+<summary>Solution</summary>
 </details>
                 
                   
