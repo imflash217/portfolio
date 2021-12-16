@@ -3097,7 +3097,69 @@ but the relative order among paths in the outer list does not matter.</p>
 </td></tr></table>
 <details class="done" open="open">
 <summary>Solution</summary>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># class Node:</span>
+<span class="c1">#   def __init__(self, val):</span>
+<span class="c1">#     self.val = val</span>
+<span class="c1">#     self.left = None</span>
+<span class="c1">#     self.right = None</span>
+
+<span class="c1">## Recursive DFS</span>
+<span class="c1">## during DFS let the nodes return two lists which contains</span>
+<span class="c1">## the two possible paths (left &amp; right)</span>
+<span class="c1">## branch it according to values it receives from each branch</span>
+
+<span class="k">def</span> <span class="nf">_all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+  <span class="c1">## base case (None node)</span>
+  <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[]</span>         <span class="c1">## return empty list as there its a null node</span>
+
+  <span class="n">left_paths</span> <span class="o">=</span> <span class="n">_all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+  <span class="n">right_paths</span> <span class="o">=</span> <span class="n">_all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+  <span class="n">paths</span> <span class="o">=</span> <span class="n">left_paths</span> <span class="o">+</span> <span class="n">right_paths</span>
+
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">paths</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">paths</span>
+
+  <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+    <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">paths</span>
+
+<span class="k">def</span> <span class="nf">all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+  <span class="n">all_paths</span> <span class="o">=</span> <span class="n">_all_tree_paths</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;==&gt;&quot;</span><span class="p">,</span> <span class="n">all_paths</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">path</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">all_paths</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
 </details>
