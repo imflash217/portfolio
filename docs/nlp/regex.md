@@ -18,6 +18,11 @@ returns every line of the input document that matches the pattern in regex.
 **extended regex**.
 
 
+## Basic Patterns
+
+
+
+
 
 ## References:
 [^1]: "Speech & Language Processing" by Jurafsky et al.; 2021
