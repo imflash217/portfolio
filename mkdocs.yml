@@ -125,7 +125,7 @@ nav:
   #  - About: hobbies/about.md
 
   - ✍🏼 Blogs:
-    - blogs/about.md
+    - Notes: blogs/notes.md
     - Physics:
       - Electromagnetic Spectrum, properties of material medium & its effects: blogs/physics/blog_01282021.md
     - Probability Theory:
