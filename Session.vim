@@ -74,12 +74,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+let s:l = 11 - ((10 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 11
+normal! 045|
 tabnext
 edit docs/nlp/nlp_book.md
 argglobal
@@ -236,6 +236,7 @@ badd +1 docs/gists/lightning/api/log.md
 badd +1 docs/gists/lightning/api/training_step.md
 badd +0 docs/nlp/nlp_book.md
 badd +0 docs/nlp/regex.md
+badd +70 docs/nlp/CS224N/cs224n_1.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
