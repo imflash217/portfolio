@@ -54,12 +54,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 120 - ((12 * winheight(0) + 19) / 39)
+let s:l = 123 - ((7 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 120
-normal! 047|
+keepjumps 123
+normal! 037|
 tabnext
 edit docs/nlp/regex.md
 argglobal
@@ -200,7 +200,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 41
 normal! 025|
-tabnext 2
+tabnext 3
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
