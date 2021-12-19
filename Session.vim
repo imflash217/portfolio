@@ -53,7 +53,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 92 - ((7 * winheight(0) + 19) / 39)
+let s:l = 92 - ((7 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -73,7 +73,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 851 - ((0 * winheight(0) + 19) / 39)
+let s:l = 851 - ((0 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -93,12 +93,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 533 - ((9 * winheight(0) + 19) / 39)
+let s:l = 721 - ((39 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 533
-normal! 011|
+keepjumps 721
+normal! 04|
 tabnext
 edit docs/stylesheets/extra.css
 argglobal
@@ -113,7 +113,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 32 - ((14 * winheight(0) + 19) / 39)
+let s:l = 32 - ((14 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -179,16 +179,18 @@ keepjumps exe s:l
 normal! zt
 keepjumps 41
 normal! 025|
-tabnext 4
+tabnext 2
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
-badd +0 docs/blogs/deep_learning/einops2.md
+badd +1 docs/blogs/deep_learning/einops2.md
+badd +0 docs/algorithms/binary_tree.md
 badd +1 docs/stylesheets/extra.css
 badd +1 docs/blogs/about.md
 badd +1 docs/transformers/about.md
 badd +1 docs/awesome.md
 badd +1 docs/blogs/lightning/about.md
+badd +35 docs/algorithms/QA.md
 badd +24 docs/todo.md
 badd +1 docs/blogs/lightning/tut_1.md
 badd +111 ~/.vimrc
@@ -200,8 +202,6 @@ badd +6 docs/gists/lightning/api/forward.md
 badd +1 docs/gists/python_snippets.md
 badd +105 docs/blogs/physics/blog_01282021.md
 badd +34 docs/index.md
-badd +35 docs/algorithms/QA.md
-badd +0 docs/algorithms/binary_tree.md
 badd +45 docs/algorithms/linked_list.md
 badd +10 docs/algorithms/023_add_lists.md
 badd +9 docs/algorithms/024_depth_first_values.md
@@ -211,8 +211,8 @@ badd +10 docs/algorithms/027_tree_sum.md
 badd +8 docs/algorithms/028_tree_min_value.md
 badd +7 docs/blogs/lightning/api.md
 badd +6 docs/gists/lightning/api/freeze.md
-badd +0 docs/gists/lightning/api/log.md
-badd +0 docs/gists/lightning/api/training_step.md
+badd +1 docs/gists/lightning/api/log.md
+badd +1 docs/gists/lightning/api/training_step.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -223,6 +223,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost

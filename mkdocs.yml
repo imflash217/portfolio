@@ -94,6 +94,15 @@ site_name: Vinay Kumar / विनय कुमार
 nav:
   - 🏡 Home: index.md
   
+  #- 👨🏻‍💻 Work Experience:
+  #  - About: work/about.md
+  #  - iVMCL Lab, NC State: work/ivmcl.md
+  #  - ARoS Lab, NC State: work/aros.md
+  #  - Springboard Inc.: work/springboard.md
+  #  - Meeami Technologies: work/meeami.md
+  #  - Flash.AI: work/flashai.md
+  # - Cognizant: work/cognizant.md
+
   - 🧬 Research Papers:
     - About: publications/about.md
     - Interspeech 2014: publications/interspeech_2014.md
@@ -106,15 +115,8 @@ nav:
     - transformers/about.md
     - Vaswani et al.: transformers/vaswani.md
     - DETR: transformers/detr.md 
-
-  #- 👨🏻‍💻 Work Experience:
-  #  - About: work/about.md
-  #  - iVMCL Lab, NC State: work/ivmcl.md
-  #  - ARoS Lab, NC State: work/aros.md
-  #  - Springboard Inc.: work/springboard.md
-  #  - Meeami Technologies: work/meeami.md
-  #  - Flash.AI: work/flashai.md
-  # - Cognizant: work/cognizant.md
+  - NLP:
+    - Speech \& Language Processing: nlp/nlp_book.md
   
   #- 🧤Projects:
   #  - About: projects/about.md
@@ -179,16 +181,14 @@ nav:
   - ✏️ Gists:
     - About: gists/about.md
     - 🐍Python_Snippets: gists/python_snippets.md
-  
-  - 🌟 Awesome List: awesome.md
-
-  - 📚 Notes:
-    - About: notes/about.md
     - ECE 542:
       - Lecture 1: notes/ECE542/ece542_lecture1.md
       - Homeworks:
         - HW1a: notes/ECE542/ece542_hw1a.md
     - CS224N:
       - Lecture 1: notes/CS224N/cs224n_lecture1.md
+
+  - 🌟 Awesome List: awesome.md
+
   
 ##########################################################################
