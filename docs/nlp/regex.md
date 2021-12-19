@@ -9,6 +9,10 @@ text processing tools like the Unix's **`grep`**.
 
 They are particularly useful for searching in texts, when we have a **pattern** to search for
 and a **corpus** of texts to search through. 
+A regex search function will search through the corpus returning all teexts that match the pattern.
+The corpus can be a single document or a collection. 
+For example, the Unix cmd tool **`grep`** takes a regex and 
+returns every line of the input document that matches the pattern in regex.
 
 
 
