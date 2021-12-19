@@ -115,7 +115,9 @@ nav:
     - transformers/about.md
     - Vaswani et al.: transformers/vaswani.md
     - DETR: transformers/detr.md 
+
   - 🗣 NLP:
+    - Regular Expressions (RegEx): nlp/regex.md
     - Speech & Language Processing: nlp/nlp_book.md
   
   #- 🧤Projects:

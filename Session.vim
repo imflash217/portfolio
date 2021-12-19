@@ -20,6 +20,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -53,12 +54,32 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 132 - ((36 * winheight(0) + 19) / 39)
+let s:l = 120 - ((12 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 132
-normal! 013|
+keepjumps 120
+normal! 047|
+tabnext
+edit docs/nlp/regex.md
+argglobal
+balt mkdocs.yml
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext
 edit docs/nlp/nlp_book.md
 argglobal
@@ -179,7 +200,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 41
 normal! 025|
-tabnext 2
+tabnext 3
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
@@ -214,6 +235,7 @@ badd +6 docs/gists/lightning/api/freeze.md
 badd +1 docs/gists/lightning/api/log.md
 badd +1 docs/gists/lightning/api/training_step.md
 badd +0 docs/nlp/nlp_book.md
+badd +0 docs/nlp/regex.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
