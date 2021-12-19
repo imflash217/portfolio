@@ -119,6 +119,8 @@ nav:
   - 🗣 NLP:
     - Regular Expressions (RegEx): nlp/regex.md
     - Speech & Language Processing: nlp/nlp_book.md
+    - CS224N:
+      - Lecture 1: nlp/CS224N/cs224n_1.md
   
   #- 🧤Projects:
   #  - About: projects/about.md
@@ -187,8 +189,6 @@ nav:
       - Lecture 1: notes/ECE542/ece542_lecture1.md
       - Homeworks:
         - HW1a: notes/ECE542/ece542_hw1a.md
-    - CS224N:
-      - Lecture 1: notes/CS224N/cs224n_lecture1.md
 
   - 🌟 Awesome List: awesome.md
 
