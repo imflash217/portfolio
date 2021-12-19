@@ -116,7 +116,7 @@ nav:
     - Vaswani et al.: transformers/vaswani.md
     - DETR: transformers/detr.md 
   - 🗣 NLP:
-    - Speech \& Language Processing: nlp/nlp_book.md
+    - Speech & Language Processing: nlp/nlp_book.md
   
   #- 🧤Projects:
   #  - About: projects/about.md
