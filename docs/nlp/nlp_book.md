@@ -8,4 +8,10 @@ separating out or **tokenizing** words from running text  (which is called as **
 
 ### Tokenization
 
+### Lemmatization
 
+### Stemming
+
+### Sentence Segmentation
+
+## Edit Distance
