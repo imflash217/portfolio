@@ -14,7 +14,7 @@ The corpus can be a single document or a collection.
 For example, the Unix cmd tool **`grep`** takes a regex and 
 returns every line of the input document that matches the pattern in regex.
 
-:rotating_light: RegEx comes in many variants. Int his article we will be discussing
+:rotating_light: RegEx comes in many variants. In his article we will be discussing
 **extended regex**.
 
 
