@@ -105,8 +105,8 @@ nav:
 
   - 🧬 Research Papers:
     - About: publications/about.md
-    - Interspeech 2014: publications/interspeech_2014.md
-    - Odyssey 2014: publications/odyssey_2014.md
+    - Interspeech 2014: publications/about.md #interspeech_2014.md
+    - Odyssey 2014: publications/about.md #odyssey_2014.md
 
   #- 📚 Paper Reviews:
   #  - About: paper_reviews/about.md
