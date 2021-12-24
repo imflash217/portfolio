@@ -108,8 +108,8 @@ nav:
     - Interspeech 2014: publications/interspeech_2014.md
     - Odyssey 2014: publications/odyssey_2014.md
 
-  - 📚 Paper Reviews:
-    - About: paper_reviews/about.md
+  #- 📚 Paper Reviews:
+  #  - About: paper_reviews/about.md
 
   - 🤖 Transformers:
     - transformers/about.md
