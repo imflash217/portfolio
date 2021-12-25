@@ -3,6 +3,13 @@
 In this tutorial we will talk about a widely useful **Linked List** data structure.
 Previously, we had tried to implement _dynamic lists_ using **`arrays`**, 
 but we encountered several issues with its inefficiency in terms of memory usage.
+To understand LInked List properly, we first need to understand theses limitations encountered 
+while trying to implement _dynamic lists_ using `arrays`.
+
+So, let's start with a story, imagine a computer's memory (RAM) and imagine that to be represented 
+as separate partitions where each partition represents a **`byte`** of the memory 
+and each **`byte`** has its memory-address as well. Let's focus on one region of this RAM's memory address
+starting with address `200`.
 
 
 
