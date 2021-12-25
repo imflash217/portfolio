@@ -1,3 +1,33 @@
+# Linked List Data Structure
+
+In this tutorial we will talk about a widely useful **Linked List** data structure.
+Previously, we had tried to implement _dynamic lists_ using **`arrays`**, 
+but we encountered several issues with its inefficiency in terms of memory usage.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 23: Adding lists
 
 ???+ danger "Add lists"
