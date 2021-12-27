@@ -11,4 +11,5 @@ keeping only the **word-frequency** in the given document.
 In this **bag-of-words** representation, all we care about is how many times a given word appears in this document.
 
 > **Naïve Bayes** is a _probabilistic classifier_, meaning that for a given document **`d`**,
-out of all classes $c\in C$ the classifier returns the class $\hat{c}$
+out of all classes $c\in C$ the classifier returns the class $\hat{c}$ which has the maximum
+posterior probability given the document **`d`**.
