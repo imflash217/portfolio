@@ -99,6 +99,7 @@ tabnext 3
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +0 mkdocs.yml
+badd +1 docs/nlp/naive_bayes.md
 badd +45 docs/algorithms/linked_list.md
 badd +1 docs/blogs/lightning/about.md
 badd +23 docs/nlp/regex.md
@@ -132,7 +133,6 @@ badd +6 docs/gists/lightning/api/freeze.md
 badd +1 docs/gists/lightning/api/log.md
 badd +1 docs/gists/lightning/api/training_step.md
 badd +70 docs/nlp/CS224N/cs224n_1.md
-badd +0 docs/nlp/naive_bayes.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
