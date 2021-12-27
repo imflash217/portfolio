@@ -118,6 +118,7 @@ nav:
 
   - 🗣 NLP:
     - Regular Expressions (RegEx): nlp/regex.md
+    - Naïve Bayes Classifiers: nlp/naive_bayes.md
     - Speech & Language Processing: nlp/nlp_book.md
     - CS224N:
       - Lecture 1: nlp/CS224N/cs224n_1.md

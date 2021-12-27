@@ -15,6 +15,7 @@ $argadd docs/python/cookbook_dabeaz/ch08.md
 set stal=2
 tabnew
 tabnew
+tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -28,7 +29,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 233 - ((37 * winheight(0) + 19) / 38)
+let s:l = 233 - ((38 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -48,12 +49,32 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 161 - ((9 * winheight(0) + 20) / 40)
+let s:l = 121 - ((15 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 161
-normal! 043|
+keepjumps 121
+normal! 049|
+tabnext
+edit docs/nlp/naive_bayes.md
+argglobal
+balt mkdocs.yml
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext
 edit docs/algorithms/linked_list.md
 argglobal
@@ -68,16 +89,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 20) / 40)
+let s:l = 12 - ((11 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 014|
+keepjumps 12
+normal! 028|
 tabnext 3
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +0 mkdocs.yml
+badd +45 docs/algorithms/linked_list.md
+badd +1 docs/blogs/lightning/about.md
 badd +23 docs/nlp/regex.md
 badd +17 docs/nlp/nlp_book.md
 badd +851 docs/blogs/deep_learning/einops2.md
@@ -85,9 +108,8 @@ badd +721 docs/algorithms/binary_tree.md
 badd +32 docs/stylesheets/extra.css
 badd +8 docs/transformers/about.md
 badd +41 docs/awesome.md
-badd +1 docs/blogs/lightning/about.md
-badd +0 docs/algorithms/QA.md
-badd +0 docs/blogs/about.md
+badd +1 docs/algorithms/QA.md
+badd +1 docs/blogs/about.md
 badd +24 docs/todo.md
 badd +1 docs/blogs/lightning/tut_1.md
 badd +111 ~/.vimrc
@@ -99,7 +121,6 @@ badd +6 docs/gists/lightning/api/forward.md
 badd +1 docs/gists/python_snippets.md
 badd +105 docs/blogs/physics/blog_01282021.md
 badd +34 docs/index.md
-badd +45 docs/algorithms/linked_list.md
 badd +10 docs/algorithms/023_add_lists.md
 badd +9 docs/algorithms/024_depth_first_values.md
 badd +9 docs/algorithms/025_breadth_first_values.md
@@ -111,6 +132,7 @@ badd +6 docs/gists/lightning/api/freeze.md
 badd +1 docs/gists/lightning/api/log.md
 badd +1 docs/gists/lightning/api/training_step.md
 badd +70 docs/nlp/CS224N/cs224n_1.md
+badd +0 docs/nlp/naive_bayes.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
