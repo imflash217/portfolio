@@ -1831,7 +1831,13 @@ so called because it is a <em>Bayesian Classifier that makes a simplifying (naï
 assumption about the interaaction b/w features</em>.</p>
 <p>Let's understand the intuition of this calssifier in the context of <strong>text classification</strong>.
 Given a text document we first respresnt the text document as a <strong>bag-of-words</strong> 
-(i.e. an unordered set of words in the document with their position information removed).</p>
+(i.e. an unordered set of words in the document with their position information removed)
+keeping only the <strong>word-frequency</strong> in the given document.
+In this <strong>bag-of-words</strong> representation, all we care about is how many times a given word appears in this document.</p>
+<blockquote>
+<p><strong>Naïve Bayes</strong> is a <em>probabilistic classifier</em>, meaning that for a given document <strong><code>d</code></strong>,
+out of all classes <span class="arithmatex">\(c\in C\)</span> the classifier returns the class <span class="arithmatex">\(\hat{c}\)</span></p>
+</blockquote>
                 
                   
                     
