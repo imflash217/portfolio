@@ -16,6 +16,7 @@ set stal=2
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit docs/python/cookbook_dabeaz/ch08.md
 argglobal
@@ -29,7 +30,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 233 - ((38 * winheight(0) + 19) / 39)
+let s:l = 233 - ((39 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -49,12 +50,32 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 121 - ((15 * winheight(0) + 19) / 39)
+let s:l = 185 - ((35 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 121
-normal! 049|
+keepjumps 185
+normal! 040|
+tabnext
+edit docs/algorithms/dict.md
+argglobal
+balt mkdocs.yml
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 20) / 40)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext
 edit docs/nlp/naive_bayes.md
 argglobal
@@ -69,12 +90,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+let s:l = 15 - ((14 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 15
+normal! 049|
 tabnext
 edit docs/algorithms/linked_list.md
 argglobal
@@ -89,7 +110,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 12 - ((11 * winheight(0) + 19) / 39)
+let s:l = 12 - ((11 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -98,8 +119,8 @@ normal! 028|
 tabnext 3
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
-badd +0 mkdocs.yml
-badd +1 docs/nlp/naive_bayes.md
+badd +1 mkdocs.yml
+badd +0 docs/nlp/naive_bayes.md
 badd +45 docs/algorithms/linked_list.md
 badd +1 docs/blogs/lightning/about.md
 badd +23 docs/nlp/regex.md
@@ -133,6 +154,7 @@ badd +6 docs/gists/lightning/api/freeze.md
 badd +1 docs/gists/lightning/api/log.md
 badd +1 docs/gists/lightning/api/training_step.md
 badd +70 docs/nlp/CS224N/cs224n_1.md
+badd +0 docs/algorithms/dict.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

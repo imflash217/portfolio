@@ -182,6 +182,7 @@ nav:
     - Arrays: algorithms/arrays.md
     - Linked List: algorithms/linked_list.md
     - Binary Tree: algorithms/binary_tree.md
+    - Dictionary ADT: algorithms/dict.md
 
   - ✏️ Gists:
     - About: gists/about.md
