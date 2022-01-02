@@ -1656,6 +1656,19 @@
     Collisions
   </a>
   
+    <nav class="md-nav" aria-label="Collisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-probing" class="md-nav__link">
+    Linear Probing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1915,6 +1928,19 @@
     Collisions
   </a>
   
+    <nav class="md-nav" aria-label="Collisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-probing" class="md-nav__link">
+    Linear Probing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1961,6 +1987,32 @@
 </ol>
 </li>
 </ol>
+<h3 id="linear-probing">Linear Probing</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">linear_probing_insert</span><span class="p">(</span><span class="n">hash_table</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">hash_table</span><span class="o">.</span><span class="n">isfull</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">TableFullError</span>
+
+    <span class="n">slots</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">hash_table</span><span class="p">)</span>                 <span class="c1">## the total number of slots</span>
+    <span class="n">probe</span> <span class="o">=</span> <span class="n">hash_fn</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>                    <span class="c1">## the hash of the &#39;key&#39;</span>
+
+    <span class="k">while</span> <span class="n">hash_table</span><span class="p">[</span><span class="n">probe</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">probe</span> <span class="o">+=</span> <span class="mi">1</span>                          <span class="c1">## go to the next index if the current index is occupied</span>
+        <span class="n">probe</span> <span class="o">=</span> <span class="n">probe</span> <span class="o">%</span> <span class="n">slots</span>               <span class="c1">## wrap-arround to support in-range indexing</span>
+    <span class="n">hash_table</span><span class="p">[</span><span class="n">probe</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>                 <span class="c1">## INSERT the key in the hash-table</span>
+    <span class="k">return</span> <span class="n">hash_table</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                     
@@ -1969,7 +2021,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2022-01-01
+      Last update: 2022-01-02
     
   </small>
 </div>
