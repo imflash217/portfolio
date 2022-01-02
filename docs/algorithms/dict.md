@@ -13,3 +13,13 @@ _where **m** is the table size_
 - [ ] Hash function **`hash()`** is _say_, the last two digits of the _student-id_.
 - [ ] So, now, `2022CS10110` goes to location `10` in the hash-table.
 - [ ] 
+
+## Multiply-Add-Divide (MAD)
+
+This technique is used to create pseudo-unique **hash values**.
+
+> :rotating_light: It is also used in **pseudo random number generators**
+
+The method is as follows:
+
+$$ \text{hash}(k) = |a\times k + b|\ \text{mod}\ N$$
