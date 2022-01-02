@@ -23,3 +23,13 @@ This technique is used to create pseudo-unique **hash values**.
 The method is as follows:
 
 $$ \text{hash}(k) = |a\cdot k + b|\ \text{mod}\ N$$
+
+
+## Collisions
+
+Methods to resolve **collisions**
+
+1. Chaining
+2. Open Addressing:
+    1. Linear Probing
+    2. Double Hashing
