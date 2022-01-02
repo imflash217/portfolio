@@ -33,3 +33,20 @@ Methods to resolve **collisions**
 2. Open Addressing:
     1. Linear Probing
     2. Double Hashing
+
+### Linear Probing
+
+```python
+def linear_probing_insert(hash_table, key):
+    if hash_table.isfull():
+        raise TableFullError
+    
+    slots = len(hash_table)                 ## the total number of slots
+    probe = hash_fn(key)                    ## the hash of the 'key'
+    
+    while hash_table[probe] == None:
+        probe += 1                          ## go to the next index if the current index is occupied
+        probe = probe % slots               ## wrap-arround to support in-range indexing
+    hash_table[probe] = key                 ## INSERT the key in the hash-table
+    return hash_table
+```
