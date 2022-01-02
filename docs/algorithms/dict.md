@@ -22,4 +22,4 @@ This technique is used to create pseudo-unique **hash values**.
 
 The method is as follows:
 
-$$ \text{hash}(k) = |a\times k + b|\ \text{mod}\ N$$
+$$ \text{hash}(k) = |a\cdot k + b|\ \text{mod}\ N$$
