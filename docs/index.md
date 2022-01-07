@@ -48,6 +48,12 @@ hide:
 
 <div class="photo">
 <figure>
-    <img src="assets/VinayK_resume_2.png"/>
+    <img src="assets/VinayK_resume_2022.jpeg"/>
+</figure>
+</div>
+
+<div class="photo">
+<figure>
+    <img src="assets/VinayK_resume_2022_2.jpeg"/>
 </figure>
 </div>
