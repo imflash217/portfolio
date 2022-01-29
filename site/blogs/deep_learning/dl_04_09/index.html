@@ -1930,6 +1930,19 @@
                 
                 <h2 id="environment-distribution-shift">Environment &amp; Distribution Shift</h2>
 <h3 id="concept-shift-correction">Concept Shift Correction</h3>
+<p><strong>Concept Shift</strong> is much harder to fix in a principled manner.
+For instance, in a situation where the problem suddenly changes from
+classifying <strong><code>cats</code> v/s <code>dogs</code></strong> to classying <strong><code>white</code> v/s <code>black</code> animals</strong>;
+it will be <em>unreasonable</em> to assume that we can do much better by collecting new labels and training
+from scratch.</p>
+<p>Fortunately, in practice such concept-shifts are very rare, but instead it is usually observed that the 
+<em>task keeps on changing gradually</em>. For example:</p>
+<ol>
+<li>Traffic Camera lenses degrade over time due to wear-&amp;-tear and hence the quality of images degrade too.</li>
+<li>News content changes gradually; i.e. new stories appear while the news still remain almost same.</li>
+<li>In computational advertising, new products gets launched and hence popularity of products changes 
+and the CTR-Predictor needs to change as well.</li>
+</ol>
                 
                   
                     
