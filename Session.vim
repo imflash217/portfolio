@@ -91,12 +91,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 59 - ((38 * winheight(0) + 19) / 39)
+let s:l = 34 - ((13 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 59
-normal! 06|
+keepjumps 34
+normal! 033|
 tabnext
 edit docs/nlp/naive_bayes.md
 argglobal
@@ -137,7 +137,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 12
 normal! 028|
-tabnext 4
+tabnext 2
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
