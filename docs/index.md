@@ -31,7 +31,7 @@ hide:
 <!-- ------------------------------------------------------------------------------------ -->
 
 <div class="photo">
-  <img src="assets/vinay.jpeg" alt="avatar" style="width:40%">
+  <img src="assets/vinay_2022.png" alt="avatar" style="width:40%">
   <div class="container">
     <h2><b>Vinay Kumar /  विनय कुमार </b></h2> 
     <h3>Machine Learning Engineer</h3>

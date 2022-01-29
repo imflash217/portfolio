@@ -31,7 +31,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 233 - ((39 * winheight(0) + 20) / 40)
+let s:l = 233 - ((38 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -51,11 +51,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 185 - ((35 * winheight(0) + 20) / 40)
+let s:l = 139 - ((24 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 185
+keepjumps 139
 normal! 040|
 tabnext
 edit docs/algorithms/dict.md
@@ -111,7 +111,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 15 - ((14 * winheight(0) + 20) / 40)
+let s:l = 15 - ((14 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -131,7 +131,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 12 - ((11 * winheight(0) + 20) / 40)
+let s:l = 12 - ((11 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -141,7 +141,9 @@ tabnext 4
 set stal=1
 badd +1 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
-badd +0 docs/nlp/naive_bayes.md
+badd +1 docs/algorithms/dict.md
+badd +0 docs/index.md
+badd +1 docs/nlp/naive_bayes.md
 badd +45 docs/algorithms/linked_list.md
 badd +1 docs/blogs/lightning/about.md
 badd +23 docs/nlp/regex.md
@@ -163,7 +165,6 @@ badd +2 docs/gists/lightning/api/configure_optimizers.md
 badd +6 docs/gists/lightning/api/forward.md
 badd +1 docs/gists/python_snippets.md
 badd +105 docs/blogs/physics/blog_01282021.md
-badd +34 docs/index.md
 badd +10 docs/algorithms/023_add_lists.md
 badd +9 docs/algorithms/024_depth_first_values.md
 badd +9 docs/algorithms/025_breadth_first_values.md
@@ -175,7 +176,6 @@ badd +6 docs/gists/lightning/api/freeze.md
 badd +1 docs/gists/lightning/api/log.md
 badd +1 docs/gists/lightning/api/training_step.md
 badd +70 docs/nlp/CS224N/cs224n_1.md
-badd +0 docs/algorithms/dict.md
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
