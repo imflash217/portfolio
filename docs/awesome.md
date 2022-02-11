@@ -1,4 +1,6 @@
 
+<iframe src="assets/report_GridTr.html" width="100%" height="500px"></iframe>
+
 [^1]: 🟡 PositionalEncoding: 
             https://e2eml.school/transformers.html
 [^2]: 🟡 PositionalEncoding: 

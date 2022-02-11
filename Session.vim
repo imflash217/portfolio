@@ -19,6 +19,7 @@ tabnew
 tabnew
 tabnew
 tabnew
+tabnew
 tabrewind
 edit mkdocs.yml
 argglobal
@@ -33,11 +34,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 139 - ((24 * winheight(0) + 19) / 39)
+let s:l = 199 - ((38 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 139
+keepjumps 199
 normal! 073|
 tabnext
 edit docs/notes/about.md
@@ -57,7 +58,27 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 31
-normal! 041|
+normal! 0
+tabnext
+edit docs/awesome.md
+argglobal
+balt docs/notes/about.md
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext
 edit docs/blogs/deep_learning/dl_04_09.md
 argglobal
@@ -158,7 +179,7 @@ keepjumps exe s:l
 normal! zt
 keepjumps 12
 normal! 028|
-tabnext 1
+tabnext 3
 set stal=1
 badd +0 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
