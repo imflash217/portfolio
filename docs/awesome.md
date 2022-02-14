@@ -1,7 +1,7 @@
 
 
-<embed type="../assets/report_GridTr.html"
-       src="/media/cc0-videos/flower.mp4"
+<embed type="text/html"
+       src="assets/report_GridTr.html"
        width="250"
        height="200">
 
