@@ -34,7 +34,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 192 - ((31 * winheight(0) + 19) / 39)
+let s:l = 192 - ((20 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -43,6 +43,7 @@ normal! 020|
 tabnext
 edit docs/notes/about.md
 argglobal
+balt mkdocs.yml
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -53,7 +54,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 31 - ((30 * winheight(0) + 19) / 39)
+let s:l = 31 - ((30 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -73,12 +74,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 19) / 39)
+let s:l = 1 - ((0 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 013|
+keepjumps 1
+normal! 0
 tabnext
 edit docs/blogs/deep_learning/dl_04_09.md
 argglobal
@@ -93,7 +94,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 19) / 39)
+let s:l = 1 - ((0 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -113,7 +114,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 52 - ((38 * winheight(0) + 19) / 39)
+let s:l = 52 - ((24 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -133,7 +134,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 34 - ((13 * winheight(0) + 19) / 39)
+let s:l = 34 - ((8 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -153,7 +154,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 15 - ((14 * winheight(0) + 19) / 39)
+let s:l = 15 - ((9 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -173,17 +174,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 12 - ((11 * winheight(0) + 19) / 39)
+let s:l = 12 - ((7 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 12
 normal! 028|
-tabnext 3
+tabnext 2
 set stal=1
-badd +0 docs/python/cookbook_dabeaz/ch08.md
 badd +1 mkdocs.yml
-badd +0 docs/blogs/deep_learning/dl_04_09.md
+badd +1 docs/python/cookbook_dabeaz/ch08.md
+badd +152 docs/notes/about.md
+badd +0 docs/awesome.md
+badd +1 docs/blogs/deep_learning/dl_04_09.md
 badd +1 docs/algorithms/dict.md
 badd +1 docs/index.md
 badd +1 docs/nlp/naive_bayes.md
@@ -195,13 +198,11 @@ badd +851 docs/blogs/deep_learning/einops2.md
 badd +721 docs/algorithms/binary_tree.md
 badd +32 docs/stylesheets/extra.css
 badd +8 docs/transformers/about.md
-badd +41 docs/awesome.md
 badd +1 docs/algorithms/QA.md
 badd +1 docs/blogs/about.md
 badd +24 docs/todo.md
 badd +1 docs/blogs/lightning/tut_1.md
 badd +111 ~/.vimrc
-badd +152 docs/notes/about.md
 badd +1 docs/notes/ECE542/ece542_hw1a.md
 badd +1 docs/gists/about.md
 badd +2 docs/gists/lightning/api/configure_optimizers.md
@@ -229,6 +230,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost

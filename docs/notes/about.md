@@ -28,7 +28,11 @@
 </div>
 
 <iframe src="../vim.pdf" width="100%" height="500px"></iframe>
-<iframe src="../assets/report_GridTr.html" width="100%" height="500px"></iframe>
+
+<embed type="../assets/report_GridTr.html"
+       src="/media/cc0-videos/flower.mp4"
+       width="250"
+       height="200">
 
 <iframe src="https://arxiv.org/pdf/2111.06377.pdf" width="100%" height="500px"></iframe>
 
