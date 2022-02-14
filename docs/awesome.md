@@ -1,5 +1,9 @@
 
-<iframe src="report_GridTr.html" width="100%" height="500px"></iframe>
+
+<embed type="../assets/report_GridTr.html"
+       src="/media/cc0-videos/flower.mp4"
+       width="250"
+       height="200">
 
 [^1]: 🟡 PositionalEncoding: 
             https://e2eml.school/transformers.html
