@@ -30,9 +30,11 @@ hide:
 
 <!-- ------------------------------------------------------------------------------------ -->
 
-<figure>
-    <img src="assets/job_ads.png" width="800" />
-</figure>
+<div class="photo">
+  <figure>
+    <img src="assets/job_ads.png" />
+  </figure>
+</div>
 
 <div class="photo">
   <img src="assets/vinay_2019.png" alt="avatar" style="width:40%">
