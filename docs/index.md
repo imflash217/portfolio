@@ -30,6 +30,11 @@ hide:
 
 <!-- ------------------------------------------------------------------------------------ -->
 
+<figure>
+    <img src="https://4.bp.blogspot.com/-tgA9nKQJJ2Q/Vtra_9UwzDI/AAAAAAAANhQ/VmWebFhwBxw/s1600/underconstruction.jpg
+" width="800" />
+</figure>
+
 <div class="photo">
   <img src="assets/vinay_2022.png" alt="avatar" style="width:40%">
   <div class="container">

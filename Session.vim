@@ -34,14 +34,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 192 - ((32 * winheight(0) + 20) / 40)
+let s:l = 199 - ((39 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 192
+keepjumps 199
 normal! 020|
 tabnext
-edit docs/notes/about.md
+edit docs/index.md
 argglobal
 balt mkdocs.yml
 setlocal fdm=manual
@@ -54,16 +54,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 32 - ((10 * winheight(0) + 20) / 40)
+let s:l = 32 - ((14 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 32
 normal! 0
 tabnext
-edit docs/awesome.md
+edit docs/notes/about.md
 argglobal
-balt docs/notes/about.md
+balt docs/index.md
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -94,7 +94,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 12) / 25)
+let s:l = 1 - ((0 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -180,11 +180,11 @@ keepjumps exe s:l
 normal! zt
 keepjumps 12
 normal! 028|
-tabnext 1
+tabnext 2
 set stal=1
 badd +1 mkdocs.yml
 badd +1 docs/python/cookbook_dabeaz/ch08.md
-badd +152 docs/notes/about.md
+badd +32 docs/notes/about.md
 badd +0 docs/awesome.md
 badd +1 docs/blogs/deep_learning/dl_04_09.md
 badd +1 docs/algorithms/dict.md
