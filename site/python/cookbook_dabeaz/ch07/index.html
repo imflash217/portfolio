@@ -1,0 +1,2839 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.3">
+    
+    
+      
+        <title>7. Functions - Vinay Kumar / विनय कुमार</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e8d9bf0c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CCascadia+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Cascadia Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#71-function-with-any-number-of-arguments-args-kwargs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Vinay Kumar / विनय कुमार" class="md-header__button md-logo" aria-label="Vinay Kumar / विनय कुमार" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vinay Kumar / विनय कुमार
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. Functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      🏡 Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../publications/about/" class="md-tabs__link">
+        🧬 Research Papers
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../transformers/about/" class="md-tabs__link">
+        🤖 Transformers
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../nlp/regex/" class="md-tabs__link">
+        🗣 NLP
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../blogs/notes/" class="md-tabs__link">
+        ✍🏼 Blogs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch01/" class="md-tabs__link md-tabs__link--active">
+        👑 Python Gems
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../algorithms/QA/" class="md-tabs__link">
+        📟 Algorithms
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../gists/about/" class="md-tabs__link">
+        ✏️ Gists
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../awesome/" class="md-tabs__link">
+      🌟 Awesome List
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Vinay Kumar / विनय कुमार" class="md-nav__button md-logo" aria-label="Vinay Kumar / विनय कुमार" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Vinay Kumar / विनय कुमार
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        🏡 Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          🧬 Research Papers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🧬 Research Papers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          🧬 Research Papers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../publications/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../publications/about/" class="md-nav__link">
+        Interspeech 2014
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../publications/about/" class="md-nav__link">
+        Odyssey 2014
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          🤖 Transformers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🤖 Transformers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          🤖 Transformers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../transformers/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../transformers/vaswani/" class="md-nav__link">
+        Vaswani et al.
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../transformers/detr/" class="md-nav__link">
+        DETR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../transformers/Untitled/" class="md-nav__link">
+        Notebooks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          🗣 NLP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🗣 NLP" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          🗣 NLP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nlp/regex/" class="md-nav__link">
+        Regular Expressions (RegEx)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nlp/naive_bayes/" class="md-nav__link">
+        Naïve Bayes Classifiers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nlp/nlp_book/" class="md-nav__link">
+        Speech & Language Processing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" data-md-state="indeterminate" type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          CS224N
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CS224N" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          CS224N
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nlp/CS224N/cs224n_1/" class="md-nav__link">
+        Lecture 1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          ✍🏼 Blogs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="✍🏼 Blogs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          ✍🏼 Blogs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/notes/" class="md-nav__link">
+        Notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" data-md-state="indeterminate" type="checkbox" id="__nav_5_2" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Physics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Physics" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Physics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/physics/blog_01282021/" class="md-nav__link">
+        Electromagnetic Spectrum, properties of material medium & its effects
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" data-md-state="indeterminate" type="checkbox" id="__nav_5_3" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          Probability Theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Probability Theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Probability Theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/prob/intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" data-md-state="indeterminate" type="checkbox" id="__nav_5_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4">
+          Deep Learning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Deep Learning" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Deep Learning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/deep_learning/dl_04_09/" class="md-nav__link">
+        Environment & Distribution Shift
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/deep_learning/blog_tf_v1/" class="md-nav__link">
+        Tensorflow Tutorial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/deep_learning/blog_dataloaders/" class="md-nav__link">
+        PyTorch Dataloaders
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" data-md-state="indeterminate" type="checkbox" id="__nav_5_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          EINSUM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="EINSUM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          EINSUM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/deep_learning/einops/" class="md-nav__link">
+        einops tutorial
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/deep_learning/einops2/" class="md-nav__link">
+        einops examples
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" data-md-state="indeterminate" type="checkbox" id="__nav_5_6" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_6">
+          PyTorch Lightning⚡️
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PyTorch Lightning⚡️" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          PyTorch Lightning⚡️
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/lightning/api/" class="md-nav__link">
+        API reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/lightning/tut_1/" class="md-nav__link">
+        Tutorial-1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/lightning/tut_2/" class="md-nav__link">
+        Tutorial-2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/lightning/tut_3/" class="md-nav__link">
+        Tutorial-3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/lightning/tut_4/" class="md-nav__link">
+        Tutorial-4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blogs/lightning/tut_5/" class="md-nav__link">
+        Tutorial-5
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          👑 Python Gems
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="👑 Python Gems" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          👑 Python Gems
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_1">
+          🥘 Cookbook
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🥘 Cookbook" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          🥘 Cookbook
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01/" class="md-nav__link">
+        1. Data Structures & Algorithms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch02/" class="md-nav__link">
+        2. Strings & Texts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch04/" class="md-nav__link">
+        4. Iterators & Generators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch05/" class="md-nav__link">
+        5. Files & I/O
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06/" class="md-nav__link">
+        6. Data Encoding & Processing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          7. Functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        7. Functions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-function-with-any-number-of-arguments-args-kwargs" class="md-nav__link">
+    7.1: Function with any number of arguments (*args, **kwargs)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-keyword-only-arguments" class="md-nav__link">
+    7.2: Keyword-only arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-function-argument-annotations" class="md-nav__link">
+    7.3: Function argument annotations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-capturing-variables-in-anonymous-functions" class="md-nav__link">
+    7.7: Capturing variables in Anonymous functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78-functoolspartial" class="md-nav__link">
+    7.8: functools.partial()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#79-replacing-single-method-classes-with-functions" class="md-nav__link">
+    7.9: Replacing single method classes with functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#710-carrying-extra-state-with-callback-functions" class="md-nav__link">
+    7.10: Carrying extra state with callback functions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08/" class="md-nav__link">
+        8. Classes & Objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09/" class="md-nav__link">
+        9. Metaprogramming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10/" class="md-nav__link">
+        10. Modules & Packages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch12/" class="md-nav__link">
+        12. Concurrency
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch14/" class="md-nav__link">
+        14. Testing, Debugging & Exceptions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../decorators/" class="md-nav__link">
+        Decorators & Closures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pythonic_object/" class="md-nav__link">
+        A Pythonic Object
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context_managers/" class="md-nav__link">
+        Context Managers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocols/" class="md-nav__link">
+        Protocols
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hashing/" class="md-nav__link">
+        Hashing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          📟 Algorithms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="📟 Algorithms" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          📟 Algorithms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/QA/" class="md-nav__link">
+        Q/A
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/hashtables/" class="md-nav__link">
+        Hash Tables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/sorting/" class="md-nav__link">
+        Sorting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/document_distance/" class="md-nav__link">
+        Document Distance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/priority_queue/" class="md-nav__link">
+        Priority Queue
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/arrays/" class="md-nav__link">
+        Arrays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/linked_list/" class="md-nav__link">
+        Linked List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/binary_tree/" class="md-nav__link">
+        Binary Tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithms/dict/" class="md-nav__link">
+        Dictionary ADT
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          ✏️ Gists
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="✏️ Gists" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          ✏️ Gists
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gists/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gists/python_snippets/" class="md-nav__link">
+        🐍Python_Snippets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" data-md-state="indeterminate" type="checkbox" id="__nav_8_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8_3">
+          ECE 542
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ECE 542" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          ECE 542
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/ECE542/ece542_lecture1/" class="md-nav__link">
+        Lecture 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3_2" data-md-state="indeterminate" type="checkbox" id="__nav_8_3_2" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8_3_2">
+          Homeworks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Homeworks" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Homeworks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/ECE542/ece542_hw1a/" class="md-nav__link">
+        HW1a
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../awesome/" class="md-nav__link">
+        🌟 Awesome List
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-function-with-any-number-of-arguments-args-kwargs" class="md-nav__link">
+    7.1: Function with any number of arguments (*args, **kwargs)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-keyword-only-arguments" class="md-nav__link">
+    7.2: Keyword-only arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-function-argument-annotations" class="md-nav__link">
+    7.3: Function argument annotations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-capturing-variables-in-anonymous-functions" class="md-nav__link">
+    7.7: Capturing variables in Anonymous functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78-functoolspartial" class="md-nav__link">
+    7.8: functools.partial()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#79-replacing-single-method-classes-with-functions" class="md-nav__link">
+    7.9: Replacing single method classes with functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#710-carrying-extra-state-with-callback-functions" class="md-nav__link">
+    7.10: Carrying extra state with callback functions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>7. Functions</h1>
+
+<p>Writing functions using <code>def</code> is a cornerstone of all programs.
+In this tutorial we will look into some of the advance usage of functions
+viz.</p>
+<ol>
+<li>closures</li>
+<li>callback-functions</li>
+<li>control-flow</li>
+<li>keyword-only arguments</li>
+<li>default-arguments</li>
+<li>annotations</li>
+<li>any-number-of-arguments (<code>*args</code> &amp; <code>**kwargs</code>) etc.</li>
+</ol>
+<h2 id="71-function-with-any-number-of-arguments-args-kwargs">7.1: Function with any number of arguments (<code>*args, **kwargs</code>)</h2>
+<details class="danger" open="open">
+<summary>Problem</summary>
+<p>You want to write a function that accepts any number of arguments.</p>
+</details>
+<details class="done" open="open">
+<summary>Solution</summary>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> For a function that accepts any number of <strong>positional</strong> arguments use a <strong><code>*</code></strong> argument.</p>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> For a function that accepts any number of <strong>keyword</strong> arguments use a <code>**</code> argument.</p>
+<p>To write any function that accepts any numbe rof positional arguments, use a <strong><code>*</code></strong> argument as shown below.
+In this example, <strong><code>rest</code></strong> is a <strong><code>tuple</code></strong> of all extra positional arguments passed.
+In above code, it is treated as a <strong><code>sequence</code></strong> in further calculations inside the function.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="k">def</span> <span class="nf">avg</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">):</span>
+</span>    <span class="k">return</span> <span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">rest</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">rest</span><span class="p">))</span>
+
+<span class="c1">## ------------------------------------------------- ##</span>
+
+<span class="n">avg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>        <span class="c1">## return=2.0; first=1, rest=(2, 3)</span>
+<span class="n">avg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>     <span class="c1">## return=2.5; first=1, rest=(2, 3, 4)</span>
+</code></pre></div>
+</td></tr></table>
+<p>To accept any number of <strong>keyword arguments</strong> use a <code>**</code> argument as shown below. 
+In the below code, <strong><code>attrs</code></strong> is a <strong>dictionary</strong> that holds the passed keyword arguments (if any)</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">html</span>
+
+<span class="hll"><span class="k">def</span> <span class="nf">make_element</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">):</span>
+</span>    <span class="n">keyvals</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">=&#39;</span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s2">&#39;&quot;</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">atts</span><span class="o">.</span><span class="n">items</span><span class="p">]</span>
+    <span class="n">attr_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">keyvals</span><span class="p">)</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">name</span><span class="si">}{</span><span class="n">attr_str</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+    <span class="k">return</span> <span class="n">element</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Creates: &quot;&lt;item size=&#39;large&#39; quantity=6&gt;Albatross&lt;/item&gt;&quot;</span>
+<span class="n">make_element</span><span class="p">(</span><span class="s2">&quot;item&quot;</span><span class="p">,</span> <span class="s2">&quot;Albatross&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;large&quot;</span><span class="p">,</span> <span class="n">quantity</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Creates: &quot;&lt;p&gt;&amp;lt;spam&amp;gt;&lt;/p&gt;&quot;</span>
+<span class="n">make_element</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;&lt;spam&gt;&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table></p>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> If you want a function that accepts both any-number-of-positional-arguments aswell as
+any-number-of-keyword-arguments use both <strong><code>*</code></strong> &amp; <code>**</code> arguments as shown below</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="k">def</span> <span class="nf">anyargs</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>     <span class="c1">## a tuple</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>   <span class="c1">## a dictionary</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="quote" open="open">
+<summary>Discussion</summary>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> A <strong><code>*</code></strong> argument can only appear as the <strong>last positional argument</strong> in a function
+and a <code>**</code> argumnet can only appear as the <strong>last argumnet</strong> in a function.</p>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> A subtle aspect of function definition is that arguments can still appear 
+after a <strong><code>*</code></strong> argument by they are treated as keyword argument only (as discussed in further lessons).</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## valid function definitions</span>
+<span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="c1">## WRONG function defintions</span>
+<span class="c1">## here argument &quot;z&quot; appears after `**kwargs`; hence its a WRONG definition</span>
+
+<span class="k">def</span> <span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span> <span class="k">pass</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="72-keyword-only-arguments">7.2: Keyword-only arguments</h2>
+<details class="danger" open="open">
+<summary>Problem</summary>
+<p>You want to write a function that accepts <strong>only keyword arguments</strong>.</p>
+</details>
+<details class="done" open="open">
+<summary>Solution</summary>
+<p>This feature is easy to implement if you place the <strong>keyword argument</strong> after the <strong><code>*</code></strong> argument
+or <strong>a single unnamed <code>*</code></strong> as shown below.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="k">def</span> <span class="nf">recv</span><span class="p">(</span><span class="n">maxsize</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">block</span><span class="p">):</span>
+</span>    <span class="sd">&quot;&quot;&quot;Receives a message&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+<span class="c1">##-------------------------------------##</span>
+
+<span class="hll"><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>            <span class="c1">## Type Error</span>
+</span><span class="n">recv</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>      <span class="c1">## OK</span>
+</code></pre></div>
+</td></tr></table>
+<p>This technique can also be used to specify keyword arguments for functions that
+accept <strong>varying numbe rof positional arguments</strong> as shown below.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span>    <span class="n">m</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">clip</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">clip</span> <span class="k">if</span> <span class="n">clip</span> <span class="o">&gt;</span> <span class="n">m</span> <span class="k">else</span> <span class="n">m</span>
+    <span class="k">return</span> <span class="n">m</span>
+
+<span class="c1">## ----------------------------------------- ##</span>
+
+<span class="n">minimum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>            <span class="c1">## -5</span>
+<span class="n">minimum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>    <span class="c1">## 0</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="quote" open="open">
+<summary>Discussion</summary>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> <strong>Keyword-only arguments</strong> are a good way to enforce greater code-clarity when
+specifying optional function arguments. For example consider the following code:</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">msg</span> <span class="o">=</span> <span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+If someone is not familiar with <strong><code>recv</code></strong> (written in above section), they might not know 
+what does <strong><code>False</code></strong> mean in this scenario. On the other hand, its much clearer to the user 
+if someone writes the call as below:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">msg</span> <span class="o">=</span> <span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> The use of keyword-only arguments is often very useful for tricks involving <code>**kwargs</code>,
+since they show up nicely when the user asks for <code>help()</code></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>&gt;&gt;&gt; help<span class="o">(</span>recv<span class="o">)</span>
+Help on <span class="k">function</span> recv <span class="k">in</span> module __main__:
+recv<span class="o">(</span>maxsize, *, block<span class="o">)</span>:
+    <span class="s2">&quot;&quot;&quot;Receives a message&quot;&quot;&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Keyword-only arguments also have utility in advance usage like <strong>argument injection</strong> 
+using <code>*args</code> &amp; <code>**kwargs</code>.</p>
+</details>
+<h2 id="73-function-argument-annotations">7.3: Function argument annotations</h2>
+<details class="danger" open="open">
+<summary>Problem</summary>
+<p>You've written a function but you want add some additional information about the <strong>arguments</strong>
+so that users can know more easily how a function is supposed to be used.</p>
+</details>
+<details class="done" open="open">
+<summary>Solution</summary>
+<p><strong>Function argument annotations</strong> can be very useful in givin gprogrammers hint about how a function is supposed to be used.
+Cosider the following <strong>annotated</strong> function.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## normal function definition</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="c1">## Annotated function definition -- MUCH BETTER for users</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> <strong>The Python Interpreter does not add any semantic meaning to the attached annotations.</strong>
+Neither are they type-cheked nor does Puython behave any differently than before.
+However, they might give useful hunts about types that would be useful for users or third-party libraries.</p>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Any type of object can be uased as an annotation (eg. numbers, string, instances, types, etc.).</p>
+</details>
+<details class="quote" open="open">
+<summary>Discussion</summary>
+<p>Function annotations are merely stored in function's <strong><code>__annotations__</code></strong> attribute.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="o">.</span><span class="vm">__annotations__</span>
+</span><span class="p">{</span><span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&quot;</span><span class="nc">int</span><span class="s2">&quot;&gt;,</span>
+ <span class="s2">&quot;return&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&quot;</span><span class="nc">int</span><span class="s2">&quot;&gt;,</span>
+ <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">class</span> <span class="err">&quot;</span><span class="nc">int</span><span class="s2">&quot;&gt;,</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Although, annotations have many potential use-cases, their primary utility is probably <strong>just documentation</strong>.
+Because Python does not have type decalrations, it can be difficult to read a source code without much documentation
+and hind about the types of objects; <strong>function annotations</strong> are one way to resolve this problem.</p>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> More advance usage of function annotations is to implement <strong>multiple dispatch</strong> (i.e. <em>overloaded functions</em>)</p>
+</details>
+<h2 id="77-capturing-variables-in-anonymous-functions">7.7: Capturing variables in Anonymous functions</h2>
+<details class="danger" open="open">
+<summary>Problem</summary>
+<p>You have defined an anonymous function using <strong><code>lambda</code></strong> and but you also need to capture the
+value of certain variable at the tim eof definition.</p>
+</details>
+<details class="done" open="open">
+<summary>Solution</summary>
+<p>Consider the behaviour of the following code a python console:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre></div>
+</td></tr></table>
+<p>Now ask yourself a question. What is the value of <strong><code>a(10)</code></strong> and <strong><code>b(10)</code></strong> now?
+If you think that the values will be <code>20</code> and <code>30</code>; you would be wrong.
+The python console gives the follwoing results.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="mi">30</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="mi">30</span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> The problem here is that <strong><code>x</code></strong> used here (in the <strong><code>lambda</code></strong> expression) is a <strong>free variable</strong>;
+<strong>that gets bound at <em>runtime</em>, not at <em>definition time</em>.</strong> The value <strong><code>x</code></strong> in the <code>lambda</code> expression is
+whatever the value of <strong><code>x</code></strong> variable happens to be at the time of execution of the statement <strong><code>a(10), b(10)</code></strong>.
+For example see below code:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="mi">15</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="mi">25</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="mi">13</span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> If you want an anonymous <code>lambda</code> function to capture a value at the <strong>point of definition</strong>
+include that value as a <strong>default value</strong> in the <code>lambda</code> expression definition as follows.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span><span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span><span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="mi">20</span>                          <span class="c1">## Note the difference here from above code (earlier this was 30)</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="mi">30</span>                          <span class="c1">## Note that &quot;b&quot; captured the correct value of &quot;x&quot;</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="quote" open="open">
+<summary>Discussion</summary>
+<p>The problem addressed here comes up very often in code that tries to be a just a bit more clever.
+For example, creating a list of <code>lambda</code> expressions using a <code>list comprehension</code> or a loop of some kind
+<strong>and expecting the <code>lambda</code> expressions to remember the iteration variable at the time of defintion</strong>.
+For example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="o">...</span>
+<span class="hll"><span class="mi">4</span>
+</span><span class="hll"><span class="mi">4</span>
+</span><span class="hll"><span class="mi">4</span>
+</span><span class="hll"><span class="mi">4</span>
+</span><span class="hll"><span class="mi">4</span>
+</span><span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Notice, how all <code>lambda</code> expressions take the same final value of <code>n</code> from the <code>range(5)</code> expression.</p>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> But, if we specifically captuer the value of <code>n</code> using <strong>default arguments</strong>, 
+then we get the behaviour we want</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+</span><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="o">...</span>
+<span class="mi">0</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="78-functoolspartial">7.8: functools.partial()</h2>
+<details class="danger" open="open">
+<summary>Making an N-argumnet callable work asa callable with fewwer argumnets</summary>
+<p>You have a callable that you want to make it work with other Python code.
+possbly as a callabel or <strong>handler</strong>, but it takes too many argumnets and causes
+an exception when called.</p>
+</details>
+<details class="done" open="open">
+<summary>Solution</summary>
+<p>If you need to reduce the number of arguments to a function, you should use <strong><code>functools.partial()</code></strong>
+The <strong><code>partial()</code></strong> function allows you to assign fixed values to one or more of the arguments 
+thus reduce the number of required argumnets in <strong>subsequent calls of the reduced function</strong>. as shown below.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">spam</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+Now consider <strong><code>functools.partial()</code></strong> to fix certain arguments.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="o">&gt;&gt;&gt;</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>               <span class="c1">## a=1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s1</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>                           <span class="c1">## note that it takes only 3 arguments</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>            <span class="c1">## d=42</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">42</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="mi">5</span> <span class="mi">99</span> <span class="mi">32</span> <span class="mi">42</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">spam</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>      <span class="c1">## a=1, b=2, d=42</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s3</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">99</span> <span class="mi">42</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+</td></tr></table></p>
+</details>
+<details class="quote" open="open">
+<summary>Discussion</summary>
+<p>...</p>
+</details>
+<h2 id="79-replacing-single-method-classes-with-functions">7.9: Replacing single method classes with functions</h2>
+<details class="danger" open="open">
+<summary>Problem</summary>
+<p>You have a class that only defines a single method except <code>__init__()</code> method.
+However, to simplify your code, you would much rather have a simple function.</p>
+</details>
+<details class="done" open="open">
+<summary>Solution</summary>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> In many cases, single method classes can be turned into functions using <strong><code>closures</code></strong>.</p>
+<p>Consider the following example, which allws users to fetch <code>URLs</code> using a kind of <strong>template-scheme</strong>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+
+<span class="k">class</span> <span class="nc">UrlTemplate</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="n">template</span>
+    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">urlopen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">format_map</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
+
+<span class="c1">## -------------------------------------------------------------------------------- ##</span>
+
+<span class="c1">## Usage of above class</span>
+<span class="c1">## Example Use: Download stock data from yahoo</span>
+
+<span class="hll"><span class="n">yahoo</span> <span class="o">=</span> <span class="n">UrlTemplate</span><span class="p">(</span><span class="s2">&quot;http://finance.yahoo.com/d/quotes.csv?s=</span><span class="si">{names}</span><span class="s2">&amp;f=</span><span class="si">{fields}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">yahoo</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="s2">&quot;APPL, FB, TSLA&quot;</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="s2">&quot;sl1c1v&quot;</span><span class="p">):</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+</span></code></pre></div>
+</td></tr></table>
+<p>This <strong><code>URLTemplate</code></strong> class be very easily replaced with a much simpler function using <strong>closures</strong>.
+as shown below.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Using closures</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+
+<span class="k">def</span> <span class="nf">url_template</span><span class="p">(</span><span class="n">template</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">opener</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">format_map</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">opener</span>
+
+<span class="c1">## ------------------------------------------------------------------------------- ##</span>
+
+<span class="c1">## Example Usage of the above CLOSURE &quot;url_template&quot;</span>
+
+<span class="hll"><span class="n">yahoo</span> <span class="o">=</span> <span class="n">url_template</span><span class="p">(</span><span class="s2">&quot;http://finance.yahoo.com/d/quotes.csv?s=</span><span class="si">{names}</span><span class="s2">&amp;f=</span><span class="si">{fields}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">yahoo</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="s2">&quot;APPL, FB, TSLA&quot;</span><span class="p">,</span> <span class="n">fileds</span><span class="o">=</span><span class="s2">&quot;sl1c1v&quot;</span><span class="p">):</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+</span></code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="710-carrying-extra-state-with-callback-functions">7.10: Carrying extra state with callback functions</h2>
+<details class="danger" open="open">
+<summary>Problem</summary>
+<p>You are writing code that relies on the use of <strong>callback functions</strong> 
+(e.g. <em>event handlers</em>, <em>completion callback</em>, etc.); but you want to have the 
+callback function carry extra state to be used inside the callback function itself.</p>
+</details>
+<details class="done" open="open">
+<summary>Solution</summary>
+<p>Let's first talk about <strong>callback functions</strong> which are used in <em>asynchronous processing</em>
+via the following example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">apply_async</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">callback</span><span class="p">):</span>
+    <span class="c1">## compute the result</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="c1">## invoke the callback</span>
+<span class="hll">    <span class="n">callback</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></code></pre></div>
+</td></tr></table>
+<p>In reality, such code might do all sorts of advanced processing involving threads, processes,
+&amp; timers. But here we are just focusing on the <strong>invocation</strong> of the <strong>callback</strong>.
+Below, we show how to use the above code:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">print_result</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Got: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">print_result</span><span class="p">)</span>
+<span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">apply_result</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Hello&quot;, &quot;World&#39;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">print_result</span><span class="p">)</span>
+<span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HelloWorld&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p>As you can notice above, the callbakc function <strong><code>print_result()</code></strong> only accepts a <strong>single argument</strong>
+i.e <strong><code>result</code></strong>. No other information is provided.
+This lack of information can be an issue when we want our callback function to interact with other contextual variables
+or other parts of the code.
+Below we provide some probable solutions to handle this issue:</p>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Some ways to carry extra information with callbacks:</p>
+<ol>
+<li>Use <strong>bound methods</strong> instead of regular sinple functions.</li>
+<li>Use <strong>closures</strong></li>
+<li>Use <strong>coroutines</strong>.</li>
+<li>Using <strong><code>functools.partial()</code></strong></li>
+</ol>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Using <strong>BOUND METHODS</strong>: One way to carry extra information in a callback is to use <strong>bound methods</strong> 
+instead of simple function. For example, this below class keeps an internal sequence number 
+that is incremented everytime a result is received.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ResultHandler</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sequence</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sequence</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sequence</span><span class="si">}</span><span class="s2">] Got: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+To use this class <strong><code>ResultHandler</code></strong>, we need to create its instance and use its 
+<strong><code>handler()</code></strong> method as a callback.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">rh</span> <span class="o">=</span> <span class="n">ResultHandler</span><span class="p">()</span>                 <span class="c1">## creating an instance of the class</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">rh</span><span class="o">.</span><span class="n">handler</span><span class="p">)</span>
+<span class="hll"><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">rh</span><span class="o">.</span><span class="n">handler</span><span class="p">)</span>
+<span class="hll"><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HelloWorld&quot;</span>
+</span></code></pre></div>
+</td></tr></table>
+Notice in the above output, how the instance of <code>ResultHandler</code> class <strong><code>rh</code></strong> uses its internal state variable
+<strong><code>self.sequence</code></strong> across two different calls of the callback function <strong><code>rh.handler</code></strong>.</p>
+<hr />
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Using <strong>CLOSURES</strong>: As an alternative we can also use <strong>closures</strong> to embed additional information
+in the callback function.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_handler</span><span class="p">():</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+<span class="hll">        <span class="k">nonlocal</span> <span class="n">sequence</span>
+</span>        <span class="n">sequence</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">sequence</span><span class="si">}</span><span class="s2">] Got: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">handler</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">handler</span> <span class="o">=</span> <span class="n">make_handler</span><span class="p">()</span>                    <span class="c1">## our callback function to be used</span>
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">handler</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">handler</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HelloWorld&quot;</span>                                       <span class="c1">## the callback remembers the count sequence</span>
+</code></pre></div>
+</td></tr></table>
+<hr />
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Using <strong>COROUTINES</strong>: Sometimes we can also use a <strong>coroutine</strong> to accomplish what we achieved
+using a <strong>bound method</strong> or a <strong>closure</strong>.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## Using COROUTINES to add context to a callback function</span>
+
+<span class="k">def</span> <span class="nf">make_handler</span><span class="p">():</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="hll">        <span class="n">result</span> <span class="o">=</span> <span class="k">yield</span>
+</span>        <span class="n">sequence</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">sequence</span><span class="si">}</span><span class="s2">] Got: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+We can use it as usual as before.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">handler</span> <span class="o">=</span> <span class="n">make_handler</span><span class="p">()</span>                            <span class="c1">## our callback function</span>
+<span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">handler</span><span class="o">.</span><span class="n">send</span><span class="p">)</span>     
+</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
+<span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;WORLD!!&quot;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">handler</span><span class="o">.</span><span class="n">send</span><span class="p">)</span>
+</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HelloWORLD!!&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> NOTICE the use of <strong><code>send</code></strong> to push value to the <strong><code>yield</code></strong> in the callback coroutine</p>
+<hr />
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> Using <strong><code>functools.partial()</code></strong>: As an alternative, we can also carry state into a callback
+using an extra argument and a <strong>partial</strong> function application.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SeqeunceNo</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sequence</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">seq</span><span class="p">):</span>
+    <span class="n">seq</span><span class="o">.</span><span class="n">sequence</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">seq</span><span class="o">.</span><span class="n">sequence</span><span class="si">}</span><span class="s2">] Got: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+</span><span class="hll"><span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span> <span class="o">=</span> <span class="n">SequenceNo</span><span class="p">()</span>
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="n">seq</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;HELLO_&quot;</span><span class="p">,</span> <span class="s2">&quot;WORLD!!!&quot;</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="n">seq</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="s2">&quot;HELLO_WORLD!!!&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<hr />
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Because, <strong><code>lambda</code></strong> expressions can be very useful in creating <strong>partial</strong> functions.
+We can use <code>lambda</code> expressions (with added contextual argumnets) as callbacks as shown below.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span> <span class="o">=</span> <span class="n">SequenceNo</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">apply_async</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">handler</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">seq</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Got</span><span class="p">:</span> <span class="mi">5</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<details class="quote" open="open">
+<summary>Discussion</summary>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Software based on <strong>callback functions</strong> often runs the risk of turning into a huge
+tangled mess. </p>
+<p>Part of the reason is that <strong>callback function is often disconnected from the code
+that made the initial request leading up the callback execution". Thus the execution environment
+between making the request and handling the result is effectively lost.</strong> </p>
+<p>If you want the callback function to continue with a procedure involving multiple steps, 
+you have to figure out how to save and restore the associated states.</p>
+<p>There are really two main promising ways to capture and restore context states:</p>
+<ol>
+<li>You can carry it around in a <strong>class instance</strong>. Attach it to <strong>bound method</strong> perhaps.</li>
+<li>Or you can carry it around in a <strong>closure</strong> (an inner function).</li>
+</ol>
+<p>Of the above two techniques, probably the <strong>closures</strong> approach is more natural and lightweight
+in that they are built from functions. They also automatically captures all the variables used.</p>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> But, if using <strong>closures</strong>, we need to pay careful attention to <em>mutable</em> variables.
+In the above solution we use <strong><code>nonlocal</code></strong> declaration for variable <strong><code>sequence</code></strong> to specify that
+we were using the variable from withing the closure; otherwise we will get an <code>ERROR</code>.</p>
+<hr />
+<p>The use of <strong><code>coroutines</code></strong> is interesting and very closely resembles the usage of <strong>closures</strong>.</p>
+<p><img alt="🏆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c6.svg" title=":trophy:" /> In some sense, it is even cleaner as we don't have to worry about the <code>nonlocal</code> declarations.</p>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> Only potential downsides of using <strong>coroutines</strong> is that its somewhat difficult to understand 
+conceptually and we have to remembr some nitty-gritty details of its usage 
+(for example, making sure to call <strong><code>next()</code></strong> before using the couroutine as a callback etc...)</p>
+<p><img alt="🚨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a8.svg" title=":rotating_light:" /> Nevertheless, coroutines are very useful in defining <strong>inlined callbacks</strong>.</p>
+</details>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2021-11-15
+    
+  </small>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../ch06/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 6. Data Encoding &amp; Processing" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              6. Data Encoding & Processing
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ch08/" class="md-footer__link md-footer__link--next" aria-label="Next: 8. Classes &amp; Objects" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              8. Classes & Objects
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 | Vinay Kumar (@imflash217) 🌺॥ महाजनो येन गतः स पन्थाः ॥🌺
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/imflash217" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/imflash217" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.expand", "navigation.indexes", "navigation.top", "navigation.instant", "search.suggest", "search.highlight", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.b88e97c5.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
