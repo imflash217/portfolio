@@ -67,6 +67,7 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
+  - mkdocs-jupyter
 
 ##########################################################################
 plugins:
@@ -115,6 +116,7 @@ nav:
     - transformers/about.md
     - Vaswani et al.: transformers/vaswani.md
     - DETR: transformers/detr.md 
+    - Notebook: transformers/test.ipynb
 
   - 🗣 NLP:
     - Regular Expressions (RegEx): nlp/regex.md

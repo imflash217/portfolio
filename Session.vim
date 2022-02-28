@@ -34,12 +34,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 199 - ((39 * winheight(0) + 20) / 40)
+let s:l = 71 - ((38 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 199
-normal! 020|
+keepjumps 71
+normal! 0
 tabnext
 edit docs/index.md
 argglobal
@@ -54,12 +54,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 32 - ((14 * winheight(0) + 20) / 40)
+let s:l = 65 - ((39 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 32
-normal! 0
+keepjumps 65
+normal! 06|
 tabnext
 edit docs/notes/about.md
 argglobal
@@ -74,7 +74,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 20) / 40)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -94,7 +94,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 20) / 40)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -114,7 +114,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 52 - ((24 * winheight(0) + 12) / 25)
+let s:l = 52 - ((36 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -134,11 +134,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 34 - ((8 * winheight(0) + 12) / 25)
+let s:l = 40 - ((21 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 34
+keepjumps 40
 normal! 033|
 tabnext
 edit docs/nlp/naive_bayes.md
@@ -154,7 +154,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 15 - ((9 * winheight(0) + 12) / 25)
+let s:l = 15 - ((14 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -174,24 +174,24 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 12 - ((7 * winheight(0) + 12) / 25)
+let s:l = 12 - ((11 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 12
 normal! 028|
-tabnext 2
+tabnext 1
 set stal=1
 badd +1 mkdocs.yml
 badd +1 docs/python/cookbook_dabeaz/ch08.md
+badd +0 docs/index.md
 badd +32 docs/notes/about.md
-badd +0 docs/awesome.md
 badd +1 docs/blogs/deep_learning/dl_04_09.md
 badd +1 docs/algorithms/dict.md
-badd +1 docs/index.md
 badd +1 docs/nlp/naive_bayes.md
 badd +45 docs/algorithms/linked_list.md
 badd +1 docs/blogs/lightning/about.md
+badd +1 docs/awesome.md
 badd +23 docs/nlp/regex.md
 badd +17 docs/nlp/nlp_book.md
 badd +851 docs/blogs/deep_learning/einops2.md
