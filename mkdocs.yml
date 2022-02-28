@@ -120,6 +120,7 @@ nav:
     - Vaswani et al.: transformers/vaswani.md
     - DETR: transformers/detr.md 
     - Notebooks: transformers/Untitled.ipynb
+    - HF Transformers: transformers/test.ipynb
 
   - 🗣 NLP:
     - Regular Expressions (RegEx): nlp/regex.md
