@@ -73,7 +73,7 @@ plugins:
   - search
   - git-revision-date
   - mkdocs-jupyter:
-    execute: False
+      execute: False
 
 ##########################################################################
 extra:
