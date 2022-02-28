@@ -72,8 +72,9 @@ markdown_extensions:
 plugins:
   - search
   - git-revision-date
-  - mkdocs-jupyter:
-      execute: False
+  - mknotebooks
+    #  - mkdocs-jupyter:
+    #     execute: False
 
 ##########################################################################
 extra:
