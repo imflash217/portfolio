@@ -67,12 +67,13 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-  - mkdocs-jupyter
 
 ##########################################################################
 plugins:
   - search
   - git-revision-date
+  - mkdocs-jupyter
+
 ##########################################################################
 extra:
   social:
