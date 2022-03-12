@@ -34,11 +34,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 71 - ((38 * winheight(0) + 20) / 40)
+let s:l = 124 - ((21 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 71
+keepjumps 124
 normal! 0
 tabnext
 edit docs/index.md

@@ -1,9 +1,10 @@
 
-
-<embed type="text/html"
+<!-- <embed type="text/html"
        src="report_GridTr.html"
        width="250"
-       height="200">
+       height="200"> -->
+
+--8<-- "report_GridTr.html"
 
 [^1]: 🟡 PositionalEncoding: 
             https://e2eml.school/transformers.html
