@@ -4,7 +4,7 @@
        width="250"
        height="200"> -->
 
---8<-- "report_GridTr.html"
+--8<-- "docs/report_GridTr.html"
 
 [^1]: 🟡 PositionalEncoding: 
             https://e2eml.school/transformers.html
