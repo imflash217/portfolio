@@ -1,9 +1,9 @@
 ##########################################################################
 theme:
   name: material
-    # icon:
-    # logo: material/flash-circle
-    # logo: material/balloon
+  # icon:
+  # logo: material/flash-circle
+  # logo: material/balloon
   logo: assets/logo.png
   favicon: assets/logo.png
   palette:
@@ -92,12 +92,12 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 ##########################################################################
-copyright: Copyright &copy; 2021 | Vinay Kumar (@imflash217) 🌺॥ महाजनो येन गतः स पन्थाः ॥🌺
+copyright: Copyright &copy; 2022 | Vinay Kumar (@imflash217) 🌺॥ महाजनो येन गतः स पन्थाः ॥🌺
 site_name: Vinay Kumar / विनय कुमार
 ##########################################################################
 nav:
   - 🏡 Home: index.md
-  
+
   #- 👨🏻‍💻 Work Experience:
   #  - About: work/about.md
   #  - iVMCL Lab, NC State: work/ivmcl.md
@@ -108,98 +108,96 @@ nav:
   #  - Cognizant: work/cognizant.md
 
   - 🧬 Research Papers:
-    - About: publications/about.md
-    - Interspeech 2014: publications/about.md #interspeech_2014.md
-    - Odyssey 2014: publications/about.md #odyssey_2014.md
+      - About: publications/about.md
+      - Interspeech 2014: publications/about.md #interspeech_2014.md
+      - Odyssey 2014: publications/about.md #odyssey_2014.md
 
   #- 📚 Paper Reviews:
   #  - About: paper_reviews/about.md
 
   - 🤖 Transformers:
-    - transformers/about.md
-    - Vaswani et al.: transformers/vaswani.md
-    - DETR: transformers/detr.md 
-    - Notebooks: transformers/Untitled.ipynb
-    - HF Transformers: transformers/test.ipynb
+      - transformers/about.md
+      - Vaswani et al.: transformers/vaswani.md
+      - DETR: transformers/detr.md
+      - Notebooks: transformers/Untitled.ipynb
+      - HF Transformers: transformers/test.ipynb
 
   - 🗣 NLP:
-    - Regular Expressions (RegEx): nlp/regex.md
-    - Naïve Bayes Classifiers: nlp/naive_bayes.md
-    - Speech & Language Processing: nlp/nlp_book.md
-    - CS224N:
-      - Lecture 1: nlp/CS224N/cs224n_1.md
-  
+      - Regular Expressions (RegEx): nlp/regex.md
+      - Naïve Bayes Classifiers: nlp/naive_bayes.md
+      - Speech & Language Processing: nlp/nlp_book.md
+      - CS224N:
+          - Lecture 1: nlp/CS224N/cs224n_1.md
+
   #- 🧤Projects:
   #  - About: projects/about.md
-  
+
   #- 🚵🏼‍♂️ Hobby Projects:
   #  - About: hobbies/about.md
 
   - ✍🏼 Blogs:
-    - Notes: blogs/notes.md
-    - Physics:
-      - Electromagnetic Spectrum, properties of material medium & its effects: blogs/physics/blog_01282021.md
-    - Probability Theory:
-      - Introduction: blogs/prob/intro.md
-    - Deep Learning:
-      - Environment & Distribution Shift: blogs/deep_learning/dl_04_09.md
-      - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
-      - PyTorch Dataloaders: blogs/deep_learning/blog_dataloaders.md
-    - EINSUM:
-      - einops tutorial: blogs/deep_learning/einops.md
-      - einops examples: blogs/deep_learning/einops2.md
-    - PyTorch Lightning⚡️:
-      - API reference: blogs/lightning/api.md
-      - Tutorial-1: blogs/lightning/tut_1.md
-      - Tutorial-2: blogs/lightning/tut_2.md
-      - Tutorial-3: blogs/lightning/tut_3.md
-      - Tutorial-4: blogs/lightning/tut_4.md
-      - Tutorial-5: blogs/lightning/tut_5.md
+      - Notes: blogs/notes.md
+      - Physics:
+          - Electromagnetic Spectrum, properties of material medium & its effects: blogs/physics/blog_01282021.md
+      - Probability Theory:
+          - Introduction: blogs/prob/intro.md
+      - Deep Learning:
+          - Environment & Distribution Shift: blogs/deep_learning/dl_04_09.md
+          - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
+          - PyTorch Dataloaders: blogs/deep_learning/blog_dataloaders.md
+      - EINSUM:
+          - einops tutorial: blogs/deep_learning/einops.md
+          - einops examples: blogs/deep_learning/einops2.md
+      - PyTorch Lightning⚡️:
+          - API reference: blogs/lightning/api.md
+          - Tutorial-1: blogs/lightning/tut_1.md
+          - Tutorial-2: blogs/lightning/tut_2.md
+          - Tutorial-3: blogs/lightning/tut_3.md
+          - Tutorial-4: blogs/lightning/tut_4.md
+          - Tutorial-5: blogs/lightning/tut_5.md
 
   - 👑 Python Gems:
-    - 🥘 Cookbook:
-      - 1. Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
-      - 2. Strings & Texts: python/cookbook_dabeaz/ch02.md
-        # - 3. Numbers, Dates & Times: python/cookbook_dabeaz/ch03.md
-      - 4. Iterators & Generators: python/cookbook_dabeaz/ch04.md
-      - 5. Files & I/O: python/cookbook_dabeaz/ch05.md
-      - 6. Data Encoding & Processing: python/cookbook_dabeaz/ch06.md
-      - 7. Functions: python/cookbook_dabeaz/ch07.md
-      - 8. Classes & Objects: python/cookbook_dabeaz/ch08.md
-      - 9. Metaprogramming: python/cookbook_dabeaz/ch09.md
-      - 10. Modules & Packages: python/cookbook_dabeaz/ch10.md
-        # - 11. Network & Web Programming: python/cookbook_dabeaz/ch11.md
-      - 12. Concurrency: python/cookbook_dabeaz/ch12.md
-        # - 13. Utility Scrioting & System Administration: python/cookbook_dabeaz/ch13.md
-      - 14. Testing, Debugging & Exceptions: python/cookbook_dabeaz/ch14.md
-        # - 15. C Extensions: python/cookbook_dabeaz/ch15.md
-    - Design Patterns: python/design_patterns.md
-    - Decorators & Closures: python/decorators.md
-    - A Pythonic Object: python/pythonic_object.md
-    - Context Managers: python/context_managers.md
-    - Protocols: python/protocols.md
-    - Hashing: python/hashing.md
+      - 🥘 Cookbook:
+          - 1. Data Structures & Algorithms: python/cookbook_dabeaz/ch01.md
+          - 2. Strings & Texts: python/cookbook_dabeaz/ch02.md
+            # - 3. Numbers, Dates & Times: python/cookbook_dabeaz/ch03.md
+          - 4. Iterators & Generators: python/cookbook_dabeaz/ch04.md
+          - 5. Files & I/O: python/cookbook_dabeaz/ch05.md
+          - 6. Data Encoding & Processing: python/cookbook_dabeaz/ch06.md
+          - 7. Functions: python/cookbook_dabeaz/ch07.md
+          - 8. Classes & Objects: python/cookbook_dabeaz/ch08.md
+          - 9. Metaprogramming: python/cookbook_dabeaz/ch09.md
+          - 10. Modules & Packages: python/cookbook_dabeaz/ch10.md
+            # - 11. Network & Web Programming: python/cookbook_dabeaz/ch11.md
+          - 12. Concurrency: python/cookbook_dabeaz/ch12.md
+            # - 13. Utility Scrioting & System Administration: python/cookbook_dabeaz/ch13.md
+          - 14. Testing, Debugging & Exceptions: python/cookbook_dabeaz/ch14.md
+            # - 15. C Extensions: python/cookbook_dabeaz/ch15.md
+      - Design Patterns: python/design_patterns.md
+      - Decorators & Closures: python/decorators.md
+      - A Pythonic Object: python/pythonic_object.md
+      - Context Managers: python/context_managers.md
+      - Protocols: python/protocols.md
+      - Hashing: python/hashing.md
 
   - 📟 Algorithms:
-    - Q/A: algorithms/QA.md
-    - Hash Tables: algorithms/hashtables.md
-    - Sorting: algorithms/sorting.md
-    - Document Distance: algorithms/document_distance.md
-    - Priority Queue: algorithms/priority_queue.md
-    - Arrays: algorithms/arrays.md
-    - Linked List: algorithms/linked_list.md
-    - Binary Tree: algorithms/binary_tree.md
-    - Dictionary ADT: algorithms/dict.md
+      - Q/A: algorithms/QA.md
+      - Hash Tables: algorithms/hashtables.md
+      - Sorting: algorithms/sorting.md
+      - Document Distance: algorithms/document_distance.md
+      - Priority Queue: algorithms/priority_queue.md
+      - Arrays: algorithms/arrays.md
+      - Linked List: algorithms/linked_list.md
+      - Binary Tree: algorithms/binary_tree.md
+      - Dictionary ADT: algorithms/dict.md
 
   - ✏️ Gists:
-    - About: gists/about.md
-    - 🐍Python_Snippets: gists/python_snippets.md
-    - ECE 542:
-      - Lecture 1: notes/ECE542/ece542_lecture1.md
-      - Homeworks:
-        - HW1a: notes/ECE542/ece542_hw1a.md
+      - About: gists/about.md
+      - 🐍Python_Snippets: gists/python_snippets.md
+      - ECE 542:
+          - Lecture 1: notes/ECE542/ece542_lecture1.md
+          - Homeworks:
+              - HW1a: notes/ECE542/ece542_hw1a.md
 
   - 🌟 Awesome List: awesome.md
-
-  
 ##########################################################################
