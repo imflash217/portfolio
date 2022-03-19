@@ -1587,12 +1587,60 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Intro
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Intro
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#design-patterns-for-humans" class="md-nav__link">
+    Design Patterns for Humans 🤗
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#be-careful" class="md-nav__link">
+    🚨 Be Careful!!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-design-patterns" class="md-nav__link">
+    Types of Design Patterns
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creational-design-patterns" class="md-nav__link">
+    Creational Design Patterns
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1916,8 +1964,42 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#design-patterns-for-humans" class="md-nav__link">
+    Design Patterns for Humans 🤗
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#be-careful" class="md-nav__link">
+    🚨 Be Careful!!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-design-patterns" class="md-nav__link">
+    Types of Design Patterns
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creational-design-patterns" class="md-nav__link">
+    Creational Design Patterns
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1931,13 +2013,15 @@
                 
 
 
+  <h1>Intro</h1>
+
 <!-- ---
 hide:
   - navigation # Hide navigation
   - toc        # Hide table of contents
 --- -->
 
-<h1 id="design-patterns-for-humans">Design Patterns for Humans 🤗</h1>
+<h2 id="design-patterns-for-humans">Design Patterns for Humans 🤗</h2>
 <p><strong>Design Patterns</strong> are guidelines to recurring problems; <mark class="critic">guidelines on how to solve certain problems</mark>
 They are not classes, packages, or libraries that you can plug into an application and wait for magic to happen.
 These are rather guideline son how to solve certain problems in certain situations.</p>
@@ -1951,7 +2035,7 @@ to a commonly recurring problem within a given context in software design.
 It is not a finished design that can be directly ported into source or machine code.
 Rather, it is a description or template for how to solve a problem that can be used in many different situations.</p>
 </mark>
-<h1 id="be-careful">🚨 Be Careful!!</h1>
+<h2 id="be-careful">🚨 Be Careful!!</h2>
 <p>Developers, mostly beginners, makes the mistake of over-thinking and forcing the design patterns
 which results in un-maintainable mess. The rule should always be to make the codebase as simple as possible.
 Once you start developing you will start to see recurring patterns in your codebase, 
@@ -1981,7 +2065,7 @@ trying to create objects in a manners suitable for the sitation.
 The basic form of object creation could result in design problems or added complexity to the design.
 Creational design patetrns solve this problem by controlling this object creation.</p>
 </mark>
-<p>There are 6 types of CReational patterns:</p>
+<p>There are 6 types of Creational patterns:</p>
 <ol>
 <li>Simple Factory</li>
 <li>Factory Method</li>
@@ -1990,136 +2074,13 @@ Creational design patetrns solve this problem by controlling this object creatio
 <li>Prototpe</li>
 <li>Singleton</li>
 </ol>
-<h3 id="simple-factory">🏠 Simple Factory</h3>
-<p>A real world example:</p>
-<blockquote>
-<p>Consider, you are building house and you need doors.
-You can either put on some carpenter clothes, bring some glue, wood, tools and make the door yourself.
-Or, you can call the factory and get the door delivered to you;
-so that you don't need to learn anything about door making or deal with the mess it brings.</p>
-</blockquote>
-<p>In simple words,</p>
-<blockquote>
-<p><strong>Simple Factory</strong> generates an instance for client without exposing any instantiation logic to the clients.</p>
-</blockquote>
-<p>Wikipedia says,</p>
-<mark class="critic block">
-<p>In Object oriented Programming language (OOP), <strong>Factory</strong> is an object for creating other objects.
-Formally, a factory is a <em>function</em> or <em>method</em> that returns objects of a varying protoype 
-or class from some method call, which is assumed to be <code>new</code>.</p>
-</mark>
-<p>👨🏻‍💻 <strong>A Programatic example:</strong></p>
-<p>First of all, we have a door interface and implementation of a wooden door.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-<span class="c1">// The Simple Factory INTERFACE</span>
-<span class="c1">// </span>
-<span class="k">interface</span> <span class="nx">Door</span><span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">get_width</span><span class="p">()</span><span class="o">:</span> <span class="nx">float</span><span class="p">;</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">get_height</span><span class="p">()</span><span class="o">:</span> <span class="nx">float</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// A CONCRETE implementation of Door interface</span>
-<span class="c1">//</span>
-<span class="k">class</span> <span class="nc">WoodenDoor</span> <span class="k">implements</span> <span class="nx">Door</span><span class="p">{</span>
-    <span class="k">protected</span> <span class="nv">$width</span><span class="p">;</span>
-    <span class="k">protected</span> <span class="nv">$height</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">float</span> <span class="nv">$width</span><span class="p">,</span> <span class="nx">float</span> <span class="nv">$height</span><span class="p">){</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$width</span> <span class="o">=</span> <span class="nv">$width</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$height</span> <span class="o">=</span> <span class="nv">$height</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">get_width</span><span class="p">()</span><span class="o">:</span> <span class="nx">float</span><span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$width</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">get_height</span><span class="p">()</span><span class="o">:</span> <span class="nx">float</span><span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$height</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-<p>Then we have our door factory that makes the door and returns it.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-
-<span class="k">class</span> <span class="nc">DoorFactory</span><span class="p">{</span>
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">make_door</span><span class="p">(</span><span class="nv">$width</span><span class="p">,</span> <span class="nv">$height</span><span class="p">)</span><span class="o">:</span> <span class="nx">Door</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nx">WoodenDoor</span><span class="p">(</span><span class="nv">$height</span><span class="p">,</span> <span class="nv">$width</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-<p>And then it can be used as:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
-
-<span class="c1">// Make a door of 100x200</span>
-<span class="nv">$door</span> <span class="o">=</span> <span class="nx">DoorFactory</span><span class="o">::</span><span class="na">make_door</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
-
-<span class="k">echo</span> <span class="s2">&quot;Width = &quot;</span> <span class="o">.</span> <span class="nv">$door</span><span class="o">-&gt;</span><span class="na">get_width</span><span class="p">();</span>
-<span class="k">echo</span> <span class="s2">&quot;Height = &quot;</span> <span class="o">.</span> <span class="nv">$door</span><span class="o">-&gt;</span><span class="na">get_width</span><span class="p">();</span>
-
-<span class="c1">// Make a door of 50x100</span>
-<span class="nv">$door2</span> <span class="o">=</span> <span class="nx">DoorFactory</span><span class="o">::</span><span class="na">make_door</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
-<p><strong> ❓ When to use?</strong></p>
-<mark class="critic block">
-<p>When creating an object is not just a few assignments, but involves some logic; 
-it makes sense to put it in a dedicated factory instead of repeating same code everywhere.</p>
-</mark>
-<h3 id="factory-method">🏭 Factory Method</h3>
-<h3 id="abstract-factory">🛠 Abstract Factory</h3>
-<h3 id="builder">👷🏽 Builder</h3>
-<h3 id="prototype">🐏 Prototype</h3>
-<h3 id="singleton">💍 Singleton</h3>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-03-18
+      2022-03-19
     
   </small>
 </div>
