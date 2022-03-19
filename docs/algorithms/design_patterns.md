@@ -63,6 +63,14 @@ There are 6 types of CReational patterns:
 
 ### 🏠 Simple Factory
 
+A real world example:
+> Consider, you are building house and you need doors.
+> You can either put on some carpenter clothes, bring some glue, wood, tools and make the door yourself.
+> Or, you can call the factory and get the door delivered to you;
+> so that you don't need to learn anything about door making or deal with the mess it brings.
+
+
+
 ### 🏭 Factory Method
 
 ### 🛠 Abstract Factory
