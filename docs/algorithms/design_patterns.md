@@ -17,4 +17,14 @@ Rather, it is a description or template for how to solve a problem that can be u
 
 ==}
 
-#  
+# 🚨 Be Careful!!
+
+Developers, mostly beginners, makes the mistake of over-thinking and forcing the design patterns
+which results in un-maintainable mess. The rule should always be to make the codebase as simple as possible.
+Once you start developing you will start to see recurring patterns in your codebase, 
+at which point you can start factoring your code using relevant design patterns.
+
+- Design Patterns are not silver bullets to your problems. Use them consciously.
+- Don't try to force them. Bad things might happen if done so!!
+- Remember! Design Patterns are gudelines towards finding solutions to problem; not solutions to problems themselves.
+  
