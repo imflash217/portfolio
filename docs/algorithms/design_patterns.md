@@ -39,3 +39,5 @@ there are broadly three types of useful & popular design patterns:
 
 ## `Creational` Design Patterns
 
+> In simple words, Creational design patterns are focused towards 
+> how to instantiate an object or group of objects
