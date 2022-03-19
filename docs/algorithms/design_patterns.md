@@ -1,4 +1,4 @@
-# Design Patterns for Humans 😊
+# Design Patterns for Humans 🤗
 
 **Design Patterns** are guidelines to recurring problems; {==guidelines on how to solve certain problems==}
 They are not classes, packages, or libraries that you can plug into an application and wait for magic to happen.
@@ -16,3 +16,5 @@ It is not a finished design that can be directly ported into source or machine c
 Rather, it is a description or template for how to solve a problem that can be used in many different situations.
 
 ==}
+
+#  
