@@ -2008,6 +2008,40 @@ or class from some method call, which is assumed to be <code>new</code>.</p>
 <span class="x">}</span>
 </code></pre></div>
 </td></tr></table>
+<p>Then we have our door factory that makes the door and returns it.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">class DoorFactory{</span>
+<span class="x">    public static function make_door($width, $height): Door {</span>
+<span class="x">        return new WoodenDoor($height, $width);</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>And then it can be used as:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="c1">// Make a door of 100x200</span>
+<span class="nv">$door</span> <span class="o">=</span> <span class="nx">DoorFactory</span><span class="o">::</span><span class="na">make_door</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="s2">&quot;Width = &quot;</span> <span class="o">.</span> <span class="nv">$door</span><span class="o">-&gt;</span><span class="na">get_width</span><span class="p">();</span>
+<span class="k">echo</span> <span class="s2">&quot;Height = &quot;</span> <span class="o">.</span> <span class="nv">$door</span><span class="o">-&gt;</span><span class="na">get_width</span><span class="p">();</span>
+
+<span class="c1">// Make a door of 50x100</span>
+<span class="nv">$door2</span> <span class="o">=</span> <span class="nx">DoorFactory</span><span class="o">::</span><span class="na">make_door</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="factory-method">🏭 Factory Method</h3>
 <h3 id="abstract-factory">🛠 Abstract Factory</h3>
 <h3 id="builder">👷🏽 Builder</h3>

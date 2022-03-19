@@ -149,7 +149,13 @@ $door2 = DoorFactory::make_door(50, 100);
 
 ```
 
+** ❓ When to use?**
+{==
 
+When creating an object is not just a few assignments, but involves some logic; 
+it makes sense to put it in a dedicated factory instead of repeating same code everywhere.
+
+==}
 
 
 
