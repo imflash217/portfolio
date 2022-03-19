@@ -183,7 +183,7 @@ nav:
   - 📟 Algorithms:
       - 🎨 Design Patterns: algorithms/design_patterns.md
       - ❓Q/A: algorithms/QA.md
-      - Hash Tables: algorithms/hashtables.md
+      - 🧮 Hash Tables: algorithms/hashtables.md
       - Sorting: algorithms/sorting.md
       # - Document Distance: algorithms/document_distance.md
       # - Priority Queue: algorithms/priority_queue.md
