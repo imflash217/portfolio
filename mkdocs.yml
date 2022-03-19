@@ -185,8 +185,8 @@ nav:
       - Q/A: algorithms/QA.md
       - Hash Tables: algorithms/hashtables.md
       - Sorting: algorithms/sorting.md
-      - Document Distance: algorithms/document_distance.md
-      - Priority Queue: algorithms/priority_queue.md
+      # - Document Distance: algorithms/document_distance.md
+      # - Priority Queue: algorithms/priority_queue.md
       - Arrays: algorithms/arrays.md
       - Linked List: algorithms/linked_list.md
       - Binary Tree: algorithms/binary_tree.md
