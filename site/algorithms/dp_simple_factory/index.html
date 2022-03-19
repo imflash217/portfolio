@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#simple-factory" class="md-skip">
+        <a href="#a-real-world-example" class="md-skip">
           Skip to content
         </a>
       
@@ -1629,29 +1629,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#simple-factory" class="md-nav__link">
-    🏠 Simple Factory
-  </a>
-  
-    <nav class="md-nav" aria-label="🏠 Simple Factory">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#a-real-world-example" class="md-nav__link">
     A real world example:
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#a-programatic-example" class="md-nav__link">
     👨🏻‍💻 A Programatic example:
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    ❓ When to use?
+  </a>
   
 </li>
       
@@ -2003,29 +1997,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#simple-factory" class="md-nav__link">
-    🏠 Simple Factory
-  </a>
-  
-    <nav class="md-nav" aria-label="🏠 Simple Factory">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#a-real-world-example" class="md-nav__link">
     A real world example:
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#a-programatic-example" class="md-nav__link">
     👨🏻‍💻 A Programatic example:
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    ❓ When to use?
+  </a>
   
 </li>
       
@@ -2045,8 +2033,7 @@
 
   <h1>🏠 Simple Factory</h1>
 
-<h2 id="simple-factory">🏠 Simple Factory</h2>
-<h3 id="a-real-world-example">A real world example:</h3>
+<h2 id="a-real-world-example">A real world example:</h2>
 <blockquote>
 <p>Consider, you are building house and you need doors.
 You can either put on some carpenter clothes, bring some glue, wood, tools and make the door yourself.
@@ -2063,7 +2050,7 @@ so that you don't need to learn anything about door making or deal with the mess
 Formally, a factory is a <em>function</em> or <em>method</em> that returns objects of a varying protoype 
 or class from some method call, which is assumed to be <code>new</code>.</p>
 </mark>
-<h3 id="a-programatic-example">👨🏻‍💻 <strong>A Programatic example:</strong></h3>
+<h2 id="a-programatic-example">👨🏻‍💻 A Programatic example:</h2>
 <p>First of all, we have a door interface and implementation of a wooden door.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2158,7 +2145,7 @@ or class from some method call, which is assumed to be <code>new</code>.</p>
 <span class="nv">$door2</span> <span class="o">=</span> <span class="nx">DoorFactory</span><span class="o">::</span><span class="na">make_door</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 </code></pre></div>
 </td></tr></table>
-<p><strong> ❓ When to use?</strong></p>
+<h2 id="when-to-use">❓ When to use?</h2>
 <mark class="critic block">
 <p>When creating an object is not just a few assignments, but involves some logic; 
 it makes sense to put it in a dedicated factory instead of repeating same code everywhere.</p>
