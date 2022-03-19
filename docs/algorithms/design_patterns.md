@@ -153,6 +153,7 @@ $door2 = DoorFactory::make_door(50, 100);
 ```
 
 ** ❓ When to use?**
+
 {==
 
 When creating an object is not just a few assignments, but involves some logic; 

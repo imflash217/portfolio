@@ -1980,32 +1980,34 @@ or class from some method call, which is assumed to be <code>new</code>.</p>
 <span class="normal">23</span>
 <span class="normal">24</span>
 <span class="normal">25</span>
-<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">// The Simple Factory INTERFACE</span>
-<span class="x">// </span>
-<span class="x">interface Door{</span>
-<span class="x">    public function get_width(): float;</span>
-<span class="x">    public function get_height(): float;</span>
-<span class="x">}</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// The Simple Factory INTERFACE</span>
+<span class="c1">// </span>
+<span class="k">interface</span> <span class="nx">Door</span><span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">get_width</span><span class="p">()</span><span class="o">:</span> <span class="nx">float</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">get_height</span><span class="p">()</span><span class="o">:</span> <span class="nx">float</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="x">// A CONCRETE implementation of Door interface</span>
-<span class="x">//</span>
-<span class="x">class WoodenDoor implements Door{</span>
-<span class="x">    protected $width;</span>
-<span class="x">    protected $height;</span>
+<span class="c1">// A CONCRETE implementation of Door interface</span>
+<span class="c1">//</span>
+<span class="k">class</span> <span class="nc">WoodenDoor</span> <span class="k">implements</span> <span class="nx">Door</span><span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$width</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$height</span><span class="p">;</span>
 
-<span class="x">    public function __construct(float $width, float $height){</span>
-<span class="x">        $this-&gt;$width = $width;</span>
-<span class="x">        $this-&gt;$height = $height;</span>
-<span class="x">    }</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">float</span> <span class="nv">$width</span><span class="p">,</span> <span class="nx">float</span> <span class="nv">$height</span><span class="p">){</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$width</span> <span class="o">=</span> <span class="nv">$width</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$height</span> <span class="o">=</span> <span class="nv">$height</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="x">    public function get_width(): float{</span>
-<span class="x">        return $this-&gt;$width;</span>
-<span class="x">    }</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">get_width</span><span class="p">()</span><span class="o">:</span> <span class="nx">float</span><span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$width</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="x">    public function get_height(): float{</span>
-<span class="x">        return $this-&gt;$height;</span>
-<span class="x">    }</span>
-<span class="x">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">get_height</span><span class="p">()</span><span class="o">:</span> <span class="nx">float</span><span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$height</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 <p>Then we have our door factory that makes the door and returns it.</p>
@@ -2013,11 +2015,15 @@ or class from some method call, which is assumed to be <code>new</code>.</p>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">class DoorFactory{</span>
-<span class="x">    public static function make_door($width, $height): Door {</span>
-<span class="x">        return new WoodenDoor($height, $width);</span>
-<span class="x">    }</span>
-<span class="x">}</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">DoorFactory</span><span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">make_door</span><span class="p">(</span><span class="nv">$width</span><span class="p">,</span> <span class="nv">$height</span><span class="p">)</span><span class="o">:</span> <span class="nx">Door</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">WoodenDoor</span><span class="p">(</span><span class="nv">$height</span><span class="p">,</span> <span class="nv">$width</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 <p>And then it can be used as:</p>
