@@ -41,3 +41,19 @@ there are broadly three types of useful & popular design patterns:
 
 > In simple words, Creational design patterns are focused towards 
 > how to instantiate an object or group of objects
+
+Wikipedia says:
+
+{==
+
+In software engineering, Creational design patterns are design patterns that deal with {==object creation mechanism==};
+trying to create objects in a manners suitable for the sitation.
+The basic form of object creation could result in design problems or added complexity to the design.
+Creational design patetrns solve this problem by controlling this object creation.
+
+==}
+
+
+
+
+
