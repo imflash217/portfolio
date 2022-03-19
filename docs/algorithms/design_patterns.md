@@ -95,6 +95,7 @@ or class from some method call, which is assumed to be `new`.
 First of all, we have a door interface and implementation of a wooden door.
 
 ```php
+<?php
 // The Simple Factory INTERFACE
 // 
 interface Door{
@@ -126,6 +127,8 @@ class WoodenDoor implements Door{
 Then we have our door factory that makes the door and returns it.
 
 ```php
+<?php
+
 class DoorFactory{
     public static function make_door($width, $height): Door {
         return new WoodenDoor($height, $width);

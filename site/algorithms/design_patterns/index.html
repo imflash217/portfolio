@@ -2042,6 +2042,11 @@ or class from some method call, which is assumed to be <code>new</code>.</p>
 <span class="nv">$door2</span> <span class="o">=</span> <span class="nx">DoorFactory</span><span class="o">::</span><span class="na">make_door</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 </code></pre></div>
 </td></tr></table>
+<p><strong> ❓ When to use?</strong>
+<mark class="critic"></p>
+<p>When creating an object is not just a few assignments, but involves some logic; 
+it makes sense to put it in a dedicated factory instead of repeating same code everywhere.</p>
+</mark>
 <h3 id="factory-method">🏭 Factory Method</h3>
 <h3 id="abstract-factory">🛠 Abstract Factory</h3>
 <h3 id="builder">👷🏽 Builder</h3>
