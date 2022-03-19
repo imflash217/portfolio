@@ -13,7 +13,8 @@
   font-weight: bold;
   font-family: "Roboto Slab";
   /* background: rgb(2, 0, 36); */
-  background-image: linear-gradient(to right, #bcffbc, #bcffbc, #ffffff93);
+  /* background-image: linear-gradient(to right, #bcffbc, #bcffbc, #ffffff93); */
+  background-image: linear-gradient(to right, #c9b5ff, #c9b5ff, #ffffff93);
   /* background-image: linear-gradient(to right, #0033ff, #232eff, #3428ff, #4121ff, #4c17ff, #6434ff, #7649ff, #875cff, #a587ff, #c2afff, #e0d7ff, #ffffff); */
   padding: 0.25em;
 }
@@ -22,21 +23,7 @@
   color: white;
   font-weight: bold;
   font-family: "Roboto Slab";
-  background-image: linear-gradient(
-    to right,
-    #000000,
-    #222222,
-    #3f3f3f,
-    #5e5e5e,
-    #7f7f7f,
-    #949494,
-    #aaaaaa,
-    #c1c1c1,
-    #d0d0d0,
-    #e0e0e0,
-    #efefef,
-    #ffffff
-  );
+  background-image: linear-gradient(to right, #bdbdbd93, #bababa93, #ffffff93);
   padding: 0.25em;
 }
 
@@ -44,7 +31,8 @@
   color: black;
   font-weight: bold;
   font-family: "Roboto Slab";
-  background-image: linear-gradient(
+  background-image: linear-gradient(to right #a9feff, #a9feff, #ffffff93);
+  /* background-image: linear-gradient(
     to right,
     #00fbff9e,
     #00fdec91,
@@ -58,7 +46,7 @@
     #b2fbff9a,
     #e9f9ffab,
     #ffffff93
-  );
+  ); */
   padding: 0.25em;
 }
 
