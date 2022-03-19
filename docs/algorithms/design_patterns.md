@@ -29,3 +29,12 @@ at which point you can start factoring your code using relevant design patterns.
 - Remember! Design Patterns are gudelines towards finding solutions to problem; not solutions to problems themselves.
   
 ## Types of Design Patterns
+
+Adapted from the Gang-of-four (GoF) book on `Design Patterns`; 
+there are broadly three types of useful & popular design patterns:
+
+1. Creational
+2. Structural 
+3. Behavioral
+
+## `Creational` Design Patterns
