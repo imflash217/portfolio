@@ -23,7 +23,7 @@
   color: black;
   font-weight: bold;
   font-family: "Roboto Slab";
-  background-image: linear-gradient(to right, #bdbdbd93, #bababa93, #ffffff93);
+  background-image: linear-gradient(to right, #979797, #acacac, #ffffff93);
   padding: 0.25em;
 }
 
@@ -32,21 +32,6 @@
   font-weight: bold;
   font-family: "Roboto Slab";
   background-image: linear-gradient(to right #a9feff, #a9feff, #ffffff93);
-  /* background-image: linear-gradient(
-    to right,
-    #00fbff9e,
-    #00fdec91,
-    #00ffd5a3,
-    #00ffb7a1,
-    #00ff959c,
-    #00ffb39c,
-    #00ffccaa,
-    #00ffe596,
-    #60ffff91,
-    #b2fbff9a,
-    #e9f9ffab,
-    #ffffff93
-  ); */
   padding: 0.25em;
 }
 
