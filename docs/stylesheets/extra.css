@@ -45,18 +45,18 @@
   font-family: "Roboto Slab";
   background-image: linear-gradient(
     to right,
-    #00faff,
-    #00fdee,
-    #00ffd6,
-    #00ffb7,
-    #00ff93,
-    #00ffb3,
-    #00ffce,
-    #00ffe4,
-    #60ffff,
-    #b2fbff,
-    #e9f9ff,
-    #ffffff
+    #00fbff9e,
+    #00fdec91,
+    #00ffd5a3,
+    #00ffb7a1,
+    #00ff959c,
+    #00ffb39c,
+    #00ffccaa,
+    #00ffe596,
+    #60ffff91,
+    #b2fbff9a,
+    #e9f9ffab,
+    #ffffff93
   );
   padding: 0.25em;
 }

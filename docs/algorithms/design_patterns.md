@@ -28,3 +28,4 @@ at which point you can start factoring your code using relevant design patterns.
 - Don't try to force them. Bad things might happen if done so!!
 - Remember! Design Patterns are gudelines towards finding solutions to problem; not solutions to problems themselves.
   
+## Types of Design Patterns
