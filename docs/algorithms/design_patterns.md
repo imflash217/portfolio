@@ -8,6 +8,7 @@ These are rather guideline son how to solve certain problems in certain situatio
 
 Wikipedia describes them as:
 {==
+
 In software engineering, a software design pattern is a general reusable solution 
 to a commonly recurring problem within a given context in software design.
 
