@@ -121,8 +121,39 @@ class WoodenDoor implements Door{
         return $this->$height;
     }
 }
+```
+
+Then we have our door factory that makes the door and returns it.
+
+```php
+class DoorFactory{
+    public static function make_door($width, $height): Door {
+        return new WoodenDoor($height, $width);
+    }
+}
+```
+
+And then it can be used as:
+
+```php
+<?php
+
+// Make a door of 100x200
+$door = DoorFactory::make_door(100, 200);
+
+echo "Width = " . $door->get_width();
+echo "Height = " . $door->get_width();
+
+// Make a door of 50x100
+$door2 = DoorFactory::make_door(50, 100);
 
 ```
+
+
+
+
+
+
 
 ### 🏭 Factory Method
 
