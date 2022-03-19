@@ -19,19 +19,19 @@
   padding: 0.25em;
 }
 
-.md-typeset h3 {
-  color: black;
-  font-weight: bold;
-  font-family: "Roboto Slab";
-  background-image: linear-gradient(to right, #979797, #acacac, #ffffff93);
-  padding: 0.25em;
-}
-
 .md-typeset h2 {
   color: black;
   font-weight: bold;
   font-family: "Roboto Slab";
   background-image: linear-gradient(to right #a9feff, #a9feff, #ffffff93);
+  padding: 0.25em;
+}
+
+.md-typeset h3 {
+  color: black;
+  font-weight: bold;
+  font-family: "Roboto Slab";
+  background-image: linear-gradient(to right, #979797, #acacac, #ffffff93);
   padding: 0.25em;
 }
 
