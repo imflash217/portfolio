@@ -7,3 +7,10 @@ These are rather guideline son how to solve certain problems in certain situatio
 {==
 Design Patterns are guidelines to solving certain recurring problems.
 ==}
+
+Wikipedia describes them as:
+{==
+In software engineering, a software design pattern is a general reusable solution 
+to a commonly recurring problem within a given context in software design.
+
+==}
