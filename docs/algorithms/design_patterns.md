@@ -92,10 +92,35 @@ or class from some method call, which is assumed to be `new`.
 
 ** A Programatic example:**
 
-First of all, we have a door interface and implementation of different types of doors: (wooden door) & (metal door)
+First of all, we have a door interface and implementation of a wooden door.
 
 ```php
+// The Simple Factory INTERFACE
+// 
+interface Door{
+    public function get_width(): float;
+    public function get_height(): float;
+}
 
+// A CONCRETE implementation of Door interface
+//
+class WoodenDoor implements Door{
+    protected $width;
+    protected $height;
+
+    public function __construct(float $width, float $height){
+        $this->$width = $width;
+        $this->$height = $height;
+    }
+
+    public function get_width(): float{
+        return $this->$width;
+    }
+
+    public function get_height(): float{
+        return $this->$height;
+    }
+}
 
 ```
 
