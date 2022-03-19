@@ -20,7 +20,7 @@
 }
 
 .md-typeset h2 {
-  color: black;
+  color: red;
   font-weight: bold;
   font-family: "Roboto Slab";
   background-image: linear-gradient(to right, #a9feff, #a9feff, #ffffff93);
