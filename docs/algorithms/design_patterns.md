@@ -75,7 +75,19 @@ A real world example:
 > Or, you can call the factory and get the door delivered to you;
 > so that you don't need to learn anything about door making or deal with the mess it brings.
 
+In simple words,
 
+> **Simple Factory** generates an instance for client without exposing any instantiation logic to the clients.
+
+Wikipedia says,
+
+{==
+
+In Object oriented Programming language (OOP), **Factory** is an object for creating other objects.
+Formally, a factory is a _function_ or _method_ that returns objects of a varying protoype 
+or class from some method call, which is assumed to be `new`.
+
+==}
 
 ### 🏭 Factory Method
 
