@@ -181,8 +181,8 @@ nav:
       - Hashing: python/hashing.md
 
   - 📟 Algorithms:
-      - 🎨 Design Patterns: algorithms/design_patterns.md
       - ❓Q/A: algorithms/QA.md
+      - 🎨 Design Patterns: algorithms/design_patterns.md
       - 🧮 Hash Tables: algorithms/hashtables.md
       - Sorting: algorithms/sorting.md
       # - Document Distance: algorithms/document_distance.md
