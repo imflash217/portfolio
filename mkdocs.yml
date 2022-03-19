@@ -184,7 +184,9 @@ nav:
       - ❓Q/A: algorithms/QA.md
       - 🎨 Design Patterns:
           - Intro: algorithms/design_patterns.md
-          - Simple Factory: algorithms/dp_simple_factory.md
+          - 🏠 Simple Factory: algorithms/dp_simple_factory.md
+          - 🏭 Factory Method: algorithms/dp_factory_method.md
+      - 🧨 Dynamic Programming: algorithms/dynamic_programming.md
       - 🧮 Hash Tables: algorithms/hashtables.md
       - Sorting: algorithms/sorting.md
       # - Document Distance: algorithms/document_distance.md
