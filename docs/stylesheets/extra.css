@@ -8,7 +8,8 @@
 }
 
 .md-typeset h1 {
-  color: white;
+  /* color: white; */
+  color: black;
   font-weight: bold;
   font-family: "Roboto Slab";
   /* background: rgb(2, 0, 36); */
