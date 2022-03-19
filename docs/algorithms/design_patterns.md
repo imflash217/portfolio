@@ -90,7 +90,7 @@ or class from some method call, which is assumed to be `new`.
 
 ==}
 
-** A Programatic example:**
+📖 **A Programatic example:**
 
 First of all, we have a door interface and implementation of a wooden door.
 
