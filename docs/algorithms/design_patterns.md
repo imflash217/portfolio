@@ -60,6 +60,7 @@ Creational design patetrns solve this problem by controlling this object creatio
 ==}
 
 There are 6 types of CReational patterns:
+
 1. Simple Factory
 2. Factory Method
 3. Abstract Factory
@@ -88,6 +89,15 @@ Formally, a factory is a _function_ or _method_ that returns objects of a varyin
 or class from some method call, which is assumed to be `new`.
 
 ==}
+
+** A Programatic example:**
+
+First of all, we have a door interface and implementation of different types of doors: (wooden door) & (metal door)
+
+```php
+
+
+```
 
 ### 🏭 Factory Method
 
