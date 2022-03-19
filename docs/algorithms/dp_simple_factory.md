@@ -1,6 +1,4 @@
-## 🏠 Simple Factory
-
-### A real world example:
+## A real world example:
 > Consider, you are building house and you need doors.
 > You can either put on some carpenter clothes, bring some glue, wood, tools and make the door yourself.
 > Or, you can call the factory and get the door delivered to you;
@@ -20,7 +18,7 @@ or class from some method call, which is assumed to be `new`.
 
 ==}
 
-### 👨🏻‍💻 **A Programatic example:**
+## 👨🏻‍💻 A Programatic example:
 
 First of all, we have a door interface and implementation of a wooden door.
 
@@ -82,7 +80,7 @@ $door2 = DoorFactory::make_door(50, 100);
 
 ```
 
-** ❓ When to use?**
+## ❓ When to use?
 
 {==
 
