@@ -10,6 +10,20 @@ Each node of the tree will a `value` and list of references to otehr nodes which
 A `binary tree` is a tree data structure where each node can have maximum 2 children only.
 A binary tree where all internal nodes (i.e. except the leaf nodes) have exactly 2 children are called `Complete Binary Tree`.
 
+## Traversals
+
+{==
+
+Pre-Order: 
+    - Here we traverse the **root first** then traverse the **left subtree**. Finally traverse the **right subtree** 
+
+In-Order:
+    - Here er traverse the **left subtree first**. Then visit the **root node**. Finally traverse the **right subtree**.
+
+Post-Order:
+    - 
+
+==}
 
 
 
