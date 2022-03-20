@@ -15,13 +15,14 @@ A binary tree where all internal nodes (i.e. except the leaf nodes) have exactly
 {==
 
 Pre-Order: 
-    - Here we traverse the **root first** then traverse the **left subtree**. Finally traverse the **right subtree** 
+    - Traverse the **root first** then traverse the **left subtree**. Finally traverse the **right subtree** 
 
 In-Order:
-    - Here er traverse the **left subtree first**. Then visit the **root node**. Finally traverse the **right subtree**.
+    - Traverse the **left subtree first**. Then visit the **root node**. Finally traverse the **right subtree**.
+    - In **binary search tree**; in-order traversal gives the whole tree nodes in a **sorted order**.
 
 Post-Order:
-    - 
+    - Traverse the **left subtree first**, then traverse the **right subtree*. FInally visit the **root node**
 
 ==}
 
