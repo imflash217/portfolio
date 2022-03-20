@@ -1,4 +1,24 @@
-## 25: Depth First values
+
+## Introduction
+
+A `tree` is a frequently used data structure to simulate a hierarchical tree-like structure.
+Each node of the tree will a `value` and list of references to otehr nodes which are called `child nodes`.
+
+> From a `graph` view, a `tree` can also be described as a DAG (directed acyclic graph) 
+> which has `N` nodes and `(N-1)` edges.
+
+
+
+
+
+
+
+
+
+
+## Examples
+
+### 25: Depth First values
 
 ???+ danger "Depth First Values"
     Write a function, `depth_first_values`, that takes in the root of a binary tree. 
@@ -57,7 +77,7 @@
     ```
 
 
-## 26: Breadth First Values
+### 26: Breadth First Values
 
 ???+ danger "Breadth First Values"
     Write a function, `breadth_first_values`, that takes in the root of a binary tree. 
@@ -129,7 +149,7 @@
 
 
 
-## 27: Tree Includes
+### 27: Tree Includes
 
 ???+ danger "Problem"
 
@@ -160,6 +180,7 @@
     ```
 
 ???+ done "Solution"
+
     ```python
     # class Node:
     #   def __init__(self, val):
@@ -181,7 +202,7 @@
     ```
 
 
-## 28: Tree Sum
+### 28: Tree Sum
 
 ???+ danger "Problem"
     Write a function, `tree_sum`, that takes in the root of a **binary tree** that contains number values. 
@@ -210,6 +231,7 @@
     ```
 
 ???+ done "Solution"
+
     ```python
     # class Node:
     #   def __init__(self, val):
@@ -225,7 +247,7 @@
     ```
 
 
-## 29: Binary Tree Min Value
+### 29: Binary Tree Min Value
 
 ???+ danger "Minimum value in a binary tree"
     Write a function, tree_min_value, that takes in the root of a binary tree that contains number values. 
@@ -258,6 +280,7 @@
 
 
 ???+ done "Solution"
+
     ```python
     # class Node:
     #   def __init__(self, val):
@@ -276,7 +299,7 @@
     ```
 
 
-## 30: Root-to-Leaf path w/ MAX sum
+### 30: Root-to-Leaf path w/ MAX sum
 
 ???+ danger "Problem"
     Write a function **`max_path_sum()`** that takes in the root of a Binary Tree
@@ -317,6 +340,7 @@
     ```
 
 ???+ done "Solution"
+
     ```python hl_lines="11-17 21"
     import math
 
@@ -341,7 +365,7 @@
         return root.val + max(left_sum, right_sum)
     ```
 
-## 31: Tree Path Finder
+### 31: Tree Path Finder
 
 ???+ danger "Problem"
     Write a function **`path_finder`** that takes in the *root* of a BT and a *target value*
@@ -382,6 +406,7 @@
     ```
 
 ???+ done "Solution"
+
     ```python hl_lines="36"
     class Node:
         def __init__(self, val):
@@ -421,7 +446,7 @@
         return path[::-1]       ## return the path in reverse order (from root to target)
     ```
 
-## 32: Tree Value Count
+### 32: Tree Value Count
 
 ???+ danger "Problem"
     Write a function, tree_value_count, that takes in the root of a binary tree and a target value. 
@@ -451,6 +476,7 @@
     ```
 
 ???+ done "Solution"
+
     ```python
     class Node:
         def __init__(self, val):
@@ -474,7 +500,7 @@
         return left_count + right_count
     ```
 
-## 33: Height of a BT
+### 33: Height of a BT
 
 ???+ danger "Problem"
     Write a function, `how_high()`, that takes in the root of a binary tree. 
@@ -512,6 +538,7 @@
     ```
 
 ???+ done "Solution"
+
     ```python
     class Node:
         def __init__(self, val):
@@ -530,7 +557,7 @@
         return 1 + max(left_height, right_height)
     ```
 
-## 34: Botton Right Value
+### 34: Botton Right Value
 
 ???+ danger "Problem"
     Write a function, `bottom_right_value()`, that takes in the root of a binary tree. 
@@ -568,6 +595,7 @@
     ```
 
 ???+ done "Solution"
+
     ```python hl_lines="1 4 14"
     from collections import deque
     
@@ -585,7 +613,7 @@
         return current.val
     ```
 
-## 35: All tree paths
+### 35: All tree paths
 
 Write a function, **`all_tree_paths()`**, that takes in the root of a binary tree. 
 The function should return a 2-Dimensional list where each subarray represents 
@@ -636,6 +664,7 @@ all_tree_paths(a) # ->
 ```
 
 ???+ done "Solution"
+
     ```python hl_lines="15 19 21-24 32"
     # class Node:
     #   def __init__(self, val):
@@ -673,7 +702,7 @@ all_tree_paths(a) # ->
     ```
 
 
-## 36: Tree levels
+### 36: Tree levels
 
 Write a function, **`tree_levels()`**, that takes in the root of a binary tree. 
 The function should return a 2D list where each sublist represents a level of the tree.
@@ -719,3 +748,4 @@ tree_levels(a) # ->
 
 ???+ done "Solution"
     
+    ...
