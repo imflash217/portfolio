@@ -22,7 +22,7 @@ In-Order:
     - In **binary search tree**; in-order traversal gives the whole tree nodes in a **sorted order**.
 
 Post-Order:
-    - Traverse the **left subtree first**, then traverse the **right subtree*. FInally visit the **root node**
+    - Traverse the **left subtree first**, then traverse the **right subtree*. Finally visit the **root node**
 
 ==}
 
