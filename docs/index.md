@@ -54,7 +54,7 @@ hide:
 
 <div class="photo">
 <figure>
-    <img src="assets/VinayK_resume_AI.jpg"/>
+    <img src="assets/vinay_resume_AI.jpg"/>
 </figure>
 </div>
 
