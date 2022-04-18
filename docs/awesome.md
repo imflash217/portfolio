@@ -46,3 +46,13 @@
             http://einops.rocks/pytorch-examples.html
 [^20]: 🟢 EINSUM / einops / PyTorch:
             https://theaisummer.com/einsum-attention/
+[^21]: 🎯 Linear Regression:
+            https://machinelearningcompass.com/machine_learning_models/linear_regression/
+[^22]: 🎯 Types of Convolutions:
+            https://towardsdatascience.com/types-of-convolutions-in-deep-learning-717013397f4d
+[^23]: 🔬 3D Graph Scene:
+            https://3dscenegraph.stanford.edu
+
+
+
+
