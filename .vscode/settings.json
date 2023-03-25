@@ -1,5 +1,8 @@
 {
     "yaml.schemas": {
         "https://json.schemastore.org/mkdocs-1.0.json": "file:///Users/vkumar24/Documents/flash_ai/study/github/portfolio/mkdocs.yml"
-    }
+    },
+    "github-actions.workflows.pinned.workflows": [
+        ".github/workflows/mkdocs_deploy.yml"
+    ]
 }
