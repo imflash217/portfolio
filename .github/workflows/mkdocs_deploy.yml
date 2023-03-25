@@ -14,7 +14,6 @@ jobs:
       - run: |
           pip3 install mkdocs-material
           pip3 install mknotebooks
-          # pip install mkdocs-git-revision-date-plugin
           pip install mkdocs-git-revision-date-localized-plugin
 
       - run: mkdocs gh-deploy --force
