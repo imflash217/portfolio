@@ -141,7 +141,7 @@ nav:
   - ✍🏼 Blogs:
       - Notes: blogs/notes.md
       - 🍥 System Design:
-          - 🌩️ CDN: cdn.md
+          - 🌩️ CDN: blogs/system_design/cdn.md
       - Physics:
           - Electromagnetic Spectrum, properties of material medium & its effects: blogs/physics/blog_01282021.md
       - Probability Theory:
