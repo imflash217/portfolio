@@ -48,6 +48,13 @@ hide:
 ??? success "Solution"
     Introducing more number of variables increasing the capacity of the model. If the number of data points in teh dataset is kept fixed, and then increasing the number of model parameters (variables) leads to **OVERFITTING**. Overfitting is a scenario where the trained model performs very well on the training data but performs poorly in the test daatset due to lack of generalization capabilites as the overly sized model just remembered the data points instead of understanding teh features & data distribution in the traning set.
 
+??? quote "हिन्दी में"
+    > **प्रश्न:** 
+    > Training data में data-points की संख्या निश्चित रखते हुए, model-variables की संख्या बढ़ाने से हम एक ऐसा trained model को प्राप्त कर सकते हैं जो training data को अत्यंत आची प्रकार fit कर सकता है। इस प्रक्रिया के करने से क्या-क्या हानियाँ होते हैं?
+
+    **उत्तर:**
+    Model के variables बढ़ाने से model की capacity बढ़ती है और इससे वो training data को आचे से समझ सकता है और training data-distribution के बारे में समझ सकता है। परंतु अगर variables की संख्या बढ़ाने के साथ-साथ अगर हम training-data की संख्या नहीं बढ़ाते हैं तो trained model में एक विकृति होने लगती है जिसे हम **OVERFITTING** कहते हैं। Overfitting होने से हमारा trained model, training-data के विषय में तो बहुत अच्छे से जानता है परंतु वो test-data पर वो अच्छे से कार्य नहीं करता है क्योंकि training के समय वो अपनी generalization क्षमता को विक्षित नहीं कर पाया और संभवतः एक रटंत (memorized training data) model ही बन पाया। अतः हमे *overfitting* को यथा संभव रोकने का प्रयास करना चाहिए जिसके लिये अनेक पथ अपनाए जाते हैं जैसे: (१) dropout (२) data augmentation (३) pruning
+     
 ---------------
 
 ### Q4: Odds of Success
