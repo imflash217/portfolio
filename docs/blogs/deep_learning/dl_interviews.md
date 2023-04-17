@@ -18,7 +18,7 @@ hide:
 Solution:
 
 In a bounded interval `[a, b]`, the **UNIFORM DISTRIBUTION** has the maximum entropy. The variance of the Uniform Distribution $\mathcal{U}(a, b)$ is $\sigma^2 = \frac{(b-a)^2}{12}$.
-Therefore, the maximum entropy in a bounded interval `[a, b]` is $\frac{\log{12}}{2} + \log(\sigma)$
+Therefore, the maximum entropy in a bounded interval `[a, b]` is $\left(\frac{\log{12}}{2} + \log(\sigma)\right)$
 
 ----------
 
