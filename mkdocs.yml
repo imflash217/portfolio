@@ -147,7 +147,7 @@ nav:
       - Probability Theory:
           - Introduction: blogs/prob/intro.md
       - Deep Learning:
-          - 🧑🏻‍💻 DL Interviews: blogs/deep_learning/ml_interviews.md
+          - 🧑🏻‍💻 DL Interviews: blogs/deep_learning/dl_interviews.md
           - Environment & Distribution Shift: blogs/deep_learning/dl_04_09.md
           - Tensorflow Tutorial: blogs/deep_learning/blog_tf_v1.md
           - PyTorch Dataloaders: blogs/deep_learning/blog_dataloaders.md
