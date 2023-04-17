@@ -54,7 +54,7 @@ hide:
 
     **उत्तर:**
     Model के variables बढ़ाने से model की capacity बढ़ती है और इससे वो training data को आचे से समझ सकता है और training data-distribution के बारे में समझ सकता है। परंतु अगर variables की संख्या बढ़ाने के साथ-साथ अगर हम training-data की संख्या नहीं बढ़ाते हैं तो trained model में एक विकृति होने लगती है जिसे हम **OVERFITTING** कहते हैं। Overfitting होने से हमारा trained model, training-data के विषय में तो बहुत अच्छे से जानता है परंतु वो test-data पर वो अच्छे से कार्य नहीं करता है क्योंकि training के समय वो अपनी generalization क्षमता को विक्षित नहीं कर पाया और संभवतः एक रटंत (memorized training data) model ही बन पाया। अतः हमे *overfitting* को यथा संभव रोकने का प्रयास करना चाहिए जिसके लिये अनेक पथ अपनाए जाते हैं जैसे: (१) dropout (२) data augmentation (३) pruning
-     
+
 ---------------
 
 ### Q4: Odds of Success
@@ -63,5 +63,6 @@ hide:
 > Give a numerical example that stresses the relationship the relationship between *probability* and *odds of an event occuring*.
 
 ??? success "Solution"
-    ...
+    **Odds of Success** of an event in an experiment is the ratio of *probability of the event occuring* and the *probability of the event not occuring*
+    i.e. $\left(\frac{\text{probability of occurance of an event E}}{1 - \text{(probability of the occurance of the event E)}}\right)$
 
