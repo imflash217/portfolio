@@ -210,6 +210,10 @@ nav:
           - Lecture 1: notes/ECE542/ece542_lecture1.md
           - Homeworks:
               - HW1a: notes/ECE542/ece542_hw1a.md
+    
+  - 🧑🏻‍🏫 TIL:
+      - About: til/about.md
+      - Numpy v/s Pandas: til/042123.md
 
   - 🌟 Awesome List: awesome.md
 ##########################################################################
