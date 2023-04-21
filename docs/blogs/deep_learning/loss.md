@@ -9,6 +9,8 @@ hide:
 
 ## Cross Entropy
 
+Cross Entropy is usually used in **multiclass classification** tasks.
+
 ???+ quote "Cross Entropy using Numpy"
     ```python
     import numpy as np
