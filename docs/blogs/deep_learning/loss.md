@@ -11,6 +11,8 @@ hide:
 
 Cross Entropy is usually used in **multiclass classification** tasks.
 
+> **`Pareto Optimization`**: An area of *multiple* criteria decision making that is concerned with mathematical optimization problems involving more than one objective functions to be optimized simultaneously. 
+
 ???+ quote "Cross Entropy using Numpy"
     ```python
     import numpy as np
@@ -22,3 +24,4 @@ Cross Entropy is usually used in **multiclass classification** tasks.
         return xentropy
 
     ```
+
