@@ -51,9 +51,10 @@ hide:
 </div>
 
 <!-- ------------------------------------------------------------------------------------ -->
-
+<!-- 
 ???+ quote "Resume"
-  ![...](assets/vinay_resume_AI.jpg)
+  ![...](assets/vinay_resume_AI.jpg) 
+-->
 
 
 <div class="photo">
