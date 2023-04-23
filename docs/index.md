@@ -53,9 +53,7 @@ hide:
 <!-- ------------------------------------------------------------------------------------ -->
 
 ???+ quote "Resume"
-  <figure markdown class="card">
   ![...](assets/vinay_resume_AI.jpg)
-  </figure>
 
 
 <div class="photo">
