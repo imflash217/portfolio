@@ -58,11 +58,11 @@ hide:
   </figure>
 
 
-  <div class="photo">
-  <figure>
-      <img src="assets/vinay_resume_AI.jpg"/>
-  </figure>
-  </div>
+<div class="photo">
+<figure>
+    <img src="assets/vinay_resume_AI.jpg"/>
+</figure>
+</div>
 
 <!-- <div class="photo">
 <figure>
