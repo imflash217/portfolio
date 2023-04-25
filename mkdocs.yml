@@ -19,7 +19,8 @@ theme:
     # text: Freight Sans Pro
     # text: Nunito
     # text: Roboto
-    code: Cascadia Code
+    # code: Cascadia Code
+    code: Operator Mono
   features:
     - navigation.tabs
     # - navigation.tabs.sticky
