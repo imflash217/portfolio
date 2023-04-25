@@ -11,14 +11,14 @@ theme:
     primary: white
     accent: indigo
   font:
-    # text: lexend
+    text: lexend
     # text: Playfair Display
     # text: Source Serif Pro
     # text: Cascadia Code PL
     # text: Arvo
     # text: Freight Sans Pro
     # text: Nunito
-    text: Roboto
+    # text: Roboto
     code: Cascadia Code
   features:
     - navigation.tabs
@@ -73,7 +73,7 @@ plugins:
   - search
   # - git-revision-date
   - git-revision-date-localized:
-      enable_creation_date: true
+      enable_creation_date: false
   - mknotebooks
     #  - mkdocs-jupyter:
     #     execute: False
