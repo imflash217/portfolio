@@ -126,12 +126,16 @@ nav:
       - HF Transformers: transformers/test.ipynb
       # - Layout_LM: transformers/layout_lm.md
 
-  - 🗣 NLP:
+  - 💬 NLP:
       - Regular Expressions (RegEx): nlp/regex.md
       - Naïve Bayes Classifiers: nlp/naive_bayes.md
       - Speech & Language Processing: nlp/nlp_book.md
       - CS224N:
           - Lecture 1: nlp/CS224N/cs224n_1.md
+
+  - 🗣️ Speech Processing:
+      - Lectures:
+          - Lecture-3: speech/lecture-3.md
 
   #- 🧤Projects:
   #  - About: projects/about.md
