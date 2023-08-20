@@ -68,6 +68,11 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.pathconverter:
+      base_path: "portfolio" # default: ''
+      relative_path: "" # default ''
+      absolute: true # default: false
+      tags: "a script img link object embed"
 
 ##########################################################################
 plugins:
