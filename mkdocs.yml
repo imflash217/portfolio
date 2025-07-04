@@ -114,22 +114,19 @@ nav:
   #  - Meeami Technologies: work/meeami.md
   #  - Flash.AI: work/flashai.md
   #  - Cognizant: work/cognizant.md
-
   # - 🧬 Research Papers:
   #     - About: publications/about.md
   #     - Interspeech 2014: publications/about.md #interspeech_2014.md
   #     - Odyssey 2014: publications/about.md #odyssey_2014.md
-
   #- 📚 Paper Reviews:
   #  - About: paper_reviews/about.md
-
   - 🤖 Transformers:
       - transformers/about.md
       # - Vaswani et al.: transformers/vaswani.md
       - DETR: transformers/detr.md
       # - Notebooks: transformers/Untitled.ipynb
     #   - HF Transformers: transformers/test.ipynb
-      # - Layout_LM: transformers/layout_lm.md
+    # - Layout_LM: transformers/layout_lm.md
 
   - 💬 NLP:
       - Regular Expressions (RegEx): nlp/regex.md
@@ -220,6 +217,10 @@ nav:
           - Lecture 1: notes/ECE542/ece542_lecture1.md
           - Homeworks:
               - HW1a: notes/ECE542/ece542_hw1a.md
+
+  - 📚 Notes:
+      - Papers2Read: notes/library/papers_to_read.md
+      - AI Libraries: notes/library/important_ai_libraries.md
 
   - 🧑🏻‍🏫 TIL:
       - About: til/about.md
