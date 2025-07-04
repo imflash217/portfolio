@@ -1,4 +1,6 @@
 # Important AI libraries
 
-1. AutoGen: https://github.com/microsoft/autogen
-2. Sentence Transformers: https://github.com/UKPLab/sentence-transformers
+1. `autogen`: https://github.com/microsoft/autogen
+2. `sentence-transformers`: https://github.com/UKPLab/sentence-transformers
+3. `gensim`:
+4.
