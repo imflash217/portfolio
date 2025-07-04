@@ -9,7 +9,60 @@ hide:
 
 
 <!-- ------------------------------------------------------------------------------------ -->
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23d5ab, #23a6d5);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #fff;
+}
 
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 60%;
+  display: flex;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+.container {
+  padding: 2px 10px;
+}
+
+.photo {
+  margin-bottom: 20px;
+}
+
+.photo img {
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+</style>
+
+<!--
 <style>
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -26,7 +79,7 @@ hide:
 .container {
   padding: 2px 10px;
 }
-</style>
+</style> -->
 
 <!-- ------------------------------------------------------------------------------------ -->
 
