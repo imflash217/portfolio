@@ -128,7 +128,7 @@ nav:
       # - Vaswani et al.: transformers/vaswani.md
       - DETR: transformers/detr.md
       # - Notebooks: transformers/Untitled.ipynb
-      - HF Transformers: transformers/test.ipynb
+    #   - HF Transformers: transformers/test.ipynb
       # - Layout_LM: transformers/layout_lm.md
 
   - 💬 NLP:
