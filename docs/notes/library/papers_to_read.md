@@ -8,4 +8,4 @@
 # Articles to Read:
 
 - [ ] Word2Vec `@jay_alammar`: https://jalammar.github.io/illustrated-word2vec/
-- [ ]
+- [ ] .
