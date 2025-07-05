@@ -30,6 +30,6 @@
 
 ## External code refernce
 
-``` py
+``` py title="fibonacci: test.py"
 --8<-- "src/test.py"
 ```
