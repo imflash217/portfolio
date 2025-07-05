@@ -31,5 +31,5 @@
 ## External code refernce
 
 ``` py title="fibonacci: test.py"
---8<-- "src/test.py"
+--8<-- "src/test.py:5:10"
 ```
