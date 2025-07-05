@@ -65,7 +65,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.pathconverter:
+  - pymdownx.pathconverter: # this dictates the filepaths we provide in all md files
       base_path: "portfolio" # default: ''
       relative_path: "" # default ''
       absolute: true # default: false
