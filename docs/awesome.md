@@ -30,6 +30,4 @@
 
 ## External code refernce
 
-```{.python .snippet}
 --8<-- "index.md"  # Adjust the relative path from the docs folder
-```
