@@ -1,0 +1,62 @@
+.md-grid {
+  max-width: initial;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 16px;
+}
+
+.md-typeset h1 {
+  /* color: white; */
+  color: black;
+  font-weight: bold;
+  font-family: "Roboto Slab";
+  /* background: rgb(2, 0, 36); */
+  /* background-image: linear-gradient(to right, #bcffbc, #bcffbc, #ffffff93); */
+  /* background-image: linear-gradient(to right, #c9b5ff, #c9b5ff, #ffffff93); */
+  /* background-image: linear-gradient(to right, #0033ff, #232eff, #3428ff, #4121ff, #4c17ff, #6434ff, #7649ff, #875cff, #a587ff, #c2afff, #e0d7ff, #ffffff); */
+  padding: 0.25em;
+}
+
+.md-typeset h2 {
+  color: black;
+  font-weight: bold;
+  font-family: "Roboto Slab";
+  /* background-image: linear-gradient(to right, #a9feff, #a9feff, #ffffff93); */
+  padding: 0.25em;
+}
+
+.md-typeset h3 {
+  color: black;
+  font-weight: bold;
+  font-family: "Roboto Slab";
+  /* background-image: linear-gradient(to right, #979797, #acacac, #ffffff93); */
+  padding: 0.25em;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: auto;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.photo {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 70%;
+  display: flex;
+  margin: auto;
+}
+
+.photo:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
