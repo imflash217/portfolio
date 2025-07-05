@@ -113,10 +113,9 @@ hide:
 </style>
 
 <!-- ------------------------------------------------------------------------------------ -->
-
-<div class="photo">
-  <figure>
-    <img src="assets/job_ads.png" />
+<div class="photo" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+  <figure style="margin: 0;">
+    <img src="assets/job_ads.png" style="width: 100%; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
   </figure>
 </div>
 
