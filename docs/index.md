@@ -150,7 +150,7 @@ hide:
 </div>
 
 <!-- ------------------------------------------------------------------------------------ -->
-
+<!-- 
 <div class="grid cards" markdown>
 
 -   :material-clock-fast:{ .lg .middle } __Set up in 5 minutes__
@@ -186,4 +186,4 @@ hide:
 
     [:octicons-arrow-right-24: License](#)
 
-</div>
+</div> -->
