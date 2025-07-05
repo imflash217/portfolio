@@ -32,3 +32,4 @@
 
 ```{.python .snippet}
 --8<-- "../src/test.py"  # Adjust the relative path from the docs folder
+```
