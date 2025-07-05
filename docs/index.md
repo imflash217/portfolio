@@ -62,6 +62,54 @@ hide:
   flex-grow: 1;
 }
 
+.profile-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  height: 200px;
+}
+
+.profile-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #666;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.profile-details h2 {
+  margin: 0 0 0.5rem 0;
+}
+
+.profile-details h3 {
+  margin: 0 0 1rem 0;
+  color: #666;
+}
+
+.education {
+  margin-bottom: 0.5rem;
+}
+
+.education p {
+  margin: 0.25rem 0;
+}
+
+.social-links {
+  font-size: 0.9rem;
+}
 </style>
 
 <!-- ------------------------------------------------------------------------------------ -->
@@ -72,19 +120,25 @@ hide:
   </figure>
 </div>
 
-<div class="profile-container">
+<div class="profile-card">
   <div class="profile-image">
     <img src="assets/vinay_2019.png" alt="avatar">
   </div>
-  <div class="profile-details">
-    <h2><b>Vinay Kumar /  विनय कुमार </b></h2>
-    <h3>Machine Learning Engineer</h3>
-    <p>🎓 BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
-    <p>🎓 Masters in EE <a style="font-weight:bold" href="https://www.ncsu.edu/">@NC State University</a></p>
-    Find me on <a style="font-weight:bold" href="https://github.com/imflash217">GitHub</a>,
-    <a style="font-weight:bold" href="https://linkedin.com/in/imflash217">LinkedIn</a> &
-    <a style="font-weight:bold" href="https://wandb.ai/imflash217/">WandB</a> by the handle
-    <b>@imflash217</b> or drop me an email at <b>vkumar24@ncsu.edu</b>
+  <div class="profile-content">
+    <div class="profile-details">
+      <h2><b>Vinay Kumar /  विनय कुमार </b></h2>
+      <h3>Machine Learning Engineer</h3>
+      <div class="education">
+        <p>🎓 BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
+        <p>🎓 Masters in EE <a style="font-weight:bold" href="https://www.ncsu.edu/">@NC State University</a></p>
+      </div>
+      <div class="social-links">
+        Find me on <a style="font-weight:bold" href="https://github.com/imflash217">GitHub</a>,
+        <a style="font-weight:bold" href="https://linkedin.com/in/imflash217">LinkedIn</a> &
+        <a style="font-weight:bold" href="https://wandb.ai/imflash217/">WandB</a> by the handle
+        <b>@imflash217</b> or drop me an email at <b>vkumar24@ncsu.edu</b>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -126,36 +180,3 @@ hide:
     [:octicons-arrow-right-24: License](#)
 
 </div>
-
-
-
-<div class="grid" markdown>
-
-:fontawesome-brands-html5: __HTML__ for content and structure
-{ .card }
-
-:fontawesome-brands-js: __JavaScript__ for interactivity
-{ .card }
-
-:fontawesome-brands-css3: __CSS__ for text running out of boxes
-{ .card }
-
-> :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
-
-</div>
-
-
-<!--
-
-
-<!-- <div class="photo">
-<figure>
-    <img src="assets/vinay_resume_AI.jpg"/>
-</figure>
-</div> -->
-
-<!-- <div class="photo">
-<figure>
-    <img src="assets/VinayK_resume_2022_2.jpg"/>
-</figure>
-</div> -->
