@@ -113,20 +113,22 @@ hide:
 </style>
 
 <!-- ------------------------------------------------------------------------------------ -->
-<div class="photo" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+<div class="photo" style="max-width: 900px; margin: 0 auto; padding: 20px;">
   <figure style="margin: 0;">
     <img src="assets/job_ads.png" style="width: 100%; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
   </figure>
 </div>
 
-<div class="profile-card">
+<div style="margin: 40px 0;"></div>
+
+<div class="profile-card" style="max-width: 900px; min-height: 220px; height: auto;">
   <div class="profile-image">
     <img src="assets/vinay_2019.png" alt="avatar">
   </div>
   <div class="profile-content">
     <div class="profile-details">
       <h2 style="margin: 0 0 0.25rem 0;"><b>Vinay Kumar /  विनय कुमार </b></h2>
-      <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">
+      <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; line-height: 1.5; overflow-wrap: break-word;">
         I'm a Machine Learning Engineer with expertise in deep learning, computer vision, and natural language processing.
         Currently working on large language models and multimodal AI systems. Previously, I completed my
         <a href="https://www.ece.ncsu.edu/" style="font-weight:bold">Masters in Electrical Engineering</a>
@@ -134,56 +136,8 @@ hide:
         <a href="https://ee.iith.ac.in/" style="font-weight:bold">BTech in Electrical Engineering</a>
         from IIT Hyderabad. I'm passionate about developing AI solutions that can make a real-world impact.
       </p>
-      <!-- <h3 style="margin: 0 0 0.5rem 0;">Machine Learning Engineer</h3>
-      <div class="education" style="margin-bottom: 0.5rem; font-size: 0.9rem;">
-        <p style="margin: 0.1rem 0;">🎓 BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
-        <p style="margin: 0.1rem 0;">🎓 Masters in EE <a style="font-weight:bold" href="https://www.ncsu.edu/">@NC State University</a></p>
-      </div>
-      <div class="social-links" style="font-size: 0.85rem; line-height: 1.2;">
-        Find me on <a style="font-weight:bold" href="https://github.com/imflash217">GitHub</a>,
-        <a style="font-weight:bold" href="https://linkedin.com/in/imflash217">LinkedIn</a> &
-        <a style="font-weight:bold" href="https://wandb.ai/imflash217/">WandB</a> by the handle
-        <b>@imflash217</b> or drop me an email at <b>vkumar24@ncsu.edu</b>
-      </div> -->
     </div>
   </div>
 </div>
 
 <!-- ------------------------------------------------------------------------------------ -->
-<!-- 
-<div class="grid cards" markdown>
-
--   :material-clock-fast:{ .lg .middle } __Set up in 5 minutes__
-
-    ---
-
-    Install [`mkdocs-material`](#) with [`pip`](#) and get up
-    and running in minutes
-
-    [:octicons-arrow-right-24: Getting started](#)
-
--   :fontawesome-brands-markdown:{ .lg .middle } __It's just Markdown__
-
-    ---
-
-    Focus on your content and generate a responsive and searchable static site
-
-    [:octicons-arrow-right-24: Reference](#)
-
--   :material-format-font:{ .lg .middle } __Made to measure__
-
-    ---
-
-    Change the colors, fonts, language, icons, logo and more with a few lines
-
-    [:octicons-arrow-right-24: Customization](#)
-
--   :material-scale-balance:{ .lg .middle } __Open Source, MIT__
-
-    ---
-
-    Material for MkDocs is licensed under MIT and available on [GitHub]
-
-    [:octicons-arrow-right-24: License](#)
-
-</div> -->
