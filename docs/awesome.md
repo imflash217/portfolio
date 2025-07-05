@@ -31,5 +31,5 @@
 ## External code refernce
 
 ```{.python .snippet}
---8<-- "../src/test.py"  # Adjust the relative path from the docs folder
+--8<-- "index.md"  # Adjust the relative path from the docs folder
 ```
