@@ -36,6 +36,32 @@ hide:
   max-width: 800px;
   margin: auto;
 }
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile-image {
+  flex-shrink: 0;
+}
+
+.profile-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #666;
+}
+
+.profile-details {
+  flex-grow: 1;
+}
+
 </style>
 
 <!-- ------------------------------------------------------------------------------------ -->
@@ -46,9 +72,11 @@ hide:
   </figure>
 </div>
 
-<div class="photo">
-  <img src="assets/vinay_2019.png" alt="avatar" style="width:40%">
-  <div class="container">
+<div class="profile-container">
+  <div class="profile-image">
+    <img src="assets/vinay_2019.png" alt="avatar">
+  </div>
+  <div class="profile-details">
     <h2><b>Vinay Kumar /  विनय कुमार </b></h2>
     <h3>Machine Learning Engineer</h3>
     <p>🎓 BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
@@ -56,7 +84,7 @@ hide:
     Find me on <a style="font-weight:bold" href="https://github.com/imflash217">GitHub</a>,
     <a style="font-weight:bold" href="https://linkedin.com/in/imflash217">LinkedIn</a> &
     <a style="font-weight:bold" href="https://wandb.ai/imflash217/">WandB</a> by the handle
-    <b>@imflash217</b> or drop me an email at <b>vkumar24@ncsu.edu<b>
+    <b>@imflash217</b> or drop me an email at <b>vkumar24@ncsu.edu</b>
   </div>
 </div>
 
