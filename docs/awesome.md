@@ -30,4 +30,4 @@
 
 ## External code refernce
 
---8<-- "run.sh"  # Adjust the relative path from the docs folder
+--8<-- "run.sh"
