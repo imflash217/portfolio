@@ -126,7 +126,15 @@ hide:
   <div class="profile-content">
     <div class="profile-details">
       <h2 style="margin: 0 0 0.25rem 0;"><b>Vinay Kumar /  विनय कुमार </b></h2>
-      <h3 style="margin: 0 0 0.5rem 0;">Machine Learning Engineer</h3>
+      <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem;">
+        I'm a Machine Learning Engineer with expertise in deep learning, computer vision, and natural language processing.
+        Currently working on large language models and multimodal AI systems. Previously, I completed my
+        <a href="https://www.ece.ncsu.edu/" style="font-weight:bold">Masters in Electrical Engineering</a>
+        from NC State University, specializing in AI/ML, and my
+        <a href="https://ee.iith.ac.in/" style="font-weight:bold">BTech in Electrical Engineering</a>
+        from IIT Hyderabad. I'm passionate about developing AI solutions that can make a real-world impact.
+      </p>
+      <!-- <h3 style="margin: 0 0 0.5rem 0;">Machine Learning Engineer</h3>
       <div class="education" style="margin-bottom: 0.5rem; font-size: 0.9rem;">
         <p style="margin: 0.1rem 0;">🎓 BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
         <p style="margin: 0.1rem 0;">🎓 Masters in EE <a style="font-weight:bold" href="https://www.ncsu.edu/">@NC State University</a></p>
@@ -136,7 +144,7 @@ hide:
         <a style="font-weight:bold" href="https://linkedin.com/in/imflash217">LinkedIn</a> &
         <a style="font-weight:bold" href="https://wandb.ai/imflash217/">WandB</a> by the handle
         <b>@imflash217</b> or drop me an email at <b>vkumar24@ncsu.edu</b>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
