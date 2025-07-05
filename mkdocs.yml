@@ -34,6 +34,11 @@ theme:
 
 ##########################################################################
 markdown_extensions:
+  - abbr
+  - attr_list
+  - md_in_html
+  - footnotes
+  - meta
   - admonition
   - pymdownx.emoji
   - pymdownx.details
@@ -41,8 +46,12 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.highlight
   - pymdownx.inlinehilite
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.snippets:
@@ -53,21 +62,9 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
       clickable_checkbox: false
-  - pymdownx.arithmatex:
-      generic: true
-  - abbr
-  - attr_list
-  - md_in_html
-  - footnotes
-  - meta
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.critic
-  - pymdownx.caret
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
   - pymdownx.pathconverter:
       base_path: "portfolio" # default: ''
       relative_path: "" # default ''
