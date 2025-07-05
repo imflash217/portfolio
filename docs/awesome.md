@@ -36,6 +36,8 @@
        src="report_GridTr.html"
        width="250"
        height="200"> -->
-```
---8<-- "../src/test.py"
-```
+
+## External code refernce
+
+```{.python .snippet}
+--8<-- "../src/test.py"  # Adjust the relative path from the docs folder
