@@ -1,10 +1,10 @@
 # ✨ Awesome List:
 
-- [ ] PositionalEncoding:
+- [ ] **PositionalEncoding**:
     * [ ] https://e2eml.school/transformers.html
     * [ ] https://github.com/tensorflow/tensor2tensor/issues/1591
     * [ ] https://kazemnejad.com/blog/transformer_architecture_positional_encoding/
-- [ ] BatchNorm:
+- [ ] **BatchNorm**:
     * [ ] https://colab.research.google.com/drive/1Sw2GXJmylz9DvtPaBfJIeutoXNISelZy?usp=sharing
     * [ ] https://e2eml.school/batch_normalization.html
     * [ ] How BatchNorm Helps?: https://arxiv.org/pdf/1805.11604.pdf
@@ -17,7 +17,7 @@
     * [ ] https://e2eml.school/how_optimization_works_2.html
 - [ ] Optimizing a linear model: https://e2eml.school/how_optimization_works_3.html
 - [ ] Optimizing complex models:vhttps://e2eml.school/how_optimization_works_4.html
-- [ ] EINSUM:
+- [ ] **EINSUM**:
     * [x] https://obilaniu6266h16.wordpress.com/2016/02/04/einstein-summation-in-numpy/
     * [x] https://rockt.github.io/2018/04/30/einsum
     * [x] https://ajcr.net/Basic-guide-to-einsum/
@@ -30,4 +30,6 @@
 
 ## External code refernce
 
---8<-- "run.sh"
+``` py
+--8<-- "src/test.py"
+```
