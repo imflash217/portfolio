@@ -26,6 +26,16 @@ hide:
 .container {
   padding: 2px 10px;
 }
+
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  padding: 0 20px;
+  max-width: 800px;
+  margin: auto;
+}
 </style>
 
 <!-- ------------------------------------------------------------------------------------ -->
