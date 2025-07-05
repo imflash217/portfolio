@@ -125,13 +125,13 @@ hide:
   </div>
   <div class="profile-content">
     <div class="profile-details">
-      <h2><b>Vinay Kumar /  विनय कुमार </b></h2>
-      <h3>Machine Learning Engineer</h3>
-      <div class="education">
-        <p>🎓 BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
-        <p>🎓 Masters in EE <a style="font-weight:bold" href="https://www.ncsu.edu/">@NC State University</a></p>
+      <h2 style="margin: 0 0 0.25rem 0;"><b>Vinay Kumar /  विनय कुमार </b></h2>
+      <h3 style="margin: 0 0 0.5rem 0;">Machine Learning Engineer</h3>
+      <div class="education" style="margin-bottom: 0.5rem; font-size: 0.9rem;">
+        <p style="margin: 0.1rem 0;">🎓 BTech in EE <a style="font-weight:bold" href="https://iith.ac.in/">@IIT-Hyderabad</a></p>
+        <p style="margin: 0.1rem 0;">🎓 Masters in EE <a style="font-weight:bold" href="https://www.ncsu.edu/">@NC State University</a></p>
       </div>
-      <div class="social-links">
+      <div class="social-links" style="font-size: 0.85rem; line-height: 1.2;">
         Find me on <a style="font-weight:bold" href="https://github.com/imflash217">GitHub</a>,
         <a style="font-weight:bold" href="https://linkedin.com/in/imflash217">LinkedIn</a> &
         <a style="font-weight:bold" href="https://wandb.ai/imflash217/">WandB</a> by the handle
