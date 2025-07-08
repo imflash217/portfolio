@@ -216,7 +216,9 @@ nav:
               - HW1a: notes/ECE542/ece542_hw1a.md
 
   - 📚 Notes:
-      - Papers2Read: notes/library/papers_to_read.md
+      - Papers to Read: notes/library/papers_to_read.md
+      - Articles to Read: notes/library/articles_to_read.md
+      - Books to Read: notes/library/books_to_read.md
       - AI Libraries: notes/library/important_ai_libraries.md
 
   - 🧑🏻‍🏫 TIL:

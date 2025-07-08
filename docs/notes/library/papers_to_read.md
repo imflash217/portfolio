@@ -7,14 +7,14 @@
 - [ ] Sparse Transformers: https://arxiv.org/pdf/1904.10509
 - [ ] LongFormer: https://arxiv.org/pdf/2004.05150
 - [ ] Transformer-XL: https://arxiv.org/pdf/1901.02860
-- [ ] Grouped Query Attention (GQA): https://arxiv.org/pdf/2305.13245
+- [ ] GQA (Grouped Query Attention): https://arxiv.org/pdf/2305.13245
 - [ ] Fast Transformer (aka. Multi-Query Attention): https://arxiv.org/pdf/1911.02150
 - [ ] Flash Attention: https://arxiv.org/pdf/2205.14135
 - [ ] Flash Attention 2: https://tridao.me/publications/flash2/flash2.pdf
-
-# Articles to Read:
-
-- [ ] Illustrated Transformer `@jay_alammar`: https://jalammar.github.io/illustrated-transformer/
-- [ ] Illustrated Word2Vec `@jay_alammar`: https://jalammar.github.io/illustrated-word2vec/
-- [ ] KV Cache in Transformers: https://kipp.ly/transformer-inference-arithmetic/
+- [ ] RMS-Norm: https://arxiv.org/pdf/1910.07467
+- [ ] On Layer Normalization: https://arxiv.org/pdf/2002.04745
+- [ ] SwiGLU: https://arxiv.org/pdf/2002.05202
+- [ ] RoFormer / RoPE (Rotary Positional Embeddings): https://arxiv.org/pdf/2104.09864v4
+- [ ] Data Packing w/o Cross-Contamination: https://arxiv.org/pdf/2107.02027, https://www.graphcore.ai/posts/introducing-packed-bert-for-2x-faster-training-in-natural-language-processing
 - [ ]
+
