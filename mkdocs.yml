@@ -221,6 +221,9 @@ nav:
       - Books to Read: notes/library/books_to_read.md
       - AI Libraries: notes/library/important_ai_libraries.md
 
+  - 🍥 ML System Design:
+      - Overview: mlsd/01_overview.md
+
   - 🧑🏻‍🏫 TIL:
       - About: til/about.md
       - Numpy v/s Pandas: til/042123.md

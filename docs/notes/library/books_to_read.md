@@ -1,5 +1,5 @@
 # Books to read:
 
-- [ ] https://visionbook.mit.edu/linear_image_filtering.html
+- [ ] https://visionbook.mit.edu/
 - [ ] https://szeliski.org/Book/
-- [ ] 
+- [ ]
