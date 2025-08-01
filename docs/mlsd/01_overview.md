@@ -4,7 +4,40 @@ As its adoption in the industry quickly grows, ML has proven to be a powerful to
 
 > So, before starting an ML project, we must ask whether ML is **necessary** and **cost-effective**
 
+Some applications where use of ML have been widely adopted are:
+
+- [ ] Predictive Typing
+- [ ] Machine Translation
+- [ ] Fraud Detection
+- [ ] Price Optimization
+- [ ] Churn Prediction
+- [ ] Automated Support Ticket Classification
+- [ ] Brand Monitoring
+- [ ] Sentiment Analysis
+- [ ] Healthcare applications
+
 ???+ info "Hindi version (हिंदी संस्करण देखें)"
     जैसे जैसे industry में Machine Learning का उपयोग बढ़ रहा है, वैसे वैसे ML और भी अनेकानेक समस्याओं को solve करने में बहुत उपयोगी सिद्ध हो रहा है और इसकी चर्चाएं भी समाज में बढ़ रही हैं। परंतु फिर भी हमें ये बात ध्यान में रखना चाहिए की ML सभी समस्याओं की कोई रामबाण औषधि नहीं है। ML एक बहुत ही powerful tool है इसलिए वो अनेकानेक परिस्थितियों में उपयोग किया जाता है, परंतु ये आवश्यक नहीं की वो सभी परिस्थितियों में उपयोग किया जाये।
 
-    > अतः ML को किसी भी परिस्थिति में उपयोग करने से पहले, हमें यह जरूर देखना चाहिए की क्या वो **आवश्यक ⚡️** और **किफायती 🤑** है?
+    ???+ quote
+        अतः ML को किसी भी परिस्थिति में उपयोग करने से पहले, हमें यह जरूर देखना चाहिए की क्या वो **आवश्यक ⚡️** और **किफायती 🤑** है?
+
+    कुछ क्षेत्र जहाँ पर ML का प्रयोग बहुत सफलता पूर्वक उपयोग में लाया गया है:
+    - [ ] Predictive Typing
+    - [ ] Machine Translation
+    - [ ] Fraud Detection
+    - [ ] Price Optimization
+    - [ ] Churn Prediction
+
+    ``` mermaid
+        sequenceDiagram
+        autonumber
+        Alice->>John: Hello John, how are you?
+        loop Healthcheck
+            John->>John: Fight against hypochondria
+        end
+        Note right of John: Rational thoughts!
+        John-->>Alice: Great!
+        John->>Bob: How about you?
+        Bob-->>John: Jolly good!
+    ```
