@@ -23,14 +23,15 @@ Some applications where use of ML have been widely adopted are:
         अतः ML को किसी भी परिस्थिति में उपयोग करने से पहले, हमें यह जरूर देखना चाहिए की क्या वो **आवश्यक ⚡️** और **किफायती 🤑** है?
 
     कुछ क्षेत्र जहाँ पर ML का प्रयोग बहुत सफलता पूर्वक उपयोग में लाया गया है:
+
     - [ ] Predictive Typing
     - [ ] Machine Translation
     - [ ] Fraud Detection
     - [ ] Price Optimization
     - [ ] Churn Prediction
 
-    ``` mermaid
-        sequenceDiagram
+    ```mermaid
+    sequenceDiagram
         autonumber
         Alice->>John: Hello John, how are you?
         loop Healthcheck
