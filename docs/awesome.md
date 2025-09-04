@@ -33,3 +33,7 @@
 ``` py title="fibonacci: test.py"
 --8<-- "src/test.py:5:10"
 ```
+
+``` py title="Address Extraction"
+--8<-- "src/extract_address.py"
+```
