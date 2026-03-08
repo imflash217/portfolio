@@ -24,7 +24,7 @@
     padding: 3px 10px; border-radius: 20px;
   }
   .v2-body {
-    display: flex; align-items: center; justify-content: space-between;
+    display: block; align-items: center; justify-content: space-between;
     padding: 20px 28px;
   }
   .v2-info { flex: 1; }
@@ -35,12 +35,13 @@
   }
   .v2-bio {
     font-size: 0.82rem; color: var(--secondary); line-height: 1.5;
-    max-width: 340px;
+    max-width: none;
   }
   .v2-photo {
     width: 100px; height: 100px; border-radius: 50%;
     object-fit: cover; margin-left: 20px; flex-shrink: 0;
     border: 3px solid var(--border);
+    float: right; margin: 0 0 10px 20px;
   }
   .v2-actions {
     display: flex; gap: 8px; padding: 0 28px 20px;
