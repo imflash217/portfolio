@@ -118,11 +118,11 @@
     <span class="v2-available">✦ Open to Work</span>
   </div>
   <div class="v2-body">
+    <img class="v2-photo" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "profile image" }}" />
     <div class="v2-info">
       <h1 class="v2-name">{{ .title | default site.Title }}</h1>
       <p class="v2-bio">{{ .subtitle | markdownify }}</p>
     </div>
-    <img class="v2-photo" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "profile image" }}" />
   </div>
   <div class="v2-actions">
     <a href="mailto:vinay217.dev@gmail.com" class="v2-btn v2-btn-primary"><i class="fa-solid fa-envelope"></i> Get in Touch</a>
