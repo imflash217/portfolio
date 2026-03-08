@@ -38,11 +38,7 @@ buildExpired = false
   [params.profileMode]
     enabled = true
     title = "Vinay Kumar"
-    subtitle = """
-      Sr. ML Engineer specializing in LLMs, Computer Vision, Speech & Stateful Agents.<br><br>
-      Currently shipping production AI at <a href="https://www.tiaa.org" target="_blank">TIAA</a> · Previously at <a href="https://www.boom.interactive" target="_blank">Boom Inc.</a> and <a href="https://www.ncsu.edu" target="_blank">NC State</a><br>
-      MS from <a href="https://www.ncsu.edu" target="_blank">NC State</a> · BTech from <a href="https://iith.ac.in" target="_blank">IIT Hyderabad</a>
-    """
+    subtitle = """Sr. ML Engineer specializing in Computer Vision, Speech Processing, Language Models, & Stateful LLM Agents - shipping production AI at <a href="https://www.tiaa.org" target="_blank">TIAA</a>. \n\n\n Previously at <a href="https://www.boom.interactive" target="_blank">Boom Inc.</a> and <a href="https://www.ncsu.edu" target="_blank">NC State</a>. \n\n MS from <a href="https://www.ncsu.edu" target="_blank">NC State</a>, BTech from <a href="https://iith.ac.in" target="_blank">IIT Hyderabad</a>."""
     imageUrl = "https://avatars.githubusercontent.com/u/12234745?v=4"
     imageTitle = "Vinay Kumar"
     imageWidth = 150
