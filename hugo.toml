@@ -148,6 +148,11 @@ buildExpired = false
     url = "/speech/"
     weight = 7
   [[menu.main]]
+  identifier = "awesome"
+  name = "Awesome"
+  url = "/awesome/"
+  weight = 8
+  [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
