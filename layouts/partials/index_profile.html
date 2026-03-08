@@ -118,7 +118,7 @@
   </div>
   <div class="v2-body">
     <div class="v2-info">
-      <h1 class="v2-name">I'm {{ .title | default site.Title }}</h1>
+      <h1 class="v2-name">{{ .title | default site.Title }}</h1>
       <p class="v2-bio">{{ .subtitle | markdownify }}</p>
     </div>
     <img class="v2-photo" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default "profile image" }}" />
