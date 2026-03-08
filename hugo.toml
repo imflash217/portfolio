@@ -41,8 +41,10 @@ buildExpired = false
     subtitle = """Sr. ML Engineer specializing in Computer Vision, Speech Processing, Language Models, & Stateful LLM Agents \
     - shipping production AI at <a href="https://www.tiaa.org" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">TIAA</a>.\
     <br><br>\
-    Previously at <a href="https://www.boom.interactive" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Boom Inc.</a> \
-    and <a href="https://www.ncsu.edu" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">NC State</a>.\
+    Previously at <a href="https://www.boom.interactive" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Boom Inc.</a> , \
+    <a href="https://research.ece.ncsu.edu/ivmcl" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">iVMCL @NCState</a>, \
+    <a href="https://www.meeamitech.com" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Meeami Technologies</a>, \
+    <a href="https://www.cognizant.com/us/en" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Cognizant</a>.\
     <br><br>\
     Masters in Electrical Engineering from <a href="https://www.ncsu.edu" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">NC State</a> \
     <br>\
