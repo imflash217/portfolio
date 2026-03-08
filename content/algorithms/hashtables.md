@@ -1,16 +1,13 @@
 ---
 title: "Hash Tables"
 tags:
-  - algorithms
-  - data-structures
-  - hash-tables
+    - algorithms
+    - data-structures
+    - hash-tables
 author: "Vinay Kumar"
 date: 2021-01-29
 summary: "Deep dive into hash tables  -  hashing, collision resolution via chaining and open addressing, and hash functions."
 ---
-
-# Hash Tables
-`Author: Vinay Kumar (@imflash217) | Date: 29/January/2021`
 
 ## Definition
 
@@ -32,19 +29,23 @@ DAT works well when the universe `U` of keys is small. But when `U` is very larg
 A good hash function satisfies the assumption of **simple uniform hashing**: each key is equally likely to hash to any of the `m` slots.
 
 #### Division Method:
+
 $$h(k) = k \mod m$$
 
 #### Multiplication Method:
+
 $$h(k) = \lfloor m(k \cdot A \mod 1) \rfloor$$
 where $0 < A < 1$. Knuth suggests $A \approx \frac{\sqrt{5} - 1}{2} = 0.6180339887...$
 
 ### Collision Resolution
 
 #### Chaining
+
 - Each slot of the hash-table holds a linked list of all the elements that hash to the same slot.
 - **Expected Time**: $O(1 + \alpha)$ where $\alpha = n/m$ is the load factor
 
 #### Open Addressing
+
 - All elements are stored in the hash-table itself.
 - Each slot has either an element or `NIL`.
 - **Linear Probing**: $h(k, i) = (h'(k) + i) \mod m$
