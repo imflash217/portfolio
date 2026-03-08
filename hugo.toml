@@ -33,7 +33,7 @@ buildExpired = false
   ShowWordCount = true
 
   [params.label]
-    text = "flash217"
+    text = "imflash217"
 
   [params.profileMode]
     enabled = true
