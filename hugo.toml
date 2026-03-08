@@ -143,6 +143,11 @@ buildExpired = false
     url = "/python/"
     weight = 6
   [[menu.main]]
+    identifier = "speech"
+    name = "Speech"
+    url = "/speech/"
+    weight = 7
+  [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
