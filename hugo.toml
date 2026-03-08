@@ -60,7 +60,7 @@ buildExpired = false
       name = "Python"
       url = "/python/"
     [[params.profileMode.buttons]]
-      name = "ML System Design"
+      name = "System Design"
       url = "/mlsd/"
 
   [[params.socialIcons]]
