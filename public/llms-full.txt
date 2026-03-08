@@ -1,0 +1,1470 @@
+# Vinay Kumar's Portfolio  -  Full Content
+
+> Complete content of all articles for LLM consumption.
+
+---
+
+## Source: /2023-01-27-the-transformer-family-v2.md
+
+Many new Transformer architecture improvements have been proposed since the original "The Transformer Family" post about three years ago. Here we do a big refactoring and enrichment  -  restructuring the hierarchy of sections and improving many sections with more recent papers. Version 2.0 is a superset of the old version, about twice the length.
+
+## Notations
+
+| Symbol | Meaning |
+|---|---|
+| $d$ | The model size / hidden state dimension / positional encoding size |
+| $h$ | The number of heads in multi-head attention layer |
+| $L$ | The segment length of input sequence |
+| $N$ | The total number of attention layers in the model |
+| $\mathbf{X} \in \mathbb{R}^{L \times d}$ | The input sequence where each element has been mapped into an embedding vector of shape $d$ |
+| $\mathbf{W}^k \in \mathbb{R}^{d \times d_k}$ | The key weight matrix |
+| $\mathbf{W}^q \in \mathbb{R}^{d \times d_k}$ | The query weight matrix |
+| $\mathbf{W}^v \in \mathbb{R}^{d \times d_v}$ | The value weight matrix |
+
+## Transformer Basics
+
+The **Transformer** (Vaswani, et al., 2017) model has an encoder-decoder architecture, as commonly used in many NMT models. Later simplified Transformer was shown to achieve great performance in language modeling tasks, like in encoder-only BERT or decoder-only GPT.
+
+### Attention and Self-Attention
+
+**Attention** is a mechanism in neural network that a model can learn to make predictions by selectively attending to a given set of data. The amount of attention is quantified by learned weights and thus the output is usually formed as a weighted average.
+
+**Self-attention** is a type of attention mechanism where the model makes prediction for one part of a data sample using other parts of the observation about the same sample.
+
+Transformer relies on the *scaled dot-product attention*: given a query matrix $\mathbf{Q}$, a key matrix $\mathbf{K}$ and a value matrix $\mathbf{V}$, the output is a weighted sum of the value vectors:
+
+$$\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^\top}{\sqrt{d_k}}\right)\mathbf{V}$$
+
+For a query and a key vector $\mathbf{q}_i, \mathbf{k}_j \in \mathbb{R}^d$, we have a scalar score:
+
+$$a_{ij} = \text{softmax}\left(\frac{\mathbf{q}_i \mathbf{k}_j^\top}{\sqrt{d_k}}\right) = \frac{\exp\left(\frac{\mathbf{q}_i \mathbf{k}_j^\top}{\sqrt{d_k}}\right)}{\sum_{r \in S_i} \exp\left(\frac{\mathbf{q}_i \mathbf{k}_r^\top}{\sqrt{d_k}}\right)}$$
+
+### Multi-Head Self-Attention
+
+The **multi-head self-attention** module is a key component in Transformer. Rather than only computing the attention once, the multi-head mechanism splits the inputs into smaller chunks and then computes the scaled dot-product attention over each subspace in parallel:
+
+$$\text{MultiHead}(\mathbf{X}_q, \mathbf{X}_k, \mathbf{X}_v) = [\text{head}_1; \dots; \text{head}_h] \mathbf{W}^o$$
+
+$$\text{where head}_i = \text{Attention}(\mathbf{X}_q\mathbf{W}^q_i, \mathbf{X}_k\mathbf{W}^k_i, \mathbf{X}_v\mathbf{W}^v_i)$$
+
+### Positional Encoding
+
+Because self-attention operation is permutation invariant, it is important to use proper **positional encoding** to provide order information to the model.
+
+#### Sinusoidal Positional Encoding
+
+Sinusoidal positional encoding is defined as follows, given the token position $i$ and the dimension $\delta$:
+
+$$\text{PE}(i, \delta) = \begin{cases} \sin\left(\frac{i}{10000^{2\delta'/d}}\right) & \text{if } \delta = 2\delta' \\ \cos\left(\frac{i}{10000^{2\delta'/d}}\right) & \text{if } \delta = 2\delta' + 1 \end{cases}$$
+
+#### Rotary Position Embedding
+
+Rotary position embedding (RoPE; Su et al. 2021) encodes the absolute position with a rotation matrix and multiplies key and value matrices of every attention layer with it to inject relative positional information at every layer.
+
+Given a vector $\mathbf{z}$, to rotate it counterclockwise by $\theta$, we multiply by a rotation matrix:
+
+$$R = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix}$$
+
+When generalizing to higher dimensional space, RoPE divides the $d$-dimensional space into $d/2$ subspaces and constructs a block-diagonal rotation matrix. Then both key and query matrices incorporate positional information:
+
+$$\mathbf{q}_i^\top \mathbf{k}_j = (\mathbf{R}^d_{\Theta, i} \mathbf{W}^q \mathbf{x}_i)^\top (\mathbf{R}^d_{\Theta, j} \mathbf{W}^k \mathbf{x}_j) = \mathbf{x}_i^\top \mathbf{W}^q \mathbf{R}^d_{\Theta, j-i} \mathbf{W}^k \mathbf{x}_j$$
+
+## Efficient Attention
+
+The computation and memory cost of vanilla Transformer grows quadratically with sequence length and hence it is hard to be applied on very long sequences.
+
+### Sparse Attention Patterns
+
+A simple alteration to make self-attention less expensive is to restrict the attention span of each token to **local** context only, so that self-attention grows linearly with the sequence length.
+
+**Sparse Transformer** (Child et al., 2019) introduced *factorized self-attention*, through sparse matrix factorization, making it possible to train dense attention networks with hundreds of layers on sequence length up to 16,384.
+
+### Low-Rank Attention
+
+**Linformer** (Wang et al. 2020) approximates the full attention matrix with a *low rank* matrix, reducing the time & space complexity to be linear:
+
+$$\overline{\text{head}}_i = \text{softmax}\left(\frac{\mathbf{X}_q \mathbf{W}^q_i (\mathbf{E}_i \mathbf{X}_k \mathbf{W}^k_i)^\top}{\sqrt{d}}\right) \mathbf{F}_i \mathbf{X}_v \mathbf{W}^v_i$$
+
+### Content-based Attention
+
+The **Reformer** (Kitaev, et al. 2020) replaces the dot-product attention with *locality-sensitive hashing (LSH) attention*, reducing the complexity from $\mathcal{O}(L^2)$ to $\mathcal{O}(L \log L)$.
+
+A hashing scheme $x \mapsto h(x)$ is *locality-sensitive* if it preserves the distancing information between data points. The Reformer adopts: $h(x) = \arg\max([xR; -xR])$ where $\mathbf{R} \in \mathbb{R}^{d \times b/2}$ is a fixed random matrix.
+
+## Longer Context
+
+The length of an input sequence for transformer models at inference time is upper-bounded by the context length used for training. Naively increasing context length leads to high consumption in both time $\mathcal{O}(L^2 d)$ and memory $\mathcal{O}(L^2)$.
+
+### Context Memory
+
+**Transformer-XL** (Dai et al., 2019) modifies the architecture to reuse hidden states between segments with an additional memory:
+
+$$\widetilde{\mathbf{h}}_{\tau+1}^{(n-1)} = [\text{stop-gradient}(\mathbf{h}_{\tau}^{(n-1)}) \circ \mathbf{h}_{\tau+1}^{(n-1)}]$$
+
+$$\mathbf{Q}_{\tau+1}^{(n)} = \mathbf{h}_{\tau+1}^{(n-1)} \mathbf{W}^q$$
+
+$$\mathbf{K}_{\tau+1}^{(n)} = \widetilde{\mathbf{h}}_{\tau+1}^{(n-1)} \mathbf{W}^k$$
+
+## Transformers for Reinforcement Learning
+
+The self-attention mechanism avoids compressing the whole past into a fixed-size hidden state and does not suffer from vanishing or exploding gradients as much as RNNs.
+
+**Decision Transformer** (DT; Chen et al 2021) formulates RL problems as a process of *conditional sequence modeling*, outputting the optimal actions conditioned on the desired return:
+
+$$\tau = (\hat{R}_1, s_1, a_1, \hat{R}_2, s_2, a_2, \dots, \hat{R}_T, s_T, a_T)$$
+
+Three linear layers are added for return-to-go, state, and action respectively. The prediction head learns to predict $a_t$ corresponding to the input token $s_t$.
+
+## Citation
+
+Cited as:
+
+> Weng, Lilian. (Jan 2023). The Transformer Family Version 2.0. Lil'Log. https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/.
+
+## References
+
+[1] Vaswani et al. "Attention is all you need." NIPS 2017.
+
+[2] Su et al. "Roformer: Enhanced transformer with rotary position embedding." arXiv preprint arXiv:2104.09864 (2021).
+
+[3] Child et al. "Generating Long Sequences with Sparse Transformers" arXiv:1904.10509 (2019).
+
+[4] Wang et al. "Linformer: Self-Attention with Linear Complexity." arXiv preprint arXiv:2006.04768 (2020).
+
+[5] Kitaev et al. "Reformer: The Efficient Transformer" ICLR 2020.
+
+[6] Dai et al. "Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context." ACL 2019.
+
+[7] Chen et al. "Decision Transformer: Reinforcement Learning via Sequence Modeling" arXiv preprint arXiv:2106.01345 (2021).
+
+[8] Press et al. "Train Short, Test Long: Attention With Linear Biases Enables Input Length Extrapolation." ICLR 2022.
+
+---
+
+## Source: /2023-06-23-llm-autonomous-agents.md
+
+Building agents with LLM (large language model) as its core controller is a cool concept. Several proof-of-concept demos, such as AutoGPT, GPT-Engineer, and BabyAGI, serve as inspiring examples. The potentiality of LLM extends beyond generating well-written copies, stories, essays, and programs; it can be framed as a powerful general problem solver.
+
+## Agent System Overview
+
+In a LLM-powered autonomous agent system, LLM functions as the agent's brain, complemented by several key components:
+
+- **Planning**
+  - Subgoal and decomposition: The agent breaks down large tasks into smaller, manageable subgoals, enabling efficient handling of complex tasks.
+  - Reflection and refinement: The agent can do self-criticism and self-reflection over past actions, learn from mistakes and refine them for future steps.
+- **Memory**
+  - Short-term memory: All the in-context learning as utilizing short-term memory of the model to learn.
+  - Long-term memory: This provides the agent with the capability to retain and recall information over extended periods, often by leveraging an external vector store and fast retrieval.
+- **Tool use**
+  - The agent learns to call external APIs for extra information that is missing from the model weights, including current information, code execution capability, and access to proprietary information sources.
+
+## Component One: Planning
+
+A complicated task usually involves many steps. An agent needs to know what they are and plan ahead.
+
+### Task Decomposition
+
+**Chain of thought** (CoT; Wei et al. 2022) has become a standard prompting technique for enhancing model performance on complex tasks. The model is instructed to "think step by step" to utilize more test-time computation to decompose hard tasks into smaller and simpler steps.
+
+**Tree of Thoughts** (Yao et al. 2023) extends CoT by exploring multiple reasoning possibilities at each step. It first decomposes the problem into multiple thought steps and generates multiple thoughts per step, creating a tree structure. The search process can be BFS or DFS with each state evaluated by a classifier or majority vote.
+
+Task decomposition can be done:
+1. By LLM with simple prompting like `"Steps for XYZ.\n1."`
+2. By using task-specific instructions
+3. With human inputs
+
+### Self-Reflection
+
+Self-reflection is a vital aspect that allows autonomous agents to improve iteratively by refining past action decisions and correcting previous mistakes.
+
+**ReAct** (Yao et al. 2023) integrates reasoning and acting within LLM by extending the action space to be a combination of task-specific discrete actions and the language space. The prompt template incorporates explicit steps for LLM to think:
+
+```
+Thought: ...
+Action: ...
+Observation: ...
+... (Repeated many times)
+```
+
+**Reflexion** (Shinn & Labash 2023) is a framework to equip agents with dynamic memory and self-reflection capabilities. After each action $a_t$, the agent computes a heuristic $h_t$ and optionally may decide to reset the environment to start a new trial depending on the self-reflection results.
+
+## Component Two: Memory
+
+### Types of Memory
+
+Memory can be defined as the processes used to acquire, store, retain, and later retrieve information. There are several types of memory in human brains:
+
+1. **Sensory Memory**: The earliest stage of memory, providing the ability to retain impressions of sensory information after the original stimuli have ended.
+
+2. **Short-Term Memory** (STM) or **Working Memory**: It stores information that we are currently aware of and needed to carry out complex cognitive tasks. Short-term memory has the capacity of about 7 items (Miller 1956) and lasts for 20-30 seconds.
+
+3. **Long-Term Memory** (LTM): Can store information for a remarkably long time, ranging from a few days to decades, with essentially unlimited storage capacity.
+
+We can roughly consider the following mappings:
+
+- Sensory memory as learning embedding representations for raw inputs;
+- Short-term memory as in-context learning, restricted by the finite context window length;
+- Long-term memory as the external vector store accessible via fast retrieval.
+
+### Maximum Inner Product Search (MIPS)
+
+The external memory can alleviate the restriction of finite attention span. A standard practice is to save the embedding representation into a vector store that supports fast maximum inner-product search (MIPS).
+
+Common choices of ANN algorithms for fast MIPS:
+
+- **LSH** (Locality-Sensitive Hashing): Introduces a hashing function such that similar input items are mapped to the same buckets with high probability.
+- **ANNOY** (Approximate Nearest Neighbors Oh Yeah): The core data structure are random projection trees.
+- **HNSW** (Hierarchical Navigable Small World): Builds hierarchical layers of small-world graphs where bottom layers contain actual data points.
+- **FAISS** (Facebook AI Similarity Search): Applies vector quantization by partitioning the vector space into clusters.
+- **ScaNN** (Scalable Nearest Neighbors): Main innovation is anisotropic vector quantization.
+
+## Component Three: Tool Use
+
+Tool use is a remarkable and distinguishing characteristic of human beings. Equipping LLMs with external tools can significantly extend the model capabilities.
+
+**MRKL** (Karpas et al. 2022), short for "Modular Reasoning, Knowledge and Language", is a neuro-symbolic architecture for autonomous agents containing a collection of "expert" modules where the LLM works as a router.
+
+Both **TALM** (Tool Augmented Language Models; Parisi et al. 2022) and **Toolformer** (Schick et al. 2023) fine-tune a LM to learn to use external tool APIs.
+
+**HuggingGPT** (Shen et al. 2023) is a framework to use ChatGPT as the task planner to select models available in HuggingFace platform. The system comprises 4 stages:
+
+1. **Task planning**: LLM parses user requests into multiple tasks
+2. **Model selection**: LLM distributes tasks to expert models
+3. **Task execution**: Expert models execute on specific tasks
+4. **Response generation**: LLM receives execution results and provides summarized results
+
+## Challenges
+
+After going through key ideas and demos of building LLM-centered agents, several common limitations emerge:
+
+- **Finite context length**: The restricted context capacity limits the inclusion of historical information, detailed instructions, API call context, and responses.
+- **Challenges in long-term planning and task decomposition**: Planning over a lengthy history and effectively exploring the solution space remain challenging.
+- **Reliability of natural language interface**: The reliability of model outputs is questionable, as LLMs may make formatting errors and occasionally exhibit rebellious behavior.
+
+## Citation
+
+Cited as:
+
+> Weng, Lilian. (Jun 2023). "LLM-powered Autonomous Agents". Lil'Log. https://lilianweng.github.io/posts/2023-06-23-agent/.
+
+## References
+
+[1] Wei et al. "Chain of thought prompting elicits reasoning in large language models." NeurIPS 2022
+
+[2] Yao et al. "Tree of Thoughts: Deliberate Problem Solving with Large Language Models." arXiv preprint arXiv:2305.10601 (2023).
+
+[3] Yao et al. "ReAct: Synergizing reasoning and acting in language models." ICLR 2023.
+
+[4] Shinn & Labash. "Reflexion: an autonomous agent with dynamic memory and self-reflection" arXiv preprint arXiv:2303.11366 (2023).
+
+[5] Karpas et al. "MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning." arXiv preprint arXiv:2205.00445 (2022).
+
+[6] Schick et al. "Toolformer: Language Models Can Teach Themselves to Use Tools." arXiv preprint arXiv:2302.04761 (2023).
+
+[7] Shen et al. "HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace" arXiv preprint arXiv:2303.17580 (2023).
+
+[8] Park, et al. "Generative Agents: Interactive Simulacra of Human Behavior." arXiv preprint arXiv:2304.03442 (2023).
+
+---
+
+## Source: /algorithms/QA.md
+
+# Linked List
+
+**Question #1**
+> What two properties are typically stored in the nodes of a singly linked list?
+
+🏆 **`value`** and **`next`**
+
+---
+
+**Question #2**
+> What terms are commonly used to describe the **first node** & **last node** of a linked list?
+
+🏆 **HEAD** for first-node
+
+🏆 **TAIL** for last-node
+
+---
+
+**Question #3**
+> What is the **dummy head pattern** for a linked-list?
+
+🏆 The **dummy head pattern** is where we use a fake node to
+act as the HEAD of the linked-list. The dummy-head is used to simplify
+**edge cases** such as inserting the first node into an empty linked-list.
+
+---
+
+**Question #4**
+> Why might the expression **`current_node.next.val`** be UNSAFE?
+
+🏆 If the current node is a **TAIL-node** then its `.next` will be `None`
+and `None` object does not have `.val` attribute.
+
+---
+
+**Question #5**
+> What are the time complexities for the following linked-list operations?
+> - Lookup
+> - Insert
+> - Delete
+
+🏆
+| Operation | Time Complexity |
+|-----------|----------------|
+| Lookup    | $O(n)$         |
+| Insert    | $O(1)$         |
+| Delete    | $O(1)$         |
+
+---
+
+## Source: /algorithms/hashtables.md
+
+# Hash Tables
+`Author: Vinay Kumar (@imflash217) | Date: 29/January/2021`
+
+## Definition
+
+**Hash Table** is a data structure which stores data in an **associative manner** (i.e. in a (key, value) pair).
+
+- In a hash table, the data is stored in an array format where each data-value has its own unique index-value. Due to this feature, the access to data becomes very fast if we know the desired index-value; irrespective of the size of the data.
+- Hash Table uses an array as a storage medium and uses **hashing** to generate the index where an element is to be inserted or to be located from.
+
+## Hashing
+
+**Hashing** is a technique to convert a range of key values into a range of indexes of an array.
+
+### Direct-Address Tables (DAT)
+
+DAT works well when the universe `U` of keys is small. But when `U` is very large then it is IMPRACTICAL to have all `|U|` slots.
+
+### Hash Functions
+
+A good hash function satisfies the assumption of **simple uniform hashing**: each key is equally likely to hash to any of the `m` slots.
+
+#### Division Method:
+$$h(k) = k \mod m$$
+
+#### Multiplication Method:
+$$h(k) = \lfloor m(k \cdot A \mod 1) \rfloor$$
+where $0 < A < 1$. Knuth suggests $A \approx \frac{\sqrt{5} - 1}{2} = 0.6180339887...$
+
+### Collision Resolution
+
+#### Chaining
+- Each slot of the hash-table holds a linked list of all the elements that hash to the same slot.
+- **Expected Time**: $O(1 + \alpha)$ where $\alpha = n/m$ is the load factor
+
+#### Open Addressing
+- All elements are stored in the hash-table itself.
+- Each slot has either an element or `NIL`.
+- **Linear Probing**: $h(k, i) = (h'(k) + i) \mod m$
+- **Quadratic Probing**: $h(k, i) = (h'(k) + c_1 i + c_2 i^2) \mod m$
+- **Double Hashing**: $h(k, i) = (h_1(k) + i \cdot h_2(k)) \mod m$
+
+---
+
+## Source: /algorithms/sorting.md
+
+# Sorting Algorithms
+
+## Insertion Sort
+
+### Vanilla Insertion Sort
+
+```
+for i = 1, 2, 3, ..., n{
+    insert A[i] into sorted array A[0:i-1]
+    by "pairwise swaps" down to the correct position
+}
+```
+
+This above version has **$\theta(n)$** steps and each step has **$\theta(n)$** comparisons. So this version of the algorithm is **$\theta(n^2)$** runtime complexity.
+
+### Binary Insertion Sort
+
+This improved version is slightly improved by using **Binary Search** while searching for the position to place the key `A[i]` in the sorted part of the array (i.e. `A[0:i-1]`)
+
+```
+for i = 1, 2, 3, ..., n{
+    insert A[i] into sorted array A[0:i-1]
+    by "Binary Search" down to the correct position
+}
+```
+
+This above version has **$\theta(n)$** steps and each step has **$\theta(\log n)$** comparisons. So this version of the algorithm has **$\theta(n \log n)$** comparisons; but **$\theta(n^2)$** swaps. So, overall complexity is still **$\theta(n^2)$**
+
+## Merge Sort
+
+```
+merge_sort(A):
+    if len(A) < 2: return A
+    else:
+        L = merge_sort(A[0:n/2])
+        R = merge_sort(A[n/2:n])
+        return merge(L, R)
+```
+
+**Time Complexity**: $T(n) = c_1 + 2T(n/2) + cn$
+
+By Master's Theorem: $T(n) = \theta(n \log n)$
+
+**Space Complexity**: $\theta(n)$ auxiliary space
+
+## Heap Sort
+
+- The HEAP is an implementation of the abstract data-type called **priority queue**
+- An array visualized as a nearly complete Binary-Tree
+
+### Heap properties:
+- `parent(i) = i / 2`
+- `left_child(i) = 2 * i`
+- `right_child(i) = 2 * i + 1`
+
+### Max-Heap Property:
+For every node `i` (other than the root): `A[parent(i)] >= A[i]`
+
+### Build Max Heap
+```python
+def build_max_heap(A):
+    n = len(A)
+    for i in range(n//2, -1, -1):
+        max_heapify(A, i)
+
+def max_heapify(A, i):
+    l = 2*i + 1
+    r = 2*i + 2
+    largest = i
+    if l < len(A) and A[l] > A[largest]:
+        largest = l
+    if r < len(A) and A[r] > A[largest]:
+        largest = r
+    if largest != i:
+        A[i], A[largest] = A[largest], A[i]
+        max_heapify(A, largest)
+```
+
+---
+
+## Source: /awesome.md
+
+# Awesome List:
+
+- [ ] **PositionalEncoding**:
+    * [ ] https://e2eml.school/transformers.html
+    * [ ] https://github.com/tensorflow/tensor2tensor/issues/1591
+    * [ ] https://kazemnejad.com/blog/transformer_architecture_positional_encoding/
+- [ ] **BatchNorm**:
+    * [ ] https://colab.research.google.com/drive/1Sw2GXJmylz9DvtPaBfJIeutoXNISelZy?usp=sharing
+    * [ ] https://e2eml.school/batch_normalization.html
+    * [ ] How BatchNorm Helps?: https://arxiv.org/pdf/1805.11604.pdf
+    * [ ] Understanding BatchNorm: https://proceedings.neurips.cc/paper/2018/file/36072923bfc3cf47745d704feb489480-Paper.pdf
+    * [ ] Batch-ReNorm: https://arxiv.org/pdf/1702.03275.pdf
+- [ ] StreamingNorm: https://arxiv.org/pdf/1610.06160.pdf
+- [ ] Online Norm: https://proceedings.neurips.cc/paper/2019/file/cb3ce9b06932da6faaa7fc70d5b5d2f4-Paper.pdf
+- [ ] How optimization works:
+    * [ ] https://e2eml.school/how_optimization_works_1.html
+- [ ] Einops:
+    * [ ] https://github.com/arogozhnikov/einops
+- [ ] FlashAttention:
+    * [ ] https://arxiv.org/abs/2205.14135
+- [ ] Mamba:
+    * [ ] https://arxiv.org/abs/2312.00752
+
+---
+
+## Source: /blogs/deep_learning/blog_tf_v1.md
+
+# Tensorflow Tutorial
+
+In this session you will learn to do the following in `TensorFlow v1.0`
+
+1. Initialize Variables
+2. Start your own session
+3. Train Algorithms
+4. Implement a Neural Network
+
+## Exploring the Tensorflow Library
+
+### Example-1: General Overview
+
+```python
+import tensorflow as tf
+
+y_hat = tf.constant(36, name="y_hat")           ## Defines a "y_hat" constant. Sets its value to 36
+y = tf.constant(39, name="y")                   ## Defines a "y" constant. Sets its value to 39
+loss = tf.Variable((y-y_hat)**2, name="loss")
+
+init = tf.global_variables_initializer()
+
+with tf.Session() as sess:
+    sess.run(init)
+    sess.run(loss)
+    print(loss)
+```
+
+Writing and running programs in `Tensorflow` has the following steps:
+
+1. **Create tensors** (variables) that are not yet evaluated/executed.
+2. **Write operations** between those tensors.
+3. **Initialize** the tensors.
+4. **Create a Session**.
+5. **Run the session**. This will run the operations written in step-2.
+
+### Example-2: `tf.Session()`
+
+```python
+a = tf.constant(2)
+b = tf.constant(10)
+c = tf.multiply(a, b)
+print(c)
+```
+
+```
+Tensor("Mul:0", shape=(), dtype=int32)
+```
+
+As expected we will not see `20`. We got a tensor saying that the result of the tensor
+does not have the `shape` attribute and is of the type `int32`. All we did was to put in
+the **computation graph**; but we haven't run this computation yet!
+
+```python
+sess = tf.Session()
+print(sess.run(c))
+```
+```
+20
+```
+
+### Example-3: `tf.placeholder()`
+
+A **placeholder** is an object whose value we can specify ONLY later.
+
+```python
+sess = tf.Session()
+x = tf.placeholder(tf.int64, name="x")
+print(sess.run(2*x, feed_dict={x:9}))
+sess.close()
+```
+```
+18
+```
+
+### Using one-hot encodings:
+
+```python
+def one_hot_matrix(labels, num_classes):
+    num_classes = tf.constant(num_classes, name="num_classes")
+    one_hot_matrix = tf.one_hot(indices=labels, depth=num_classes, axis=0)
+    sess = tf.Session()
+    one_hot = sess.run(one_hot_matrix)
+    sess.close()
+    return one_hot
+```
+
+## Building a Neural Network
+
+### Building the model
+
+```python
+def model(X_train, Y_train, X_test, Y_test,
+        lr=1e-3, num_epochs=1500, bs=32, verbose=True):
+        """
+        Implements a 3-layer Tensorflow Neural Network:
+        [Linear]->[Relu]->[Linear]->[Relu]->[Linear]->[Softmax]
+        """
+        ops.reset_default_graph()
+        tf.set_random_seed(217)
+        (n_x, m) = X_train.shape
+        n_y = Y_train.shape[0]
+        costs = []
+
+        X, Y = create_placeholders(n_x, n_y)
+        parameters = initialize_parameters()
+        Z3 = forward_propagation(X, parameters)
+        cost = compute_cost(Z3, Y)
+        optimizer = tf.train.AdamOptimizer(lr).minimize(cost)
+        init = tf.global_variables_initializer()
+
+        with tf.Session() as sess:
+            sess.run(init)
+            for epoch in range(num_epochs):
+                epoch_cost = 0.0
+                num_batches = m // bs
+                minibatches = random_mini_batches(X_train, Y_train, bs)
+                for (Xb, Yb) in minibatches:
+                    _, minibatch_cost = sess.run([optimizer, cost], feed_dict={X:Xb, Y:Yb})
+                    epoch_cost += minibatch_cost
+                epoch_cost /= num_batches
+
+            parameters = sess.run(parameters)
+            correct_preds = tf.equal(tf.argmax(Z3), tf.argmax(Y))
+            accuracy = tf.reduce_mean(tf.cast(correct_preds, "float"))
+            return parameters
+```
+
+---
+
+## Source: /blogs/deep_learning/dl_04_09.md
+
+## Correction of Distribution Shifts
+
+### Covariate Shift Correction
+
+### Label Shift Correction
+
+### Concept Shift Correction
+
+**Concept Shift** is much harder to fix in a principled manner.
+For instance, in a situation where the problem suddenly changes from
+classifying **`cats` v/s `dogs`** to classifying **`white` v/s `black` animals**;
+it will be _unreasonable_ to assume that we can do much better by collecting new labels and training
+from scratch.
+
+Fortunately, in practice such concept-shifts are very rare, but instead it is usually observed that the
+_task keeps on changing gradually_. For example:
+
+1. Traffic Camera lenses degrade over time due to wear-&-tear and hence the quality of images degrade too.
+2. News content changes gradually; i.e. new stories appear while the news still remain almost same.
+3. In computational advertising, new products get launched and hence popularity of products changes
+and the CTR-Predictor needs to change as well.
+
+In such above cases, we use the same strategy that we used while training the network to make them
+adapt to change in data i.e.; we use **Transfer Learning** by finetuning the pre-trained weights with
+the new acquired data.
+
+## A taxonomy of Learning Problems
+
+Armed with the knowledge of dealing with changes in the distribution of data/labels,
+we now focus on other aspects of machine learning formulations:
+
+### Batch Learning
+
+---
+
+## Source: /blogs/deep_learning/dl_interviews.md
+
+# Deep Learning Interviews
+
+## Introduction
+
+### Q1: Distribution of maximum entropy
+
+> What is the distribution of **maximum entropy**; i.e. the distribution that has the maximum entropy among all distributions in a bounded interval `[a, b]`, `(-\inf, +\inf)`?
+
+**Solution:**
+In a bounded interval `[a, b]`, the **UNIFORM DISTRIBUTION** has the maximum entropy. The variance of the Uniform Distribution $\mathcal{U}(a, b)$ is $\sigma^2 = \frac{(b-a)^2}{12}$.
+Therefore, the maximum entropy in a bounded interval `[a, b]` is $\left(\frac{\log{12}}{2} + \log(\sigma)\right)$
+
+---
+
+### Q2: What's the purpose of this code-snippet?
+
+> Describe in your own words, what is the purpose of this code snippet?
+> ```python
+> self.transforms = []
+> if rotate:
+>     self.transforms.append(RandomRotate())
+> if flip:
+>     self.transforms.append(RandomFlip())
+> ```
+
+**Solution:**
+**Overfitting** is a common problem that occurs during training of machine learning systems. Among various strategies to overcome the problem of overfitting; **data-augmentation** is a very handy method. **Data Augmentation** is a regularization technique that synthetically expands the data-set by utilizing *label-preserving* transformations to add more **invariant examples** of the same data samples.
+
+Usually, the data-augmentation process is done in the CPU before uploading the batched-data for training the model on the GPU.
+
+---
+
+## Logistic Regression
+
+### Q3: Drawbacks of model fitting
+
+> For a fixed number of observations in a dataset, introducing more number of variables normally generate a model that has a better fit to the data. What may be drawbacks of such a model fitting strategy?
+
+**Solution:**
+Introducing more number of variables increases the capacity of the model. If the number of data points in the dataset is kept fixed, and then increasing the number of model parameters (variables) leads to **OVERFITTING**. Overfitting is a scenario where the trained model performs very well on the training data but performs poorly on the test dataset due to lack of generalization capabilities as the overly sized model just remembered the data points instead of understanding the features & data distribution in the training set.
+
+---
+
+### Q4: Odds of Success
+
+> Define the term **`odds of success`**, both *qualitatively* and *formally*.
+
+**Solution:**
+**Odds of Success** of an event in an experiment is the ratio of *probability of the event occurring* and the *probability of the event not occurring*
+i.e. $\left(\frac{\text{probability of occurrence of an event E}}{1 - \text{(probability of the occurrence of the event E)}}\right)$
+
+---
+
+## Source: /blogs/deep_learning/einops.md
+
+## Part-1
+
+### Welcome to einops
+
+1. We don't write
+    ```python
+    y = x.transpose(0,2,3,1)
+    ```
+2. We write comprehensible code
+    ```python
+    y = einops.rearrange(x, "b c h w -> b h w c")
+    ```
+3. `einops` supports widely used tensor packages viz.
+    `numpy`, `pytorch`, `tensorflow`, `chainer`, `gluon`
+    and **extends** them.
+
+### What's in this tutorial?
+
+1. **Fundamentals**: reordering, composition, and decomposition of tensors.
+2. **Operations**: `rearrange`, `reduce`, `repeat`
+3. How much can you do with a **single** operation?
+
+### Preparations
+```python
+import numpy
+from utils import display_np_arrays_as_images
+display_np_arrays_as_images()
+```
+
+### Load a batch of images
+```python
+## there are 6 images of shape 96x96
+## with 3 color channels packed as tensors
+images = np.load("./resources/test_images.npy", allow_pickle=False)
+print(images.shape)  ## (6, 96, 96, 3)
+```
+
+### Composition of axes
+```python
+from einops import rearrange
+
+## composing the first two axes together
+## i.e. 6 images of shape (96, 96, 3) are rearranged
+## into a single image of shape (6*96, 96, 3)
+rearrange(images, "b h w c -> (b h) w c").shape  ## (576, 96, 3)
+```
+
+### Decomposition of axes
+```python
+## decomposition is the reverse of composition
+rearrange(images, "b h w c -> b h w c").shape  ## (6, 96, 96, 3)
+```
+
+### Order of axes matters
+```python
+## moving color channel to the 2nd position
+rearrange(images, "b h w c -> b c h w").shape  ## (6, 3, 96, 96)
+```
+
+---
+
+## Source: /blogs/deep_learning/einops2.md
+
+# Deep Learning Architectures using EINOPS
+
+In this section we will be rewriting the building blocks of deep learning
+in both the traditional `PyTorch` way as well as using `einops` library.
+
+## Imports
+
+```python
+import math
+import numpy as np
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+from einops import rearrange, reduce, repeat, asnumpy, parse_shape
+from einops.layers.torch import Rearrange, Reduce
+```
+
+## Simple ConvNet
+
+### Using only PyTorch
+
+```python
+class ConvNet(nn.Module):
+    def __init__(self):
+        super(ConvNet, self).__init__()
+        self.conv1 = nn.Conv2d(1, 10, kernel_size=5)
+        self.conv2 = nn.Conv2d(10, 20, kernel_size=5)
+        self.fc1 = nn.Linear(320, 50)
+        self.fc2 = nn.Linear(50, 10)
+
+    def forward(self, x):
+        x = F.relu(F.max_pool2d(self.conv1(x), 2))
+        x = F.relu(F.max_pool2d(self.conv2(x), 2))
+        x = x.view(-1, 320)                          # <-- RESHAPE
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+        return F.log_softmax(x, dim=1)
+```
+
+### Using einops
+
+```python
+class ConvNetEinops(nn.Module):
+    def __init__(self):
+        super(ConvNetEinops, self).__init__()
+        self.conv1 = nn.Conv2d(1, 10, kernel_size=5)
+        self.conv2 = nn.Conv2d(10, 20, kernel_size=5)
+        self.fc1 = nn.Linear(320, 50)
+        self.fc2 = nn.Linear(50, 10)
+
+    def forward(self, x):
+        x = F.relu(F.max_pool2d(self.conv1(x), 2))
+        x = F.relu(F.max_pool2d(self.conv2(x), 2))
+        x = rearrange(x, "b c h w -> b (c h w)")     # <-- einops RESHAPE
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+        return F.log_softmax(x, dim=1)
+```
+
+## Multi-Head Attention
+
+### Using only PyTorch
+
+```python
+class MultiHeadAttention(nn.Module):
+    def __init__(self, n_head, d_model, d_k, d_v):
+        super().__init__()
+        self.n_head = n_head
+        self.w_qs = nn.Linear(d_model, n_head * d_k)
+        self.w_ks = nn.Linear(d_model, n_head * d_k)
+        self.w_vs = nn.Linear(d_model, n_head * d_v)
+
+    def forward(self, q, k, v, mask=None):
+        B, Lq, Lk, Lv = q.size(0), q.size(1), k.size(1), v.size(1)
+        n_head, d_k, d_v = self.n_head, self.d_k, self.d_v
+
+        qs = self.w_qs(q).view(B, Lq, n_head, d_k)   # <-- RESHAPE
+        ks = self.w_ks(k).view(B, Lk, n_head, d_k)
+        vs = self.w_vs(v).view(B, Lv, n_head, d_v)
+
+        qs = qs.permute(0, 2, 1, 3)                   # <-- TRANSPOSE
+        ks = ks.permute(0, 2, 1, 3)
+        vs = vs.permute(0, 2, 1, 3)
+        # ... rest of attention
+```
+
+### Using einops
+
+```python
+class MultiHeadAttentionEinops(nn.Module):
+    def __init__(self, n_head, d_model, d_k, d_v):
+        super().__init__()
+        self.n_head = n_head
+        self.w_qs = nn.Linear(d_model, n_head * d_k)
+        self.w_ks = nn.Linear(d_model, n_head * d_k)
+        self.w_vs = nn.Linear(d_model, n_head * d_v)
+
+    def forward(self, q, k, v, mask=None):
+        qs = rearrange(self.w_qs(q), "b l (head k) -> b head l k", head=self.n_head)
+        ks = rearrange(self.w_ks(k), "b t (head k) -> b head t k", head=self.n_head)
+        vs = rearrange(self.w_vs(v), "b t (head v) -> b head t v", head=self.n_head)
+        # ... rest of attention
+```
+
+---
+
+## Source: /blogs/deep_learning/loss.md
+
+# Loss Functions
+
+## Cross Entropy
+
+Cross Entropy is usually used in **multiclass classification** tasks.
+
+> **`Pareto Optimization`**: An area of *multiple* criteria decision making that is concerned with mathematical optimization problems involving more than one objective functions to be optimized simultaneously.
+
+### Cross Entropy using Numpy
+
+```python
+import numpy as np
+
+def cross_entropy(preds, labels):
+    xentropy = 0
+    for i in range(len(preds)):
+        xentropy -= preds[i] * np.log(labels[i])    # NOTE the `-=` instead of `+=`
+    return xentropy
+```
+
+---
+
+## Source: /blogs/notes.md
+
+# The Preface of the key technological stuffs here
+
+## Tips & Tricks
+
+### LR Scheduler
+- [x] Similar to the `learning rate`, the `lr-scheduler` to apply depends on the
+    classifier & the model.
+- [x] For image classifiers and **`SGD` optimizer**, the **`Multi-Step LR Scheduler`**
+    is shown to be a good choice.
+- [x] Models trained with **`Adam`** commonly use a smooth exponential-decay
+    in the `lr` or a cosine-like scheduler.
+- [x] For TRANSFORMERS:
+    - 🚨 Remember to use a **`learning rate WARMUP`**
+    - 🚨 The `cosine-scheduler` is often used for decaying the `lr`
+        afterwards (but can also be replaced by `exponential decay`)
+
+### Regularization
+- [x] Regularization is important in networks when we see a significantly higher
+    **training** performance than **test** performance.
+
+---
+
+## Source: /blogs/physics/blog_01282021.md
+
+# Electromagnetic Spectrum, properties of material medium & its effects.
+
+## Electromagnetic Spectrum
+
+The different parts of the electromagnetic spectrum have very different effects upon interaction with matter. Starting with low frequency `radio waves`, the human body is quite transparent (_you can listen to your portable radio inside your home since the waves pass freely through the walls of your house and even through the person beside you!_) **As you move upward through `microwaves` and `infrared` to `visible light`, you absorb more and more strongly.** In the lower ultraviolet range, all the `UV` from the sun is absorbed in a thin outer layer of your skin. As you move further up into the `x-ray` region of the spectrum, you become transparent again, because most of the mechanisms for absorption are gone. You then absorb only a small fraction of the radiation, but that absorption involves the `more violent ionization events`.
+
+- Each portion of the electromagnetic spectrum has quantum energies appropriate for the excitation of certain types of physical processes.
+- The energy levels for all physical processes at the atomic and molecular levels are quantized, and if there are no available quantized energy levels with spacings which match the quantum energy of the incident radiation, then the material will be transparent **to that radiation**, and it will pass through.
+- If electromagnetic energy is absorbed, but cannot eject electrons from the atoms of the material, then it is classified as non-ionizing radiation, and will typically just heat the material.
+
+## Microwaves
+
+The _quantum energy_ of microwave photons is in the range **`0.00001 to 0.001 eV`** _which is in the range of energies separating the quantum states of molecular rotation and torsion_.
+
+- The interaction of microwaves with matter **other than metallic conductors** will be to rotate molecules and produce heat as result of that molecular motion.
+- Conductors will strongly absorb microwaves and any lower frequencies _because they will cause electric currents which will heat the material._ Most matter, including the human body, is largely transparent to microwaves.
+- High intensity microwaves, as in a _microwave oven_ where they pass back and forth through the food millions of times, will heat the material **by producing molecular rotations and torsions.** Since the quantum energies are a million times lower than those of x-rays, they **cannot produce ionization** and the characteristic types of radiation damage associated with ionizing radiation.
+
+## Infrared
+
+The quantum energy of infrared photons is in the range **`0.001 to 1.7 eV` which is in the range of energies separating the quantum states of molecular vibrations.**
+
+- Infrared is absorbed more strongly than microwaves, but less strongly than visible light.
+- The result of infrared absorption is heating of the tissue since it increases molecular vibrational activity.
+- Infrared radiation **does penetrate the skin further than visible light** and can thus be used for **photographic imaging of subcutaneous blood vessels.**
+
+## Visible Light
+
+The primary mechanism for the absorption of visible light photons is the elevation of electrons to higher energy levels. There are many available states, so visible light is absorbed strongly. With a strong light source, red light can be transmitted through the hand or a fold of skin, showing that **the red end of the spectrum is not absorbed as strongly as the violet end.**
+
+While exposure to visible light causes heating, it does not cause ionization with its risks. You may be heated by the sun through a car windshield, but you will not be sunburned - that is an effect of the higher frequency uv part of sunlight which is blocked by the glass of the windshield.
+
+## Ultraviolet
+
+The near ultraviolet is absorbed very strongly in the surface layer of the skin by **electron transitions**. As you go to higher energies, the ionization energies for many molecules are reached and the **more dangerous photoionization processes** take place.
+
+- Sunburn is primarily an effect of uv, and ionization produces the risk of _skin cancer_.
+
+The `ozone layer` in the upper atmosphere is important for human health because it absorbs most of the harmful ultraviolet radiation from the sun before it reaches the surface. **The higher frequencies in the ultraviolet are ionizing radiation** and can produce harmful physiological effects ranging from _sunburn_ to _skin cancer_.
+
+## X-ray
+
+Since the **quantum energies** of x-ray photons are much **too high to be absorbed in electron transitions** between states for most atoms, they can interact with an electron only by knocking it completely out of the atom. That is, **all x-rays are classified as ionizing radiation**. This can occur by giving all of the energy to an electron (_photoionization_) or by giving part of the energy to the electron and the remainder to a lower energy photon (_Compton Scattering_). **At sufficiently high energies, the x-ray photon can create an electron positron pair.**
+
+---
+
+> **Author Disclaimer**
+> `Author: Vinay Kumar (@imflash217)`
+> `Date: 28/January/2021`
+>
+> The contents of this article were originally published at the references below. I have assembled it for my own understanding. Feel free to reuse and tag along the references. 👍
+
+## References:
+[^1]: http://hyperphysics.phy-astr.gsu.edu/hbase/mod3.html
+[^2]: http://hyperphysics.phy-astr.gsu.edu/hbase/mod2.html
+
+---
+
+## Source: /blogs/prob/intro.md
+
+# Probability Theory
+
+A key concept in the field of **pattern recognition** is that of **uncertainty**.
+It arises through:
+
+1. noise on measurements
+2. finite size of datasets.
+
+Probability theory provides a consistent framework for the quantification
+and manipulation of uncertainty and forms one of the central foundations
+of Pattern Recognition.
+
+When combined with **Decision Theory**, it allows us to make optimal predictions
+given all the information available to us, even though that information may be incomplete or ambiguous.
+
+## Example: Red/Blue boxes
+
+### The setup
+
+Imagine we have two boxes `red_box` and `blue_box`.
+Each box contains different number of fruits `oranges` and `apples`.
+```
+red_box:
+    - apples: 2
+    - oranges: 6
+blue_box:
+    - apples: 3
+    - oranges: 1
+```
+
+### The Experiment
+
+Now, we do the following steps:
+
+1. _Select a box_: **Randomly** pick one of the boxes (either `red_box` or `blue_box`)
+2. _Pick a fruit_: Then, **randomly** select an item of fruit from the box.
+3. _Replace the fruit_: Having observed the type of the picked fruit (`apple` or `orange`),
+now, replace it in the box from which it came.
+4. _Repeat_ steps 1-to-3 multiple times.
+
+### The Pre-conditions / Assumptions
+
+Now, let's suppose in doing the above experiment,
+
+1. we pick the `red_box` **40%** of the times and the `blue_box` **60%** of the times.
+2. Also, assume that when we remove an item of fruit from a box, we are equally likely to select any of the pieces of fruits in the box.
+
+### The Theory
+
+In this experiment:
+
+1. the identity of the box to be chosen is a **random variable** $B$ which can take
+two possible values `r` and `b` (corresponding to red or blue boxes).
+2. Similarly, the identity of fruit is also a **random variable** $F$ and it can
+take either of the values `a` and `o` (corresponding to apple and orange respectively).
+
+> Definition:
+>
+> The **Probability of an event** is defined as the _fraction_ of times, that event occurs
+> out of the total number of trials (in the limit that the total number of trials goes to
+> infinity). All probabilities must lie in the interval [0, 1]
+
+Thus, the probability of selecting the `red_box` is $4/10$ and that of the `blue_box` is
+$6/10$.
+
+$$
+p(B=r) = 4/10
+$$
+
+$$
+p(B=b) = 6/10
+$$
+
+---
+
+## Source: /blogs/system_design/cdn.md
+
+# **CDN** अर्थात् *Content Delivery Network*
+
+**CDN** अर्थात् servers का एक ऐसा network जो पृथ्वी पर अलग-अलग भूगौलिक क्षेत्रों में होता है; और इनका एक ही कार्य होता है: "static content जैसे images, videos, CSS, JavaScript, etc. को माँगने वाले client (जैसे apps, end-users, etc) तक पहुँचाना"। इस कार्य को करने के लिए CDN के द्वारा प्रयुक्त होने वाले technology का नाम है: **Dynamic Content Caching** जो `request path`, `query strings`, `cookies` और `request headers` के आधार पर HTML pages को **cache** करने की योग्यता प्रदान करता है।
+
+> सरल भाषा में **CDN** मुख्यतः दो कार्यों को करता है:
+>
+> - Client को *static content* देना
+> - नज़दीकी client की सर्वप्रथम सेवा करना (अर्थात्, अगर हमारा CDN `चेन्नई` में है और दो client, एक `बैंगलुरु` व दूसरा `दिल्ली` से CDN से एक website माँग रहे हैं तो सर्वप्रथम `बैंगलुरु` के `request` को पूरा किया जाएगा फिर `दिल्ली` को क्योंकि `दिल्ली` की अपेक्षा `बैंगलुरु` हमारे CDN के नज़दीक है जो `चेन्नई` में है)।
+
+---
+
+## Source: /gists/python_snippets.md
+
+# Python Snippets
+
+## 1: MappingProxyType
+
+### Immutable Mappings
+
+The mapping types provided by the standard library are all mutable;
+but you may need to guarantee that a user cannot change a mapping by mistake.
+
+Since `Python 3.3` the `types` module provides a wrapper class `MappingProxyType` which,
+given a mapping returns a `mappingproxy` instance that is **read-only** but a **dynamic-view**
+of the original mapping.
+
+This means that the original mapping can be seen through `mappingproxy`
+but changes cannot be made through it.
+
+```python
+from types import MappingProxyType
+
+d = {1:"A"}
+d_proxy = MappingProxyType(d)   ## creating a proxy for the original dict d
+
+print(d_proxy)       ## mappingproxy({1: 'A'})
+print(d_proxy[1])    ## 'A'
+
+## d_proxy[2] = "B"  ## THIS WILL RAISE TypeError
+
+d[2] = "B"           ## changing the original dict `d`
+print(d_proxy)       ## mappingproxy({1: 'A', 2: 'B'})  -- reflected in proxy!
+```
+
+## 2: Walrus Operator
+
+The **walrus operator** `:=` (assignment expression) was introduced in Python 3.8.
+
+```python
+## Without walrus operator
+results = []
+for x in range(10):
+    y = x ** 2
+    if y > 20:
+        results.append(y)
+
+## With walrus operator
+results = [y for x in range(10) if (y := x**2) > 20]
+```
+
+## 3: `__slots__`
+
+By default, Python stores instance attributes in a per-instance `__dict__`.
+When you have millions of instances, this overhead adds up. Using `__slots__`
+tells Python to store instance attributes in a fixed-size tuple instead.
+
+```python
+class PointSlots:
+    __slots__ = ('x', 'y')
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+# This is much more memory efficient than:
+class PointDict:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+```
+
+---
+
+## Source: /mlsd/01_overview.md
+
+# When & When NOT to use Machine Learning:
+
+As its adoption in the industry quickly grows, ML has proven to be a powerful tool for a wide range of problems. Despite an incredible amount of excitement and hype generated by people both inside and outside the field, ML is not a magic tool that can solve all problems. Even for problems that ML can solve, ML might not be an optimal solution.
+
+> So, before starting an ML project, we must ask whether ML is **necessary** and **cost-effective**
+
+Some applications where use of ML have been widely adopted are:
+
+- [ ] Predictive Typing
+- [ ] Machine Translation
+- [ ] Fraud Detection
+- [ ] Price Optimization
+- [ ] Churn Prediction
+- [ ] Automated Support Ticket Classification
+- [ ] Brand Monitoring
+- [ ] Sentiment Analysis
+- [ ] Healthcare applications
+
+## When to use ML
+
+ML is an approach to **learn complex patterns** from **existing data** and use these patterns to make **predictions** on **unseen data**.
+
+| Condition | Explanation |
+|-----------|-------------|
+| The system has patterns to learn | ML solutions only work when there are patterns to learn |
+| Data is available or can be collected | Without data, there are NO patterns to learn |
+| Patterns are complex | If it can be solved by simple heuristics, you don't need ML |
+| The problem is at scale | ML shines when operating at scale |
+| Predictions must change (non-static) | If the answer never changes, just hardcode it |
+
+## When NOT to use ML
+
+- [x] When the task is simple enough for hand-crafted rules
+- [x] When cost-effectiveness is not achieved
+- [x] When you need 100% explainability
+- [x] When the error cost is too high and you need deterministic outcomes
+
+---
+
+## Source: /nlp/cs224n/cs224n_1.md
+
+# Lecture #1
+
+## Word Meaning
+
+- [x] Denotational Semantics
+- [x] Distributional Semantics
+- [x] Localist Representation (like `one-hot vectors`)
+- [x] Distributed Representation (like `word-vectors`)
+
+### NLTK example: synonyms of word `good`
+
+```python
+import nltk
+from nltk.corpus import wordnet as wn
+
+for synset in wn.synsets("good"):
+    for lemma in synset.lemmas():
+        print(synset.pos(), lemma.name())
+```
+
+### Problems with toolkits like `WordNet`
+
+- [x] Great as a resource but missing `nuance`
+    * Example: `proficient` is listed as a synonym for `good`; but it is correct only in some contexts.
+- [x] Missing new meaning of words
+    * Example: new slang words etc like `wicked`, `badass`, `nifty` etc.
+    * IMPOSSIBLE to keep up-to-date
+- [x] Very Subjective
+- [x] Requires human labour to curate and maintain
+- [x] Can't compute accurate word-similarity.
+
+## References
+[^1]: Stanford's NLP+DL course.
+
+---
+
+## Source: /nlp/naive_bayes.md
+
+# Naïve Bayes Classifiers
+
+In this article we will talk about **Multinomial Naïve Bayes Classifier**,
+so called because it is a *Bayesian Classifier that makes a simplifying (naïve)
+assumption about the interaction b/w features*.
+
+Let's understand the intuition of this classifier in the context of **text classification**.
+Given a text document we first represent the text document as a **bag-of-words**
+(i.e. an unordered set of words in the document with their position information removed)
+keeping only the **word-frequency** in the given document.
+In this **bag-of-words** representation, all we care about is how many times a given word appears in this document.
+
+> **Naïve Bayes** is a _probabilistic classifier_, meaning that for a given document **`d`**,
+out of all classes $c\in C$ the classifier returns the class $\hat{c}$ which has the maximum
+posterior probability given the document **`d`**.
+
+---
+
+## Source: /nlp/nlp_book.md
+
+# NLP notes:
+
+## Text Normalization
+
+Normalizing text means converting them into a more convenient, standard form.
+For example, most of what we are going to do with language relies on first
+separating out or **tokenizing** words from running text (which is called as **tokenization**).
+
+### Tokenization
+
+### Lemmatization
+
+### Stemming
+
+### Sentence Segmentation
+
+## Edit Distance
+
+---
+
+## Source: /nlp/regex.md
+
+# Regular Expressions
+
+One of the unsung successes in standardization of computer science has been the
+**Regular Expressions (RE)**, a language for specifying text search strings.
+This practical language is in every computer language, word processor, and
+text processing tools like the Unix's **`grep`**.
+
+> 🏆 A regular expression is an algebraic notation for characterizing a set of strings.
+
+They are particularly useful for searching in texts, when we have a **pattern** to search for
+and a **corpus** of texts to search through.
+A regex search function will search through the corpus returning all texts that match the pattern.
+The corpus can be a single document or a collection.
+For example, the Unix cmd tool **`grep`** takes a regex and
+returns every line of the input document that matches the pattern in regex.
+
+🚨 RegEx comes in many variants. In this article we will be discussing
+**extended regex**.
+
+
+## Basic Patterns
+
+
+
+
+## References:
+[^1]: "Speech & Language Processing" by Jurafsky et al.; 2021
+[^2]: https://regex101.com/
+
+---
+
+## Source: /python/design_patterns.md
+
+## STRATEGY Pattern
+
+```python
+from abc import ABC, abstractmethod
+from collections import namedtuple
+
+Customer = namedtuple("Customer", "name fidelity")
+
+class LineItem:
+    def __init__(self, product, quantity, price):
+        self.product = product
+        self.quantity = quantity
+        self.price = price
+
+    def total(self):
+        return self.price * self.quantity
+
+class Order:
+    """This is the CONTEXT part of the Strategy-Pattern"""
+    def __init__(self, customer, cart, promotion=None):
+        self.customer = customer
+        self.cart = list(cart)
+        self.promotion = promotion
+
+    def total(self):
+        if not hasattr(self, "__total"):
+            self.__total = sum(item.total() for item in self.cart)
+        return self.__total
+
+    def due(self):
+        if self.promotion is None:
+            discount = 0
+        else:
+            discount = self.promotion.discount(self)
+        return self.total() - discount
+
+    def __repr__(self):
+        return f"<Order total: {self.total():.2f} due: {self.due():.2f}>"
+```
+
+### Abstract Strategy
+
+```python
+class Promotion(ABC):
+    """Abstract Base Class for implementing promotions"""
+
+    @abstractmethod
+    def discount(self, order):
+        """return discount as +ve amount"""
+        pass
+
+class FidelityPromotion(Promotion):
+    """5% off for customers with 1000+ fidelity points"""
+    def discount(self, order):
+        return order.total() * 0.05 if order.customer.fidelity >= 1000 else 0
+
+class BulkItemPromotion(Promotion):
+    """10% discount for each item with 20+ units"""
+    def discount(self, order):
+        discount = 0
+        for item in order.cart:
+            if item.quantity >= 20:
+                discount += item.total() * 0.1
+        return discount
+
+class LargeOrderPromotion(Promotion):
+    """7% discount on orders with 10+ distinct items"""
+    def discount(self, order):
+        distinct_items = {item.product for item in order.cart}
+        if len(distinct_items) >= 10:
+            return order.total() * 0.07
+        return 0
+```
+
+---
+
+## Source: /speech/lecture-3.md
+
+Most of you may know that about 90% of the technology available is *idle*; in fact even more. Probably more than 95% of computing power is idle.
+
+In last class we discussed two important ideas:
+
+1. Role of speech technology
+2. `Signal -- to -- Symbol`
+
+### Scope of Speech Technology for this course
+
+1. ❌ Language Translation
+2. ❌ Coding
+3. ❌ Transmission (Tx)
+4. ❌ Communication Technology in Speech (here it deals with coding & Tx)
+5. ✅ Signal to Symbol Transformation
+6. ✅ Language Knowledge
+7. ✅ Suprasegmental Knowledge (aka `prosody`)
+
+---
+
+## Source: /til/042123.md
+
+# `numpy` v/s `pandas`
+
+One subtle aspect that lot of engineers miss is the `access control` design of `numpy` and `pandas`.
+
+1. `numpy` uses **row-major** access control.
+2. `pandas` uses **column-major** access control.
+
+Generally its seen that engineers complain about slow-nature of `numpy` compared to `pandas`. One of the prime culprits of this issue is the lack of knowledge about the *access control* used in these libraries.
+
+By default, `numpy` uses row-major but it allows the user to specify the access control while creating the `ndarray`. Below, are all scenarios of accessing the row/col using pandas or numpy is shown.
+
+### Iterating numpy `ndarray` using column-major
+```python
+import numpy as np
+df_np = df.to_numpy()
+n_rows, n_cols = df_np.shape
+
+start = time.time()
+for j in range(n_cols):
+    for item in df_np[:, j]:
+        pass
+
+print(time.time() - start)
+```
+
+### Iterating numpy `ndarray` using row-major (DEFAULT)
+```python
+start = time.time()
+for i in range(n_rows):
+    for item in df_np[i, :]:
+        pass
+
+print(time.time() - start)
+```
+
+### Key Takeaway
+
+| Library | Default Memory Layout | Faster Access |
+|---------|----------------------|---------------|
+| `numpy` | Row-major (C-order) | Row iteration |
+| `pandas` | Column-major | Column iteration |
+
+> 💡 **Tip**: When using `numpy`, iterate over rows. When using `pandas`, iterate over columns. Or better yet, use vectorized operations!
+
+---
+
+## Source: /transformers/about.md
+
+# `Stay tuned`.
+
+## References:
+
+[^1]: Transformers explained: https://e2eml.school/transformers.html
+[^2]: Positional Embeddings: https://kazemnejad.com/blog/transformer_architecture_positional_encoding/
+[^3]: Positional Embeddings: https://timodenk.com/blog/linear-relationships-in-the-transformers-positional-encoding/
+[^4]: POS Summation v/s Concat: https://github.com/tensorflow/tensor2tensor/issues/1591
+
+---
+
+## Source: /transformers/detr.md
+
+# DETR: End-to-End Object Detection with Transformers
+
+## The paper
+
+> DETR (DEtection TRansformer) is a new method that views object detection as a direct set prediction problem. The approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like non-maximum suppression or anchor generation.
+
+The key idea is to use a transformer encoder-decoder architecture combined with a bipartite matching loss that forces unique predictions.
+
+## Review Presentation Slides
+
+*Coming soon*
+

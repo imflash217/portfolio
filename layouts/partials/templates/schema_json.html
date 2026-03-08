@@ -1,0 +1,64 @@
+{{ if not .IsHome }}
+<script type="application/ld+json">
+{{- $url := replace .Permalink (printf "%s" site.Home.Permalink) "" }}
+{{- $lang_url := strings.TrimPrefix (printf "%s/" .Lang) $url -}}
+{{- $bc_list := split $lang_url "/" }}
+{{- $scratch := newScratch }}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "articleSection": {{ .Section }},
+      "name": {{ .Title }},
+      "headline": {{ .Title }},
+      {{- with .Params.summary }}
+      "description": {{ . }},
+      {{- else }}
+      "description": {{ .Summary | plainify | htmlUnescape }},
+      {{- end }}
+      "inLanguage": {{ site.LanguageCode }},
+      "author": {
+        "@type": "Person",
+        "name": {{ site.Params.author | default site.Title }}
+      },
+      "url": {{ .Permalink | safeHTML }},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ .Permalink | safeHTML }}
+      }
+      {{- with .Params.date }},
+      "datePublished": {{ . }}
+      {{- end }}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {{- $counter := 0 }}
+        {{- range $index, $element := $bc_list }}
+          {{- $scratch.Add "path" (printf "%s/" $element ) | safeJS }}
+          {{- $bc_pg := site.GetPage ($scratch.Get "path") -}}
+          {{- if (and ($bc_pg) (gt (len . ) 0))}}
+            {{- if gt $counter 0 }},{{ end }}
+            {
+              "@type": "ListItem",
+              "position": {{ add 1 $counter }},
+              "name": {{ $bc_pg.Name }},
+              "item": {{ $bc_pg.Permalink | safeHTML }}
+            }
+            {{- $counter = add $counter 1 }}
+          {{- end }}
+        {{- end }}
+        {{- if gt $counter 0 }},{{ end }}
+        {
+          "@type": "ListItem",
+          "position": {{ add 1 $counter }},
+          "name": {{ .Name }},
+          "item": {{ .Permalink | safeHTML }}
+        }
+      ]
+    }
+  ]
+}
+</script>
+{{ end }}

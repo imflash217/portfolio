@@ -1,0 +1,36 @@
+# Vinay Kumar's Portfolio
+
+> Machine Learning Engineer exploring deep learning, NLP, and systems engineering. Notes, tutorials, and deep dives into AI research.
+
+## Sections
+
+- [Transformers](/transformers/): Transformer architectures, DETR, attention mechanisms
+- [NLP](/nlp/): Naïve Bayes classifiers, Regular Expressions, NLP book notes, Stanford CS224N
+- [Speech](/speech/): Speech processing lectures, signal-to-symbol transformation
+- [Blogs](/blogs/): Deep learning, physics, probability, system design notes
+- [Python](/python/): Design patterns (Strategy pattern, ABC)
+- [Algorithms](/algorithms/): Sorting algorithms, hash tables, linked list Q&A
+- [Gists](/gists/): Python snippets (MappingProxyType, walrus operator, __slots__)
+- [ML System Design](/mlsd/): When and when not to use ML
+- [TIL](/til/): Today I Learned  -  numpy vs pandas access control
+
+## Key Articles
+
+- [Sorting Algorithms](/algorithms/sorting/): Insertion sort, binary insertion sort, merge sort, heap sort with complexity analysis
+- [Hash Tables](/algorithms/hashtables/): Hashing, collision resolution (chaining, open addressing), hash functions
+- [Linked List Q&A](/algorithms/QA/): Interview questions on linked lists
+- [DL Interviews](/blogs/deep_learning/dl_interviews/): Maximum entropy, data augmentation, overfitting, odds of success
+- [Probability Theory](/blogs/prob/intro/): Bayesian foundations, red/blue box experiment, random variables
+- [Naïve Bayes](/nlp/naive_bayes/): Multinomial Naïve Bayes for text classification
+- [Regular Expressions](/nlp/regex/): RegEx fundamentals for text processing
+- [Einops Part 1](/blogs/deep_learning/einops/): Tensor rearranging with einops
+- [Einops Part 2](/blogs/deep_learning/einops2/): ConvNets and Multi-Head Attention with einops
+- [Loss Functions](/blogs/deep_learning/loss/): Cross entropy implementation
+- [TensorFlow Tutorial](/blogs/deep_learning/blog_tf_v1/): TF v1.0 basics, sessions, placeholders, neural networks
+- [Distribution Shift](/blogs/deep_learning/dl_04_09/): Covariate, label, and concept shift correction
+- [EM Spectrum](/blogs/physics/blog_01282021/): Electromagnetic spectrum interactions with matter
+- [CDN](/blogs/system_design/cdn/): Content Delivery Networks explained (in Hindi)
+- [Design Patterns](/python/design_patterns/): Strategy pattern in Python
+- [ML System Design Overview](/mlsd/01_overview/): When to use and not use ML
+- [numpy vs pandas](/til/042123/): Row-major vs column-major access control
+- [CS224N Lecture 1](/nlp/cs224n/cs224n_1/): Word meaning, distributional semantics

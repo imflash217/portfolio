@@ -1,0 +1,157 @@
+baseURL = "https://imflash217.github.io/"
+languageCode = "en-us"
+title = "flash217"
+theme = "PaperMod"
+[pagination]
+  pagerSize = 10
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+  minifyOutput = true
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[params]
+  env = "production"
+  author = "Vinay Kumar"
+  description = "Machine Learning Engineer  -  Deep Learning, NLP, Systems"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  hideFooter = false
+  TocOpen = true
+  ShowWordCount = true
+
+  [params.label]
+    text = "flash217"
+
+  [params.profileMode]
+    enabled = true
+    title = "Vinay Kumar"
+    subtitle = """Sr. ML Engineer specializing in LLMs, computer vision, speech, and stateful agents  -  shipping production AI at <i class='fa-solid fa-briefcase' style='font-size:0.7em; opacity:0.6;'></i> <a href="https://www.tiaa.org" target="_blank">TIAA</a>, previously at <i class='fa-solid fa-briefcase' style='font-size:0.7em; opacity:0.6;'></i> <a href="https://www.boom.interactive" target="_blank">Boom Interactive</a> and <i class='fa-solid fa-briefcase' style='font-size:0.7em; opacity:0.6;'></i> <a href="https://www.ncsu.edu" target="_blank">NC State</a>. Founded FlashAI. <i class='fa-solid fa-graduation-cap' style='font-size:0.7em; opacity:0.6;'></i> MS from <a href="https://www.ncsu.edu" target="_blank">NC State</a>, <i class='fa-solid fa-graduation-cap' style='font-size:0.7em; opacity:0.6;'></i> BTech from <a href="https://iith.ac.in" target="_blank">IIT Hyderabad</a>."""
+    imageUrl = "https://avatars.githubusercontent.com/u/12234745?v=4"
+    imageTitle = "Vinay Kumar"
+    imageWidth = 150
+    imageHeight = 150
+
+    [[params.profileMode.buttons]]
+      name = "Transformers"
+      url = "/transformers/"
+    [[params.profileMode.buttons]]
+      name = "NLP"
+      url = "/nlp/"
+    [[params.profileMode.buttons]]
+      name = "Blogs"
+      url = "/blogs/"
+    [[params.profileMode.buttons]]
+      name = "Algorithms"
+      url = "/algorithms/"
+    [[params.profileMode.buttons]]
+      name = "Python"
+      url = "/python/"
+    [[params.profileMode.buttons]]
+      name = "ML System Design"
+      url = "/mlsd/"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/imflash217"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/imflash217"
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com/imflash217"
+
+  # Featured Projects (used in V2 homepage)
+  # Add your projects here. Link `url` to the blog post or external page.
+  [[params.featuredProjects]]
+    name = "Reverse Retrieval at TIAA"
+    desc = "LLM-powered retrieval for 2.5M+ customer queries"
+    icon = "fa-magnifying-glass"
+    color = "#667eea"
+    url = "/mlsd/01_overview/"
+  [[params.featuredProjects]]
+    name = "Generative AI Patent"
+    desc = "Multi-layered image rendering based on data prompts"
+    icon = "fa-lightbulb"
+    color = "#f59e0b"
+    url = "#"
+  [[params.featuredProjects]]
+    name = "FlashAI - Satellite Detection"
+    desc = "Garbage dump detection in satellite imagery using transfer learning"
+    icon = "fa-satellite"
+    color = "#10b981"
+    url = "#"
+  [[params.featuredProjects]]
+    name = "DETR Object Detection"
+    desc = "End-to-end detection with transformers and bipartite matching"
+    icon = "fa-robot"
+    color = "#a855f7"
+    url = "/transformers/detr/"
+
+[params.editPost]
+  URL = "https://github.com/imflash217/portfolio/tree/main/content"
+  Text = "Suggest Changes"
+  appendFilePath = true
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.goldmark.extensions.passthrough]
+    enable = true
+    [markup.goldmark.extensions.passthrough.delimiters]
+      block = [["$$", "$$"], ["\\[", "\\]"]]
+      inline = [["$", "$"], ["\\(", "\\)"]]
+
+[menu]
+  [[menu.main]]
+    identifier = "transformers"
+    name = "Transformers"
+    url = "/transformers/"
+    weight = 2
+  [[menu.main]]
+    identifier = "nlp"
+    name = "NLP"
+    url = "/nlp/"
+    weight = 3
+  [[menu.main]]
+    identifier = "blogs"
+    name = "Blogs"
+    url = "/blogs/"
+    weight = 4
+  [[menu.main]]
+    identifier = "algorithms"
+    name = "Algorithms"
+    url = "/algorithms/"
+    weight = 5
+  [[menu.main]]
+    identifier = "python"
+    name = "Python"
+    url = "/python/"
+    weight = 6
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 10
+  [[menu.main]]
+    identifier = "search"
+    name = "Search"
+    url = "/search/"
+    weight = 11
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

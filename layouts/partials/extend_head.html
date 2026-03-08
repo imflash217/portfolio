@@ -1,0 +1,209 @@
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" as="style">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Honk&family=Lexend:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&family=Train+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  /* Hire banner */
+  .hire-banner {
+    background: #0a0a0a; color: #fff; text-align: center; padding: 0.5rem 1rem;
+    font-size: 0.84rem; font-weight: 500; position: sticky; top: 0; z-index: 9999;
+    letter-spacing: 0.3px;
+  }
+  .hire-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(16,185,129,0.15); color: #6ee7b7;
+    padding: 2px 12px; border-radius: 50px; font-size: 0.78rem;
+    font-weight: 600; border: 1px solid rgba(16,185,129,0.3); margin-right: 8px;
+  }
+  .hire-link {
+    color: #d1fae5; text-decoration: none; margin-left: 0.5rem;
+    font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.4);
+  }
+  .hire-link:hover { color: #fff; }
+  /* Base: clean readable body */
+  body, .post-content, .post-header {
+    font-family: 'Lexend', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .post-content h1 { font-size: 1.6rem; }
+  .post-content h2 { font-size: 1.35rem; }
+  .post-content h3 { font-size: 1.15rem; }
+  .post-content h4 { font-size: 1.05rem; }
+  .post-content p, .post-content li { font-size: 0.95rem; line-height: 1.75; }
+  .post-content code { font-size: 0.85rem; }
+  .post-content pre { font-size: 0.85rem; }
+  .post-content pre code { font-size: 0.85rem; }
+  .entry .entry-content { font-size: 0.9rem; }
+  /* Wider viewport */
+  .main { max-width: 1200px; margin: 0 auto; }
+  .post-single { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+  .profile { max-width: 100%; }
+  .header { max-width: 100%; }
+  /* Breadcrumbs  -  inline text style */
+  .breadcrumbs { font-size: 0.78rem; color: var(--secondary); opacity: 0.7; }
+  .breadcrumbs a { color: var(--secondary); text-decoration: none; }
+  .breadcrumbs a:hover { color: var(--primary); text-decoration: underline; }
+  /* Section description */
+  .post-description { font-size: 0.88rem; color: var(--secondary); opacity: 0.8; margin-bottom: 1.5rem; }
+  /* Tile grid for section/list pages */
+  .tile-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 18px; margin-top: 12px;
+  }
+  .tile-card {
+    position: relative; overflow: hidden;
+    background: var(--entry); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 16px;
+    text-decoration: none; color: var(--primary);
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: block;
+  }
+  .tile-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12); transform: translateY(-2px);
+    border-color: var(--secondary);
+  }
+  .tile-bg-icon { display: none; }
+  .tile-title {
+    font-size: 1.1rem; font-weight: 700; margin: -14px -16px 8px; color: #fff;
+    line-height: 1.3; background: #1a1a1a; padding: 10px 16px; border-radius: 10px 10px 0 0;
+  }
+  .tile-summary {
+    font-size: 0.92rem; color: var(--primary); opacity: 0.75;
+    margin: 0; line-height: 1.5;
+    overflow: hidden; display: -webkit-box;
+    -webkit-box-orient: vertical; -webkit-line-clamp: 2; min-height: 2.1em;
+  }
+  .tile-meta {
+    font-size: 0.75rem; color: var(--secondary); opacity: 0.5;
+    margin-top: 4px;
+  }
+  @media (max-width: 640px) {
+    .tile-grid { grid-template-columns: 1fr; }
+  }
+/* Clean minimal nav */
+  #menu { gap: 2px !important; }
+  #menu li + li { margin-inline-start: 2px !important; }
+  #menu a {
+    padding: 4px 10px !important;
+    border-radius: 6px;
+    font-size: 0.82rem !important;
+    font-weight: 500;
+    color: var(--secondary);
+    background: transparent;
+    transition: all 0.15s ease;
+    line-height: 1.8 !important;
+  }
+  #menu a:hover {
+    color: var(--primary);
+    background: var(--code-bg);
+  }
+  #menu .active {
+    border-bottom: none !important;
+  }
+  #menu a:has(.active) {
+    color: #fff !important;
+    background: #1a1a1a !important;
+    font-weight: 600;
+  }
+  [data-theme="dark"] #menu a:has(.active) {
+    color: #1a1a1a !important;
+    background: #fff !important;
+  }
+  .header {
+    border-bottom: 1px solid var(--border);
+  }
+  /* Site brand: playful identity */
+  .logo a, .profile .hdr, .profile h1 {
+    font-family: 'Agbalumo', cursive;
+  }
+  /* Article titles: architectural double-stroke */
+  .post-title, .entry .entry-title {
+    font-family: 'Train One', system-ui;
+  }
+  /* Section list headings: structured feel */
+  .terms-tags .title, .archive-month-header, .list .header-title {
+    font-family: 'Train One', system-ui;
+  }
+  /* Tags page & 404: fun moments */
+  .page-header h1, .not-found h1 {
+    font-family: 'Honk', system-ui;
+  }
+  /* Glassmorphism color-coded tags */
+  .post-tags a, .terms-tags a {
+    backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important;
+    background: rgba(148,163,184,0.12) !important; color: var(--secondary) !important;
+    border: 1px solid rgba(148,163,184,0.25) !important;
+    border-radius: 6px !important; padding: 1px 6px !important;
+    font-size: 0.75rem !important; font-weight: 500;
+    line-height: 26px !important;
+    text-decoration: none; display: inline-block;
+    transition: all 0.3s;
+  }
+  .post-tags { gap: 6px !important; }
+  /* Color coding by keyword */
+  .post-tags a[href*="deep-learning"], .terms-tags a[href*="deep-learning"],
+  .post-tags a[href*="pytorch"], .terms-tags a[href*="pytorch"],
+  .post-tags a[href*="loss"], .terms-tags a[href*="loss"],
+  .post-tags a[href*="tensor"], .terms-tags a[href*="tensor"] {
+    background: rgba(99,102,241,0.15) !important; color: #667eea !important; border-color: rgba(99,102,241,0.3) !important;
+  }
+  .post-tags a[href*="python"], .terms-tags a[href*="python"],
+  .post-tags a[href*="design-pattern"], .terms-tags a[href*="design-pattern"],
+  .post-tags a[href*="snippet"], .terms-tags a[href*="snippet"] {
+    background: rgba(16,185,129,0.15) !important; color: #10b981 !important; border-color: rgba(16,185,129,0.3) !important;
+  }
+  .post-tags a[href*="nlp"], .terms-tags a[href*="nlp"],
+  .post-tags a[href*="transformer"], .terms-tags a[href*="transformer"],
+  .post-tags a[href*="einops"], .terms-tags a[href*="einops"] {
+    background: rgba(168,85,247,0.15) !important; color: #a855f7 !important; border-color: rgba(168,85,247,0.3) !important;
+  }
+  .post-tags a[href*="algorithm"], .terms-tags a[href*="algorithm"],
+  .post-tags a[href*="sorting"], .terms-tags a[href*="sorting"],
+  .post-tags a[href*="data-structure"], .terms-tags a[href*="data-structure"],
+  .post-tags a[href*="hash"], .terms-tags a[href*="hash"],
+  .post-tags a[href*="linked"], .terms-tags a[href*="linked"] {
+    background: rgba(245,158,11,0.15) !important; color: #f59e0b !important; border-color: rgba(245,158,11,0.3) !important;
+  }
+  .post-tags a[href*="ml-system"], .terms-tags a[href*="ml-system"],
+  .post-tags a[href*="interview"], .terms-tags a[href*="interview"] {
+    background: rgba(239,68,68,0.15) !important; color: #ef4444 !important; border-color: rgba(239,68,68,0.3) !important;
+  }
+  .post-tags a[href*="speech"], .terms-tags a[href*="speech"],
+  .post-tags a[href*="physics"], .terms-tags a[href*="physics"] {
+    background: rgba(6,182,212,0.15) !important; color: #06b6d4 !important; border-color: rgba(6,182,212,0.3) !important;
+  }
+  .post-tags a[href*="numpy"], .terms-tags a[href*="numpy"],
+  .post-tags a[href*="pandas"], .terms-tags a[href*="pandas"],
+  .post-tags a[href*="performance"], .terms-tags a[href*="performance"] {
+    background: rgba(236,72,153,0.15) !important; color: #ec4899 !important; border-color: rgba(236,72,153,0.3) !important;
+  }
+  .post-tags a[href*="overview"], .terms-tags a[href*="overview"] {
+    background: rgba(239,68,68,0.15) !important; color: #ef4444 !important; border-color: rgba(239,68,68,0.3) !important;
+  }
+  .post-tags a[href*="resource"], .terms-tags a[href*="resource"],
+  .post-tags a[href*="reading"], .terms-tags a[href*="reading"] {
+    background: rgba(124,58,237,0.15) !important; color: #7c3aed !important; border-color: rgba(124,58,237,0.3) !important;
+  }
+  .post-tags a:hover, .terms-tags a:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+</style>
+
+<!-- KaTeX for math rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\\\[', right: '\\\\]', display: true},
+            {left: '\\\\(', right: '\\\\)', display: false}
+        ],
+        throwOnError: false
+    });"></script>
