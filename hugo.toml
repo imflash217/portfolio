@@ -43,8 +43,9 @@ buildExpired = false
     <br><br>\
     Previously at <a href="https://www.boom.interactive" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">Boom Inc.</a> \
     and <a href="https://www.ncsu.edu" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">NC State</a>.\
-    <br>\
+    <br><br>\
     MS from <a href="https://www.ncsu.edu" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">NC State</a>, \
+    <br><br>\
     BTech from <a href="https://iith.ac.in" target="_blank" style="background: #1a1a1a; color: #fff; padding: 1px 8px; border-radius: 4px; text-decoration: none; font-weight: 600;">IIT Hyderabad</a>."""
     imageUrl = "https://avatars.githubusercontent.com/u/12234745?v=4"
     imageTitle = "Vinay Kumar"
