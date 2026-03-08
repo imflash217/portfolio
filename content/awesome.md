@@ -1,5 +1,5 @@
 ---
-title: "📚 Awesome List"
+title: "Awesome List"
 tags:
   - resources
   - reading-list
